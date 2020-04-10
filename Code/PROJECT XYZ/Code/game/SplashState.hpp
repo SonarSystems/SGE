@@ -16,7 +16,7 @@ namespace Sonar
 		// No pause() or resume() methods here as this
 		// is a very simple example of a game state.
 
-		void HandleInput();
+		void HandleInput(float dt);
 		void Update(float dt);
 		void Draw(float dt);
 
@@ -25,6 +25,6 @@ namespace Sonar
 
 		sf::Clock _clock;
 
-		sf::Sprite _background;
+		sf::RectangleShape player, boundaryPlayer;
 	};
 }

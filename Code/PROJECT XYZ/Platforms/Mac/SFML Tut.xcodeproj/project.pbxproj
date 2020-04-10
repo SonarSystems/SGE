@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E75200BC243C77710007A939 /* Resources in Resources */ = {isa = PBXBuildFile; fileRef = E75200BB243C775E0007A939 /* Resources */; };
+		E75200BD243C779A0007A939 /* Resources in CopyFiles */ = {isa = PBXBuildFile; fileRef = E75200BB243C775E0007A939 /* Resources */; };
 		EE08DDA71F5860D200987C3E /* AssetManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE08DD9A1F5860D200987C3E /* AssetManager.cpp */; };
 		EE08DDA81F5860D200987C3E /* b2GLDraw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE08DD9C1F5860D200987C3E /* b2GLDraw.cpp */; };
 		EE08DDA91F5860D200987C3E /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE08DD9E1F5860D200987C3E /* Game.cpp */; };
@@ -19,17 +21,26 @@
 		EECB13BF1F521E6300B6A50B /* libsfml-network.2.4.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EECB13BA1F521E6300B6A50B /* libsfml-network.2.4.2.dylib */; };
 		EECB13C01F521E6300B6A50B /* libsfml-system.2.4.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EECB13BB1F521E6300B6A50B /* libsfml-system.2.4.2.dylib */; };
 		EECB13C11F521E6300B6A50B /* libsfml-window.2.4.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EECB13BC1F521E6300B6A50B /* libsfml-window.2.4.2.dylib */; };
-		EECB13D31F5225E800B6A50B /* Resources in CopyFiles */ = {isa = PBXBuildFile; fileRef = EECB13D11F5225CC00B6A50B /* Resources */; };
 		EECB13D51F5775D300B6A50B /* libBox2D.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EECB13D41F5775D300B6A50B /* libBox2D.a */; };
 		EECB13DA1F57778200B6A50B /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EECB13D91F57778200B6A50B /* OpenGL.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		E75200BA243C76D40007A939 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+				E75200BD243C779A0007A939 /* Resources in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EE790DA61E3D25F1002224EA /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
+			dstPath = usr/share/man/man1;
+			dstSubfolderSpec = 16;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 1;
@@ -40,13 +51,15 @@
 			dstPath = "";
 			dstSubfolderSpec = 7;
 			files = (
-				EECB13D31F5225E800B6A50B /* Resources in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E75200B7243C76B20007A939 /* ground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ground.png; sourceTree = "<group>"; };
+		E75200B8243C76B20007A939 /* box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = box.png; sourceTree = "<group>"; };
+		E75200BB243C775E0007A939 /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Resources; path = ../../Resources; sourceTree = SOURCE_ROOT; };
 		EE08DD9A1F5860D200987C3E /* AssetManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AssetManager.cpp; sourceTree = "<group>"; };
 		EE08DD9B1F5860D200987C3E /* AssetManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = AssetManager.hpp; sourceTree = "<group>"; };
 		EE08DD9C1F5860D200987C3E /* b2GLDraw.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = b2GLDraw.cpp; sourceTree = "<group>"; };
@@ -69,7 +82,6 @@
 		EECB13BA1F521E6300B6A50B /* libsfml-network.2.4.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libsfml-network.2.4.2.dylib"; path = "../../External Libraries/Mac/SFML/lib/libsfml-network.2.4.2.dylib"; sourceTree = "<group>"; };
 		EECB13BB1F521E6300B6A50B /* libsfml-system.2.4.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libsfml-system.2.4.2.dylib"; path = "../../External Libraries/Mac/SFML/lib/libsfml-system.2.4.2.dylib"; sourceTree = "<group>"; };
 		EECB13BC1F521E6300B6A50B /* libsfml-window.2.4.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libsfml-window.2.4.2.dylib"; path = "../../External Libraries/Mac/SFML/lib/libsfml-window.2.4.2.dylib"; sourceTree = "<group>"; };
-		EECB13D11F5225CC00B6A50B /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Resources; path = ../../../Resources; sourceTree = "<group>"; };
 		EECB13D41F5775D300B6A50B /* libBox2D.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libBox2D.a; path = "../../External Libraries/Mac/Box2D/lib/libBox2D.a"; sourceTree = "<group>"; };
 		EECB13D91F57778200B6A50B /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -92,6 +104,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E75200B6243C76B20007A939 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E75200B7243C76B20007A939 /* ground.png */,
+				E75200B8243C76B20007A939 /* box.png */,
+			);
+			name = Resources;
+			path = ../../Resources;
+			sourceTree = "<group>";
+		};
 		EE08DD991F5860D200987C3E /* engine */ = {
 			isa = PBXGroup;
 			children = (
@@ -142,7 +164,8 @@
 		EE790DAA1E3D25F1002224EA /* SFML Tut */ = {
 			isa = PBXGroup;
 			children = (
-				EECB13D11F5225CC00B6A50B /* Resources */,
+				E75200B6243C76B20007A939 /* Resources */,
+				E75200BB243C775E0007A939 /* Resources */,
 				EECB13C81F52221400B6A50B /* Code */,
 			);
 			path = "SFML Tut";
@@ -169,8 +192,8 @@
 				EE08DDAD1F58615300987C3E /* game */,
 			);
 			name = Code;
-			path = ../../../Code;
-			sourceTree = "<group>";
+			path = ../../Code;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -183,6 +206,8 @@
 				EE790DA51E3D25F1002224EA /* Frameworks */,
 				EE790DA61E3D25F1002224EA /* CopyFiles */,
 				EECB13D21F5225DA00B6A50B /* CopyFiles */,
+				E75200B9243C76C60007A939 /* Resources */,
+				E75200BA243C76D40007A939 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -199,7 +224,7 @@
 		EE790DA01E3D25F1002224EA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = "Sonar Systems";
 				TargetAttributes = {
 					EE790DA71E3D25F1002224EA = {
@@ -210,10 +235,11 @@
 			};
 			buildConfigurationList = EE790DA31E3D25F1002224EA /* Build configuration list for PBXProject "SFML Tut" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = EE790D9F1E3D25F1002224EA;
 			productRefGroup = EE790DA91E3D25F1002224EA /* Products */;
@@ -224,6 +250,17 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E75200B9243C76C60007A939 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E75200BC243C77710007A939 /* Resources in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EE790DA41E3D25F1002224EA /* Sources */ = {
@@ -247,20 +284,29 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -294,20 +340,29 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -334,6 +389,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "-";
 				HEADER_SEARCH_PATHS = (
 					"\"${SRCROOT}/../../External Libraries/Mac/SFML/include\"",
 					"\"${SRCROOT}/../../External Libraries/Mac/Box2D/include\"",
@@ -351,6 +407,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "-";
 				HEADER_SEARCH_PATHS = (
 					"\"${SRCROOT}/../../External Libraries/Mac/SFML/include\"",
 					"\"${SRCROOT}/../../External Libraries/Mac/Box2D/include\"",
