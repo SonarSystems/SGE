@@ -25,6 +25,6 @@ namespace Sonar
 
 		sf::Clock _clock;
 
-		sf::RectangleShape player, boundaryPlayer;
+		sf::RectangleShape player;
 	};
 }
