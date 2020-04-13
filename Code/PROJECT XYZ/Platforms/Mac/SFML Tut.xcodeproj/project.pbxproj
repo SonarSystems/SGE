@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E702AD2F2443106C0029B5AB /* TODO.md in Sources */ = {isa = PBXBuildFile; fileRef = E702AD2E2443106C0029B5AB /* TODO.md */; };
 		E75200BC243C77710007A939 /* Resources in Resources */ = {isa = PBXBuildFile; fileRef = E75200BB243C775E0007A939 /* Resources */; };
 		E75200BD243C779A0007A939 /* Resources in CopyFiles */ = {isa = PBXBuildFile; fileRef = E75200BB243C775E0007A939 /* Resources */; };
+		E7BC937E24450C22000E8FBE /* NOTES.md in Sources */ = {isa = PBXBuildFile; fileRef = E7BC937D24450C22000E8FBE /* NOTES.md */; };
 		EE08DDA71F5860D200987C3E /* AssetManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE08DD9A1F5860D200987C3E /* AssetManager.cpp */; };
 		EE08DDA81F5860D200987C3E /* b2GLDraw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE08DD9C1F5860D200987C3E /* b2GLDraw.cpp */; };
 		EE08DDA91F5860D200987C3E /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE08DD9E1F5860D200987C3E /* Game.cpp */; };
@@ -57,9 +59,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E702AD2E2443106C0029B5AB /* TODO.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = TODO.md; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.markdown; };
 		E75200B7243C76B20007A939 /* ground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ground.png; sourceTree = "<group>"; };
 		E75200B8243C76B20007A939 /* box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = box.png; sourceTree = "<group>"; };
 		E75200BB243C775E0007A939 /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Resources; path = ../../Resources; sourceTree = SOURCE_ROOT; };
+		E7BC937D24450C22000E8FBE /* NOTES.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = NOTES.md; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.markdown; };
 		EE08DD9A1F5860D200987C3E /* AssetManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AssetManager.cpp; sourceTree = "<group>"; };
 		EE08DD9B1F5860D200987C3E /* AssetManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = AssetManager.hpp; sourceTree = "<group>"; };
 		EE08DD9C1F5860D200987C3E /* b2GLDraw.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = b2GLDraw.cpp; sourceTree = "<group>"; };
@@ -190,6 +194,8 @@
 			children = (
 				EE08DD991F5860D200987C3E /* engine */,
 				EE08DDAD1F58615300987C3E /* game */,
+				E702AD2E2443106C0029B5AB /* TODO.md */,
+				E7BC937D24450C22000E8FBE /* NOTES.md */,
 			);
 			name = Code;
 			path = ../../Code;
@@ -272,8 +278,10 @@
 				EE08DDA81F5860D200987C3E /* b2GLDraw.cpp in Sources */,
 				EE08DDAB1F5860D200987C3E /* main.cpp in Sources */,
 				EE08DDB01F58615300987C3E /* SplashState.cpp in Sources */,
+				E7BC937E24450C22000E8FBE /* NOTES.md in Sources */,
 				EE08DDA71F5860D200987C3E /* AssetManager.cpp in Sources */,
 				EE08DDAC1F5860D200987C3E /* StateMachine.cpp in Sources */,
+				E702AD2F2443106C0029B5AB /* TODO.md in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

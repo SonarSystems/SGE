@@ -6,6 +6,8 @@
 #include "StateMachine.hpp"
 #include "AssetManager.hpp"
 #include "InputManager.hpp"
+#include <Box2D/Box2D.h>
+#include "b2GLDraw.h"
 
 namespace Sonar
 {
