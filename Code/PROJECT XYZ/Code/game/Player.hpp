@@ -14,6 +14,7 @@ namespace Sonar
         void Update( float dt );
         void Draw( float dt );
         
+    private:
         sf::RectangleShape player;
         
         GameDataRef _data;
