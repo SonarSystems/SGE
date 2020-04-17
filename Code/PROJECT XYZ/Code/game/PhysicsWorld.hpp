@@ -4,6 +4,7 @@
 #include <Box2D/Box2D.h>
 #include "b2GLDraw.h"
 #include "Game.hpp"
+#include <iostream>
 
 namespace Sonar
 {
@@ -15,11 +16,11 @@ namespace Sonar
         void Update( float dt );
         void Draw( float dt );
         
-        /** Create the base for the boxes to land */
-        void CreateGround( b2World &World, float X, float Y );
+        
+        void CreateStaticBody( float posX, float posY, float width, float height, float density = 0 );
 
         /** Create the boxes */
-        void CreateBox( b2World &World, int MouseX, int MouseY );
+        void CreateDynamicBody( float posX, float posY, float width, float height, float density = 0, float friction = 0 );
         
     private:
         GameDataRef _data;

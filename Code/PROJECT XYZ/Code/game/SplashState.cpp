@@ -25,12 +25,20 @@ namespace Sonar
         
         player->HandleInput( dt );
 
-		while (this->_data->window.pollEvent(event))
+		while ( this->_data->window.pollEvent( event ) )
 		{
-			if (sf::Event::Closed == event.type)
+			if ( sf::Event::Closed == event.type )
 			{
-				this->_data->window.close();
+				this->_data->window.close( );
 			}
+            
+            if ( sf::Event::MouseMoved == event.type )
+            {
+                physicsWorld->CreateDynamicBody( event.mouseButton.x, event.mouseButton.y, 2, 2 );
+                
+                //.event.mouseButton.x
+                
+            }
 		}
 	}
 

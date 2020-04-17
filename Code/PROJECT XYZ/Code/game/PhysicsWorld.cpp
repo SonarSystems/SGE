@@ -12,15 +12,10 @@ namespace Sonar
         _data->assets.LoadTexture("Ground Texture", "Resources/ground.png");
         _data->assets.LoadTexture("Box Texture", "Resources/box.png");
 
-        //_background.setTexture(this->_data->assets.GetTexture("Splash State Background"));
-        
-        //GroundTexture.loadFromFile("Resources/ground.png");
-        //BoxTexture.loadFromFile("Resources/box.png");
-        
         /** Prepare the world */
-        Gravity = b2Vec2(0.f, 9.8f);
-        World = new b2World(Gravity);
-        CreateGround(*World, 400.f, 500.f);
+        Gravity = b2Vec2( 0.f, 9.8f );
+        World = new b2World( Gravity );
+        CreateStaticBody( 0, 952, 1920, 128 );
         
         World->SetDebugDraw(&fooDrawInstance);
         uint32 flags = 0;
@@ -34,7 +29,7 @@ namespace Sonar
 
     void PhysicsWorld::Update( float dt )
     {
-        World->Step( 1.0 / 60.f, 8, 3 );
+        World->Step( dt, 8, 3 );
     }
 
     void PhysicsWorld::Draw( float dt )
@@ -56,9 +51,14 @@ namespace Sonar
             {
                 sf::Sprite GroundSprite;
                 GroundSprite.setTexture(_data->assets.GetTexture("Ground Texture"));
-                GroundSprite.setOrigin(400.f, 8.f);
-                GroundSprite.setPosition(BodyIterator->GetPosition().x * SCALE, BodyIterator->GetPosition().y * SCALE);
+                
+                float relativeX = ( BodyIterator->GetPosition().x * SCALE ) - ( GroundSprite.getLocalBounds().width / 2 );
+                float relativeY = ( BodyIterator->GetPosition().y * SCALE ) - ( GroundSprite.getLocalBounds().height / 2 );
+                
+                GroundSprite.setPosition(relativeX, relativeY);
                 GroundSprite.setRotation(180 / b2_pi * BodyIterator->GetAngle());
+                //GroundSprite.scale(0, 0);
+                
                 _data->window.draw(GroundSprite);
             }
         }
@@ -66,34 +66,41 @@ namespace Sonar
         World->DrawDebugData();
     }
 
-    void PhysicsWorld::CreateBox(b2World& World, int MouseX, int MouseY)
+    void PhysicsWorld::CreateDynamicBody( float posX, float posY, float width, float height, float density, float friction )
     {
+        float relativeX = posX + ( width / 2 );
+        float relativeY = posY + ( height / 2 );
+        
+        
         b2BodyDef BodyDef;
-        BodyDef.position = b2Vec2(MouseX / SCALE, MouseY / SCALE);
+        BodyDef.position = b2Vec2( relativeX / SCALE, relativeY / SCALE );
         BodyDef.type = b2_dynamicBody;
-        b2Body *Body = World.CreateBody(&BodyDef);
+        b2Body *Body = World->CreateBody( &BodyDef );
         
         b2PolygonShape Shape;
-        Shape.SetAsBox((32.f / 2) / SCALE, (32.f / 2) / SCALE);
+        Shape.SetAsBox( ( width / 2 ) / SCALE, ( height / 2 ) / SCALE );
         b2FixtureDef FixtureDef;
         FixtureDef.density = 1.f;
         FixtureDef.friction = 0.7f;
         FixtureDef.shape = &Shape;
-        Body->CreateFixture(&FixtureDef);
+        Body->CreateFixture( &FixtureDef );
     }
 
-    void PhysicsWorld::CreateGround(b2World& World, float X, float Y)
+    void PhysicsWorld::CreateStaticBody( float posX, float posY, float width, float height, float density )
     {
+        float relativeX = posX + ( width / 2 );
+        float relativeY = posY + ( height / 2 );
+        
         b2BodyDef BodyDef;
-        BodyDef.position = b2Vec2(X / SCALE, Y / SCALE);
+        BodyDef.position = b2Vec2( relativeX / SCALE, relativeY / SCALE );
         BodyDef.type = b2_staticBody;
-        b2Body *Body = World.CreateBody(&BodyDef);
+        b2Body *Body = World->CreateBody( &BodyDef );
         
         b2PolygonShape Shape;
-        Shape.SetAsBox((800.f / 2) / SCALE, (16.f / 2) / SCALE);
+        Shape.SetAsBox( ( width / 2 ) / SCALE, ( height / 2 ) / SCALE );
         b2FixtureDef FixtureDef;
-        FixtureDef.density = 0.f;
+        FixtureDef.density = density;
         FixtureDef.shape = &Shape;
-        Body->CreateFixture(&FixtureDef);
+        Body->CreateFixture( &FixtureDef );
     }
 }
