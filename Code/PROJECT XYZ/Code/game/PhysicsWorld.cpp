@@ -9,10 +9,8 @@ namespace Sonar
     {
         _data = data;
         
-        _data->assets.LoadTexture("Splash State Background", "ground.png");
-        _data->assets.LoadTexture("Splash State Background44", "../Resources/ground.png");
-        _data->assets.LoadTexture("Splash State Background1", "../../Resources/ground.png");
-        _data->assets.LoadTexture("Splash State Background2", "../../../Resources/ground.png");
+        _data->assets.LoadTexture("Ground Texture", "Resources/ground.png");
+        _data->assets.LoadTexture("Box Texture", "Resources/box.png");
 
         //_background.setTexture(this->_data->assets.GetTexture("Splash State Background"));
         
@@ -47,7 +45,7 @@ namespace Sonar
             if (BodyIterator->GetType() == b2_dynamicBody)
             {
                 sf::Sprite Sprite;
-                Sprite.setTexture(BoxTexture);
+                Sprite.setTexture(_data->assets.GetTexture("Box Texture"));
                 Sprite.setOrigin(16.f, 16.f);
                 Sprite.setPosition(SCALE * BodyIterator->GetPosition().x, SCALE * BodyIterator->GetPosition().y);
                 Sprite.setRotation(BodyIterator->GetAngle() * 180 / b2_pi);
@@ -57,7 +55,7 @@ namespace Sonar
             else
             {
                 sf::Sprite GroundSprite;
-                GroundSprite.setTexture(GroundTexture);
+                GroundSprite.setTexture(_data->assets.GetTexture("Ground Texture"));
                 GroundSprite.setOrigin(400.f, 8.f);
                 GroundSprite.setPosition(BodyIterator->GetPosition().x * SCALE, BodyIterator->GetPosition().y * SCALE);
                 GroundSprite.setRotation(180 / b2_pi * BodyIterator->GetAngle());

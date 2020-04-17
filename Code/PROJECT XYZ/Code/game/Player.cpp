@@ -10,6 +10,7 @@ namespace Sonar
 
     void Player::HandleInput(float dt)
     {
+        
         if ( sf::Keyboard::isKeyPressed( sf::Keyboard::Key::Left ) )
         {
             player.move( -500.0f * dt, 0 );

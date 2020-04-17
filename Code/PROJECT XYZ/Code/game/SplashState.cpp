@@ -8,11 +8,13 @@ namespace Sonar
 	{
         player = new Player( _data );
         physicsWorld = new PhysicsWorld( _data );
+   
+        
 	}
 
 	void SplashState::Init( )
 	{
-        _data->assets.LoadTexture("Splash State Background", "Resources/ground.png");
+        
 
         //_background.setTexture(this->_data->assets.GetTexture("Splash State Background"));
 	}

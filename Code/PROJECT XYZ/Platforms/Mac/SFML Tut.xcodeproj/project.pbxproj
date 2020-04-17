@@ -8,11 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		E702AD2F2443106C0029B5AB /* TODO.md in Sources */ = {isa = PBXBuildFile; fileRef = E702AD2E2443106C0029B5AB /* TODO.md */; };
-		E75200BC243C77710007A939 /* Resources in Resources */ = {isa = PBXBuildFile; fileRef = E75200BB243C775E0007A939 /* Resources */; };
-		E75200BD243C779A0007A939 /* Resources in CopyFiles */ = {isa = PBXBuildFile; fileRef = E75200BB243C775E0007A939 /* Resources */; };
 		E79DFFAD2447243500AE4416 /* PhysicsWorld.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E79DFFAB2447243500AE4416 /* PhysicsWorld.cpp */; };
 		E7BC937E24450C22000E8FBE /* NOTES.md in Sources */ = {isa = PBXBuildFile; fileRef = E7BC937D24450C22000E8FBE /* NOTES.md */; };
 		E7BC938124450C7C000E8FBE /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7BC937F24450C7C000E8FBE /* Player.cpp */; };
+		E7FE6BF32447E45000882771 /* Resources in CopyFiles */ = {isa = PBXBuildFile; fileRef = E7FE6BF12447E42C00882771 /* Resources */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		EE08DDA71F5860D200987C3E /* AssetManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE08DD9A1F5860D200987C3E /* AssetManager.cpp */; };
 		EE08DDA81F5860D200987C3E /* b2GLDraw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE08DD9C1F5860D200987C3E /* b2GLDraw.cpp */; };
 		EE08DDA91F5860D200987C3E /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE08DD9E1F5860D200987C3E /* Game.cpp */; };
@@ -32,11 +31,11 @@
 /* Begin PBXCopyFilesBuildPhase section */
 		E75200BA243C76D40007A939 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			dstPath = "";
 			dstSubfolderSpec = 7;
 			files = (
-				E75200BD243C779A0007A939 /* Resources in CopyFiles */,
+				E7FE6BF32447E45000882771 /* Resources in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,14 +61,12 @@
 
 /* Begin PBXFileReference section */
 		E702AD2E2443106C0029B5AB /* TODO.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = TODO.md; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.markdown; };
-		E75200B7243C76B20007A939 /* ground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ground.png; sourceTree = "<group>"; };
-		E75200B8243C76B20007A939 /* box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = box.png; sourceTree = "<group>"; };
-		E75200BB243C775E0007A939 /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Resources; path = ../../Resources; sourceTree = SOURCE_ROOT; };
 		E79DFFAB2447243500AE4416 /* PhysicsWorld.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PhysicsWorld.cpp; sourceTree = "<group>"; };
 		E79DFFAC2447243500AE4416 /* PhysicsWorld.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = PhysicsWorld.hpp; sourceTree = "<group>"; };
 		E7BC937D24450C22000E8FBE /* NOTES.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = NOTES.md; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.markdown; };
 		E7BC937F24450C7C000E8FBE /* Player.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
 		E7BC938024450C7C000E8FBE /* Player.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Player.hpp; sourceTree = "<group>"; };
+		E7FE6BF12447E42C00882771 /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Resources; path = ../../Resources; sourceTree = "<group>"; };
 		EE08DD9A1F5860D200987C3E /* AssetManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AssetManager.cpp; sourceTree = "<group>"; };
 		EE08DD9B1F5860D200987C3E /* AssetManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = AssetManager.hpp; sourceTree = "<group>"; };
 		EE08DD9C1F5860D200987C3E /* b2GLDraw.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = b2GLDraw.cpp; sourceTree = "<group>"; };
@@ -114,16 +111,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E75200B6243C76B20007A939 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				E75200B7243C76B20007A939 /* ground.png */,
-				E75200B8243C76B20007A939 /* box.png */,
-			);
-			name = Resources;
-			path = ../../Resources;
-			sourceTree = "<group>";
-		};
 		EE08DD991F5860D200987C3E /* engine */ = {
 			isa = PBXGroup;
 			children = (
@@ -161,6 +148,7 @@
 		EE790D9F1E3D25F1002224EA = {
 			isa = PBXGroup;
 			children = (
+				E7FE6BF12447E42C00882771 /* Resources */,
 				EE790DAA1E3D25F1002224EA /* SFML Tut */,
 				EE790DA91E3D25F1002224EA /* Products */,
 				EE790DB21E3D267F002224EA /* Frameworks */,
@@ -178,11 +166,10 @@
 		EE790DAA1E3D25F1002224EA /* SFML Tut */ = {
 			isa = PBXGroup;
 			children = (
-				E75200B6243C76B20007A939 /* Resources */,
-				E75200BB243C775E0007A939 /* Resources */,
 				EECB13C81F52221400B6A50B /* Code */,
 			);
-			path = "SFML Tut";
+			name = "SFML Tut";
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		EE790DB21E3D267F002224EA /* Frameworks */ = {
@@ -222,7 +209,6 @@
 				EE790DA51E3D25F1002224EA /* Frameworks */,
 				EE790DA61E3D25F1002224EA /* CopyFiles */,
 				EECB13D21F5225DA00B6A50B /* CopyFiles */,
-				E75200B9243C76C60007A939 /* Resources */,
 				E75200BA243C76D40007A939 /* CopyFiles */,
 			);
 			buildRules = (
@@ -266,17 +252,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXResourcesBuildPhase section */
-		E75200B9243C76C60007A939 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E75200BC243C77710007A939 /* Resources in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EE790DA41E3D25F1002224EA /* Sources */ = {
@@ -401,6 +376,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -410,6 +386,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_IDENTITY = "-";
+				DEVELOPMENT_ASSET_PATHS = "";
 				HEADER_SEARCH_PATHS = (
 					"\"${SRCROOT}/../../External Libraries/Mac/SFML/include\"",
 					"\"${SRCROOT}/../../External Libraries/Mac/Box2D/include\"",
@@ -428,6 +405,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_IDENTITY = "-";
+				DEVELOPMENT_ASSET_PATHS = "";
 				HEADER_SEARCH_PATHS = (
 					"\"${SRCROOT}/../../External Libraries/Mac/SFML/include\"",
 					"\"${SRCROOT}/../../External Libraries/Mac/Box2D/include\"",
