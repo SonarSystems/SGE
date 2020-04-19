@@ -5,10 +5,8 @@ namespace Sonar
     /** We need this to easily convert between pixel and real-world coordinates*/
     static const float SCALE = 30.f;
 
-    PhysicsWorld::PhysicsWorld( GameDataRef data )
-    {
-        _data = data;
-        
+    PhysicsWorld::PhysicsWorld( GameDataRef data ): _data( data )
+    {        
         _data->assets.LoadTexture("Ground Texture", "Resources/ground.png");
         _data->assets.LoadTexture("Box Texture", "Resources/box.png");
 
@@ -63,7 +61,8 @@ namespace Sonar
             }
         }
         
-        World->DrawDebugData();
+        if ( _data->debug->IsEnabled( ) )
+        { World->DrawDebugData(); }
     }
 
     void PhysicsWorld::CreateDynamicBody( float posX, float posY, float width, float height, float density, float friction )
@@ -81,7 +80,7 @@ namespace Sonar
         Shape.SetAsBox( ( width / 2 ) / SCALE, ( height / 2 ) / SCALE );
         b2FixtureDef FixtureDef;
         FixtureDef.density = 1.f;
-        FixtureDef.friction = 0.7f;
+        FixtureDef.friction = 1.f;
         FixtureDef.shape = &Shape;
         Body->CreateFixture( &FixtureDef );
     }

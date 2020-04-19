@@ -33,6 +33,5 @@ namespace Sonar
         sf::Texture GroundTexture;
         sf::Texture BoxTexture;
         
-        
     };
 }

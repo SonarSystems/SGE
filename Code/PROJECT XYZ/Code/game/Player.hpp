@@ -18,5 +18,6 @@ namespace Sonar
         sf::RectangleShape player;
         
         GameDataRef _data;
+                
     };
 }

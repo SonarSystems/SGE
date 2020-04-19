@@ -21,28 +21,15 @@ namespace Sonar
 		void HandleInput( float dt );
 		void Update( float dt );
 		void Draw( float dt );
-        
-        
-        /** Create the base for the boxes to land */
-        //void CreateGround( b2World &World, float X, float Y );
-
-        /** Create the boxes */
-        //void CreateBox( b2World &World, int MouseX, int MouseY );
 
 	private:
 		GameDataRef _data;
 
 		sf::Clock _clock;
-
-        /*b2Vec2 Gravity;
-        b2World *World;
-        
-        b2GLDraw fooDrawInstance;*/
         
         PhysicsWorld *physicsWorld;
         
-        
-        
         Player *player;
+                
 	};
 }

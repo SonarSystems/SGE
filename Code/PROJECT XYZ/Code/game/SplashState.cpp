@@ -32,9 +32,9 @@ namespace Sonar
 				this->_data->window.close( );
 			}
             
-            if ( sf::Event::MouseMoved == event.type )
+            if ( sf::Event::MouseWheelMoved == event.type )
             {
-                physicsWorld->CreateDynamicBody( event.mouseButton.x, event.mouseButton.y, 2, 2 );
+                physicsWorld->CreateDynamicBody( event.mouseButton.x, event.mouseButton.y, 32, 32 );
                 
                 //.event.mouseButton.x
                 

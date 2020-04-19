@@ -8,6 +8,7 @@
 #include "InputManager.hpp"
 #include <Box2D/Box2D.h>
 #include "b2GLDraw.h"
+#include "Debug.hpp"
 
 namespace Sonar
 {
@@ -17,6 +18,7 @@ namespace Sonar
 		sf::RenderWindow window;
 		AssetManager assets;
 		InputManager input;
+        Debug *debug;
 	};
 
 	typedef std::shared_ptr<GameData> GameDataRef;
@@ -25,7 +27,7 @@ namespace Sonar
 	{
 	public:
 		Game(int width, int height, std::string title);
-
+        
 	private:
 		// Updates run at 60 per second.
 		const float dt = 1.0f / 60.0f;
@@ -34,5 +36,6 @@ namespace Sonar
 		GameDataRef _data = std::make_shared<GameData>();
 
 		void Run();
+        
 	};
 }

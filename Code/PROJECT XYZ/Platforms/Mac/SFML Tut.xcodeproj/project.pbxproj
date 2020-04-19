@@ -11,6 +11,7 @@
 		E79DFFAD2447243500AE4416 /* PhysicsWorld.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E79DFFAB2447243500AE4416 /* PhysicsWorld.cpp */; };
 		E7BC937E24450C22000E8FBE /* NOTES.md in Sources */ = {isa = PBXBuildFile; fileRef = E7BC937D24450C22000E8FBE /* NOTES.md */; };
 		E7BC938124450C7C000E8FBE /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7BC937F24450C7C000E8FBE /* Player.cpp */; };
+		E7C3B87F244C7724007AF95D /* Debug.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7C3B87D244C7724007AF95D /* Debug.cpp */; };
 		E7FE6BF32447E45000882771 /* Resources in CopyFiles */ = {isa = PBXBuildFile; fileRef = E7FE6BF12447E42C00882771 /* Resources */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		EE08DDA71F5860D200987C3E /* AssetManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE08DD9A1F5860D200987C3E /* AssetManager.cpp */; };
 		EE08DDA81F5860D200987C3E /* b2GLDraw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE08DD9C1F5860D200987C3E /* b2GLDraw.cpp */; };
@@ -66,6 +67,8 @@
 		E7BC937D24450C22000E8FBE /* NOTES.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = NOTES.md; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.markdown; };
 		E7BC937F24450C7C000E8FBE /* Player.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
 		E7BC938024450C7C000E8FBE /* Player.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Player.hpp; sourceTree = "<group>"; };
+		E7C3B87D244C7724007AF95D /* Debug.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Debug.cpp; sourceTree = "<group>"; };
+		E7C3B87E244C7724007AF95D /* Debug.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Debug.hpp; sourceTree = "<group>"; };
 		E7FE6BF12447E42C00882771 /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Resources; path = ../../Resources; sourceTree = "<group>"; };
 		EE08DD9A1F5860D200987C3E /* AssetManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AssetManager.cpp; sourceTree = "<group>"; };
 		EE08DD9B1F5860D200987C3E /* AssetManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = AssetManager.hpp; sourceTree = "<group>"; };
@@ -128,6 +131,8 @@
 				EE08DDA21F5860D200987C3E /* InputManager.hpp */,
 				EE08DDA41F5860D200987C3E /* State.hpp */,
 				EE08DDA61F5860D200987C3E /* StateMachine.hpp */,
+				E7C3B87D244C7724007AF95D /* Debug.cpp */,
+				E7C3B87E244C7724007AF95D /* Debug.hpp */,
 			);
 			path = engine;
 			sourceTree = "<group>";
@@ -263,6 +268,7 @@
 				EE08DDA81F5860D200987C3E /* b2GLDraw.cpp in Sources */,
 				EE08DDAB1F5860D200987C3E /* main.cpp in Sources */,
 				E7BC938124450C7C000E8FBE /* Player.cpp in Sources */,
+				E7C3B87F244C7724007AF95D /* Debug.cpp in Sources */,
 				E79DFFAD2447243500AE4416 /* PhysicsWorld.cpp in Sources */,
 				EE08DDB01F58615300987C3E /* SplashState.cpp in Sources */,
 				E7BC937E24450C22000E8FBE /* NOTES.md in Sources */,
