@@ -29,7 +29,7 @@
 // Headers
 ////////////////////////////////////////////////////////////
 #include <SFML/Audio/Export.hpp>
-#include <SFML/Audio/SoundStream.hpp>
+#include<SFML/Audio/SoundStream.hpp>
 #include <SFML/Audio/InputSoundFile.hpp>
 #include <SFML/System/Mutex.hpp>
 #include <SFML/System/Time.hpp>

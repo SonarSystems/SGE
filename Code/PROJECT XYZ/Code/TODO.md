@@ -5,9 +5,12 @@ GAME
 
 ENGINE
 -----------------------------------------------------------------
-* Asset Manager
-    - Load music
-    - Load sound
+* Sprite
+    - Migrate game folder classes to using sprite class
+* Input manager - CHECK ALL INPUT
+    - Get mouse states
+    - Get keyboard states
+    - Joystick
 * GUI - https://github.com/Hopson97/SFML-Game-Framework
     - Menu system - https://www.youtube.com/watch?v=4Vg9d1pjL20
         - Mouse support

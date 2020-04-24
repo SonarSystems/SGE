@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		E702AD2F2443106C0029B5AB /* TODO.md in Sources */ = {isa = PBXBuildFile; fileRef = E702AD2E2443106C0029B5AB /* TODO.md */; };
 		E79DFFAD2447243500AE4416 /* PhysicsWorld.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E79DFFAB2447243500AE4416 /* PhysicsWorld.cpp */; };
+		E7A2ABF5245255AE00B2E711 /* Sprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7A2ABF3245255AE00B2E711 /* Sprite.cpp */; };
 		E7BC937E24450C22000E8FBE /* NOTES.md in Sources */ = {isa = PBXBuildFile; fileRef = E7BC937D24450C22000E8FBE /* NOTES.md */; };
 		E7BC938124450C7C000E8FBE /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7BC937F24450C7C000E8FBE /* Player.cpp */; };
 		E7C3B87F244C7724007AF95D /* Debug.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7C3B87D244C7724007AF95D /* Debug.cpp */; };
@@ -64,6 +65,8 @@
 		E702AD2E2443106C0029B5AB /* TODO.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = TODO.md; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.markdown; };
 		E79DFFAB2447243500AE4416 /* PhysicsWorld.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PhysicsWorld.cpp; sourceTree = "<group>"; };
 		E79DFFAC2447243500AE4416 /* PhysicsWorld.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = PhysicsWorld.hpp; sourceTree = "<group>"; };
+		E7A2ABF3245255AE00B2E711 /* Sprite.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Sprite.cpp; sourceTree = "<group>"; };
+		E7A2ABF4245255AE00B2E711 /* Sprite.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Sprite.hpp; sourceTree = "<group>"; };
 		E7BC937D24450C22000E8FBE /* NOTES.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = NOTES.md; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.markdown; };
 		E7BC937F24450C7C000E8FBE /* Player.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
 		E7BC938024450C7C000E8FBE /* Player.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Player.hpp; sourceTree = "<group>"; };
@@ -118,21 +121,23 @@
 			isa = PBXGroup;
 			children = (
 				EE08DD9A1F5860D200987C3E /* AssetManager.cpp */,
-				EE08DD9C1F5860D200987C3E /* b2GLDraw.cpp */,
-				EE08DD9E1F5860D200987C3E /* Game.cpp */,
-				EE08DDA11F5860D200987C3E /* InputManager.cpp */,
-				EE08DDA31F5860D200987C3E /* main.cpp */,
-				EE08DDA51F5860D200987C3E /* StateMachine.cpp */,
-				EE08DD9D1F5860D200987C3E /* b2GLDraw.h */,
-				EE08DDA01F5860D200987C3E /* glext.h */,
 				EE08DD9B1F5860D200987C3E /* AssetManager.hpp */,
-				EE08DDB11F58621600987C3E /* ENGINEDEFINITIONS.hpp */,
-				EE08DD9F1F5860D200987C3E /* Game.hpp */,
-				EE08DDA21F5860D200987C3E /* InputManager.hpp */,
-				EE08DDA41F5860D200987C3E /* State.hpp */,
-				EE08DDA61F5860D200987C3E /* StateMachine.hpp */,
+				EE08DD9C1F5860D200987C3E /* b2GLDraw.cpp */,
+				EE08DD9D1F5860D200987C3E /* b2GLDraw.h */,
 				E7C3B87D244C7724007AF95D /* Debug.cpp */,
 				E7C3B87E244C7724007AF95D /* Debug.hpp */,
+				EE08DDB11F58621600987C3E /* ENGINEDEFINITIONS.hpp */,
+				EE08DD9E1F5860D200987C3E /* Game.cpp */,
+				EE08DD9F1F5860D200987C3E /* Game.hpp */,
+				EE08DDA01F5860D200987C3E /* glext.h */,
+				EE08DDA11F5860D200987C3E /* InputManager.cpp */,
+				EE08DDA21F5860D200987C3E /* InputManager.hpp */,
+				EE08DDA31F5860D200987C3E /* main.cpp */,
+				E7A2ABF3245255AE00B2E711 /* Sprite.cpp */,
+				E7A2ABF4245255AE00B2E711 /* Sprite.hpp */,
+				EE08DDA41F5860D200987C3E /* State.hpp */,
+				EE08DDA51F5860D200987C3E /* StateMachine.cpp */,
+				EE08DDA61F5860D200987C3E /* StateMachine.hpp */,
 			);
 			path = engine;
 			sourceTree = "<group>";
@@ -268,6 +273,7 @@
 				EE08DDA81F5860D200987C3E /* b2GLDraw.cpp in Sources */,
 				EE08DDAB1F5860D200987C3E /* main.cpp in Sources */,
 				E7BC938124450C7C000E8FBE /* Player.cpp in Sources */,
+				E7A2ABF5245255AE00B2E711 /* Sprite.cpp in Sources */,
 				E7C3B87F244C7724007AF95D /* Debug.cpp in Sources */,
 				E79DFFAD2447243500AE4416 /* PhysicsWorld.cpp in Sources */,
 				EE08DDB01F58615300987C3E /* SplashState.cpp in Sources */,
