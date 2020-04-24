@@ -2,11 +2,12 @@
 
 #include <SFML/Graphics.hpp>
 #include <string>
-#include <vector>
+#include <glm/glm.hpp>
+#include "Drawable.hpp"
 
 namespace Sonar
 {
-    class Sprite
+    class Sprite : public Drawable
     {
     public:
         // default constructor
@@ -15,11 +16,6 @@ namespace Sonar
         Sprite( std::string filepath );
         
         // DRAW
-        
-        void SetPosition( float x, float y );
-        void SetPositionX( float x );
-        void SetPositionY( float y );
-        void SetPosition( std::vector<float> pos );
         
         // default destructor
         ~Sprite( );
@@ -30,8 +26,7 @@ namespace Sonar
         // texture for loading an image to be assigned to the sprite
         sf::Texture myTexture;
         
-        // sprite position
-        std::vector<float> position;
+
         
     };
 }

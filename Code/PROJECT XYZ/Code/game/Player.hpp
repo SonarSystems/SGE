@@ -2,6 +2,7 @@
 
 #include <SFML/Graphics.hpp>
 #include "Game.hpp"
+#include "Sprite.hpp"
 
 namespace Sonar
 {
@@ -16,6 +17,7 @@ namespace Sonar
         
     private:
         sf::RectangleShape player;
+        Sprite _player;
         
         GameDataRef _data;
                 

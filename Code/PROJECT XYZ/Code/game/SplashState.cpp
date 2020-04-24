@@ -15,8 +15,6 @@ namespace Sonar
 	void SplashState::Init( )
 	{
         
-
-        //_background.setTexture(this->_data->assets.GetTexture("Splash State Background"));
 	}
 
 	void SplashState::HandleInput( float dt )
