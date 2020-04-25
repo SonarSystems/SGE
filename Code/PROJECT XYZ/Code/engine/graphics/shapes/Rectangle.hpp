@@ -13,12 +13,20 @@ namespace Sonar
         // default constructor
         Rectangle( );
         // constructor with image filepath to create a texture
-        Rectangle( float width, float height );
+        Rectangle( const float &width, const float &height );
         
         // default destructor
         ~Rectangle( );
         
-        // DRAW
+        // set position methods
+        void SetPosition( const float &x, const float &y );
+        void SetPositionX( const float &x );
+        void SetPositionY( const float &y );
+        
+        // set size methods
+        void SetSize( const float &width, const float &height );
+        void SetWidth( const float &width );
+        void SetHeight( const float &height );
 
     private:
         // sprite for the class

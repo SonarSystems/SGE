@@ -12,36 +12,44 @@ namespace Sonar
         // default constructor
         Drawable( );
         
-        // DRAW
-        
-        // set position methods
-        void SetPosition( float x, float y );
-        void SetPosition( glm::vec2 pos );
-        void SetPositionX( float x );
-        void SetPositionY( float y );
-        
-        // get position methods
-        float GetPositionX( );
-        float GetPositionY( );
-        glm::vec2 GetPosition( );
-        
-        // set size methods
-        void SetSize( float x, float y );
-        void SetSize( glm::vec2 size );
-        void SetWidth( float x );
-        void SetHeight( float y );
-        
-        // get size methods
-        float GetWidth( );
-        float GetHeight( );
-        glm::vec2 GetSize( );
-        
         // default destructor
         virtual ~Drawable( ) = 0;
+        
+    public:
+        // draw object
+        void Draw( sf::RenderWindow &window );
+        
+        // set position methods
+        void SetPosition( const float &x, const float &y );
+        void SetPositionX( const float &x );
+        void SetPositionY( const float &y );
+        
+        // get position methods
+        const float GetPositionX( ) const;
+        const float GetPositionY( ) const;
+        const glm::vec2 GetPosition( ) const;
+        
+        // set size methods
+        void SetSize( const float &width, const float &height );
+        void SetWidth( const float &width );
+        void SetHeight( const float &height );
+        
+        // get size methods
+        const float GetWidth( ) const;
+        const float GetHeight( ) const;
+        const glm::vec2 GetSize( ) const;
+        
+        // set colors
+        void SetFillColor( );
+        void Set
+        
+        sf::Drawable *object;
 
-        // sprite position
+    private:
+        // object position (x and y)
         glm::vec2 _position;
         
+        // object size (width and heigh(
         glm::vec2 _size;
         
     };

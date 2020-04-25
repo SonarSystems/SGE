@@ -7,6 +7,7 @@ ENGINE
 -----------------------------------------------------------------
 * Sprite
     - Migrate game folder classes to using sprite class
+* Master include
 * Input manager - CHECK ALL INPUT
     - Get mouse states
     - Get keyboard states

@@ -2,50 +2,53 @@
 
 namespace Sonar
 {
-    Drawable::Drawable( )
+    Drawable::Drawable( ) { }
+
+    Drawable::~Drawable( ) { }
+
+    void Drawable::Draw( sf::RenderWindow &window )
+    { window.draw( *object ); }
+
+    void Drawable::SetPosition( const float &x, const float &y )
     {
-        
+        _position.x = x;
+        _position.y = y;
     }
 
-    Drawable::~Drawable( )
+    void Drawable::SetPositionX( const float &x )
+    { _position.x = x; }
+
+    void Drawable::SetPositionY( const float &y )
+    { _position.y = y; }
+
+    const float Drawable::GetPositionX( ) const
+    { return _position.x; }
+
+    const float Drawable::GetPositionY( ) const
+    { return _position.y; }
+
+    const glm::vec2 Drawable::GetPosition( ) const
+    { return _position; }
+
+    void Drawable::SetSize( const float &width, const float &height )
     {
-        
+        _size.x = width;
+        _size.y = height;
     }
 
-    void Drawable::SetPosition( float x, float y )
-    {
-        position.x = x;
-        position.y = y;
-    }
+    void Drawable::SetWidth( const float &width )
+    { _size.x = width; }
 
-    void Drawable::SetPositionX( float x )
-    {
-        position.x = x;
-    }
+    void Drawable::SetHeight( const float &height )
+    { _size.y = height; }
+    
+    const float Drawable::GetWidth( ) const
+    { return _size.x; }
 
-    void Drawable::SetPositionY( float y )
-    {
-        position.y = y;
-    }
+    const float Drawable::GetHeight( ) const
+    { return _size.y; }
 
-    void Drawable::SetPosition( glm::vec2 pos )
-    {
-        position = pos;
-    }
-
-    float Drawable::GetPositionX( )
-    {
-        return position.x;
-    }
-
-    float Drawable::GetPositionY( )
-    {
-        return position.y;
-    }
-
-    glm::vec2 Drawable::GetPosition( )
-    {
-        return position;
-    }
+    const glm::vec2 Drawable::GetSize( ) const
+    { return _size; }
 }
 
