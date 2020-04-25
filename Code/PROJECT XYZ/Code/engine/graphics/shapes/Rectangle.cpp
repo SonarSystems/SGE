@@ -6,7 +6,7 @@ namespace Sonar
     {
         object = &shape;
         //shape.setSize( sf::Vector2f( 500, 500 ) );
-        shape.setFillColor( sf::Color::Red );
+        //shape.setFillColor( Color::Blue );
     }
 
     Rectangle::Rectangle( const float &width, const float &height )
@@ -15,10 +15,7 @@ namespace Sonar
         SetSize( width, height );
     }
 
-    Rectangle::~Rectangle( )
-    {
-        
-    }
+    Rectangle::~Rectangle( ) { }
 
     void Rectangle::SetPosition( const float &x, const float &y )
     {
@@ -48,14 +45,30 @@ namespace Sonar
     {
         Drawable::SetWidth( width );
         shape.setSize( sf::Vector2f( width, shape.getSize( ).y ) );
-        
     }
 
     void Rectangle::SetHeight( const float &height )
     {
         Drawable::SetHeight( height );
         shape.setSize( sf::Vector2f( shape.getSize( ).x, height ) );
-        
+    }
+
+    void Rectangle::SetInsideColor( const Color &color )
+    {
+        Drawable::SetInsideColor( color );
+        shape.setFillColor( color.GetColor( ) );
+    }
+
+    void Rectangle::SetBorderColor( const Color &color )
+    {
+        Drawable::SetBorderColor( color );
+        shape.setOutlineColor( color.GetColor( ) );
+    }
+
+    void Rectangle::SetBorderThickness( const float &thickness )
+    {
+        Drawable::SetBorderThickness( thickness );
+        shape.setOutlineThickness( thickness );
     }
 }
 

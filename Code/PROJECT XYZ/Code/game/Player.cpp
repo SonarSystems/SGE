@@ -6,14 +6,11 @@ namespace Sonar
     {
         _player.SetSize( 75, 50 );
         _player.SetPosition( 300, 100 );
-        std::cout << _player.GetPositionY() << std::endl;
-        //player = sf::RectangleShape( sf::Vector2f( 100, 100 ) );
-        //player.setFillColor( sf::Color::Black );
+        _player.SetInsideColor( Color::Black );
     }
 
     void Player::HandleInput(float dt)
     {
-        
         if ( sf::Keyboard::isKeyPressed( sf::Keyboard::Key::Left ) )
         {
             //player.move( -500.0f * dt, 0 );
@@ -59,6 +56,5 @@ namespace Sonar
     void Player::Draw( float dt )
     {
         _player.Draw( _data->window );
-        //_data->window.draw( player );
     }
 }

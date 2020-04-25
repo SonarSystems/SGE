@@ -3,20 +3,14 @@
 #include <SFML/Graphics.hpp>
 #include <string>
 #include <glm/glm.hpp>
+#include "Color.hpp"
 
 namespace Sonar
 {
     class Drawable
     {
-    protected:
-        // default constructor
-        Drawable( );
-        
-        // default destructor
-        virtual ~Drawable( ) = 0;
-        
     public:
-        // draw object
+        // draw object to application window
         void Draw( sf::RenderWindow &window );
         
         // set position methods
@@ -25,9 +19,9 @@ namespace Sonar
         void SetPositionY( const float &y );
         
         // get position methods
-        const float GetPositionX( ) const;
-        const float GetPositionY( ) const;
-        const glm::vec2 GetPosition( ) const;
+        const float &GetPositionX( ) const;
+        const float &GetPositionY( ) const;
+        const glm::vec2 &GetPosition( ) const;
         
         // set size methods
         void SetSize( const float &width, const float &height );
@@ -35,13 +29,26 @@ namespace Sonar
         void SetHeight( const float &height );
         
         // get size methods
-        const float GetWidth( ) const;
-        const float GetHeight( ) const;
-        const glm::vec2 GetSize( ) const;
+        const float &GetWidth( ) const;
+        const float &GetHeight( ) const;
+        const glm::vec2 &GetSize( ) const;
         
-        // set colors
-        void SetFillColor( );
-        void Set
+        // set color properties
+        void SetInsideColor( const Color &color );
+        void SetBorderColor( const Color &color );
+        void SetBorderThickness( const float &thickness );
+        
+        // get color properties
+        const Color &GetInsideColor( ) const;
+        const Color &GetBorderColor( ) const;
+        const float &GetBorderThickness( ) const;
+    
+    protected:
+        // default constructor
+        Drawable( );
+        
+        // default destructor
+        virtual ~Drawable( ) = 0;
         
         sf::Drawable *object;
 
@@ -51,6 +58,11 @@ namespace Sonar
         
         // object size (width and heigh(
         glm::vec2 _size;
+        
+        // colors
+        Color _color;
+        Color _borderColor;
+        float _borderThickness;
         
     };
 }

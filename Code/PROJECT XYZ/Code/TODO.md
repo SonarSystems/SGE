@@ -5,9 +5,9 @@ GAME
 
 ENGINE
 -----------------------------------------------------------------
+* Master include - check DOOM, SFML, SDL, Valve, Vulkan
 * Sprite
-    - Migrate game folder classes to using sprite class
-* Master include
+- Migrate game folder classes to using sprite class
 * Input manager - CHECK ALL INPUT
     - Get mouse states
     - Get keyboard states
@@ -25,5 +25,6 @@ ENGINE
     - Radio button
     - Checkbox
     - FPS counter - https://github.com/Hopson97/SFML-Game-Framework/blob/master/Source/Util/FPSCounter.cpp
+* Update SFML
 * Networking
 * CMAKE (NOT YET)

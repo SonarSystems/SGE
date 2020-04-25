@@ -12,6 +12,7 @@
 		E7A2ABF5245255AE00B2E711 /* Sprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7A2ABF3245255AE00B2E711 /* Sprite.cpp */; };
 		E7B3B2C12452C2CD0010845F /* Drawable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B3B2BF2452C2CD0010845F /* Drawable.cpp */; };
 		E7B3B2C52452C55E0010845F /* Rectangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B3B2C32452C55E0010845F /* Rectangle.cpp */; };
+		E7B3B2C824547C700010845F /* Color.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B3B2C624547C700010845F /* Color.cpp */; };
 		E7BC937E24450C22000E8FBE /* NOTES.md in Sources */ = {isa = PBXBuildFile; fileRef = E7BC937D24450C22000E8FBE /* NOTES.md */; };
 		E7BC938124450C7C000E8FBE /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7BC937F24450C7C000E8FBE /* Player.cpp */; };
 		E7C3B87F244C7724007AF95D /* Debug.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7C3B87D244C7724007AF95D /* Debug.cpp */; };
@@ -73,6 +74,8 @@
 		E7B3B2C02452C2CD0010845F /* Drawable.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Drawable.hpp; sourceTree = "<group>"; };
 		E7B3B2C32452C55E0010845F /* Rectangle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Rectangle.cpp; sourceTree = "<group>"; };
 		E7B3B2C42452C55E0010845F /* Rectangle.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Rectangle.hpp; sourceTree = "<group>"; };
+		E7B3B2C624547C700010845F /* Color.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Color.cpp; sourceTree = "<group>"; };
+		E7B3B2C724547C700010845F /* Color.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Color.hpp; sourceTree = "<group>"; };
 		E7BC937D24450C22000E8FBE /* NOTES.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = NOTES.md; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.markdown; };
 		E7BC937F24450C7C000E8FBE /* Player.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
 		E7BC938024450C7C000E8FBE /* Player.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Player.hpp; sourceTree = "<group>"; };
@@ -167,6 +170,8 @@
 				E7A2ABF4245255AE00B2E711 /* Sprite.hpp */,
 				E7B3B2BF2452C2CD0010845F /* Drawable.cpp */,
 				E7B3B2C02452C2CD0010845F /* Drawable.hpp */,
+				E7B3B2C624547C700010845F /* Color.cpp */,
+				E7B3B2C724547C700010845F /* Color.hpp */,
 			);
 			path = graphics;
 			sourceTree = "<group>";
@@ -327,6 +332,7 @@
 				E7A2ABF5245255AE00B2E711 /* Sprite.cpp in Sources */,
 				E7C3B87F244C7724007AF95D /* Debug.cpp in Sources */,
 				E7B3B2C52452C55E0010845F /* Rectangle.cpp in Sources */,
+				E7B3B2C824547C700010845F /* Color.cpp in Sources */,
 				E79DFFAD2447243500AE4416 /* PhysicsWorld.cpp in Sources */,
 				EE08DDB01F58615300987C3E /* SplashState.cpp in Sources */,
 				E7BC937E24450C22000E8FBE /* NOTES.md in Sources */,

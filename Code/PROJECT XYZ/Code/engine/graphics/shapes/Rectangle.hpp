@@ -4,6 +4,7 @@
 #include <string>
 #include <glm/glm.hpp>
 #include "Drawable.hpp"
+#include "Color.hpp"
 
 namespace Sonar
 {
@@ -27,6 +28,16 @@ namespace Sonar
         void SetSize( const float &width, const float &height );
         void SetWidth( const float &width );
         void SetHeight( const float &height );
+        
+        // set color properties
+        void SetInsideColor( const Color &color );
+        void SetBorderColor( const Color &color );
+        void SetBorderThickness( const float &thickness );
+        
+        // get color properties
+        const Color &GetInsideColor( ) const;
+        const Color &GetBorderColor( ) const;
+        const float &GetBorderThickness( ) const;
 
     private:
         // sprite for the class
