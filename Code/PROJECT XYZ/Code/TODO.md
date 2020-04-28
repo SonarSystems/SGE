@@ -13,6 +13,7 @@ ENGINE
     - Joystick
 * Sprite
 - Migrate game folder classes to using sprite class
+* Saving and loading
 * GUI - https://github.com/Hopson97/SFML-Game-Framework
     - Menu system - https://www.youtube.com/watch?v=4Vg9d1pjL20
         - Mouse support
