@@ -5,14 +5,17 @@ GAME
 
 ENGINE
 -----------------------------------------------------------------
-* Separate Source and Header Files
 * Input manager - CHECK ALL INPUT
+    - Remove SFML return and requirements
     - Get mouse states
     - Get keyboard states
     - Joystick
 * Sprite
 - Migrate game folder classes to using sprite class
-* Saving and loading
+* File loading
+* Saving and loading (link with file loading)
+    - Single pieces of data
+    - Chunks of data like a database
 * GUI - https://github.com/Hopson97/SFML-Game-Framework
     - Menu system - https://www.youtube.com/watch?v=4Vg9d1pjL20
         - Mouse support
