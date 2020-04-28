@@ -76,6 +76,7 @@
 		E7B3B2C42452C55E0010845F /* Rectangle.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Rectangle.hpp; sourceTree = "<group>"; };
 		E7B3B2C624547C700010845F /* Color.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Color.cpp; sourceTree = "<group>"; };
 		E7B3B2C724547C700010845F /* Color.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Color.hpp; sourceTree = "<group>"; };
+		E7B3B2C9245506CD0010845F /* Sonar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Sonar.h; sourceTree = "<group>"; };
 		E7BC937D24450C22000E8FBE /* NOTES.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = NOTES.md; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.markdown; };
 		E7BC937F24450C7C000E8FBE /* Player.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
 		E7BC938024450C7C000E8FBE /* Player.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Player.hpp; sourceTree = "<group>"; };
@@ -126,7 +127,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E7B3B2BB2452C2220010845F /* core */ = {
+		E7B3B2BB2452C2220010845F /* Core */ = {
 			isa = PBXGroup;
 			children = (
 				E7C3B87D244C7724007AF95D /* Debug.cpp */,
@@ -138,10 +139,10 @@
 				EE08DDA51F5860D200987C3E /* StateMachine.cpp */,
 				EE08DDA61F5860D200987C3E /* StateMachine.hpp */,
 			);
-			path = core;
+			path = Core;
 			sourceTree = "<group>";
 		};
-		E7B3B2BC2452C24C0010845F /* managers */ = {
+		E7B3B2BC2452C24C0010845F /* Managers */ = {
 			isa = PBXGroup;
 			children = (
 				EE08DD9A1F5860D200987C3E /* AssetManager.cpp */,
@@ -149,23 +150,23 @@
 				EE08DDA11F5860D200987C3E /* InputManager.cpp */,
 				EE08DDA21F5860D200987C3E /* InputManager.hpp */,
 			);
-			path = managers;
+			path = Managers;
 			sourceTree = "<group>";
 		};
-		E7B3B2BD2452C2710010845F /* extern */ = {
+		E7B3B2BD2452C2710010845F /* External */ = {
 			isa = PBXGroup;
 			children = (
 				EE08DD9C1F5860D200987C3E /* b2GLDraw.cpp */,
 				EE08DD9D1F5860D200987C3E /* b2GLDraw.h */,
 				EE08DDA01F5860D200987C3E /* glext.h */,
 			);
-			path = extern;
+			path = External;
 			sourceTree = "<group>";
 		};
-		E7B3B2BE2452C27F0010845F /* graphics */ = {
+		E7B3B2BE2452C27F0010845F /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
-				E7B3B2C22452C5510010845F /* shapes */,
+				E7B3B2C22452C5510010845F /* Shapes */,
 				E7A2ABF3245255AE00B2E711 /* Sprite.cpp */,
 				E7A2ABF4245255AE00B2E711 /* Sprite.hpp */,
 				E7B3B2BF2452C2CD0010845F /* Drawable.cpp */,
@@ -173,31 +174,32 @@
 				E7B3B2C624547C700010845F /* Color.cpp */,
 				E7B3B2C724547C700010845F /* Color.hpp */,
 			);
-			path = graphics;
+			path = Graphics;
 			sourceTree = "<group>";
 		};
-		E7B3B2C22452C5510010845F /* shapes */ = {
+		E7B3B2C22452C5510010845F /* Shapes */ = {
 			isa = PBXGroup;
 			children = (
 				E7B3B2C32452C55E0010845F /* Rectangle.cpp */,
 				E7B3B2C42452C55E0010845F /* Rectangle.hpp */,
 			);
-			path = shapes;
+			path = Shapes;
 			sourceTree = "<group>";
 		};
-		EE08DD991F5860D200987C3E /* engine */ = {
+		EE08DD991F5860D200987C3E /* Engine */ = {
 			isa = PBXGroup;
 			children = (
-				E7B3B2BE2452C27F0010845F /* graphics */,
-				E7B3B2BD2452C2710010845F /* extern */,
-				E7B3B2BC2452C24C0010845F /* managers */,
-				E7B3B2BB2452C2220010845F /* core */,
+				E7B3B2BB2452C2220010845F /* Core */,
+				E7B3B2BD2452C2710010845F /* External */,
+				E7B3B2BE2452C27F0010845F /* Graphics */,
 				EE08DDA31F5860D200987C3E /* main.cpp */,
+				E7B3B2BC2452C24C0010845F /* Managers */,
+				E7B3B2C9245506CD0010845F /* Sonar.h */,
 			);
-			path = engine;
+			path = Engine;
 			sourceTree = "<group>";
 		};
-		EE08DDAD1F58615300987C3E /* game */ = {
+		EE08DDAD1F58615300987C3E /* Game */ = {
 			isa = PBXGroup;
 			children = (
 				EE08DDAE1F58615300987C3E /* SplashState.cpp */,
@@ -207,7 +209,7 @@
 				E79DFFAB2447243500AE4416 /* PhysicsWorld.cpp */,
 				E79DFFAC2447243500AE4416 /* PhysicsWorld.hpp */,
 			);
-			path = game;
+			path = Game;
 			sourceTree = "<group>";
 		};
 		EE790D9F1E3D25F1002224EA = {
@@ -254,8 +256,8 @@
 		EECB13C81F52221400B6A50B /* Code */ = {
 			isa = PBXGroup;
 			children = (
-				EE08DD991F5860D200987C3E /* engine */,
-				EE08DDAD1F58615300987C3E /* game */,
+				EE08DD991F5860D200987C3E /* Engine */,
+				EE08DDAD1F58615300987C3E /* Game */,
 				E702AD2E2443106C0029B5AB /* TODO.md */,
 				E7BC937D24450C22000E8FBE /* NOTES.md */,
 			);

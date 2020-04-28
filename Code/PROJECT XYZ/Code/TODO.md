@@ -5,13 +5,14 @@ GAME
 
 ENGINE
 -----------------------------------------------------------------
-* Master include - check DOOM, SFML, SDL, Valve, Vulkan
-* Sprite
-- Migrate game folder classes to using sprite class
+* Gitignore - ds store files
+* Separate Source and Header Files
 * Input manager - CHECK ALL INPUT
     - Get mouse states
     - Get keyboard states
     - Joystick
+* Sprite
+- Migrate game folder classes to using sprite class
 * GUI - https://github.com/Hopson97/SFML-Game-Framework
     - Menu system - https://www.youtube.com/watch?v=4Vg9d1pjL20
         - Mouse support
@@ -26,5 +27,6 @@ ENGINE
     - Checkbox
     - FPS counter - https://github.com/Hopson97/SFML-Game-Framework/blob/master/Source/Util/FPSCounter.cpp
 * Update SFML
+* Ray tracing
 * Networking
 * CMAKE (NOT YET)

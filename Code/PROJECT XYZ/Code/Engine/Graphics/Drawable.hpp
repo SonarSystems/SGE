@@ -4,6 +4,7 @@
 #include <string>
 #include <glm/glm.hpp>
 #include "Color.hpp"
+#include "Game.hpp"
 
 namespace Sonar
 {
@@ -11,7 +12,7 @@ namespace Sonar
     {
     public:
         // draw object to application window
-        void Draw( sf::RenderWindow &window );
+        void Draw( );
         
         // set position methods
         void SetPosition( const float &x, const float &y );
@@ -42,15 +43,23 @@ namespace Sonar
         const Color &GetInsideColor( ) const;
         const Color &GetBorderColor( ) const;
         const float &GetBorderThickness( ) const;
+        
+        // move the object
+        void Move( const float &x, const float &y );
+        void MoveX( const float &x );
+        void MoveY( const float &y );
     
     protected:
         // default constructor
-        Drawable( );
+        Drawable( GameDataRef data );
         
         // default destructor
         virtual ~Drawable( ) = 0;
         
+        // object to be drawn to the screen, assigned the address of the object from a child class
         sf::Drawable *object;
+        
+        GameDataRef _data;
 
     private:
         // object position (x and y)

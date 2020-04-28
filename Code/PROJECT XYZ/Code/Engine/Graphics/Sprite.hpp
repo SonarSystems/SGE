@@ -7,7 +7,7 @@
 
 namespace Sonar
 {
-    class Sprite : public Drawable
+    class Sprite// : public Drawable
     {
     public:
         // default constructor

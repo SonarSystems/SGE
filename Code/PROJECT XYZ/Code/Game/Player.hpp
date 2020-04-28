@@ -1,8 +1,7 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
-#include "Game.hpp"
-#include "Rectangle.hpp"
+#include "Sonar.h"
 
 namespace Sonar
 {
@@ -17,7 +16,7 @@ namespace Sonar
         
     private:
         //sf::RectangleShape player;
-        Rectangle _player;
+        Rectangle *_player;
         
         GameDataRef _data;
                 

@@ -1,8 +1,7 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
-#include "State.hpp"
-#include "Game.hpp"
+#include "Sonar.h"
 #include "Player.hpp"
 #include "PhysicsWorld.hpp"
 

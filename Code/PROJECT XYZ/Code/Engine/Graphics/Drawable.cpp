@@ -2,12 +2,12 @@
 
 namespace Sonar
 {
-    Drawable::Drawable( ) { }
+    Drawable::Drawable( GameDataRef data ) : _data( data ) { }
 
     Drawable::~Drawable( ) { }
 
-    void Drawable::Draw( sf::RenderWindow &window )
-    { window.draw( *object ); }
+    void Drawable::Draw( )
+    { _data->window.draw( *object ); }
 
     void Drawable::SetPosition( const float &x, const float &y )
     {
@@ -68,5 +68,17 @@ namespace Sonar
 
     const float &Drawable::GetBorderThickness( ) const
     { return _borderThickness; }
+
+    void Drawable::Move( const float &x, const float &y )
+    {
+        _position.x += x;
+        _position.y += y;
+    }
+
+    void Drawable::MoveX( const float &x )
+    { _position.x += x; }
+
+    void Drawable::MoveY( const float &y )
+    { _position.y += y; }
 }
 

@@ -12,9 +12,9 @@ namespace Sonar
     {
     public:
         // default constructor
-        Rectangle( );
+        Rectangle( GameDataRef data );
         // constructor with image filepath to create a texture
-        Rectangle( const float &width, const float &height );
+        Rectangle( GameDataRef data, const float &width, const float &height );
         
         // default destructor
         ~Rectangle( );
@@ -38,6 +38,11 @@ namespace Sonar
         const Color &GetInsideColor( ) const;
         const Color &GetBorderColor( ) const;
         const float &GetBorderThickness( ) const;
+        
+        // move the shape
+        void Move( const float &x, const float &y );
+        void MoveX( const float &x );
+        void MoveY( const float &y );
 
     private:
         // sprite for the class

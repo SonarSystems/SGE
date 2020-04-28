@@ -2,14 +2,12 @@
 
 namespace Sonar
 {
-    Rectangle::Rectangle( )
+    Rectangle::Rectangle( GameDataRef data ) : Drawable( data )
     {
         object = &shape;
-        //shape.setSize( sf::Vector2f( 500, 500 ) );
-        //shape.setFillColor( Color::Blue );
     }
 
-    Rectangle::Rectangle( const float &width, const float &height )
+    Rectangle::Rectangle( GameDataRef data, const float &width, const float &height ) : Drawable( data )
     {
         object = &shape;
         SetSize( width, height );
@@ -69,6 +67,24 @@ namespace Sonar
     {
         Drawable::SetBorderThickness( thickness );
         shape.setOutlineThickness( thickness );
+    }
+
+    void Rectangle::Move( const float &x, const float &y )
+    {
+        Drawable::Move( x, y );
+        shape.move( x, y );
+    }
+
+    void Rectangle::MoveX( const float &x )
+    {
+        Drawable::MoveX( x );
+        shape.move( x, 0 );
+    }
+
+    void Rectangle::MoveY( const float &y )
+    {
+        Drawable::MoveY( y );
+        shape.move( 0, y );
     }
 }
 
