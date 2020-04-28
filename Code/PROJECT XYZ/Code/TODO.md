@@ -5,7 +5,6 @@ GAME
 
 ENGINE
 -----------------------------------------------------------------
-* Gitignore - ds store files
 * Separate Source and Header Files
 * Input manager - CHECK ALL INPUT
     - Get mouse states
