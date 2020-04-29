@@ -5,7 +5,6 @@ GAME
 
 ENGINE
 -----------------------------------------------------------------
-* Separate Source and Header Files
 * Input manager - CHECK ALL INPUT
     - Remove SFML return and requirements
     - Get mouse states
