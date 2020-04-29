@@ -1,7 +1,5 @@
 #pragma once
 
-#include "Game.hpp"
-
 namespace Sonar
 {
 	class State

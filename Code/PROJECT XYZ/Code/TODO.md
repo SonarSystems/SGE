@@ -5,22 +5,15 @@ GAME
 
 ENGINE
 -----------------------------------------------------------------
-<<<<<<< HEAD
-=======
 * Gitignore - ds store files
 * Separate Source and Header Files
->>>>>>> parent of 258e2c0... Project Restructuring
 * Input manager - CHECK ALL INPUT
-    - Remove SFML return and requirements
     - Get mouse states
     - Get keyboard states
     - Joystick
 * Sprite
 - Migrate game folder classes to using sprite class
-* File loading
-* Saving and loading (link with file loading)
-    - Single pieces of data
-    - Chunks of data like a database
+* Saving and loading
 * GUI - https://github.com/Hopson97/SFML-Game-Framework
     - Menu system - https://www.youtube.com/watch?v=4Vg9d1pjL20
         - Mouse support
