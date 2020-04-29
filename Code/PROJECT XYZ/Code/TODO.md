@@ -5,6 +5,11 @@ GAME
 
 ENGINE
 -----------------------------------------------------------------
+<<<<<<< HEAD
+=======
+* Gitignore - ds store files
+* Separate Source and Header Files
+>>>>>>> parent of 258e2c0... Project Restructuring
 * Input manager - CHECK ALL INPUT
     - Remove SFML return and requirements
     - Get mouse states
