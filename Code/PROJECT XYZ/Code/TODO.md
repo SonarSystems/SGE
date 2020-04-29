@@ -5,7 +5,6 @@ GAME
 
 ENGINE
 -----------------------------------------------------------------
-* Remove DS STORE
 * Separate Source and Header Files
 * Input manager - CHECK ALL INPUT
     - Remove SFML return and requirements
@@ -14,7 +13,6 @@ ENGINE
     - Joystick
 * Sprite
 - Migrate game folder classes to using sprite class
-* Saving and loading
 * File loading
 * Saving and loading (link with file loading)
     - Single pieces of data
