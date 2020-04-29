@@ -2,13 +2,13 @@
 
 namespace Sonar
 {
-	bool InputManager::IsSpriteClicked(sf::Sprite object, sf::Mouse::Button button, sf::RenderWindow &window)
+	bool InputManager::IsSpriteClicked( sf::Sprite object, sf::Mouse::Button button, sf::RenderWindow &window )
 	{
-		if (sf::Mouse::isButtonPressed(button))
+		if ( sf::Mouse::isButtonPressed( button ) )
 		{
-			sf::IntRect playButtonRect(object.getPosition().x, object.getPosition().y, object.getGlobalBounds().width, object.getGlobalBounds().height);
+			sf::IntRect playButtonRect( object.getPosition( ).x, object.getPosition( ).y, object.getGlobalBounds( ).width, object.getGlobalBounds( ).height );
 
-			if (playButtonRect.contains(sf::Mouse::getPosition(window)))
+			if ( playButtonRect.contains( sf::Mouse::getPosition( window ) ) )
 			{
 				return true;
 			}
@@ -17,8 +17,8 @@ namespace Sonar
 		return false;
 	}
 
-	sf::Vector2i InputManager::GetMousePosition(sf::RenderWindow &window)
+	glm::vec2 InputManager::GetMousePosition( sf::RenderWindow &window )
 	{
-		return sf::Mouse::getPosition(window);
+		return glm::vec2( sf::Mouse::getPosition( window ).x, sf::Mouse::getPosition( window ).y );
 	}
 }
