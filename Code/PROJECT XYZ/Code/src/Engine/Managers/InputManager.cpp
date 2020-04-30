@@ -12,24 +12,6 @@ namespace Sonar
         
     }
 
-	/*bool InputManager::IsObjectClicked( const Drawable &object, const sf::Mouse::Button &button, const sf::RenderWindow &window )
-	{
-        //sf::Mouse::isButtonPressed(sf::Mouse::Button::Left);
-        
-		if (sf::Mouse::isButtonPressed(button))
-		{
-            
-            sf::IntRect playButtonRect( object.GetPositionX( ), object.GetPositionY( ), object.GetWidth( ), object.GetHeight( ) );
-
-			if (playButtonRect.contains(sf::Mouse::getPosition(window)))
-			{
-				return true;
-			}
-		}
-
-		return false;
-	}*/
-
     const glm::vec2 &InputManager::GetMousePosition( const sf::RenderWindow &window, const bool &windowOnly )
 	{
         glm::vec2 position( sf::Mouse::getPosition( window ).x, sf::Mouse::getPosition( window ).y );

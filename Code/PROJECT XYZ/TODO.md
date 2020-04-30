@@ -6,7 +6,7 @@ GAME
 ENGINE
 -----------------------------------------------------------------
 * Input manager - CHECK ALL INPUT
-    - Remove SFML return and requirements
+    - Mouse buttons, similar to color - CHECK SFML
     - Get mouse states
     - Get keyboard states
     - Joystick

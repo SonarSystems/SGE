@@ -54,7 +54,7 @@ namespace Sonar
 
         player->Draw( dt );
         
-        //physicsWorld->Draw( dt );
+        physicsWorld->Draw( dt );
         
         
 

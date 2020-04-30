@@ -137,8 +137,8 @@
 		E7B35D4124597836001F5C35 /* include */ = {
 			isa = PBXGroup;
 			children = (
-				E7B35D4224597836001F5C35 /* Game */,
 				E7B35D4624597836001F5C35 /* Engine */,
+				E7B35D4224597836001F5C35 /* Game */,
 			);
 			path = include;
 			sourceTree = "<group>";

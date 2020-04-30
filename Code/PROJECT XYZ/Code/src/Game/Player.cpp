@@ -12,15 +12,6 @@ namespace Sonar
 
     void Player::HandleInput(float dt)
     {
-        if ( _player->IsClicked( sf::Mouse::Button::Left ) )
-        {
-            Debug::Print( "Clicked" );
-        }
-        else
-        {
-            //Debug::Print( "NOT CLICKED" );
-        }
-        
         if ( sf::Keyboard::isKeyPressed( sf::Keyboard::Key::Left ) )
         {
             _player->Move( -500.0f * dt, 0 );
