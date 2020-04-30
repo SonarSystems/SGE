@@ -54,7 +54,7 @@ namespace Sonar
         Drawable( GameDataRef data );
         
         // default destructor
-        virtual ~Drawable( ) = 0;
+         ~Drawable( ) ;
         
         // object to be drawn to the screen, assigned the address of the object from a child class
         sf::Drawable *object;

@@ -129,8 +129,6 @@
 			isa = PBXGroup;
 			children = (
 				E7B35D4124597836001F5C35 /* include */,
-				E7B35D5A24597836001F5C35 /* TODO.md */,
-				E7B35D5B24597836001F5C35 /* NOTES.md */,
 				E7B35D5C24597836001F5C35 /* src */,
 			);
 			path = Code;
@@ -315,6 +313,8 @@
 			isa = PBXGroup;
 			children = (
 				E7B35D4024597836001F5C35 /* Code */,
+				E7B35D5A24597836001F5C35 /* TODO.md */,
+				E7B35D5B24597836001F5C35 /* NOTES.md */,
 			);
 			name = "SFML Tut";
 			path = ../..;

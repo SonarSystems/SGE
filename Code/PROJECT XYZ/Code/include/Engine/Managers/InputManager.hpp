@@ -1,6 +1,8 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
+#include <glm/glm.hpp>
+#include "Drawable.hpp"
 
 namespace Sonar
 {
@@ -10,8 +12,9 @@ namespace Sonar
         InputManager( );
         ~InputManager( );
 
-		bool IsSpriteClicked(sf::Sprite object, sf::Mouse::Button button, sf::RenderWindow &window);
+		bool IsObjectClicked( const Drawable &object, const sf::Mouse::Button &button, const sf::RenderWindow &window );
 
-		sf::Vector2i GetMousePosition(sf::RenderWindow &window);
+        static const glm::vec2 &GetMousePosition( const sf::RenderWindow &window, const bool &windowOnly = true );
+        
 	};
 }
