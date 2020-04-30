@@ -17,7 +17,8 @@ namespace Sonar
         bool IsEnabled( );
         
         void Log( std::string message, bool newLine = true );
-        
+        static void Print( std::string message, bool newLine = true );
+
         static Debug *getInstance();
         
     private:

@@ -41,6 +41,21 @@ namespace Sonar
 
     void Debug::Log( std::string message, bool newLine )
     {
+        if ( isEnabled )
+        {
+            if ( newLine )
+            {
+                std::cout << message << std::endl;
+            }
+            else
+            {
+                std::cout << message;
+            }
+        }
+    }
+
+    void Debug::Print( std::string message, bool newLine )
+    {
         if ( newLine )
         {
             std::cout << message << std::endl;

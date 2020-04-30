@@ -48,6 +48,8 @@ namespace Sonar
         void Move( const float &x, const float &y );
         void MoveX( const float &x );
         void MoveY( const float &y );
+        
+        const bool &IsClicked( const sf::Mouse::Button &button );
     
     protected:
         // default constructor

@@ -12,7 +12,7 @@ namespace Sonar
         
     }
 
-	bool InputManager::IsObjectClicked( const Drawable &object, const sf::Mouse::Button &button, const sf::RenderWindow &window )
+	/*bool InputManager::IsObjectClicked( const Drawable &object, const sf::Mouse::Button &button, const sf::RenderWindow &window )
 	{
         //sf::Mouse::isButtonPressed(sf::Mouse::Button::Left);
         
@@ -28,7 +28,7 @@ namespace Sonar
 		}
 
 		return false;
-	}
+	}*/
 
     const glm::vec2 &InputManager::GetMousePosition( const sf::RenderWindow &window, const bool &windowOnly )
 	{
