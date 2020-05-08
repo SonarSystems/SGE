@@ -17,14 +17,12 @@ namespace Sonar
 		// No pause() or resume() methods here as this
 		// is a very simple example of a game state.
 
-		void HandleInput( float dt );
-		void Update( float dt );
-		void Draw( float dt );
+		void PollInput( const float &dt, const Event &event );
+		void Update( const float &dt );
+		void Draw( const float &dt );
 
 	private:
 		GameDataRef _data;
-
-		sf::Clock _clock;
         
         PhysicsWorld *physicsWorld;
         

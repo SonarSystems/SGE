@@ -7,13 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E70FC62A2460C82B0090EFBC /* Events.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E70FC6292460C82B0090EFBC /* Events.cpp */; };
+		E70FC62D2461FD890090EFBC /* Joystick.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E70FC62B2461FD890090EFBC /* Joystick.cpp */; };
+		E70FC6302461FE970090EFBC /* Sensor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E70FC62E2461FE970090EFBC /* Sensor.cpp */; };
+		E70FC633246201AB0090EFBC /* Keyboard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E70FC631246201AB0090EFBC /* Keyboard.cpp */; };
 		E7B35D7224597836001F5C35 /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B35D5E24597836001F5C35 /* Player.cpp */; };
 		E7B35D7324597836001F5C35 /* SplashState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B35D5F24597836001F5C35 /* SplashState.cpp */; };
 		E7B35D7424597836001F5C35 /* PhysicsWorld.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B35D6024597836001F5C35 /* PhysicsWorld.cpp */; };
 		E7B35D7524597836001F5C35 /* StateMachine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B35D6324597836001F5C35 /* StateMachine.cpp */; };
 		E7B35D7624597836001F5C35 /* Debug.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B35D6424597836001F5C35 /* Debug.cpp */; };
 		E7B35D7724597836001F5C35 /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B35D6524597836001F5C35 /* Game.cpp */; };
-		E7B35D7824597836001F5C35 /* InputManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B35D6724597836001F5C35 /* InputManager.cpp */; };
+		E7B35D7824597836001F5C35 /* Mouse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B35D6724597836001F5C35 /* Mouse.cpp */; };
 		E7B35D7924597836001F5C35 /* AssetManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B35D6824597836001F5C35 /* AssetManager.cpp */; };
 		E7B35D7A24597836001F5C35 /* b2GLDraw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B35D6A24597836001F5C35 /* b2GLDraw.cpp */; };
 		E7B35D7B24597836001F5C35 /* Sprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B35D6C24597836001F5C35 /* Sprite.cpp */; };
@@ -63,6 +67,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E70FC6282460C5420090EFBC /* Events.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Events.hpp; sourceTree = "<group>"; };
+		E70FC6292460C82B0090EFBC /* Events.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Events.cpp; sourceTree = "<group>"; };
+		E70FC62B2461FD890090EFBC /* Joystick.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Joystick.cpp; sourceTree = "<group>"; };
+		E70FC62C2461FD890090EFBC /* Joystick.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Joystick.hpp; sourceTree = "<group>"; };
+		E70FC62E2461FE970090EFBC /* Sensor.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Sensor.cpp; sourceTree = "<group>"; };
+		E70FC62F2461FE970090EFBC /* Sensor.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Sensor.hpp; sourceTree = "<group>"; };
+		E70FC631246201AB0090EFBC /* Keyboard.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Keyboard.cpp; sourceTree = "<group>"; };
+		E70FC632246201AB0090EFBC /* Keyboard.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Keyboard.hpp; sourceTree = "<group>"; };
 		E7B35D4324597836001F5C35 /* PhysicsWorld.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PhysicsWorld.hpp; sourceTree = "<group>"; };
 		E7B35D4424597836001F5C35 /* SplashState.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SplashState.hpp; sourceTree = "<group>"; };
 		E7B35D4524597836001F5C35 /* Player.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Player.hpp; sourceTree = "<group>"; };
@@ -71,7 +83,7 @@
 		E7B35D4A24597836001F5C35 /* Debug.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Debug.hpp; sourceTree = "<group>"; };
 		E7B35D4B24597836001F5C35 /* State.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = State.hpp; sourceTree = "<group>"; };
 		E7B35D4C24597836001F5C35 /* StateMachine.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = StateMachine.hpp; sourceTree = "<group>"; };
-		E7B35D4E24597836001F5C35 /* InputManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = InputManager.hpp; sourceTree = "<group>"; };
+		E7B35D4E24597836001F5C35 /* Mouse.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Mouse.hpp; sourceTree = "<group>"; };
 		E7B35D4F24597836001F5C35 /* AssetManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = AssetManager.hpp; sourceTree = "<group>"; };
 		E7B35D5024597836001F5C35 /* Sonar.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Sonar.hpp; sourceTree = "<group>"; };
 		E7B35D5224597836001F5C35 /* glext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glext.h; sourceTree = "<group>"; };
@@ -88,7 +100,7 @@
 		E7B35D6324597836001F5C35 /* StateMachine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StateMachine.cpp; sourceTree = "<group>"; };
 		E7B35D6424597836001F5C35 /* Debug.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Debug.cpp; sourceTree = "<group>"; };
 		E7B35D6524597836001F5C35 /* Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
-		E7B35D6724597836001F5C35 /* InputManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = InputManager.cpp; sourceTree = "<group>"; };
+		E7B35D6724597836001F5C35 /* Mouse.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Mouse.cpp; sourceTree = "<group>"; };
 		E7B35D6824597836001F5C35 /* AssetManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AssetManager.cpp; sourceTree = "<group>"; };
 		E7B35D6A24597836001F5C35 /* b2GLDraw.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = b2GLDraw.cpp; sourceTree = "<group>"; };
 		E7B35D6C24597836001F5C35 /* Sprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sprite.cpp; sourceTree = "<group>"; };
@@ -159,6 +171,7 @@
 				E7B35D4724597836001F5C35 /* Core */,
 				E7B35D5124597836001F5C35 /* External */,
 				E7B35D5424597836001F5C35 /* Graphics */,
+				E7B59579245C9ADB00D73A85 /* Input */,
 				E7B35D4D24597836001F5C35 /* Managers */,
 				E7B35D5024597836001F5C35 /* Sonar.hpp */,
 			);
@@ -181,7 +194,6 @@
 			isa = PBXGroup;
 			children = (
 				E7B35D4F24597836001F5C35 /* AssetManager.hpp */,
-				E7B35D4E24597836001F5C35 /* InputManager.hpp */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -226,9 +238,9 @@
 		E7B35D5D24597836001F5C35 /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				E7B35D6024597836001F5C35 /* PhysicsWorld.cpp */,
 				E7B35D5E24597836001F5C35 /* Player.cpp */,
 				E7B35D5F24597836001F5C35 /* SplashState.cpp */,
-				E7B35D6024597836001F5C35 /* PhysicsWorld.cpp */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -239,6 +251,7 @@
 				E7B35D6224597836001F5C35 /* Core */,
 				E7B35D6924597836001F5C35 /* External */,
 				E7B35D6B24597836001F5C35 /* Graphics */,
+				E7B5957A245C9AEB00D73A85 /* Input */,
 				E7B35D7124597836001F5C35 /* main.cpp */,
 				E7B35D6624597836001F5C35 /* Managers */,
 			);
@@ -259,7 +272,6 @@
 			isa = PBXGroup;
 			children = (
 				E7B35D6824597836001F5C35 /* AssetManager.cpp */,
-				E7B35D6724597836001F5C35 /* InputManager.cpp */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -289,6 +301,30 @@
 				E7B35D6F24597836001F5C35 /* Rectangle.cpp */,
 			);
 			path = Shapes;
+			sourceTree = "<group>";
+		};
+		E7B59579245C9ADB00D73A85 /* Input */ = {
+			isa = PBXGroup;
+			children = (
+				E70FC6282460C5420090EFBC /* Events.hpp */,
+				E70FC62C2461FD890090EFBC /* Joystick.hpp */,
+				E70FC632246201AB0090EFBC /* Keyboard.hpp */,
+				E7B35D4E24597836001F5C35 /* Mouse.hpp */,
+				E70FC62F2461FE970090EFBC /* Sensor.hpp */,
+			);
+			path = Input;
+			sourceTree = "<group>";
+		};
+		E7B5957A245C9AEB00D73A85 /* Input */ = {
+			isa = PBXGroup;
+			children = (
+				E70FC6292460C82B0090EFBC /* Events.cpp */,
+				E70FC62B2461FD890090EFBC /* Joystick.cpp */,
+				E70FC631246201AB0090EFBC /* Keyboard.cpp */,
+				E7B35D6724597836001F5C35 /* Mouse.cpp */,
+				E70FC62E2461FE970090EFBC /* Sensor.cpp */,
+			);
+			path = Input;
 			sourceTree = "<group>";
 		};
 		EE790D9F1E3D25F1002224EA = {
@@ -396,7 +432,10 @@
 			files = (
 				E7B35D7324597836001F5C35 /* SplashState.cpp in Sources */,
 				E7B35D7E24597836001F5C35 /* Color.cpp in Sources */,
+				E70FC633246201AB0090EFBC /* Keyboard.cpp in Sources */,
 				E7B35D7624597836001F5C35 /* Debug.cpp in Sources */,
+				E70FC62A2460C82B0090EFBC /* Events.cpp in Sources */,
+				E70FC6302461FE970090EFBC /* Sensor.cpp in Sources */,
 				E7B35D7B24597836001F5C35 /* Sprite.cpp in Sources */,
 				E7B35D7F24597836001F5C35 /* main.cpp in Sources */,
 				E7B35D7C24597836001F5C35 /* Drawable.cpp in Sources */,
@@ -404,8 +443,9 @@
 				E7B35D7724597836001F5C35 /* Game.cpp in Sources */,
 				E7B35D7924597836001F5C35 /* AssetManager.cpp in Sources */,
 				E7B35D7224597836001F5C35 /* Player.cpp in Sources */,
-				E7B35D7824597836001F5C35 /* InputManager.cpp in Sources */,
+				E7B35D7824597836001F5C35 /* Mouse.cpp in Sources */,
 				E7B35D7A24597836001F5C35 /* b2GLDraw.cpp in Sources */,
+				E70FC62D2461FD890090EFBC /* Joystick.cpp in Sources */,
 				E7B35D7524597836001F5C35 /* StateMachine.cpp in Sources */,
 				E7B35D7D24597836001F5C35 /* Rectangle.cpp in Sources */,
 			);

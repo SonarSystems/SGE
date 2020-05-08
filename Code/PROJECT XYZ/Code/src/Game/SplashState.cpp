@@ -8,8 +8,6 @@ namespace Sonar
 	{
         player = new Player( _data );
         physicsWorld = new PhysicsWorld( _data );
-   
-        
 	}
 
 	void SplashState::Init( )
@@ -17,48 +15,37 @@ namespace Sonar
         
 	}
 
-	void SplashState::HandleInput( float dt )
+	void SplashState::PollInput( const float &dt, const Event &event )
 	{
-		sf::Event event;
-        
         player->HandleInput( dt );
+        
+        if ( Event::MouseWheelMoved == event.type )
+        {
+            physicsWorld->CreateDynamicBody( event.mouseButton.x, event.mouseButton.y, 32, 32 );
+        }
 
-		while ( this->_data->window.pollEvent( event ) )
-		{
-			if ( sf::Event::Closed == event.type )
-			{
-				this->_data->window.close( );
-			}
-            
-            if ( sf::Event::MouseWheelMoved == event.type )
-            {
-                physicsWorld->CreateDynamicBody( event.mouseButton.x, event.mouseButton.y, 32, 32 );
-                
-                //.event.mouseButton.x
-                
-            }
-		}
+        if ( Keyboard::Enter == event.key.code )
+        {
+            physicsWorld->CreateDynamicBody( event.mouseButton.x, event.mouseButton.y, 32, 32 );
+        }
 	}
 
-	void SplashState::Update( float dt )
+	void SplashState::Update( const float &dt )
 	{
         player->Update( dt );
         
+        std::cout << Joystick::GetIdentification( 0 ).name << " : " << Joystick::GetIdentification( 0 ).productId << " : " << Joystick::GetIdentification( 0 ).vendorId << std::endl;
         
         physicsWorld->Update( dt );
 	}
 
-	void SplashState::Draw( float dt )
+	void SplashState::Draw( const float &dt )
 	{
-		this->_data->window.clear(sf::Color::White);
+		this->_data->window.clear( sf::Color::White );
 
         player->Draw( dt );
         
         physicsWorld->Draw( dt );
-        
-        
-
-		this->_data->window.display();
 	}
 
     

@@ -11,4 +11,9 @@
 #include "Graphics/Color.hpp"
 #include "Graphics/Shapes/Rectangle.hpp"
 #include "Managers/AssetManager.hpp"
-#include "Managers/InputManager.hpp"
+#include "Input/Events.hpp"
+#include "Input/Joystick.hpp"
+#include "Input/Keyboard.hpp"
+#include "Input/Mouse.hpp"
+#include "Input/Sensor.hpp"
+

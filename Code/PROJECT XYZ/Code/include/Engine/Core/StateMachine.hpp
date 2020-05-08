@@ -2,6 +2,7 @@
 
 #include <memory>
 #include <stack>
+#include <SFML/Graphics.hpp>
 
 #include "State.hpp"
 
@@ -12,15 +13,15 @@ namespace Sonar
 	class StateMachine
 	{
 	public:
-		StateMachine() { }
-		~StateMachine() { }
+		StateMachine( ) { }
+		~StateMachine( ) { }
 
-		void AddState(StateRef newState, bool isReplacing = true);
-		void RemoveState();
+		void AddState( StateRef newState, const bool &isReplacing = true );
+		void RemoveState( );
 		// Run at start of each loop in Game.cpp
-		void ProcessStateChanges();
+		void ProcessStateChanges( );
 
-		StateRef &GetActiveState();
+		StateRef &GetActiveState( );
 
 	private:
 		std::stack<StateRef> _states;

@@ -1,17 +1,21 @@
 #pragma once
 
+#include "Events.hpp"
+
 namespace Sonar
 {
 	class State
 	{
 	public:
-		virtual void Init() = 0;
+        virtual ~State() { }
+        
+		virtual void Init( ) = 0;
 
-		virtual void HandleInput(float dt) = 0;
-		virtual void Update(float dt) = 0;
-		virtual void Draw(float dt) = 0;
+		virtual void PollInput( const float &dt, const Event &event ) = 0;
+		virtual void Update( const float &dt ) = 0;
+		virtual void Draw( const float &dt ) = 0;
 
-		virtual void Pause() { }
-		virtual void Resume() { }
+		virtual void Pause( ) { }
+		virtual void Resume( ) { }
 	};
 }

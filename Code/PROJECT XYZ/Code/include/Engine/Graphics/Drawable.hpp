@@ -5,6 +5,7 @@
 #include <glm/glm.hpp>
 #include "Color.hpp"
 #include "Game.hpp"
+#include "Mouse.hpp"
 
 namespace Sonar
 {
@@ -49,7 +50,7 @@ namespace Sonar
         void MoveX( const float &x );
         void MoveY( const float &y );
         
-        const bool &IsClicked( const sf::Mouse::Button &button );
+        const bool &IsClicked( const Mouse::Button &button );
     
     protected:
         // default constructor

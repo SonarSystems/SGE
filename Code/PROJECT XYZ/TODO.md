@@ -6,10 +6,17 @@ GAME
 ENGINE
 -----------------------------------------------------------------
 * Input manager - CHECK ALL INPUT
-    - Mouse buttons, similar to color - CHECK SFML
-    - Get mouse states
-    - Get keyboard states
-    - Joystick
+    - Chords - multiple keys pressed (maybe even across devices)
+    - Sequences
+    - Gestures
+* Clearing the screen colour abstraction
+* Sprite/Drawable culling outside of the screen
+* Collision Detection (In Drawable) - Bounding box
+* Debug
+    - Toggle different message categories on and off
+        - Use a list/vector of the name of the categories that are disabled to see if the message is to be displayed
+    - Box2d shape rendering toggle
+    - Print cast anything to string (ATM IT ONLY ACCEPTS STRINGS WHICH IS VERY LIMITED AND THUS COUT HAS TO BE USED MOST OF THE TIME)
 * Sprite
 - Migrate game folder classes to using sprite class
 * File loading
@@ -25,10 +32,14 @@ ENGINE
         - Textures for buttons 
             - Hover
             - Colour masking
+    - Labels
+        - Tick up/down to a number from a number over a set duration 
     - Textbox
     - Radio button
     - Checkbox
     - FPS counter - https://github.com/Hopson97/SFML-Game-Framework/blob/master/Source/Util/FPSCounter.cpp
+        - **Part of DEBUG CLASS**
+        - **MAKE IT LIKE DOOMS**
 * Update SFML
 * Ray tracing
 * Networking

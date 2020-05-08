@@ -81,9 +81,9 @@ namespace Sonar
     void Drawable::MoveY( const float &y )
     { _position.y += y; }
 
-    const bool &Drawable::IsClicked( const sf::Mouse::Button &button )
+    const bool &Drawable::IsClicked( const Mouse::Button &button )
     {
-        if ( sf::Mouse::isButtonPressed( button ) )
+        if ( sf::Mouse::isButtonPressed( ( sf::Mouse::Button )button ) )
         {
             sf::IntRect playButtonRect( _position.x, _position.y, _size.x, _size.y );
 

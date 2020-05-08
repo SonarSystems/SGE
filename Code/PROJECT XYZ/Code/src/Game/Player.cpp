@@ -10,24 +10,24 @@ namespace Sonar
         _player->SetInsideColor( Color::Black );
     }
 
-    void Player::HandleInput(float dt)
+    void Player::HandleInput( float dt )
     {
-        if ( sf::Keyboard::isKeyPressed( sf::Keyboard::Key::Left ) )
+        if ( Keyboard::IsPressed( Keyboard::Key::Left ) )
         {
             _player->Move( -500.0f * dt, 0 );
         }
         
-        if ( sf::Keyboard::isKeyPressed( sf::Keyboard::Key::Right ) )
+        if ( Keyboard::IsPressed( Keyboard::Key::Right ) )
         {
             _player->Move( 500.0f * dt, 0 );
         }
         
-        if ( sf::Keyboard::isKeyPressed( sf::Keyboard::Key::Down ) )
+        if ( Keyboard::IsPressed( Keyboard::Key::Down ) )
         {
             _player->Move( 0, 500.0f * dt );
         }
         
-        if ( sf::Keyboard::isKeyPressed( sf::Keyboard::Key::Up ) )
+        if ( Keyboard::IsPressed( Keyboard::Key::Up ) )
         {
             _player->Move( 0, -500.0f * dt );
         }
