@@ -29,9 +29,9 @@ namespace Sonar
 	{
         player->Update( dt );
         
-        if ( Keyboard::IsPressed( Keyboard::Key::A ) && Keyboard::IsPressed( Keyboard::Key::LSystem ) )
+        if ( Keyboard::ChordPressed( { Keyboard::Key::LSystem, Keyboard::Key::LShift, Keyboard::Key::A } ) )
         {
-            Debug::Print( "Pressed" );
+            Debug::Print( "YAY" );
         }
         
         physicsWorld->Update( dt );
