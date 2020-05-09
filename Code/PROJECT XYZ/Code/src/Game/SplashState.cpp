@@ -22,19 +22,17 @@ namespace Sonar
         if ( Event::MouseWheelMoved == event.type )
         {
             physicsWorld->CreateDynamicBody( event.mouseButton.x, event.mouseButton.y, 32, 32 );
-        }
-
-        if ( Keyboard::Enter == event.key.code )
-        {
-            physicsWorld->CreateDynamicBody( event.mouseButton.x, event.mouseButton.y, 32, 32 );
-        }
+        }        
 	}
 
 	void SplashState::Update( const float &dt )
 	{
         player->Update( dt );
         
-        std::cout << Joystick::GetIdentification( 0 ).name << " : " << Joystick::GetIdentification( 0 ).productId << " : " << Joystick::GetIdentification( 0 ).vendorId << std::endl;
+        if ( Keyboard::IsPressed( Keyboard::Key::A ) && Keyboard::IsPressed( Keyboard::Key::LSystem ) )
+        {
+            Debug::Print( "Pressed" );
+        }
         
         physicsWorld->Update( dt );
 	}

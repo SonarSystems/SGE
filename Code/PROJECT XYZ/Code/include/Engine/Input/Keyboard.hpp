@@ -1,6 +1,13 @@
 #pragma once
 
 #include <SFML/Window.hpp>
+#include <vector>
+
+#include <stdio.h>
+
+#include <iostream>
+#include <string>
+#include <initializer_list>
 
 namespace Sonar
 {
@@ -119,5 +126,7 @@ namespace Sonar
         ~Keyboard( ) { }
         
         static bool IsPressed( const Key &key );
+        
+        static void IsChord( const Key *keys, Args... args);
     };
 }
