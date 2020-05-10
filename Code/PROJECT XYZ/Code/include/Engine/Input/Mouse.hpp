@@ -39,6 +39,9 @@ namespace Sonar
         // set the mouse position
         static void SetPosition( const float &x, const float &y );
         static void SetPosition( const float &x, const float &y, const sf::RenderWindow &window );
+        
+        // Check if multiple buttons have been pressed
+        static bool ChordPressed( const std::initializer_list<Button> &buttons );
 
 	};
 }

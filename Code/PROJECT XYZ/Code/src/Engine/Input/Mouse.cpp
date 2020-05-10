@@ -39,4 +39,19 @@ namespace Sonar
     {
         sf::Mouse::setPosition( sf::Vector2i( x, y ), window );
     }
+
+    bool Mouse::ChordPressed( const std::initializer_list<Button> &buttons )
+    {
+        bool allButtonsPressed = true;
+        
+        // Iterate over all the buttons
+        for ( Button button : buttons )
+        {
+            // Check if a key hasn't been pressed
+            if ( !sf::Mouse::isButtonPressed( ( sf::Mouse::Button )button ) )
+            { allButtonsPressed = false; }
+        }
+        
+        return allButtonsPressed;
+    }
 }

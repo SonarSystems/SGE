@@ -7,7 +7,6 @@ ENGINE
 -----------------------------------------------------------------
 * Input manager - CHECK ALL INPUT
     - Chords - multiple keys pressed (maybe even across devices)
-        - Mouse
         - Joystick
         - Cross devices
             - Input class (****NEW****)
