@@ -5,9 +5,9 @@ GAME
 
 ENGINE
 -----------------------------------------------------------------
+* Comment all headers
 * Input manager - CHECK ALL INPUT
     - Chords - multiple keys pressed (maybe even across devices)
-        - Joystick
         - Cross devices
             - Input class (****NEW****)
     - Sequences

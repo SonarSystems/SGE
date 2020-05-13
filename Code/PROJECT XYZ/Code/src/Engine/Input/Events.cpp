@@ -55,9 +55,4 @@ namespace Sonar
         this->sensor.y = event.sensor.y;
         this->sensor.z = event.sensor.z;
     }
-
-    Event::~Event( )
-    {
-        
-    }
 }

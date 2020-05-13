@@ -34,10 +34,11 @@ namespace Sonar
             Debug::Print( "YAY" );
         }
         
-        if ( Mouse::ChordPressed( { Mouse::Button::Left, Mouse::Button::Right, Mouse::Button::Middle } ) )
+        if ( Joystick::ChordPressed( { { 0, 1 }, { 0, 2 } } ) )
         {
             Debug::Print( "OH YES" );
         }
+        
         
         physicsWorld->Update( dt );
 	}

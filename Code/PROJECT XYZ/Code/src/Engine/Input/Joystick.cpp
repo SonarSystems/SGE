@@ -27,4 +27,19 @@ namespace Sonar
 
     float Joystick::GetAxisPosition( const unsigned int &joystick, const Axis &axis)
     { return sf::Joystick::getAxisPosition( joystick, ( sf::Joystick::Axis )axis ); }
+
+    bool Joystick::ChordPressed( const std::initializer_list<std::array<int, 2>> &joystickButtons )
+    {
+        bool allKeysPressed = true;
+        
+        // Iterate over all the keys
+        for ( std::array<int, 2> joystick : joystickButtons )
+        {
+            // Check if a key hasn't been pressed
+            if ( !sf::Joystick::isButtonPressed( joystick[0], joystick[1] ) )
+            { allKeysPressed = false; }
+        }
+        
+        return allKeysPressed;
+    }
 }
