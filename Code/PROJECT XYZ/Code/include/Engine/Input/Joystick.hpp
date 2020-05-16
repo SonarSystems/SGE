@@ -20,7 +20,7 @@ namespace Sonar
         };
 
         /**
-         * \brief Axes supported by Sonar joysticks
+         * \brief Axes supported by joysticks
         */
         enum Axis
         {
@@ -47,7 +47,7 @@ namespace Sonar
         /**
          * \brief Get information about a connected joystick
          *
-         * \param joystick joystick id
+         * \param joystick Joystick id
          *
          * \return Output returns the name, vendor id and product id of the joystick
         */
@@ -56,7 +56,7 @@ namespace Sonar
         /**
          * \brief Check if a joystick is connected
          *
-         * \param joystick joystick id
+         * \param joystick Joystick id
          *
          * \return Output returns true if the joystick is connected, false if it isn't
         */
@@ -65,7 +65,7 @@ namespace Sonar
         /**
          * \brief Return the number of buttons supported by a joystick
          *
-         * \param joystick joystick id
+         * \param joystick Joystick id
          *
          * \return Output returns how many buttons the joystick supports
         */
@@ -74,8 +74,8 @@ namespace Sonar
         /**
          * \brief Check if a joystick supports a given axis
          *
-         * \param joystick joystick id
-         * \param axis joystick axis to check
+         * \param joystick Joystick id
+         * \param axis Joystick axis to check
          *
          * \return Output returns true if the joystick supports the axis and false if it doesn't
         */
@@ -84,8 +84,8 @@ namespace Sonar
         /**
          * \brief Check if a joystick button is pressed
          *
-         * \param joystick joystick id
-         * \param button joystick button id
+         * \param joystick Joystick id
+         * \param button Joystick button id
          *
          * \return Output returns true if the button is pressed, false if it isn't
         */
@@ -94,8 +94,8 @@ namespace Sonar
         /**
          * \brief Get the current position of a joystick axis
          *
-         * \param joystick joystick id
-         * \param axis joystick axis to check
+         * \param joystick Joystick id
+         * \param axis Joystick axis to check
          *
          * \return Output returns the axis position
         */
@@ -104,7 +104,7 @@ namespace Sonar
         /**
          * \brief Check if multiple buttons have been pressed
          *
-         * \param joystickButtons list of all the joysticks and buttons to check, first array parameter is the joystick id and second array parameter is the button id
+         * \param joystickButtons List of all the joysticks and buttons to check, first array parameter is the joystick id and second array parameter is the button id
          *
          * \return Output returns true if all buttons on all joysticks are pressed, false if not
          *

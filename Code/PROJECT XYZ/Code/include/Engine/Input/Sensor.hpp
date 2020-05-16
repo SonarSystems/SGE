@@ -5,6 +5,9 @@ namespace Sonar
     class Sensor
     {
     public:
+        /**
+         * \brief Types supported by the Sensor system
+        */
         enum Type
         {
             Accelerometer,    ///< Measures the raw acceleration (m/s^2)

@@ -3,7 +3,7 @@
 #include <iostream>
 #include <string>
 
-#define START_STATE false
+#define START_STATE true
 
 namespace Sonar
 {

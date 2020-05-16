@@ -9,6 +9,9 @@ namespace Sonar
     class Keyboard
     {
     public:
+        /**
+         * \brief Keys supported by the keyboard
+        */
         enum Key
         {
             Unknown = -1, // Unhandled key
@@ -117,13 +120,22 @@ namespace Sonar
             KeyCount,     // Keep last -- the total number of keyboard keys
         };
         
-        Keyboard( ) { }
-        ~Keyboard( ) { }
-        
-        // Check if a key has been pressed using live input
+        /**
+         * \brief Check if a key has been pressed using live input
+         *
+         * \param key Key to be checked
+         *
+         * \return Output returns true if key is pressed and false otherwise
+        */
         static bool IsPressed( const Key &key );
         
-        // Check if multiple keys have been pressed
+        /**
+         * \brief Check if multiple keys have been pressed
+         *
+         * \param keys List of all the keys to check
+         *
+         * \return Output returns true if all keys are pressed and false otherwise
+        */
         static bool ChordPressed( const std::initializer_list<Key> &keys );
     };
 }

@@ -11,6 +11,7 @@ ENGINE
         - Cross devices
             - Input class (****NEW****)
     - Sequences
+    - Time tracked events (press key/chord for x amount of time)
     - Gestures
 * Clearing the screen colour abstraction
 * Sprite/Drawable culling outside of the screen
@@ -21,6 +22,11 @@ ENGINE
     - Box2d shape rendering toggle
     - Print cast anything to string (ATM IT ONLY ACCEPTS STRINGS WHICH IS VERY LIMITED AND THUS COUT HAS TO BE USED MOST OF THE TIME)
 * Sprite
+* Shapes
+    - Circle
+    - Triangle
+        - Equilateral
+        - Vertex based
 - Migrate game folder classes to using sprite class
 * File loading
 * Saving and loading (link with file loading)

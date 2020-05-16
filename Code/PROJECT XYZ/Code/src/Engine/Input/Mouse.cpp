@@ -40,7 +40,7 @@ namespace Sonar
         sf::Mouse::setPosition( sf::Vector2i( x, y ), window );
     }
 
-    bool Mouse::ChordPressed( const std::initializer_list<Button> &buttons )
+    const bool Mouse::ChordPressed( const std::initializer_list<Button> &buttons )
     {
         bool allButtonsPressed = true;
         

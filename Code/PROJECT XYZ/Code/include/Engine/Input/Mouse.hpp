@@ -8,6 +8,9 @@ namespace Sonar
 	class Mouse
 	{
 	public:
+        /**
+         * \brief Buttons supported by the mouse
+        */
         enum Button
         {
             Left,       // The left mouse button
@@ -19,29 +22,64 @@ namespace Sonar
             ButtonCount // Keep last -- the total number of mouse buttons
         };
         
+        /**
+         * \brief Wheels supported by the mouse
+        */
         enum Wheel
         {
             VerticalWheel,  // The vertical mouse wheel
             HorizontalWheel // The horizontal mouse wheel
         };
-        
-        Mouse( ) { }
-        ~Mouse( ) { }
-        
-        // check if a mouse button is pressed
+
+        /**
+         * \brief Check if a mouse button is pressed
+         *
+         * \param button Button to check if it is pressed
+         *
+         * \return Output returns true if the button is pressed abd false otherwise
+        */
         static const bool &IsPressed( const Button &button );
         
-        // get the mouse position relative to the game window
+        /**
+         * \brief Get the mouse position relative to the game window
+         *
+         * \param window Game window
+         * \param windowOnly Should the position go beyond the game window
+         *
+         * \return Output returns the mouse position relative to the game window
+         */
         static const glm::vec2 &GetPosition( const sf::RenderWindow &window, const bool &windowOnly = true );
-        // get the mouse position relative to the screen
+        /**
+         * \brief Get the mouse position relative to the screen
+         *
+         * \return Output returns the mouse position relative to the screen
+        */
         static const glm::vec2 &GetScreenPosition( );
         
-        // set the mouse position
+        /**
+         * \brief Set the mouse position relative to the screen
+         *
+         * \param x Screen's x coordinate
+         * \param y Screen's y coordinate
+        */
         static void SetPosition( const float &x, const float &y );
+        /**
+         * \brief Set the mouse position relative to the game window
+         *
+         * \param x Screen's x coordinate
+         * \param y Screen's y coordinate
+         * \param window Game window
+        */
         static void SetPosition( const float &x, const float &y, const sf::RenderWindow &window );
         
-        // Check if multiple buttons have been pressed
-        static bool ChordPressed( const std::initializer_list<Button> &buttons );
+        /**
+         * \brief Check if multiple buttons have been pressed
+         *
+         * \param buttons Buttons to be checked
+         *
+         * \return Output returns true if key is pressed and false otherwise
+        */
+        static const bool ChordPressed( const std::initializer_list<Button> &buttons );
 
 	};
 }
