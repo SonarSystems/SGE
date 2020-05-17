@@ -49,6 +49,12 @@ ENGINE
     - FPS counter - https://github.com/Hopson97/SFML-Game-Framework/blob/master/Source/Util/FPSCounter.cpp
         - **Part of DEBUG CLASS**
         - **MAKE IT LIKE DOOMS**
+        - Draw calls count
+        - Indices count
+        - Vertices count
+        - Triangles count
+        - Quads count
+        
 * Update SFML
 * Ray tracing
 * Networking
