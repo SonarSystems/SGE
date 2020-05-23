@@ -12,68 +12,221 @@ namespace Sonar
     class Drawable
     {
     public:
-        // draw object to application window
+        /**
+         * \brief Draw object to application window
+        */
         void Draw( );
         
-        // set position methods
+        /**
+         * \brief Set x and y position
+         *
+         * \param x X position
+         * \param y Y position
+        */
         void SetPosition( const float &x, const float &y );
+        
+        /**
+         * \brief Set x position
+         *
+         * \param x X position
+        */
         void SetPositionX( const float &x );
+        
+        /**
+         * \brief Set y position
+         *
+         * \param y Y position
+        */
         void SetPositionY( const float &y );
         
-        // get position methods
+        /**
+         * \brief Get the x position
+         *
+         * \return Output returns the x position
+        */
         const float &GetPositionX( ) const;
+        
+        /**
+         * \brief Get the y position
+         *
+         * \return Output returns the y position
+        */
         const float &GetPositionY( ) const;
+        
+        /**
+         * \brief Get the position vector
+         *
+         * \return Output returns the position vector
+        */
         const glm::vec2 &GetPosition( ) const;
         
-        // set size methods
+        /**
+         * \brief Set width and height
+         *
+         * \param width Width of the drawable object
+         * \param height Height of the drawable object
+        */
         void SetSize( const float &width, const float &height );
+        
+        /**
+         * \brief Set width
+         *
+         * \param width Width of the drawable object
+        */
         void SetWidth( const float &width );
+        
+        /**
+         * \brief Set height
+         *
+         * \param height Height of the drawable object
+        */
         void SetHeight( const float &height );
         
-        // get size methods
+        /**
+         * \brief Get the width
+         *
+         * \return Output returns the width
+        */
         const float &GetWidth( ) const;
+        
+        /**
+         * \brief Get the height
+         *
+         * \return Output returns the height
+        */
         const float &GetHeight( ) const;
+        
+        /**
+         * \brief Get the size vector
+         *
+         * \return Output returns the size vector
+        */
         const glm::vec2 &GetSize( ) const;
         
-        // set color properties
+        /**
+         * \brief Set the inside color (fill color)
+         *
+         * \param color Color object
+        */
         void SetInsideColor( const Color &color );
+        
+        /**
+         * \brief Set the border color
+         *
+         * \param color Color object
+         *
+         * SetBorderThickness method required aswell
+        */
         void SetBorderColor( const Color &color );
+        
+        /**
+         * \brief Set the border thickness
+         *
+         * \param thickness Thickness of the border
+         *
+         * Required for border, otherwise border is to set 0 thickness and cannot be seen
+        */
         void SetBorderThickness( const float &thickness );
         
-        // get color properties
+        /**
+         * \brief Get the inside color (fill color)
+         *
+         * \return Output returns the inside color
+        */
         const Color &GetInsideColor( ) const;
+        
+        /**
+         * \brief Get the border color
+         *
+         * \return Output returns the border color
+        */
         const Color &GetBorderColor( ) const;
+        
+        /**
+         * \brief Get the border thickness
+         *
+         * \return Output returns the border thickness
+        */
         const float &GetBorderThickness( ) const;
         
-        // move the object
+        /**
+         * \brief Move the object relative to it's current position in the x and y axis
+         *
+         * \param x Offset in x axis
+         * \param y Offset in y axis
+        */
         void Move( const float &x, const float &y );
+        
+        /**
+         * \brief Move the object relative to it's current position in the x axis
+         *
+         * \param x Offset in x axis
+        */
         void MoveX( const float &x );
+        
+        /**
+         * \brief Move the object relative to it's current position in the y axis
+         *
+         * \param y Offset in y axis
+        */
         void MoveY( const float &y );
         
+        /**
+         * \brief Check if the object is clicked by the mouse
+         *
+         * \param button The mouse button to check
+         *
+         * \return Output returns true if the mouse is being clicked over the object and false otherwise
+        */
         const bool &IsClicked( const Mouse::Button &button );
     
     protected:
-        // default constructor
+        /**
+         * \brief Class constructor
+         *
+         * \param data game engine object
+        */
         Drawable( GameDataRef data );
         
-        // default destructor
+        /**
+         * \brief Class destructor
+        */
          ~Drawable( ) ;
         
-        // object to be drawn to the screen, assigned the address of the object from a child class
+        /**
+         * \brief Object to be drawn to the screen, assigned the address of the object from a child class
+        */
         sf::Drawable *object;
         
+        /**
+         * \brief Game data object
+        */
         GameDataRef _data;
 
     private:
-        // object position (x and y)
+        /**
+         * \brief Object position vector (x and y)
+        */
         glm::vec2 _position;
         
-        // object size (width and heigh(
+        /**
+         * \brief Object size vector (width and height)
+        */
         glm::vec2 _size;
         
-        // colors
+        /**
+         * \brief Inside color object
+        */
         Color _color;
+        
+        /**
+         * \brief Border color object
+        */
         Color _borderColor;
+        
+        /**
+         * \brief Border thickness
+        */
         float _borderThickness;
         
     };

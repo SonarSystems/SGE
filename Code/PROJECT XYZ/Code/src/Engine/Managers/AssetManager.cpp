@@ -3,7 +3,7 @@
 
 namespace Sonar
 {
-	void AssetManager::LoadTexture(std::string name, std::string fileName)
+	void AssetManager::LoadTexture( const std::string &name, const std::string &fileName )
 	{
 		sf::Texture tex;
 
@@ -13,12 +13,12 @@ namespace Sonar
 		}
 	}
 
-	sf::Texture &AssetManager::GetTexture(std::string name)
+	const sf::Texture &AssetManager::GetTexture( const std::string &name ) const
 	{
 		return this->_textures.at(name);
 	}
 
-	void AssetManager::LoadFont(std::string name, std::string fileName)
+	void AssetManager::LoadFont( const std::string &name, const std::string &fileName )
     {
         sf::Font font;
 
@@ -28,12 +28,12 @@ namespace Sonar
         }
     }
 
-    sf::Font &AssetManager::GetFont(std::string name)
+    const sf::Font &AssetManager::GetFont( const std::string &name ) const
     {
         return this->_fonts.at(name);
     }
 
-    void AssetManager::LoadSound(std::string name, std::string fileName)
+    void AssetManager::LoadSound( const std::string &name, const std::string &fileName )
     {
         sf::SoundBuffer buffer;
         
@@ -43,7 +43,7 @@ namespace Sonar
         }
     }
 
-    sf::Sound &AssetManager::GetSound(std::string name)
+    const sf::Sound &AssetManager::GetSound( const std::string &name ) const
     {
         static sf::Sound sound;
         
@@ -52,7 +52,7 @@ namespace Sonar
         return sound;
     }
 
-    void AssetManager::LoadMusic(std::string name, std::string fileName)
+    void AssetManager::LoadMusic( const std::string &name, const std::string &fileName )
     {
         sf::Music music;
                 
@@ -62,7 +62,7 @@ namespace Sonar
         }
     }
 
-    sf::Music &AssetManager::GetMusic(std::string name)
+    const sf::Music &AssetManager::GetMusic( const std::string &name ) const
     {
         return this->_musics.at(name);
     }

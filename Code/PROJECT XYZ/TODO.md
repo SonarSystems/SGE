@@ -5,7 +5,6 @@ GAME
 
 ENGINE
 -----------------------------------------------------------------
-* Comment all headers
 * Input manager - CHECK ALL INPUT
     - Chords - multiple keys pressed (maybe even across devices)
         - Cross devices
