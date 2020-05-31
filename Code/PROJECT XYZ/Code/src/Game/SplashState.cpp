@@ -39,6 +39,10 @@ namespace Sonar
             Debug::Print( "OH YES" );
         }
         
+        if ( Input::MultiDeviceChordPressed( { Mouse::Button::Right }, { }, { { 0, 1 }, {0,2} } ) )
+        {
+            Debug::Print( "IT'S WORKING, IT'S WORKING" );
+        }
         
         physicsWorld->Update( dt );
 	}

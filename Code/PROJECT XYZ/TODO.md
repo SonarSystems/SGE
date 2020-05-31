@@ -6,9 +6,6 @@ GAME
 ENGINE
 -----------------------------------------------------------------
 * Input manager - CHECK ALL INPUT
-    - Chords - multiple keys pressed (maybe even across devices)
-        - Cross devices
-            - Input class (****NEW****)
     - Sequences
     - Time tracked events (press key/chord for x amount of time)
     - Gestures

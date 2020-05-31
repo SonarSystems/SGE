@@ -1,5 +1,9 @@
 #pragma once
 
+/**
+ * Master Include File
+*/
+
 #include "Core/Debug.hpp"
 #include "Core/Game.hpp"
 #include "Core/State.hpp"
@@ -12,6 +16,7 @@
 #include "Graphics/Shapes/Rectangle.hpp"
 #include "Managers/AssetManager.hpp"
 #include "Input/Events.hpp"
+#include "Input/Input.hpp"
 #include "Input/Joystick.hpp"
 #include "Input/Keyboard.hpp"
 #include "Input/Mouse.hpp"

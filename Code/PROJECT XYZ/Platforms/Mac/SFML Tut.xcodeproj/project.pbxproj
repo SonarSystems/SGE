@@ -25,6 +25,7 @@
 		E7B35D7D24597836001F5C35 /* Rectangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B35D6F24597836001F5C35 /* Rectangle.cpp */; };
 		E7B35D7E24597836001F5C35 /* Color.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B35D7024597836001F5C35 /* Color.cpp */; };
 		E7B35D7F24597836001F5C35 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B35D7124597836001F5C35 /* main.cpp */; };
+		E7B9A8B52479C211009B5804 /* Input.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B9A8B32479C211009B5804 /* Input.cpp */; };
 		E7FE6BF32447E45000882771 /* Resources in CopyFiles */ = {isa = PBXBuildFile; fileRef = E7FE6BF12447E42C00882771 /* Resources */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		EECB13BD1F521E6300B6A50B /* libsfml-audio.2.4.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EECB13B81F521E6300B6A50B /* libsfml-audio.2.4.2.dylib */; };
 		EECB13BE1F521E6300B6A50B /* libsfml-graphics.2.4.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EECB13B91F521E6300B6A50B /* libsfml-graphics.2.4.2.dylib */; };
@@ -108,6 +109,8 @@
 		E7B35D6F24597836001F5C35 /* Rectangle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Rectangle.cpp; sourceTree = "<group>"; };
 		E7B35D7024597836001F5C35 /* Color.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Color.cpp; sourceTree = "<group>"; };
 		E7B35D7124597836001F5C35 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		E7B9A8B32479C211009B5804 /* Input.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Input.cpp; sourceTree = "<group>"; };
+		E7B9A8B42479C211009B5804 /* Input.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Input.hpp; sourceTree = "<group>"; };
 		E7FE6BF12447E42C00882771 /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Resources; path = ../../Resources; sourceTree = "<group>"; };
 		EE790DA81E3D25F1002224EA /* SFML Tut */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "SFML Tut"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EECB13B81F521E6300B6A50B /* libsfml-audio.2.4.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libsfml-audio.2.4.2.dylib"; path = "../../External Libraries/Mac/SFML/lib/libsfml-audio.2.4.2.dylib"; sourceTree = "<group>"; };
@@ -307,6 +310,7 @@
 			isa = PBXGroup;
 			children = (
 				E70FC6282460C5420090EFBC /* Events.hpp */,
+				E7B9A8B42479C211009B5804 /* Input.hpp */,
 				E70FC62C2461FD890090EFBC /* Joystick.hpp */,
 				E70FC632246201AB0090EFBC /* Keyboard.hpp */,
 				E7B35D4E24597836001F5C35 /* Mouse.hpp */,
@@ -319,6 +323,7 @@
 			isa = PBXGroup;
 			children = (
 				E70FC6292460C82B0090EFBC /* Events.cpp */,
+				E7B9A8B32479C211009B5804 /* Input.cpp */,
 				E70FC62B2461FD890090EFBC /* Joystick.cpp */,
 				E70FC631246201AB0090EFBC /* Keyboard.cpp */,
 				E7B35D6724597836001F5C35 /* Mouse.cpp */,
@@ -432,6 +437,7 @@
 			files = (
 				E7B35D7324597836001F5C35 /* SplashState.cpp in Sources */,
 				E7B35D7E24597836001F5C35 /* Color.cpp in Sources */,
+				E7B9A8B52479C211009B5804 /* Input.cpp in Sources */,
 				E70FC633246201AB0090EFBC /* Keyboard.cpp in Sources */,
 				E7B35D7624597836001F5C35 /* Debug.cpp in Sources */,
 				E70FC62A2460C82B0090EFBC /* Events.cpp in Sources */,
