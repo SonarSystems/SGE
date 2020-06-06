@@ -4,6 +4,7 @@
 #include <string>
 #include <array>
 
+
 namespace Sonar
 {
     class Joystick
@@ -89,7 +90,7 @@ namespace Sonar
          *
          * \return Output returns true if the button is pressed, false if it isn't
         */
-        static bool IsPressed( const unsigned int &joystick, const unsigned int &button);
+        static bool IsPressed( const unsigned int &joystick, const unsigned int &button );
         
         /**
          * \brief Get the current position of a joystick axis
@@ -99,7 +100,7 @@ namespace Sonar
          *
          * \return Output returns the axis position
         */
-        static float GetAxisPosition( const unsigned int &joystick, const Axis &axis);
+        static float GetAxisPosition( const unsigned int &joystick, const Axis &axis );
         
         /**
          * \brief Check if multiple buttons have been pressed
@@ -111,5 +112,7 @@ namespace Sonar
          * Checks if all buttons are being pressed at the same time across all joysticks
         */
         static bool ChordPressed( const std::initializer_list<std::array<int, 2>> &joystickButtons );
+        
+        
     };
 }

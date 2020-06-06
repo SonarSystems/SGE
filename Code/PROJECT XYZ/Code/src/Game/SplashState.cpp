@@ -22,27 +22,17 @@ namespace Sonar
         if ( Event::MouseWheelMoved == event.type )
         {
             physicsWorld->CreateDynamicBody( event.mouseButton.x, event.mouseButton.y, 32, 32 );
-        }        
+        }
+        
+        if ( Input::AnyMouseButtonPressed( event ) )
+        {
+            Debug::Print( "YAS QUEEN2" );
+        }
 	}
 
 	void SplashState::Update( const float &dt )
 	{
         player->Update( dt );
-        
-        if ( Keyboard::ChordPressed( { Keyboard::Key::LSystem, Keyboard::Key::LShift, Keyboard::Key::A } ) )
-        {
-            Debug::Print( "YAY" );
-        }
-        
-        if ( Joystick::ChordPressed( { { 0, 1 }, { 0, 2 } } ) )
-        {
-            Debug::Print( "OH YES" );
-        }
-        
-        if ( Input::MultiDeviceChordPressed( { Mouse::Button::Right }, { }, { { 0, 1 }, {0,2} } ) )
-        {
-            Debug::Print( "IT'S WORKING, IT'S WORKING" );
-        }
         
         physicsWorld->Update( dt );
 	}

@@ -175,8 +175,6 @@ namespace Sonar
             Count                   // Keep last -- the total number of event types
         };
 
-        
-
         /**
          * \brief Member data
          */

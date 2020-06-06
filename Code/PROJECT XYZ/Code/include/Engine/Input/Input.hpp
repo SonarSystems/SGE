@@ -8,6 +8,8 @@
 #include "Keyboard.hpp"
 #include "Mouse.hpp"
 
+#include "Events.hpp"
+
 namespace Sonar
 {
     class Input
@@ -24,5 +26,33 @@ namespace Sonar
          * \return Output returns true if all buttons on all devices are pressed, false if not
         */
         static bool MultiDeviceChordPressed( const std::initializer_list<Mouse::Button> &mouseButtons, const std::initializer_list<Keyboard::Key> &keyboardButtons, const std::initializer_list<std::array<int, 2>> &joystickButtons );
+        
+        /**
+         * \brief Check if any joystick button has been pressed
+         *
+         * \param event Event to poll
+         *
+         * \return Output returns true if any button has been pressed, false otherwise
+        */
+        static bool AnyJoystickButtonPressed( const Event &event );
+        
+        /**
+         * \brief Check if any mouse button has been pressed
+         *
+         * \param event Event to poll
+         *
+         * \return Output returns true if any button has been pressed, false otherwise
+        */
+        static bool AnyMouseButtonPressed( const Event &event );
+        
+        /**
+         * \brief Check if any keyboard button has been pressed
+         *
+         * \param event Event to poll
+         *
+         * \return Output returns true if any button has been pressed, false otherwise
+        */
+        static bool AnyKeyboardButtonPressed( const Event &event );
+        
     };
 }

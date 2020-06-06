@@ -6,7 +6,7 @@ GAME
 ENGINE
 -----------------------------------------------------------------
 * Input manager - CHECK ALL INPUT
-    - Sequences
+    - Sequences/QTE (maybe a separate thing)
     - Time tracked events (press key/chord for x amount of time)
     - Gestures
 * Clearing the screen colour abstraction
@@ -50,8 +50,13 @@ ENGINE
         - Vertices count
         - Triangles count
         - Quads count
-        
+    - Mini map
+        - Square
+        - Rounded
+        - Draw using shapes, ability to override using sprites
 * Update SFML
+* Shadows
+* Fog
 * Ray tracing
 * Networking
 * CMAKE (NOT YET)
