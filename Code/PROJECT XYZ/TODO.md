@@ -9,7 +9,6 @@ ENGINE
     - Sequences/QTE (maybe a separate thing)
     - Time tracked events (press key/chord for x amount of time)
     - Gestures
-* Clearing the screen colour abstraction
 * Sprite/Drawable culling outside of the screen
 * Collision Detection (In Drawable) - Bounding box
 * Debug
@@ -59,4 +58,6 @@ ENGINE
 * Fog
 * Ray tracing
 * Networking
+* AI
+    - A star
 * CMAKE (NOT YET)

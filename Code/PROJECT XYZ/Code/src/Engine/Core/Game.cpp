@@ -54,6 +54,8 @@ namespace Sonar
 
 			interpolation = accumulator / dt;
             
+            this->_data->window.clear( sf::Color( _data->backgroundColor.GetRed( ), _data->backgroundColor.GetGreen( ), _data->backgroundColor.GetBlue( ), _data->backgroundColor.GetAlpha( ) ) );
+            
 			this->_data->machine.GetActiveState( )->Draw( interpolation );
             
             this->_data->window.display( );

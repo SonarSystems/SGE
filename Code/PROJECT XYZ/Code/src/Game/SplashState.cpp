@@ -7,7 +7,7 @@ namespace Sonar
 	SplashState::SplashState( GameDataRef data ) : _data( data )
 	{
         player = new Player( _data );
-        physicsWorld = new PhysicsWorld( _data );
+        physicsWorld = new PhysicsWorld( _data );        
 	}
 
 	void SplashState::Init( )
@@ -23,11 +23,6 @@ namespace Sonar
         {
             physicsWorld->CreateDynamicBody( event.mouseButton.x, event.mouseButton.y, 32, 32 );
         }
-        
-        if ( Input::AnyMouseButtonPressed( event ) )
-        {
-            Debug::Print( "YAS QUEEN2" );
-        }
 	}
 
 	void SplashState::Update( const float &dt )
@@ -39,8 +34,6 @@ namespace Sonar
 
 	void SplashState::Draw( const float &dt )
 	{
-		this->_data->window.clear( sf::Color::White );
-
         player->Draw( dt );
         
         physicsWorld->Draw( dt );

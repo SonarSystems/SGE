@@ -10,6 +10,7 @@
 #include "b2GLDraw.h"
 #include "Debug.hpp"
 #include "Events.hpp"
+#include "Color.hpp"
 
 namespace Sonar
 {
@@ -22,6 +23,7 @@ namespace Sonar
 		sf::RenderWindow window; // Game window
 		AssetManager assets; // Asset manager
         Debug *debug; // Debugger
+        Color backgroundColor = Color::White;
 	};
     
     /**
@@ -40,7 +42,7 @@ namespace Sonar
          * \param title Game window title
         */
 		Game( const int &width, const int &height, const std::string &title );
-                
+                        
 	private:
         /**
          * \brief Updates run at 60 per second.
