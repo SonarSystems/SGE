@@ -6,6 +6,11 @@ GAME
 ENGINE
 -----------------------------------------------------------------
 * Input manager - CHECK ALL INPUT
+    - Sequence 1 button press - Figure out tracking it
+        - Button to detect
+        - 0 - 100
+        - Increments
+        - Amount to reduce every second/millisecond
     - Sequences/QTE (maybe a separate thing)
     - Time tracked events (press key/chord for x amount of time)
     - Gestures
@@ -22,6 +27,7 @@ ENGINE
     - Triangle
         - Equilateral
         - Vertex based
+* Parallax background
 - Migrate game folder classes to using sprite class
 * File loading
 * Saving and loading (link with file loading)
@@ -43,7 +49,7 @@ ENGINE
     - Checkbox
     - FPS counter - https://github.com/Hopson97/SFML-Game-Framework/blob/master/Source/Util/FPSCounter.cpp
         - **Part of DEBUG CLASS**
-        - **MAKE IT LIKE DOOMS**
+        - **MAKE IT LIKE DOOM'S**
         - Draw calls count
         - Indices count
         - Vertices count

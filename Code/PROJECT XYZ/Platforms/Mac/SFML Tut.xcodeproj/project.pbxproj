@@ -11,6 +11,7 @@
 		E70FC62D2461FD890090EFBC /* Joystick.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E70FC62B2461FD890090EFBC /* Joystick.cpp */; };
 		E70FC6302461FE970090EFBC /* Sensor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E70FC62E2461FE970090EFBC /* Sensor.cpp */; };
 		E70FC633246201AB0090EFBC /* Keyboard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E70FC631246201AB0090EFBC /* Keyboard.cpp */; };
+		E7899CF22496B1940069B8F4 /* Sequence.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7899CF02496B1940069B8F4 /* Sequence.cpp */; };
 		E7B35D7224597836001F5C35 /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B35D5E24597836001F5C35 /* Player.cpp */; };
 		E7B35D7324597836001F5C35 /* SplashState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B35D5F24597836001F5C35 /* SplashState.cpp */; };
 		E7B35D7424597836001F5C35 /* PhysicsWorld.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B35D6024597836001F5C35 /* PhysicsWorld.cpp */; };
@@ -76,6 +77,8 @@
 		E70FC62F2461FE970090EFBC /* Sensor.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Sensor.hpp; sourceTree = "<group>"; };
 		E70FC631246201AB0090EFBC /* Keyboard.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Keyboard.cpp; sourceTree = "<group>"; };
 		E70FC632246201AB0090EFBC /* Keyboard.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Keyboard.hpp; sourceTree = "<group>"; };
+		E7899CF02496B1940069B8F4 /* Sequence.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Sequence.cpp; sourceTree = "<group>"; };
+		E7899CF12496B1940069B8F4 /* Sequence.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Sequence.hpp; sourceTree = "<group>"; };
 		E7B35D4324597836001F5C35 /* PhysicsWorld.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PhysicsWorld.hpp; sourceTree = "<group>"; };
 		E7B35D4424597836001F5C35 /* SplashState.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SplashState.hpp; sourceTree = "<group>"; };
 		E7B35D4524597836001F5C35 /* Player.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Player.hpp; sourceTree = "<group>"; };
@@ -315,6 +318,7 @@
 				E70FC632246201AB0090EFBC /* Keyboard.hpp */,
 				E7B35D4E24597836001F5C35 /* Mouse.hpp */,
 				E70FC62F2461FE970090EFBC /* Sensor.hpp */,
+				E7899CF12496B1940069B8F4 /* Sequence.hpp */,
 			);
 			path = Input;
 			sourceTree = "<group>";
@@ -328,6 +332,7 @@
 				E70FC631246201AB0090EFBC /* Keyboard.cpp */,
 				E7B35D6724597836001F5C35 /* Mouse.cpp */,
 				E70FC62E2461FE970090EFBC /* Sensor.cpp */,
+				E7899CF02496B1940069B8F4 /* Sequence.cpp */,
 			);
 			path = Input;
 			sourceTree = "<group>";
@@ -453,6 +458,7 @@
 				E7B35D7A24597836001F5C35 /* b2GLDraw.cpp in Sources */,
 				E70FC62D2461FD890090EFBC /* Joystick.cpp in Sources */,
 				E7B35D7524597836001F5C35 /* StateMachine.cpp in Sources */,
+				E7899CF22496B1940069B8F4 /* Sequence.cpp in Sources */,
 				E7B35D7D24597836001F5C35 /* Rectangle.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
