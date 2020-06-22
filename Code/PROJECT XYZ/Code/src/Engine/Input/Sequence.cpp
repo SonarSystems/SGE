@@ -13,16 +13,16 @@ namespace Sonar
     {
         _count += amount;
         
-        if ( !canGoOver && _count > 100 )
-        { _count = 100; }
+        if ( !canGoOver && _count > _max )
+        { _count = _max; }
     }
 
     void Sequence::TickDown( const float &amount, const bool &canGoUnder )
     {
         _count -= amount;
         
-        if ( !canGoUnder && _count < 0 )
-        { _count = 0; }
+        if ( !canGoUnder && _count < _min )
+        { _count = _min; }
     }
 
     const float &Sequence::GetCount( ) const
@@ -41,6 +41,18 @@ namespace Sonar
         { TickUp( amount ); }
     }
 
+    void Sequence::KeyboardPress( const Keyboard::Key &key, const float &amount )
+    {
+        if ( Keyboard::IsPressed( key ) )
+        { TickUp( amount ); }
+    }
+
+    void Sequence::JoystickPress( const unsigned int joystickID, const unsigned int &button, const float &amount )
+    {
+        if ( Joystick::IsPressed( joystickID, button ) )
+        { TickUp( amount ); }
+    }
+
     void Sequence::SetCount( const float &count )
     { _count = count; }
 
@@ -50,8 +62,7 @@ namespace Sonar
     void Sequence::SetMax( const float &max )
     { _max = max; }
 
-
-    void Squence::Update( const float &dt )
+    void Sequence::Update( const float &dt )
     {
         // IMPLEMENT WITH A TIMER SYSTEM
         // PROBABLY BEST TO RENAME THE METHOD

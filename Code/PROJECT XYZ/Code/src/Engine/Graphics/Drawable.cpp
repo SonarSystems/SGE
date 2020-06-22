@@ -7,7 +7,18 @@ namespace Sonar
     Drawable::~Drawable( ) { }
 
     void Drawable::Draw( )
-    { _data->window.draw( *object ); }
+    {
+		// Check if the object is within the visible window
+		// If not cull it
+		if ( _position.x + _size.x < 0 // Check if it's beyond the left boundary
+			|| _position.x > _data->window.getSize( ).x // Check if it's beyond the right boundary
+			|| _position.y + _size.y < 0 // Check if it's beyond the top boundary
+			|| _position.y > _data->window.getSize( ).y // Check if it's beyond the bottom boundary
+			)
+		{ return; }
+		
+		_data->window.draw( *object );
+	}
 
     void Drawable::SetPosition( const float &x, const float &y )
     {

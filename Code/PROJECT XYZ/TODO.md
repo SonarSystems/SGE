@@ -7,14 +7,10 @@ ENGINE
 -----------------------------------------------------------------
 * Input manager - CHECK ALL INPUT
     - Sequence 1 button press - Figure out tracking it
-        - Button to detect
-        - 0 - 100
-        - Increments
         - Amount to reduce every second/millisecond
     - Sequences/QTE (maybe a separate thing)
     - Time tracked events (press key/chord for x amount of time)
     - Gestures
-* Sprite/Drawable culling outside of the screen
 * Collision Detection (In Drawable) - Bounding box
 * Debug
     - Toggle different message categories on and off

@@ -18,6 +18,10 @@ namespace Sonar
         
         void MousePress( const Mouse::Button &button, const float &amount = 1 );
         
+        void KeyboardPress( const Keyboard::Key &key, const float &amount = 1 );
+        
+        void JoystickPress( const unsigned int joystickID, const unsigned int &button, const float &amount = 1 );
+        
         void SetCount( const float &count );
         
         void SetMin( const float &min );
