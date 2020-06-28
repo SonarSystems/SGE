@@ -14,8 +14,9 @@ namespace Sonar
         void Draw( float dt );
         
     private:
-        Rectangle *_player;
-        
+		Rectangle *_player;
+		Rectangle *object2;
+
         GameDataRef _data;
                 
     };

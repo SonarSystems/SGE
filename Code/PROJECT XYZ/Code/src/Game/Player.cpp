@@ -4,10 +4,15 @@ namespace Sonar
 {
     Player::Player( GameDataRef data ) : _data( data )
     {
-        _player = new Rectangle( data );
-        _player->SetSize( 75, 50 );
-        _player->SetPosition( 300, 100 );
-        _player->SetInsideColor( Color::Black );
+		_player = new Rectangle( data );
+		_player->SetSize( 75, 50 );
+		_player->SetPosition( 300, 100 );
+		_player->SetInsideColor( Color::Black );
+		
+		object2 = new Rectangle( data );
+		object2->SetSize( 20, 40 );
+		object2->SetPosition( 30, 400 );
+		object2->SetInsideColor( Color::Green );
     }
 
     void Player::HandleInput( float dt )
@@ -52,10 +57,12 @@ namespace Sonar
         {
             _player->SetPositionY( -_player->GetHeight( ) );
         }
+		
     }
 
     void Player::Draw( float dt )
     {
-        _player->Draw( );
+		_player->Draw( );
+		object2->Draw( );
     }
 }

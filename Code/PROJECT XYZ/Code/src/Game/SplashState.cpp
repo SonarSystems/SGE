@@ -30,10 +30,8 @@ namespace Sonar
         player->Update( dt );
         
         physicsWorld->Update( dt );
-        
-        std::cout << seq.GetCount( ) << std::endl;
-        
-        seq.MousePress( Mouse::Button::Left );
+		
+		seq.Update( dt );
 	}
 
 	void SplashState::Draw( const float &dt )

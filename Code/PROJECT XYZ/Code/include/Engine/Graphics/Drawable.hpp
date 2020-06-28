@@ -178,7 +178,16 @@ namespace Sonar
          *
          * \return Output returns true if the mouse is being clicked over the object and false otherwise
         */
-        const bool &IsClicked( const Mouse::Button &button );
+        const bool &IsClicked( const Mouse::Button &button ) const;
+		
+		/**
+		 * \brief Check if the object has collided with another using bounding box
+		 *
+		 * \param object The other object to check collision with
+		 *
+		 * \return Output returns true if the objects have collided, false otherwise
+		 */
+		const bool &BoundingBoxCollision( const Drawable &object ) const;
     
     protected:
         /**

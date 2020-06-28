@@ -27,6 +27,8 @@
 		E7B35D7E24597836001F5C35 /* Color.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B35D7024597836001F5C35 /* Color.cpp */; };
 		E7B35D7F24597836001F5C35 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B35D7124597836001F5C35 /* main.cpp */; };
 		E7B9A8B52479C211009B5804 /* Input.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B9A8B32479C211009B5804 /* Input.cpp */; };
+		E7DD02C024A776E400665D35 /* Clock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7DD02BE24A776E400665D35 /* Clock.cpp */; };
+		E7F351C424A77AAC008123A3 /* Time.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7F351C224A77AAC008123A3 /* Time.cpp */; };
 		E7FE6BF32447E45000882771 /* Resources in CopyFiles */ = {isa = PBXBuildFile; fileRef = E7FE6BF12447E42C00882771 /* Resources */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		EECB13BD1F521E6300B6A50B /* libsfml-audio.2.4.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EECB13B81F521E6300B6A50B /* libsfml-audio.2.4.2.dylib */; };
 		EECB13BE1F521E6300B6A50B /* libsfml-graphics.2.4.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EECB13B91F521E6300B6A50B /* libsfml-graphics.2.4.2.dylib */; };
@@ -114,6 +116,10 @@
 		E7B35D7124597836001F5C35 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		E7B9A8B32479C211009B5804 /* Input.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Input.cpp; sourceTree = "<group>"; };
 		E7B9A8B42479C211009B5804 /* Input.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Input.hpp; sourceTree = "<group>"; };
+		E7DD02BE24A776E400665D35 /* Clock.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Clock.cpp; sourceTree = "<group>"; };
+		E7DD02BF24A776E400665D35 /* Clock.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Clock.hpp; sourceTree = "<group>"; };
+		E7F351C224A77AAC008123A3 /* Time.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Time.cpp; sourceTree = "<group>"; };
+		E7F351C324A77AAC008123A3 /* Time.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Time.hpp; sourceTree = "<group>"; };
 		E7FE6BF12447E42C00882771 /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Resources; path = ../../Resources; sourceTree = "<group>"; };
 		EE790DA81E3D25F1002224EA /* SFML Tut */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "SFML Tut"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EECB13B81F521E6300B6A50B /* libsfml-audio.2.4.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libsfml-audio.2.4.2.dylib"; path = "../../External Libraries/Mac/SFML/lib/libsfml-audio.2.4.2.dylib"; sourceTree = "<group>"; };
@@ -187,11 +193,13 @@
 		E7B35D4724597836001F5C35 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				E7DD02BF24A776E400665D35 /* Clock.hpp */,
 				E7B35D4A24597836001F5C35 /* Debug.hpp */,
 				E7B35D4924597836001F5C35 /* ENGINEDEFINITIONS.hpp */,
 				E7B35D4824597836001F5C35 /* Game.hpp */,
 				E7B35D4B24597836001F5C35 /* State.hpp */,
 				E7B35D4C24597836001F5C35 /* StateMachine.hpp */,
+				E7F351C324A77AAC008123A3 /* Time.hpp */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -267,9 +275,11 @@
 		E7B35D6224597836001F5C35 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				E7DD02BE24A776E400665D35 /* Clock.cpp */,
 				E7B35D6424597836001F5C35 /* Debug.cpp */,
 				E7B35D6524597836001F5C35 /* Game.cpp */,
 				E7B35D6324597836001F5C35 /* StateMachine.cpp */,
+				E7F351C224A77AAC008123A3 /* Time.cpp */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -446,6 +456,7 @@
 				E70FC633246201AB0090EFBC /* Keyboard.cpp in Sources */,
 				E7B35D7624597836001F5C35 /* Debug.cpp in Sources */,
 				E70FC62A2460C82B0090EFBC /* Events.cpp in Sources */,
+				E7F351C424A77AAC008123A3 /* Time.cpp in Sources */,
 				E70FC6302461FE970090EFBC /* Sensor.cpp in Sources */,
 				E7B35D7B24597836001F5C35 /* Sprite.cpp in Sources */,
 				E7B35D7F24597836001F5C35 /* main.cpp in Sources */,
@@ -459,6 +470,7 @@
 				E70FC62D2461FD890090EFBC /* Joystick.cpp in Sources */,
 				E7B35D7524597836001F5C35 /* StateMachine.cpp in Sources */,
 				E7899CF22496B1940069B8F4 /* Sequence.cpp in Sources */,
+				E7DD02C024A776E400665D35 /* Clock.cpp in Sources */,
 				E7B35D7D24597836001F5C35 /* Rectangle.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

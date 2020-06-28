@@ -11,7 +11,7 @@ ENGINE
     - Sequences/QTE (maybe a separate thing)
     - Time tracked events (press key/chord for x amount of time)
     - Gestures
-* Collision Detection (In Drawable) - Bounding box
+* Objects move faster when scrolling aswell
 * Debug
     - Toggle different message categories on and off
         - Use a list/vector of the name of the categories that are disabled to see if the message is to be displayed

@@ -26,8 +26,8 @@ namespace Sonar
         
         PhysicsWorld *physicsWorld;
         
-        Player *player;
-        
+		Player *player;
+
         Sequence seq;
                 
 	};
