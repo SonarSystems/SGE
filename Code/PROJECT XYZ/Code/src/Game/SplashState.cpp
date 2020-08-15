@@ -22,6 +22,7 @@ namespace Sonar
         if ( Event::MouseWheelMoved == event.type )
         {
             physicsWorld->CreateDynamicBody( event.mouseButton.x, event.mouseButton.y, 32, 32 );
+			
         }
 	}
 
@@ -31,7 +32,11 @@ namespace Sonar
         
         physicsWorld->Update( dt );
 		
-		seq.Update( dt );
+		//std::cout << " has been pressed for: " << seq.MousePressedTimer( Mouse::Button::Left ).AsSeconds( ) << " seconds" << std::endl;
+		
+		seq.KeyboardPress( Keyboard::Key::B, 5 );
+		
+		std::cout << seq.GetCount( ) << std::endl;
 	}
 
 	void SplashState::Draw( const float &dt )

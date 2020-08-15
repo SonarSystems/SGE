@@ -16,38 +16,38 @@ namespace Sonar
 		~Time( ) { }
 		
 		/**
-		 * \brief Get the time as seconds
-		 *
-		 * \return Output returns the time as seconds
-		 */
-		const float &asSeconds( ) const;
-		
-		/**
-		 * \brief Get the time as milliseconds
-		 *
-		 * \return Output returns the time as milliseconds
-		 */
-		const int &asMilliseconds( ) const;
-		
-		/**
-		 * \brief Get the time as microseconds
-		 *
-		 * \return Output returns the time as microseconds
-		 */
-		const long long &asMicroseconds( ) const;
-		
-	private:
-		friend Time seconds( const float & );
-		friend Time milliseconds( const int & );
-		friend Time microseconds( const long long & );
-		
-		/**
 		 * \brief Construct from a number of microseconds
 		 *
 		 * \param microseconds Number of microseconds
 		 *
 		 */
 		explicit Time( const long long &microseconds );
+		
+		/**
+		 * \brief Get the time as seconds
+		 *
+		 * \return Output returns the time as seconds
+		 */
+		const float &AsSeconds( ) const;
+		
+		/**
+		 * \brief Get the time as milliseconds
+		 *
+		 * \return Output returns the time as milliseconds
+		 */
+		const int &AsMilliseconds( ) const;
+		
+		/**
+		 * \brief Get the time as microseconds
+		 *
+		 * \return Output returns the time as microseconds
+		 */
+		const long long &AsMicroseconds( ) const;
+		
+	private:
+		friend Time Seconds( const float & );
+		friend Time Milliseconds( const int & );
+		friend Time Microseconds( const long long & );
 		
 		/**
 		 * \brief Time variable
@@ -63,7 +63,7 @@ namespace Sonar
 	 *
 	 * \return Time value constructed from the amount of seconds
 	 */
-	Time seconds( const float &amount );
+	Time Seconds( const float &amount );
 	
 	/**
 	 * \brief Construct a time value from a number of milliseconds
@@ -72,7 +72,7 @@ namespace Sonar
 	 *
 	 * \return Time value constructed from the amount of milliseconds
 	 */
-	Time milliseconds( const int &amount );
+	Time Milliseconds( const int &amount );
 	
 	/**
 	 * \brief Construct a time value from a number of microseconds
@@ -81,7 +81,7 @@ namespace Sonar
 	 *
 	 * \return Time value constructed from the amount of microseconds
 	 */
-	Time microseconds( const long long &amount );
+	Time Microseconds( const long long &amount );
 	
 	/**
 	 * \brief Overload of == operator to compare two time values

@@ -22,7 +22,7 @@ namespace Sonar
     bool Joystick::HasAxis( const unsigned int &joystick, const Axis &axis )
     { return sf::Joystick::hasAxis( joystick, ( sf::Joystick::Axis )axis ); }
 
-    bool Joystick::IsPressed( const unsigned int &joystick, const unsigned int &button)
+    bool Joystick::IsPressed( const unsigned int &joystick, const unsigned int &button )
     { return sf::Joystick::isButtonPressed( joystick, button ); }
 
     float Joystick::GetAxisPosition( const unsigned int &joystick, const Axis &axis)

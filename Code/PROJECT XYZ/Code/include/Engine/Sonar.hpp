@@ -4,10 +4,12 @@
  * Master Include File
 */
 
+#include "Core/Clock.hpp"
 #include "Core/Debug.hpp"
 #include "Core/Game.hpp"
 #include "Core/State.hpp"
 #include "Core/StateMachine.hpp"
+#include "Core/Time.hpp"
 #include "External/b2GLDraw.h"
 #include "External/glext.h"
 #include "Graphics/Sprite.hpp"

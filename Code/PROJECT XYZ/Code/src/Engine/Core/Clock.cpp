@@ -3,5 +3,8 @@
 namespace Sonar
 {
 	void Clock::Reset( )
-	{ clock.restart( ); }
+	{ _clock.restart( ); }
+	
+	const Time &Clock::GetElapsedTime( ) const
+	{ return Time( _clock.getElapsedTime( ).asMicroseconds( ) ); }
 }

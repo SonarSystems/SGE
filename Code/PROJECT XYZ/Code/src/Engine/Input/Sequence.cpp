@@ -35,22 +35,37 @@ namespace Sonar
     { return _max; }
 
 
-    void Sequence::MousePress( const Mouse::Button &button, const float &amount )
+    void Sequence::MousePress( const Mouse::Button &button, const float &amount, const DIRECTION &direction )
     {
         if ( Mouse::IsPressed( button ) )
-        { TickUp( amount ); }
+        {
+			if ( DIRECTION::UP == direction )
+			{ TickUp( amount ); }
+			else
+			{ TickDown( amount ); }
+		}
     }
 
-    void Sequence::KeyboardPress( const Keyboard::Key &key, const float &amount )
+    void Sequence::KeyboardPress( const Keyboard::Key &key, const float &amount, const DIRECTION &direction )
     {
         if ( Keyboard::IsPressed( key ) )
-        { TickUp( amount ); }
+		{
+			if ( DIRECTION::UP == direction )
+			{ TickUp( amount ); }
+			else
+			{ TickDown( amount ); }
+		}
     }
 
-    void Sequence::JoystickPress( const unsigned int joystickID, const unsigned int &button, const float &amount )
+    void Sequence::JoystickPress( const unsigned int joystickID, const unsigned int &button, const float &amount, const DIRECTION &direction )
     {
         if ( Joystick::IsPressed( joystickID, button ) )
-        { TickUp( amount ); }
+		{
+			if ( DIRECTION::UP == direction )
+			{ TickUp( amount ); }
+			else
+			{ TickDown( amount ); }
+		}
     }
 
     void Sequence::SetCount( const float &count )
@@ -62,9 +77,42 @@ namespace Sonar
     void Sequence::SetMax( const float &max )
     { _max = max; }
 
-    void Sequence::Update( const float &dt )
-    {
-        // IMPLEMENT WITH A TIMER SYSTEM
-        // PROBABLY BEST TO RENAME THE METHOD
-    }
+	const Time &Sequence::KeyboardPressedTimer( const Keyboard::Key &key )
+	{
+		if ( !Keyboard::IsPressed( key ) )
+		{
+			_clock.Reset( );
+			
+			// Return a time of 0 to overcome small time gap between reset and GetElapsedTime return statement
+			return Time( 0 );
+		}
+		
+		return _clock.GetElapsedTime( );
+	}
+	
+	const Time &Sequence::MousePressedTimer( const Mouse::Button &button )
+	{
+		if ( !Mouse::IsPressed( button ) )
+		{
+			_clock.Reset( );
+			
+			// Return a time of 0 to overcome small time gap between reset and GetElapsedTime return statement
+			return Time( 0 );
+		}
+		
+		return _clock.GetElapsedTime( );
+	}
+	
+	const Time &Sequence::JoystickPressedTimer( const unsigned int &joystick, const unsigned int &button )
+	{
+		if ( !Joystick::IsPressed( joystick, button ) )
+		{
+			_clock.Reset( );
+			
+			// Return a time of 0 to overcome small time gap between reset and GetElapsedTime return statement
+			return Time( 0 );
+		}
+		
+		return _clock.GetElapsedTime( );
+	}
 }
