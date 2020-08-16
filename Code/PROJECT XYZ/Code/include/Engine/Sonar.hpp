@@ -22,6 +22,7 @@
 #include "Input/Joystick.hpp"
 #include "Input/Keyboard.hpp"
 #include "Input/Mouse.hpp"
+#include "Input/QTE.hpp"
 #include "Input/Sensor.hpp"
 #include "Input/Sequence.hpp"
 

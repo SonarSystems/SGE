@@ -5,12 +5,15 @@ GAME
 
 ENGINE
 -----------------------------------------------------------------
+* COMMENT SEQUENCE CLASS
 * Input manager - CHECK ALL INPUT
-    - Sequence 1 button press - Figure out tracking it
-        - Amount to reduce every second/millisecond
     - Sequences/QTE (maybe a separate thing)
-    - Time tracked events (press key/chord for x amount of time)
+        - QTE timeout (after x amount of time between presses in the QTE the whole sequence fails)
+            - Ability to track what stage of the QTE the sequence is on
+    - Rapid button tapping (similar to ticking up but needs to go down as well so you need to press it fast)
     - Gestures
+        - Circular rotations on the analogue sticks
+    - Rumble
 * Objects move faster when scrolling aswell
 * Debug
     - Toggle different message categories on and off
@@ -35,11 +38,11 @@ ENGINE
         - Keyboard support
         - Drawing
         - Hover
-        - Textures for buttons 
+        - Textures for buttons
             - Hover
             - Colour masking
     - Labels
-        - Tick up/down to a number from a number over a set duration 
+        - Tick up/down to a number from a number over a set duration
     - Textbox
     - Radio button
     - Checkbox

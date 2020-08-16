@@ -10,16 +10,40 @@
 
 namespace Sonar
 {
+	/**
+	 * \brief enum for tick direction
+	 */
 	enum DIRECTION { UP, DOWN };
 	
     class Sequence
     {
     public:
+		/**
+		 * \brief Class constructor
+		 */
         Sequence( );
+		
+		/**
+		 * \brief Class destructor
+		 */
         ~Sequence( ) { };
         
+		/**
+		 * \brief Tick up the sequence counter
+		 *
+		 * \param amount Interval jump for the counter
+		 * \param canGoOver Can the counter go above its max
+		 *
+		 */
         void TickUp( const float &amount = 1, const bool &canGoOver = false );
         
+		/**
+		 * \brief Tick down the sequence counter
+		 *
+		 * \param amount Interval jump for the counter
+		 * \param canGoOver Can the counter go below its max
+		 *
+		 */
         void TickDown( const float &amount = 1, const bool &canGoUnder = false );
         
         void MousePress( const Mouse::Button &button, const float &amount = 1, const DIRECTION &direction = DIRECTION::UP );
