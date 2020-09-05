@@ -15,6 +15,7 @@ namespace Sonar
 		 */
 		~QTE( );
 		
+	private:
 		
 		
 	};

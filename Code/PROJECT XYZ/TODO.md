@@ -5,7 +5,6 @@ GAME
 
 ENGINE
 -----------------------------------------------------------------
-* COMMENT SEQUENCE CLASS
 * Input manager - CHECK ALL INPUT
     - Sequences/QTE (maybe a separate thing)
         - QTE timeout (after x amount of time between presses in the QTE the whole sequence fails)
