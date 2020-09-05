@@ -35,36 +35,36 @@ namespace Sonar
     { return _max; }
 
 
-    void Sequence::MousePress( const Mouse::Button &button, const float &amount, const DIRECTION &direction )
+    void Sequence::MousePress( const Mouse::Button &button, const float &amount, const DIRECTION &direction, const bool &canGoBeyond )
     {
         if ( Mouse::IsPressed( button ) )
         {
 			if ( DIRECTION::UP == direction )
-			{ TickUp( amount ); }
+			{ TickUp( amount, canGoBeyond ); }
 			else
-			{ TickDown( amount ); }
+			{ TickDown( amount, canGoBeyond ); }
 		}
     }
 
-    void Sequence::KeyboardPress( const Keyboard::Key &key, const float &amount, const DIRECTION &direction )
+    void Sequence::KeyboardPress( const Keyboard::Key &key, const float &amount, const DIRECTION &direction, const bool &canGoBeyond )
     {
         if ( Keyboard::IsPressed( key ) )
 		{
 			if ( DIRECTION::UP == direction )
-			{ TickUp( amount ); }
+			{ TickUp( amount, canGoBeyond ); }
 			else
-			{ TickDown( amount ); }
+			{ TickDown( amount, canGoBeyond ); }
 		}
     }
 
-    void Sequence::JoystickPress( const unsigned int joystickID, const unsigned int &button, const float &amount, const DIRECTION &direction )
+    void Sequence::JoystickPress( const unsigned int joystickID, const unsigned int &button, const float &amount, const DIRECTION &direction, const bool &canGoBeyond )
     {
         if ( Joystick::IsPressed( joystickID, button ) )
 		{
 			if ( DIRECTION::UP == direction )
-			{ TickUp( amount ); }
+			{ TickUp( amount, canGoBeyond ); }
 			else
-			{ TickDown( amount ); }
+			{ TickDown( amount, canGoBeyond ); }
 		}
     }
 
