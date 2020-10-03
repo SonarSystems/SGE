@@ -7,7 +7,9 @@ namespace Sonar
 	SplashState::SplashState( GameDataRef data ) : _data( data )
 	{
         player = new Player( _data );
-        physicsWorld = new PhysicsWorld( _data );        
+        physicsWorld = new PhysicsWorld( _data );
+		
+		qte = new QTE( { Keyboard::Key::B, Keyboard::Key::C, Keyboard::Key::F, Keyboard::Key::Z, Keyboard::Key::Num2,  } );
 	}
 
 	void SplashState::Init( )
@@ -34,9 +36,8 @@ namespace Sonar
 		
 		//std::cout << " has been pressed for: " << seq.MousePressedTimer( Mouse::Button::Left ).AsSeconds( ) << " seconds" << std::endl;
 		
-		seq.KeyboardPress( Keyboard::Key::B, 5 );
 		
-		std::cout << seq.GetCount( ) << std::endl;
+		qte->NextInput( Keyboard::Key::B );
 	}
 
 	void SplashState::Draw( const float &dt )

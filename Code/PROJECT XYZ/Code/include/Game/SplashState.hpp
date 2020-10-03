@@ -29,6 +29,8 @@ namespace Sonar
 		Player *player;
 
         Sequence seq;
+		
+		QTE *qte;
                 
 	};
 }
