@@ -65,3 +65,5 @@ ENGINE
 * AI
     - A star
 * CMAKE (NOT YET)
+* Accessibilty for blind and death people
+    - Built in voice reader
