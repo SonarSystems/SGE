@@ -2,7 +2,7 @@
 
 namespace Sonar
 {
-	QTE::QTE( const std::vector<Keyboard::Key> &list ) : _started( false ), _eventPosition( 0 ), _eventList( list )
+	QTE::QTE( const std::vector<Keyboard::Key> &list, const std::vector<float> &times ) : _started( false ), _eventPosition( 0 ), _eventList( list ), _eventTimeList( times )
 	{ }
 	
 	QTE::~QTE( )
@@ -31,12 +31,27 @@ namespace Sonar
 		{ return false; }
 	}
 	
+	const Clock &QTE::GetClock( ) const
+	{ return _clock; }
+	
 	void QTE::NextInput( const Keyboard::Key &key )
 	{
 		if ( key == _eventList[_eventPosition] )
-		{ _eventPosition++; }
+		{
+			_eventPosition++;
+			_clock.Reset( );
+		}
 	}
 	
 	void QTE::Restart( )
 	{ _eventPosition = 0; }
+	
+	void QTE::Update( )
+	{
+		if ( _clock.GetElapsedTime( ).AsSeconds() >= _eventTimeList[_eventPosition] && _eventTimeList[_eventPosition] > 0 )
+		{
+			Restart( );
+			_clock.Reset( );
+		}
+	}
 }

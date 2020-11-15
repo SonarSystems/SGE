@@ -8,12 +8,12 @@ ENGINE
 * Input manager - CHECK ALL INPUT
     - Sequences/QTE (maybe a separate thing)
         - QTE timeout (after x amount of time between presses in the QTE the whole sequence fails)
-            - Ability to track what stage of the QTE the sequence is on
     - Rapid button tapping (similar to ticking up but needs to go down as well so you need to press it fast)
+        -Use timer
     - Gestures
         - Circular rotations on the analogue sticks
     - Rumble
-* Objects move faster when scrolling aswell
+* Objects move faster when scrolling aswell, bug I believe, check it out
 * Debug
     - Toggle different message categories on and off
         - Use a list/vector of the name of the categories that are disabled to see if the message is to be displayed
@@ -26,7 +26,7 @@ ENGINE
         - Equilateral
         - Vertex based
 * Parallax background
-- Migrate game folder classes to using sprite class
+* Migrate game folder classes to using sprite class
 * File loading
 * Saving and loading (link with file loading)
     - Single pieces of data

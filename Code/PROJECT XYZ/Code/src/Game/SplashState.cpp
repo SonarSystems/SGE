@@ -9,7 +9,7 @@ namespace Sonar
         player = new Player( _data );
         physicsWorld = new PhysicsWorld( _data );
 		
-		qte = new QTE( { Keyboard::Key::B, Keyboard::Key::C, Keyboard::Key::F, Keyboard::Key::Z, Keyboard::Key::Num2,  } );
+		qte = new QTE( { Keyboard::Key::B, Keyboard::Key::C, Keyboard::Key::F, Keyboard::Key::Z, Keyboard::Key::Num2 }, { 2.0, 2.0, 2.0, 2.0, 2.0 } );
 	}
 
 	void SplashState::Init( )
@@ -38,6 +38,8 @@ namespace Sonar
         
         physicsWorld->Update( dt );
 		
+		qte->Update( );
+		
 		//std::cout << " has been pressed for: " << seq.MousePressedTimer( Mouse::Button::Left ).AsSeconds( ) << " seconds" << std::endl;
 		
 		
@@ -45,7 +47,9 @@ namespace Sonar
 		
 		std::cout << "--------------------" << std::endl;
 		
-		std::cout << qte->IsComplete( ) << std::endl;
+		std::cout << "Is Completed: " << qte->IsComplete( ) << std::endl;
+		
+		std::cout << "Timer: " << qte->GetClock( ).GetElapsedTime( ).AsSeconds( ) << std::endl;
 		
 		for ( int i = 0; i < qte->GetEventCount( ); i++ )
 		{

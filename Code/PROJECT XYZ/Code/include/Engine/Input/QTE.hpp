@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Keyboard.hpp"
+#include "Clock.hpp"
 #include <vector>
 #include <iostream>
 
@@ -12,7 +13,7 @@ namespace Sonar
 		/**
 		 * \brief Class constructor
 		 */
-		QTE( const std::vector<Keyboard::Key> &eventList );
+		QTE( const std::vector<Keyboard::Key> &eventList, const std::vector<float> &times );
 		
 		/**
 		 * \brief Class destructor
@@ -62,11 +63,23 @@ namespace Sonar
 		const bool &IsComplete( ) const;
 		
 		/**
+		 * \brief Get the QTE clock
+		 *
+		 * \return Output returns the QTE clock
+		 */
+		const Clock &GetClock( ) const;
+		
+		/**
 		 * \brief Process the next input
 		 *
 		 * \param key input key to check if it is the next input in the QTE
 		 */
 		void NextInput( const Keyboard::Key &key );
+		
+		/**
+		 * \brief Update the QTE
+		 */
+		void Update( );
 		
 		/**
 		 * \brief Restart the QTE (reset event position back to 0)
@@ -79,9 +92,8 @@ namespace Sonar
 		////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		
 		
-				
-		// QTE TIMER (after it runs out the QTE is reset)
 		
+						
 		// QTE TIMER2 (after it runs out the QTE goes back 1 or defined amount - default rollback amount is 1, can be overriden)
 		
 		
@@ -103,7 +115,15 @@ namespace Sonar
 		 */
 		std::vector<Keyboard::Key> _eventList;
 		
+		/**
+		 * \brief List (vector container) of all the individual times of the events in the QTE
+		 */
+		std::vector<float> _eventTimeList;
 		
+		/**
+		 * \brief Clock to track the QTE countdown between events
+		 */
+		Clock _clock;
 		
 	};
 }
