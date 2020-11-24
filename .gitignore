@@ -3,5 +3,5 @@ echo ".DS_Store" >> ~/.gitignore_global
 echo "._.DS_Store" >> ~/.gitignore_global
 echo "**/.DS_Store" >> ~/.gitignore_global
 echo "**/._.DS_Store" >> ~/.gitignore_global
-echo "**/.vs" >> ~/.gitignore_global
+echo "**/.vs"
 git config --global core.excludesfile ~/.gitignore_global

@@ -6,8 +6,6 @@ GAME
 ENGINE
 -----------------------------------------------------------------
 * Input manager - CHECK ALL INPUT
-    - Sequences/QTE (maybe a separate thing)
-        - QTE timeout (after x amount of time between presses in the QTE the whole sequence fails)
     - Rapid button tapping (similar to ticking up but needs to go down as well so you need to press it fast)
         -Use timer
     - Gestures
