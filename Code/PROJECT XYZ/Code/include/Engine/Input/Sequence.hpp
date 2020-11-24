@@ -1,10 +1,10 @@
 #pragma once
 
-#include "Joystick.hpp"
-#include "Keyboard.hpp"
-#include "Mouse.hpp"
-#include "Clock.hpp"
-#include "Debug.hpp"
+#include "Input/Joystick.hpp"
+#include "Input/Keyboard.hpp"
+#include "Input/Mouse.hpp"
+#include "Core/Clock.hpp"
+#include "Core/Debug.hpp"
 
 #include <iostream>
 
@@ -101,21 +101,21 @@ namespace Sonar
 		 *
 		 * \return Output returns the counter
 		 */
-        const float &GetCount( ) const;
+        float GetCount( ) const;
         
 		/**
 		 * \brief Get the min boundary value
 		 *
 		 * \return Output returns the min boundary value
 		 */
-        const float &GetMin( ) const;
+        float GetMin( ) const;
         
 		/**
 		 * \brief Get the max boundary value
 		 *
 		 * \return Output returns the max boundary value
 		 */
-        const float &GetMax( ) const;
+        float GetMax( ) const;
         
 		/**
 		 * \brief Keyboard pressed event timer
@@ -124,7 +124,7 @@ namespace Sonar
 		 *
 		 * \return Output returns the timer total since last reset
 		 */
-		const Time &KeyboardPressedTimer( const Keyboard::Key &key );
+		Time KeyboardPressedTimer( const Keyboard::Key &key );
 		
 		/**
 		 * \brief Mouse pressed event timer
@@ -133,7 +133,7 @@ namespace Sonar
 		 *
 		 * \return Output returns the timer total since last reset
 		 */
-		const Time &MousePressedTimer( const Mouse::Button &button );
+		Time MousePressedTimer( const Mouse::Button &button );
 		
 		/**
 		 * \brief Joystick pressed event timer
@@ -143,7 +143,7 @@ namespace Sonar
 		 *
 		 * \return Output returns the timer total since last reset
 		 */
-		const Time &JoystickPressedTimer( const unsigned int &joystick, const unsigned int &button );
+		Time JoystickPressedTimer( const unsigned int &joystick, const unsigned int &button );
 		
     private:
 		/**

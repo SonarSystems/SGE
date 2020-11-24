@@ -1,4 +1,4 @@
-#include "Color.hpp"
+#include "Graphics/Color.hpp"
 
 namespace Sonar
 {
@@ -111,18 +111,18 @@ namespace Sonar
         _color.a = alpha;
     }
 
-    const sf::Color &Color::GetColor( ) const
+    sf::Color Color::GetColor( ) const
     { return _color; }
     
-    const uint8_t &Color::GetRed( ) const
+    uint8_t Color::GetRed( ) const
     { return _red; }
     
-    const uint8_t &Color::GetGreen( ) const
+    uint8_t Color::GetGreen( ) const
     { return _green; }
     
-    const uint8_t &Color::GetBlue( ) const
+    uint8_t Color::GetBlue( ) const
     { return _blue; }
     
-    const uint8_t &Color::GetAlpha( ) const
+    uint8_t Color::GetAlpha( ) const
     { return _alpha; }
 }

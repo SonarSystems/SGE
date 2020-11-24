@@ -1,5 +1,5 @@
-#include "Game.hpp"
-#include "ENGINEDEFINITIONS.hpp"
+#include "Core/Game.hpp"
+#include "Core/ENGINEDEFINITIONS.hpp"
 
 int main( )
 {

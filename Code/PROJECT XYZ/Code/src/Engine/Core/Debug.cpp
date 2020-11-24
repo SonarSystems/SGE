@@ -1,4 +1,4 @@
-#include "Debug.hpp"
+#include "Core/Debug.hpp"
 
 namespace Sonar
 {

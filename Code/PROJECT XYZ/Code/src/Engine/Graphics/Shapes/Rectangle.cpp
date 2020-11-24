@@ -1,4 +1,4 @@
-#include "Rectangle.hpp"
+#include "Graphics/Shapes/Rectangle.hpp"
 
 namespace Sonar
 {

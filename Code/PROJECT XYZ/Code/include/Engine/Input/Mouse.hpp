@@ -1,7 +1,7 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
-#include <glm/glm.hpp>
+#include <External/glm/glm.hpp>
 
 namespace Sonar
 {
@@ -38,7 +38,7 @@ namespace Sonar
          *
          * \return Output returns true if the button is pressed abd false otherwise
         */
-        static const bool &IsPressed( const Button &button );
+        static bool IsPressed( const Button &button );
         
         /**
          * \brief Get the mouse position relative to the game window
@@ -48,13 +48,13 @@ namespace Sonar
          *
          * \return Output returns the mouse position relative to the game window
          */
-        static const glm::vec2 &GetPosition( const sf::RenderWindow &window, const bool &windowOnly = true );
+        static glm::vec2 GetPosition( const sf::RenderWindow &window, const bool &windowOnly = true );
         /**
          * \brief Get the mouse position relative to the screen
          *
          * \return Output returns the mouse position relative to the screen
         */
-        static const glm::vec2 &GetScreenPosition( );
+        static glm::vec2 GetScreenPosition( );
         
         /**
          * \brief Set the mouse position relative to the screen
@@ -79,7 +79,7 @@ namespace Sonar
          *
          * \return Output returns true if key is pressed and false otherwise
         */
-        static const bool ChordPressed( const std::initializer_list<Button> &buttons );
+        static bool ChordPressed( const std::initializer_list<Button> &buttons );
 
 	};
 }

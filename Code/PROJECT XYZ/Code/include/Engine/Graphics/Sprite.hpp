@@ -2,8 +2,8 @@
 
 #include <SFML/Graphics.hpp>
 #include <string>
-#include <glm/glm.hpp>
-#include "Drawable.hpp"
+#include <External/glm/glm.hpp>
+#include "Graphics/Drawable.hpp"
 
 namespace Sonar
 {

@@ -9,7 +9,7 @@ namespace Sonar
         player = new Player( _data );
         physicsWorld = new PhysicsWorld( _data );
 		
-		qte = new QTE( { Keyboard::Key::B, Keyboard::Key::C, Keyboard::Key::F, Keyboard::Key::Z, Keyboard::Key::Num2 }, { 2.0, 2.0, 2.0, 2.0, 2.0 } );
+		qte = new QTE( { Keyboard::Key::B, Keyboard::Key::C, Keyboard::Key::F, Keyboard::Key::Z, Keyboard::Key::Num2 }, { 1.0, 2.0, 3.0, 4.0, 5.0 }, 2 );
 	}
 
 	void SplashState::Init( )
@@ -47,7 +47,7 @@ namespace Sonar
 		
 		std::cout << "--------------------" << std::endl;
 		
-		std::cout << "Is Completed: " << qte->IsComplete( ) << std::endl;
+		//std::cout << "Is Completed: " << qte->IsComplete( ) << std::endl;
 		
 		std::cout << "Timer: " << qte->GetClock( ).GetElapsedTime( ).AsSeconds( ) << std::endl;
 		
@@ -55,11 +55,11 @@ namespace Sonar
 		{
 			if ( qte->GetEventPosition( ) > i )
 			{
-				std::cout << 1 << std::endl;
+				//std::cout << 1 << std::endl;
 			}
 			else
 			{
-				std::cout << 0 << std::endl;
+				//std::cout << 0 << std::endl;
 			}
 		}
 	}

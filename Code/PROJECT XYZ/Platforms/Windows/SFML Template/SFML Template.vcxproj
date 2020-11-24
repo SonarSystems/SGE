@@ -19,55 +19,88 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\Code\engine\AssetManager.cpp" />
-    <ClCompile Include="..\..\..\Code\engine\b2GLDraw.cpp" />
-    <ClCompile Include="..\..\..\Code\engine\Game.cpp" />
-    <ClCompile Include="..\..\..\Code\engine\InputManager.cpp" />
-    <ClCompile Include="..\..\..\Code\engine\main.cpp" />
-    <ClCompile Include="..\..\..\Code\engine\StateMachine.cpp" />
-    <ClCompile Include="..\..\..\Code\game\SplashState.cpp" />
+    <ClInclude Include="..\..\..\Code\include\Engine\Core\Clock.hpp" />
+    <ClInclude Include="..\..\..\Code\include\Engine\Core\Debug.hpp" />
+    <ClInclude Include="..\..\..\Code\include\Engine\Core\ENGINEDEFINITIONS.hpp" />
+    <ClInclude Include="..\..\..\Code\include\Engine\Core\Game.hpp" />
+    <ClInclude Include="..\..\..\Code\include\Engine\Core\State.hpp" />
+    <ClInclude Include="..\..\..\Code\include\Engine\Core\StateMachine.hpp" />
+    <ClInclude Include="..\..\..\Code\include\Engine\Core\Time.hpp" />
+    <ClInclude Include="..\..\..\Code\include\Engine\External\b2GLDraw.h" />
+    <ClInclude Include="..\..\..\Code\include\Engine\External\glext.h" />
+    <ClInclude Include="..\..\..\Code\include\Engine\Graphics\Color.hpp" />
+    <ClInclude Include="..\..\..\Code\include\Engine\Graphics\Drawable.hpp" />
+    <ClInclude Include="..\..\..\Code\include\Engine\Graphics\Shapes\Rectangle.hpp" />
+    <ClInclude Include="..\..\..\Code\include\Engine\Graphics\Sprite.hpp" />
+    <ClInclude Include="..\..\..\Code\include\Engine\Input\Events.hpp" />
+    <ClInclude Include="..\..\..\Code\include\Engine\Input\Input.hpp" />
+    <ClInclude Include="..\..\..\Code\include\Engine\Input\Joystick.hpp" />
+    <ClInclude Include="..\..\..\Code\include\Engine\Input\Keyboard.hpp" />
+    <ClInclude Include="..\..\..\Code\include\Engine\Input\Mouse.hpp" />
+    <ClInclude Include="..\..\..\Code\include\Engine\Input\QTE.hpp" />
+    <ClInclude Include="..\..\..\Code\include\Engine\Input\Sensor.hpp" />
+    <ClInclude Include="..\..\..\Code\include\Engine\Input\Sequence.hpp" />
+    <ClInclude Include="..\..\..\Code\include\Engine\Managers\AssetManager.hpp" />
+    <ClInclude Include="..\..\..\Code\include\Engine\Sonar.hpp" />
+    <ClInclude Include="..\..\..\Code\include\Game\PhysicsWorld.hpp" />
+    <ClInclude Include="..\..\..\Code\include\Game\Player.hpp" />
+    <ClInclude Include="..\..\..\Code\include\Game\SplashState.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\Code\engine\AssetManager.hpp" />
-    <ClInclude Include="..\..\..\Code\engine\b2GLDraw.h" />
-    <ClInclude Include="..\..\..\Code\engine\ENGINEDEFINITIONS.hpp" />
-    <ClInclude Include="..\..\..\Code\engine\Game.hpp" />
-    <ClInclude Include="..\..\..\Code\engine\glext.h" />
-    <ClInclude Include="..\..\..\Code\engine\InputManager.hpp" />
-    <ClInclude Include="..\..\..\Code\engine\State.hpp" />
-    <ClInclude Include="..\..\..\Code\engine\StateMachine.hpp" />
-    <ClInclude Include="..\..\..\Code\game\SplashState.hpp" />
+    <ClCompile Include="..\..\..\Code\src\Engine\Core\Clock.cpp" />
+    <ClCompile Include="..\..\..\Code\src\Engine\Core\Debug.cpp" />
+    <ClCompile Include="..\..\..\Code\src\Engine\Core\Game.cpp" />
+    <ClCompile Include="..\..\..\Code\src\Engine\Core\StateMachine.cpp" />
+    <ClCompile Include="..\..\..\Code\src\Engine\Core\Time.cpp" />
+    <ClCompile Include="..\..\..\Code\src\Engine\External\b2GLDraw.cpp" />
+    <ClCompile Include="..\..\..\Code\src\Engine\Graphics\Color.cpp" />
+    <ClCompile Include="..\..\..\Code\src\Engine\Graphics\Drawable.cpp" />
+    <ClCompile Include="..\..\..\Code\src\Engine\Graphics\Shapes\Rectangle.cpp" />
+    <ClCompile Include="..\..\..\Code\src\Engine\Graphics\Sprite.cpp" />
+    <ClCompile Include="..\..\..\Code\src\Engine\Input\Events.cpp" />
+    <ClCompile Include="..\..\..\Code\src\Engine\Input\Input.cpp" />
+    <ClCompile Include="..\..\..\Code\src\Engine\Input\Joystick.cpp" />
+    <ClCompile Include="..\..\..\Code\src\Engine\Input\Keyboard.cpp" />
+    <ClCompile Include="..\..\..\Code\src\Engine\Input\Mouse.cpp" />
+    <ClCompile Include="..\..\..\Code\src\Engine\Input\QTE.cpp" />
+    <ClCompile Include="..\..\..\Code\src\Engine\Input\Sensor.cpp" />
+    <ClCompile Include="..\..\..\Code\src\Engine\Input\Sequence.cpp" />
+    <ClCompile Include="..\..\..\Code\src\Engine\main.cpp" />
+    <ClCompile Include="..\..\..\Code\src\Engine\Managers\AssetManager.cpp" />
+    <ClCompile Include="..\..\..\Code\src\Game\PhysicsWorld.cpp" />
+    <ClCompile Include="..\..\..\Code\src\Game\Player.cpp" />
+    <ClCompile Include="..\..\..\Code\src\Game\SplashState.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{A960721E-6826-4F22-9735-A7E885AB2CDD}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>SFMLTemplate</RootNamespace>
-    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -108,7 +141,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)/../../External Libraries/Windows/Box2D/include;$(SolutionDir)/../../External Libraries/Windows/SFML/include;$(SolutionDir)/../../Code/engine;$(SolutionDir)/../../Code/game;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)/../../External Libraries/Windows/Box2D/include;$(SolutionDir)/../../External Libraries/Windows/SFML/include;$(SolutionDir)/../../Code/include/Engine;$(SolutionDir)/../../Code/include/Game;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

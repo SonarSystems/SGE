@@ -2,10 +2,10 @@
 
 #include <SFML/Graphics.hpp>
 #include <string>
-#include <glm/glm.hpp>
+#include <External/glm/glm.hpp>
 #include "Color.hpp"
-#include "Game.hpp"
-#include "Mouse.hpp"
+#include "Core/Game.hpp"
+#include "Input/Mouse.hpp"
 
 namespace Sonar
 {
@@ -44,21 +44,21 @@ namespace Sonar
          *
          * \return Output returns the x position
         */
-        const float &GetPositionX( ) const;
+        float GetPositionX( ) const;
         
         /**
          * \brief Get the y position
          *
          * \return Output returns the y position
         */
-        const float &GetPositionY( ) const;
+        float GetPositionY( ) const;
         
         /**
          * \brief Get the position vector
          *
          * \return Output returns the position vector
         */
-        const glm::vec2 &GetPosition( ) const;
+        glm::vec2 GetPosition( ) const;
         
         /**
          * \brief Set width and height
@@ -87,21 +87,21 @@ namespace Sonar
          *
          * \return Output returns the width
         */
-        const float &GetWidth( ) const;
+        float GetWidth( ) const;
         
         /**
          * \brief Get the height
          *
          * \return Output returns the height
         */
-        const float &GetHeight( ) const;
+        float GetHeight( ) const;
         
         /**
          * \brief Get the size vector
          *
          * \return Output returns the size vector
         */
-        const glm::vec2 &GetSize( ) const;
+        glm::vec2 GetSize( ) const;
         
         /**
          * \brief Set the inside color (fill color)
@@ -133,21 +133,21 @@ namespace Sonar
          *
          * \return Output returns the inside color
         */
-        const Color &GetInsideColor( ) const;
+        Color GetInsideColor( ) const;
         
         /**
          * \brief Get the border color
          *
          * \return Output returns the border color
         */
-        const Color &GetBorderColor( ) const;
+        Color GetBorderColor( ) const;
         
         /**
          * \brief Get the border thickness
          *
          * \return Output returns the border thickness
         */
-        const float &GetBorderThickness( ) const;
+        float GetBorderThickness( ) const;
         
         /**
          * \brief Move the object relative to it's current position in the x and y axis
@@ -178,7 +178,7 @@ namespace Sonar
          *
          * \return Output returns true if the mouse is being clicked over the object and false otherwise
         */
-        const bool &IsClicked( const Mouse::Button &button ) const;
+        bool IsClicked( const Mouse::Button &button ) const;
 		
 		/**
 		 * \brief Check if the object has collided with another using bounding box
@@ -187,7 +187,7 @@ namespace Sonar
 		 *
 		 * \return Output returns true if the objects have collided, false otherwise
 		 */
-		const bool &BoundingBoxCollision( const Drawable &object ) const;
+		bool BoundingBoxCollision( const Drawable &object ) const;
     
     protected:
         /**

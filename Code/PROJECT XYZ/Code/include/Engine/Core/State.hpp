@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Events.hpp"
+#include "Input/Events.hpp"
 
 namespace Sonar
 {

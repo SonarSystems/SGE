@@ -28,7 +28,7 @@ namespace Sonar
 		 *
 		 * \return Output returns the time that elapsed since the last reset or start
 		 */
-		const Time &GetElapsedTime( ) const;
+		 const Time GetElapsedTime( ) const;
 		
 		
 	private:

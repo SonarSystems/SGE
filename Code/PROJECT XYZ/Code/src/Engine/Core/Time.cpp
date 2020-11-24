@@ -1,4 +1,4 @@
-#include "Time.hpp"
+#include "Core/Time.hpp"
 
 namespace Sonar
 {
@@ -8,13 +8,13 @@ namespace Sonar
 	Time::Time( const long long &microseconds ) : _time( microseconds )
 	{ }
 
-	const float &Time::AsSeconds( ) const
+	float Time::AsSeconds( ) const
 	{ return _time / 1000000.f; }
 
-	const int &Time::AsMilliseconds( ) const
+	int Time::AsMilliseconds( ) const
 	{ return static_cast<int>( _time / 1000 ); }
 
-	const long long &Time::AsMicroseconds( ) const
+	long long Time::AsMicroseconds( ) const
 	{ return _time; }
 
 	Time Seconds( const float &amount )

@@ -12,12 +12,12 @@ namespace Sonar
         /**
          * \brief Default class constructor
         */
-		AssetManager( ) { }
+	AssetManager( ) { }
         
         /**
          * \brief Class destructor
         */
-		~AssetManager( ) { }
+	~AssetManager( ) { }
 
         /**
          * \brief Load a texture in the engine for later use
@@ -25,7 +25,7 @@ namespace Sonar
          * \param name Texture name (used to retrieve it)
          * \param fileName Filepath and filename to the texture
         */
-		void LoadTexture( const std::string &name, const std::string &fileName );
+	void LoadTexture( const std::string &name, const std::string &fileName );
         
         /**
          * \brief Get a texture
@@ -34,7 +34,7 @@ namespace Sonar
          *
          * \return Output returns the requested texture
         */
-		const sf::Texture &GetTexture( const std::string &name ) const;
+	sf::Texture GetTexture( const std::string &name ) const;
 
         /**
          * \brief Load a font in the engine for later use
@@ -42,7 +42,7 @@ namespace Sonar
          * \param name Font name (used to retrieve it)
          * \param fileName Filepath and filename to the font
         */
-		void LoadFont( const std::string &name, const std::string &fileName );
+	void LoadFont( const std::string &name, const std::string &fileName );
         
         /**
          * \brief Get a font
@@ -51,7 +51,7 @@ namespace Sonar
          *
          * \return Output returns the requested font
         */
-        const sf::Font &GetFont( const std::string &name ) const;
+        sf::Font GetFont( const std::string &name ) const;
         
         /**
          * \brief Load a sound in the engine for later use
@@ -68,7 +68,7 @@ namespace Sonar
          *
          * \return Output returns the requested sound
         */
-        const sf::Sound &GetSound( const std::string &name ) const;
+        sf::Sound GetSound( const std::string &name ) const;
         
         /**
          * \brief Load a music in the engine for later use
@@ -91,12 +91,12 @@ namespace Sonar
         /**
          * \brief Textures map
         */
-		std::map<std::string, sf::Texture> _textures;
+        std::map<std::string, sf::Texture> _textures;
         
         /**
          * \brief Fonts map
         */
-		std::map<std::string, sf::Font> _fonts;
+        std::map<std::string, sf::Font> _fonts;
         
         /**
          * \brief Sounds map

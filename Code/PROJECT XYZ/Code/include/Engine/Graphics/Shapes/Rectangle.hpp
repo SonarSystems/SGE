@@ -2,9 +2,9 @@
 
 #include <SFML/Graphics.hpp>
 #include <string>
-#include <glm/glm.hpp>
-#include "Drawable.hpp"
-#include "Color.hpp"
+#include <External/glm/glm.hpp>
+#include "Graphics/Drawable.hpp"
+#include "Graphics/Color.hpp"
 
 namespace Sonar
 {
@@ -106,21 +106,21 @@ namespace Sonar
          *
          * \return Output returns the inside color
         */
-        const Color &GetInsideColor( ) const;
+        Color GetInsideColor( ) const;
         
         /**
          * \brief Get the border color
          *
          * \return Output returns the border color
         */
-        const Color &GetBorderColor( ) const;
+        Color GetBorderColor( ) const;
         
         /**
          * \brief Get the border thickness
          *
          * \return Output returns the border thickness
         */
-        const float &GetBorderThickness( ) const;
+        float GetBorderThickness( ) const;
         
         /**
          * \brief Move the object relative to it's current position in the x and y axis

@@ -6,11 +6,11 @@
 #include <Box2D/Box2D.h>
 
 #include "StateMachine.hpp"
-#include "AssetManager.hpp"
-#include "b2GLDraw.h"
-#include "Debug.hpp"
-#include "Events.hpp"
-#include "Color.hpp"
+#include "Managers/AssetManager.hpp"
+#include "External/b2GLDraw.h"
+#include "Core/Debug.hpp"
+#include "Input/Events.hpp"
+#include "Graphics/Color.hpp"
 
 namespace Sonar
 {

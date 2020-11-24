@@ -1,4 +1,4 @@
-#include "Sequence.hpp"
+#include "Input/Sequence.hpp"
 
 namespace Sonar
 {
@@ -25,13 +25,13 @@ namespace Sonar
         { _count = _min; }
     }
 
-    const float &Sequence::GetCount( ) const
+    float Sequence::GetCount( ) const
     { return _count; }
     
-    const float &Sequence::GetMin( ) const
+    float Sequence::GetMin( ) const
     { return _min; }
 
-    const float &Sequence::GetMax( ) const
+    float Sequence::GetMax( ) const
     { return _max; }
 
 
@@ -77,7 +77,7 @@ namespace Sonar
     void Sequence::SetMax( const float &max )
     { _max = max; }
 
-	const Time &Sequence::KeyboardPressedTimer( const Keyboard::Key &key )
+	Time Sequence::KeyboardPressedTimer( const Keyboard::Key &key )
 	{
 		if ( !Keyboard::IsPressed( key ) )
 		{
@@ -90,7 +90,7 @@ namespace Sonar
 		return _clock.GetElapsedTime( );
 	}
 	
-	const Time &Sequence::MousePressedTimer( const Mouse::Button &button )
+	Time Sequence::MousePressedTimer( const Mouse::Button &button )
 	{
 		if ( !Mouse::IsPressed( button ) )
 		{
@@ -103,7 +103,7 @@ namespace Sonar
 		return _clock.GetElapsedTime( );
 	}
 	
-	const Time &Sequence::JoystickPressedTimer( const unsigned int &joystick, const unsigned int &button )
+	Time Sequence::JoystickPressedTimer( const unsigned int &joystick, const unsigned int &button )
 	{
 		if ( !Joystick::IsPressed( joystick, button ) )
 		{

@@ -28,21 +28,21 @@ namespace Sonar
 		 *
 		 * \return Output returns the time as seconds
 		 */
-		const float &AsSeconds( ) const;
+		float AsSeconds( ) const;
 		
 		/**
 		 * \brief Get the time as milliseconds
 		 *
 		 * \return Output returns the time as milliseconds
 		 */
-		const int &AsMilliseconds( ) const;
+		int AsMilliseconds( ) const;
 		
 		/**
 		 * \brief Get the time as microseconds
 		 *
 		 * \return Output returns the time as microseconds
 		 */
-		const long long &AsMicroseconds( ) const;
+		long long AsMicroseconds( ) const;
 		
 	private:
 		friend Time Seconds( const float & );

@@ -1,5 +1,5 @@
 #include <SFML/Graphics.hpp>
-#include "AssetManager.hpp"
+#include "Managers/AssetManager.hpp"
 
 namespace Sonar
 {
@@ -13,7 +13,7 @@ namespace Sonar
 		}
 	}
 
-	const sf::Texture &AssetManager::GetTexture( const std::string &name ) const
+	sf::Texture AssetManager::GetTexture( const std::string &name ) const
 	{
 		return this->_textures.at(name);
 	}
@@ -28,7 +28,7 @@ namespace Sonar
         }
     }
 
-    const sf::Font &AssetManager::GetFont( const std::string &name ) const
+    sf::Font AssetManager::GetFont( const std::string &name ) const
     {
         return this->_fonts.at(name);
     }
@@ -43,7 +43,7 @@ namespace Sonar
         }
     }
 
-    const sf::Sound &AssetManager::GetSound( const std::string &name ) const
+    sf::Sound AssetManager::GetSound( const std::string &name ) const
     {
         static sf::Sound sound;
         
@@ -64,6 +64,6 @@ namespace Sonar
 
     const sf::Music &AssetManager::GetMusic( const std::string &name ) const
     {
-        return this->_musics.at(name);
+        return _musics.at(name);
     }
 }

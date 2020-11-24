@@ -1,57 +1,77 @@
-#include "QTE.hpp"
+#include "Input/QTE.hpp"
 
 namespace Sonar
 {
-	QTE::QTE( const std::vector<Keyboard::Key> &list, const std::vector<float> &times ) : _started( false ), _eventPosition( 0 ), _eventList( list ), _eventTimeList( times )
+	QTE::QTE( const std::vector<Keyboard::Key> &list, const std::vector<float> &times, const int &resetAmount ) : _started( false ), _eventPosition( 0 ), _eventList( list ), _eventTimeList( times ), _resetAmount( resetAmount )
 	{ }
-	
+
 	QTE::~QTE( )
 	{ }
-	
-	const bool &QTE::HasStarted( ) const
+
+	bool QTE::HasStarted( ) const
 	{ return _started; }
-	
-	const int &QTE::GetEventPosition( ) const
+
+	int QTE::GetEventPosition( ) const
 	{ return _eventPosition; }
-	
+
 	void QTE::SetEventPosition( const int &position )
 	{ _eventPosition = position; }
-	
-	const int &QTE::GetEventCount( ) const
+
+	int QTE::GetEventCount( ) const
 	{ return _eventList.size( ); }
-	
-	const std::vector<Keyboard::Key> &QTE::GetEventList( ) const
+
+	std::vector<Keyboard::Key> QTE::GetEventList( ) const
 	{ return _eventList; }
-	
-	const bool &QTE::IsComplete( ) const
+
+	bool QTE::IsComplete( ) const
 	{
 		if ( _eventList.size( ) <= _eventPosition )
 		{ return true; }
 		else
 		{ return false; }
 	}
-	
-	const Clock &QTE::GetClock( ) const
+
+	Clock QTE::GetClock( ) const
 	{ return _clock; }
-	
+
 	void QTE::NextInput( const Keyboard::Key &key )
 	{
-		if ( key == _eventList[_eventPosition] )
+		if ( _eventPosition < _eventList.size( ) )
 		{
-			_eventPosition++;
-			_clock.Reset( );
+			if ( key == _eventList[_eventPosition] )
+			{
+				_eventPosition++;
+				_clock.Reset( );
+			}
 		}
 	}
-	
+
 	void QTE::Restart( )
-	{ _eventPosition = 0; }
-	
+	{
+		if ( 0 == _resetAmount )
+		{ _eventPosition = 0; }
+		else
+		{
+			_eventPosition -= _resetAmount;
+
+			if ( _eventPosition < 0 )
+			{ _eventPosition = 0; }
+		}
+	}
+
 	void QTE::Update( )
 	{
-		if ( _clock.GetElapsedTime( ).AsSeconds() >= _eventTimeList[_eventPosition] && _eventTimeList[_eventPosition] > 0 )
+		std::cout << "Event Size: " << _eventList.size( ) << std::endl;
+
+		if ( _eventPosition < _eventList.size( ) )
 		{
-			Restart( );
-			_clock.Reset( );
+			std::cout << _clock.GetElapsedTime( ).AsSeconds( ) << " : " << _eventTimeList[_eventPosition] << std::endl;
+
+			if ( ( float )_clock.GetElapsedTime( ).AsSeconds( ) >= ( float )_eventTimeList[_eventPosition] && _eventTimeList[_eventPosition] > 0 )
+			{
+				Restart( );
+				_clock.Reset( );
+			}
 		}
 	}
 }

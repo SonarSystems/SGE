@@ -1,4 +1,4 @@
-#include "Joystick.hpp"
+#include "Input/Joystick.hpp"
 
 namespace Sonar
 {

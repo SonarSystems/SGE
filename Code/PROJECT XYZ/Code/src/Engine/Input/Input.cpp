@@ -1,4 +1,4 @@
-#include "Input.hpp"
+#include "Input/Input.hpp"
 
 namespace Sonar
 {

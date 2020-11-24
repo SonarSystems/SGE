@@ -1,11 +1,11 @@
-#include "Mouse.hpp"
+#include "Input/Mouse.hpp"
 
 namespace Sonar
 {
-    const bool &Mouse::IsPressed( const Button &button )
+    bool Mouse::IsPressed( const Button &button )
     { return ( Mouse::Button )sf::Mouse::isButtonPressed( ( sf::Mouse::Button )button ); }
 
-    const glm::vec2 &Mouse::GetPosition( const sf::RenderWindow &window, const bool &windowOnly )
+    glm::vec2 Mouse::GetPosition( const sf::RenderWindow &window, const bool &windowOnly )
 	{
         glm::vec2 position( sf::Mouse::getPosition( window ).x, sf::Mouse::getPosition( window ).y );
         
@@ -23,7 +23,7 @@ namespace Sonar
 		return position;
 	}
 
-    const glm::vec2 &Mouse::GetScreenPosition( )
+    glm::vec2 Mouse::GetScreenPosition( )
     { return glm::vec2( sf::Mouse::getPosition( ).x, sf::Mouse::getPosition( ).y ); }
 
     void Mouse::SetPosition( const float &x, const float &y )
@@ -32,7 +32,7 @@ namespace Sonar
     void Mouse::SetPosition( const float &x, const float &y, const sf::RenderWindow &window )
     { sf::Mouse::setPosition( sf::Vector2i( x, y ), window ); }
 
-    const bool Mouse::ChordPressed( const std::initializer_list<Button> &buttons )
+    bool Mouse::ChordPressed( const std::initializer_list<Button> &buttons )
     {
         bool allButtonsPressed = true;
         

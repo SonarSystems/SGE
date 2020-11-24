@@ -1,4 +1,4 @@
-#include "Sprite.hpp"
+#include "Graphics/Sprite.hpp"
 
 namespace Sonar
 {

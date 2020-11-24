@@ -1,4 +1,4 @@
-#include "Drawable.hpp"
+#include "Graphics/Drawable.hpp"
 
 namespace Sonar
 {
@@ -32,13 +32,13 @@ namespace Sonar
     void Drawable::SetPositionY( const float &y )
     { _position.y = y; }
 
-    const float &Drawable::GetPositionX( ) const
+    float Drawable::GetPositionX( ) const
     { return _position.x; }
 
-    const float &Drawable::GetPositionY( ) const
+    float Drawable::GetPositionY( ) const
     { return _position.y; }
 
-    const glm::vec2 &Drawable::GetPosition( ) const
+    glm::vec2 Drawable::GetPosition( ) const
     { return _position; }
 
     void Drawable::SetSize( const float &width, const float &height )
@@ -53,13 +53,13 @@ namespace Sonar
     void Drawable::SetHeight( const float &height )
     { _size.y = height; }
     
-    const float &Drawable::GetWidth( ) const
+    float Drawable::GetWidth( ) const
     { return _size.x; }
 
-    const float &Drawable::GetHeight( ) const
+    float Drawable::GetHeight( ) const
     { return _size.y; }
 
-    const glm::vec2 &Drawable::GetSize( ) const
+    glm::vec2 Drawable::GetSize( ) const
     { return _size; }
 
     void Drawable::SetInsideColor( const Color &color )
@@ -71,13 +71,13 @@ namespace Sonar
     void Drawable::SetBorderThickness( const float &thickness )
     { _borderThickness = thickness; }
 
-    const Color &Drawable::GetInsideColor( ) const
+    Color Drawable::GetInsideColor( ) const
     { return _color; }
 
-    const Color &Drawable::GetBorderColor( ) const
+    Color Drawable::GetBorderColor( ) const
     { return _borderColor; }
 
-    const float &Drawable::GetBorderThickness( ) const
+    float Drawable::GetBorderThickness( ) const
     { return _borderThickness; }
 
     void Drawable::Move( const float &x, const float &y )
@@ -92,7 +92,7 @@ namespace Sonar
     void Drawable::MoveY( const float &y )
     { _position.y += y; }
 
-    const bool &Drawable::IsClicked( const Mouse::Button &button ) const
+    bool Drawable::IsClicked( const Mouse::Button &button ) const
     {
         if ( sf::Mouse::isButtonPressed( ( sf::Mouse::Button )button ) )
         {
@@ -105,7 +105,7 @@ namespace Sonar
         return false;
     }
 	
-	const bool &Drawable::BoundingBoxCollision( const Drawable &object ) const
+	bool Drawable::BoundingBoxCollision( const Drawable &object ) const
 	{
 		if ( _position.x < object.GetPositionX( ) + object.GetWidth( ) &&
 			_position.x + _size.x > object.GetPositionX( ) &&

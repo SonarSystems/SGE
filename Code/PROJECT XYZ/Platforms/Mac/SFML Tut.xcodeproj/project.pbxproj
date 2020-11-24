@@ -604,6 +604,8 @@
 					"\"${SRCROOT}/../../External Libraries/Mac/SFML/include\"",
 					"\"${SRCROOT}/../../External Libraries/Mac/Box2D/include\"",
 					"\"${SRCROOT}/../../External Libraries/Mac/glm/include\"",
+					"\"${SRCROOT}/../../Code/include/Engine\"",
+					"\"${SRCROOT}/../../Code/include/Game\"",
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -626,6 +628,8 @@
 					"\"${SRCROOT}/../../External Libraries/Mac/SFML/include\"",
 					"\"${SRCROOT}/../../External Libraries/Mac/Box2D/include\"",
 					"\"${SRCROOT}/../../External Libraries/Mac/glm/include\"",
+					"\"${SRCROOT}/../../Code/include/Engine\"",
+					"\"${SRCROOT}/../../Code/include/Game\"",
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

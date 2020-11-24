@@ -1,0 +1,38 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"projectIndex" : 0,
+					"source" : "."
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Project"
+				}
+			],
+			"targets" : []
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/thund/Documents/GitHub/Project-XYZ - Copy (2)/Code/PROJECT XYZ/External Libraries/Windows/Box2D/include/Box2D/out/build/x64-Debug",
+		"source" : "C:/Users/thund/Documents/GitHub/Project-XYZ - Copy (2)/Code/PROJECT XYZ/External Libraries/Windows/Box2D/include/Box2D"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 0
+	}
+}
