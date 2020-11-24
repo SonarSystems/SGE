@@ -2,14 +2,14 @@
 
 namespace Sonar
 {
-	QTE::QTE( const std::vector<Keyboard::Key> &list, const std::vector<float> &times, const int &resetAmount ) : _started( false ), _eventPosition( 0 ), _eventList( list ), _eventTimeList( times ), _resetAmount( resetAmount )
+	QTE::QTE( const std::vector<Keyboard::Key> &list, const std::vector<float> &times, const int &resetAmount ) : _started( false ), _eventPosition( 0 ), _eventList( list ), _eventTimeList( times ), _resetAmount( resetAmount ), _failureCount( 0 )
 	{ }
 
 	QTE::~QTE( )
 	{ }
 
 	bool QTE::HasStarted( ) const
-	{ return _started; }
+	{ return _started; } 
 
 	int QTE::GetEventPosition( ) const
 	{ return _eventPosition; }
@@ -71,7 +71,11 @@ namespace Sonar
 			{
 				Restart( );
 				_clock.Reset( );
+				_failureCount++;
 			}
 		}
 	}
+
+	int QTE::GetFailureCount( ) const
+	{ return _failureCount; }
 }
