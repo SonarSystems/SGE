@@ -64,6 +64,7 @@ ENGINE
 * Alt + F4 to close (make it optional to enable from the developers point of view)
 * AI
     - A star
+* Camera
 * CMAKE (NOT YET)
 * Accessibilty for blind and death people
     - Built in voice reader
