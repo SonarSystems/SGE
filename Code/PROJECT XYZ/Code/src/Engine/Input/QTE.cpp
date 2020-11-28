@@ -42,6 +42,7 @@ namespace Sonar
 			{
 				_eventPosition++;
 				_clock.Reset( );
+				_started = true;
 			}
 		}
 	}
@@ -61,12 +62,8 @@ namespace Sonar
 
 	void QTE::Update( )
 	{
-		std::cout << "Event Size: " << _eventList.size( ) << std::endl;
-
 		if ( _eventPosition < _eventList.size( ) )
 		{
-			std::cout << _clock.GetElapsedTime( ).AsSeconds( ) << " : " << _eventTimeList[_eventPosition] << std::endl;
-
 			if ( ( float )_clock.GetElapsedTime( ).AsSeconds( ) >= ( float )_eventTimeList[_eventPosition] && _eventTimeList[_eventPosition] > 0 )
 			{
 				Restart( );

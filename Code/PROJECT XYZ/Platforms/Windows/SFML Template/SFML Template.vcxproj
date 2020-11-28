@@ -38,6 +38,7 @@
     <ClInclude Include="..\..\..\Code\include\Engine\Input\Keyboard.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\Input\Mouse.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\Input\QTE.hpp" />
+    <ClInclude Include="..\..\..\Code\include\Engine\Input\RBM.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\Input\Sensor.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\Input\Sequence.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\Managers\AssetManager.hpp" />
@@ -63,6 +64,7 @@
     <ClCompile Include="..\..\..\Code\src\Engine\Input\Keyboard.cpp" />
     <ClCompile Include="..\..\..\Code\src\Engine\Input\Mouse.cpp" />
     <ClCompile Include="..\..\..\Code\src\Engine\Input\QTE.cpp" />
+    <ClCompile Include="..\..\..\Code\src\Engine\Input\RBM.cpp" />
     <ClCompile Include="..\..\..\Code\src\Engine\Input\Sensor.cpp" />
     <ClCompile Include="..\..\..\Code\src\Engine\Input\Sequence.cpp" />
     <ClCompile Include="..\..\..\Code\src\Engine\main.cpp" />

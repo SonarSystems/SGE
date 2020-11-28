@@ -8,6 +8,7 @@ ENGINE
 * Input manager - CHECK ALL INPUT
     - Rapid button tapping (similar to ticking up but needs to go down as well so you need to press it fast)
         -Use timer
+    - QTE Mouse and Joystick
     - Gestures
         - Circular rotations on the analogue sticks
     - Rumble
@@ -60,6 +61,7 @@ ENGINE
 * Fog
 * Ray tracing
 * Networking
+* Alt + F4 to close (make it optional to enable from the developers point of view)
 * AI
     - A star
 * CMAKE (NOT YET)

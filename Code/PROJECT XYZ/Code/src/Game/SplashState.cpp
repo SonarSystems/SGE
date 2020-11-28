@@ -28,8 +28,12 @@ namespace Sonar
 		
 		if ( Event::KeyReleased == event.type )
 		{
-			qte->NextInput( event.key.code );
+			//qte->NextInput( event.key.code );
+			
+
 		}
+		
+		seq.KeyboardPress( Keyboard::Key::A, 5, DIRECTION::UP, false );
 	}
 
 	void SplashState::Update( const float &dt )
@@ -40,28 +44,7 @@ namespace Sonar
 		
 		qte->Update( );
 		
-		//std::cout << " has been pressed for: " << seq.MousePressedTimer( Mouse::Button::Left ).AsSeconds( ) << " seconds" << std::endl;
-		
-		
-		//qte->NextInput( Keyboard::Key::C );
-		
-		std::cout << "--------------------" << std::endl;
-		
-		//std::cout << "Is Completed: " << qte->IsComplete( ) << std::endl;
-		
-		std::cout << "Timer: " << qte->GetClock( ).GetElapsedTime( ).AsSeconds( ) << std::endl;
-		
-		for ( int i = 0; i < qte->GetEventCount( ); i++ )
-		{
-			if ( qte->GetEventPosition( ) > i )
-			{
-				//std::cout << 1 << std::endl;
-			}
-			else
-			{
-				//std::cout << 0 << std::endl;
-			}
-		}
+		std::cout << seq.GetCount( ) << std::endl;
 	}
 
 	void SplashState::Draw( const float &dt )

@@ -43,6 +43,16 @@ namespace Sonar
 		 * \param canGoUnder Can the counter go below its max
 		 */
         void TickDown( const float &amount = 1, const bool &canGoUnder = false );
+
+		/**
+		* \brief Tick up/down based on a keyboard press event
+		*
+		* \param key Which key triggers the keyboard press event
+		* \param amount Interval jump for the counter
+		* \param direction Tick up or down
+		* \param canGoBeyond Can the counter go above/below its max/min
+		*/
+		void KeyboardPress( const Keyboard::Key &key, const float &amount = 1, const DIRECTION &direction = DIRECTION::UP, const bool &canGoBeyond = false );
         
 		/**
 		 * \brief Tick up/down based on a mouse press event
@@ -53,16 +63,6 @@ namespace Sonar
 		 * \param canGoBeyond Can the counter go above/below its max/min
 		 */
         void MousePress( const Mouse::Button &button, const float &amount = 1, const DIRECTION &direction = DIRECTION::UP, const bool &canGoBeyond = false );
-        
-		/**
-		 * \brief Tick up/down based on a keyboard press event
-		 *
-		 * \param key Which key triggers the keyboard press event
-		 * \param amount Interval jump for the counter
-		 * \param direction Tick up or down
-		 * \param canGoBeyond Can the counter go above/below its max/min
-		 */
-        void KeyboardPress( const Keyboard::Key &key, const float &amount = 1, const DIRECTION &direction = DIRECTION::UP, const bool &canGoBeyond = false );
         
 		/**
 		 * \brief Tick up/down based on a joystick press event

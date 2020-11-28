@@ -12,7 +12,7 @@ namespace Sonar
     void Sequence::TickUp( const float &amount, const bool &canGoOver )
     {
         _count += amount;
-        
+
         if ( !canGoOver && _count > _max )
         { _count = _max; }
     }
@@ -34,11 +34,10 @@ namespace Sonar
     float Sequence::GetMax( ) const
     { return _max; }
 
-
-    void Sequence::MousePress( const Mouse::Button &button, const float &amount, const DIRECTION &direction, const bool &canGoBeyond )
+	void Sequence::KeyboardPress( const Keyboard::Key &key, const float &amount, const DIRECTION &direction, const bool &canGoBeyond )
     {
-        if ( Mouse::IsPressed( button ) )
-        {
+        if ( Keyboard::IsPressed( key ) )
+		{
 			if ( DIRECTION::UP == direction )
 			{ TickUp( amount, canGoBeyond ); }
 			else
@@ -46,10 +45,10 @@ namespace Sonar
 		}
     }
 
-    void Sequence::KeyboardPress( const Keyboard::Key &key, const float &amount, const DIRECTION &direction, const bool &canGoBeyond )
+    void Sequence::MousePress( const Mouse::Button &button, const float &amount, const DIRECTION &direction, const bool &canGoBeyond )
     {
-        if ( Keyboard::IsPressed( key ) )
-		{
+        if ( Mouse::IsPressed( button ) )
+        {
 			if ( DIRECTION::UP == direction )
 			{ TickUp( amount, canGoBeyond ); }
 			else
