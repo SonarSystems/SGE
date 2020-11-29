@@ -66,6 +66,6 @@ ENGINE
     - A star
 * Camera
 * CMAKE (NOT YET)
-* Accessibilty for blind and death people
+* Accessibilty for blind and deaf people
     - Built in voice reader
     - Built in screen reader

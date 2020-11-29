@@ -30,6 +30,8 @@ namespace Sonar
         Sequence seq;
 		
 		QTE *qte;
+
+		RBM *rapido;
                 
 	};
 }

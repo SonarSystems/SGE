@@ -10,13 +10,10 @@ namespace Sonar
 	class RBM // Rapid Button Masher
 	{
 	public:
-
-		// SONAR: REMOVE KEY, MAKE IT SIMPLE AND ABSTRACT, WHICH EVENT TRIGGERS THE COUNT TO GO UP IS DEPENDENT ON AN EXTERNAL CLASS
-
 		/**
 		* \brief Class constructor
 		*/
-		RBM( const Keyboard::Key &key, const float &threshold, const float &amountToTickUp, const float &tickDownTime, const float &tickDownAmount );
+		RBM( const float &threshold, const float &amountToTickUp, const Time &tickDownTime, const float &tickDownAmount );
 
 		/**
 		* \brief Class destructor
@@ -61,16 +58,23 @@ namespace Sonar
 		*/
 		int GetFailureCount( ) const;
 
+		/**
+		* \brief Tick up the RBM counter
+		*/
+		void TickUp( );
+
+		/**
+		* \brief Get the count of the RBM
+		*
+		* \return Output returns the RBM counter
+		*/
+		float GetCounter( ) const;
+
 	private:
 		/**
 		* \brief Has the RBM begun (has the user pressed the first input)
 		*/
 		bool _started;
-
-		/**
-		* \brief Which key is to be pressed in the RBM
-		*/
-		Keyboard::Key _key;
 
 		/**
 		* \brief Amount to get to in the RBM
@@ -85,7 +89,7 @@ namespace Sonar
 		/**
 		* \brief Period after which the counter goes down
 		*/
-		float _tickDownTime;
+		Time _tickDownTime;
 	
 		/**
 		* \brief Amount for counter to go down
