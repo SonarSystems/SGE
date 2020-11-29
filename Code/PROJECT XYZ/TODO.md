@@ -5,9 +5,9 @@ GAME
 
 ENGINE
 -----------------------------------------------------------------
+* Fix memory leak
+* Implement static methods for timer conversions0
 * Input manager - CHECK ALL INPUT
-    - Rapid button tapping (similar to ticking up but needs to go down as well so you need to press it fast)
-        -Use timer
     - QTE Mouse and Joystick
     - Gestures
         - Circular rotations on the analogue sticks

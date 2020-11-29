@@ -13,7 +13,7 @@ namespace Sonar
 		}
 	}
 
-	sf::Texture AssetManager::GetTexture( const std::string &name ) const
+	const sf::Texture &AssetManager::GetTexture( const std::string &name ) const
 	{
 		return this->_textures.at(name);
 	}

@@ -47,7 +47,7 @@ namespace Sonar
 		
 		qte->Update( );
 		
-		std::cout << rapido->GetCounter( ) << " : " << rapido->GetClock( ).GetElapsedTime( ).AsSeconds( ) << " : " << rapido->IsComplete( ) << std::endl;
+		//std::cout << rapido->GetCounter( ) << " : " << rapido->GetClock( ).GetElapsedTime( ).AsSeconds( ) << " : " << rapido->IsComplete( ) << std::endl;
 
 		rapido->Update( );
 	}
