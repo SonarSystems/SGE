@@ -5,8 +5,6 @@ GAME
 
 ENGINE
 -----------------------------------------------------------------
-* Fix memory leak
-* Implement static methods for timer conversions0
 * Input manager - CHECK ALL INPUT
     - QTE Mouse and Joystick
     - Gestures

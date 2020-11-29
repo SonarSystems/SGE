@@ -28,7 +28,7 @@ namespace Sonar
         }
     }
 
-    sf::Font AssetManager::GetFont( const std::string &name ) const
+    const sf::Font &AssetManager::GetFont( const std::string &name ) const
     {
         return this->_fonts.at(name);
     }
@@ -43,7 +43,7 @@ namespace Sonar
         }
     }
 
-    sf::Sound AssetManager::GetSound( const std::string &name ) const
+    const sf::Sound &AssetManager::GetSound( const std::string &name ) const
     {
         static sf::Sound sound;
         

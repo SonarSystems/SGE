@@ -51,7 +51,7 @@ namespace Sonar
 		 *
 		 * \return Output returns the requested font
 		*/
-		sf::Font GetFont( const std::string &name ) const;
+		const sf::Font &GetFont( const std::string &name ) const;
 
 		/**
 		 * \brief Load a sound in the engine for later use
@@ -68,7 +68,7 @@ namespace Sonar
 		 *
 		 * \return Output returns the requested sound
 		*/
-		sf::Sound GetSound( const std::string &name ) const;
+		const sf::Sound &GetSound( const std::string &name ) const;
 
 		/**
 		 * \brief Load a music in the engine for later use

@@ -37,7 +37,7 @@ namespace Sonar
 		 *
 		 * \return Output returns the time as milliseconds
 		 */
-		int AsMilliseconds( ) const;
+		float AsMilliseconds( ) const;
 		
 		/**
 		 * \brief Get the time as microseconds
@@ -45,10 +45,64 @@ namespace Sonar
 		 * \return Output returns the time as microseconds
 		 */
 		long long AsMicroseconds( ) const;
-		
+
+		/**
+		* \brief Convert seconds to milliseconds
+		*
+		* \param seconds Seconds value to be converted
+		*
+		* \return Output returns the value converted to milliseconds
+		*/
+		static float SecondsToMilliseconds( float seconds );
+
+		/**
+		* \brief Convert seconds to microseconds
+		*
+		* \param seconds Seconds value to be converted
+		*
+		* \return Output returns the value converted to microseconds
+		*/
+		static long long SecondsToMicroseconds( float seconds );
+
+		/**
+		* \brief Convert milliseconds to seconds
+		*
+		* \param milliseconds Milliseconds value to be converted
+		*
+		* \return Output returns the value converted to seconds
+		*/
+		static float MillisecondsToSeconds( float milliseconds );
+
+		/**
+		* \brief Convert milliseconds to microseconds
+		*
+		* \param milliseconds Milliseconds value to be converted
+		*
+		* \return Output returns the value converted to microseconds
+		*/
+		static long long MillisecondsToMicroseconds( float milliseconds );
+
+		/**
+		* \brief Convert microseconds to seconds
+		*
+		* \param microseconds Microseconds value to be converted
+		*
+		* \return Output returns the value converted to seconds
+		*/
+		static float MicrosecondsToSeconds( long long microseconds );
+
+		/**
+		* \brief Convert microseconds to milliseconds
+		*
+		* \param microseconds Microseconds value to be converted
+		*
+		* \return Output returns the value converted to milliseconds
+		*/
+		static float MicrosecondsToMilliseconds( long long microseconds );
+
 	private:
 		friend Time Seconds( const float & );
-		friend Time Milliseconds( const int & );
+		friend Time Milliseconds( const float & );
 		friend Time Microseconds( const long long & );
 		
 		/**
