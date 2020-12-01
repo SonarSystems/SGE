@@ -5,8 +5,6 @@ namespace Sonar
 	class Time
 	{
 	public:
-		// SONAR: Static methods for conversion for each 3 denominations
-
 		/**
 		 * \brief Class constructor
 		 */

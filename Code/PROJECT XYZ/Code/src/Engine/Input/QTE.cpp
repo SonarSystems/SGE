@@ -2,7 +2,13 @@
 
 namespace Sonar
 {
-	QTE::QTE( const std::vector<Keyboard::Key> &list, const std::vector<float> &times, const int &resetAmount ) : _started( false ), _eventPosition( 0 ), _eventList( list ), _eventTimeList( times ), _resetAmount( resetAmount ), _failureCount( 0 )
+	QTE::QTE( const std::vector<Keyboard::Key> &eventList, const std::vector<float> &times, const int &resetAmount ) : _started( false ), _eventPosition( 0 ), _eventListKeyboard( eventList ), _eventTimeList( times ), _resetAmount( resetAmount ), _failureCount( 0 ), _eventCount( eventList.size( ) )
+	{ }
+
+	QTE::QTE( const std::vector<std::array<int, 2>> &eventList, const std::vector<float> &times, const int &resetAmount ) : _started( false ), _eventPosition( 0 ), _eventListJoystick( eventList ), _eventTimeList( times ), _resetAmount( resetAmount ), _failureCount( 0 ), _eventCount( eventList.size( ) )
+	{ }
+
+	QTE::QTE( const std::vector<Mouse::Button> &eventList, const std::vector<float> &times, const int &resetAmount ) : _started( false ), _eventPosition( 0 ), _eventListMouse( eventList ), _eventTimeList( times ), _resetAmount( resetAmount ), _failureCount( 0 ), _eventCount( eventList.size( ) )
 	{ }
 
 	QTE::~QTE( )
@@ -18,14 +24,17 @@ namespace Sonar
 	{ _eventPosition = position; }
 
 	int QTE::GetEventCount( ) const
-	{ return _eventList.size( ); }
+	{ return _eventCount; }
 
-	std::vector<Keyboard::Key> QTE::GetEventList( ) const
-	{ return _eventList; }
+	std::vector<Keyboard::Key> QTE::GetEventListKeyboard( ) const
+	{ return _eventListKeyboard; }
+
+	std::vector<std::array<int, 2>> QTE::GetEventListJoystick( ) const
+	{ return _eventListJoystick; }
 
 	bool QTE::IsComplete( ) const
 	{
-		if ( _eventList.size( ) <= _eventPosition )
+		if ( _eventCount <= _eventPosition )
 		{ return true; }
 		else
 		{ return false; }
@@ -34,11 +43,37 @@ namespace Sonar
 	Clock QTE::GetClock( ) const
 	{ return _clock; }
 
-	void QTE::NextInput( const Keyboard::Key &key )
+	void QTE::NextInputKeyboard( const Keyboard::Key &key )
 	{
-		if ( _eventPosition < _eventList.size( ) )
+		if ( _eventPosition < _eventCount )
 		{
-			if ( key == _eventList[_eventPosition] )
+			if ( key == _eventListKeyboard[_eventPosition] )
+			{
+				_eventPosition++;
+				_clock.Reset( );
+				_started = true;
+			}
+		}
+	}
+
+	void QTE::NextInputJoystick( const unsigned int &joystickID, const unsigned int &joystickButton )
+	{
+		if ( _eventPosition < _eventCount )
+		{
+			if ( joystickID == _eventListJoystick[_eventPosition][0] && joystickButton == _eventListJoystick[_eventPosition][1] )
+			{
+				_eventPosition++;
+				_clock.Reset( );
+				_started = true;
+			}
+		}
+	}
+
+	void QTE::NextInputMouse( const Mouse::Button &button )
+	{
+		if ( _eventPosition < _eventCount )
+		{
+			if ( button == _eventListMouse[_eventPosition] )
 			{
 				_eventPosition++;
 				_clock.Reset( );
@@ -62,7 +97,7 @@ namespace Sonar
 
 	void QTE::Update( )
 	{
-		if ( _eventPosition < _eventList.size( ) )
+		if ( _eventPosition < _eventCount )
 		{
 			if ( ( float )_clock.GetElapsedTime( ).AsSeconds( ) >= ( float )_eventTimeList[_eventPosition] && _eventTimeList[_eventPosition] > 0 )
 			{
@@ -73,6 +108,6 @@ namespace Sonar
 		}
 	}
 
-	int QTE::GetFailureCount( ) const
+	unsigned int QTE::GetFailureCount( ) const
 	{ return _failureCount; }
 }

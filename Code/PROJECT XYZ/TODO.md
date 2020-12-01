@@ -6,10 +6,13 @@ GAME
 ENGINE
 -----------------------------------------------------------------
 * Input manager - CHECK ALL INPUT
-    - QTE Mouse and Joystick
     - Gestures
         - Circular rotations on the analogue sticks
     - Rumble
+    - Pre defined controller types
+        - Xbox
+        - PlayStation
+        - Plus auto detection, look into identification struct in joystick class
 * Objects move faster when scrolling aswell, bug I believe, check it out
 * Debug
     - Toggle different message categories on and off
