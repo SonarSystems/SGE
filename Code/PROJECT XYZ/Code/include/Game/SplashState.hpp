@@ -26,12 +26,6 @@ namespace Sonar
         PhysicsWorld *physicsWorld;
         
 		Player *player;
-
-        Sequence seq;
-		
-		QTE *qte;
-
-		RBM *rapido;
                 
 	};
 }

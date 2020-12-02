@@ -34,7 +34,27 @@ namespace Sonar
             PovX, // The X axis of the point-of-view hat
             PovY  // The Y axis of the point-of-view hat
         };
-        
+
+        /**
+        * \brief Analogue Sticks
+        */
+        enum AnalogueStick
+        {
+            LeftStick,
+            RightStick
+        };
+
+        /**
+        * \brief Gesture Direction
+        */
+        enum Direction
+        {
+            Left,
+            Right,
+            Up,
+            Down
+        };
+
         /**
          * \brief Joystick information
         */
@@ -113,6 +133,7 @@ namespace Sonar
         */
         static bool ChordPressed( const std::initializer_list<std::array<int, 2>> &joystickButtons );
         
-        
+        static bool IsGestureTriggered( const unsigned int &joystickID, const Joystick::AnalogueStick &analogueStick, const Direction &direction );
+
     };
 }

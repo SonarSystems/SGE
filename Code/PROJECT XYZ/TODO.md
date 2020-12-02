@@ -8,6 +8,7 @@ ENGINE
 * Input manager - CHECK ALL INPUT
     - Gestures
         - Circular rotations on the analogue sticks
+    - Deadzone on analogue sticks
     - Rumble
     - Pre defined controller types
         - Xbox

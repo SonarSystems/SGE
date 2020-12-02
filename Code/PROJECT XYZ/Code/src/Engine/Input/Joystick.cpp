@@ -42,4 +42,70 @@ namespace Sonar
         
         return allKeysPressed;
     }
+
+    bool Joystick::IsGestureTriggered( const unsigned int &joystickID, const Joystick::AnalogueStick &analogueStick, const Direction &direction )
+    {
+        if ( AnalogueStick::LeftStick == analogueStick )
+        {
+            if ( Direction::Left == direction )
+            {
+                if ( Joystick::GetAxisPosition( joystickID, Axis::X ) < -90 )
+                { return true; }
+                else
+                { return false; }
+            }
+            else if ( Direction::Right == direction )
+            {
+                if ( Joystick::GetAxisPosition( joystickID, Axis::X ) > 90 )
+                { return true; }
+                else
+                { return false; }
+            }
+            else if ( Direction::Up == direction )
+            {
+                if ( Joystick::GetAxisPosition( joystickID, Axis::Y ) < -90 )
+                { return true; }
+                else
+                { return false; }
+            }
+            else if ( Direction::Down == direction )
+            {
+                if ( Joystick::GetAxisPosition( joystickID, Axis::Y ) > 90 )
+                { return true; }
+                else
+                { return false; }
+            }
+        }
+        else if ( AnalogueStick::RightStick == analogueStick )
+        {
+            if ( Direction::Left == direction )
+            {
+                if ( Joystick::GetAxisPosition( joystickID, Axis::U ) < -90 )
+                { return true; }
+                else
+                { return false; }
+            }
+            else if ( Direction::Right == direction )
+            {
+                if ( Joystick::GetAxisPosition( joystickID, Axis::U ) > 90 )
+                { return true; }
+                else
+                { return false; }
+            }
+            else if ( Direction::Up == direction )
+            {
+                if ( Joystick::GetAxisPosition( joystickID, Axis::R ) < -90 )
+                { return true; }
+                else
+                { return false; }
+            }
+            else if ( Direction::Down == direction )
+            {
+                if ( Joystick::GetAxisPosition( joystickID, Axis::R ) > 90 )
+                { return true; }
+                else
+                { return false; }
+            }
+        }
+    }
 }

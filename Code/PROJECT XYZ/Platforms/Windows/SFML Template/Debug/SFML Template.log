@@ -1,20 +1,4 @@
-﻿  Clock.cpp
-  Game.cpp
-  Time.cpp
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Core\Time.cpp(33,19): warning C4244: 'return': conversion from 'float' to '__int64', possible loss of data
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Core\Time.cpp(39,24): warning C4244: 'return': conversion from 'float' to '__int64', possible loss of data
-  QTE.cpp
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\QTE.cpp(37,20): warning C4018: '<=': signed/unsigned mismatch
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\QTE.cpp(48,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\QTE.cpp(61,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\QTE.cpp(74,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\QTE.cpp(100,23): warning C4018: '<': signed/unsigned mismatch
-  RBM.cpp
-  Sequence.cpp
-  PhysicsWorld.cpp
-  Player.cpp
-  SplashState.cpp
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(33,84): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(33,63): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
-  Generating Code...
+﻿  SplashState.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(26,84): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(26,63): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
   SFML Template.vcxproj -> C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\SFML Template.exe
