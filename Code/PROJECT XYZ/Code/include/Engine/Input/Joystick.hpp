@@ -52,7 +52,11 @@ namespace Sonar
             Left,
             Right,
             Up,
-            Down
+            Down,
+            LeftUp,
+            RightUp,
+            LeftDown,
+            RightDown
         };
 
         /**

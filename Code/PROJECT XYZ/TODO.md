@@ -26,6 +26,8 @@ ENGINE
     - Triangle
         - Equilateral
         - Vertex based
+* Physics
+    - pixel perfect collision
 * Parallax background
 * Migrate game folder classes to using sprite class
 * File loading
