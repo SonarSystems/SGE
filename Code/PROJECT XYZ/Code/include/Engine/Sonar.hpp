@@ -18,6 +18,7 @@
 #include "Graphics/Shapes/Rectangle.hpp"
 #include "Managers/AssetManager.hpp"
 #include "Input/Events.hpp"
+#include "Input/Gesture.hpp"
 #include "Input/Input.hpp"
 #include "Input/Joystick.hpp"
 #include "Input/Keyboard.hpp"

@@ -26,14 +26,8 @@ namespace Sonar
         PhysicsWorld *physicsWorld;
         
 		Player *player;
-
-		Clock clock;
-
-		bool isMoving;
-
-		bool canCheckRotation;
-
-		bool check1, check2, check3;
                 
+		Gesture gesture;
+
 	};
 }

@@ -137,6 +137,15 @@ namespace Sonar
         */
         static bool ChordPressed( const std::initializer_list<std::array<int, 2>> &joystickButtons );
         
+        /**
+        * \brief Check if a basic gesture is triggered in a single direction
+        *
+        * \param joystickID ID of the joystick to be checked
+        * \param analogueStick The analogue stick to be checked
+        * \param direction Which direction/gesture is being checked
+        *
+        * \return Output returns true if all buttons on all joysticks are pressed, false if not
+        */
         static bool IsGestureTriggered( const unsigned int &joystickID, const Joystick::AnalogueStick &analogueStick, const Direction &direction );
 
     };

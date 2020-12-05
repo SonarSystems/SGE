@@ -10,6 +10,7 @@ ENGINE
         - Circular rotations on the analogue sticks
     - Deadzone on analogue sticks
     - Rumble
+    - Motion (Wii, PS3+)
     - Pre defined controller types
         - Xbox
         - PlayStation

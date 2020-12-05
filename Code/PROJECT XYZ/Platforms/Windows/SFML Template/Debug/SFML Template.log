@@ -1,4 +1,17 @@
-﻿  SplashState.cpp
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(30,84): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(30,63): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
-  SFML Template.vcxproj -> C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\SFML Template.exe
+﻿  Game.cpp
+  Gesture.cpp
+  PhysicsWorld.cpp
+  Player.cpp
+  SplashState.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(26,84): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(26,63): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
+  Generating Code...
+Gesture.obj : error LNK2005: "struct Sonar::G Sonar::LeftClockwiseUp" (?LeftClockwiseUp@Sonar@@3UG@1@A) already defined in Game.obj
+Gesture.obj : error LNK2005: "struct Sonar::G Sonar::RightCounterClockwiseUp" (?RightCounterClockwiseUp@Sonar@@3UG@1@A) already defined in Game.obj
+PhysicsWorld.obj : error LNK2005: "struct Sonar::G Sonar::LeftClockwiseUp" (?LeftClockwiseUp@Sonar@@3UG@1@A) already defined in Game.obj
+PhysicsWorld.obj : error LNK2005: "struct Sonar::G Sonar::RightCounterClockwiseUp" (?RightCounterClockwiseUp@Sonar@@3UG@1@A) already defined in Game.obj
+Player.obj : error LNK2005: "struct Sonar::G Sonar::LeftClockwiseUp" (?LeftClockwiseUp@Sonar@@3UG@1@A) already defined in Game.obj
+Player.obj : error LNK2005: "struct Sonar::G Sonar::RightCounterClockwiseUp" (?RightCounterClockwiseUp@Sonar@@3UG@1@A) already defined in Game.obj
+SplashState.obj : error LNK2005: "struct Sonar::G Sonar::LeftClockwiseUp" (?LeftClockwiseUp@Sonar@@3UG@1@A) already defined in Game.obj
+SplashState.obj : error LNK2005: "struct Sonar::G Sonar::RightCounterClockwiseUp" (?RightCounterClockwiseUp@Sonar@@3UG@1@A) already defined in Game.obj
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\SFML Template.exe : fatal error LNK1169: one or more multiply defined symbols found
