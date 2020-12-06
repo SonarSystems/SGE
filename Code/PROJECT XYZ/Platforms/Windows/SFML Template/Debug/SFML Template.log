@@ -1,17 +1,37 @@
-﻿  Game.cpp
-  Gesture.cpp
-  PhysicsWorld.cpp
-  Player.cpp
-  SplashState.cpp
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(26,84): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(26,63): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
-  Generating Code...
-Gesture.obj : error LNK2005: "struct Sonar::G Sonar::LeftClockwiseUp" (?LeftClockwiseUp@Sonar@@3UG@1@A) already defined in Game.obj
-Gesture.obj : error LNK2005: "struct Sonar::G Sonar::RightCounterClockwiseUp" (?RightCounterClockwiseUp@Sonar@@3UG@1@A) already defined in Game.obj
-PhysicsWorld.obj : error LNK2005: "struct Sonar::G Sonar::LeftClockwiseUp" (?LeftClockwiseUp@Sonar@@3UG@1@A) already defined in Game.obj
-PhysicsWorld.obj : error LNK2005: "struct Sonar::G Sonar::RightCounterClockwiseUp" (?RightCounterClockwiseUp@Sonar@@3UG@1@A) already defined in Game.obj
-Player.obj : error LNK2005: "struct Sonar::G Sonar::LeftClockwiseUp" (?LeftClockwiseUp@Sonar@@3UG@1@A) already defined in Game.obj
-Player.obj : error LNK2005: "struct Sonar::G Sonar::RightCounterClockwiseUp" (?RightCounterClockwiseUp@Sonar@@3UG@1@A) already defined in Game.obj
-SplashState.obj : error LNK2005: "struct Sonar::G Sonar::LeftClockwiseUp" (?LeftClockwiseUp@Sonar@@3UG@1@A) already defined in Game.obj
-SplashState.obj : error LNK2005: "struct Sonar::G Sonar::RightCounterClockwiseUp" (?RightCounterClockwiseUp@Sonar@@3UG@1@A) already defined in Game.obj
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\SFML Template.exe : fatal error LNK1169: one or more multiply defined symbols found
+﻿  Gesture.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(16,5): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(25,5): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(34,5): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(43,5): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(147,18): warning C4018: '>=': signed/unsigned mismatch
+D:\Software\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\utility(151,16): warning C4244: 'initializing': conversion from '_Ty' to '_Ty1', possible loss of data
+          with
+          [
+              _Ty=int
+          ]
+          and
+          [
+              _Ty1=float
+          ]
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(16): message : see reference to function template instantiation 'std::pair<float,float>::pair<int,int,0>(_Other1 &&,_Other2 &&) noexcept' being compiled
+          with
+          [
+              _Other1=int,
+              _Other2=int
+          ]
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(9): message : see reference to function template instantiation 'std::pair<float,float>::pair<int,int,0>(_Other1 &&,_Other2 &&) noexcept' being compiled
+          with
+          [
+              _Other1=int,
+              _Other2=int
+          ]
+D:\Software\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\utility(151,1): warning C4244: 'initializing': conversion from '_Ty' to '_Ty2', possible loss of data
+          with
+          [
+              _Ty=int
+          ]
+          and
+          [
+              _Ty2=float
+          ]
+  SFML Template.vcxproj -> C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\SFML Template.exe

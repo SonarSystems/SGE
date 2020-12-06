@@ -6,7 +6,7 @@
 
 namespace Sonar
 {
-	struct G
+	/*struct GesturePattern
 	{
 		int pos1[3];
 		int pos2[3];
@@ -16,16 +16,34 @@ namespace Sonar
 		int reset[1];
 		
 		float time;
-	} LeftClockwiseUp, RightCounterClockwiseUp;
+	};*/
 
-	//static int pos1[3] = { -50, -20, 20 };
-	//static int pos2[3] = { -90, -20, 20 };
-	//static int pos3[2] = { -45, -45 };
-	//static int pos4[2] = { -10, -90 };
+	enum Direction
+	{
+		 Left,
+		 Right,
+		 Up,
+		 Down,
+		 NONE
+	};
 
-	//static int reset[1] = { -10 };
+	struct GestureStep
+	{
+		std::pair<float, float> xMinMax;
+		std::pair<float, float> yMinMax;
 
-	//static float time = 0.1f;
+		Direction xDirection;
+		Direction yDirection;
+
+		float timeToFinish = 0;
+	};
+
+	struct GesturePattern
+	{
+		std::vector<GestureStep> steps;
+
+		std::pair<float, float> resetXY;
+	};
 
 	class Gesture
 	{
@@ -48,6 +66,10 @@ namespace Sonar
 		bool isMoving;
 
 		bool canCheckRotation;
+
+		GesturePattern LeftClockwiseUp;
+
+		
 
 	};
 }
