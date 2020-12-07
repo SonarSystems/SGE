@@ -27,7 +27,7 @@ namespace Sonar
         
 		Player *player;
                 
-		Gesture gesture;
+		Gesture *gesture;
 
 	};
 }

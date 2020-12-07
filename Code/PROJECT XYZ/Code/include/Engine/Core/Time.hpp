@@ -19,7 +19,6 @@ namespace Sonar
 		 * \brief Construct from a number of microseconds
 		 *
 		 * \param microseconds Number of microseconds
-		 *
 		 */
 		explicit Time( const long long &microseconds );
 		

@@ -6,27 +6,18 @@
 
 namespace Sonar
 {
-	/*struct GesturePattern
-	{
-		int pos1[3];
-		int pos2[3];
-		int pos3[2];
-		int pos4[2];
-		
-		int reset[1];
-		
-		float time;
-	};*/
-
 	enum Direction
 	{
-		 Left,
-		 Right,
-		 Up,
-		 Down,
-		 NONE
+		Left,
+		Right,
+		Up,
+		Down,
+		NONE
 	};
 
+	/**
+	* \brief Individual gesture step
+	*/
 	struct GestureStep
 	{
 		std::pair<float, float> xMinMax;
@@ -38,6 +29,9 @@ namespace Sonar
 		float timeToFinish = 0;
 	};
 
+	/**
+	* \brief Gesture sequence with all steps and reset
+	*/
 	struct GesturePattern
 	{
 		std::vector<GestureStep> steps;
@@ -51,25 +45,57 @@ namespace Sonar
 		/**
 		* \brief Class constructor
 		*/
-		Gesture( );
+		Gesture( const int &joystickID );
 
 		/**
 		* \brief Class destructor
 		*/
 		~Gesture( );
 
+		/**
+		* \brief Update the gesture
+		*/
 		void Update( );
 
+		/**
+		* \brief Checks if the gesture is complete
+		*
+		* \return Output returns the status of the gesture
+		*/
+		bool IsComplete( );
+
+		/**
+		* \brief Reset the Gesture
+		*/
+		void Reset( );
+
 	private:
-		Clock clock;
+		/**
+		* \brief Keeps track of the time between steps
+		*/
+		Clock _clock;
 
-		bool isMoving;
+		/**
+		* \brief Is the device moving or not
+		*/
+		bool _isMoving;
 
-		bool canCheckRotation;
+		/**
+		* \brief Is the gesture complete
+		*/
+		bool _isComplete;
+
+		/**
+		* \brief What stage of the gesture is currently active
+		*/
+		int _loopCounter;
+
+		/**
+		* \brief ID of the joystick to be checked
+		*/
+		int _joystickID;
 
 		GesturePattern LeftClockwiseUp;
-
-		
 
 	};
 }

@@ -8,8 +8,8 @@ ENGINE
 * Input manager - CHECK ALL INPUT
     - Gestures
         - Circular rotations on the analogue sticks
-        - Update gesture class for all joysticks (pass in joystick id into the constructor)
         - Update gesture class for all different analogue sticks, again pass into the constructor
+        - Implement all remaining gestures
     - Deadzone on analogue sticks
     - Rumble
     - Motion (Wii, PS3+)

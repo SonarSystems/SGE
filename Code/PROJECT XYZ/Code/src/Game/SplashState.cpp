@@ -8,6 +8,7 @@ namespace Sonar
 	{
         player = new Player( _data );
         physicsWorld = new PhysicsWorld( _data );
+		gesture = new Gesture( 1 );
 		
 		std::cout << Joystick::IsConnected( 1 ) << std::endl;
 	}
@@ -33,10 +34,7 @@ namespace Sonar
         
         physicsWorld->Update( dt );
 
-
-			
-
-		gesture.Update( );
+		gesture->Update( );
 	}
 
 	void SplashState::Draw( const float &dt )
