@@ -8,7 +8,7 @@ namespace Sonar
 	{
         player = new Player( _data );
         physicsWorld = new PhysicsWorld( _data );
-		gesture = new Gesture( 1 );
+		gesture = new Gesture( 1, AnalogueStick::RightStick );
 		
 		std::cout << Joystick::IsConnected( 1 ) << std::endl;
 	}
@@ -35,6 +35,10 @@ namespace Sonar
         physicsWorld->Update( dt );
 
 		gesture->Update( );
+
+		//std::cout << Joystick::GetAxisPosition( 1, Joystick::Axis::R ) << " :: " << Joystick::GetAxisPosition( 1, Joystick::Axis::U ) << std::endl;
+
+		//std::cout << gesture->IsComplete( ) << std::endl;
 	}
 
 	void SplashState::Draw( const float &dt )
@@ -43,6 +47,4 @@ namespace Sonar
         
         physicsWorld->Draw( dt );
 	}
-
-    
 }

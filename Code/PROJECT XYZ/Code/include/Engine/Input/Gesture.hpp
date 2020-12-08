@@ -6,6 +6,18 @@
 
 namespace Sonar
 {
+	/**
+	* \brief Analogue Sticks
+	*/
+	enum AnalogueStick
+	{
+		LeftStick,
+		RightStick
+	};
+
+	/**
+	* \brief Analogue Stick Direction
+	*/
 	enum Direction
 	{
 		Left,
@@ -45,7 +57,7 @@ namespace Sonar
 		/**
 		* \brief Class constructor
 		*/
-		Gesture( const int &joystickID );
+		Gesture( const int &joystickID, const AnalogueStick &analogueStick );
 
 		/**
 		* \brief Class destructor
@@ -68,6 +80,34 @@ namespace Sonar
 		* \brief Reset the Gesture
 		*/
 		void Reset( );
+
+		/**
+		* \brief Set the analogue stick
+		*
+		* \param analogueStick Analogue stick for gesture
+		*/
+		void SetAnalogueStick( const AnalogueStick &analogueStick );
+
+		/**
+		* \brief Get the current analogue stick
+		*
+		* \return Output returns the gesture's analogue stick
+		*/
+		AnalogueStick GetAnalogueStick( ) const;
+
+		/**
+		* \brief Set the joysticks ID
+		*
+		* \param analogueStick Analogue stick for gesture
+		*/
+		void SetJoystickID( const int &joystickID );
+
+		/**
+		* \brief Get the ID of the current joystick
+		*
+		* \return Output returns the joystick ID
+		*/
+		int GetJoystickID( ) const;
 
 	private:
 		/**
@@ -94,6 +134,21 @@ namespace Sonar
 		* \brief ID of the joystick to be checked
 		*/
 		int _joystickID;
+
+		/**
+		* \brief X axis of the joystick
+		*/
+		Joystick::Axis _xAxis;
+
+		/**
+		* \brief Y axis of the joystick
+		*/
+		Joystick::Axis _yAxis;
+
+		/**
+		* \brief Analogue stick to check gesture with
+		*/
+		AnalogueStick _analogueStick;
 
 		GesturePattern LeftClockwiseUp;
 

@@ -2,12 +2,14 @@
 
 namespace Sonar
 {
-	Gesture::Gesture( const int &joystickID ) : _joystickID( joystickID )
+	Gesture::Gesture( const int &joystickID, const AnalogueStick &analogueStick ) : _joystickID( joystickID )
 	{
 		_loopCounter = 0;
 
 		_isComplete = false;
 		_isMoving = false;
+
+		SetAnalogueStick( analogueStick );
 
 		LeftClockwiseUp.steps.push_back(
 		{
@@ -33,7 +35,7 @@ namespace Sonar
 			{ -45, -45 },
 			Direction::Right,
 			Direction::Up,
-			{ 0.2 }
+			{ 0.45 }
 		} );
 
 		LeftClockwiseUp.steps.push_back(
@@ -42,7 +44,7 @@ namespace Sonar
 			{ -90, -90 },
 			Direction::Right,
 			Direction::Up,
-			{ 0.2 }
+			{ 0.45 }
 		} );
 
 		LeftClockwiseUp.resetXY = { -5, -5 };
@@ -74,13 +76,13 @@ namespace Sonar
 
 				if ( Direction::Left == step.xDirection )
 				{
-					xLeftValue = Joystick::GetAxisPosition( _joystickID, Joystick::Axis::X );
+					xLeftValue = Joystick::GetAxisPosition( _joystickID, _xAxis );
 					xRightValue = step.xMinMax.first;
 				}
 				else if ( Direction::Right == step.xDirection )
 				{
 					xLeftValue = step.xMinMax.first;
-					xRightValue = Joystick::GetAxisPosition( _joystickID, Joystick::Axis::X );
+					xRightValue = Joystick::GetAxisPosition( _joystickID, _xAxis );
 				}
 
 				if ( xLeftValue < xRightValue )
@@ -88,9 +90,11 @@ namespace Sonar
 			}
 			else
 			{
-				if ( Joystick::GetAxisPosition( _joystickID, Joystick::Axis::X ) > step.xMinMax.first
-					&& Joystick::GetAxisPosition( _joystickID, Joystick::Axis::X ) < step.xMinMax.second )
-				{ xValid = true; }
+				if ( Joystick::GetAxisPosition( _joystickID, _xAxis ) > step.xMinMax.first
+					&& Joystick::GetAxisPosition( _joystickID, _xAxis ) < step.xMinMax.second )
+				{
+					xValid = true;
+				}
 			}
 
 			if ( Direction::NONE != step.yDirection )
@@ -100,13 +104,13 @@ namespace Sonar
 
 				if ( Direction::Up == step.yDirection )
 				{
-					yLeftValue = Joystick::GetAxisPosition( _joystickID, Joystick::Axis::Y );
+					yLeftValue = Joystick::GetAxisPosition( _joystickID, _yAxis );
 					yRightValue = step.yMinMax.first;
 				}
 				else if ( Direction::Down == step.yDirection )
 				{
 					yLeftValue = step.yMinMax.first;
-					yRightValue = Joystick::GetAxisPosition( _joystickID, Joystick::Axis::Y );
+					yRightValue = Joystick::GetAxisPosition( _joystickID, _yAxis );
 				}
 
 				if ( yLeftValue < yRightValue )
@@ -114,16 +118,20 @@ namespace Sonar
 			}
 			else
 			{
-				if ( Joystick::GetAxisPosition( _joystickID, Joystick::Axis::Y ) > step.yMinMax.first
-					&& Joystick::GetAxisPosition( _joystickID, Joystick::Axis::Y ) < step.yMinMax.second )
-				{ yValid = true; }
+				if ( Joystick::GetAxisPosition( _joystickID, _yAxis ) > step.yMinMax.first
+					&& Joystick::GetAxisPosition( _joystickID, _yAxis ) < step.yMinMax.second )
+				{
+					yValid = true;
+				}
 			}
 
 			if ( _clock.GetElapsedTime( ).AsSeconds( ) < step.timeToFinish )
-			{ timeValid = true;  }
+			{ timeValid = true; }
 
 			if ( xValid && yValid && timeValid )
 			{
+				std::cout << _loopCounter << std::endl;
+
 				_clock.Reset( );
 
 				_loopCounter++;
@@ -131,7 +139,7 @@ namespace Sonar
 				if ( _loopCounter >= LeftClockwiseUp.steps.size( ) )
 				{ _isComplete = true; }
 			}
-			else if ( Joystick::GetAxisPosition( _joystickID, Joystick::Axis::X ) > LeftClockwiseUp.resetXY.first )
+			else if ( Joystick::GetAxisPosition( _joystickID, _xAxis ) > LeftClockwiseUp.resetXY.first )
 			{ _isMoving = false; }
 		}
 		else
@@ -148,4 +156,29 @@ namespace Sonar
 		_isComplete = false;
 		_isMoving = false;
 	}
+
+	void Gesture::SetAnalogueStick( const AnalogueStick &analogueStick )
+	{
+		_analogueStick = analogueStick;
+
+		if ( AnalogueStick::LeftStick == _analogueStick )
+		{
+			_xAxis = Joystick::Axis::X;
+			_yAxis = Joystick::Axis::Y;
+		}
+		else if ( AnalogueStick::RightStick == _analogueStick )
+		{
+			_xAxis = Joystick::Axis::U;
+			_yAxis = Joystick::Axis::R;
+		}
+	}
+
+	AnalogueStick Gesture::GetAnalogueStick( ) const
+	{ return _analogueStick; }
+
+	void Gesture::SetJoystickID( const int &joystickID )
+	{ _joystickID = joystickID; }
+
+	int Gesture::GetJoystickID( ) const
+	{ return _joystickID; }
 }

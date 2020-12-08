@@ -8,11 +8,12 @@ ENGINE
 * Input manager - CHECK ALL INPUT
     - Gestures
         - Circular rotations on the analogue sticks
-        - Update gesture class for all different analogue sticks, again pass into the constructor
+        - Test for playstation controller, PS3, PS4, PS5
         - Implement all remaining gestures
     - Deadzone on analogue sticks
     - Rumble
     - Motion (Wii, PS3+)
+    - Auto detection of all available joysticks/controllers and identify them
     - Pre defined controller types
         - Xbox
         - PlayStation
