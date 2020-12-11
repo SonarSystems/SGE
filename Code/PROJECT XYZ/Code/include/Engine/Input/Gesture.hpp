@@ -28,6 +28,26 @@ namespace Sonar
 	};
 
 	/**
+	* \brief Logical Comparison Direction
+	*/
+	enum ComparisonDirection
+	{
+		LessThan,
+		GreaterThan
+	};
+
+	/**
+	* \brief Patterns for the Gesture
+	*/
+	enum Pattern
+	{
+		LeftClockwiseUp,
+		LeftCounterClockwiseDown,
+		RightCounterClockwiseUp,
+		RightClockwiseDown
+	};
+
+	/**
 	* \brief Individual gesture step
 	*/
 	struct GestureStep
@@ -48,7 +68,9 @@ namespace Sonar
 	{
 		std::vector<GestureStep> steps;
 
-		std::pair<float, float> resetXY;
+		float resetPos;
+
+		Pattern pattern;
 	};
 
 	class Gesture
@@ -57,7 +79,7 @@ namespace Sonar
 		/**
 		* \brief Class constructor
 		*/
-		Gesture( const int &joystickID, const AnalogueStick &analogueStick );
+		Gesture( const int &joystickID, const AnalogueStick &analogueStick, const Pattern &pattern );
 
 		/**
 		* \brief Class destructor
@@ -109,7 +131,23 @@ namespace Sonar
 		*/
 		int GetJoystickID( ) const;
 
+		/**
+		* \brief Set the gesture pattern
+		*
+		* \param pattern Gesture pattern to be used
+		*/
+		void SetPattern( const Pattern &pattern );
+
+		/**
+		* \brief Get the gesture pattern
+		*
+		* \return Output returns the gesture pattern
+		*/
+		Pattern GetPattern( ) const;
+
 	private:
+		void SetResetAxis( );
+
 		/**
 		* \brief Keeps track of the time between steps
 		*/
@@ -150,7 +188,20 @@ namespace Sonar
 		*/
 		AnalogueStick _analogueStick;
 
-		GesturePattern LeftClockwiseUp;
+		/**
+		* \brief Gesture pattern to be checked
+		*/
+		GesturePattern _gesturePattern;
+
+		/**
+		* \brief Reset axis to check
+		*/
+		Joystick::Axis _resetAxis;
+
+		/**
+		* \brief Comparison direction for the reset axis
+		*/
+		ComparisonDirection _comparisonDirection;
 
 	};
 }

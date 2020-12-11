@@ -8,9 +8,9 @@ namespace Sonar
 	{
         player = new Player( _data );
         physicsWorld = new PhysicsWorld( _data );
-		gesture = new Gesture( 0, AnalogueStick::LeftStick );
+		gesture = new Gesture( 1, AnalogueStick::LeftStick, Pattern::RightClockwiseDown );
 		
-		std::cout << Joystick::IsConnected( 0 ) << std::endl;
+		std::cout << Joystick::IsConnected( 1 ) << std::endl;
 	}
 
 	void SplashState::Init( )

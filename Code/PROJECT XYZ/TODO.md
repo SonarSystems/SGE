@@ -71,7 +71,6 @@ ENGINE
 * Fog
 * Ray tracing
 * Networking
-* Alt + F4 to close (make it optional to enable from the developers point of view)
 * AI
     - A star
 * Camera

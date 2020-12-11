@@ -2,7 +2,7 @@
 
 namespace Sonar
 {
-	Gesture::Gesture( const int &joystickID, const AnalogueStick &analogueStick ) : _joystickID( joystickID )
+	Gesture::Gesture( const int &joystickID, const AnalogueStick &analogueStick, const Pattern &pattern ) : _joystickID( joystickID )
 	{
 		_loopCounter = 0;
 
@@ -11,43 +11,7 @@ namespace Sonar
 
 		SetAnalogueStick( analogueStick );
 
-		LeftClockwiseUp.steps.push_back(
-		{
-			{ -50, -50 },
-			{ -20, 20 },
-			Direction::Left,
-			Direction::NONE,
-			{ 0.2 },
-		} );
-
-		LeftClockwiseUp.steps.push_back(
-		{
-			{ -90, -90 },
-			{ -20, 20 },
-			Direction::Left,
-			Direction::NONE,
-			{ 0.2 }
-		} );
-
-		LeftClockwiseUp.steps.push_back(
-		{
-			{ -45, -45 },
-			{ -45, -45 },
-			Direction::Right,
-			Direction::Up,
-			{ 0.45 }
-		} );
-
-		LeftClockwiseUp.steps.push_back(
-		{
-			{ -10, -10 },
-			{ -90, -90 },
-			Direction::Right,
-			Direction::Up,
-			{ 0.45 }
-		} );
-
-		LeftClockwiseUp.resetXY = { -5, -5 };
+		SetPattern( pattern );
 	}
 
 	Gesture::~Gesture( ) { }
@@ -61,9 +25,9 @@ namespace Sonar
 			_loopCounter = 0;
 		}
 
-		if ( _loopCounter < LeftClockwiseUp.steps.size( ) )
+		if ( _loopCounter < _gesturePattern.steps.size( ) )
 		{
-			auto step = LeftClockwiseUp.steps.at( _loopCounter );
+			auto step = _gesturePattern.steps.at( _loopCounter );
 
 			bool xValid = false;
 			bool yValid = false;
@@ -136,11 +100,22 @@ namespace Sonar
 
 				_loopCounter++;
 
-				if ( _loopCounter >= LeftClockwiseUp.steps.size( ) )
+				if ( _loopCounter >= _gesturePattern.steps.size( ) )
 				{ _isComplete = true; }
 			}
-			else if ( Joystick::GetAxisPosition( _joystickID, _xAxis ) > LeftClockwiseUp.resetXY.first )
-			{ _isMoving = false; }
+			else
+			{
+				if ( ComparisonDirection::LessThan == _comparisonDirection )
+				{
+					if ( Joystick::GetAxisPosition( _joystickID, _resetAxis ) < _gesturePattern.resetPos )
+					{ _isMoving = false; }
+				}
+				else if ( ComparisonDirection::GreaterThan == _comparisonDirection )
+				{
+					if ( Joystick::GetAxisPosition( _joystickID, _resetAxis ) > _gesturePattern.resetPos )
+					{ _isMoving = false; }
+				}
+			}
 		}
 		else
 		{ _loopCounter = 0; }
@@ -181,4 +156,211 @@ namespace Sonar
 
 	int Gesture::GetJoystickID( ) const
 	{ return _joystickID; }
+
+	void Gesture::SetPattern( const Pattern &pattern )
+	{
+		_gesturePattern.pattern = pattern;
+
+		if ( Pattern::LeftClockwiseUp == _gesturePattern.pattern )
+		{
+			_gesturePattern.steps.push_back(
+			{
+				{ -50, -50 },
+				{ -30, 30 },
+				Direction::Left,
+				Direction::NONE,
+				{ 0.2 },
+			} );
+
+			_gesturePattern.steps.push_back(
+			{
+				{ -90, -90 },
+				{ -30, 30 },
+				Direction::Left,
+				Direction::NONE,
+				{ 0.2 }
+			} );
+
+			_gesturePattern.steps.push_back(
+			{
+				{ -45, -45 },
+				{ -45, -45 },
+				Direction::Right,
+				Direction::Up,
+				{ 0.45 }
+			} );
+
+			_gesturePattern.steps.push_back(
+			{
+				{ -20, -20 },
+				{ -90, -90 },
+				Direction::Right,
+				Direction::Up,
+				{ 0.45 }
+			} );
+
+			_gesturePattern.resetPos = -15;
+		}
+		else if ( Pattern::LeftCounterClockwiseDown == _gesturePattern.pattern )
+		{
+			_gesturePattern.steps.push_back(
+			{
+				{ -50, -50 },
+				{ -30, 30 },
+				Direction::Left,
+				Direction::NONE,
+				{ 0.2 },
+			} );
+
+			_gesturePattern.steps.push_back(
+			{
+				{ -90, -90 },
+				{ -30, 30 },
+				Direction::Left,
+				Direction::NONE,
+				{ 0.2 }
+			} );
+
+			_gesturePattern.steps.push_back(
+			{
+				{ -45, -45 },
+				{ 45, 45 },
+				Direction::Right,
+				Direction::Down,
+				{ 0.45 }
+			} );
+
+			_gesturePattern.steps.push_back(
+			{
+				{ -20, -20 },
+				{ 90, 90 },
+				Direction::Right,
+				Direction::Down,
+				{ 0.45 }
+			} );
+
+			_gesturePattern.resetPos = -15;
+		}
+		else if ( Pattern::RightCounterClockwiseUp == _gesturePattern.pattern )
+		{
+			_gesturePattern.steps.push_back(
+			{
+				{ 50, 50 },
+				{ -30, 30 },
+				Direction::Right,
+				Direction::NONE,
+				{ 0.2 },
+			} );
+
+			_gesturePattern.steps.push_back(
+			{
+				{ 90, 90 },
+				{ -30, 30 },
+				Direction::Right,
+				Direction::NONE,
+				{ 0.2 }
+			} );
+
+			_gesturePattern.steps.push_back(
+			{
+				{ 45, 45 },
+				{ -45, -45 },
+				Direction::Left,
+				Direction::Up,
+				{ 0.45 }
+			} );
+
+			_gesturePattern.steps.push_back(
+			{
+				{ 20, 20 },
+				{ -90, -90 },
+				Direction::Left,
+				Direction::Up,
+				{ 0.45 }
+			} );
+
+			_gesturePattern.resetPos = 15;
+		}
+		else if ( Pattern::RightClockwiseDown == _gesturePattern.pattern )
+		{
+			_gesturePattern.steps.push_back(
+			{
+				{ 50, 50 },
+				{ -30, 30 },
+				Direction::Right,
+				Direction::NONE,
+				{ 0.2 },
+			} );
+
+			_gesturePattern.steps.push_back(
+			{
+				{ 90, 90 },
+				{ -30, 30 },
+				Direction::Right,
+				Direction::NONE,
+				{ 0.2 }
+			} );
+
+			_gesturePattern.steps.push_back(
+			{
+				{ 45, 45 },
+				{ 45, 45 },
+				Direction::Left,
+				Direction::Down,
+				{ 0.45 }
+			} );
+
+			_gesturePattern.steps.push_back(
+			{
+				{ 20, 20 },
+				{ 90, 90 },
+				Direction::Left,
+				Direction::Down,
+				{ 0.45 }
+			} );
+
+			_gesturePattern.resetPos = 15;
+		}
+
+		SetResetAxis( );
+	}
+
+	Pattern Gesture::GetPattern( ) const
+	{ return _gesturePattern.pattern; }
+
+
+	void Gesture::SetResetAxis( )
+	{
+		if ( Direction::NONE != _gesturePattern.steps.at( 0 ).xDirection )
+		{
+			if ( Direction::Left == _gesturePattern.steps.at( 0 ).xDirection )
+			{
+				// > is original for Left
+				_comparisonDirection = ComparisonDirection::GreaterThan;
+				
+			}
+			else if ( Direction::Right == _gesturePattern.steps.at( 0 ).xDirection )
+			{
+				// < should be for Right
+				_comparisonDirection = ComparisonDirection::LessThan;
+			}
+
+			_resetAxis = _xAxis;
+		}
+		else if ( Direction::NONE != _gesturePattern.steps.at( 0 ).yDirection )
+		{
+			if ( Direction::Up == _gesturePattern.steps.at( 0 ).yDirection )
+			{
+				// > is original for Up
+				_comparisonDirection = ComparisonDirection::GreaterThan;
+			}
+			else if ( Direction::Down == _gesturePattern.steps.at( 0 ).yDirection )
+			{
+				// < should be for Down
+				_comparisonDirection = ComparisonDirection::LessThan;
+			}
+
+			_resetAxis = _yAxis;
+		}
+	}
 }
