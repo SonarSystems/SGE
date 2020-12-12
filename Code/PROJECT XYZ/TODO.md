@@ -8,7 +8,13 @@ ENGINE
 * Input manager - CHECK ALL INPUT
     - Gestures
         - Circular rotations on the analogue sticks
-        - Implement all remaining gestures
+            - Clockwise rotation
+            - Counter clockwise rotation
+            - Data to detect
+                - Total degrees turned
+                    - Number of full circles turned
+                - Total turning duration/time
+                - If it's turning
     - Deadzone on analogue sticks
     - Rumble
     - Motion (Wii, PS3+)
@@ -74,6 +80,7 @@ ENGINE
 * AI
     - A star
 * Camera
+* VR
 * CMAKE (NOT YET)
 * Accessibilty for blind and deaf people
     - Built in voice reader

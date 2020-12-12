@@ -321,6 +321,166 @@ namespace Sonar
 
 			_gesturePattern.resetPos = 15;
 		}
+		else if ( Pattern::UpCounterClockwiseLeft == _gesturePattern.pattern )
+		{
+			_gesturePattern.steps.push_back(
+			{
+				{ -30, 30 },
+				{ -50, -50 },
+				Direction::NONE,
+				Direction::Up,
+				{ 0.2 },
+			} );
+
+			_gesturePattern.steps.push_back(
+			{
+				{ -30, 30 },
+				{ -90, -90 },
+				Direction::NONE,
+				Direction::Up,
+				{ 0.2 }
+			} );
+
+			_gesturePattern.steps.push_back(
+			{
+				{ -45, -45 },
+				{ -45, -45 },
+				Direction::Left,
+				Direction::Down,
+				{ 0.45 }
+			} );
+
+			_gesturePattern.steps.push_back(
+			{
+				{ -90, -90 },
+				{ -20, -20 },
+				Direction::Left,
+				Direction::Down,
+				{ 0.45 }
+			} );
+
+			_gesturePattern.resetPos = -15;
+		}
+		else if ( Pattern::UpClockwiseRight == _gesturePattern.pattern )
+		{
+			_gesturePattern.steps.push_back(
+			{
+				{ -30, 30 },
+				{ -50, -50 },
+				Direction::NONE,
+				Direction::Up,
+				{ 0.2 },
+			} );
+
+			_gesturePattern.steps.push_back(
+			{
+				{ -30, 30 },
+				{ -90, -90 },
+				Direction::NONE,
+				Direction::Up,
+				{ 0.2 }
+			} );
+
+			_gesturePattern.steps.push_back(
+			{
+				{ 45, 45 },
+				{ -45, -45 },
+				Direction::Right,
+				Direction::Down,
+				{ 0.45 }
+			} );
+
+			_gesturePattern.steps.push_back(
+			{
+				{ 90, 90 },
+				{ -20, -20 },
+				Direction::Right,
+				Direction::Down,
+				{ 0.45 }
+			} );
+
+			_gesturePattern.resetPos = -15;
+		}
+		else if ( Pattern::DownClockwiseLeft == _gesturePattern.pattern )
+		{
+			_gesturePattern.steps.push_back(
+			{
+				{ -30, 30 },
+				{ 50, 50 },
+				Direction::NONE,
+				Direction::Down,
+				{ 0.2 },
+			} );
+
+			_gesturePattern.steps.push_back(
+			{
+				{ -30, 30 },
+				{ 90, 90 },
+				Direction::NONE,
+				Direction::Down,
+				{ 0.2 }
+			} );
+
+			_gesturePattern.steps.push_back(
+			{
+				{ -45, -45 },
+				{ 45, 45 },
+				Direction::Left,
+				Direction::Up,
+				{ 0.45 }
+			} );
+
+			_gesturePattern.steps.push_back(
+			{
+				{ -90, -90 },
+				{ 20, 20 },
+				Direction::Left,
+				Direction::Up,
+				{ 0.45 }
+			} );
+
+			_gesturePattern.resetPos = 15;
+		}
+		else if ( Pattern::DownCounterClockwiseRight == _gesturePattern.pattern )
+		{
+			_gesturePattern.steps.push_back(
+			{
+				{ -30, 30 },
+				{ 50, 50 },
+				Direction::NONE,
+				Direction::Down,
+				{ 0.2 },
+			} );
+
+			_gesturePattern.steps.push_back(
+			{
+				{ -30, 30 },
+				{ 90, 90 },
+				Direction::NONE,
+				Direction::Down,
+				{ 0.2 }
+			} );
+
+			_gesturePattern.steps.push_back(
+			{
+				{ 45, 45 },
+				{ 45, 45 },
+				Direction::Right,
+				Direction::Up,
+				{ 0.45 }
+			} );
+
+			_gesturePattern.steps.push_back(
+			{
+				{ 90, 90 },
+				{ 20, 20 },
+				Direction::Right,
+				Direction::Up,
+				{ 0.45 }
+			} );
+
+			_gesturePattern.resetPos = 15;
+		}
 
 		SetResetAxis( );
 	}

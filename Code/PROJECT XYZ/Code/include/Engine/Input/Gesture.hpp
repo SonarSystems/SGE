@@ -44,7 +44,12 @@ namespace Sonar
 		LeftClockwiseUp,
 		LeftCounterClockwiseDown,
 		RightCounterClockwiseUp,
-		RightClockwiseDown
+		RightClockwiseDown,
+
+		UpCounterClockwiseLeft,
+		UpClockwiseRight,
+		DownClockwiseLeft,
+		DownCounterClockwiseRight // SONAR: TODO
 	};
 
 	/**
