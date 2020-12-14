@@ -140,20 +140,17 @@ namespace Sonar
 		float xCoord = Joystick::GetAxisPosition( joystick, xAxis );
 		float yCoord = Joystick::GetAxisPosition( joystick, yAxis );
 
-		float multiplyFactor = 1.0f;
-		float initialAngle = 3.14159f;
-
 		if ( 0 == xCoord )
 		{ xCoord = 0.0001; }
 
 		float angle = atan( yCoord / -xCoord );
 
 		if ( xCoord > 0 )
-		{ angle = initialAngle - angle; }
+		{ angle = 3.14159f - angle; }
 		else
 		{
 			if ( yCoord > 0 )
-			{ angle = ( 2 * initialAngle ) - angle; }
+			{ angle = ( 2 * 3.14159f ) - angle; }
 			else
 			{ angle *= -1.0f; }
 		}
