@@ -1,39 +1,38 @@
-﻿  Game.cpp
-  Gesture.cpp
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(28,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(103,23): warning C4018: '>=': signed/unsigned mismatch
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(173,6): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(182,6): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(191,6): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(200,6): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(213,6): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(222,6): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(231,6): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(240,6): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(253,6): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(262,6): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(271,6): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(280,6): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(293,6): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(302,6): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(311,6): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(320,6): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(333,6): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(342,6): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(351,6): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(360,6): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(373,6): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(382,6): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(391,6): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(400,6): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(413,6): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(422,6): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(431,6): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(440,6): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(453,6): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(462,6): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(471,6): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(480,6): warning C4305: 'initializing': truncation from 'double' to 'float'
+﻿  Gesture.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(39,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(114,24): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(185,6): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(194,6): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(203,6): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(212,6): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(225,6): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(234,6): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(243,6): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(252,6): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(265,6): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(274,6): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(283,6): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(292,6): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(305,6): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(314,6): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(323,6): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(332,6): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(345,6): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(354,6): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(363,6): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(372,6): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(385,6): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(394,6): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(403,6): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(412,6): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(425,6): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(434,6): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(443,6): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(452,6): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(465,6): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(474,6): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(483,6): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(492,6): warning C4305: 'initializing': truncation from 'double' to 'float'
 D:\Software\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\utility(151,16): warning C4244: 'initializing': conversion from '_Ty' to '_Ty1', possible loss of data
           with
           [
@@ -43,13 +42,13 @@ D:\Software\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\inc
           [
               _Ty1=float
           ]
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(173): message : see reference to function template instantiation 'std::pair<float,float>::pair<int,int,0>(_Other1 &&,_Other2 &&) noexcept' being compiled
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(185): message : see reference to function template instantiation 'std::pair<float,float>::pair<int,int,0>(_Other1 &&,_Other2 &&) noexcept' being compiled
           with
           [
               _Other1=int,
               _Other2=int
           ]
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(166): message : see reference to function template instantiation 'std::pair<float,float>::pair<int,int,0>(_Other1 &&,_Other2 &&) noexcept' being compiled
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(178): message : see reference to function template instantiation 'std::pair<float,float>::pair<int,int,0>(_Other1 &&,_Other2 &&) noexcept' being compiled
           with
           [
               _Other1=int,
@@ -64,9 +63,4 @@ D:\Software\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\inc
           [
               _Ty2=float
           ]
-  Player.cpp
-  SplashState.cpp
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(27,84): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(27,63): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
-  Generating Code...
   SFML Template.vcxproj -> C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\SFML Template.exe

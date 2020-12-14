@@ -134,4 +134,34 @@ namespace Sonar
 			}
 		}
 	}
+
+	float Joystick::GetJoystickAngle( const unsigned int &joystick, const Axis &xAxis, const Axis &yAxis, const bool &isDegrees )
+	{
+		float xCoord = Joystick::GetAxisPosition( joystick, xAxis );
+		float yCoord = Joystick::GetAxisPosition( joystick, yAxis );
+
+		float multiplyFactor = 1.0f;
+		float initialAngle = 3.14159f;
+
+		if ( 0 == xCoord )
+		{ xCoord = 0.0001; }
+
+		float angle = atan( yCoord / -xCoord );
+
+		if ( xCoord > 0 )
+		{ angle = initialAngle - angle; }
+		else
+		{
+			if ( yCoord > 0 )
+			{ angle = ( 2 * initialAngle ) - angle; }
+			else
+			{ angle *= -1.0f; }
+		}
+
+		if ( isDegrees )
+		{ return angle * ( 180 / 3.14159 ); }
+		else
+		{ return angle; }
+	}
+
 }

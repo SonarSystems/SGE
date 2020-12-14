@@ -148,5 +148,16 @@ namespace Sonar
         */
         static bool IsGestureTriggered( const unsigned int &joystickID, const Joystick::AnalogueStick &analogueStick, const Direction &direction );
 
+        /**
+        * \brief Get the angle of a joystick (Left and no vertical is 0 and it goes clockwise)
+        *
+        * \param joystick Joystick id
+        * \param xAxis Joystick x axis to check
+		* \param yAxis Joystick y axis to check
+		* \param isDegrees Degrees or radians (true for degrees by default and false for radians
+        *
+        * \return Output returns the axis angle
+        */
+        static float GetJoystickAngle( const unsigned int &joystick, const Axis &xAxis, const Axis &yAxis, const bool &isDegrees = true );
     };
 }

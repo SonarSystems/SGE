@@ -8,7 +8,7 @@ namespace Sonar
 	{
         player = new Player( _data );
         physicsWorld = new PhysicsWorld( _data );
-		gesture = new Gesture( 1, AnalogueStick::LeftStick, Pattern::DownCounterClockwiseRight );
+		gesture = new Gesture( 1, AnalogueStick::LeftStick, Pattern::Clockwise );
 		
 		std::cout << Joystick::IsConnected( 1 ) << std::endl;
 	}

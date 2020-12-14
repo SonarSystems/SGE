@@ -25,100 +25,112 @@ namespace Sonar
 			_loopCounter = 0;
 		}
 
-		if ( _loopCounter < _gesturePattern.steps.size( ) )
-		{
-			auto step = _gesturePattern.steps.at( _loopCounter );
+		/*********************************************************************/
+		/*********************************************************************/
+		/*********************************************************************/
+		std::cout << Joystick::GetJoystickAngle( _joystickID, _xAxis, _yAxis, false ) << std::endl;
+		/*********************************************************************/
+		/*********************************************************************/
+		/*********************************************************************/
 
-			bool xValid = false;
-			bool yValid = false;
-			bool timeValid = false;
-
-			if ( Direction::NONE != step.xDirection )
+		
+		if ( Pattern::Clockwise != _gesturePattern.pattern && Pattern::CounterClockwise != _gesturePattern.pattern )
+		{ 
+			if ( _loopCounter < _gesturePattern.steps.size( ) )
 			{
-				float xLeftValue = 0;
-				float xRightValue = 0;
+				auto step = _gesturePattern.steps.at( _loopCounter );
 
-				if ( Direction::Left == step.xDirection )
+				bool xValid = false;
+				bool yValid = false;
+				bool timeValid = false;
+
+				if ( Direction::NONE != step.xDirection )
 				{
-					xLeftValue = Joystick::GetAxisPosition( _joystickID, _xAxis );
-					xRightValue = step.xMinMax.first;
+					float xLeftValue = 0;
+					float xRightValue = 0;
+
+					if ( Direction::Left == step.xDirection )
+					{
+						xLeftValue = Joystick::GetAxisPosition( _joystickID, _xAxis );
+						xRightValue = step.xMinMax.first;
+					}
+					else if ( Direction::Right == step.xDirection )
+					{
+						xLeftValue = step.xMinMax.first;
+						xRightValue = Joystick::GetAxisPosition( _joystickID, _xAxis );
+					}
+
+					if ( xLeftValue < xRightValue )
+					{ xValid = true; }
 				}
-				else if ( Direction::Right == step.xDirection )
+				else
 				{
-					xLeftValue = step.xMinMax.first;
-					xRightValue = Joystick::GetAxisPosition( _joystickID, _xAxis );
+					if ( Joystick::GetAxisPosition( _joystickID, _xAxis ) > step.xMinMax.first
+						&& Joystick::GetAxisPosition( _joystickID, _xAxis ) < step.xMinMax.second )
+					{
+						xValid = true;
+					}
 				}
 
-				if ( xLeftValue < xRightValue )
-				{ xValid = true; }
+				if ( Direction::NONE != step.yDirection )
+				{
+					float yLeftValue = 0;
+					float yRightValue = 0;
+
+					if ( Direction::Up == step.yDirection )
+					{
+						yLeftValue = Joystick::GetAxisPosition( _joystickID, _yAxis );
+						yRightValue = step.yMinMax.first;
+					}
+					else if ( Direction::Down == step.yDirection )
+					{
+						yLeftValue = step.yMinMax.first;
+						yRightValue = Joystick::GetAxisPosition( _joystickID, _yAxis );
+					}
+
+					if ( yLeftValue < yRightValue )
+					{ yValid = true; }
+				}
+				else
+				{
+					if ( Joystick::GetAxisPosition( _joystickID, _yAxis ) > step.yMinMax.first
+						&& Joystick::GetAxisPosition( _joystickID, _yAxis ) < step.yMinMax.second )
+					{
+						yValid = true;
+					}
+				}
+
+				if ( _clock.GetElapsedTime( ).AsSeconds( ) < step.timeToFinish )
+				{ timeValid = true; }
+
+				if ( xValid && yValid && timeValid )
+				{
+					std::cout << _loopCounter << std::endl;
+
+					_clock.Reset( );
+
+					_loopCounter++;
+
+					if ( _loopCounter >= _gesturePattern.steps.size( ) )
+					{ _isComplete = true; }
+				}
+				else
+				{
+					if ( ComparisonDirection::LessThan == _comparisonDirection )
+					{
+						if ( Joystick::GetAxisPosition( _joystickID, _resetAxis ) < _gesturePattern.resetPos )
+						{ _isMoving = false; }
+					}
+					else if ( ComparisonDirection::GreaterThan == _comparisonDirection )
+					{
+						if ( Joystick::GetAxisPosition( _joystickID, _resetAxis ) > _gesturePattern.resetPos )
+						{ _isMoving = false; }
+					}
+				}
 			}
 			else
-			{
-				if ( Joystick::GetAxisPosition( _joystickID, _xAxis ) > step.xMinMax.first
-					&& Joystick::GetAxisPosition( _joystickID, _xAxis ) < step.xMinMax.second )
-				{
-					xValid = true;
-				}
-			}
-
-			if ( Direction::NONE != step.yDirection )
-			{
-				float yLeftValue = 0;
-				float yRightValue = 0;
-
-				if ( Direction::Up == step.yDirection )
-				{
-					yLeftValue = Joystick::GetAxisPosition( _joystickID, _yAxis );
-					yRightValue = step.yMinMax.first;
-				}
-				else if ( Direction::Down == step.yDirection )
-				{
-					yLeftValue = step.yMinMax.first;
-					yRightValue = Joystick::GetAxisPosition( _joystickID, _yAxis );
-				}
-
-				if ( yLeftValue < yRightValue )
-				{ yValid = true; }
-			}
-			else
-			{
-				if ( Joystick::GetAxisPosition( _joystickID, _yAxis ) > step.yMinMax.first
-					&& Joystick::GetAxisPosition( _joystickID, _yAxis ) < step.yMinMax.second )
-				{
-					yValid = true;
-				}
-			}
-
-			if ( _clock.GetElapsedTime( ).AsSeconds( ) < step.timeToFinish )
-			{ timeValid = true; }
-
-			if ( xValid && yValid && timeValid )
-			{
-				std::cout << _loopCounter << std::endl;
-
-				_clock.Reset( );
-
-				_loopCounter++;
-
-				if ( _loopCounter >= _gesturePattern.steps.size( ) )
-				{ _isComplete = true; }
-			}
-			else
-			{
-				if ( ComparisonDirection::LessThan == _comparisonDirection )
-				{
-					if ( Joystick::GetAxisPosition( _joystickID, _resetAxis ) < _gesturePattern.resetPos )
-					{ _isMoving = false; }
-				}
-				else if ( ComparisonDirection::GreaterThan == _comparisonDirection )
-				{
-					if ( Joystick::GetAxisPosition( _joystickID, _resetAxis ) > _gesturePattern.resetPos )
-					{ _isMoving = false; }
-				}
-			}
+			{ _loopCounter = 0; }
 		}
-		else
-		{ _loopCounter = 0; }
 	}
 
 	bool Gesture::IsComplete( )
@@ -481,6 +493,10 @@ namespace Sonar
 
 			_gesturePattern.resetPos = 15;
 		}
+		else if ( Pattern::Clockwise == _gesturePattern.pattern )
+		{
+			
+		}
 
 		SetResetAxis( );
 	}
@@ -491,36 +507,38 @@ namespace Sonar
 
 	void Gesture::SetResetAxis( )
 	{
-		if ( Direction::NONE != _gesturePattern.steps.at( 0 ).xDirection )
+		if ( Pattern::Clockwise != _gesturePattern.pattern && Pattern::CounterClockwise != _gesturePattern.pattern )
 		{
-			if ( Direction::Left == _gesturePattern.steps.at( 0 ).xDirection )
+			if ( Direction::NONE != _gesturePattern.steps.at( 0 ).xDirection )
 			{
-				// > is original for Left
-				_comparisonDirection = ComparisonDirection::GreaterThan;
-				
-			}
-			else if ( Direction::Right == _gesturePattern.steps.at( 0 ).xDirection )
-			{
-				// < should be for Right
-				_comparisonDirection = ComparisonDirection::LessThan;
-			}
+				if ( Direction::Left == _gesturePattern.steps.at( 0 ).xDirection )
+				{
+					// > is original for Left
+					_comparisonDirection = ComparisonDirection::GreaterThan;
+				}
+				else if ( Direction::Right == _gesturePattern.steps.at( 0 ).xDirection )
+				{
+					// < should be for Right
+					_comparisonDirection = ComparisonDirection::LessThan;
+				}
 
-			_resetAxis = _xAxis;
-		}
-		else if ( Direction::NONE != _gesturePattern.steps.at( 0 ).yDirection )
-		{
-			if ( Direction::Up == _gesturePattern.steps.at( 0 ).yDirection )
-			{
-				// > is original for Up
-				_comparisonDirection = ComparisonDirection::GreaterThan;
+				_resetAxis = _xAxis;
 			}
-			else if ( Direction::Down == _gesturePattern.steps.at( 0 ).yDirection )
+			else if ( Direction::NONE != _gesturePattern.steps.at( 0 ).yDirection )
 			{
-				// < should be for Down
-				_comparisonDirection = ComparisonDirection::LessThan;
-			}
+				if ( Direction::Up == _gesturePattern.steps.at( 0 ).yDirection )
+				{
+					// > is original for Up
+					_comparisonDirection = ComparisonDirection::GreaterThan;
+				}
+				else if ( Direction::Down == _gesturePattern.steps.at( 0 ).yDirection )
+				{
+					// < should be for Down
+					_comparisonDirection = ComparisonDirection::LessThan;
+				}
 
-			_resetAxis = _yAxis;
+				_resetAxis = _yAxis;
+			}
 		}
 	}
 }

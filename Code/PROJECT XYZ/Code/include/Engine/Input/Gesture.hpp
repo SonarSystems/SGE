@@ -2,7 +2,9 @@
 
 #include "Core/Clock.hpp"
 #include "Input/Joystick.hpp"
+
 #include <iostream>
+#include <cmath>
 
 namespace Sonar
 {
@@ -49,7 +51,10 @@ namespace Sonar
 		UpCounterClockwiseLeft,
 		UpClockwiseRight,
 		DownClockwiseLeft,
-		DownCounterClockwiseRight // SONAR: TODO
+		DownCounterClockwiseRight,
+
+		Clockwise,
+		CounterClockwise
 	};
 
 	/**
