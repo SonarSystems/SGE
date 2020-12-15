@@ -213,5 +213,9 @@ namespace Sonar
 		*/
 		ComparisonDirection _comparisonDirection;
 
+		float _previousAngle;
+
+		bool _isRotating;
+
 	};
 }

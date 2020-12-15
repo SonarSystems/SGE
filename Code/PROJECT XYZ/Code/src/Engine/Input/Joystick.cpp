@@ -156,9 +156,17 @@ namespace Sonar
 		}
 
 		if ( isDegrees )
-		{ return angle * ( 180 / 3.14159 ); }
+		{ return angle * ( 180 / 3.14159f ); }
 		else
 		{ return angle; }
+	}
+
+	float Joystick::GetJoystickDistanceFromCenter( const unsigned int &joystick, const Axis &xAxis, const Axis &yAxis )
+	{
+		float xCoord = Joystick::GetAxisPosition( joystick, xAxis );
+		float yCoord = Joystick::GetAxisPosition( joystick, yAxis );
+
+		return sqrt( ( xCoord * xCoord ) + ( yCoord * yCoord ) );
 	}
 
 }

@@ -12,6 +12,9 @@ namespace Sonar
 		SetAnalogueStick( analogueStick );
 
 		SetPattern( pattern );
+
+		_previousAngle = 0.0f;
+		_isRotating = false;
 	}
 
 	Gesture::~Gesture( ) { }
@@ -28,10 +31,15 @@ namespace Sonar
 		/*********************************************************************/
 		/*********************************************************************/
 		/*********************************************************************/
-		std::cout << Joystick::GetJoystickAngle( _joystickID, _xAxis, _yAxis, false ) << std::endl;
+		/*std::cout << Joystick::GetJoystickAngle( _joystickID, _xAxis, _yAxis, false )
+			<< " : "
+			<< Joystick::GetJoystickDistanceFromCenter( _joystickID, _xAxis, _yAxis )
+			<< std::endl;*/
 		/*********************************************************************/
 		/*********************************************************************/
 		/*********************************************************************/
+
+		std::cout << _isRotating << " : " << _previousAngle << std::endl;
 
 		
 		if ( Pattern::Clockwise != _gesturePattern.pattern && Pattern::CounterClockwise != _gesturePattern.pattern )
@@ -130,6 +138,32 @@ namespace Sonar
 			}
 			else
 			{ _loopCounter = 0; }
+		}
+		else
+		{
+			float distanceFromCenter = Joystick::GetJoystickDistanceFromCenter( _joystickID, _xAxis, _yAxis );
+
+			if ( distanceFromCenter > 70 )
+			{
+				float angle = Joystick::GetJoystickAngle( _joystickID, _xAxis, _yAxis );
+
+				if ( !_isRotating )
+				{
+					_previousAngle = angle;
+					_isRotating = true;
+				}
+				else
+				{
+					if ( angle > _previousAngle )
+					{
+						_previousAngle = angle;
+					}
+					else if ( angle < _previousAngle )
+					{
+						_isRotating = false;
+					}
+				}
+			}
 		}
 	}
 

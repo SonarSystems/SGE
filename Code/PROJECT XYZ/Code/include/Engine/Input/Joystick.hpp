@@ -3,6 +3,7 @@
 #include <SFML/Window.hpp>
 #include <string>
 #include <array>
+#include <cmath>
 
 
 namespace Sonar
@@ -156,8 +157,20 @@ namespace Sonar
 		* \param yAxis Joystick y axis to check
 		* \param isDegrees Degrees or radians (true for degrees by default and false for radians
         *
-        * \return Output returns the axis angle
+        * \return Output returns the joystick angle
         */
         static float GetJoystickAngle( const unsigned int &joystick, const Axis &xAxis, const Axis &yAxis, const bool &isDegrees = true );
+
+        /**
+        * \brief Get the distance of the joystick from the center/origin
+        *
+        * \param joystick Joystick id
+        * \param xAxis Joystick x axis to check
+        * \param yAxis Joystick y axis to check
+        *
+        * \return Output returns the joystick distance
+        */
+        static float GetJoystickDistanceFromCenter( const unsigned int &joystick, const Axis &xAxis, const Axis &yAxis );
+
     };
 }
