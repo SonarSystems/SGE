@@ -15,35 +15,22 @@ namespace Sonar
 
 		_previousAngle = 0.0f;
 		_isRotating = false;
+		_totalDegreesTurned = 0;
 	}
 
 	Gesture::~Gesture( ) { }
 
 	void Gesture::Update( )
-	{
-		if ( !_isMoving )
-		{
-			_clock.Reset( );
-			_isMoving = true;
-			_loopCounter = 0;
-		}
-
-		/*********************************************************************/
-		/*********************************************************************/
-		/*********************************************************************/
-		/*std::cout << Joystick::GetJoystickAngle( _joystickID, _xAxis, _yAxis, false )
-			<< " : "
-			<< Joystick::GetJoystickDistanceFromCenter( _joystickID, _xAxis, _yAxis )
-			<< std::endl;*/
-		/*********************************************************************/
-		/*********************************************************************/
-		/*********************************************************************/
-
-		std::cout << _isRotating << " : " << _previousAngle << std::endl;
-
-		
+	{		
 		if ( Pattern::Clockwise != _gesturePattern.pattern && Pattern::CounterClockwise != _gesturePattern.pattern )
 		{ 
+			if ( !_isMoving )
+			{
+				_clock.Reset( );
+				_isMoving = true;
+				_loopCounter = 0;
+			}
+
 			if ( _loopCounter < _gesturePattern.steps.size( ) )
 			{
 				auto step = _gesturePattern.steps.at( _loopCounter );
@@ -139,7 +126,7 @@ namespace Sonar
 			else
 			{ _loopCounter = 0; }
 		}
-		else
+		else if ( Pattern::Clockwise == _gesturePattern.pattern )
 		{
 			float distanceFromCenter = Joystick::GetJoystickDistanceFromCenter( _joystickID, _xAxis, _yAxis );
 
@@ -149,20 +136,66 @@ namespace Sonar
 
 				if ( !_isRotating )
 				{
+					_clock.Reset( );
 					_previousAngle = angle;
 					_isRotating = true;
+					_totalDegreesTurned = 0;
 				}
 				else
 				{
 					if ( angle > _previousAngle )
 					{
+						_totalDegreesTurned += angle - _previousAngle;
 						_previousAngle = angle;
 					}
+					else if ( _previousAngle > 300 && angle < 60 )
+					{ _previousAngle = angle; }
 					else if ( angle < _previousAngle )
 					{
 						_isRotating = false;
 					}
 				}
+			}
+			else
+			{
+				_isRotating = false;
+				_totalDegreesTurned = 0;
+			}
+		}
+		else if ( Pattern::CounterClockwise == _gesturePattern.pattern )
+		{
+			float distanceFromCenter = Joystick::GetJoystickDistanceFromCenter( _joystickID, _xAxis, _yAxis );
+
+			if ( distanceFromCenter > 70 )
+			{
+				float angle = Joystick::GetJoystickAngle( _joystickID, _xAxis, _yAxis );
+
+				if ( !_isRotating )
+				{
+					_clock.Reset( );
+					_previousAngle = angle;
+					_isRotating = true;
+					_totalDegreesTurned = 0;
+				}
+				else
+				{
+					if ( angle < _previousAngle )
+					{
+						_totalDegreesTurned += _previousAngle - angle;
+						_previousAngle = angle;
+					}
+					else if ( _previousAngle < 300 && angle > 60 )
+					{ _previousAngle = angle; }
+					else if ( angle > _previousAngle )
+					{
+						_isRotating = false;
+					}
+				}
+			}
+			else
+			{
+				_isRotating = false;
+				_totalDegreesTurned = 0;
 			}
 		}
 	}
@@ -527,10 +560,6 @@ namespace Sonar
 
 			_gesturePattern.resetPos = 15;
 		}
-		else if ( Pattern::Clockwise == _gesturePattern.pattern )
-		{
-			
-		}
 
 		SetResetAxis( );
 	}
@@ -538,6 +567,23 @@ namespace Sonar
 	Pattern Gesture::GetPattern( ) const
 	{ return _gesturePattern.pattern; }
 
+
+	bool Gesture::GetIsRotating( ) const
+	{ return _isRotating; }
+
+	bool Gesture::GetTotalDegreesTurned( const bool &isDegrees /*= true */ ) const
+	{
+		if ( !isDegrees )
+		{ return _totalDegreesTurned * ( 3.14159f / 180 ); }
+		else
+		{ return _totalDegreesTurned; }
+	}
+
+	float Gesture::GetTotalCirclesTurned( ) const
+	{ return _totalDegreesTurned / 360.0f; }
+
+	Sonar::Clock Gesture::GetClock( )
+	{ return _clock; }
 
 	void Gesture::SetResetAxis( )
 	{
@@ -575,4 +621,6 @@ namespace Sonar
 			}
 		}
 	}
+
+
 }

@@ -155,6 +155,36 @@ namespace Sonar
 		*/
 		Pattern GetPattern( ) const;
 
+		/**
+		* \brief Get the status of the joystick rotation (only for Clockwise and CounterClockwise patterns)
+		*
+		* \return Output returns joystick rotation status
+		*/
+		bool GetIsRotating( ) const;
+
+		/**
+		* \brief Get the total number of degrees turned (only for Clockwise and CounterClockwise patterns)
+		*
+		* \param isDegrees True (by default) returns the result in degrees and false returns it in radians
+		*
+		* \return Output returns total degrees turned by the joystick
+		*/
+		bool GetTotalDegreesTurned( const bool &isDegrees = true ) const;
+
+		/**
+		* \brief Get the total number of circles turned by the joystick (only for Clockwise and CounterClockwise patterns)
+		*
+		* \return Output returns total number of joystick rotations
+		*/
+		float GetTotalCirclesTurned( ) const;
+
+		/**
+		* \brief Get the gesture clock (only for Clockwise and CounterClockwise patterns)
+		*
+		* \return Output returns clock
+		*/
+		Clock GetClock( );
+
 	private:
 		void SetResetAxis( );
 
@@ -215,7 +245,16 @@ namespace Sonar
 
 		float _previousAngle;
 
+		/**
+		* \brief Track whether or not the joystick is turning (only for Clockwise and CounterClockwise patterns)
+		*/
 		bool _isRotating;
+
+		/**
+		* \brief Total number of degrees the joystick has turned (only for Clockwise and CounterClockwise patterns)
+		*/
+		float _totalDegreesTurned;
+
 
 	};
 }
