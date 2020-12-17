@@ -25,8 +25,23 @@ namespace Sonar
 	bool Joystick::IsPressed( const unsigned int &joystick, const unsigned int &button )
 	{ return sf::Joystick::isButtonPressed( joystick, button ); }
 
-	float Joystick::GetAxisPosition( const unsigned int &joystick, const Axis &axis )
-	{ return sf::Joystick::getAxisPosition( joystick, ( sf::Joystick::Axis )axis ); }
+	float Joystick::GetAxisPosition( const unsigned int &joystick, const Axis &axis, const float &deadzone )
+	{
+		float position = sf::Joystick::getAxisPosition( joystick, ( sf::Joystick::Axis )axis );
+
+		if ( position >= 0 )
+		{
+			if ( position < deadzone )
+			{ return 0; }
+		}
+		else
+		{
+			if ( position > -deadzone )
+			{ return 0; }
+		}
+
+		return position;
+	}
 
 	bool Joystick::ChordPressed( const std::initializer_list<std::array<int, 2>> &joystickButtons )
 	{
@@ -135,10 +150,10 @@ namespace Sonar
 		}
 	}
 
-	float Joystick::GetJoystickAngle( const unsigned int &joystick, const Axis &xAxis, const Axis &yAxis, const bool &isDegrees )
+	float Joystick::GetJoystickAngle( const unsigned int &joystick, const Axis &xAxis, const Axis &yAxis, const bool &isDegrees, const std::pair<float, float> &deadzone )
 	{
-		float xCoord = Joystick::GetAxisPosition( joystick, xAxis );
-		float yCoord = Joystick::GetAxisPosition( joystick, yAxis );
+		float xCoord = Joystick::GetAxisPosition( joystick, xAxis, deadzone.first );
+		float yCoord = Joystick::GetAxisPosition( joystick, yAxis, deadzone.second );
 
 		if ( 0 == xCoord )
 		{ xCoord = 0.0001; }
@@ -161,10 +176,10 @@ namespace Sonar
 		{ return angle; }
 	}
 
-	float Joystick::GetJoystickDistanceFromCenter( const unsigned int &joystick, const Axis &xAxis, const Axis &yAxis )
+	float Joystick::GetJoystickDistanceFromCenter( const unsigned int &joystick, const Axis &xAxis, const Axis &yAxis, const std::pair<float, float> &deadzone )
 	{
-		float xCoord = Joystick::GetAxisPosition( joystick, xAxis );
-		float yCoord = Joystick::GetAxisPosition( joystick, yAxis );
+		float xCoord = Joystick::GetAxisPosition( joystick, xAxis, deadzone.first );
+		float yCoord = Joystick::GetAxisPosition( joystick, yAxis, deadzone.second );
 
 		return sqrt( ( xCoord * xCoord ) + ( yCoord * yCoord ) );
 	}

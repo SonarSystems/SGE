@@ -121,11 +121,12 @@ namespace Sonar
          * \brief Get the current position of a joystick axis
          *
          * \param joystick Joystick id
-         * \param axis Joystick axis to check
+		 * \param axis Joystick axis to check
+		 * \param deadzone The joystick axis deadzone for not returning a position other than 0
          *
          * \return Output returns the axis position
         */
-        static float GetAxisPosition( const unsigned int &joystick, const Axis &axis );
+        static float GetAxisPosition( const unsigned int &joystick, const Axis &axis, const float &deadzone = 0 );
         
         /**
          * \brief Check if multiple buttons have been pressed
@@ -156,21 +157,23 @@ namespace Sonar
         * \param xAxis Joystick x axis to check
 		* \param yAxis Joystick y axis to check
 		* \param isDegrees Degrees or radians (true for degrees by default and false for radians
+		* \param deadzone The joystick deadzone for not returning a position other than 0
         *
         * \return Output returns the joystick angle
         */
-        static float GetJoystickAngle( const unsigned int &joystick, const Axis &xAxis, const Axis &yAxis, const bool &isDegrees = true );
+        static float GetJoystickAngle( const unsigned int &joystick, const Axis &xAxis, const Axis &yAxis, const bool &isDegrees = true, const std::pair<float, float> &deadzone = { 0.0, 0.0 } );
 
         /**
         * \brief Get the distance of the joystick from the center/origin
         *
         * \param joystick Joystick id
         * \param xAxis Joystick x axis to check
-        * \param yAxis Joystick y axis to check
+		* \param yAxis Joystick y axis to check
+		* \param deadzone The joystick deadzone for not returning a position other than 0
         *
         * \return Output returns the joystick distance
         */
-        static float GetJoystickDistanceFromCenter( const unsigned int &joystick, const Axis &xAxis, const Axis &yAxis );
+        static float GetJoystickDistanceFromCenter( const unsigned int &joystick, const Axis &xAxis, const Axis &yAxis, const std::pair<float, float> &deadzone = { 0.0, 0.0 } );
 
     };
 }

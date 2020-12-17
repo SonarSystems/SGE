@@ -36,11 +36,7 @@ namespace Sonar
 
 		gesture->Update( );
 
-		std::cout << gesture->GetClock().GetElapsedTime().AsSeconds() << std::endl;
-
-		//std::cout << Joystick::GetAxisPosition( 1, Joystick::Axis::X ) << " :: " << Joystick::GetAxisPosition( 1, Joystick::Axis::Y ) << std::endl;
-
-		//std::cout << gesture->IsComplete( ) << std::endl;
+		std::cout << Joystick::GetAxisPosition( 1, Joystick::Axis::X, 20 ) << std::endl;;
 	}
 
 	void SplashState::Draw( const float &dt )

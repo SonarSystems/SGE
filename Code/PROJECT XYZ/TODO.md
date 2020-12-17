@@ -6,15 +6,6 @@ GAME
 ENGINE
 -----------------------------------------------------------------
 * Input manager - CHECK ALL INPUT
-    - Gestures
-        - Circular rotations on the analogue sticks
-            - Clockwise rotation
-            - Counter clockwise rotation
-            - Data to detect
-                - Total degrees turned
-                    - Number of full circles turned
-                - Total turning duration/time
-                - If it's turning
     - Deadzone on analogue sticks
     - Rumble
     - Motion (Wii, PS3+)
