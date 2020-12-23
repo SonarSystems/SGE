@@ -5,7 +5,6 @@
 #include <array>
 #include <cmath>
 
-
 namespace Sonar
 {
     class Joystick

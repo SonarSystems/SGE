@@ -6,7 +6,6 @@ GAME
 ENGINE
 -----------------------------------------------------------------
 * Input manager - CHECK ALL INPUT
-    - Deadzone on analogue sticks
     - Rumble
     - Motion (Wii, PS3+)
     - Auto detection of all available joysticks/controllers and identify them

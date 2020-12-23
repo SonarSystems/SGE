@@ -27,6 +27,7 @@
     <ClInclude Include="..\..\..\Code\include\Engine\Core\StateMachine.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\Core\Time.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\External\b2GLDraw.h" />
+    <ClInclude Include="..\..\..\Code\include\Engine\External\Gamepad.h" />
     <ClInclude Include="..\..\..\Code\include\Engine\External\glext.h" />
     <ClInclude Include="..\..\..\Code\include\Engine\Graphics\Color.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\Graphics\Drawable.hpp" />
@@ -55,6 +56,7 @@
     <ClCompile Include="..\..\..\Code\src\Engine\Core\StateMachine.cpp" />
     <ClCompile Include="..\..\..\Code\src\Engine\Core\Time.cpp" />
     <ClCompile Include="..\..\..\Code\src\Engine\External\b2GLDraw.cpp" />
+    <ClCompile Include="..\..\..\Code\src\Engine\External\Gamepad.cpp" />
     <ClCompile Include="..\..\..\Code\src\Engine\Graphics\Color.cpp" />
     <ClCompile Include="..\..\..\Code\src\Engine\Graphics\Drawable.cpp" />
     <ClCompile Include="..\..\..\Code\src\Engine\Graphics\Shapes\Rectangle.cpp" />
