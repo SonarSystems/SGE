@@ -6,8 +6,7 @@ GAME
 ENGINE
 -----------------------------------------------------------------
 * Input manager - CHECK ALL INPUT
-    - Rumble
-    - Motion (Wii, PS3+)
+     - Motion (Wii, PS3+)
     - Auto detection of all available joysticks/controllers and identify them
         - Function for checking all connected controllers and getting a list along with the ID
     - Pre defined controller types

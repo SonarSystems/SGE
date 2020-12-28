@@ -6,12 +6,13 @@
     "\\Code\\PROJECT XYZ\\Code",
     "\\Code\\PROJECT XYZ\\Code\\include",
     "\\Code\\PROJECT XYZ\\Code\\include\\Engine",
-    "\\Code\\PROJECT XYZ\\Code\\include\\Engine\\Input",
+    "\\Code\\PROJECT XYZ\\Code\\include\\Engine\\Graphics",
+    "\\Code\\PROJECT XYZ\\Code\\include\\Engine\\Graphics\\Shapes",
     "\\Code\\PROJECT XYZ\\Code\\src",
     "\\Code\\PROJECT XYZ\\Code\\src\\Engine",
-    "\\Code\\PROJECT XYZ\\Code\\src\\Engine\\Input",
-    "\\Code\\PROJECT XYZ\\Code\\src\\Game"
+    "\\Code\\PROJECT XYZ\\Code\\src\\Engine\\Graphics",
+    "\\Code\\PROJECT XYZ\\Code\\src\\Engine\\Graphics\\Shapes"
   ],
-  "SelectedNode": "\\Code\\PROJECT XYZ\\Code\\src\\Engine\\Input\\Gesture.cpp",
+  "SelectedNode": "\\Code\\PROJECT XYZ\\Code\\include\\Engine\\Graphics\\Drawable.hpp",
   "PreviewInSolutionExplorer": false
 }

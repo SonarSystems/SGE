@@ -9,6 +9,8 @@ namespace Sonar
         player = new Player( _data );
         physicsWorld = new PhysicsWorld( _data );
 		gesture = new Gesture( 1, AnalogueStick::LeftStick, Pattern::Clockwise );
+
+		joy = new Joystick( 1 );
 		
 		std::cout << Joystick::IsConnected( 1 ) << std::endl;
 	}
@@ -25,7 +27,12 @@ namespace Sonar
         if ( Event::MouseWheelMoved == event.type )
         {
             physicsWorld->CreateDynamicBody( event.mouseButton.x, event.mouseButton.y, 32, 32 );
+			joy->SetVibration( 1.0f, 0.0f );
         }
+		else if ( Event::MouseButtonPressed == event.type )
+		{
+			joy->DisableVibration( );
+		}
 	}
 
 	void SplashState::Update( const float &dt )
@@ -36,6 +43,8 @@ namespace Sonar
 
 		gesture->Update( );
 
+		joy->Update( );
+
 		std::cout << Joystick::GetAxisPosition( 1, Joystick::Axis::X, 20 ) << std::endl;;
 	}
 
@@ -43,6 +52,6 @@ namespace Sonar
 	{
         player->Draw( dt );
         
-        physicsWorld->Draw( dt );
+		physicsWorld->Draw( dt );
 	}
 }

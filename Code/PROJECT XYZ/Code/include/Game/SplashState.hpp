@@ -29,5 +29,7 @@ namespace Sonar
                 
 		Gesture *gesture;
 
+		Joystick *joy;
+
 	};
 }

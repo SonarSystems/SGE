@@ -5,11 +5,23 @@
 #include <array>
 #include <cmath>
 
+#include "External/Gamepad.h"
+
 namespace Sonar
 {
     class Joystick
     {
     public:
+        /**
+        * \brief Class constructor
+        */
+        Joystick( const float &joystickID );
+
+        /**
+        * \brief Class destructor
+        */
+        ~Joystick( );
+
         /**
          * \brief Maximum supported joysticks, buttons and axes
         */
@@ -173,6 +185,90 @@ namespace Sonar
         * \return Output returns the joystick distance
         */
         static float GetJoystickDistanceFromCenter( const unsigned int &joystick, const Axis &xAxis, const Axis &yAxis, const std::pair<float, float> &deadzone = { 0.0, 0.0 } );
+
+        /**
+        * \brief Update the rumble status
+        */
+        void Update( );
+
+        /**
+        * \brief Set left and right motor vibration
+        *
+		* \param leftRumble Left motors rumble intensity (0.0 to 1.0)
+		* \param rightRumble Right motors rumble intensity (0.0 to 1.0)
+        */
+		void SetVibration( const float &leftRumble, const float &rightRumble );
+
+        /**
+        * \brief Set left motor vibration
+        *
+        * \param leftRumble Left motors rumble intensity (0.0 to 1.0)
+        */
+		void SetVibrationLeft( const float &leftRumble );
+
+        /**
+        * right motor vibration
+        *
+        * \param rightRumble Right motors rumble intensity (0.0 to 1.0)
+        */
+		void SetVibrationRight( const float &rightRumble );
+
+        /**
+        * \brief Return the vibration intensity
+        *
+        * \return Output returns vibration intensity for both motors and 
+        */
+         std::pair<float, float> GetVibration( ) const;
+
+         /**
+         * \brief Disable the controllers vibration for both motors
+         */
+		 void DisableVibration( );
+
+         /**
+         * \brief Disable the controllers left vibration 
+         */
+         void DisableVibrationLeft( );
+
+         /**
+         * \brief Disable the controller right vibration
+         */
+         void DisableVibrationRight( );
+
+         /**
+         * \brief Set the ID of the joystick to be checked
+         *
+         * \param joystickID ID of the current controller
+         */
+         void SetJoystickID( const int &joystickID );
+
+         /**
+         * \brief Gets the current Joysticks ID
+         *
+         * \return Output returns joystick ID
+         */
+         int GetJoystickID( ) const;
+
+    private:              
+         /**
+         * \brief Gamepad object from the external library
+         */
+         Gamepad _gamepad;
+
+         /**
+         * \brief ID of the joystick
+         */
+         int _joystickID;
+
+         /**
+         * \brief Left motor rumble
+         */
+         float _leftRumble;
+
+         /**
+         * \brief Right motor rumble
+         */
+         float _rightRumble;
 
     };
 }

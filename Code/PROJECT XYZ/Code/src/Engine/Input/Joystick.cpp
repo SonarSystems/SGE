@@ -2,6 +2,17 @@
 
 namespace Sonar
 {
+	Joystick::Joystick( const float &joystickID )
+	{
+		_gamepad = Gamepad( joystickID );
+
+		_leftRumble = _rightRumble = 0.0f;
+
+		_joystickID = 0.0f;
+	}
+
+	Joystick::~Joystick(  ) { }
+
 	Joystick::Identification Joystick::GetIdentification( const unsigned int &joystick )
 	{
 		Identification id;
@@ -184,4 +195,62 @@ namespace Sonar
 		return sqrt( ( xCoord * xCoord ) + ( yCoord * yCoord ) );
 	}
 
+	void Joystick::Update( )
+	{ _gamepad.Refresh( ); }
+
+	void Joystick::SetVibration( const float &leftRumble, const float &rightRumble )
+	{
+		_gamepad.SetRumble( leftRumble, rightRumble );
+
+		_leftRumble = leftRumble;
+		_rightRumble = rightRumble;
+	}
+
+	void Joystick::SetVibrationLeft( const float &leftRumble )
+	{
+		_gamepad.SetRumble( leftRumble, _rightRumble );
+
+		_leftRumble = leftRumble;
+	}
+
+	void Joystick::SetVibrationRight( const float &rightRumble )
+	{
+		_gamepad.SetRumble( _leftRumble, rightRumble );
+
+		_rightRumble = rightRumble;
+	}
+
+	std::pair<float, float> Joystick::GetVibration( ) const
+	{ return { _leftRumble,_rightRumble }; }
+
+	void Joystick::DisableVibration( )
+	{
+		_gamepad.SetRumble( 0.0f, 0.0f );
+
+		_leftRumble = _rightRumble = 0.0f;
+	}
+
+	void Joystick::DisableVibrationLeft( )
+	{
+		_gamepad.SetRumble( 0.0f, _rightRumble );
+
+		_leftRumble = 0.0f;
+	}
+
+	void Joystick::DisableVibrationRight( )
+	{
+		_gamepad.SetRumble( _leftRumble, 0.0f );
+
+		_rightRumble = 0.0f;
+	}
+
+	void Joystick::SetJoystickID( const int &joystickID )
+	{
+		_gamepad = Gamepad( joystickID );
+
+		_joystickID = joystickID;
+	}
+
+	int Joystick::GetJoystickID( ) const
+	{ return _joystickID; }
 }
