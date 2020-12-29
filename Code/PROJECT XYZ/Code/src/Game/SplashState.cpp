@@ -8,11 +8,36 @@ namespace Sonar
 	{
         player = new Player( _data );
         physicsWorld = new PhysicsWorld( _data );
-		gesture = new Gesture( 1, AnalogueStick::LeftStick, Pattern::Clockwise );
 
-		joy = new Joystick( 1 );
-		
-		std::cout << Joystick::IsConnected( 1 ) << std::endl;
+		joy = new Joystick( 0 );
+
+		for ( int i = 0; i < Joystick::Count; i++ )
+		{
+			if ( Joystick::IsConnected( i ) )
+			{
+				Joystick::Identification id = Joystick::GetIdentification( i );
+
+				std::cout << i << ": " << id.name << " - " << id.vendorId << " - " << id.productId << std::endl;
+			}
+		}
+
+		/*
+		vendorid
+		-------------------------
+		1356 - Sony
+		1118 - Microsoft
+
+		productid
+		-------------------------
+		3290 - PS Classic
+		2508 - PS4 controller new (with extra light in touch bar)
+		1476 - PS4 controller old (without extra light in touch bar)
+		721 - Xbox One Wireless (using Xbox One Dongle)
+		736 - Xbox One Wireless (using Bluetooth)
+		767 - Xbox One Wired
+		2834 - Xbox Series Wireless (using Xbox One Dongle)
+		2835 - Xbox Series Wireless (using Bluetooth)
+		*/
 	}
 
 	void SplashState::Init( )
@@ -41,11 +66,7 @@ namespace Sonar
         
         physicsWorld->Update( dt );
 
-		gesture->Update( );
-
 		joy->Update( );
-
-		std::cout << Joystick::GetAxisPosition( 1, Joystick::Axis::X, 20 ) << std::endl;;
 	}
 
 	void SplashState::Draw( const float &dt )

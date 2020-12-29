@@ -6,7 +6,6 @@ GAME
 ENGINE
 -----------------------------------------------------------------
 * Input manager - CHECK ALL INPUT
-     - Motion (Wii, PS3+)
     - Auto detection of all available joysticks/controllers and identify them
         - Function for checking all connected controllers and getting a list along with the ID
     - Pre defined controller types
@@ -75,3 +74,8 @@ ENGINE
 * Accessibilty for blind and deaf people
     - Built in voice reader
     - Built in screen reader
+
+
+SKIPPED
+-----------------------------------------------------------------
+* Input manager - Motion (Wii, PS3+)

@@ -26,8 +26,6 @@ namespace Sonar
         PhysicsWorld *physicsWorld;
         
 		Player *player;
-                
-		Gesture *gesture;
 
 		Joystick *joy;
 
