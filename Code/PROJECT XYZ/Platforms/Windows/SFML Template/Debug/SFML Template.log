@@ -1,4 +1,6 @@
-﻿  SplashState.cpp
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(54,84): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(54,63): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
+﻿  Joystick.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Joystick.cpp(34,23): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Joystick.cpp(38,17): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Joystick.cpp(197,20): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Joystick.cpp(189): warning C4715: 'Sonar::Joystick::IsGestureTriggered': not all control paths return a value
   SFML Template.vcxproj -> C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\SFML Template.exe

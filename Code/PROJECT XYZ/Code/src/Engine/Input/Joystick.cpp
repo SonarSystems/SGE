@@ -2,6 +2,33 @@
 
 namespace Sonar
 {
+	/*
+	vendorid
+	-------------------------
+	1356 - Sony
+	1118 - Microsoft
+	2389 - NVIDIA
+	1406 - NINTENDO
+
+	productid
+	-------------------------
+	654 - PS3 controller (SIXAXIS/Dualshock 3) using XINPUT mapping
+	721 - Xbox One Wireless (using Xbox One Dongle)
+	736 - Xbox One Wireless (using Bluetooth)
+	767 - Xbox One Wired
+	774 - Wii Controller
+	816 - Wii U Pro Controller
+	981 - PS Move
+	1476 - PS4 controller old (without extra light in touch bar) - wired/wireless
+	2508 - PS4 controller new (with extra light in touch bar) - wired/wireless
+	2834 - Xbox Series Wireless (using Xbox One Dongle)
+	2835 - Xbox Series Wireless (using Bluetooth)
+	3290 - PS Classic
+	3302 - PS5 controller - wired
+	46080 - NVIDIA Shield 2015/2017 Wired/Wireless
+	*/
+
+
 	Joystick::Joystick( const float &joystickID )
 	{
 		_gamepad = Gamepad( joystickID );
@@ -193,6 +220,51 @@ namespace Sonar
 		float yCoord = Joystick::GetAxisPosition( joystick, yAxis, deadzone.second );
 
 		return sqrt( ( xCoord * xCoord ) + ( yCoord * yCoord ) );
+	}
+
+
+	std::tuple<int, std::string, std::string, std::string> Joystick::IdentifyJoystick( const int &joystickID )
+	{
+		Identification id = GetIdentification( joystickID );
+
+		for ( const auto &element : ProductID )
+		{
+			if ( std::get<0>( element ) == id.productId )
+			{ return element; }
+
+			// std::get<0>(values) to get the product id
+			// std::get<1>(values) to get the short description
+			// std::get<2>(values) to get the long description
+		}
+
+		return std::make_tuple( -1, "", "", "" );
+	}
+
+	std::vector<std::tuple<int, int, std::string, std::string, std::string>> Joystick::GetControllerList( )
+	{
+		std::vector<std::tuple<int, int, std::string, std::string, std::string>> joysticks;
+
+		for ( int i = 0; i < Count; i++ )
+		{
+			Identification id = GetIdentification( i );
+
+			for ( const auto &element : ProductID )
+			{
+				if ( std::get<0>( element ) == id.productId )
+				{
+					joysticks.push_back( std::make_tuple
+					(
+						i,
+						std::get<0>( element ),
+						std::get<1>( element ),
+						std::get<2>( element ),
+						std::get<3>( element )
+					) );
+				}
+			}
+		}
+
+		return joysticks;
 	}
 
 	void Joystick::Update( )

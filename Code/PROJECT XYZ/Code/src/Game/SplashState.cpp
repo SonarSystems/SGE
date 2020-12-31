@@ -21,23 +21,20 @@ namespace Sonar
 			}
 		}
 
-		/*
-		vendorid
-		-------------------------
-		1356 - Sony
-		1118 - Microsoft
+		std::cout << "-----------------" << std::endl;
 
-		productid
-		-------------------------
-		3290 - PS Classic
-		2508 - PS4 controller new (with extra light in touch bar)
-		1476 - PS4 controller old (without extra light in touch bar)
-		721 - Xbox One Wireless (using Xbox One Dongle)
-		736 - Xbox One Wireless (using Bluetooth)
-		767 - Xbox One Wired
-		2834 - Xbox Series Wireless (using Xbox One Dongle)
-		2835 - Xbox Series Wireless (using Bluetooth)
-		*/
+		auto id = Joystick::IdentifyJoystick( 3 );
+
+		//std::cout << std::get<0>( id ) << " : " << std::get<1>( id ) << " : " << std::get<2>( id ) 
+		//	<< " : " << std::get<3>( id ) << std::endl;
+
+		auto joysticks = Joystick::GetControllerList( );
+
+		for ( const auto &element : joysticks )
+		{
+			std::cout << std::get<0>( element ) << " : " << std::get<1>( element ) << " : " << std::get<2>( element )
+				<< " : " << std::get<3>( element ) << " : " << std::get<4>( element ) << std::endl;
+		}
 	}
 
 	void SplashState::Init( )

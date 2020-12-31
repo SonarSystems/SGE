@@ -4,11 +4,34 @@
 #include <string>
 #include <array>
 #include <cmath>
+#include <tuple>
+#include <vector>
 
 #include "External/Gamepad.h"
 
 namespace Sonar
 {
+    /**
+    * \brief Joystick product id's
+    */
+	const static std::vector<std::tuple<int, const std::string, const std::string, const std::string>> ProductID =
+	{
+		std::make_tuple( 654, "Sony", "PS3 Controller", "PS3 controller (SIXAXIS/Dualshock 3) using XINPUT mapping" ),
+		std::make_tuple( 721, "Microsoft", "Xbox One Controller", "Xbox One Wireless (using Xbox One Dongle)" ),
+		std::make_tuple( 736, "Microsoft", "Xbox One Controller", "Xbox One Wireless (using Bluetooth)" ),
+		std::make_tuple( 767, "Microsoft", "Xbox One Controller", "Xbox One Wired" ),
+		std::make_tuple( 774, "Nintendo", "Wii Controller", "Wii Controller" ),
+		std::make_tuple( 816, "Nintendo", "Wii U Pro Controller", "Wii U Pro Controller" ),
+		std::make_tuple( 981, "Sony", "PS Move", "PS Move" ),
+		std::make_tuple( 1476, "Sony", "PS4 Controller", "PS4 controller old (without extra light in touch bar) - wired/wireless" ),
+		std::make_tuple( 2508, "Sony", "PS4 Controller", "PS4 controller new (with extra light in touch bar) - wired/wireless" ),
+		std::make_tuple( 2834, "Microsoft", "Xbox Series Wireless", "Xbox Series Wireless (using Xbox One Dongle)" ),
+		std::make_tuple( 2835, "Microsoft", "Xbox Series Wireless", "Xbox Series Wireless (using Bluetooth)" ),
+		std::make_tuple( 3290, "Sony", "PS Classic", "PS Classic" ),
+		std::make_tuple( 3302, "Sony", "PS5 Controller", "PS5 controller - wired" ),
+		std::make_tuple( 46080, "NVIDIA", "NVIDIA Shield Controller", "NVIDIA Shield 2015/2017 Wired/Wireless" )
+	};
+
     class Joystick
     {
     public:
@@ -70,6 +93,19 @@ namespace Sonar
             LeftDown,
             RightDown
         };
+
+        /**
+        * \brief Joystick vendor id's
+        */
+        enum VendorID
+        {
+            MICROSOFT = 1118,
+            SONY = 1356,
+            NINTENDO = 1406,
+            NVIDIA = 2389
+        };
+
+        // List all controllers (including joystick id)
 
         /**
          * \brief Joystick information
@@ -185,6 +221,22 @@ namespace Sonar
         * \return Output returns the joystick distance
         */
         static float GetJoystickDistanceFromCenter( const unsigned int &joystick, const Axis &xAxis, const Axis &yAxis, const std::pair<float, float> &deadzone = { 0.0, 0.0 } );
+
+        /**
+        * \brief Identify a joysticks manufacturer and product description
+        *
+        * \param joystickID id of the joystick to be identified
+        *
+        * \return Output returns joysticks info
+        */
+        static std::tuple<int, std::string, std::string, std::string> IdentifyJoystick( const int &joystickID );
+
+        /**
+        * \brief Get a list of all the connected controllers
+        *
+        * \return Output returns a list of all the connected controllers
+        */
+        static std::vector<std::tuple<int, int, std::string, std::string, std::string>> GetControllerList( );
 
         /**
         * \brief Update the rumble status
