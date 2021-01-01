@@ -5,19 +5,7 @@ GAME
 
 ENGINE
 -----------------------------------------------------------------
-* Input manager - CHECK ALL INPUT
-    - Auto detection of all available joysticks/controllers and identify them
-        - Function for checking all connected controllers and getting a list along with the ID
-    - Pre defined controller types
-        - Xbox
-        - PlayStation
-            - PS3 needs xinput so no pre definition required
-            - PS4/PS5 have different axes so update for gestures and check all buttons as well to see if they match xinput
-        - Plus auto detection, look into identification struct in joystick class
-* Objects move faster when scrolling aswell, bug I believe, check it out
 * Debug
-    - Toggle different message categories on and off
-        - Use a list/vector of the name of the categories that are disabled to see if the message is to be displayed
     - Box2d shape rendering toggle
     - Print cast anything to string (ATM IT ONLY ACCEPTS STRINGS WHICH IS VERY LIMITED AND THUS COUT HAS TO BE USED MOST OF THE TIME)
 * Sprite

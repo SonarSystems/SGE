@@ -27,7 +27,5 @@ namespace Sonar
         
 		Player *player;
 
-		Joystick *joy;
-
 	};
 }

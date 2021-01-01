@@ -1,6 +1,51 @@
-﻿  Joystick.cpp
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Joystick.cpp(34,23): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Joystick.cpp(38,17): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Joystick.cpp(197,20): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Joystick.cpp(189): warning C4715: 'Sonar::Joystick::IsGestureTriggered': not all control paths return a value
+﻿  Debug.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Core\Debug.cpp(76,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Core\Debug.cpp(85,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Core\Debug.cpp(94,22): warning C4018: '<': signed/unsigned mismatch
+  Game.cpp
+  Drawable.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Drawable.cpp(99,81): warning C4244: 'argument': conversion from 'const T' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+          and
+          [
+              T=int
+          ]
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Drawable.cpp(99,72): warning C4244: 'argument': conversion from 'const T' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+          and
+          [
+              T=int
+          ]
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Drawable.cpp(99,63): warning C4244: 'argument': conversion from 'const T' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+          and
+          [
+              T=int
+          ]
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Drawable.cpp(99,50): warning C4244: 'argument': conversion from 'const T' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+          and
+          [
+              T=int
+          ]
+  Rectangle.cpp
+  Sprite.cpp
+  Sequence.cpp
+  main.cpp
+  PhysicsWorld.cpp
+  Player.cpp
+  SplashState.cpp
+  Generating Code...
   SFML Template.vcxproj -> C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\SFML Template.exe
