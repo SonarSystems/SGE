@@ -55,9 +55,9 @@ namespace Sonar
 			if ( IsCategoryEnabled( category ) )
 			{
 				if ( newLine )
-				{ std::cout << message << std::endl; }
+				{ spdlog::info( message + "\n" ); }
 				else
-				{ std::cout << message; }
+				{ spdlog::info( message ); }
 			}
 			else
 			{ AddCategory( category ); }
@@ -67,10 +67,11 @@ namespace Sonar
 	void Debug::LogStatic( const std::string &message, const bool &newLine )
 	{
 		if ( newLine )
-		{ std::cout << message << std::endl; }
+		{ spdlog::info( message + "\n" ); }
 		else
-		{ std::cout << message; }
+		{ spdlog::info( message ); }
 	}
+
 	std::string Debug::ToLower( std::string string )
 	{
 		std::transform( string.begin( ), string.end( ), string.begin( ),

@@ -20,10 +20,6 @@ namespace Sonar
 		if ( Event::MouseWheelMoved == event.type )
 		{
 			physicsWorld->CreateDynamicBody( event.mouseButton.x, event.mouseButton.y, 32, 32 );
-
-			_data->debug->Log( "ddd", "ed" );
-
-			spdlog::info( 98987 );
 		}
 	}
 
