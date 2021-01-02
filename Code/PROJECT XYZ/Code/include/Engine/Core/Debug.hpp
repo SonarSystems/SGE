@@ -4,6 +4,7 @@
 #include <string>
 #include <vector>
 #include <algorithm>
+#include <spdlog/spdlog.h>
 
 // Starting state of the Debug system, true being enabled and false being disabled
 #define START_STATE true
