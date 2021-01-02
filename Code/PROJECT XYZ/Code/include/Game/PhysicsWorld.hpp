@@ -2,8 +2,9 @@
 
 #include <SFML/Graphics.hpp>
 #include <Box2D/Box2D.h>
-#include "Sonar.hpp"
 #include <iostream>
+
+#include "Sonar.hpp"
 
 namespace Sonar
 {

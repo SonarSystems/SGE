@@ -13,7 +13,11 @@ namespace Sonar
     }
 
     Debug::Debug( )
-    { _isEnabled = START_STATE; }
+    {
+        _isEnabled = START_STATE;
+
+        _isPhysicsEnabled = PHYSICS_START_STATE;
+    }
 
     void Debug::Enable( )
     { _isEnabled = true; }
@@ -27,30 +31,46 @@ namespace Sonar
     bool Debug::IsEnabled( ) const
     { return _isEnabled; }
 
-    void Debug::Log( const std::string &message, const std::string &category, const bool &newLine )
-    {
+	void Debug::EnablePhysics( )
+	{ _isPhysicsEnabled = true; }
+
+	void Debug::DisablePhysics( )
+	{ _isPhysicsEnabled = false; }
+
+	void Debug::TogglePhysics( )
+	{ _isPhysicsEnabled = !_isPhysicsEnabled; }
+
+	bool Debug::IsPhysicsEnabled( ) const
+	{
         if ( _isEnabled )
-        {
-            if ( IsCategoryEnabled( category ) )
-            {
-                if ( newLine )
-                { std::cout << message << std::endl; }
-                else
-                { std::cout << message; }
-            }
-            else
-            { AddCategory( category ); }
-        }
-    }
-
-    void Debug::LogStatic( const std::string &message, const bool &newLine )
-    {
-        if ( newLine )
-        { std::cout << message << std::endl; }
+        { return _isPhysicsEnabled; }
         else
-        { std::cout << message; }
+        { return false; }
     }
 
+	void Debug::Log( const std::string &message, const std::string &category, const bool &newLine )
+	{
+		if ( _isEnabled )
+		{
+			if ( IsCategoryEnabled( category ) )
+			{
+				if ( newLine )
+				{ std::cout << message << std::endl; }
+				else
+				{ std::cout << message; }
+			}
+			else
+			{ AddCategory( category ); }
+		}
+	}
+
+	void Debug::LogStatic( const std::string &message, const bool &newLine )
+	{
+		if ( newLine )
+		{ std::cout << message << std::endl; }
+		else
+		{ std::cout << message; }
+	}
 	std::string Debug::ToLower( std::string string )
 	{
 		std::transform( string.begin( ), string.end( ), string.begin( ),

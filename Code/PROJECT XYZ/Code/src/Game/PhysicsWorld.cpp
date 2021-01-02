@@ -61,7 +61,7 @@ namespace Sonar
             }
         }
         
-        if ( _data->debug->IsEnabled( ) )
+        if ( _data->debug->IsPhysicsEnabled( ) )
         { World->DrawDebugData(); }
     }
 

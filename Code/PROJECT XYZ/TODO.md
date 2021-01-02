@@ -6,7 +6,6 @@ GAME
 ENGINE
 -----------------------------------------------------------------
 * Debug
-    - Box2d shape rendering toggle
     - Print cast anything to string (ATM IT ONLY ACCEPTS STRINGS WHICH IS VERY LIMITED AND THUS COUT HAS TO BE USED MOST OF THE TIME)
 * Sprite
 * Shapes

@@ -7,6 +7,7 @@
 
 // Starting state of the Debug system, true being enabled and false being disabled
 #define START_STATE true
+#define PHYSICS_START_STATE true
 
 namespace Sonar
 {
@@ -39,21 +40,42 @@ namespace Sonar
          * \return Output returns true if the debugger is enabled and false if it isn't
         */
         bool IsEnabled( ) const;
+
+        /**
+        * \brief Enable the physics debug drawing
+        */
+        void EnablePhysics( );
+        /**
+        * \brief Disable the physics debug drawing
+        */
+        void DisablePhysics( );
+        /**
+        * \brief Toggle the physics debug drawing on and off
+        */
+        void TogglePhysics( );
+
+        /**
+        * \brief Check if the physics debug drawing is enabled
+        *
+        * \return Output returns true if the physics debug drawing is enabled and false if it isn't
+        */
+        bool IsPhysicsEnabled( ) const;
         
         /**
          * \brief Print a message to the terminal
          *
-         * \param message String to print
+         * \param message Message to print
          * \param newLine Whether a new line tag should be at the end (optional, true by default)
         */
-        void Log( const std::string &message, const std::string &category, const bool &newLine = true );
+		void Log( const std::string &message, const std::string &category, const bool &newLine = true );
+
         /**
          * \brief Print a message to the terminal (static so isn't affected by debugger settings)
          *
-         * \param message String to print
+         * \param message Message to print
          * \param newLine Whether a new line tag should be at the end (optional, true by default)
         */
-        static void LogStatic( const std::string &message, const bool &newLine = true );
+		static void LogStatic( const std::string &message, const bool &newLine = true );
 
         /**
         * \brief Add a category manually
@@ -111,6 +133,11 @@ namespace Sonar
          * \brief Tracks the debugger's enabled status
         */
         bool _isEnabled;
+
+        /**
+        * \brief Tracks the physics debug drawing enabled status
+        */
+        bool _isPhysicsEnabled;
         
         /**
          * \brief Static class instance

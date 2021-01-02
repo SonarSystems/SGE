@@ -38,6 +38,7 @@ namespace Sonar
 			if ( _counter <= 0 )
 			{
 				_failureCount++;
+
 				Restart( );
 			}
 		}
