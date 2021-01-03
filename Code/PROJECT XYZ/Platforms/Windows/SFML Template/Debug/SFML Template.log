@@ -1,9 +1,97 @@
-﻿  Debug.cpp
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Core\Debug.cpp(97,22): warning C4018: '<': signed/unsigned mismatch
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Core\Debug.cpp(106,22): warning C4018: '<': signed/unsigned mismatch
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Core\Debug.cpp(115,22): warning C4018: '<': signed/unsigned mismatch
+﻿  Game.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(91,34): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(91,34): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(93,38): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(93,38): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(97,17): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(97,17): error C2143: syntax error: missing ';' before '*'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(97,37): error C2238: unexpected token(s) preceding ';'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(99,17): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(99,17): error C2143: syntax error: missing ';' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(99,41): error C2238: unexpected token(s) preceding ';'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(102,27): error C3646: 'getLocalBounds': unknown override specifier
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(102,27): error C2059: syntax error: '('
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(102,36): error C2238: unexpected token(s) preceding ';'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(104,28): error C3646: 'getGlobalBounds': unknown override specifier
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(104,28): error C2059: syntax error: '('
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(104,37): error C2238: unexpected token(s) preceding ';'
+  Sprite.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(91,34): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(91,34): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(93,38): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(93,38): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(97,17): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(97,17): error C2143: syntax error: missing ';' before '*'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(97,37): error C2238: unexpected token(s) preceding ';'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(99,17): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(99,17): error C2143: syntax error: missing ';' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(99,41): error C2238: unexpected token(s) preceding ';'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(102,27): error C3646: 'getLocalBounds': unknown override specifier
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(102,27): error C2059: syntax error: '('
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(102,36): error C2238: unexpected token(s) preceding ';'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(104,28): error C3646: 'getGlobalBounds': unknown override specifier
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(104,28): error C2059: syntax error: '('
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(104,37): error C2238: unexpected token(s) preceding ';'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Sprite.cpp(6,5): error C2789: 'Sonar::Sprite::Texture': an object of const-qualified type must be initialized
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(97): message : see declaration of 'Sonar::Sprite::Texture'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Sprite.cpp(6,5): error C2789: 'Sonar::Sprite::IntRect': an object of const-qualified type must be initialized
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(99): message : see declaration of 'Sonar::Sprite::IntRect'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Sprite.cpp(11,5): error C2789: 'Sonar::Sprite::Texture': an object of const-qualified type must be initialized
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(97): message : see declaration of 'Sonar::Sprite::Texture'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Sprite.cpp(11,5): error C2789: 'Sonar::Sprite::IntRect': an object of const-qualified type must be initialized
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(99): message : see declaration of 'Sonar::Sprite::IntRect'
+  Texture.cpp
+  PhysicsWorld.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(91,34): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(91,34): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(93,38): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(93,38): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(97,17): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(97,17): error C2143: syntax error: missing ';' before '*'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(97,37): error C2238: unexpected token(s) preceding ';'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(99,17): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(99,17): error C2143: syntax error: missing ';' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(99,41): error C2238: unexpected token(s) preceding ';'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(102,27): error C3646: 'getLocalBounds': unknown override specifier
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(102,27): error C2059: syntax error: '('
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(102,36): error C2238: unexpected token(s) preceding ';'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(104,28): error C3646: 'getGlobalBounds': unknown override specifier
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(104,28): error C2059: syntax error: '('
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(104,37): error C2238: unexpected token(s) preceding ';'
+  Player.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(91,34): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(91,34): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(93,38): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(93,38): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(97,17): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(97,17): error C2143: syntax error: missing ';' before '*'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(97,37): error C2238: unexpected token(s) preceding ';'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(99,17): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(99,17): error C2143: syntax error: missing ';' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(99,41): error C2238: unexpected token(s) preceding ';'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(102,27): error C3646: 'getLocalBounds': unknown override specifier
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(102,27): error C2059: syntax error: '('
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(102,36): error C2238: unexpected token(s) preceding ';'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(104,28): error C3646: 'getGlobalBounds': unknown override specifier
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(104,28): error C2059: syntax error: '('
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(104,37): error C2238: unexpected token(s) preceding ';'
   SplashState.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(91,34): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(91,34): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(93,38): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(93,38): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(97,17): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(97,17): error C2143: syntax error: missing ';' before '*'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(97,37): error C2238: unexpected token(s) preceding ';'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(99,17): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(99,17): error C2143: syntax error: missing ';' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(99,41): error C2238: unexpected token(s) preceding ';'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(102,27): error C3646: 'getLocalBounds': unknown override specifier
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(102,27): error C2059: syntax error: '('
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(102,36): error C2238: unexpected token(s) preceding ';'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(104,28): error C3646: 'getGlobalBounds': unknown override specifier
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(104,28): error C2059: syntax error: '('
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Sprite.hpp(104,37): error C2238: unexpected token(s) preceding ';'
 C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(22,75): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
 C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(22,54): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
   Generating Code...
-  SFML Template.vcxproj -> C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\SFML Template.exe

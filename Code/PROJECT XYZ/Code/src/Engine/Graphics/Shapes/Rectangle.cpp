@@ -69,7 +69,17 @@ namespace Sonar
         _shape.setOutlineThickness( thickness );
     }
 
-    void Rectangle::Move( const float &x, const float &y )
+	Color Rectangle::GetInsideColor( ) const
+	{ return Color( _shape.getFillColor( ).r, _shape.getFillColor( ).g, _shape.getFillColor( ).b, _shape.getFillColor( ).a ); }
+
+	Color Rectangle::GetBorderColor( ) const
+	{ return Color( _shape.getOutlineColor( ).r, _shape.getOutlineColor( ).g, _shape.getOutlineColor( ).b, _shape.getOutlineColor( ).a ); }
+
+
+	float Rectangle::GetBorderThickness( ) const
+    { return _shape.getOutlineThickness( ); }
+
+	void Rectangle::Move( const float &x, const float &y )
     {
         Drawable::Move( x, y );
         _shape.move( x, y );

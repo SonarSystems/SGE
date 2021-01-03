@@ -33,7 +33,7 @@ namespace Sonar
         ~Rectangle( );
         
         /**
-         * \brief Set the rectangles position (x and y)
+         * \brief Set the position (x and y)
          *
          * \param x X position
          * \param y Y position
