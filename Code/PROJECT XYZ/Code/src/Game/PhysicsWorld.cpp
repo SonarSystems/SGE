@@ -32,7 +32,7 @@ namespace Sonar
 
     void PhysicsWorld::Draw( float dt )
     {
-        int BodyCount = 0;
+        /*int BodyCount = 0;
         for (b2Body* BodyIterator = World->GetBodyList(); BodyIterator != 0; BodyIterator = BodyIterator->GetNext())
         {
             if (BodyIterator->GetType() == b2_dynamicBody)
@@ -62,7 +62,7 @@ namespace Sonar
         }
         
         if ( _data->debug->IsPhysicsEnabled( ) )
-        { World->DrawDebugData(); }
+        { World->DrawDebugData(); }*/
     }
 
     void PhysicsWorld::CreateDynamicBody( float posX, float posY, float width, float height, float density, float friction )

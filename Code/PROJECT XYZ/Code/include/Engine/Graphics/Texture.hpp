@@ -11,6 +11,11 @@ namespace Sonar
     {
     public:
         /**
+        * \brief Default class constructor
+        */
+        Texture( );
+
+        /**
         * \brief Class constructor
         *
         * \param filepath File path of the image
@@ -41,7 +46,7 @@ namespace Sonar
         *
         * \return Output returns the texture
         */
-        sf::Texture GetTexture( ) const;
+        sf::Texture *GetTexture( ) const;
 
         /**
         * \brief Get the texture size
@@ -68,7 +73,7 @@ namespace Sonar
         /**
         * \brief SFML texture object
         */
-        sf::Texture _texture;
+        sf::Texture *_texture;
         
     };
 }

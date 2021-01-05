@@ -4,16 +4,28 @@ namespace Sonar
 {
     Sprite::Sprite( GameDataRef data ) : Drawable( data )
     {
-        
-    }
+		object = &_sprite;
+		_texture = new Texture( );
+	}
 
     Sprite::Sprite( GameDataRef data, const std::string &filepath ) : Drawable( data )
     {
-        _texture.loadFromFile( filepath );
-        _sprite.setTexture( _texture );
-    }
+		object = &_sprite;
 
-    Sprite::~Sprite( ) { }
+		_texture = new Texture( );
+		SetTexture( filepath );
+	}
+
+	Sprite::Sprite( GameDataRef data, Texture *texture ) : Drawable( data )
+	{
+		object = &_sprite;
+
+		_texture = new Texture( );
+		SetTexture( texture );
+	}
+
+	Sprite::~Sprite( )
+	{ delete _texture; }
 
 	void Sprite::SetPosition( const float &x, const float &y )
 	{
@@ -56,5 +68,42 @@ namespace Sonar
 		Drawable::MoveY( y );
 		_sprite.move( 0, y );
 	}
+
+	void Sprite::SetTexture( const std::string &filepath, const bool &resetRect )
+	{
+		_texture->SetTexture( filepath );
+		_sprite.setTexture( *_texture->GetTexture( ), resetRect );
+
+		SetPosition( _sprite.getPosition( ).x, _sprite.getPosition( ).y );
+		SetSize( _sprite.getLocalBounds( ).width, _sprite.getLocalBounds( ).height );
+	}
+
+	void Sprite::SetTexture( Texture *texture, const bool &resetRect )
+	{
+		_texture = texture;
+		_sprite.setTexture( *_texture->GetTexture( ), resetRect );
+
+		SetPosition( _sprite.getPosition( ).x, _sprite.getPosition( ).y );
+		SetSize( _sprite.getLocalBounds( ).width, _sprite.getLocalBounds( ).height );
+	}
+
+	void Sprite::SetTextureRect( const glm::ivec4 &rectangle )
+	{ _sprite.setTextureRect( sf::IntRect( rectangle.x, rectangle.y, rectangle.z, rectangle.w ) ); }
+
+	void Sprite::SetTextureRect( const int &left, const int &top, const int &width, const int &height )
+	{ _sprite.setTextureRect( sf::IntRect( left, top, width, height ) ); }
+
+	Texture *Sprite::GetTexture( ) const
+	{ return _texture; }
+
+	glm::ivec4 Sprite::GetTextureRect( ) const
+	{ return glm::ivec4( _sprite.getTextureRect( ).left, _sprite.getTextureRect( ).top, _sprite.getTextureRect( ).width, _sprite.getTextureRect( ).height ); }
+
+	glm::vec4 Sprite::GetLocalBounds( ) const
+	{ return glm::vec4( _sprite.getLocalBounds( ).left, _sprite.getLocalBounds( ).top, _sprite.getLocalBounds( ).width, _sprite.getLocalBounds( ).height ); }
+
+	glm::vec4 Sprite::GetGlobalBounds( ) const
+	{ return glm::vec4( _sprite.getGlobalBounds( ).left, _sprite.getGlobalBounds( ).top, _sprite.getGlobalBounds( ).width, _sprite.getGlobalBounds( ).height ); }
+
 }
 

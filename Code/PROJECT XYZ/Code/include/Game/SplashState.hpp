@@ -27,5 +27,7 @@ namespace Sonar
         
 		Player *player;
 
+		Sprite *sprite;
+
 	};
 }

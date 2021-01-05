@@ -6,7 +6,10 @@ namespace Sonar
 	{
         player = new Player( _data );
         physicsWorld = new PhysicsWorld( _data );
-	}
+
+		sprite = new Sprite( _data, "Resources/box.png" );
+		sprite->SetPosition( 100, 100 );
+	} 
 
 	void SplashState::Init( )
 	{
@@ -25,15 +28,15 @@ namespace Sonar
 
 	void SplashState::Update( const float &dt )
 	{
-        player->Update( dt );
+        //player->Update( dt );
         
-        physicsWorld->Update( dt );
+        //physicsWorld->Update( dt );
 	}
 
 	void SplashState::Draw( const float &dt )
 	{
-        player->Draw( dt );
-        
-		physicsWorld->Draw( dt );
+        //player->Draw( dt );
+        sprite->Draw( );
+		//physicsWorld->Draw( dt );
 	}
 }

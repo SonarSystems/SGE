@@ -10,6 +10,7 @@ namespace Sonar
     Rectangle::Rectangle( GameDataRef data, const float &width, const float &height ) : Drawable( data )
     {
         object = &_shape;
+        SetPosition( 0, 0 );
         SetSize( width, height );
     }
 

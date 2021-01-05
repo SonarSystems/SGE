@@ -5,7 +5,6 @@ GAME
 
 ENGINE
 -----------------------------------------------------------------
-* Sprite
 * Shapes
     - Circle
     - Triangle
