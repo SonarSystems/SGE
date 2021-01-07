@@ -8,10 +8,6 @@ namespace Sonar
 
     void Drawable::Draw( )
     {
-        //spdlog::info( "1\n" );
-
-        std::cout << _position.x << " : " << _position.y << std::endl;
-
 		// Check if the object is within the visible window
 		// If not cull it
 		if ( _position.x + _size.x < 0 // Check if it's beyond the left boundary
@@ -20,8 +16,6 @@ namespace Sonar
 			|| _position.y > _data->window.getSize( ).y // Check if it's beyond the bottom boundary
 			)
 		{ return; }
-		
-        spdlog::info( "HEYHEY\n" );
 
 		_data->window.draw( *object );
 	}

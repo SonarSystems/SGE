@@ -9,6 +9,11 @@ namespace Sonar
 
 		sprite = new Sprite( _data, "Resources/box.png" );
 		sprite->SetPosition( 100, 100 );
+
+		circle = new Circle( _data, 100 );
+		circle->SetInsideColor( Color::Red );
+		circle->SetBorderColor( Color::Cyan );
+		circle->SetBorderThickness( 10 );
 	} 
 
 	void SplashState::Init( )
@@ -36,7 +41,8 @@ namespace Sonar
 	void SplashState::Draw( const float &dt )
 	{
         //player->Draw( dt );
-        sprite->Draw( );
+        //sprite->Draw( );
+		circle->Draw( );
 		//physicsWorld->Draw( dt );
 	}
 }

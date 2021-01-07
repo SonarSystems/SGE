@@ -29,5 +29,7 @@ namespace Sonar
 
 		Sprite *sprite;
 
+		Circle *circle;
+
 	};
 }

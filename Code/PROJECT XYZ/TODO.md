@@ -6,7 +6,6 @@ GAME
 ENGINE
 -----------------------------------------------------------------
 * Shapes
-    - Circle
     - Triangle
         - Equilateral
         - Vertex based
