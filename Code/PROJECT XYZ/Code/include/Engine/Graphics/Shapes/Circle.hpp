@@ -19,7 +19,7 @@ namespace Sonar
         Circle( GameDataRef data );
         
         /**
-         * \brief Class constructor with width and height of rectangle
+         * \brief Class constructor with radius of the circl
          *
          * \param data Game data object
          * \param width Width of the rectangle

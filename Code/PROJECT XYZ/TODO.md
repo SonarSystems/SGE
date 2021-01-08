@@ -9,6 +9,12 @@ ENGINE
     - Triangle
         - Equilateral
         - Vertex based
+* Rotation - implement into the following classes
+    - Drawable (keeping track of things)
+    - Sprite
+    - Circle
+    - Rectangle
+    - Triangle
 * Physics
     - pixel perfect collision
 * Parallax background
@@ -43,6 +49,7 @@ ENGINE
         - Square
         - Rounded
         - Draw using shapes, ability to override using sprites
+* Anti Aliasing and other settings for SFML
 * Update SFML
 * Shadows
 * Fog

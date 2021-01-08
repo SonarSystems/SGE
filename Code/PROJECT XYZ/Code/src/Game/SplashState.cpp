@@ -7,13 +7,14 @@ namespace Sonar
         player = new Player( _data );
         physicsWorld = new PhysicsWorld( _data );
 
-		sprite = new Sprite( _data, "Resources/box.png" );
-		sprite->SetPosition( 100, 100 );
-
 		circle = new Circle( _data, 100 );
 		circle->SetInsideColor( Color::Red );
 		circle->SetBorderColor( Color::Cyan );
 		circle->SetBorderThickness( 10 );
+
+		triangle = new Triangle( _data, {0, 0}, {100, 200}, {50, 200} );
+		triangle->SetInsideColor( Color::Red );
+		//triangle->
 	} 
 
 	void SplashState::Init( )
@@ -42,7 +43,9 @@ namespace Sonar
 	{
         //player->Draw( dt );
         //sprite->Draw( );
-		circle->Draw( );
+		//circle->Draw( );
 		//physicsWorld->Draw( dt );
+
+		triangle->Draw( );
 	}
 }

@@ -33,6 +33,7 @@
     <ClInclude Include="..\..\..\Code\include\Engine\Graphics\Drawable.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\Graphics\Shapes\Circle.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\Graphics\Shapes\Rectangle.hpp" />
+    <ClInclude Include="..\..\..\Code\include\Engine\Graphics\Shapes\Triangle.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\Graphics\Sprite.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\Graphics\Texture.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\Input\Events.hpp" />
@@ -63,6 +64,7 @@
     <ClCompile Include="..\..\..\Code\src\Engine\Graphics\Drawable.cpp" />
     <ClCompile Include="..\..\..\Code\src\Engine\Graphics\Shapes\Circle.cpp" />
     <ClCompile Include="..\..\..\Code\src\Engine\Graphics\Shapes\Rectangle.cpp" />
+    <ClCompile Include="..\..\..\Code\src\Engine\Graphics\Shapes\Triangle.cpp" />
     <ClCompile Include="..\..\..\Code\src\Engine\Graphics\Sprite.cpp" />
     <ClCompile Include="..\..\..\Code\src\Engine\Graphics\Texture.cpp" />
     <ClCompile Include="..\..\..\Code\src\Engine\Input\Events.cpp" />

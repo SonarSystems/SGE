@@ -27,9 +27,9 @@ namespace Sonar
         
 		Player *player;
 
-		Sprite *sprite;
-
 		Circle *circle;
+
+		Triangle *triangle;
 
 	};
 }

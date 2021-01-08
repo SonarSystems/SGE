@@ -16,6 +16,7 @@
 #include "Graphics/Drawable.hpp"
 #include "Graphics/Shapes/Circle.hpp"
 #include "Graphics/Shapes/Rectangle.hpp"
+#include "Graphics/Shapes/Triangle.hpp"
 #include "Graphics/Sprite.hpp"
 #include "Graphics/Texture.hpp"
 #include "Input/Events.hpp"
