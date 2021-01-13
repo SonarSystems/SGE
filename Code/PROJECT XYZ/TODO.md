@@ -5,6 +5,12 @@ GAME
 
 ENGINE
 -----------------------------------------------------------------
+* Pulsing - start and end size (or just an end size and the start size is the current size)
+    - Drawable (keeping track of things)
+    - Sprite
+    - Circle
+    - Rectangle
+    - Triangle
 * Physics
     - circle collision detection
         - Circle on circle
