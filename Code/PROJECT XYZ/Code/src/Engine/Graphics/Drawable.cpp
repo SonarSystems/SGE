@@ -2,7 +2,12 @@
 
 namespace Sonar
 {
-    Drawable::Drawable( GameDataRef data ) : _data( data ) { }
+    Drawable::Drawable( GameDataRef data ) : _data( data )
+    {
+        _rotation = 0;
+        _scale[0] = _scale[1] = 1;
+        _pivot[0] = _pivot[1] = 0;
+    }
 
     Drawable::~Drawable( ) { }
 
@@ -10,9 +15,9 @@ namespace Sonar
     {
 		// Check if the object is within the visible window
 		// If not cull it
-		if ( _position.x + _size.x < 0 // Check if it's beyond the left boundary
+		if ( _position.x + ( _size.x * _scale[0] ) < 0 // Check if it's beyond the left boundary
 			|| _position.x > _data->window.getSize( ).x // Check if it's beyond the right boundary
-			|| _position.y + _size.y < 0 // Check if it's beyond the top boundary
+			|| _position.y + ( _size.y * _scale[1] ) < 0 // Check if it's beyond the top boundary
 			|| _position.y > _data->window.getSize( ).y // Check if it's beyond the bottom boundary
 			)
 		{ return; }
@@ -92,7 +97,92 @@ namespace Sonar
     void Drawable::MoveY( const float &y )
     { _position.y += y; }
 
-    bool Drawable::IsClicked( const Mouse::Button &button ) const
+	void Drawable::SetRotation( const float &angle )
+	{ _rotation = angle; }
+
+	float Drawable::GetRotation( ) const
+    { return _rotation; }
+
+	void Drawable::SetScale( const float &xScale, const float &yScale )
+	{
+        _scale[0] = xScale;
+        _scale[1] = yScale;
+	}
+
+	void Drawable::SetScale( const glm::vec2 &scale )
+	{ _scale = scale; }
+
+	void Drawable::SetScaleX( const float &xScale )
+	{ _scale[0] = xScale; }
+
+	void Drawable::SetScaleY( const float &yScale )
+	{ _scale[1] = yScale; }
+
+	glm::vec2 Drawable::GetScale( ) const
+	{ return _scale; }
+
+	float Drawable::GetScaleX( ) const
+	{ return _scale[0]; }
+
+	float Drawable::GetScaleY( ) const
+    { return _scale[1]; }
+
+	void Drawable::SetPivot( const float &xPoint, const float &yPoint )
+	{
+        _pivot[0] = xPoint;
+        _pivot[1] = yPoint;
+	}
+
+	void Drawable::SetPivot( const glm::vec2 &pivot )
+	{ _pivot = pivot; }
+
+	void Drawable::SetPivot( const OBJECT_POINTS &pivot )
+	{
+        switch ( pivot )
+        {
+			case OBJECT_POINTS::CENTER:
+				SetPivot( _size[0] * 0.5f, _size[1] * 0.5f );
+
+				break;
+
+			case OBJECT_POINTS::TOP_LEFT:
+				SetPivot( 0, 0 );
+
+				break;
+
+			case OBJECT_POINTS::TOP_RIGHT:
+				SetPivot( _size[0], 0 );
+
+				break;
+
+			case OBJECT_POINTS::BOTTOM_LEFT:
+				SetPivot( 0, _size[1] );
+
+				break;
+
+			case OBJECT_POINTS::BOTTOM_RIGHT:
+				SetPivot( _size[0], _size[1] );
+
+				break;
+        }
+	}
+
+	void Drawable::SetPivotX( const float &xPoint )
+	{ _pivot[0] = xPoint; }
+
+	void Drawable::SetPivotY( const float &yPoint )
+    { _pivot[1] = yPoint; }
+
+	glm::vec2 Drawable::GetPivot( ) const
+	{ return _pivot; }
+
+	float Drawable::GetPivotX( ) const
+	{ return _pivot[0]; }
+
+	float Drawable::GetPivotY( ) const
+    { return _pivot[1]; }
+
+	bool Drawable::IsClicked( const Mouse::Button &button ) const
     {
         if ( sf::Mouse::isButtonPressed( ( sf::Mouse::Button )button ) )
         {

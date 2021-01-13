@@ -5,7 +5,7 @@
 #include <vector>
 #include <algorithm>
 
-#define SPDLOG_EOL ""
+#define SPDLOG_EOL "\n"
 #include <spdlog/spdlog.h>
 
 // Starting state of the Debug system, true being enabled and false being disabled

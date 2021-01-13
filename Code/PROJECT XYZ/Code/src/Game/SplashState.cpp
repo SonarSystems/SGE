@@ -9,12 +9,20 @@ namespace Sonar
 
 		circle = new Circle( _data, 100 );
 		circle->SetInsideColor( Color::Red );
-		circle->SetBorderColor( Color::Cyan );
-		circle->SetBorderThickness( 10 );
+
+		spdlog::info( circle->GetLocalBounds( )[0] );
+		spdlog::info( circle->GetSize( )[0] );
+
+		circle->SetScale( 2, 2 );
+		spdlog::info( circle->GetLocalBounds( )[0] );
+		spdlog::info( circle->GetSize( )[0] );
+
+		circle->SetPosition( -335, -335 );
+
 
 		triangle = new Triangle( _data, {0, 0}, {100, 200}, {50, 200} );
 		triangle->SetInsideColor( Color::Red );
-		//triangle->
+		triangle->SetRotation( 20 );
 	} 
 
 	void SplashState::Init( )
@@ -43,9 +51,9 @@ namespace Sonar
 	{
         //player->Draw( dt );
         //sprite->Draw( );
-		//circle->Draw( );
+		circle->Draw( );
 		//physicsWorld->Draw( dt );
 
-		triangle->Draw( );
+		//triangle->Draw( );
 	}
 }

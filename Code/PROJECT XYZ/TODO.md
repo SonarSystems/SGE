@@ -1,28 +1,20 @@
 GAME
 -----------------------------------------------------------------
-* Fluid box2d
+* Fluid box2d - MAYBE IN THE ENGINE POTENTIALLY, WILL SEE
 
 
 ENGINE
 -----------------------------------------------------------------
-* Shapes
-    - Triangle
-        - Equilateral
-        - Vertex based
-* Rotation - implement into the following classes
-    - Drawable (keeping track of things)
-    - Sprite
-    - Circle
-    - Rectangle
-    - Triangle
 * Physics
+    - circle collision detection
+        - Circle on circle
+        - Circle on rectangle/polygon (use for triangle aswell)
     - pixel perfect collision
 * Parallax background
-* Migrate game folder classes to using sprite class
 * File loading
-* Saving and loading (link with file loading)
-    - Single pieces of data
-    - Chunks of data like a database
+    - Saving and loading
+        - Single pieces of data
+        - Chunks of data like a database
 * GUI - https://github.com/Hopson97/SFML-Game-Framework
     - Menu system - https://www.youtube.com/watch?v=4Vg9d1pjL20
         - Mouse support

@@ -69,6 +69,99 @@ namespace Sonar
 		_sprite.move( 0, y );
 	}
 
+	void Sprite::SetRotation( const float &angle )
+	{
+		Drawable::SetRotation( angle );
+		_sprite.setRotation( angle );
+	}
+
+	float Sprite::GetRotation( ) const
+	{ return _sprite.getRotation( ); }
+
+	void Sprite::SetScale( const float &xScale, const float &yScale )
+	{
+		Drawable::SetScale( xScale, yScale );
+		_sprite.setScale( xScale, yScale );
+	}
+
+	void Sprite::SetScale( const glm::vec2 &scale )
+	{
+		Drawable::SetScale( scale[0], scale[1] );
+		_sprite.setScale( scale[0], scale[1] );
+	}
+
+	void Sprite::SetScaleX( const float &xScale )
+	{
+		Drawable::SetScaleX( xScale );
+		_sprite.setScale( xScale, _sprite.getScale( ).y );
+	}
+
+	void Sprite::SetScaleY( const float &yScale )
+	{
+		Drawable::SetScaleX( yScale );
+		_sprite.setScale( _sprite.getScale( ).x, yScale );
+	}
+
+	void Sprite::SetPivot( const float &xPoint, const float &yPoint )
+	{
+		Drawable::SetPivot( xPoint, yPoint );
+		_sprite.setOrigin( xPoint, yPoint );
+	}
+
+	void Sprite::SetPivot( const glm::vec2 &pivot )
+	{
+		Drawable::SetPivot( pivot );
+		_sprite.setOrigin( pivot[0], pivot[1] );
+	}
+
+	void Sprite::SetPivot( const OBJECT_POINTS &pivot )
+	{
+		switch ( pivot )
+		{
+			case OBJECT_POINTS::CENTER:
+				Drawable::SetPivot( OBJECT_POINTS::CENTER );
+				_sprite.setOrigin( _sprite.getLocalBounds( ).width * 0.5f, _sprite.getLocalBounds( ).height * 0.5f );
+
+				break;
+
+			case OBJECT_POINTS::TOP_LEFT:
+				Drawable::SetPivot( OBJECT_POINTS::TOP_LEFT );
+				_sprite.setOrigin( 0, 0 );
+
+				break;
+
+			case OBJECT_POINTS::TOP_RIGHT:
+				Drawable::SetPivot( OBJECT_POINTS::TOP_RIGHT );
+				_sprite.setOrigin( _sprite.getLocalBounds( ).width, 0 );
+
+				break;
+
+			case OBJECT_POINTS::BOTTOM_LEFT:
+				Drawable::SetPivot( OBJECT_POINTS::BOTTOM_LEFT );
+				_sprite.setOrigin( 0, _sprite.getLocalBounds( ).height );
+
+				break;
+
+			case OBJECT_POINTS::BOTTOM_RIGHT:
+				Drawable::SetPivot( OBJECT_POINTS::BOTTOM_RIGHT );
+				_sprite.setOrigin( _sprite.getLocalBounds( ).width, _sprite.getLocalBounds( ).height );
+
+				break;
+		}
+	}
+
+	void Sprite::SetPivotX( const float &xPoint )
+	{
+		Drawable::SetPivotX( xPoint );
+		_sprite.setOrigin( xPoint, _sprite.getOrigin( ).y );
+	}
+
+	void Sprite::SetPivotY( const float &yPoint )
+	{
+		Drawable::SetPivotY( yPoint );
+		_sprite.setOrigin( _sprite.getOrigin( ).x, yPoint );
+	}
+
 	void Sprite::SetTexture( const std::string &filepath, const bool &resetRect )
 	{
 		_texture->SetTexture( filepath );

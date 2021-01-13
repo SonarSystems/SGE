@@ -9,6 +9,15 @@
 
 namespace Sonar
 {
+    enum OBJECT_POINTS
+    {
+        CENTER,
+        TOP_LEFT,
+        TOP_RIGHT,
+        BOTTOM_LEFT,
+        BOTTOM_RIGHT
+    };
+
     class Drawable
     {
     public:
@@ -170,6 +179,127 @@ namespace Sonar
          * \param y Offset in y axis
         */
         void MoveY( const float &y );
+
+        /**
+        * \brief Set the rotation angle
+        *
+        * \param angle Angle of the rotation
+        */
+        void SetRotation( const float &angle );
+
+        /**
+        * \brief Get the rotation angle
+        *
+        * \return Output returns the rotation angle
+        */
+        float GetRotation( ) const;
+
+        /**
+        * \brief Set the scale factor
+        *
+        * \param xScale Scale in x axis
+        * \param yScale Scale in y axis
+        */
+        void SetScale( const float &xScale, const float &yScale );
+
+        /**
+        * \brief Set the scale factor
+        *
+        * \param scale Scale in x and y axes
+        */
+        void SetScale( const glm::vec2 &scale );
+
+        /**
+        * \brief Set the x axis scale factor
+        *
+        * \param xScale Scale in x axis
+        */
+        void SetScaleX( const float &xScale );
+
+        /**
+        * \brief Set the y axis scale factor
+        *
+        * \param yScale Scale in y axis
+        */
+        void SetScaleY( const float &yScale );
+
+        /**
+        * \brief Get the scale factor for both axes
+        *
+        * \return Output returns scale factor for both axes
+        */
+        glm::vec2 GetScale( ) const;
+
+        /**
+        * \brief Get the scale factor for x axis
+        *
+        * \return Output returns scale factor for the x axis
+        */
+        float GetScaleX( ) const;
+
+        /**
+        * \brief Get the scale factor for y axis
+        *
+        * \return Output returns scale factor for the y axis
+        */
+        float GetScaleY( ) const;
+
+        /**
+        * \brief Set the pivot point
+        *
+        * \param xPoint X pivot point
+        * \param yPoint Y pivot point
+        */
+        void SetPivot( const float &xPoint, const float &yPoint );
+
+        /**
+        * \brief Set the pivot point
+        *
+        * \param pivot X and y pivot point
+        */
+        void SetPivot( const glm::vec2 &pivot );
+
+        /**
+        * \brief Set the pivot point based on predefined points (center, top left, top right, bottom left, bottom right)
+        *
+        * \param pivot Predefined pivot location
+        */
+        void SetPivot( const OBJECT_POINTS &pivot );
+
+        /**
+        * \brief Set the x pivot point
+        *
+        * \param xPoint X pivot point
+        */
+        void SetPivotX( const float &xPoint );
+
+        /**
+        * \brief Set the y pivot point
+        *
+        * \param yPoint Y pivot point
+        */
+        void SetPivotY( const float &yPoint );
+
+        /**
+        * \brief Get the pivot points for both axes
+        *
+        * \return Output returns pivot points for both axes
+        */
+        glm::vec2 GetPivot( ) const;
+
+        /**
+        * \brief Get the x pivot point
+        *
+        * \return Output returns x pivot point
+        */
+        float GetPivotX( ) const;
+
+        /**
+        * \brief Get the y pivot point
+        *
+        * \return Output returns y pivot point
+        */
+        float GetPivotY( ) const;
         
         /**
          * \brief Check if the object is clicked by the mouse
@@ -238,5 +368,20 @@ namespace Sonar
         */
         float _borderThickness;
         
+        /**
+        * \brief Rotation of the object
+        */
+        float _rotation;
+
+        /**
+        * \brief Scale of the object
+        */
+        glm::vec2 _scale;
+
+        /**
+        * \brief Pivot point of the object
+        */
+        glm::vec2 _pivot;
+
     };
 }
