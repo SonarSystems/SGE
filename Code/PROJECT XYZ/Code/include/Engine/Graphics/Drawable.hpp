@@ -3,8 +3,11 @@
 #include <SFML/Graphics.hpp>
 #include <string>
 #include <External/glm/glm.hpp>
+
 #include "Color.hpp"
+#include "Core/Clock.hpp"
 #include "Core/Game.hpp"
+#include "Core/Time.hpp"
 #include "Input/Mouse.hpp"
 
 namespace Sonar
@@ -300,6 +303,12 @@ namespace Sonar
         * \return Output returns y pivot point
         */
         float GetPivotY( ) const;
+
+        void SetPulse( const float &endScaleX, const float &endScaleY, const Time &timeBetweenPulses, const int &pulseAmount = 0 );
+
+        glm::vec2 GetPulse( ) const;
+
+        void Update( const float &dt );
         
         /**
          * \brief Check if the object is clicked by the mouse
@@ -382,6 +391,18 @@ namespace Sonar
         * \brief Pivot point of the object
         */
         glm::vec2 _pivot;
+
+        glm::vec2 _endPulseScale;
+
+        bool _isPulsed;
+
+        int _pulseAmount;
+        
+        int _pulseCounter;
+        
+        Time _timeBetweenPulses;
+
+        Clock _clock;
 
     };
 }

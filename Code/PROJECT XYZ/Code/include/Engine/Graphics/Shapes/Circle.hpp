@@ -231,6 +231,8 @@ namespace Sonar
         */
         void SetPivotY( const float &yPoint );
 
+		void Update( const float &dt );
+
         /**
         * \brief Set the shape texture from a file
         *

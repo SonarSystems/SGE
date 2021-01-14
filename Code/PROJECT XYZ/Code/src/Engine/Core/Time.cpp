@@ -9,10 +9,10 @@ namespace Sonar
 	{ }
 
 	float Time::AsSeconds( ) const
-	{ return _time / 1000000.f; }
+	{ return _time * 0.000001f; }
 
 	float Time::AsMilliseconds( ) const
-	{ return static_cast<float>( _time / 1000 ); }
+	{ return static_cast<float>( _time * 0.001f ); }
 
 	long long Time::AsMicroseconds( ) const
 	{ return _time; }
@@ -33,16 +33,16 @@ namespace Sonar
 	{ return seconds * 1000000; }
 
 	static float MillisecondsToSeconds( float milliseconds )
-	{ return milliseconds / 1000.0f; }
+	{ return milliseconds * 0.001f; }
 
 	static long long MillisecondsToMicroseconds( float milliseconds )
 	{ return milliseconds * 1000; }
 
 	static float MicrosecondsToSeconds( long long microseconds )
-	{ return microseconds / 1000000.0f; }
+	{ return microseconds * 0.000001f; }
 
 	static float MicrosecondsToMilliseconds( long long microseconds )
-	{ return microseconds / 1000.0f; }
+	{ return microseconds * 0.001f; }
 
 	bool operator ==( const Time &left, const Time &right )
 	{ return left.AsMicroseconds( ) == right.AsMicroseconds( ); }

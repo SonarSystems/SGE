@@ -6,6 +6,7 @@ GAME
 ENGINE
 -----------------------------------------------------------------
 * Pulsing - start and end size (or just an end size and the start size is the current size)
+== Add Start pulse (set to current pulse when setting pulse)
     - Drawable (keeping track of things)
     - Sprite
     - Circle

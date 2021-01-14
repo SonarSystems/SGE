@@ -7,6 +7,12 @@ namespace Sonar
         _rotation = 0;
         _scale[0] = _scale[1] = 1;
         _pivot[0] = _pivot[1] = 0;
+
+        _endPulseScale[0] = _endPulseScale[1] = 1;
+        _timeBetweenPulses = Seconds( 0 );
+        _isPulsed = false;
+        _pulseAmount = 0;
+        _pulseCounter = 0;
     }
 
     Drawable::~Drawable( ) { }
@@ -181,6 +187,61 @@ namespace Sonar
 
 	float Drawable::GetPivotY( ) const
     { return _pivot[1]; }
+
+	void Drawable::SetPulse( const float &endScaleX, const float &endScaleY, const Time &timeBetweenPulses, const int &pulseAmount )
+	{
+        _endPulseScale = glm::vec2( endScaleX, endScaleY );
+        _timeBetweenPulses = timeBetweenPulses;
+
+        _pulseAmount = pulseAmount;
+	}
+
+	glm::vec2 Drawable::GetPulse( ) const
+	{ return _endPulseScale; }
+
+	void Drawable::Update( const float &dt )
+	{
+        if ( _clock.GetElapsedTime( ).AsMicroseconds( ) > _timeBetweenPulses.AsMicroseconds( ) )
+        {
+            if ( ( _pulseAmount > 0 && _pulseCounter < _pulseAmount )
+                || 0 == _pulseAmount )
+            {
+                if ( _isPulsed )
+                {
+                    SetScale( 1.0f, 1.0f );
+
+                    _pulseCounter++;
+                }
+                else
+                { SetScale( _endPulseScale ); }
+            } 
+
+            _isPulsed = !_isPulsed;
+            _clock.Reset( );
+        }
+        else
+        {
+			float multiplier = _clock.GetElapsedTime( ).AsSeconds( ) / _timeBetweenPulses.AsSeconds( );
+
+            glm::vec2 pulseDelta = glm::vec2( 1.0f, 1.0f ) - _endPulseScale;
+            glm::vec2 interimPulse = glm::vec2( 1.0f, 1.0f ) - ( pulseDelta * multiplier );
+
+            spdlog::info( _clock.GetElapsedTime( ).AsMicroseconds( ) );
+            spdlog::info( _timeBetweenPulses.AsMicroseconds( ) );
+            spdlog::info( multiplier );
+
+            SetScale( interimPulse );
+
+			if ( _isPulsed )
+			{
+			    //SetScale( glm::vec2( 1.0f, 1.0f ) * multiplier );
+            }
+            else
+            {
+                //SetScale( _endPulseScale * multiplier );
+            }
+        }
+	}
 
 	bool Drawable::IsClicked( const Mouse::Button &button ) const
     {
