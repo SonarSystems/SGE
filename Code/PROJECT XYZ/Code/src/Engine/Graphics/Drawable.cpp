@@ -202,35 +202,58 @@ namespace Sonar
 	void Drawable::Update( const float &dt )
 	{
         if ( _clock.GetElapsedTime( ).AsMicroseconds( ) > _timeBetweenPulses.AsMicroseconds( ) )
-        {
-            if ( ( _pulseAmount > 0 && _pulseCounter < _pulseAmount )
-                || 0 == _pulseAmount )
-            {
-                if ( _isPulsed )
-                {
-                    SetScale( 1.0f, 1.0f );
-
-                    _pulseCounter++;
-                }
-                else
-                { SetScale( _endPulseScale ); }
-            } 
-
-            _isPulsed = !_isPulsed;
-            _clock.Reset( );
-        }
+        { _clock.Reset( ); }
         else
         {
-			float multiplier = _clock.GetElapsedTime( ).AsSeconds( ) / _timeBetweenPulses.AsSeconds( );
+            if ( _clock.GetElapsedTime( ).AsMicroseconds( ) < _timeBetweenPulses.AsMicroseconds( ) / 2 )
+            {
+                float multiplier = _clock.GetElapsedTime( ).AsSeconds( ) / ( _timeBetweenPulses.AsSeconds( ) * 0.5f );
 
-            glm::vec2 pulseDelta = glm::vec2( 1.0f, 1.0f ) - _endPulseScale;
-            glm::vec2 interimPulse = glm::vec2( 1.0f, 1.0f ) - ( pulseDelta * multiplier );
+                glm::vec2 pulseDelta = glm::vec2( 1.0f, 1.0f ) - _endPulseScale;
+                glm::vec2 interimPulse = glm::vec2( 1.0f, 1.0f ) - ( pulseDelta * multiplier );
 
-            spdlog::info( _clock.GetElapsedTime( ).AsMicroseconds( ) );
-            spdlog::info( _timeBetweenPulses.AsMicroseconds( ) );
-            spdlog::info( multiplier );
+                SetScale( interimPulse );
+            }
+            else
+            {
+				float multiplier = _clock.GetElapsedTime( ).AsSeconds( );
 
-            SetScale( interimPulse );
+                // x
+				float pulseDeltaX = 1.0f - _endPulseScale[0];
+				float pulseDeltaY = 1.0f - _endPulseScale[1];
+
+				float interimPulseX;
+				float interimPulseY;
+
+				if ( _endPulseScale[0] < 1.0f )
+				{
+					interimPulseX = _endPulseScale[0] + ( _clock.GetElapsedTime( ).AsSeconds( ) / _timeBetweenPulses.AsSeconds( ) ) - 0.5f;
+				}
+				else
+				{
+					interimPulseX = _endPulseScale[0] - ( ( _clock.GetElapsedTime( ).AsSeconds( ) / _timeBetweenPulses.AsSeconds( ) ) - 0.5f );
+				}
+
+				if ( _endPulseScale[1] < 1.0f )
+				{
+					interimPulseY = _endPulseScale[1] + ( _clock.GetElapsedTime( ).AsSeconds( ) / _timeBetweenPulses.AsSeconds( ) ) - 0.5f;
+				}
+				else
+				{
+					interimPulseY = _endPulseScale[1] - ( ( _clock.GetElapsedTime( ).AsSeconds( ) / _timeBetweenPulses.AsSeconds( ) ) - 0.5f );
+				}
+
+                //glm::vec2 interimPulse = _endPulseScale - ( ( _clock.GetElapsedTime( ).AsSeconds( ) / _timeBetweenPulses.AsSeconds( ) ) - 0.5f );
+
+				//glm::vec2 pulseDelta = glm::vec2( 1.0f, 1.0f ) - _endPulseScale;
+
+				//glm::vec2 interimPulse = _endPulseScale + ( _clock.GetElapsedTime( ).AsSeconds( ) / _timeBetweenPulses.AsSeconds( ) ) - 0.5f;
+				//glm::vec2 interimPulse = _endPulseScale - ( ( _clock.GetElapsedTime( ).AsSeconds( ) / _timeBetweenPulses.AsSeconds( ) ) - 0.5f );
+
+                SetScale( interimPulseX, interimPulseY );
+            }
+
+			
 
 			if ( _isPulsed )
 			{

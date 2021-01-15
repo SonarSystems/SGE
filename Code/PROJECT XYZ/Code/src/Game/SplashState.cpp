@@ -9,9 +9,21 @@ namespace Sonar
 
 		circle = new Circle( _data, 100 );
 		circle->SetInsideColor( Color::Red );
-		circle->SetPulse( 0.5, 0.5, Seconds( 1.5 ) );
+
+		//circle->SetScale(2.0f, 2.0f);
+		circle->SetPulse( 0.1, 0.1, Seconds( 5 ) );
 		circle->SetPivot( OBJECT_POINTS::CENTER );
 		circle->SetPosition( 200, 200 );
+
+		circle2 = new Circle( _data, 100 );
+		circle2->SetInsideColor( Color::Blue );
+		circle2->SetPivot( OBJECT_POINTS::CENTER );
+		circle2->SetPosition( 200, 500 );
+
+		circle3 = new Circle( _data, 150 );
+		circle3->SetInsideColor( Color::Green );
+		circle3->SetPivot( OBJECT_POINTS::CENTER );
+		circle3->SetPosition( 500, 200 );
 
 		triangle = new Triangle( _data, {0, 0}, {100, 200}, {50, 200} );
 		triangle->SetInsideColor( Color::Red );
@@ -40,6 +52,8 @@ namespace Sonar
         //physicsWorld->Update( dt );
 
 		circle->Update( dt );
+		circle2->Update( dt );
+		circle3->Update( dt );
 	}
 
 	void SplashState::Draw( const float &dt )
@@ -47,6 +61,8 @@ namespace Sonar
         //player->Draw( dt );
         //sprite->Draw( );
 		circle->Draw( );
+		circle2->Draw( );
+		circle3->Draw( );
 		//physicsWorld->Draw( dt );
 
 		//triangle->Draw( );
