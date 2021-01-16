@@ -8,9 +8,9 @@ namespace Sonar
         _scale[0] = _scale[1] = 1;
         _pivot[0] = _pivot[1] = 0;
 
+		_initialPulseScale[0] = _initialPulseScale[1] = 1;
         _endPulseScale[0] = _endPulseScale[1] = 1;
         _timeBetweenPulses = Seconds( 0 );
-        _isPulsed = false;
         _pulseAmount = 0;
         _pulseCounter = 0;
     }
@@ -190,79 +190,72 @@ namespace Sonar
 
 	void Drawable::SetPulse( const float &endScaleX, const float &endScaleY, const Time &timeBetweenPulses, const int &pulseAmount )
 	{
+        _initialPulseScale = glm::vec2( GetScaleX( ), GetScaleY( ) );
         _endPulseScale = glm::vec2( endScaleX, endScaleY );
         _timeBetweenPulses = timeBetweenPulses;
 
         _pulseAmount = pulseAmount;
+
+		_clock.Reset( );
 	}
 
 	glm::vec2 Drawable::GetPulse( ) const
 	{ return _endPulseScale; }
 
+	int Drawable::GetPulseAmount( ) const
+	{ return +_pulseAmount; }
+
+	int Drawable::GetPulseCounter( ) const
+	{ return _pulseCounter; }
+
+	void Drawable::StopPulse( )
+	{
+		_pulseCounter = 0;
+		_endPulseScale = _initialPulseScale;
+
+		SetScale( _initialPulseScale );
+	}
+
 	void Drawable::Update( const float &dt )
 	{
-        if ( _clock.GetElapsedTime( ).AsMicroseconds( ) > _timeBetweenPulses.AsMicroseconds( ) )
-        { _clock.Reset( ); }
-        else
-        {
-            if ( _clock.GetElapsedTime( ).AsMicroseconds( ) < _timeBetweenPulses.AsMicroseconds( ) / 2 )
-            {
-                float multiplier = _clock.GetElapsedTime( ).AsSeconds( ) / ( _timeBetweenPulses.AsSeconds( ) * 0.5f );
-
-                glm::vec2 pulseDelta = glm::vec2( 1.0f, 1.0f ) - _endPulseScale;
-                glm::vec2 interimPulse = glm::vec2( 1.0f, 1.0f ) - ( pulseDelta * multiplier );
-
-                SetScale( interimPulse );
-            }
-            else
-            {
-				float multiplier = _clock.GetElapsedTime( ).AsSeconds( );
-
-                // x
-				float pulseDeltaX = 1.0f - _endPulseScale[0];
-				float pulseDeltaY = 1.0f - _endPulseScale[1];
-
-				float interimPulseX;
-				float interimPulseY;
-
-				if ( _endPulseScale[0] < 1.0f )
-				{
-					interimPulseX = _endPulseScale[0] + ( _clock.GetElapsedTime( ).AsSeconds( ) / _timeBetweenPulses.AsSeconds( ) ) - 0.5f;
-				}
-				else
-				{
-					interimPulseX = _endPulseScale[0] - ( ( _clock.GetElapsedTime( ).AsSeconds( ) / _timeBetweenPulses.AsSeconds( ) ) - 0.5f );
-				}
-
-				if ( _endPulseScale[1] < 1.0f )
-				{
-					interimPulseY = _endPulseScale[1] + ( _clock.GetElapsedTime( ).AsSeconds( ) / _timeBetweenPulses.AsSeconds( ) ) - 0.5f;
-				}
-				else
-				{
-					interimPulseY = _endPulseScale[1] - ( ( _clock.GetElapsedTime( ).AsSeconds( ) / _timeBetweenPulses.AsSeconds( ) ) - 0.5f );
-				}
-
-                //glm::vec2 interimPulse = _endPulseScale - ( ( _clock.GetElapsedTime( ).AsSeconds( ) / _timeBetweenPulses.AsSeconds( ) ) - 0.5f );
-
-				//glm::vec2 pulseDelta = glm::vec2( 1.0f, 1.0f ) - _endPulseScale;
-
-				//glm::vec2 interimPulse = _endPulseScale + ( _clock.GetElapsedTime( ).AsSeconds( ) / _timeBetweenPulses.AsSeconds( ) ) - 0.5f;
-				//glm::vec2 interimPulse = _endPulseScale - ( ( _clock.GetElapsedTime( ).AsSeconds( ) / _timeBetweenPulses.AsSeconds( ) ) - 0.5f );
-
-                SetScale( interimPulseX, interimPulseY );
-            }
-
-			
-
-			if ( _isPulsed )
+		if ( ( _pulseAmount > 0 && _pulseCounter < _pulseAmount ) || 0 == _pulseAmount )
+		{
+			if ( _clock.GetElapsedTime( ).AsMicroseconds( ) > _timeBetweenPulses.AsMicroseconds( ) )
 			{
-			    //SetScale( glm::vec2( 1.0f, 1.0f ) * multiplier );
-            }
-            else
-            {
-                //SetScale( _endPulseScale * multiplier );
-            }
+				_clock.Reset( );
+				_pulseCounter++;
+			}
+			else
+			{
+				if ( _clock.GetElapsedTime( ).AsMicroseconds( ) < _timeBetweenPulses.AsMicroseconds( ) / 2 )
+				{
+					float multiplier = _clock.GetElapsedTime( ).AsSeconds( ) / ( _timeBetweenPulses.AsSeconds( ) * 0.5f );
+
+					glm::vec2 pulseDelta = glm::vec2( _initialPulseScale[0], _initialPulseScale[1] ) - _endPulseScale;
+					glm::vec2 interimPulse = glm::vec2( _initialPulseScale[0], _initialPulseScale[1] ) - ( pulseDelta * multiplier );
+
+					SetScale( interimPulse );
+				}
+				else
+				{
+					float interimPulseX;
+					float interimPulseY;
+
+					float halfTotalTime = _timeBetweenPulses.AsSeconds( ) / 2;
+
+					if ( _endPulseScale[0] < _initialPulseScale[0] )
+					{ interimPulseX = _endPulseScale[0] + ( ( ( _clock.GetElapsedTime( ).AsSeconds( ) - halfTotalTime ) / halfTotalTime ) * ( _initialPulseScale[0] - _endPulseScale[0] ) ); }
+					else
+					{ interimPulseX = _endPulseScale[0] - ( ( ( _clock.GetElapsedTime( ).AsSeconds( ) - halfTotalTime ) / halfTotalTime ) * ( _endPulseScale[0] - _initialPulseScale[0] ) ); }
+
+					if ( _endPulseScale[1] < _initialPulseScale[1] )
+					{ interimPulseY = _endPulseScale[1] + ( ( ( _clock.GetElapsedTime( ).AsSeconds( ) - halfTotalTime ) / halfTotalTime ) * ( _initialPulseScale[1] - _endPulseScale[1] ) ); }
+					else
+					{ interimPulseY = _endPulseScale[1] - ( ( ( _clock.GetElapsedTime( ).AsSeconds( ) - halfTotalTime ) / halfTotalTime ) * ( _endPulseScale[1] - _initialPulseScale[1] ) ); }
+
+					SetScale( interimPulseX, interimPulseY );
+				}
+			}
         }
 	}
 

@@ -205,6 +205,13 @@ namespace Sonar
         void SetPivotY( const float &yPoint );
 
         /**
+        * \brief Update the object
+        *
+        * \param dt Delta time between frames
+        */
+        void Update( const float &dt );
+
+        /**
         * \brief Set the points/vertices of the triangle
         *
         * \param point1 Vertex 1 of the triangle

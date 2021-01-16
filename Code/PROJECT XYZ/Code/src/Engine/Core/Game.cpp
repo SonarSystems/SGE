@@ -28,9 +28,7 @@ namespace Sonar
 			frameTime = newTime - currentTime;
 
 			if ( frameTime > 0.25f )
-			{
-				frameTime = 0.25f;
-			}
+			{ frameTime = 0.25f; }
 
 			currentTime = newTime;
 			accumulator += frameTime;

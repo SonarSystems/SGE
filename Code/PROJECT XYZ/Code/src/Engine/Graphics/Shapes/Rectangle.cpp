@@ -196,6 +196,13 @@ namespace Sonar
 		_shape.setOrigin( _shape.getOrigin( ).x, yPoint );
 	}
 
+	void Rectangle::Update( const float &dt )
+	{
+		Drawable::Update( dt );
+
+		SetScale( Drawable::GetScale( ) );
+	}
+
 	void Rectangle::SetTexture( const std::string &filepath, const bool &resetRect )
 	{
 		_texture->SetTexture( filepath );

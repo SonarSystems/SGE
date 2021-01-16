@@ -5,19 +5,8 @@ GAME
 
 ENGINE
 -----------------------------------------------------------------
-* Pulsing - start and end size (or just an end size and the start size is the current size)
-== o.5 in Drawable is hard coded - NEEDS FIXING
-== Add Start pulse (set to current pulse when setting pulse)
-== Abstract so it's no longer using 1.0f, 1.0f as the initial scale
-== Specify in SetPulse if you want it to reset - so a single pulse
-== Also have a reset pulse as well
-    - Drawable (keeping track of things)
-    - Sprite
-    - Circle
-    - Rectangle
-    - Triangle
 * Culling not working below bottom of the screen
-* Physics
+* Physics (for all shapes and sprites put both kinds of collision detection)
     - circle collision detection
         - Circle on circle
         - Circle on rectangle/polygon (use for triangle aswell)

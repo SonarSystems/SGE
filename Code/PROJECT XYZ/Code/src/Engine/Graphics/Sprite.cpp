@@ -162,6 +162,13 @@ namespace Sonar
 		_sprite.setOrigin( _sprite.getOrigin( ).x, yPoint );
 	}
 
+	void Sprite::Update( const float &dt )
+	{
+		Drawable::Update( dt );
+
+		SetScale( Drawable::GetScale( ) );
+	}
+
 	void Sprite::SetTexture( const std::string &filepath, const bool &resetRect )
 	{
 		_texture->SetTexture( filepath );

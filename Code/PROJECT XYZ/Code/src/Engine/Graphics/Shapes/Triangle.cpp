@@ -216,6 +216,13 @@ namespace Sonar
 		_shape.setOrigin( _shape.getOrigin( ).x, yPoint );
 	}
 
+	void Triangle::Update( const float &dt )
+	{
+		Drawable::Update( dt );
+
+		SetScale( Drawable::GetScale( ) );
+	}
+
 	void Triangle::SetPoints( const glm::vec2 &point1, const glm::vec2 &point2, const glm::vec2 &point3 )
 	{
 		_shape.setPoint( 0, sf::Vector2f( point1.x, point1.y ) );

@@ -10,8 +10,8 @@ namespace Sonar
 		circle = new Circle( _data, 100 );
 		circle->SetInsideColor( Color::Red );
 
-		//circle->SetScale(2.0f, 2.0f);
-		circle->SetPulse( 0.1, 0.1, Seconds( 5 ) );
+		circle->SetScale(0.1f, 0.1f);
+		circle->SetPulse( 0.5, 0.5, Seconds( 1 ) );
 		circle->SetPivot( OBJECT_POINTS::CENTER );
 		circle->SetPosition( 200, 200 );
 
@@ -41,6 +41,8 @@ namespace Sonar
 
 		if ( Event::MouseWheelMoved == event.type )
 		{
+			circle->StopPulse( );
+			//circle->SetPulse( 0.9, 0.9, Seconds( 2 ) );
 			physicsWorld->CreateDynamicBody( event.mouseButton.x, event.mouseButton.y, 32, 32 );
 		}
 	}

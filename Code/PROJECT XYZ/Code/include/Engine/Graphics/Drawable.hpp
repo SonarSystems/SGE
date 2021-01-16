@@ -304,10 +304,47 @@ namespace Sonar
         */
         float GetPivotY( ) const;
 
+        /**
+        * \brief Set the pulse properties and activate it
+        *
+		* \param endScaleX The scale goal x axis
+		* \param endScaleY The scale goal y axis
+		* \param timeBetweenPulses How long each scale takes (half to get to the end scale size and half to get back)
+		* \param pulseAmount How many times to pulse (default of 0 is infinite pulse)
+        */
         void SetPulse( const float &endScaleX, const float &endScaleY, const Time &timeBetweenPulses, const int &pulseAmount = 0 );
 
+        /**
+        * \brief Get the end pulse scale
+        *
+        * \return Output returns the end pulse scale vector
+        */
         glm::vec2 GetPulse( ) const;
 
+        /**
+        * \brief Gets the total number of pulses to be performed
+        *
+        * \return Output returns the pulse amount
+        */
+        int GetPulseAmount( ) const;
+
+        /**
+        * \brief Gets the amount of successful pulses
+        *
+        * \return Output returns the pulse counter
+        */
+        int GetPulseCounter( ) const;
+
+        /**
+        * \brief Stop the pulse
+        */
+        void StopPulse( );
+
+        /**
+        * \brief Update the object
+        *
+        * \param dt Delta time between frames
+        */
         void Update( const float &dt );
         
         /**
@@ -392,16 +429,34 @@ namespace Sonar
         */
         glm::vec2 _pivot;
 
+        /**
+        * \brief The current scale when the pulse is set
+        */
+        glm::vec2 _initialPulseScale;
+
+        /**
+        * \brief The end scale for the each pulse to get to before resetting to the initial pulse scale
+        */
         glm::vec2 _endPulseScale;
 
-        bool _isPulsed;
-
+        /**
+        * \brief How many times to pulse (0 is infinite)
+        */
         int _pulseAmount;
         
+        /**
+        * \brief The amount of times the object has pulse
+        */
         int _pulseCounter;
         
+        /**
+        * \brief How long each pulse takes (half to get to end pulse scale and half to reset back to initial pulse scale)
+        */
         Time _timeBetweenPulses;
 
+        /**
+        * \brief Clock to keep track of the time
+        */
         Clock _clock;
 
     };

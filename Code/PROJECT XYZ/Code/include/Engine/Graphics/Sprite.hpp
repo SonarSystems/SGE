@@ -178,6 +178,13 @@ namespace Sonar
         void SetPivotY( const float &yPoint );
 
         /**
+        * \brief Update the object
+        *
+        * \param dt Delta time between frames
+        */
+        void Update( const float &dt );
+
+        /**
         * \brief Set the sprite texture from a file
         *
 		* \param filePath Location of image to be applied

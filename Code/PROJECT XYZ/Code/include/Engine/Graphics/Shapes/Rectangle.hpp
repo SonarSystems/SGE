@@ -224,6 +224,13 @@ namespace Sonar
         * \param yPoint Y pivot point
         */
         void SetPivotY( const float &yPoint );
+
+        /**
+        * \brief Update the object
+        *
+        * \param dt Delta time between frames
+        */
+        void Update( const float &dt );
         /**
         * \brief Set the shape texture from a file
         *
