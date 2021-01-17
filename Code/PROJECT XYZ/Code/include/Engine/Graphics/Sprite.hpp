@@ -4,8 +4,11 @@
 #include <string>
 #include <External/glm/glm.hpp>
 
+#include "External/Collision.hpp"
+
 #include "Graphics/Drawable.hpp"
 #include "Graphics/Texture.hpp"
+
 
 namespace Sonar
 {
@@ -232,18 +235,35 @@ namespace Sonar
 		glm::ivec4 GetTextureRect( ) const;
 
         /**
-        * \brief Get the Textures local bounds
+        * \brief Get the local bounds
         *
-        * \return Output returns the sprite's texture local bounds
+        * \return Output returns the sprite's local bounds
         */
 		glm::vec4 GetLocalBounds( ) const;
 
         /**
-        * \brief Get the Textures global bounds
+        * \brief Get the global bounds
         *
-        * \return Output returns the sprite's texture global bounds
+        * \return Output returns the sprite's global bounds
         */
         glm::vec4 GetGlobalBounds( ) const;
+
+        /**
+        * \brief Check for pixel perfect collision (very heavy on the processing)
+        *
+		* \param object Object to check collision with
+		* \param alphaLimit The threshold at which a pixel becomes "solid". If AlphaLimit is 127, a pixel with alpha value 128 will cause a collision and a pixel with alpha value 126 will not.
+        *
+        * \return Output returns true if the collision is successful
+        */
+        bool PixelPerfectCollisionCheck( const Sprite &object, const sf::Uint8 &alphaLimit = 0 );
+
+        /**
+        * \brief Get the underlying SFML sprite object
+        *
+        * \return Output returns SFML sprite object
+        */
+        sf::Sprite GetSFMLSprite( ) const;
 
     private:
         /**

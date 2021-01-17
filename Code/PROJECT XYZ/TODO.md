@@ -5,8 +5,6 @@ GAME
 
 ENGINE
 -----------------------------------------------------------------
-* Physics (for all shapes and sprites put both kinds of collision detection)
-    - pixel perfect collision
 * Parallax background
 * File loading
     - Saving and loading
