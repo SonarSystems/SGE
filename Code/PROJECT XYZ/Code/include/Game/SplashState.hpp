@@ -27,9 +27,9 @@ namespace Sonar
         
 		Player *player;
 
-		Circle *circle, *circle2, *circle3;
+		Rectangle *rectangle;
 
-		Triangle *triangle;
+		Circle *circle1, *circle2;
 
 	};
 }

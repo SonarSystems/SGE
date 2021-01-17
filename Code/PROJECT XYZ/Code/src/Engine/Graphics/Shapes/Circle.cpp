@@ -4,13 +4,15 @@ namespace Sonar
 {
     Circle::Circle( GameDataRef data ) : Drawable( data )
     {
-		object = &_shape;
+		_object = &_shape;
 		_texture = new Texture( );
+
+		_globalBounds = _shape.getGlobalBounds( );
     }
 
     Circle::Circle( GameDataRef data, const float &radius ) : Drawable( data )
     {
-		object = &_shape;
+		_object = &_shape;
 		_texture = new Texture( );
 
         SetRadius( radius );
@@ -18,18 +20,25 @@ namespace Sonar
         SetPosition( 0, 0 );
         SetSize( radius );
 		SetPointCount( 36 );
+		_globalBounds = _shape.getGlobalBounds( );
     }
 
     Circle::~Circle( ) { }
 
 	void Circle::SetRadius( const float &radius )
-	{ _shape.setRadius( radius ); }
+	{
+		_shape.setRadius( radius );
+		_globalBounds = _shape.getGlobalBounds( );
+	}
 
 	float Circle::GetRadius( ) const
 	{ return _shape.getRadius( ); }
 
 	void Circle::SetPointCount( const unsigned int &count )
-	{ _shape.setPointCount( count ); }
+	{
+		_shape.setPointCount( count );
+		_globalBounds = _shape.getGlobalBounds( );
+	}
 
 	int Circle::GetPointCount( ) const
 	{ return _shape.getPointCount( ); }
@@ -38,23 +47,27 @@ namespace Sonar
 	{
 		Drawable::SetPosition( x, y );
 		_shape.setPosition( x, y );
+		_globalBounds = _shape.getGlobalBounds( );
 	}
 
 	void Circle::SetPositionX( const float &x )
 	{
 		Drawable::SetPositionX( x );
 		_shape.setPosition( x, _shape.getPosition( ).y );
+		_globalBounds = _shape.getGlobalBounds( );
 	}
 
 	void Circle::SetPositionY( const float &y )
 	{
 		Drawable::SetPositionY( y );
 		_shape.setPosition( _shape.getPosition( ).x, y );
+		_globalBounds = _shape.getGlobalBounds( );
 	}
 
 	void Circle::SetSize( const float &radius )
 	{
 		Drawable::SetSize( radius * 2, radius * 2 );
+		_globalBounds = _shape.getGlobalBounds( );
 	}
 
 	void Circle::SetInsideColor( const Color &color )
@@ -89,24 +102,28 @@ namespace Sonar
 	{
 		Drawable::Move( x, y );
 		_shape.move( x, y );
+		_globalBounds = _shape.getGlobalBounds( );
 	}
 
 	void Circle::MoveX( const float &x )
 	{
 		Drawable::MoveX( x );
 		_shape.move( x, 0 );
+		_globalBounds = _shape.getGlobalBounds( );
 	}
 
 	void Circle::MoveY( const float &y )
 	{
 		Drawable::MoveY( y );
 		_shape.move( 0, y );
+		_globalBounds = _shape.getGlobalBounds( );
 	}
 
 	void Circle::SetRotation( const float &angle )
 	{
 		Drawable::SetRotation( angle );
 		_shape.setRotation( angle );
+		_globalBounds = _shape.getGlobalBounds( );
 	}
 
 	float Circle::GetRotation( ) const
@@ -116,36 +133,42 @@ namespace Sonar
 	{
 		Drawable::SetScale( xScale, yScale );
 		_shape.setScale( xScale, yScale );
+		_globalBounds = _shape.getGlobalBounds( );
 	}
 
 	void Circle::SetScale( const glm::vec2 &scale )
 	{
 		Drawable::SetScale( scale[0], scale[1] );
 		_shape.setScale( scale[0], scale[1] );
+		_globalBounds = _shape.getGlobalBounds( );
 	}
 
 	void Circle::SetScaleX( const float &xScale )
 	{
 		Drawable::SetScaleX( xScale );
 		_shape.setScale( xScale, _shape.getScale( ).y );
+		_globalBounds = _shape.getGlobalBounds( );
 	}
 
 	void Circle::SetScaleY( const float &yScale )
 	{
 		Drawable::SetScaleX( yScale );
 		_shape.setScale( _shape.getScale( ).x, yScale );
+		_globalBounds = _shape.getGlobalBounds( );
 	}
 
 	void Circle::SetPivot( const float &xPoint, const float &yPoint )
 	{
 		Drawable::SetPivot( xPoint, yPoint );
 		_shape.setOrigin( xPoint, yPoint );
+		_globalBounds = _shape.getGlobalBounds( );
 	}
 
 	void Circle::SetPivot( const glm::vec2 &pivot )
 	{
 		Drawable::SetPivot( pivot );
 		_shape.setOrigin( pivot[0], pivot[1] );
+		_globalBounds = _shape.getGlobalBounds( );
 	}
 
 	void Circle::SetPivot( const OBJECT_POINTS &pivot )
@@ -182,18 +205,22 @@ namespace Sonar
 
 				break;
 		}
+
+		_globalBounds = _shape.getGlobalBounds( );
 	}
 
 	void Circle::SetPivotX( const float &xPoint )
 	{
 		Drawable::SetPivotX( xPoint );
 		_shape.setOrigin( xPoint, _shape.getOrigin( ).y );
+		_globalBounds = _shape.getGlobalBounds( );
 	}
 
 	void Circle::SetPivotY( const float &yPoint )
 	{
 		Drawable::SetPivotY( yPoint );
 		_shape.setOrigin( _shape.getOrigin( ).x, yPoint );
+		_globalBounds = _shape.getGlobalBounds( );
 	}
 
 	void Circle::Update( const float &dt )

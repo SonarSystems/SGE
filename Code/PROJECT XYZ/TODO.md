@@ -5,11 +5,7 @@ GAME
 
 ENGINE
 -----------------------------------------------------------------
-* Culling not working below bottom of the screen
 * Physics (for all shapes and sprites put both kinds of collision detection)
-    - circle collision detection
-        - Circle on circle
-        - Circle on rectangle/polygon (use for triangle aswell)
     - pixel perfect collision
 * Parallax background
 * File loading

@@ -4,18 +4,19 @@ namespace Sonar
 {
 	Triangle::Triangle( GameDataRef data ) : Drawable( data )
 	{
-		object = &_shape;
+		_object = &_shape;
 		_texture = new Texture( );
 
 		_shape.setPointCount( 3 );
 
 		SetInsideColor( Color::Black );
 		SetPosition( 0, 0 );
+		_globalBounds = _shape.getGlobalBounds( );
 	}
 
     Triangle::Triangle( GameDataRef data, const glm::vec2 &point1, const glm::vec2 &point2, const glm::vec2 &point3 ) : Drawable( data )
     {
-        object = &_shape;
+        _object = &_shape;
 		_texture = new Texture( );
 
 		_shape.setPointCount( 3 );
@@ -24,6 +25,7 @@ namespace Sonar
 
 		SetInsideColor( Color::Black );
         SetPosition( 0, 0 );
+		_globalBounds = _shape.getGlobalBounds( );
     }
 
     Triangle::~Triangle( ) { }
@@ -32,18 +34,21 @@ namespace Sonar
 	{
 		Drawable::SetPosition( x, y );
 		_shape.setPosition( x, y );
+		_globalBounds = _shape.getGlobalBounds( );
 	}
 
 	void Triangle::SetPositionX( const float &x )
 	{
 		Drawable::SetPositionX( x );
 		_shape.setPosition( x, _shape.getPosition( ).y );
+		_globalBounds = _shape.getGlobalBounds( );
 	}
 
 	void Triangle::SetPositionY( const float &y )
 	{
 		Drawable::SetPositionY( y );
 		_shape.setPosition( _shape.getPosition( ).x, y );
+		_globalBounds = _shape.getGlobalBounds( );
 	}
 
 	void Triangle::SetSize( const glm::vec2 &point1, const glm::vec2 &point2, const glm::vec2 &point3 )
@@ -75,6 +80,7 @@ namespace Sonar
 		float height = yMax - yMin;
 
 		Drawable::SetSize( width, height );
+		_globalBounds = _shape.getGlobalBounds( );
 	}
 
 	void Triangle::SetInsideColor( const Color &color )
@@ -109,24 +115,28 @@ namespace Sonar
 	{
 		Drawable::Move( x, y );
 		_shape.move( x, y );
+		_globalBounds = _shape.getGlobalBounds( );
 	}
 
 	void Triangle::MoveX( const float &x )
 	{
 		Drawable::MoveX( x );
 		_shape.move( x, 0 );
+		_globalBounds = _shape.getGlobalBounds( );
 	}
 
 	void Triangle::MoveY( const float &y )
 	{
 		Drawable::MoveY( y );
 		_shape.move( 0, y );
+		_globalBounds = _shape.getGlobalBounds( );
 	}
 
 	void Triangle::SetRotation( const float &angle )
 	{
 		Drawable::SetRotation( angle );
 		_shape.setRotation( angle );
+		_globalBounds = _shape.getGlobalBounds( );
 	}
 
 	float Triangle::GetRotation( ) const
@@ -136,36 +146,42 @@ namespace Sonar
 	{
 		Drawable::SetScale( xScale, yScale );
 		_shape.setScale( xScale, yScale );
+		_globalBounds = _shape.getGlobalBounds( );
 	}
 
 	void Triangle::SetScale( const glm::vec2 &scale )
 	{
 		Drawable::SetScale( scale[0], scale[1] );
 		_shape.setScale( scale[0], scale[1] );
+		_globalBounds = _shape.getGlobalBounds( );
 	}
 
 	void Triangle::SetScaleX( const float &xScale )
 	{
 		Drawable::SetScaleX( xScale );
 		_shape.setScale( xScale, _shape.getScale( ).y );
+		_globalBounds = _shape.getGlobalBounds( );
 	}
 
 	void Triangle::SetScaleY( const float &yScale )
 	{
 		Drawable::SetScaleX( yScale );
 		_shape.setScale( _shape.getScale( ).x, yScale );
+		_globalBounds = _shape.getGlobalBounds( );
 	}
 
 	void Triangle::SetPivot( const float &xPoint, const float &yPoint )
 	{
 		Drawable::SetPivot( xPoint, yPoint );
 		_shape.setOrigin( xPoint, yPoint );
+		_globalBounds = _shape.getGlobalBounds( );
 	}
 
 	void Triangle::SetPivot( const glm::vec2 &pivot )
 	{
 		Drawable::SetPivot( pivot );
 		_shape.setOrigin( pivot[0], pivot[1] );
+		_globalBounds = _shape.getGlobalBounds( );
 	}
 
 	void Triangle::SetPivot( const OBJECT_POINTS &pivot )
@@ -202,18 +218,22 @@ namespace Sonar
 
 				break;
 		}
+
+		_globalBounds = _shape.getGlobalBounds( );
 	}
 
 	void Triangle::SetPivotX( const float &xPoint )
 	{
 		Drawable::SetPivotX( xPoint );
 		_shape.setOrigin( xPoint, _shape.getOrigin( ).y );
+		_globalBounds = _shape.getGlobalBounds( );
 	}
 
 	void Triangle::SetPivotY( const float &yPoint )
 	{
 		Drawable::SetPivotY( yPoint );
 		_shape.setOrigin( _shape.getOrigin( ).x, yPoint );
+		_globalBounds = _shape.getGlobalBounds( );
 	}
 
 	void Triangle::Update( const float &dt )
@@ -234,6 +254,8 @@ namespace Sonar
 		_points.push_back( point3 );
 
 		SetSize( point1, point2, point3 );
+
+		_globalBounds = _shape.getGlobalBounds( );
 	}
 
 	std::vector<glm::vec2> Triangle::GetPoints( )

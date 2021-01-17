@@ -4,19 +4,21 @@ namespace Sonar
 {
     Rectangle::Rectangle( GameDataRef data ) : Drawable( data )
     {
-		object = &_shape;
+		_object = &_shape;
 		_texture = new Texture( );
 
         SetPosition( 0, 0 );
+		_globalBounds = _shape.getGlobalBounds( );
     }
 
     Rectangle::Rectangle( GameDataRef data, const float &width, const float &height ) : Drawable( data )
     {
-		object = &_shape;
+		_object = &_shape;
 		_texture = new Texture( );
 
         SetPosition( 0, 0 );
         SetSize( width, height );
+		_globalBounds = _shape.getGlobalBounds( );
     }
 
     Rectangle::~Rectangle( ) { }
@@ -25,36 +27,42 @@ namespace Sonar
     {
         Drawable::SetPosition( x, y );
         _shape.setPosition( x, y );
+		_globalBounds = _shape.getGlobalBounds( );
     }
 
     void Rectangle::SetPositionX( const float &x )
     {
         Drawable::SetPositionX( x );
         _shape.setPosition( x, _shape.getPosition( ).y );
+		_globalBounds = _shape.getGlobalBounds( );
     }
 
     void Rectangle::SetPositionY( const float &y )
     {
         Drawable::SetPositionY( y );
         _shape.setPosition( _shape.getPosition( ).x, y );
+		_globalBounds = _shape.getGlobalBounds( );
     }
 
     void Rectangle::SetSize( const float &width, const float &height )
     {
         Drawable::SetSize( width, height );
         _shape.setSize( sf::Vector2f( width, height ) );
+		_globalBounds = _shape.getGlobalBounds( );
     }
 
     void Rectangle::SetWidth( const float &width )
     {
         Drawable::SetWidth( width );
         _shape.setSize( sf::Vector2f( width, _shape.getSize( ).y ) );
+		_globalBounds = _shape.getGlobalBounds( );
     }
 
     void Rectangle::SetHeight( const float &height )
     {
         Drawable::SetHeight( height );
         _shape.setSize( sf::Vector2f( _shape.getSize( ).x, height ) );
+		_globalBounds = _shape.getGlobalBounds( );
     }
 
     void Rectangle::SetInsideColor( const Color &color )
@@ -89,24 +97,28 @@ namespace Sonar
     {
         Drawable::Move( x, y );
         _shape.move( x, y );
+		_globalBounds = _shape.getGlobalBounds( );
     }
 
     void Rectangle::MoveX( const float &x )
     {
         Drawable::MoveX( x );
         _shape.move( x, 0 );
+		_globalBounds = _shape.getGlobalBounds( );
     }
 
     void Rectangle::MoveY( const float &y )
     {
         Drawable::MoveY( y );
         _shape.move( 0, y );
+		_globalBounds = _shape.getGlobalBounds( );
     }
 
 	void Rectangle::SetRotation( const float &angle )
 	{
 		Drawable::SetRotation( angle );
 		_shape.setRotation( angle );
+		_globalBounds = _shape.getGlobalBounds( );
 	}
 
 	float Rectangle::GetRotation( ) const
@@ -116,36 +128,42 @@ namespace Sonar
 	{
 		Drawable::SetScale( xScale, yScale );
 		_shape.setScale( xScale, yScale );
+		_globalBounds = _shape.getGlobalBounds( );
 	}
 
 	void Rectangle::SetScale( const glm::vec2 &scale )
 	{
 		Drawable::SetScale( scale[0], scale[1] );
 		_shape.setScale( scale[0], scale[1] );
+		_globalBounds = _shape.getGlobalBounds( );
 	}
 
 	void Rectangle::SetScaleX( const float &xScale )
 	{
 		Drawable::SetScaleX( xScale );
 		_shape.setScale( xScale, _shape.getScale( ).y );
+		_globalBounds = _shape.getGlobalBounds( );
 	}
 
 	void Rectangle::SetScaleY( const float &yScale )
 	{
         Rectangle::SetScaleX( yScale );
 		_shape.setScale( _shape.getScale( ).x, yScale );
+		_globalBounds = _shape.getGlobalBounds( );
 	}
 
 	void Rectangle::SetPivot( const float &xPoint, const float &yPoint )
 	{
 		Drawable::SetPivot( xPoint, yPoint );
 		_shape.setOrigin( xPoint, yPoint );
+		_globalBounds = _shape.getGlobalBounds( );
 	}
 
 	void Rectangle::SetPivot( const glm::vec2 &pivot )
 	{
 		Drawable::SetPivot( pivot );
 		_shape.setOrigin( pivot[0], pivot[1] );
+		_globalBounds = _shape.getGlobalBounds( );
 	}
 
 	void Rectangle::SetPivot( const OBJECT_POINTS &pivot )
@@ -182,18 +200,22 @@ namespace Sonar
 
 				break;
 		}
+
+		_globalBounds = _shape.getGlobalBounds( );
 	}
 
 	void Rectangle::SetPivotX( const float &xPoint )
 	{
 		Drawable::SetPivotX( xPoint );
 		_shape.setOrigin( xPoint, _shape.getOrigin( ).y );
+		_globalBounds = _shape.getGlobalBounds( );
 	}
 
 	void Rectangle::SetPivotY( const float &yPoint )
 	{
 		Drawable::SetPivotY( yPoint );
 		_shape.setOrigin( _shape.getOrigin( ).x, yPoint );
+		_globalBounds = _shape.getGlobalBounds( );
 	}
 
 	void Rectangle::Update( const float &dt )

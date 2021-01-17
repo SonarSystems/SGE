@@ -356,14 +356,30 @@ namespace Sonar
         */
         bool IsClicked( const Mouse::Button &button ) const;
 		
-		/**
-		 * \brief Check if the object has collided with another using bounding box
-		 *
-		 * \param object The other object to check collision with
-		 *
-		 * \return Output returns true if the objects have collided, false otherwise
-		 */
-		bool BoundingBoxCollision( const Drawable &object ) const;
+        /**
+        * \brief Check if the object has collided with another using bounding box
+        *
+        * \param object The other object to check collision with
+        *
+        * \return Output returns true if the objects have collided, false otherwise
+        */
+        bool BoundingBoxCollision( const Drawable &object ) const;
+
+        /**
+        * \brief Check if the object has collided with another using circle collision detection
+        *
+        * \param object The other object to check collision with
+        *
+        * \return Output returns true if the objects have collided, false otherwise
+        */
+        bool CircleCollision( const Drawable &object ) const;
+
+        /**
+        * \brief Get the global bounds
+        *
+        * \return Output returns the shape's texture global bounds
+        */
+        glm::vec4 GetGlobalBounds( ) const;
     
     protected:
         /**
@@ -381,7 +397,12 @@ namespace Sonar
         /**
          * \brief Object to be drawn to the screen, assigned the address of the object from a child class
         */
-        sf::Drawable *object;
+        sf::Drawable *_object;
+
+        /**
+        * \brief Bounding box relative to the window
+        */
+        sf::FloatRect _globalBounds;
         
         /**
          * \brief Game data object

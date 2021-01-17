@@ -4,24 +4,28 @@ namespace Sonar
 {
     Sprite::Sprite( GameDataRef data ) : Drawable( data )
     {
-		object = &_sprite;
+		_object = &_sprite;
 		_texture = new Texture( );
+
+		_globalBounds = _sprite.getGlobalBounds( );
 	}
 
     Sprite::Sprite( GameDataRef data, const std::string &filepath ) : Drawable( data )
     {
-		object = &_sprite;
-
+		_object = &_sprite;
 		_texture = new Texture( );
+
 		SetTexture( filepath );
+		_globalBounds = _sprite.getGlobalBounds( );
 	}
 
 	Sprite::Sprite( GameDataRef data, Texture *texture ) : Drawable( data )
 	{
-		object = &_sprite;
+		_object = &_sprite;
 
 		_texture = new Texture( );
 		SetTexture( texture );
+		_globalBounds = _sprite.getGlobalBounds( );
 	}
 
 	Sprite::~Sprite( )
@@ -31,18 +35,21 @@ namespace Sonar
 	{
 		Drawable::SetPosition( x, y );
 		_sprite.setPosition( x, y );
+		_globalBounds = _sprite.getGlobalBounds( );
 	}
 
 	void Sprite::SetPositionX( const float &x )
 	{
 		Drawable::SetPositionX( x );
 		_sprite.setPosition( x, _sprite.getPosition( ).y );
+		_globalBounds = _sprite.getGlobalBounds( );
 	}
 
 	void Sprite::SetPositionY( const float &y )
 	{
 		Drawable::SetPositionY( y );
 		_sprite.setPosition( _sprite.getPosition( ).x, y );
+		_globalBounds = _sprite.getGlobalBounds( );
 	}
 
 	void Sprite::SetColor( const Color &color )
@@ -55,24 +62,28 @@ namespace Sonar
 	{
 		Drawable::Move( x, y );
 		_sprite.move( x, y );
+		_globalBounds = _sprite.getGlobalBounds( );
 	}
 
 	void Sprite::MoveX( const float &x )
 	{
 		Drawable::MoveX( x );
 		_sprite.move( x, 0 );
+		_globalBounds = _sprite.getGlobalBounds( );
 	}
 
 	void Sprite::MoveY( const float &y )
 	{
 		Drawable::MoveY( y );
 		_sprite.move( 0, y );
+		_globalBounds = _sprite.getGlobalBounds( );
 	}
 
 	void Sprite::SetRotation( const float &angle )
 	{
 		Drawable::SetRotation( angle );
 		_sprite.setRotation( angle );
+		_globalBounds = _sprite.getGlobalBounds( );
 	}
 
 	float Sprite::GetRotation( ) const
@@ -82,36 +93,42 @@ namespace Sonar
 	{
 		Drawable::SetScale( xScale, yScale );
 		_sprite.setScale( xScale, yScale );
+		_globalBounds = _sprite.getGlobalBounds( );
 	}
 
 	void Sprite::SetScale( const glm::vec2 &scale )
 	{
 		Drawable::SetScale( scale[0], scale[1] );
 		_sprite.setScale( scale[0], scale[1] );
+		_globalBounds = _sprite.getGlobalBounds( );
 	}
 
 	void Sprite::SetScaleX( const float &xScale )
 	{
 		Drawable::SetScaleX( xScale );
 		_sprite.setScale( xScale, _sprite.getScale( ).y );
+		_globalBounds = _sprite.getGlobalBounds( );
 	}
 
 	void Sprite::SetScaleY( const float &yScale )
 	{
 		Drawable::SetScaleX( yScale );
 		_sprite.setScale( _sprite.getScale( ).x, yScale );
+		_globalBounds = _sprite.getGlobalBounds( );
 	}
 
 	void Sprite::SetPivot( const float &xPoint, const float &yPoint )
 	{
 		Drawable::SetPivot( xPoint, yPoint );
 		_sprite.setOrigin( xPoint, yPoint );
+		_globalBounds = _sprite.getGlobalBounds( );
 	}
 
 	void Sprite::SetPivot( const glm::vec2 &pivot )
 	{
 		Drawable::SetPivot( pivot );
 		_sprite.setOrigin( pivot[0], pivot[1] );
+		_globalBounds = _sprite.getGlobalBounds( );
 	}
 
 	void Sprite::SetPivot( const OBJECT_POINTS &pivot )
@@ -148,18 +165,22 @@ namespace Sonar
 
 				break;
 		}
+
+		_globalBounds = _sprite.getGlobalBounds( );
 	}
 
 	void Sprite::SetPivotX( const float &xPoint )
 	{
 		Drawable::SetPivotX( xPoint );
 		_sprite.setOrigin( xPoint, _sprite.getOrigin( ).y );
+		_globalBounds = _sprite.getGlobalBounds( );
 	}
 
 	void Sprite::SetPivotY( const float &yPoint )
 	{
 		Drawable::SetPivotY( yPoint );
 		_sprite.setOrigin( _sprite.getOrigin( ).x, yPoint );
+		_globalBounds = _sprite.getGlobalBounds( );
 	}
 
 	void Sprite::Update( const float &dt )

@@ -28,7 +28,7 @@ namespace Sonar
 			)
 		{ return; }
 
-		_data->window.draw( *object );
+		_data->window.draw( *_object );
 	}
 
     void Drawable::SetPosition( const float &x, const float &y )
@@ -282,5 +282,24 @@ namespace Sonar
 		else
 		{ return false; }
 	}
+
+	bool Drawable::CircleCollision( const Drawable &object ) const
+	{
+		sf::FloatRect shape1 = _globalBounds; // This object
+		sf::FloatRect shape2 = sf::FloatRect( object.GetGlobalBounds( )[0], object.GetGlobalBounds( )[1], object.GetGlobalBounds( )[2], object.GetGlobalBounds( )[3] ); // Passed in object
+
+		float dx = ( _position[0] + ( shape1.width / 2 ) ) - ( object.GetPositionX( ) + ( shape2.width / 2 ) );
+		float dy = ( _position[1] + ( shape1.height / 2 ) ) - ( object.GetPositionY( ) + ( shape2.height / 2 ) );
+		float distance = std::sqrt( ( dx * dx ) + ( dy * dy ) );
+
+		if ( distance <= ( shape1.width / 2 ) + ( shape2.width / 2 ) )
+		{ return true; }
+		else
+		{ return false; }
+	}
+
+	glm::vec4 Drawable::GetGlobalBounds( ) const
+	{ return glm::vec4( _globalBounds.left, _globalBounds.top, _globalBounds.width, _globalBounds.height); }
+
 }
 

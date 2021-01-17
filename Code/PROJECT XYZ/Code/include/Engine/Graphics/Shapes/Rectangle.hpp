@@ -279,14 +279,14 @@ namespace Sonar
         glm::ivec4 GetTextureRect( ) const;
 
         /**
-        * \brief Get the Textures local bounds
+        * \brief Get the local bounds
         *
         * \return Output returns the shape's texture local bounds
         */
         glm::vec4 GetLocalBounds( ) const;
 
         /**
-        * \brief Get the Textures global bounds
+        * \brief Get the global bounds
         *
         * \return Output returns the shape's texture global bounds
         */
