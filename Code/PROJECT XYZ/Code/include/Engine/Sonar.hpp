@@ -14,6 +14,7 @@
 #include "External/glext.h"
 #include "Graphics/Color.hpp"
 #include "Graphics/Drawable.hpp"
+#include "Graphics/Parallax.hpp"
 #include "Graphics/Shapes/Circle.hpp"
 #include "Graphics/Shapes/Rectangle.hpp"
 #include "Graphics/Shapes/Triangle.hpp"

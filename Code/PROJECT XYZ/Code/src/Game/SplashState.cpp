@@ -20,6 +20,16 @@ namespace Sonar
 		circle2 = new Circle( _data, 100 );
 		circle2->SetInsideColor( Color::Green );
 		circle2->SetPosition( 200, 300 );
+
+		spr = new Sprite( _data, "Resources/Background.jpg" );
+		spr2 = new Sprite( _data, "Resources/Background.jpg" );
+
+		parallax = new Parallax( _data );
+		parallax->SetBackgrounds( {
+			new Sprite( _data, "Resources/Background.jpg" ),
+			new Sprite( _data, "Resources/box.png" ),
+			new Sprite( _data, "Resources/Background.jpg" )
+		} );
 	} 
 
 	void SplashState::Init( )
@@ -71,6 +81,8 @@ namespace Sonar
 		{
 			spdlog::info( "NO COLLISION" );
 		}
+
+		parallax->Update( dt );
 	}
 
 	void SplashState::Draw( const float &dt )
@@ -79,7 +91,11 @@ namespace Sonar
 		//physicsWorld->Draw( dt );
 
 		//rectangle->Draw( );
-		circle1->Draw( );
-		circle2->Draw( );
+		//circle1->Draw( );
+		//circle2->Draw( );
+
+		parallax->Draw( );
+
+		//spr->Draw( );
 	}
 }

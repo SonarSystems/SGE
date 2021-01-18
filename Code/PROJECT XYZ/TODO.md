@@ -6,7 +6,7 @@ GAME
 ENGINE
 -----------------------------------------------------------------
 * Parallax background
-* File loading
+* File loading - GOOGLE SEE WHAT OTHERS HAVE DONE AND POTENTIALLY USE
     - Saving and loading
         - Single pieces of data
         - Chunks of data like a database
@@ -43,6 +43,7 @@ ENGINE
     - Top right
     - Bottom left
     - Bottom right
+* Add grid for debugging/developing - ABILITY TO SET SPACE BETWEEN LINES AND/OR HOW MANY LINES IN BOTH AXES
 * Update SFML
 * Shadows
 * Fog

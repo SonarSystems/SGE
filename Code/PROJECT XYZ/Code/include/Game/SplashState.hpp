@@ -31,5 +31,9 @@ namespace Sonar
 
 		Circle *circle1, *circle2;
 
+		Parallax *parallax;
+
+		Sprite *spr, *spr2;
+
 	};
 }
