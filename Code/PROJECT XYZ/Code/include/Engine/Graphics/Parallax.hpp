@@ -11,6 +11,14 @@ namespace Sonar
     class Parallax
     {
     public:
+        enum DIRECTION
+        {
+            LEFT = 0,
+            RIGHT,
+            UP,
+            DOWN
+        };
+
         /**
         * \brief Default class constructor
         */
@@ -27,18 +35,34 @@ namespace Sonar
 
         void Draw( );
 
-        // set speed
-        // get speed
+        void SetSpeed( const float &speed );
+
+        float GetSpeed( ) const;
+
+        // Set Direction (x and y) - LEFT/RIGHT OR UP/DOWN - ENUM BASED
+        // GET direction
         // manual movement based on external trigger
-        // Set Direction (x and y) - LEFT/RIGHT OR UP/DOWN
 
     private:
-        std::vector<Sprite *> _backgrounds;
-
         /**
         * \brief Game data object
         */
         GameDataRef _data;
+
+        /**
+        * \brief Backgrounds to scroll next to each other
+        */
+        std::vector<Sprite *> _backgrounds;
+
+        /**
+        * \brief Speed at which the background moves (negative moves it left/up and positive moves it right/down)
+        */
+        float _speed;
+
+        /**
+        * \brief The direction of the moving backgrounds
+        */
+        Parallax::DIRECTION _direction;
         
     };
 }

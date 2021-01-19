@@ -30,6 +30,7 @@ namespace Sonar
 			new Sprite( _data, "Resources/box.png" ),
 			new Sprite( _data, "Resources/Background.jpg" )
 		} );
+		parallax->SetSpeed( -500 );
 	} 
 
 	void SplashState::Init( )

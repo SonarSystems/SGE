@@ -2,7 +2,12 @@
 
 namespace Sonar
 {  
-	Parallax::Parallax( GameDataRef data ) : _data( data ) { }
+	Parallax::Parallax( GameDataRef data ) : _data( data )
+	{
+		_speed = -100;
+
+		_direction = Parallax::DIRECTION::LEFT;
+	}
 
 	Parallax::~Parallax( ) { }
 
@@ -29,12 +34,27 @@ namespace Sonar
 		}
 	}
 
-	// IMPLEMENT A RESET AFTER IT's GONE OFF THE SCREEN
 	void Parallax::Update( const float &dt )
 	{
-		for ( auto &background : _backgrounds )
+		for ( int i = 0; i < _backgrounds.size( ); i++ )
 		{
-			background->MoveX( dt * -350 );
+			_backgrounds.at( i )->MoveX( dt * _speed );
+
+			if ( _backgrounds.at( i )->GetPositionX( ) + _backgrounds.at( i )->GetWidth( ) < 0 )
+			{
+				if ( 0 == i )
+				{
+					const int lastID = _backgrounds.size( ) - 1;
+
+					_backgrounds.at( i )->SetPositionX( _backgrounds.at( lastID )->GetPositionX( ) + _backgrounds.at( lastID )->GetWidth( ) + ( _speed * dt ) );
+				}
+				else
+				{
+					const int lastID = i - 1;
+
+					_backgrounds.at( i )->SetPositionX( _backgrounds.at( lastID )->GetPositionX( ) + _backgrounds.at( lastID )->GetWidth( ) );
+				}				
+			}
 		}
 	}
 
@@ -43,5 +63,18 @@ namespace Sonar
 		for ( auto &background : _backgrounds )
 		{ background->Draw( ); }
 	}
+
+	void Parallax::SetSpeed( const float &speed )
+	{
+		_speed = speed;
+
+		if ( speed < 0 )
+		{ _speed = 0; }
+		else
+		{ _speed = speed; }
+	}
+
+	float Parallax::GetSpeed( ) const
+	{ return _speed; }
 
 }
