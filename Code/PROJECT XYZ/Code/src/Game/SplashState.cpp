@@ -30,7 +30,8 @@ namespace Sonar
 			new Sprite( _data, "Resources/box.png" ),
 			new Sprite( _data, "Resources/Background.jpg" )
 		} );
-		parallax->SetSpeed( -500 );
+		parallax->SetSpeed( 0 );
+		//parallax->SetDirection( Parallax::DIRECTION::RIGHT );
 	} 
 
 	void SplashState::Init( )
@@ -42,10 +43,23 @@ namespace Sonar
 	{
         player->HandleInput( dt );
 
-		if ( Event::MouseWheelMoved == event.type )
+		if ( Event::MouseWheelScrolled == event.type )
 		{
-			physicsWorld->CreateDynamicBody( event.mouseButton.x, event.mouseButton.y, 32, 32 );
+			//physicsWorld->CreateDynamicBody( event.mouseButton.x, event.mouseButton.y, 32, 32 );
+
+			std::cout << (float)event.mouseWheelScroll.delta << std::endl;
+			
+
+			if ( event.mouseWheelScroll.delta < 0 )
+			{
+				parallax->Move( Parallax::DIRECTION::LEFT, -event.mouseWheelScroll.delta * 200 );
+			}
+			else
+			{
+				parallax->Move( Parallax::DIRECTION::RIGHT, event.mouseWheelScroll.delta * 200 );
+			}
 		}
+		
 	}
 
 	void SplashState::Update( const float &dt )
@@ -72,15 +86,6 @@ namespace Sonar
 		if ( Keyboard::IsPressed( Keyboard::Key::Down ) )
 		{
 			circle1->MoveY( dt * SPEED );
-		}
-
-		if ( circle1->CircleCollision( *circle2 ) )
-		{
-			spdlog::info( "Collision detected" );
-		}
-		else
-		{
-			spdlog::info( "NO COLLISION" );
 		}
 
 		parallax->Update( dt );
