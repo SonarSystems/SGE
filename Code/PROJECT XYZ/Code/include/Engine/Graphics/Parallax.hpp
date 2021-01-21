@@ -23,6 +23,15 @@ namespace Sonar
         };
 
         /**
+        * \brief Orientation of the moving backgrounds
+        */
+        enum ORIENTATION
+        {
+            HORIZONTAL = 0,
+            VERTICAL
+        };
+
+        /**
         * \brief Default class constructor
         */
         Parallax( GameDataRef data );
@@ -73,17 +82,41 @@ namespace Sonar
         void SetDirection( const Parallax::DIRECTION &direction );
 
         /**
-        * \brief Get the direction of the scrolling backgrounds
+        * \brief Get the direction of the scrolling backgrounds (the order is reverse for right/down, so last appears first)
         *
         * \return Output returns the direction of the background scroll
         */
         Parallax::DIRECTION GetDirection( ) const;
 
+        /**
+        * \brief Set the orientation of the scrolling backgrounds
+        *
+        * \param orientation Orientation of the scroll
+        */
+        void SetOrientation( const Parallax::ORIENTATION &orientation );
+
+        /**
+        * \brief Get the orientation of the scrolling backgrounds
+        *
+        * \return Output returns the orientation of the background scroll
+        */
+        Parallax::ORIENTATION GetOrientation( ) const;
+
+        /**
+        * \brief Set the scrolling to be triggered manually not time based (backgrounds are positioned with last first and going in the left/up direction)
+        *
+        * \param orientation Orientation of the manual scroll
+        */
+        void SetScrollToManual( const Parallax::ORIENTATION &orientation );
+
+        /**
+        * \brief Move the backgrounds manually
+        *
+		* \param direction Direction of the scrolling backgrounds
+		* \param speed Movement speed of the backgrounds
+        */
         void Move( const Parallax::DIRECTION &direction, const float &speed );
 
-        // manual movement based on external trigger - FIX ORDER WHEN SWITCHING SIDES
-            // - TRY USING THE SAME INITIAL ORDER
-            // - BUT index 0 is FIRST FOR LEFT and last index is FIRST FOR RIGHT
         // Set initial position
         // RESET
 
@@ -112,6 +145,11 @@ namespace Sonar
         * \brief The direction of the moving backgrounds
         */
         Parallax::DIRECTION _direction;
+
+        /**
+        * \brief The orientation of the moving backgrounds
+        */
+        Parallax::ORIENTATION _orientation;
 
         /**
         * \brief Does the scrolling have to stop after a single update

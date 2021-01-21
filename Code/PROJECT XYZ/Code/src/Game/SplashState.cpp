@@ -26,12 +26,13 @@ namespace Sonar
 
 		parallax = new Parallax( _data );
 		parallax->SetBackgrounds( {
-			new Sprite( _data, "Resources/Background.jpg" ),
-			new Sprite( _data, "Resources/box.png" ),
-			new Sprite( _data, "Resources/Background.jpg" )
+			new Sprite( _data, "Resources/1.png" ),
+			new Sprite( _data, "Resources/2.png" ),
+			new Sprite( _data, "Resources/3.png" )
 		} );
-		parallax->SetSpeed( 0 );
-		//parallax->SetDirection( Parallax::DIRECTION::RIGHT );
+		parallax->SetScrollToManual( Parallax::ORIENTATION::VERTICAL );
+		//parallax->SetSpeed( 0 );
+		//parallax->SetDirection( Parallax::DIRECTION::DOWN );
 	} 
 
 	void SplashState::Init( )
@@ -52,11 +53,11 @@ namespace Sonar
 
 			if ( event.mouseWheelScroll.delta < 0 )
 			{
-				parallax->Move( Parallax::DIRECTION::LEFT, -event.mouseWheelScroll.delta * 200 );
+				parallax->Move( Parallax::DIRECTION::UP, -event.mouseWheelScroll.delta * 600 );
 			}
 			else
 			{
-				parallax->Move( Parallax::DIRECTION::RIGHT, event.mouseWheelScroll.delta * 200 );
+				parallax->Move( Parallax::DIRECTION::DOWN, event.mouseWheelScroll.delta * 600 );
 			}
 		}
 		

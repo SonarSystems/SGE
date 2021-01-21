@@ -7,6 +7,7 @@ namespace Sonar
 		_speed = 100;
 
 		_direction = Parallax::DIRECTION::LEFT;
+		_orientation = Parallax::ORIENTATION::HORIZONTAL;
 
 		_isSingleScroll = false;
 	}
@@ -50,17 +51,17 @@ namespace Sonar
 
 				if ( _backgrounds.at( i )->GetPositionX( ) > _data->window.getSize( ).x )
 				{
-					if ( 0 == i )
+					if ( _backgrounds.size( ) - 1 == i )
 					{
-						const int lastID = _backgrounds.size( ) - 1;
+						const int lastID = 0;
 
-						_backgrounds.at( i )->SetPositionX( _backgrounds.at( lastID )->GetPositionX( ) - _backgrounds.at( i )->GetWidth( ) + ( _speed * dt ) );
+						_backgrounds.at( i )->SetPositionX( _backgrounds.at( lastID )->GetPositionX( ) - _backgrounds.at( i )->GetWidth( ) );
 					}
 					else
 					{
-						const int lastID = i - 1;
+						const int lastID = i + 1;
 
-						_backgrounds.at( i )->SetPositionX( _backgrounds.at( lastID )->GetPositionX( ) - _backgrounds.at( i )->GetWidth( ) );
+						_backgrounds.at( i )->SetPositionX( _backgrounds.at( lastID )->GetPositionX( ) - _backgrounds.at( i )->GetWidth( ) + ( _speed * dt ) );
 					}
 				}
 			}
@@ -90,17 +91,17 @@ namespace Sonar
 
 				if ( _backgrounds.at( i )->GetPositionY( ) > _data->window.getSize( ).y )
 				{
-					if ( 0 == i )
+					if ( _backgrounds.size( ) - 1 == i )
 					{
-						const int lastID = _backgrounds.size( ) - 1;
+						const int lastID = 0;
 
-						_backgrounds.at( i )->SetPositionY( _backgrounds.at( lastID )->GetPositionY( ) - _backgrounds.at( i )->GetHeight( ) + ( _speed * dt ) );
+						_backgrounds.at( i )->SetPositionY( _backgrounds.at( lastID )->GetPositionY( ) - _backgrounds.at( i )->GetHeight( ) );
 					}
 					else
 					{
-						const int lastID = i - 1;
+						const int lastID = i + 1;
 
-						_backgrounds.at( i )->SetPositionY( _backgrounds.at( lastID )->GetPositionY( ) - _backgrounds.at( i )->GetHeight( ) );
+						_backgrounds.at( i )->SetPositionY( _backgrounds.at( lastID )->GetPositionY( ) - _backgrounds.at( i )->GetHeight( ) + ( _speed * dt ) );
 					}
 				}
 			}
@@ -136,11 +137,33 @@ namespace Sonar
 	{
 		_direction = direction;
 
+		if ( Parallax::DIRECTION::LEFT == direction || Parallax::DIRECTION::RIGHT == direction )
+		{ _orientation = Parallax::ORIENTATION::HORIZONTAL; }
+		else
+		{ _orientation = Parallax::ORIENTATION::VERTICAL; }
+
 		SetBackgroundPositions( );
 	}
 
 	Sonar::Parallax::Parallax::DIRECTION Parallax::GetDirection( ) const
 	{ return _direction; }
+
+	void Parallax::SetOrientation( const Parallax::ORIENTATION &orientation )
+	{ _orientation = orientation; }
+
+	Sonar::Parallax::Parallax::ORIENTATION Parallax::GetOrientation( ) const
+	{ return _orientation; };
+
+	void Parallax::SetScrollToManual( const Parallax::ORIENTATION &orientation )
+	{
+		_orientation = orientation;
+		_speed = 0;
+
+		if ( Parallax::ORIENTATION::HORIZONTAL == orientation )
+		{ SetDirection( Parallax::DIRECTION::RIGHT ); }
+		else
+		{ SetDirection( Parallax::DIRECTION::DOWN ); }
+	}
 
 	void Parallax::Move( const Parallax::DIRECTION &direction, const float &speed )
 	{
@@ -151,7 +174,7 @@ namespace Sonar
 
 	void Parallax::SetBackgroundPositions( )
 	{
-		for ( int i = 0; i < _backgrounds.size( ); i++ )
+		for ( int i = _backgrounds.size( ) - 1; i >= 0; i-- )
 		{
 			if ( Parallax::DIRECTION::LEFT == _direction )
 			{
@@ -168,13 +191,13 @@ namespace Sonar
 			}
 			else if ( Parallax::DIRECTION::RIGHT == _direction )
 			{
-				if ( 0 == i )
+				if ( _backgrounds.size( ) - 1 == i )
 				{ _backgrounds.at( i )->SetPosition( 0, 0 ); }
 				else
 				{
 					_backgrounds.at( i )->SetPosition
 					(
-						_backgrounds.at( i - 1 )->GetPositionX( ) - _backgrounds.at( i )->GetWidth( ),
+						_backgrounds.at( i + 1 )->GetPositionX( ) - _backgrounds.at( i )->GetWidth( ),
 						0
 					);
 				}
@@ -194,14 +217,14 @@ namespace Sonar
 			}
 			else if ( Parallax::DIRECTION::DOWN == _direction )
 			{
-				if ( 0 == i )
+				if ( _backgrounds.size( ) - 1 == i )
 				{ _backgrounds.at( i )->SetPosition( 0, 0 ); }
 				else
 				{
 					_backgrounds.at( i )->SetPosition
 					(
 						0,
-						_backgrounds.at( i - 1 )->GetPositionY( ) - _backgrounds.at( i )->GetHeight( )
+						_backgrounds.at( i + 1 )->GetPositionY( ) - _backgrounds.at( i )->GetHeight( )
 					);
 				}
 			}

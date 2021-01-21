@@ -1,7 +1,6 @@
 ﻿  Game.cpp
   Parallax.cpp
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Parallax.cpp(25,22): warning C4018: '<': signed/unsigned mismatch
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Parallax.cpp(154,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Parallax.cpp(26,22): warning C4018: '<': signed/unsigned mismatch
   PhysicsWorld.cpp
   Player.cpp
   SplashState.cpp
