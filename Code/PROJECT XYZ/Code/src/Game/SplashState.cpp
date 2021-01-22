@@ -25,11 +25,28 @@ namespace Sonar
 		spr2 = new Sprite( _data, "Resources/Background.jpg" );
 
 		parallax = new Parallax( _data );
+		parallax2 = new Parallax( _data );
+
 		parallax->SetBackgrounds( {
 			new Sprite( _data, "Resources/1.png" ),
 			new Sprite( _data, "Resources/2.png" ),
 			new Sprite( _data, "Resources/3.png" )
 		} );
+
+		parallax2->SetBackgrounds( {
+			new Sprite( _data, "Resources/Cloud.png" ),
+			new Sprite( _data, "Resources/Cloud.png" ),
+			new Sprite( _data, "Resources/Cloud.png" ),
+			new Sprite( _data, "Resources/Cloud.png" ),
+			new Sprite( _data, "Resources/Cloud.png" )
+		} );
+
+		parallax2->SetSpeed( 500 );
+		parallax2->SetDirection( Parallax::DIRECTION::UP );
+		parallax2->SetOffset( 350, 250 );
+
+		parallax->SetSpeed( 500 );
+		//parallax->SetDirection( Parallax::DIRECTION::RIGHT );
 		parallax->SetScrollToManual( Parallax::ORIENTATION::VERTICAL );
 		//parallax->SetSpeed( 0 );
 		//parallax->SetDirection( Parallax::DIRECTION::DOWN );
@@ -60,7 +77,6 @@ namespace Sonar
 				parallax->Move( Parallax::DIRECTION::DOWN, event.mouseWheelScroll.delta * 600 );
 			}
 		}
-		
 	}
 
 	void SplashState::Update( const float &dt )
@@ -71,25 +87,11 @@ namespace Sonar
 
 		if ( Keyboard::IsPressed( Keyboard::Key::Left ) )
 		{
-			circle1->MoveX( dt * -SPEED );
-		}
-
-		if ( Keyboard::IsPressed( Keyboard::Key::Right ) )
-		{
-			circle1->MoveX( dt * SPEED );
-		}
-
-		if ( Keyboard::IsPressed( Keyboard::Key::Up ) )
-		{
-			circle1->MoveY( dt * -SPEED );
-		}
-
-		if ( Keyboard::IsPressed( Keyboard::Key::Down ) )
-		{
-			circle1->MoveY( dt * SPEED );
+			parallax->Reset( );
 		}
 
 		parallax->Update( dt );
+		parallax2->Update( dt );
 	}
 
 	void SplashState::Draw( const float &dt )
@@ -102,6 +104,7 @@ namespace Sonar
 		//circle2->Draw( );
 
 		parallax->Draw( );
+		parallax2->Draw( );
 
 		//spr->Draw( );
 	}

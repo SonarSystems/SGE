@@ -117,8 +117,24 @@ namespace Sonar
         */
         void Move( const Parallax::DIRECTION &direction, const float &speed );
 
-        // Set initial position
-        // RESET
+        /**
+        * \brief Resets the backgrounds
+        */
+        void Reset( );
+
+        /**
+        * \brief Set the background offset
+        *
+		* \param offsetX Offset between backgrounds in the x axis
+		* \param offsetY Offset between backgrounds in the y axis
+        */
+        void SetOffset( const float &offsetX, const float &offsetY );
+
+        // SetBackgrounds method that takes just filepaths instead of sprites
+		// fit window
+		    // - Based on width
+			// - Based on height
+			// - Based on width and height
 
     private:
         /**
@@ -144,7 +160,7 @@ namespace Sonar
         /**
         * \brief The direction of the moving backgrounds
         */
-        Parallax::DIRECTION _direction;
+        Parallax::DIRECTION _direction, _originalDirection;
 
         /**
         * \brief The orientation of the moving backgrounds
@@ -155,6 +171,11 @@ namespace Sonar
         * \brief Does the scrolling have to stop after a single update
         */
         bool _isSingleScroll;
+
+        /**
+        * \brief Offsets for the backgrounds
+        */
+        float _offsetX, _offsetY;
         
     };
 }

@@ -6,10 +6,12 @@ namespace Sonar
 	{
 		_speed = 100;
 
-		_direction = Parallax::DIRECTION::LEFT;
+		_originalDirection = _direction = Parallax::DIRECTION::LEFT;
 		_orientation = Parallax::ORIENTATION::HORIZONTAL;
 
 		_isSingleScroll = false;
+
+		_offsetX = _offsetY = 0;
 	}
 
 	Parallax::~Parallax( ) { }
@@ -35,13 +37,13 @@ namespace Sonar
 					{
 						const int lastID = _backgrounds.size( ) - 1;
 
-						_backgrounds.at( i )->SetPositionX( _backgrounds.at( lastID )->GetPositionX( ) + _backgrounds.at( lastID )->GetWidth( ) + ( -_speed * dt ) );
+						_backgrounds.at( i )->SetPositionX( _backgrounds.at( lastID )->GetPositionX( ) + _backgrounds.at( lastID )->GetWidth( ) + _offsetX + ( -_speed * dt ) );
 					}
 					else
 					{
 						const int lastID = i - 1;
 
-						_backgrounds.at( i )->SetPositionX( _backgrounds.at( lastID )->GetPositionX( ) + _backgrounds.at( lastID )->GetWidth( ) );
+						_backgrounds.at( i )->SetPositionX( _backgrounds.at( lastID )->GetPositionX( ) + _backgrounds.at( lastID )->GetWidth( ) + _offsetX );
 					}
 				}
 			}
@@ -55,13 +57,13 @@ namespace Sonar
 					{
 						const int lastID = 0;
 
-						_backgrounds.at( i )->SetPositionX( _backgrounds.at( lastID )->GetPositionX( ) - _backgrounds.at( i )->GetWidth( ) );
+						_backgrounds.at( i )->SetPositionX( _backgrounds.at( lastID )->GetPositionX( ) - _backgrounds.at( i )->GetWidth( ) - _offsetX );
 					}
 					else
 					{
 						const int lastID = i + 1;
 
-						_backgrounds.at( i )->SetPositionX( _backgrounds.at( lastID )->GetPositionX( ) - _backgrounds.at( i )->GetWidth( ) + ( _speed * dt ) );
+						_backgrounds.at( i )->SetPositionX( _backgrounds.at( lastID )->GetPositionX( ) - _backgrounds.at( i )->GetWidth( ) - _offsetX + ( _speed * dt ) );
 					}
 				}
 			}
@@ -75,13 +77,13 @@ namespace Sonar
 					{
 						const int lastID = _backgrounds.size( ) - 1;
 
-						_backgrounds.at( i )->SetPositionY( _backgrounds.at( lastID )->GetPositionY( ) + _backgrounds.at( lastID )->GetHeight( ) + ( -_speed * dt ) );
+						_backgrounds.at( i )->SetPositionY( _backgrounds.at( lastID )->GetPositionY( ) + _backgrounds.at( lastID )->GetHeight( ) + _offsetY + ( -_speed * dt ) );
 					}
 					else
 					{
 						const int lastID = i - 1;
 
-						_backgrounds.at( i )->SetPositionY( _backgrounds.at( lastID )->GetPositionY( ) + _backgrounds.at( lastID )->GetHeight( ) );
+						_backgrounds.at( i )->SetPositionY( _backgrounds.at( lastID )->GetPositionY( ) + _backgrounds.at( lastID )->GetHeight( ) + _offsetY );
 					}
 				}
 			}
@@ -95,13 +97,13 @@ namespace Sonar
 					{
 						const int lastID = 0;
 
-						_backgrounds.at( i )->SetPositionY( _backgrounds.at( lastID )->GetPositionY( ) - _backgrounds.at( i )->GetHeight( ) );
+						_backgrounds.at( i )->SetPositionY( _backgrounds.at( lastID )->GetPositionY( ) - _backgrounds.at( i )->GetHeight( ) - _offsetY );
 					}
 					else
 					{
 						const int lastID = i + 1;
 
-						_backgrounds.at( i )->SetPositionY( _backgrounds.at( lastID )->GetPositionY( ) - _backgrounds.at( i )->GetHeight( ) + ( _speed * dt ) );
+						_backgrounds.at( i )->SetPositionY( _backgrounds.at( lastID )->GetPositionY( ) - _backgrounds.at( i )->GetHeight( ) - _offsetY + ( _speed * dt ) );
 					}
 				}
 			}
@@ -135,7 +137,7 @@ namespace Sonar
 
 	void Parallax::SetDirection( const Parallax::DIRECTION &direction )
 	{
-		_direction = direction;
+		_originalDirection = _direction = direction;
 
 		if ( Parallax::DIRECTION::LEFT == direction || Parallax::DIRECTION::RIGHT == direction )
 		{ _orientation = Parallax::ORIENTATION::HORIZONTAL; }
@@ -172,59 +174,82 @@ namespace Sonar
 		_isSingleScroll = true;
 	}
 
+	void Parallax::Reset( )
+	{
+		_direction = _originalDirection;
+		SetBackgroundPositions( );
+	}
+
+	void Parallax::SetOffset( const float &offsetX, const float &offsetY )
+	{
+		_offsetX = offsetX;
+		_offsetY = offsetY;
+
+		SetBackgroundPositions( );
+	}
+
 	void Parallax::SetBackgroundPositions( )
 	{
-		for ( int i = _backgrounds.size( ) - 1; i >= 0; i-- )
+		if ( Parallax::DIRECTION::LEFT == _direction )
 		{
-			if ( Parallax::DIRECTION::LEFT == _direction )
+			for ( int i = 0; i < _backgrounds.size( ); i++ )
 			{
 				if ( 0 == i )
-				{ _backgrounds.at( i )->SetPosition( 0, 0 ); }
+				{ _backgrounds.at( i )->SetPosition( _offsetX, _offsetY ); }
 				else
 				{
 					_backgrounds.at( i )->SetPosition
 					(
-						_backgrounds.at( i - 1 )->GetPositionX( ) + _backgrounds.at( i - 1 )->GetWidth( ),
-						0
+						_backgrounds.at( i - 1 )->GetPositionX( ) + _backgrounds.at( i - 1 )->GetWidth( ) + _offsetX,
+						_offsetY
 					);
 				}
 			}
-			else if ( Parallax::DIRECTION::RIGHT == _direction )
+		}
+		else if ( Parallax::DIRECTION::RIGHT == _direction )
+		{
+			for ( int i = _backgrounds.size( ) - 1; i >= 0; i-- )
 			{
 				if ( _backgrounds.size( ) - 1 == i )
-				{ _backgrounds.at( i )->SetPosition( 0, 0 ); }
+				{ _backgrounds.at( i )->SetPosition( _offsetX, _offsetY ); }
 				else
 				{
 					_backgrounds.at( i )->SetPosition
 					(
-						_backgrounds.at( i + 1 )->GetPositionX( ) - _backgrounds.at( i )->GetWidth( ),
-						0
+						_backgrounds.at( i + 1 )->GetPositionX( ) - _backgrounds.at( i )->GetWidth( ) - _offsetX,
+						_offsetY
 					);
 				}
 			}
-			else if ( Parallax::DIRECTION::UP == _direction )
+		}
+		else if ( Parallax::DIRECTION::UP == _direction )
+		{
+			for ( int i = 0; i < _backgrounds.size( ); i++ )
 			{
 				if ( 0 == i )
-				{ _backgrounds.at( i )->SetPosition( 0, 0 ); }
+				{ _backgrounds.at( i )->SetPosition( _offsetX, _offsetY ); }
 				else
 				{
 					_backgrounds.at( i )->SetPosition
 					(
-						0,
-						_backgrounds.at( i - 1 )->GetPositionY( ) + _backgrounds.at( i - 1 )->GetHeight( )
+						_offsetX,
+						_backgrounds.at( i - 1 )->GetPositionY( ) + _backgrounds.at( i - 1 )->GetHeight( ) + _offsetY
 					);
 				}
 			}
-			else if ( Parallax::DIRECTION::DOWN == _direction )
+		}
+		else if ( Parallax::DIRECTION::DOWN == _direction )
+		{
+			for ( int i = _backgrounds.size( ) - 1; i >= 0; i-- )
 			{
 				if ( _backgrounds.size( ) - 1 == i )
-				{ _backgrounds.at( i )->SetPosition( 0, 0 ); }
+				{ _backgrounds.at( i )->SetPosition( _offsetX, _offsetY ); }
 				else
 				{
 					_backgrounds.at( i )->SetPosition
 					(
-						0,
-						_backgrounds.at( i + 1 )->GetPositionY( ) - _backgrounds.at( i )->GetHeight( )
+						_offsetX,
+						_backgrounds.at( i + 1 )->GetPositionY( ) - _backgrounds.at( i )->GetHeight( ) - _offsetY
 					);
 				}
 			}
