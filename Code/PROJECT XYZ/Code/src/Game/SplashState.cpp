@@ -24,8 +24,8 @@ namespace Sonar
 		spr = new Sprite( _data, "Resources/Background.jpg" );
 		spr2 = new Sprite( _data, "Resources/Background.jpg" );
 
-		parallax = new Parallax( _data );
-		parallax2 = new Parallax( _data );
+		parallax = new ScrollingBackground( _data );
+		parallax2 = new ScrollingBackground( _data );
 
 		parallax->SetBackgrounds( {
 			"Resources/1.png",
@@ -42,12 +42,12 @@ namespace Sonar
 		} );
 
 		parallax2->SetSpeed( 500 );
-		parallax2->SetDirection( Parallax::DIRECTION::UP );
+		parallax2->SetDirection( ScrollingBackground::DIRECTION::UP );
 		parallax2->SetOffset( 350, 250 );
 
 		parallax->SetSpeed( 500 );
 		//parallax->SetDirection( Parallax::DIRECTION::RIGHT );
-		parallax->SetScrollToManual( Parallax::ORIENTATION::VERTICAL );
+		parallax->SetScrollToManual( ScrollingBackground::ORIENTATION::VERTICAL );
 		//parallax->SetSpeed( 0 );
 		//parallax->SetDirection( Parallax::DIRECTION::DOWN );
 	} 
@@ -70,11 +70,11 @@ namespace Sonar
 
 			if ( event.mouseWheelScroll.delta < 0 )
 			{
-				parallax->Move( Parallax::DIRECTION::UP, -event.mouseWheelScroll.delta * 600 );
+				parallax->Move( ScrollingBackground::DIRECTION::UP, -event.mouseWheelScroll.delta * 600 );
 			}
 			else
 			{
-				parallax->Move( Parallax::DIRECTION::DOWN, event.mouseWheelScroll.delta * 600 );
+				parallax->Move( ScrollingBackground::DIRECTION::DOWN, event.mouseWheelScroll.delta * 600 );
 			}
 		}
 	}

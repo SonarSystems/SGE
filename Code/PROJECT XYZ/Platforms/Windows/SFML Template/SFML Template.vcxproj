@@ -33,6 +33,7 @@
     <ClInclude Include="..\..\..\Code\include\Engine\Graphics\Color.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\Graphics\Drawable.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\Graphics\Parallax.hpp" />
+    <ClInclude Include="..\..\..\Code\include\Engine\Graphics\ScrollingBackground.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\Graphics\Shapes\Circle.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\Graphics\Shapes\Rectangle.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\Graphics\Shapes\Triangle.hpp" />
@@ -66,6 +67,7 @@
     <ClCompile Include="..\..\..\Code\src\Engine\Graphics\Color.cpp" />
     <ClCompile Include="..\..\..\Code\src\Engine\Graphics\Drawable.cpp" />
     <ClCompile Include="..\..\..\Code\src\Engine\Graphics\Parallax.cpp" />
+    <ClCompile Include="..\..\..\Code\src\Engine\Graphics\ScrollingBackground.cpp" />
     <ClCompile Include="..\..\..\Code\src\Engine\Graphics\Shapes\Circle.cpp" />
     <ClCompile Include="..\..\..\Code\src\Engine\Graphics\Shapes\Rectangle.cpp" />
     <ClCompile Include="..\..\..\Code\src\Engine\Graphics\Shapes\Triangle.cpp" />

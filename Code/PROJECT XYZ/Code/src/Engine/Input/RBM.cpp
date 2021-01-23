@@ -2,11 +2,9 @@
 
 namespace Sonar
 {
-	RBM::RBM( const float &threshold, const float &amountToTickUp, const Time &tickDownTime, const float &tickDownAmount ) : _started( false ), _failureCount( 0 ), _thresholdGoal( threshold ), _amountToTickUp( amountToTickUp ), _tickDownTime( tickDownTime ), _tickDownAmount( tickDownAmount ), _counter( 0 )
-	{ }
+	RBM::RBM( const float &threshold, const float &amountToTickUp, const Time &tickDownTime, const float &tickDownAmount ) : _started( false ), _failureCount( 0 ), _thresholdGoal( threshold ), _amountToTickUp( amountToTickUp ), _tickDownTime( tickDownTime ), _tickDownAmount( tickDownAmount ), _counter( 0 ) { }
 
-	RBM::~RBM( )
-	{ }
+	RBM::~RBM( ) { }
 
 	bool RBM::HasStarted( ) const
 	{ return _started; } 

@@ -2,17 +2,13 @@
 
 namespace Sonar
 {
-	QTE::QTE( const std::vector<Keyboard::Key> &eventList, const std::vector<float> &times, const int &resetAmount ) : _started( false ), _eventPosition( 0 ), _eventListKeyboard( eventList ), _eventTimeList( times ), _resetAmount( resetAmount ), _failureCount( 0 ), _eventCount( eventList.size( ) )
-	{ }
+	QTE::QTE( const std::vector<Keyboard::Key> &eventList, const std::vector<float> &times, const int &resetAmount ) : _started( false ), _eventPosition( 0 ), _eventListKeyboard( eventList ), _eventTimeList( times ), _resetAmount( resetAmount ), _failureCount( 0 ), _eventCount( eventList.size( ) ) { }
 
-	QTE::QTE( const std::vector<std::array<int, 2>> &eventList, const std::vector<float> &times, const int &resetAmount ) : _started( false ), _eventPosition( 0 ), _eventListJoystick( eventList ), _eventTimeList( times ), _resetAmount( resetAmount ), _failureCount( 0 ), _eventCount( eventList.size( ) )
-	{ }
+	QTE::QTE( const std::vector<std::array<int, 2>> &eventList, const std::vector<float> &times, const int &resetAmount ) : _started( false ), _eventPosition( 0 ), _eventListJoystick( eventList ), _eventTimeList( times ), _resetAmount( resetAmount ), _failureCount( 0 ), _eventCount( eventList.size( ) ) { }
 
-	QTE::QTE( const std::vector<Mouse::Button> &eventList, const std::vector<float> &times, const int &resetAmount ) : _started( false ), _eventPosition( 0 ), _eventListMouse( eventList ), _eventTimeList( times ), _resetAmount( resetAmount ), _failureCount( 0 ), _eventCount( eventList.size( ) )
-	{ }
+	QTE::QTE( const std::vector<Mouse::Button> &eventList, const std::vector<float> &times, const int &resetAmount ) : _started( false ), _eventPosition( 0 ), _eventListMouse( eventList ), _eventTimeList( times ), _resetAmount( resetAmount ), _failureCount( 0 ), _eventCount( eventList.size( ) ) { }
 
-	QTE::~QTE( )
-	{ }
+	QTE::~QTE( ) { }
 
 	bool QTE::HasStarted( ) const
 	{ return _started; } 

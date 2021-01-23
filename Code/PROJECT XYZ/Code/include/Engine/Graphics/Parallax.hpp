@@ -3,8 +3,8 @@
 #include <External/glm/glm.hpp>
 #include <vector>
 
-#include "Graphics/Sprite.hpp"
 #include "Sonar.hpp"
+#include "Graphics/ScrollingBackground.hpp"
 
 namespace Sonar
 {
@@ -12,175 +12,48 @@ namespace Sonar
     {
     public:
         /**
-        * \brief Direction of the moving backgrounds
-        */
-        enum DIRECTION
-        {
-            LEFT = 0,
-            RIGHT,
-            UP,
-            DOWN
-        };
-
-        /**
-        * \brief Orientation of the moving backgrounds
-        */
-        enum ORIENTATION
-        {
-            HORIZONTAL = 0,
-            VERTICAL
-        };
-
-        /**
         * \brief Default class constructor
         */
         Parallax( GameDataRef data );
-        
+
         /**
         * \brief Class destructor
         */
         ~Parallax( );
 
         /**
-        * \brief Set the backgrounds
-        *
-        * \param backgrounds All the backgrounds to be set
-        */
-        void SetBackgrounds( const std::vector<Sprite *> &backgrounds );
-
-        /**
-        * \brief Set the backgrounds
-        *
-        * \param backgrounds All the backgrounds to be using file paths
-        */
-        void SetBackgrounds( const std::vector<std::string> &backgrounds );
-
-        /**
-        * \brief Update the scrolling backgrounds
+        * \brief Update the Parallax
         *
         * \param dt Delta time between frames
         */
         void Update( const float &dt );
 
         /**
-        * \brief Draw the backgrounds
+        * \brief Draw the layers
         */
         void Draw( );
 
-        /**
-        * \brief Set the background scrolling speed
-        *
-        * \param speed Speed at which the backgrounds move
-        */
-        void SetSpeed( const float &speed );
+        void AddLayer( const ScrollingBackground &layer );
 
-        /**
-        * \brief Get the speed at which the backgrounds scroll
-        *
-        * \return Output returns the background speed
-        */
-        float GetSpeed( ) const;
+		void AddLayer( const std::vector<Sprite *> &backgrounds );
 
-        /**
-        * \brief Set the direction of the scrolling backgrounds
-        *
-        * \param direction Direct of the scroll
-        */
-        void SetDirection( const Parallax::DIRECTION &direction );
+		void AddLayer( const std::vector<std::string> &backgrounds );
 
-        /**
-        * \brief Get the direction of the scrolling backgrounds (the order is reverse for right/down, so last appears first)
-        *
-        * \return Output returns the direction of the background scroll
-        */
-        Parallax::DIRECTION GetDirection( ) const;
-
-        /**
-        * \brief Set the orientation of the scrolling backgrounds
-        *
-        * \param orientation Orientation of the scroll
-        */
-        void SetOrientation( const Parallax::ORIENTATION &orientation );
-
-        /**
-        * \brief Get the orientation of the scrolling backgrounds
-        *
-        * \return Output returns the orientation of the background scroll
-        */
-        Parallax::ORIENTATION GetOrientation( ) const;
-
-        /**
-        * \brief Set the scrolling to be triggered manually not time based (backgrounds are positioned with last first and going in the left/up direction)
-        *
-        * \param orientation Orientation of the manual scroll
-        */
-        void SetScrollToManual( const Parallax::ORIENTATION &orientation );
-
-        /**
-        * \brief Move the backgrounds manually
-        *
-		* \param direction Direction of the scrolling backgrounds
-		* \param speed Movement speed of the backgrounds
-        */
-        void Move( const Parallax::DIRECTION &direction, const float &speed );
-
-        /**
-        * \brief Resets the backgrounds
-        */
-        void Reset( );
-
-        /**
-        * \brief Set the background offset
-        *
-		* \param offsetX Offset between backgrounds in the x axis
-		* \param offsetY Offset between backgrounds in the y axis
-        */
-        void SetOffset( const float &offsetX, const float &offsetY );
-
-
-        // Convert parallax class into scrolling background class
-        // Create parallax class
+        // delete layer
+        // disable/hide layer
+        // set direction
+        // set orientation
+        // set scroll to normal
+        // move (specify the layer)
+        // set offset for layer
 
     private:
-        /**
-        * \brief Set background position
-        */
-        void SetBackgroundPositions( );
-
         /**
         * \brief Game data object
         */
         GameDataRef _data;
 
-        /**
-        * \brief Backgrounds to scroll next to each other
-        */
-        std::vector<Sprite *> _backgrounds;
-
-        /**
-        * \brief Speed at which the background moves (negative moves it left/up and positive moves it right/down)
-        */
-        float _speed;
-
-        /**
-        * \brief The direction of the moving backgrounds
-        */
-        Parallax::DIRECTION _direction, _originalDirection;
-
-        /**
-        * \brief The orientation of the moving backgrounds
-        */
-        Parallax::ORIENTATION _orientation;
-
-        /**
-        * \brief Does the scrolling have to stop after a single update
-        */
-        bool _isSingleScroll;
-
-        /**
-        * \brief Offsets for the backgrounds
-        */
-        float _offsetX, _offsetY;
+        std::vector<ScrollingBackground> _layers;
         
     };
 }
