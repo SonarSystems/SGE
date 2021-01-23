@@ -23,6 +23,14 @@ namespace Sonar
 		SetBackgroundPositions( );
 	}
 
+	void Parallax::SetBackgrounds( const std::vector<std::string> &backgrounds )
+	{
+		for ( auto filepath : backgrounds )
+		{ _backgrounds.push_back( new Sprite( _data, filepath ) ); }
+
+		SetBackgroundPositions( );
+	}
+
 	void Parallax::Update( const float &dt )
 	{
 		for ( int i = 0; i < _backgrounds.size( ); i++ )

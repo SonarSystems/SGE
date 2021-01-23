@@ -42,11 +42,18 @@ namespace Sonar
         ~Parallax( );
 
         /**
-        * \brief Set the backgrounds of the scroll
+        * \brief Set the backgrounds
         *
         * \param backgrounds All the backgrounds to be set
         */
         void SetBackgrounds( const std::vector<Sprite *> &backgrounds );
+
+        /**
+        * \brief Set the backgrounds
+        *
+        * \param backgrounds All the backgrounds to be using file paths
+        */
+        void SetBackgrounds( const std::vector<std::string> &backgrounds );
 
         /**
         * \brief Update the scrolling backgrounds
@@ -130,11 +137,9 @@ namespace Sonar
         */
         void SetOffset( const float &offsetX, const float &offsetY );
 
-        // SetBackgrounds method that takes just filepaths instead of sprites
-		// fit window
-		    // - Based on width
-			// - Based on height
-			// - Based on width and height
+
+        // Convert parallax class into scrolling background class
+        // Create parallax class
 
     private:
         /**

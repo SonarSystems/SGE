@@ -28,9 +28,9 @@ namespace Sonar
 		parallax2 = new Parallax( _data );
 
 		parallax->SetBackgrounds( {
-			new Sprite( _data, "Resources/1.png" ),
-			new Sprite( _data, "Resources/2.png" ),
-			new Sprite( _data, "Resources/3.png" )
+			"Resources/1.png",
+			"Resources/2.png",
+			"Resources/3.png"
 		} );
 
 		parallax2->SetBackgrounds( {
