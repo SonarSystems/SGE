@@ -9,47 +9,36 @@ namespace Sonar
         player = new Player( _data );
         physicsWorld = new PhysicsWorld( _data );
 
-		rectangle = new Rectangle( _data );
-		rectangle->SetSize( 200, 150 );
-		rectangle->SetInsideColor( Color::Red );
-		rectangle->SetScale( 2, 2 );
+		parallax = new Parallax( _data );
 
-		circle1 = new Circle( _data, 50 );
-		circle1->SetInsideColor( Color::Blue );
-
-		circle2 = new Circle( _data, 100 );
-		circle2->SetInsideColor( Color::Green );
-		circle2->SetPosition( 200, 300 );
-
-		spr = new Sprite( _data, "Resources/Background.jpg" );
-		spr2 = new Sprite( _data, "Resources/Background.jpg" );
-
-		parallax = new ScrollingBackground( _data );
-		parallax2 = new ScrollingBackground( _data );
-
-		parallax->SetBackgrounds( {
+		parallax->AddLayer( {
 			"Resources/1.png",
 			"Resources/2.png",
 			"Resources/3.png"
 		} );
 
-		parallax2->SetBackgrounds( {
-			new Sprite( _data, "Resources/Cloud.png" ),
-			new Sprite( _data, "Resources/Cloud.png" ),
-			new Sprite( _data, "Resources/Cloud.png" ),
-			new Sprite( _data, "Resources/Cloud.png" ),
-			new Sprite( _data, "Resources/Cloud.png" )
+		parallax->AddLayer( {
+			"Resources/Cloud.png",
+			"Resources/Cloud.png",
+			"Resources/Cloud.png",
+			"Resources/Cloud.png",
+			"Resources/Cloud.png"
 		} );
 
-		parallax2->SetSpeed( 500 );
-		parallax2->SetDirection( ScrollingBackground::DIRECTION::UP );
-		parallax2->SetOffset( 350, 250 );
+		parallax->AddLayer( {
+			"Resources/Heart.png",
+			"Resources/Heart.png",
+			"Resources/Heart.png",
+			"Resources/Heart.png",
+			"Resources/Heart.png"
+		} );
 
-		parallax->SetSpeed( 500 );
-		//parallax->SetDirection( Parallax::DIRECTION::RIGHT );
-		parallax->SetScrollToManual( ScrollingBackground::ORIENTATION::VERTICAL );
-		//parallax->SetSpeed( 0 );
-		//parallax->SetDirection( Parallax::DIRECTION::DOWN );
+		parallax->SetSpeed( 0, 200 );
+		parallax->SetSpeed( 1, 400 );
+		parallax->SetSpeed( 2, 600 );
+
+		parallax->SetOffset( 1, 350, 150 );
+		parallax->SetOffset( 2, 600, 500 );
 	} 
 
 	void SplashState::Init( )
@@ -66,16 +55,6 @@ namespace Sonar
 			//physicsWorld->CreateDynamicBody( event.mouseButton.x, event.mouseButton.y, 32, 32 );
 
 			std::cout << (float)event.mouseWheelScroll.delta << std::endl;
-			
-
-			if ( event.mouseWheelScroll.delta < 0 )
-			{
-				parallax->Move( ScrollingBackground::DIRECTION::UP, -event.mouseWheelScroll.delta * 600 );
-			}
-			else
-			{
-				parallax->Move( ScrollingBackground::DIRECTION::DOWN, event.mouseWheelScroll.delta * 600 );
-			}
 		}
 	}
 
@@ -85,13 +64,7 @@ namespace Sonar
         
         //physicsWorld->Update( dt );
 
-		if ( Keyboard::IsPressed( Keyboard::Key::Left ) )
-		{
-			parallax->Reset( );
-		}
-
 		parallax->Update( dt );
-		parallax2->Update( dt );
 	}
 
 	void SplashState::Draw( const float &dt )
@@ -99,13 +72,6 @@ namespace Sonar
         //player->Draw( dt );
 		//physicsWorld->Draw( dt );
 
-		//rectangle->Draw( );
-		//circle1->Draw( );
-		//circle2->Draw( );
-
 		parallax->Draw( );
-		parallax2->Draw( );
-
-		//spr->Draw( );
 	}
 }

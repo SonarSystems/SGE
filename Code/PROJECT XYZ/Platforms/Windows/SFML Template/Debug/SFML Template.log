@@ -1,14 +1,8 @@
-﻿  Game.cpp
-  Parallax.cpp
-  ScrollingBackground.cpp
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Parallax.hpp(36,50): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Parallax.hpp(36,50): error C2143: syntax error: missing ',' before '&'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Parallax.hpp(56,21): error C2065: 'ScrollingBackground': undeclared identifier
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Parallax.hpp(56,14): error C2923: 'std::vector': 'ScrollingBackground' is not a valid template type argument for parameter '_Ty'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\ScrollingBackground.cpp(36,22): warning C4018: '<': signed/unsigned mismatch
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\ScrollingBackground.cpp(203,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\ScrollingBackground.cpp(235,23): warning C4018: '<': signed/unsigned mismatch
+﻿  Parallax.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Parallax.cpp(12,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Parallax.cpp(21,22): warning C4018: '<': signed/unsigned mismatch
   PhysicsWorld.cpp
   Player.cpp
   SplashState.cpp
   Generating Code...
+  SFML Template.vcxproj -> C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\SFML Template.exe

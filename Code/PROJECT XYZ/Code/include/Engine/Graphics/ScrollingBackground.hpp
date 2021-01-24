@@ -4,7 +4,6 @@
 #include <vector>
 
 #include "Graphics/Sprite.hpp"
-#include "Sonar.hpp"
 
 namespace Sonar
 {

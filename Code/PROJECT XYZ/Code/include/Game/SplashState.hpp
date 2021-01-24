@@ -27,13 +27,9 @@ namespace Sonar
         
 		Player *player;
 
-		Rectangle *rectangle;
+		//ScrollingBackground *parallax, *parallax2;
 
-		Circle *circle1, *circle2;
-
-		ScrollingBackground *parallax, *parallax2;
-
-		Sprite *spr, *spr2;
+		Parallax *parallax;
 
 	};
 }
