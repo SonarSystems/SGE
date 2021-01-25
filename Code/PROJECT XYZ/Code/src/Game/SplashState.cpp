@@ -1,7 +1,5 @@
 #include "SplashState.hpp"
 
-#define SPEED 100
-
 namespace Sonar
 {
 	SplashState::SplashState( GameDataRef data ) : _data( data )

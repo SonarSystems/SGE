@@ -5,7 +5,6 @@ GAME
 
 ENGINE
 -----------------------------------------------------------------
-* Parallax background
 * File loading - GOOGLE SEE WHAT OTHERS HAVE DONE AND POTENTIALLY USE
     - Saving and loading
         - Single pieces of data
