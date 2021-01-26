@@ -1,6 +1,6 @@
 GAME
 -----------------------------------------------------------------
-* Fluid box2d - MAYBE IN THE ENGINE POTENTIALLY, WILL SEE
+* Fluid box2d - MAYBE IN THE ENGINE POTENTIALLY, WILL SEE - build into the graphics classes like shapes and sprite
 
 
 ENGINE
@@ -9,6 +9,15 @@ ENGINE
     - Saving and loading
         - Single pieces of data
         - Chunks of data like a database
+    - Parse file into arrays & different data types
+    - XML parser - rapidxml
+    - CSV parser - check for parser
+    - JSON parser - check for parser
+    - Highscore loading system - name & date/time & score
+        - Check if score is high enough
+    - Map
+        - specify width and height
+        - place characters/numbers and methods for looping over them
 * GUI - https://github.com/Hopson97/SFML-Game-Framework
     - Menu system - https://www.youtube.com/watch?v=4Vg9d1pjL20
         - Mouse support

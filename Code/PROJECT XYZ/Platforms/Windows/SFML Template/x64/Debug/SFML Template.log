@@ -10,18 +10,36 @@ C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Cor
 C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Core\Time.cpp(1,10): fatal error C1083: Cannot open include file: 'Core/Time.hpp': No such file or directory
   b2GLDraw.cpp
 C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\External\b2GLDraw.cpp(1,10): fatal error C1083: Cannot open include file: 'External/b2GLDraw.h': No such file or directory
+  Collision.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\External\Collision.cpp(5,10): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  Gamepad.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\External\Gamepad.cpp(14,10): fatal error C1083: Cannot open include file: 'External/Gamepad.h': No such file or directory
   Color.cpp
 C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Color.cpp(1,10): fatal error C1083: Cannot open include file: 'Graphics/Color.hpp': No such file or directory
   Drawable.cpp
 C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Drawable.cpp(1,10): fatal error C1083: Cannot open include file: 'Graphics/Drawable.hpp': No such file or directory
+  Parallax.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Parallax.cpp(1,10): fatal error C1083: Cannot open include file: 'Graphics/Parallax.hpp': No such file or directory
+  ScrollingBackground.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\ScrollingBackground.cpp(1,10): fatal error C1083: Cannot open include file: 'Graphics/ScrollingBackground.hpp': No such file or directory
+  Circle.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Shapes\Circle.cpp(1,10): fatal error C1083: Cannot open include file: 'Graphics/Shapes/Circle.hpp': No such file or directory
   Rectangle.cpp
 C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Shapes\Rectangle.cpp(1,10): fatal error C1083: Cannot open include file: 'Graphics/Shapes/Rectangle.hpp': No such file or directory
+  Triangle.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Shapes\Triangle.cpp(1,10): fatal error C1083: Cannot open include file: 'Graphics/Shapes/Triangle.hpp': No such file or directory
   Sprite.cpp
 C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Sprite.cpp(1,10): fatal error C1083: Cannot open include file: 'Graphics/Sprite.hpp': No such file or directory
+  Texture.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Texture.cpp(1,10): fatal error C1083: Cannot open include file: 'Graphics/Texture.hpp': No such file or directory
   Events.cpp
 C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Events.cpp(1,10): fatal error C1083: Cannot open include file: 'Input/Events.hpp': No such file or directory
+  Gesture.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Gesture.cpp(1,10): fatal error C1083: Cannot open include file: 'Input/Gesture.hpp': No such file or directory
   Input.cpp
 C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Input.cpp(1,10): fatal error C1083: Cannot open include file: 'Input/Input.hpp': No such file or directory
+  Generating Code...
+  Compiling...
   Joystick.cpp
 C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Joystick.cpp(1,10): fatal error C1083: Cannot open include file: 'Input/Joystick.hpp': No such file or directory
   Keyboard.cpp
@@ -30,20 +48,20 @@ C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Inp
 C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Mouse.cpp(1,10): fatal error C1083: Cannot open include file: 'Input/Mouse.hpp': No such file or directory
   QTE.cpp
 C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\QTE.cpp(1,10): fatal error C1083: Cannot open include file: 'Input/QTE.hpp': No such file or directory
+  RBM.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\RBM.cpp(1,10): fatal error C1083: Cannot open include file: 'Input/RBM.hpp': No such file or directory
   Sensor.cpp
 C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Sensor.cpp(1,10): fatal error C1083: Cannot open include file: 'Input/Sensor.hpp': No such file or directory
   Sequence.cpp
 C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Sequence.cpp(1,10): fatal error C1083: Cannot open include file: 'Input/Sequence.hpp': No such file or directory
   main.cpp
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\main.cpp(1,10): fatal error C1083: Cannot open include file: 'Core/Game.hpp': No such file or directory
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\main.cpp(1,10): fatal error C1083: Cannot open include file: 'Core/ENGINEDEFINITIONS.hpp': No such file or directory
   AssetManager.cpp
 C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Managers\AssetManager.cpp(1,10): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
-  Generating Code...
-  Compiling...
   PhysicsWorld.cpp
 C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\PhysicsWorld.cpp(1,10): fatal error C1083: Cannot open include file: 'PhysicsWorld.hpp': No such file or directory
   Player.cpp
 C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\Player.cpp(1,10): fatal error C1083: Cannot open include file: 'Player.hpp': No such file or directory
   SplashState.cpp
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(2,10): fatal error C1083: Cannot open include file: 'SplashState.hpp': No such file or directory
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(1,10): fatal error C1083: Cannot open include file: 'SplashState.hpp': No such file or directory
   Generating Code...

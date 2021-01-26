@@ -32,4 +32,5 @@
 #include "Input/Sensor.hpp"
 #include "Input/Sequence.hpp"
 #include "Managers/AssetManager.hpp"
+#include "Managers/FileManager.hpp"
 

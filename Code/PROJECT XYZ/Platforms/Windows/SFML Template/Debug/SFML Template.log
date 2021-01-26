@@ -1,6 +1,5 @@
-﻿  Parallax.cpp
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Parallax.cpp(12,22): warning C4018: '<': signed/unsigned mismatch
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Parallax.cpp(21,22): warning C4018: '<': signed/unsigned mismatch
+﻿  Game.cpp
+  FileManager.cpp
   PhysicsWorld.cpp
   Player.cpp
   SplashState.cpp

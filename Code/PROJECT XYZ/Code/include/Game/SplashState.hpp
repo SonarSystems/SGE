@@ -11,6 +11,8 @@ namespace Sonar
 	public:
 		SplashState( GameDataRef data );
 
+		~SplashState( );
+
 		void Init( );
 
 		// No pause() or resume() methods here as this
@@ -30,6 +32,8 @@ namespace Sonar
 		//ScrollingBackground *parallax, *parallax2;
 
 		Parallax *parallax;
+
+		FileManager fileManager;
 
 	};
 }

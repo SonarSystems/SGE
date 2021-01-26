@@ -50,6 +50,7 @@
     <ClInclude Include="..\..\..\Code\include\Engine\Input\Sensor.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\Input\Sequence.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\Managers\AssetManager.hpp" />
+    <ClInclude Include="..\..\..\Code\include\Engine\Managers\FileManager.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\Sonar.hpp" />
     <ClInclude Include="..\..\..\Code\include\Game\PhysicsWorld.hpp" />
     <ClInclude Include="..\..\..\Code\include\Game\Player.hpp" />
@@ -85,6 +86,7 @@
     <ClCompile Include="..\..\..\Code\src\Engine\Input\Sequence.cpp" />
     <ClCompile Include="..\..\..\Code\src\Engine\main.cpp" />
     <ClCompile Include="..\..\..\Code\src\Engine\Managers\AssetManager.cpp" />
+    <ClCompile Include="..\..\..\Code\src\Engine\Managers\FileManager.cpp" />
     <ClCompile Include="..\..\..\Code\src\Game\PhysicsWorld.cpp" />
     <ClCompile Include="..\..\..\Code\src\Game\Player.cpp" />
     <ClCompile Include="..\..\..\Code\src\Game\SplashState.cpp" />
@@ -160,6 +162,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(SolutionDir)/../../External Libraries/spdlog/include/;$(SolutionDir)/../../External Libraries/Windows/Box2D/include;$(SolutionDir)/../../External Libraries/Windows/SFML/include;$(SolutionDir)/../../Code/include/Engine;$(SolutionDir)/../../Code/include/Game;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -175,6 +178,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -191,6 +195,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(SolutionDir)/../../External Libraries/Windows/Box2D/include;$(SolutionDir)/../../External Libraries/Windows/SFML/include;$(SolutionDir)/../../Code/engine;$(SolutionDir)/../../Code/game;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -210,6 +215,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
