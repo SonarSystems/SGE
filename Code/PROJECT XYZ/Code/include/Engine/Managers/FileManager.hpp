@@ -4,6 +4,7 @@
 #include <iostream>
 #include <String>
 #include <filesystem>
+#include <sstream>
 
 namespace Sonar
 {
@@ -32,6 +33,15 @@ namespace Sonar
 		};
 
 		/**
+		* \brief How the file is to be used
+		*/
+		enum ACCESS_METHOD
+		{
+			READING = 0,
+			WRITING
+		};
+
+		/**
 		 * \brief Default class constructor
 		*/
 		FileManager( );
@@ -49,13 +59,14 @@ namespace Sonar
 		FILE_STATUS GetStatus( );
 
 		/**
-		* \brief Open a file
+		* \brief Open a file (call again to get updated version of the contents)
 		*
 		* \param filepath Variable description
+		* \param accessMethod Is the file opened for reading or writing
 		* \param createIfDoesntExist [OPTIONAL] Creates the file if it doesn't exist
 		* \param overwriteIfExists [OPTIONAL] Overwrites the file if it exists
 		*/
-		void OpenFile( const std::string &filepath, const bool &createIfDoesntExist = true, const bool &overwriteIfExists = false );
+		void OpenFile( const std::string &filepath, const ACCESS_METHOD &accessMethod, const bool &createIfDoesntExist = true, const bool &overwriteIfExists = false );
 
 		/**
 		* \brief Close the open file
@@ -70,17 +81,50 @@ namespace Sonar
 		*/
 		void WriteToFile( const std::string &data, const WRITE_PROPERTY &writeProperty = WRITE_PROPERTY::ADD_TO_NEW_LINE );
 
+		/**
+		* \brief Write multiple lines to the open file
+		*
+		* \param data Data to be written
+		* \param writeProperty [OPTIONAL] Property dictating how to write to the file (default adds the data to a new line)
+		*/
+		void WriteToFile( const std::vector<std::string> &data, const WRITE_PROPERTY &writeProperty = WRITE_PROPERTY::ADD_TO_NEW_LINE );
+
+		/**
+		* \brief Get all the file's data
+		*
+		* \return Output returns the while file data
+		*/
+		std::vector<std::string> GetFileContents( );
+
+		/**
+		* \brief Get a specific line from the file (0 is the first line, last is n - 1)
+		*
+		* \param lineNumber The line to get contents from (invalid line number will result in an empty string being returned)
+		*
+		* \return Output returns the specified line
+		*/
+		std::string GetLineFromFile( const unsigned int &lineNumber );
 
 	private:
 		/**
 		* \brief File
 		*/
-		std::fstream file;
+		std::fstream _file;
+
+		/**
+		* \brief Loaded file data stored in memory
+		*/
+		std::vector<std::string> _fileData;
 
 		/**
 		* \brief File status (default is CLOSED)
 		*/
-		FILE_STATUS fileStatus;
+		FILE_STATUS _fileStatus;
+
+		/**
+		* \brief Is the file open for reading of writing
+		*/
+		ACCESS_METHOD _accessMethod;
 
 	};
 }

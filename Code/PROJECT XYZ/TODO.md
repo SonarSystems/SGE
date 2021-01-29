@@ -1,15 +1,9 @@
 GAME
 -----------------------------------------------------------------
-* Fluid box2d - MAYBE IN THE ENGINE POTENTIALLY, WILL SEE - build into the graphics classes like shapes and sprite
-
 
 ENGINE
 -----------------------------------------------------------------
 * File loading - GOOGLE SEE WHAT OTHERS HAVE DONE AND POTENTIALLY USE
-    - Saving and loading
-        - Single pieces of data
-        - Chunks of data like a database
-    - Parse file into arrays & different data types
     - XML parser - rapidxml
     - CSV parser - check for parser
     - JSON parser - check for parser
@@ -52,6 +46,10 @@ ENGINE
     - Bottom left
     - Bottom right
 * Add grid for debugging/developing - ABILITY TO SET SPACE BETWEEN LINES AND/OR HOW MANY LINES IN BOTH AXES
+* Physics
+    - Box2d - MAYBE IN THE ENGINE POTENTIALLY, WILL SEE - build into the graphics classes like shapes and sprite
+    - Fluid box2d
+    - LiquidFun maybe, check it out
 * Update SFML
 * Shadows
 * Fog
