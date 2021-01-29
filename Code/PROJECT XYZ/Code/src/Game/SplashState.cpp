@@ -14,7 +14,6 @@ namespace Sonar
 		fileManager.WriteToFile( "Hehiuhrld", FileManager::WRITE_PROPERTY::ADD_TO_NEW_LINE );
 		fileManager.WriteToFile( "Hello World", FileManager::WRITE_PROPERTY::ADD_TO_CURRENT_LINE );*/
 
-
 		std::vector<std::string> daya2 = fileManager.GetFileContents( );
 
 		for ( auto &line : daya2 )

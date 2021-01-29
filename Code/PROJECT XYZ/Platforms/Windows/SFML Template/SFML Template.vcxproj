@@ -30,6 +30,8 @@
     <ClInclude Include="..\..\..\Code\include\Engine\External\Collision.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\External\Gamepad.h" />
     <ClInclude Include="..\..\..\Code\include\Engine\External\glext.h" />
+    <ClInclude Include="..\..\..\Code\include\Engine\External\pugixml\pugiconfig.hpp" />
+    <ClInclude Include="..\..\..\Code\include\Engine\External\pugixml\pugixml.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\Graphics\Color.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\Graphics\Drawable.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\Graphics\Parallax.hpp" />
@@ -65,6 +67,7 @@
     <ClCompile Include="..\..\..\Code\src\Engine\External\b2GLDraw.cpp" />
     <ClCompile Include="..\..\..\Code\src\Engine\External\Collision.cpp" />
     <ClCompile Include="..\..\..\Code\src\Engine\External\Gamepad.cpp" />
+    <ClCompile Include="..\..\..\Code\src\Engine\External\pugixml\pugixml.cpp" />
     <ClCompile Include="..\..\..\Code\src\Engine\Graphics\Color.cpp" />
     <ClCompile Include="..\..\..\Code\src\Engine\Graphics\Drawable.cpp" />
     <ClCompile Include="..\..\..\Code\src\Engine\Graphics\Parallax.cpp" />
