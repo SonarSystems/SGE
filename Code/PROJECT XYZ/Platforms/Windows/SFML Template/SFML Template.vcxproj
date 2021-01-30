@@ -30,6 +30,7 @@
     <ClInclude Include="..\..\..\Code\include\Engine\External\Collision.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\External\Gamepad.h" />
     <ClInclude Include="..\..\..\Code\include\Engine\External\glext.h" />
+    <ClInclude Include="..\..\..\Code\include\Engine\External\json.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\External\pugixml\pugiconfig.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\External\pugixml\pugixml.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\Graphics\Color.hpp" />
@@ -57,6 +58,7 @@
     <ClInclude Include="..\..\..\Code\include\Game\PhysicsWorld.hpp" />
     <ClInclude Include="..\..\..\Code\include\Game\Player.hpp" />
     <ClInclude Include="..\..\..\Code\include\Game\SplashState.hpp" />
+    <ClInclude Include="E:\Chrome\fast-cpp-csv-parser-master\csv.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\Code\src\Engine\Core\Clock.cpp" />

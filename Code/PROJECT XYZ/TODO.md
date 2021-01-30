@@ -4,7 +4,6 @@ GAME
 ENGINE
 -----------------------------------------------------------------
 * File loading - GOOGLE SEE WHAT OTHERS HAVE DONE AND POTENTIALLY USE
-    - CSV parser - check for parser
     - JSON parser - check for parser
     - Highscore loading system - name & date/time & score
         - Check if score is high enough

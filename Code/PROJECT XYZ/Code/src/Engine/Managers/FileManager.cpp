@@ -55,8 +55,10 @@ namespace Sonar
 	void FileManager::CloseFile( )
 	{ _file.close( ); }
 
-	void FileManager::WriteToFile( const std::string &data, const WRITE_PROPERTY &writeProperty /*= WRITE_PROPERTY::ADD_TO_NEW_LINE */ )
+	void FileManager::WriteToFile( const std::string &filepath, const std::string &data, const WRITE_PROPERTY &writeProperty, const bool &createIfDoesntExist, const bool &overwriteIfExists )
 	{
+		OpenFile( filepath, ACCESS_METHOD::WRITING, createIfDoesntExist, overwriteIfExists );
+
 		if ( ACCESS_METHOD::WRITING == _accessMethod )
 		{
 			if ( _file.is_open( ) )
@@ -75,10 +77,14 @@ namespace Sonar
 				_file.flush( );
 			}
 		}
+
+		CloseFile( );
 	}
 
-	void FileManager::WriteToFile( const std::vector<std::string> &data, const WRITE_PROPERTY &writeProperty /*= WRITE_PROPERTY::ADD_TO_NEW_LINE */ )
+	void FileManager::WriteToFile( const std::string &filepath,const std::vector<std::string> &data, const WRITE_PROPERTY &writeProperty, const bool &createIfDoesntExist, const bool &overwriteIfExists )
 	{
+		OpenFile( filepath, ACCESS_METHOD::WRITING, createIfDoesntExist, overwriteIfExists );
+
 		if ( ACCESS_METHOD::WRITING == _accessMethod )
 		{
 			if ( _file.is_open( ) )
@@ -100,18 +106,30 @@ namespace Sonar
 				_file.flush( );
 			}
 		}
+
+		CloseFile( );
 	}
 
-	std::vector<std::string> FileManager::GetFileContents( )
-	{ return _fileData; }
-
-	std::string FileManager::GetLineFromFile( const unsigned int &lineNumber )
+	std::vector<std::string> FileManager::GetFileContents( const std::string &filepath )
 	{
+		OpenFile( filepath, ACCESS_METHOD::READING );
+
+		CloseFile( );
+
+		return _fileData;
+	}
+
+	std::string FileManager::GetLineFromFile( const std::string &filepath, const unsigned int &lineNumber )
+	{
+		OpenFile( filepath, ACCESS_METHOD::READING );
+
 		for ( unsigned int i = 0; i < _fileData.size( ); i++ )
 		{
 			if ( lineNumber == i )
 			{ return _fileData.at( i ); }
 		}
+
+		CloseFile( );
 
 		return "";
 	}

@@ -59,6 +59,39 @@ namespace Sonar
 		FILE_STATUS GetStatus( );
 
 		/**
+		* \brief Write to the open file
+		*
+		* \param data Data to be written
+		* \param writeProperty [OPTIONAL] Property dictating how to write to the file (default adds the data to a new line)
+		*/
+		void WriteToFile( const std::string &filepath, const std::string &data, const WRITE_PROPERTY &writeProperty = WRITE_PROPERTY::ADD_TO_NEW_LINE, const bool &createIfDoesntExist = true, const bool &overwriteIfExists = false );
+
+		/**
+		* \brief Write multiple lines to the open file
+		*
+		* \param data Data to be written
+		* \param writeProperty [OPTIONAL] Property dictating how to write to the file (default adds the data to a new line)
+		*/
+		void WriteToFile( const std::string &filepath, const std::vector<std::string> &data, const WRITE_PROPERTY &writeProperty = WRITE_PROPERTY::ADD_TO_NEW_LINE, const bool &createIfDoesntExist = true, const bool &overwriteIfExists = false );
+
+		/**
+		* \brief Get all the file's data
+		*
+		* \return Output returns the while file data
+		*/
+		std::vector<std::string> GetFileContents( const std::string &filepath );
+
+		/**
+		* \brief Get a specific line from the file (0 is the first line, last is n - 1)
+		*
+		* \param lineNumber The line to get contents from (invalid line number will result in an empty string being returned)
+		*
+		* \return Output returns the specified line
+		*/
+		std::string GetLineFromFile( const std::string &filepath,const unsigned int &lineNumber );
+
+	private:
+		/**
 		* \brief Open a file (call again to get updated version of the contents)
 		*
 		* \param filepath Variable description
@@ -73,39 +106,6 @@ namespace Sonar
 		*/
 		void CloseFile( );
 
-		/**
-		* \brief Write to the open file
-		*
-		* \param data Data to be written
-		* \param writeProperty [OPTIONAL] Property dictating how to write to the file (default adds the data to a new line)
-		*/
-		void WriteToFile( const std::string &data, const WRITE_PROPERTY &writeProperty = WRITE_PROPERTY::ADD_TO_NEW_LINE );
-
-		/**
-		* \brief Write multiple lines to the open file
-		*
-		* \param data Data to be written
-		* \param writeProperty [OPTIONAL] Property dictating how to write to the file (default adds the data to a new line)
-		*/
-		void WriteToFile( const std::vector<std::string> &data, const WRITE_PROPERTY &writeProperty = WRITE_PROPERTY::ADD_TO_NEW_LINE );
-
-		/**
-		* \brief Get all the file's data
-		*
-		* \return Output returns the while file data
-		*/
-		std::vector<std::string> GetFileContents( );
-
-		/**
-		* \brief Get a specific line from the file (0 is the first line, last is n - 1)
-		*
-		* \param lineNumber The line to get contents from (invalid line number will result in an empty string being returned)
-		*
-		* \return Output returns the specified line
-		*/
-		std::string GetLineFromFile( const unsigned int &lineNumber );
-
-	private:
 		/**
 		* \brief File
 		*/
