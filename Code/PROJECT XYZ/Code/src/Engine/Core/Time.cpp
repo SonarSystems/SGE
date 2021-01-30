@@ -17,6 +17,12 @@ namespace Sonar
 	long long Time::AsMicroseconds( ) const
 	{ return _time; }
 
+	long long Time::GetCurrentEpochDateTime( )
+	{
+		std::time_t result = std::time( nullptr );
+		return result;
+	}
+
 	Time Seconds( const float &amount )
 	{ return Time( static_cast<long long>( amount * 1000000 ) ); }
 

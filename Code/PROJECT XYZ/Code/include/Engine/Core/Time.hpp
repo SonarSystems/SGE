@@ -1,5 +1,7 @@
 #pragma once
 
+#include <ctime>
+
 namespace Sonar
 {
 	class Time
@@ -96,6 +98,8 @@ namespace Sonar
 		* \return Output returns the value converted to milliseconds
 		*/
 		static float MicrosecondsToMilliseconds( long long microseconds );
+
+		static long long GetCurrentEpochDateTime( );
 
 	private:
 		friend Time Seconds( const float & );

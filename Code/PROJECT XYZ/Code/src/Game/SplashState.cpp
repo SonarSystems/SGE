@@ -6,6 +6,16 @@ namespace Sonar
 	{
         player = new Player( _data );
         physicsWorld = new PhysicsWorld( _data );
+
+		HighScoreManager high;
+
+		high.LoadScoresFromFile( "Resources/Scores.txt" );
+		auto scores = high.GetScores( );
+
+		for ( auto score : scores )
+		{
+			std::cout << score._name << " (" << score._dateTime << "): " << score._score << std::endl;
+		}
 	} 
 
 	SplashState::~SplashState( )

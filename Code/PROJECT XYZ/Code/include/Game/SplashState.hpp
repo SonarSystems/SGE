@@ -3,6 +3,7 @@
 #include "Sonar.hpp"
 #include "Player.hpp"
 #include "PhysicsWorld.hpp"
+#include <ctime>
 
 namespace Sonar
 {

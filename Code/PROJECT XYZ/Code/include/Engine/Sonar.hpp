@@ -4,6 +4,8 @@
  * Master Include File
 */
 
+#define _CRT_SECURE_NO_WARNINGS
+
 #include "Core/Clock.hpp"
 #include "Core/Debug.hpp"
 #include "Core/Game.hpp"
@@ -11,10 +13,10 @@
 #include "Core/StateMachine.hpp"
 #include "Core/Time.hpp"
 #include "External/b2GLDraw.h"
-#include "External/csv.h"
+//#include "External/csv.h"
 #include "External/glext.h"
-#include "External/json.hpp"
-#include "External/pugixml/pugixml.hpp"
+//#include "External/json.hpp"
+//#include "External/pugixml/pugixml.hpp"
 #include "Graphics/Color.hpp"
 #include "Graphics/Drawable.hpp"
 #include "Graphics/Parallax.hpp"
@@ -36,4 +38,5 @@
 #include "Input/Sequence.hpp"
 #include "Managers/AssetManager.hpp"
 #include "Managers/FileManager.hpp"
+#include "Managers/HighScoreManager.hpp"
 

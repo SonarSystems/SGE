@@ -54,6 +54,7 @@
     <ClInclude Include="..\..\..\Code\include\Engine\Input\Sequence.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\Managers\AssetManager.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\Managers\FileManager.hpp" />
+    <ClInclude Include="..\..\..\Code\include\Engine\Managers\HighScoreManager.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\Sonar.hpp" />
     <ClInclude Include="..\..\..\Code\include\Game\PhysicsWorld.hpp" />
     <ClInclude Include="..\..\..\Code\include\Game\Player.hpp" />
@@ -92,6 +93,7 @@
     <ClCompile Include="..\..\..\Code\src\Engine\main.cpp" />
     <ClCompile Include="..\..\..\Code\src\Engine\Managers\AssetManager.cpp" />
     <ClCompile Include="..\..\..\Code\src\Engine\Managers\FileManager.cpp" />
+    <ClCompile Include="..\..\..\Code\src\Engine\Managers\HighScoreManager.cpp" />
     <ClCompile Include="..\..\..\Code\src\Game\PhysicsWorld.cpp" />
     <ClCompile Include="..\..\..\Code\src\Game\Player.cpp" />
     <ClCompile Include="..\..\..\Code\src\Game\SplashState.cpp" />
