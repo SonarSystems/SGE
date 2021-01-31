@@ -89,17 +89,29 @@ namespace Sonar
 		{
 			if ( _file.is_open( ) )
 			{
+				unsigned int counter = 0;
+
 				for ( auto &line : data )
 				{
-					switch ( writeProperty )
+					if ( 0 == counter )
 					{
-						case WRITE_PROPERTY::ADD_TO_NEW_LINE:
-							_file << "\n" << line;
-							break;
+						_file << line;
+						counter++;
+					}
+					else
+					{
+						switch ( writeProperty )
+						{
+							case WRITE_PROPERTY::ADD_TO_NEW_LINE:
+								_file << "\n" << line;
+								break;
 
-						case WRITE_PROPERTY::ADD_TO_CURRENT_LINE:
-							_file << line;
-							break;
+							case WRITE_PROPERTY::ADD_TO_CURRENT_LINE:
+								_file << line;
+								break;
+						}
+
+						counter++;
 					}
 				}
 

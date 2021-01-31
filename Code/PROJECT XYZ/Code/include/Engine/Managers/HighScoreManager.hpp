@@ -1,6 +1,8 @@
 #pragma once
 
+#include "Core/Time.hpp"
 #include "Managers/FileManager.hpp"
+#include <spdlog/spdlog.h>
 
 namespace Sonar
 {
@@ -41,11 +43,19 @@ namespace Sonar
 		*/
 		std::vector<ScoreInfo> GetScores( ) const;
 
+		void SaveScore( const std::string &filepath, const long long &score, const std::string &name );
+
+		int CheckScore( const std::vector<long long> &scores, const long long &score );
+
 	private:
+		void UpdateScores( const int &position, const long long &score, const std::string &name );
+
 		/**
 		* \brief Struct of scores 
 		*/
-		std::vector<ScoreInfo> _scores;
+		std::vector<ScoreInfo> _scoresList;
+
+		std::vector<long long> _scores;
 
 	};
 }

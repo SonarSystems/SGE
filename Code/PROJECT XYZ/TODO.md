@@ -9,7 +9,7 @@ ENGINE
     - Map
         - specify width and height
         - place characters/numbers and methods for looping over them
-* GUI - https://github.com/Hopson97/SFML-Game-Framework
+* GUI - USE DRAWABLE CLASS, MAYBE HAVE A GUI CLASS THAT INHERITS DRAWABLE AND BUTTON INHERITS GUI FOR EXAMPLE
     - Menu system - https://www.youtube.com/watch?v=4Vg9d1pjL20
         - Mouse support
         - Keyboard support
@@ -19,7 +19,6 @@ ENGINE
             - Hover
             - Colour masking
     - Labels
-        - Tick up/down to a number from a number over a set duration
     - Textbox
     - Radio button
     - Checkbox

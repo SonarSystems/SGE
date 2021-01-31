@@ -16,6 +16,8 @@ namespace Sonar
 		{
 			std::cout << score._name << " (" << score._dateTime << "): " << score._score << std::endl;
 		}
+
+		high.SaveScore( "Resources/Scores.txt", 95, "BOB" );
 	} 
 
 	SplashState::~SplashState( )
