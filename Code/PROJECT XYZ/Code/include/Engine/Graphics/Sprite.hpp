@@ -2,10 +2,9 @@
 
 #include <SFML/Graphics.hpp>
 #include <string>
-#include <External/glm/glm.hpp>
 
 #include "External/Collision.hpp"
-
+#include <External/glm/glm.hpp>
 #include "Graphics/Drawable.hpp"
 #include "Graphics/Texture.hpp"
 

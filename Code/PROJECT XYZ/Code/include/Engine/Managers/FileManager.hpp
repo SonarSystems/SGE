@@ -6,6 +6,8 @@
 #include <filesystem>
 #include <sstream>
 
+#include <spdlog/spdlog.h>
+
 namespace Sonar
 {
 	class FileManager

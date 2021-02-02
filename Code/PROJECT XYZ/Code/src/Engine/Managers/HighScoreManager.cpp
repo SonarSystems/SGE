@@ -17,11 +17,18 @@ namespace Sonar
 
 		ScoreInfo scoreInfo;
 
+		spdlog::info( scoreFileData.size() );
+
 		for ( std::string &line : scoreFileData )
 		{
+			spdlog::info( line );
+
 			if ( 0 == counter % 3 ) // NAME
 			{
-				scoreInfo._name = line;
+				auto trimmed = line;
+				trimmed.erase( std::remove( trimmed.begin( ), trimmed.end( ), '\r' ), trimmed.end( ) );
+
+				scoreInfo._name = trimmed;
 			}
 			else if ( 1 == counter % 3 ) // DATE
 			{
@@ -68,7 +75,6 @@ namespace Sonar
 
 	int HighScoreManager::CheckScore( const std::vector<long long> &scores, const long long &score )
 	{
-
 		spdlog::info( "uihiuh" );
 		for ( int i = 0; i < scores.size( ); i++ )
 		{

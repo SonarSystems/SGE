@@ -1,8 +1,8 @@
 #pragma once
 
-#include <External/glm/glm.hpp>
 #include <vector>
 
+#include <External/glm/glm.hpp>
 #include "Graphics/ScrollingBackground.hpp"
 
 namespace Sonar
