@@ -11,39 +11,43 @@ namespace Sonar
 	{
 		FileManager manager;
 
-		auto scoreFileData = manager.GetFileContents( filepath );
-
-		unsigned int counter = 0;
+		nlohmann::json scoreFileData = nlohmann::json::parse( manager.GetLineFromFile( filepath, 0 ) );
 
 		ScoreInfo scoreInfo;
 
-		spdlog::info( scoreFileData.size() );
-
-		for ( std::string &line : scoreFileData )
+		for ( auto &score : scoreFileData )
 		{
-			spdlog::info( line );
+			scoreInfo._name = score["name"];
+			scoreInfo._dateTime = score["dateTime"];
+			scoreInfo._score = score["score"];
 
-			if ( 0 == counter % 3 ) // NAME
-			{
-				auto trimmed = line;
-				trimmed.erase( std::remove( trimmed.begin( ), trimmed.end( ), '\r' ), trimmed.end( ) );
-
-				scoreInfo._name = trimmed;
-			}
-			else if ( 1 == counter % 3 ) // DATE
-			{
-				scoreInfo._dateTime = std::stoll( line );
-			}
-			else if ( 2 == counter % 3 ) // SCORE
-			{
-				scoreInfo._score = std::stoll( line );
-				
-				_scoresList.push_back( scoreInfo );
-				_scores.push_back( std::stoll( line ) );
-			}
-
-			counter++;
+			_scores.push_back( scoreInfo._score );
+			_scoresList.push_back( scoreInfo );
 		}
+
+		//for ( auto &line : scoreFileData )
+		//{
+		//	if ( 0 == counter % 3 ) // NAME
+		//	{
+		//		auto trimmed = line;
+		//		trimmed.erase( std::remove( trimmed.begin( ), trimmed.end( ), '\r' ), trimmed.end( ) );
+
+		//		scoreInfo._name = trimmed;
+		//	}
+		//	else if ( 1 == counter % 3 ) // DATE
+		//	{
+		//		scoreInfo._dateTime = std::stoll( line );
+		//	}
+		//	else if ( 2 == counter % 3 ) // SCORE
+		//	{
+		//		scoreInfo._score = std::stoll( line );
+		//		
+		//		_scoresList.push_back( scoreInfo );
+		//		_scores.push_back( std::stoll( line ) );
+		//	}
+
+		//	counter++;
+		//}
 	}
 
 	std::vector<Sonar::ScoreInfo> HighScoreManager::GetScores( ) const

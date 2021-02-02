@@ -15,7 +15,7 @@
 #include "External/b2GLDraw.h"
 //#include "External/csv.h"
 #include "External/glext.h"
-//#include "External/json.hpp"
+#include "External/json.hpp"
 //#include "External/pugixml/pugixml.hpp"
 #include "Graphics/Color.hpp"
 #include "Graphics/Drawable.hpp"

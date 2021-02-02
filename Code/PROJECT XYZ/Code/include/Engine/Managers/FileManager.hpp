@@ -5,8 +5,9 @@
 #include <String>
 #include <filesystem>
 #include <sstream>
-
 #include <spdlog/spdlog.h>
+
+#include "External/json.hpp"
 
 namespace Sonar
 {
