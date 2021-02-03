@@ -14,13 +14,23 @@ namespace Sonar
 
 		for ( auto score : scoresOG )
 		{
-			std::cout << score._name << " (" << score._dateTime << "): " << score._score << std::endl;
+			//std::cout << score._name << " (" << score._dateTime << "): " << score._score << std::endl;
 		}
+
+		high.SaveScore( "Resources/Scores.json", 99, "LONDON" );
 
 		/*
 
 		high.SaveScore( "Resources/Scores.txt", 95, "BOB" );*/
 
+		nlohmann::json score;
+
+		score["1"] =
+		{
+			{ "name", "Frahaan" },
+			{ "dateTime", 1111 },
+			{ "score", 100 }
+		};
 
 		// instead, you could also write (which looks very similar to the JSON above)
 		nlohmann::json j2 = {
