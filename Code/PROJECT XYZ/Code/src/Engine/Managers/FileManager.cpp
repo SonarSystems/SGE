@@ -3,7 +3,7 @@
 namespace Sonar
 {
 	FileManager::FileManager( )
-	{ _fileStatus =FILE_STATUS::CLOSED; }
+	{ _fileStatus =FILE_STATUS::NOT_OPENED; }
 
 	FileManager::~FileManager( ) { }
 
@@ -138,11 +138,16 @@ namespace Sonar
 		for ( unsigned int i = 0; i < _fileData.size( ); i++ )
 		{
 			if ( lineNumber == i )
-			{ return _fileData.at( i ); }
+			{
+				_fileStatus = FILE_STATUS::OPEN;
+
+				return _fileData.at( i );
+			}
 		}
 
 		CloseFile( );
 
+		_fileStatus = FILE_STATUS::UNKNOWN_ERROR;
 		return "";
 	}
 

@@ -7,17 +7,19 @@ namespace Sonar
         player = new Player( _data );
         physicsWorld = new PhysicsWorld( _data );
 
-		HighScoreManager high;
+		HighScoreManager high( 5 );
 
-		high.LoadScoresFromFile( "Resources/Scores.json" );
+		high.LoadScoresFromFile( "Resources/Scores6.json" );
 		auto scoresOG = high.GetScores( );
 
 		for ( auto score : scoresOG )
 		{
-			//std::cout << score._name << " (" << score._dateTime << "): " << score._score << std::endl;
+			std::cout << score._name << " (" << score._dateTime << "): " << score._score << std::endl;
 		}
 
-		high.SaveScore( "Resources/Scores.json", 99, "LONDON" );
+		high.SaveScore( "Resources/Scores4.json", 102, "NEW YORK CITY" );
+
+		high.CreateSaveFile( "Resources/Scores.json", 3, "FRAHAAN HUSSAIN", 567, 100 );
 
 		/*
 

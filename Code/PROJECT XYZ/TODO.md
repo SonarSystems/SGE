@@ -3,9 +3,7 @@ GAME
 
 ENGINE
 -----------------------------------------------------------------
-* File loading - GOOGLE SEE WHAT OTHERS HAVE DONE AND POTENTIALLY USE
-    - Highscore loading system - name & date/time & score
-        - Check if score is high enough
+* File loading
     - Map
         - specify width and height
         - place characters/numbers and methods for looping over them
@@ -47,6 +45,7 @@ ENGINE
     - Fluid box2d
     - LiquidFun maybe, check it out
 * Update SFML
+* Borders on left and right or up and down going to center, like a movie changed from 16x9 to 21x9, use rectangle shape and ability to set colour
 * Shadows
 * Fog
 * Ray tracing

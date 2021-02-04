@@ -31,7 +31,7 @@ namespace Sonar
 			OPEN = 0,
 			UNKNOWN_ERROR,
 			IS_FOLDER_NOT_A_FILE,
-			CLOSED,
+			NOT_OPENED,
 			DOESNT_EXIST
 		};
 

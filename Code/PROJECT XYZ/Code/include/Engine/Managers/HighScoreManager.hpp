@@ -1,8 +1,10 @@
 #pragma once
 
+#include <spdlog/spdlog.h>
+
+#include "Core/ENGINEDEFINITIONS.hpp"
 #include "Core/Time.hpp"
 #include "Managers/FileManager.hpp"
-#include <spdlog/spdlog.h>
 
 namespace Sonar
 {
@@ -21,8 +23,10 @@ namespace Sonar
 	public:
 		/**
 		 * \brief Default class constructor
+		 *
+		 * \param maxNumOfHighScores The maximum number of high scores
 		*/
-		HighScoreManager( );
+		HighScoreManager( const unsigned int &maxNumOfHighScores );
 
 		/**
 		 * \brief Class destructor
@@ -58,19 +62,51 @@ namespace Sonar
 		* \param scores Scores to check the new score against
 		* \param score Score to check if is a new score
 		*
-		* \return Output returns the position the new score will be (returns -1 if not a highscore, BOOHOO)
+		* \return Output returns the position the new score will be (returns -1 if not a high score, BOOHOO)
 		*/
-		int CheckScore( const std::vector<long long> &scores, const long long &score );
+		int CheckScore( const std::vector<long long> &scores, const long long &score ) const;
+
+		/**
+		* \brief Set the maximum number of high scores
+		*
+		* \param maxNumOfHighScores The maximum number of high scores
+		*/
+		void SetMaximumNumberOfHighScores( const unsigned int &maxNumOfHighScores );
+
+		/**
+		* \brief How many scores can be stored in this high scores
+		*
+		* \return Output returns the maximum number of high scores
+		*/
+		unsigned int GetMaximumNumberOfHighScores( ) const;
+
+		/**
+		* \brief Create a save file with default scores
+		*
+		* \param filePath File path of the scores file
+		* \param maxNumOfHighScores The maximum number of high scores
+		* \param defaultName Default name of each player in the new file
+		* \param defaultDateTime Default date and time as epoch of each player in the new file
+		* \param defaultScore Default score of each player in the new file
+		*/
+		void CreateSaveFile( const std::string &filepath, const unsigned int &maxNumOfHighScores, const std::string &defaultName = HIGH_SCORE_DEFAULT_NAME, const long long &defaultDateTime = HIGH_SCORE_DEFAULT_DATE_TIME, const long long &defaultScore = HIGH_SCORE_DEFAULT_SCORE );
 
 	private:
 		/**
 		* \brief Updates the scores vectors
 		*
-		* \param position Position of the new highscore
+		* \param position Position of the new high score
 		* \param score Score to add
 		* \param name Name of the player who has achieved greatness
 		*/
 		void UpdateScores( const int &position, const long long &score, const std::string &name );
+
+		/**
+		* \brief Save the file with the local scores
+		*
+		* \param filePath File path of the scores file
+		*/
+		void SaveFile( const std::string &filepath );
 
 		/**
 		* \brief Vectors of scores and user details
@@ -81,6 +117,11 @@ namespace Sonar
 		* \brief Vector of scores only
 		*/
 		std::vector<long long> _scores;
+
+		/**
+		* \brief Maximum number of highscores
+		*/
+		unsigned int _maxNumOfHighScores;
 
 	};
 }
