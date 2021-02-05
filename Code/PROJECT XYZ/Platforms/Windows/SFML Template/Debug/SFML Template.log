@@ -1,14 +1,6 @@
-﻿  Game.cpp
-  HighScoreManager.cpp
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Managers\HighScoreManager.cpp(25,22): warning C4018: '<': signed/unsigned mismatch
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Managers\HighScoreManager.cpp(27,11): warning C4018: '<': signed/unsigned mismatch
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Managers\HighScoreManager.cpp(67,22): warning C4018: '<': signed/unsigned mismatch
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Managers\HighScoreManager.cpp(89,22): warning C4018: '<': signed/unsigned mismatch
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Managers\HighScoreManager.cpp(121,29): warning C4018: '<': signed/unsigned mismatch
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Managers\HighScoreManager.cpp(135,22): warning C4018: '<': signed/unsigned mismatch
-  main.cpp
-  PhysicsWorld.cpp
-  Player.cpp
-  SplashState.cpp
-  Generating Code...
-  SFML Template.vcxproj -> C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\SFML Template.exe
+﻿  SplashState.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.h(175,49): warning C4244: 'return': conversion from 'std::streamsize' to 'int', possible loss of data
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.h(191,62): warning C4244: '=': conversion from '__int64' to 'int', possible loss of data
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.h(1242,57): error C2338: too many columns specified
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(15): message : see reference to function template instantiation 'bool io::CSVReader<3,io::trim_chars<32,9>,io::no_quote_escape<44>,io::throw_on_overflow,io::no_comment>::read_row<std::string,std::string,std::string,std::string,std::string,std::string>(std::string &,std::string &,std::string &,std::string &,std::string &,std::string &)' being compiled
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(15): message : see reference to function template instantiation 'bool io::CSVReader<3,io::trim_chars<32,9>,io::no_quote_escape<44>,io::throw_on_overflow,io::no_comment>::read_row<std::string,std::string,std::string,std::string,std::string,std::string>(std::string &,std::string &,std::string &,std::string &,std::string &,std::string &)' being compiled

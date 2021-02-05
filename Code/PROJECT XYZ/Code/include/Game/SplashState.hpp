@@ -36,5 +36,7 @@ namespace Sonar
 
 		FileManager fileManager;
 
+		MapManager *map;
+
 	};
 }
