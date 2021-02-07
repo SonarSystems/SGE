@@ -138,7 +138,7 @@
     <ClInclude Include="..\..\..\Code\include\Engine\Managers\MapManager.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Code\include\Engine\External\csv.h">
+    <ClInclude Include="..\..\..\Code\include\Engine\External\csv.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

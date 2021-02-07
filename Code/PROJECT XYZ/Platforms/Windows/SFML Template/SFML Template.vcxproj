@@ -28,7 +28,7 @@
     <ClInclude Include="..\..\..\Code\include\Engine\Core\Time.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\External\b2GLDraw.h" />
     <ClInclude Include="..\..\..\Code\include\Engine\External\Collision.hpp" />
-    <ClInclude Include="..\..\..\Code\include\Engine\External\csv.h" />
+    <ClInclude Include="..\..\..\Code\include\Engine\External\csv.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\External\Gamepad.h" />
     <ClInclude Include="..\..\..\Code\include\Engine\External\glext.h" />
     <ClInclude Include="..\..\..\Code\include\Engine\External\json.hpp" />
