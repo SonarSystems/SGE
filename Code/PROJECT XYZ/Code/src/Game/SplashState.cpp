@@ -7,7 +7,9 @@ namespace Sonar
         player = new Player( _data );
         physicsWorld = new PhysicsWorld( _data );
 
-		map = new MapManager( 5, 5 );
+		map = new MapManager( 2, 4 );
+
+		map->SaveMap( "Resources/test.csv" );
 
 		//csv::CSVFormat csvFormat;
 		//csvFormat.no_header( );
@@ -20,14 +22,15 @@ namespace Sonar
 				// By default, get<>() produces a std::string.
 				// A more efficient get<string_view>() is also available, where the resulting
 				// string_view is valid as long as the parent CSVRow is alive
-				std::cout << row.to_json() << std::endl;
+				std::cout << row.to_json_array() << std::endl;
 			//}
 			nlohmann::json fileData;
-			fileData = nlohmann::json::parse( row.to_json() );
+			//fileData = nlohmann::json::parse( "{\"1\":{\"dateTime\":1612368265,\"name\":\"JFK\",\"score\":101}}" );
+			fileData = nlohmann::json::parse( row.to_json_array() );	
 
 			for ( auto &value : fileData )
 			{
-				//spdlog::info( value );
+				spdlog::info( value );
 			}
 		}
 

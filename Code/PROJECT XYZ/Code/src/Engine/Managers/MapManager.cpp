@@ -15,7 +15,7 @@ namespace Sonar
 		for ( int y = 0; y < arraySizeY; y++ )
 		{
 			for ( int x = 0; x < arraySizeX; x++ )
-			{ _map[x][y] = 'a'; }
+			{ _map[x][y] = 'b'; }
 		}
 	}
 
@@ -50,5 +50,23 @@ namespace Sonar
 		{ return ' '; }
 	}
 
+	void MapManager::SaveMap( const std::string &filepath )
+	{
+		std::string mapCSV = "";
 
+		for ( int y = 0; y < _arraySize[1]; y++ )
+		{
+			for ( int x = 0; x < _arraySize[0]; x++ )
+			{
+				mapCSV += _map[x][y];
+
+				if ( !( y + 1 == _arraySize[1] && x + 1 == _arraySize[0] ) )
+				{ mapCSV += ","; }
+			}
+		}
+
+		FileManager fileManager;
+
+		fileManager.WriteToFile( filepath, mapCSV, FileManager::WRITE_PROPERTY::ADD_TO_CURRENT_LINE, true, true );
+	}
 }

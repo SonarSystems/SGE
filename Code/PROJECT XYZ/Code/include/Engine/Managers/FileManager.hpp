@@ -64,6 +64,7 @@ namespace Sonar
 		/**
 		* \brief Write to the open file
 		*
+		* \param filePath File path of the file
 		* \param data Data to be written
 		* \param writeProperty [OPTIONAL] Property dictating how to write to the file (default adds the data to a new line)
 		*/
@@ -72,6 +73,7 @@ namespace Sonar
 		/**
 		* \brief Write multiple lines to the open file
 		*
+		* \param filePath File path of the file
 		* \param data Data to be written
 		* \param writeProperty [OPTIONAL] Property dictating how to write to the file (default adds the data to a new line)
 		*/
@@ -87,6 +89,7 @@ namespace Sonar
 		/**
 		* \brief Get a specific line from the file (0 is the first line, last is n - 1)
 		*
+		* \param filePath File path of the file
 		* \param lineNumber The line to get contents from (invalid line number will result in an empty string being returned)
 		*
 		* \return Output returns the specified line
@@ -97,7 +100,7 @@ namespace Sonar
 		/**
 		* \brief Open a file (call again to get updated version of the contents)
 		*
-		* \param filepath Variable description
+		* \param filePath File path of the file
 		* \param accessMethod Is the file opened for reading or writing
 		* \param createIfDoesntExist [OPTIONAL] Creates the file if it doesn't exist
 		* \param overwriteIfExists [OPTIONAL] Overwrites the file if it exists

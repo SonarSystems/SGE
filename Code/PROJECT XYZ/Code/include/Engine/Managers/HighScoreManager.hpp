@@ -50,7 +50,7 @@ namespace Sonar
 		/**
 		* \brief Check and save the score if high enough
 		*
-		* \param filePath File path of the scores file
+		* \param filePath File path of the file
 		* \param score Score to check if high enough (are you a badass or not :D)
 		* \param name Name of the player
 		*/

@@ -48,6 +48,15 @@ namespace Sonar
 		*/
 		char GetValue( const int &posX, const int &posY ) const;
 
+		/**
+		* \brief Save the map array
+		*
+		* \param filePath File path of the file
+		*/
+		void SaveMap( const std::string &filepath );
+
+		LOADFILE
+
 	private:
 		/**
 		* \brief 2D map of dynamic size
