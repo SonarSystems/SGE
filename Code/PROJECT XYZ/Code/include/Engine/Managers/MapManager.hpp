@@ -5,6 +5,7 @@
 
 #include "Core/ENGINEDEFINITIONS.hpp"
 #include "Core/Time.hpp"
+#include "External/csv.hpp"
 #include "Managers/FileManager.hpp"
 
 namespace Sonar
@@ -23,7 +24,7 @@ namespace Sonar
 		~MapManager( );
 
 		/**
-		* \brief Set all the map spaces with a specific value
+		* \brief Set all the map spaces with a specific value (overrides the entire map)
 		*
 		* \param value Value to be inserted in the map
 		*/
@@ -55,9 +56,11 @@ namespace Sonar
 		*/
 		void SaveMap( const std::string &filepath );
 
-		LOADFILE
+		void LoadMap( const std::string &filepath );
 
 	private:
+		void DeleteMapPointer( );
+
 		/**
 		* \brief 2D map of dynamic size
 		*/
