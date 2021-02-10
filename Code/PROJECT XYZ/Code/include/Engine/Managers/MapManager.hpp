@@ -56,9 +56,38 @@ namespace Sonar
 		*/
 		void SaveMap( const std::string &filepath );
 
+		/**
+		* \brief Load the map array
+		*
+		* \param filePath File path of the file
+		*/
 		void LoadMap( const std::string &filepath );
 
+		/**
+		* \brief Get the map size
+		*
+		* \return Output returns the map size
+		*/
+		glm::uvec2 GetSize( ) const;
+
+		/**
+		* \brief Get the map size x
+		*
+		* \return Output returns the map size x
+		*/
+		unsigned int GetSizeX( ) const;
+
+		/**
+		* \brief Get the map size y
+		*
+		* \return Output returns the map size y
+		*/
+		unsigned int GetSizeY( ) const;
+
 	private:
+		/**
+		* \brief Delete the map pointer
+		*/
 		void DeleteMapPointer( );
 
 		/**

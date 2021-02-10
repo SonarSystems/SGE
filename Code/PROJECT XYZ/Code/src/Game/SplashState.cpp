@@ -13,6 +13,8 @@ namespace Sonar
 
 		map->LoadMap( "Resources/test.csv" );
 
+		//map->~MapManager();
+
 		//csv::CSVFormat csvFormat;
 		//csvFormat.no_header( );
 
@@ -36,7 +38,15 @@ namespace Sonar
 		//	}
 		//}
 
+		for ( int y = 0; y < map->GetSizeY( ); y++ )
+		{
+			for ( int x = 0; x < map->GetSizeX( ); x++ )
+			{
+				std::cout << map->GetValue( x, y ) << ",";
+			}
 
+			std::cout << std::endl;
+		}
 	} 
 
 	SplashState::~SplashState( )
