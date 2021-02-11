@@ -263,15 +263,23 @@ namespace Sonar
     {
         if ( sf::Mouse::isButtonPressed( ( sf::Mouse::Button )button ) )
         {
-            sf::IntRect playButtonRect( _position.x, _position.y, _size.x, _size.y );
+            sf::IntRect buttonRect( _position.x, _position.y, _size.x, _size.y );
 
-            if ( playButtonRect.contains( sf::Mouse::getPosition( _data->window ) ) )
+            if ( buttonRect.contains( sf::Mouse::getPosition( _data->window ) ) )
             { return true; }
         }
 
         return false;
     }
 	
+	bool Drawable::IsMouseOver( ) const
+	{
+		sf::IntRect buttonRect( _position.x, _position.y, _size.x, _size.y );
+
+		if ( buttonRect.contains( sf::Mouse::getPosition( _data->window ) ) )
+		{ return true; }
+	}
+
 	bool Drawable::BoundingBoxCollision( const Drawable &object ) const
 	{
 		if ( _position.x < object.GetPositionX( ) + object.GetWidth( ) &&

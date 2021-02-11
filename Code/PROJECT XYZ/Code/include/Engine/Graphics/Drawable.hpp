@@ -12,6 +12,9 @@
 
 namespace Sonar
 {
+    /**
+    * \brief Points on the object
+    */
     enum OBJECT_POINTS
     {
         CENTER,
@@ -355,6 +358,13 @@ namespace Sonar
          * \return Output returns true if the mouse is being clicked over the object and false otherwise
         */
         bool IsClicked( const Mouse::Button &button ) const;
+
+        /**
+        * \brief Is the mouse hovering
+        *
+        * \return Output returns the mouse hover status, true if the mouse is in the item and false if it isn't
+        */
+        bool IsMouseOver( ) const;
 		
         /**
         * \brief Check if the object has collided with another using bounding box

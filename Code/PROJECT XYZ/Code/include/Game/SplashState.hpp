@@ -30,13 +30,7 @@ namespace Sonar
         
 		Player *player;
 
-		//ScrollingBackground *parallax, *parallax2;
-
-		Parallax *parallax;
-
-		FileManager fileManager;
-
-		MapManager *map;
+		Rectangle *rectangle;
 
 	};
 }

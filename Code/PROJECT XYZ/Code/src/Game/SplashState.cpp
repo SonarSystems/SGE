@@ -7,46 +7,10 @@ namespace Sonar
         player = new Player( _data );
         physicsWorld = new PhysicsWorld( _data );
 
-		map = new MapManager( 2, 4 );
+		rectangle = new Rectangle( _data, 200, 75 );
+		rectangle->SetInsideColor( Color::Red );
 
-		//map->SaveMap( "Resources/test.csv" );
-
-		map->LoadMap( "Resources/test.csv" );
-
-		//map->~MapManager();
-
-		//csv::CSVFormat csvFormat;
-		//csvFormat.no_header( );
-
-		//csv::CSVReader reader( "Resources/addresses.csv" );
-
-		//for ( csv::CSVRow &row : reader )
-		//{ // Input iterator
-		//	//for ( csv::CSVField &field : row ) {
-		//		// By default, get<>() produces a std::string.
-		//		// A more efficient get<string_view>() is also available, where the resulting
-		//		// string_view is valid as long as the parent CSVRow is alive
-		//		std::cout << row.to_json_array() << std::endl;
-		//	//}
-		//	nlohmann::json fileData;
-		//	//fileData = nlohmann::json::parse( "{\"1\":{\"dateTime\":1612368265,\"name\":\"JFK\",\"score\":101}}" );
-		//	fileData = nlohmann::json::parse( row.to_json_array() );	
-
-		//	for ( auto &value : fileData )
-		//	{
-		//		//spdlog::info( value );
-		//	}
-		//}
-
-		for ( int y = 0; y < map->GetSizeY( ); y++ )
-		{
-			for ( int x = 0; x < map->GetSizeX( ); x++ )
-			{
-				std::cout << map->GetValue( x, y ) << ",";
-			}
-
-			std::cout << std::endl;
-		}
+		rectangle->SetPosition( 400, 300 );
 	} 
 
 	SplashState::~SplashState( )
@@ -74,11 +38,22 @@ namespace Sonar
         //player->Update( dt );
         
         //physicsWorld->Update( dt );
+
+		if ( rectangle->IsMouseOver( ) )
+		{
+			spdlog::info( "INSIDE" );
+		}
+		else
+		{
+			spdlog::info( "OUTSIDE" );
+		}
 	}
 
 	void SplashState::Draw( const float &dt )
 	{
         //player->Draw( dt );
 		//physicsWorld->Draw( dt );
+
+		rectangle->Draw( );
 	}
 }

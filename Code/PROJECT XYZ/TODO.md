@@ -3,20 +3,21 @@ GAME
 
 ENGINE
 -----------------------------------------------------------------
-* File loading
-    - Map
-        - specify width and height
-        - place characters/numbers and methods for looping over them
 * GUI - USE DRAWABLE CLASS, MAYBE HAVE A GUI CLASS THAT INHERITS DRAWABLE AND BUTTON INHERITS GUI FOR EXAMPLE
     - Menu system - https://www.youtube.com/watch?v=4Vg9d1pjL20
-        - Mouse support
-        - Keyboard support
-        - Drawing
-        - Hover
+        - Keyboard support - Up and down, stops when at the end of the list or switches sides
         - Textures for buttons
             - Hover
             - Colour masking
-    - Labels
+    - Font - sf::Font
+        - SetFont - from a file
+        - GetLineSpacing
+        - GetUnderlinePosition
+        - GetUnderlineThickness
+        - SetSmooth
+        - IsSmooth
+    - Labels - sf::Text
+    - Buttons - Sonar::Label & Sonar::Rectangle
     - Textbox
     - Radio button
     - Checkbox
@@ -32,7 +33,11 @@ ENGINE
         - Square
         - Rounded
         - Draw using shapes, ability to override using sprites
+* Music and sound items
+* Port AssetManager to Sonar Classes
+* Sorting algorithms, bubble sort, quick sort, insert sort
 * Anti Aliasing and other settings for SFML
+* Abstract dt into GameData struct in the Game.hpp, only for Sonar classes not states, states still get dt
 * Get points of screen - RETURN AS glm::vec2
     - Center
     - Top left
