@@ -36,6 +36,7 @@
     <ClInclude Include="..\..\..\Code\include\Engine\External\pugixml\pugixml.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\Graphics\Color.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\Graphics\Drawable.hpp" />
+    <ClInclude Include="..\..\..\Code\include\Engine\Graphics\Font.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\Graphics\Parallax.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\Graphics\ScrollingBackground.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\Graphics\Shapes\Circle.hpp" />
@@ -74,6 +75,7 @@
     <ClCompile Include="..\..\..\Code\src\Engine\External\pugixml\pugixml.cpp" />
     <ClCompile Include="..\..\..\Code\src\Engine\Graphics\Color.cpp" />
     <ClCompile Include="..\..\..\Code\src\Engine\Graphics\Drawable.cpp" />
+    <ClCompile Include="..\..\..\Code\src\Engine\Graphics\Font.cpp" />
     <ClCompile Include="..\..\..\Code\src\Engine\Graphics\Parallax.cpp" />
     <ClCompile Include="..\..\..\Code\src\Engine\Graphics\ScrollingBackground.cpp" />
     <ClCompile Include="..\..\..\Code\src\Engine\Graphics\Shapes\Circle.cpp" />
