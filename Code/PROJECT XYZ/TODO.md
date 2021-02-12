@@ -4,7 +4,10 @@ GAME
 ENGINE
 -----------------------------------------------------------------
 * GUI - USE DRAWABLE CLASS, MAYBE HAVE A GUI CLASS THAT INHERITS DRAWABLE AND BUTTON INHERITS GUI FOR EXAMPLE
-    - Labels - sf::Text
+    - Labels - sf::Text - INHERIT FROM DRAWABLE AND IMPLEMENT THOSE FUNCTIONS
+        - FIX ISSUE OF LOWERCASE NOT WORKING, TEXT WITH OG ARIAL FONT
+    - ABSTRACT SETSTYLE FROM THIS
+        text.setStyle( sf::Text::Style::Bold | sf::Text::Style::Underlined ); to something cleaner
     - Buttons - Sonar::Label & Sonar::Rectangle
     - Textbox
     - Radio button

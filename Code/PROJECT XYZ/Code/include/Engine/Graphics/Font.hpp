@@ -68,6 +68,13 @@ namespace Sonar
         */
         float GetUnderlineThickness( const unsigned int &characterSize ) const;
 
+        /**
+        * \brief Get the underlying SFML font object
+        *
+        * \return Output returns SFML font object
+        */
+        const sf::Font &GetSFMLFont( ) const;
+
     private:
         /**
         * \brief File path of the font

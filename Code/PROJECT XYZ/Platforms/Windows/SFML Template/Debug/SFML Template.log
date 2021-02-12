@@ -1,46 +1,110 @@
-﻿  Font.cpp
-Box2D.lib(b2BroadPhase.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2BroadPhase.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2CollideCircle.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2CollideCircle.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2CollideEdge.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2CollideEdge.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2CollidePolygon.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2CollidePolygon.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2Collision.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2Collision.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2Distance.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2Distance.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2DynamicTree.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2DynamicTree.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2TimeOfImpact.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2TimeOfImpact.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2ChainShape.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2ChainShape.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2EdgeShape.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2EdgeShape.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2PolygonShape.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2PolygonShape.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2BlockAllocator.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2BlockAllocator.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2Draw.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2Draw.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2Math.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2Math.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2Settings.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2Settings.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2StackAllocator.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2StackAllocator.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2Timer.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2Timer.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2Body.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2Body.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2ContactManager.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2ContactManager.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2Fixture.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2Fixture.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2Island.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2Island.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2World.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2World.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2WorldCallbacks.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2WorldCallbacks.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2ChainAndCircleContact.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2ChainAndCircleContact.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2ChainAndPolygonContact.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2ChainAndPolygonContact.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2CircleContact.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2CircleContact.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2Contact.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2Contact.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2ContactSolver.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2ContactSolver.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2EdgeAndCircleContact.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2EdgeAndCircleContact.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2EdgeAndPolygonContact.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2EdgeAndPolygonContact.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2PolygonAndCircleContact.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2PolygonAndCircleContact.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2PolygonContact.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2PolygonContact.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2DistanceJoint.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2DistanceJoint.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2FrictionJoint.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2FrictionJoint.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2GearJoint.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2GearJoint.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2Joint.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2Joint.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2MotorJoint.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2MotorJoint.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2MouseJoint.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2MouseJoint.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2PrismaticJoint.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2PrismaticJoint.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2PulleyJoint.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2PulleyJoint.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2RevoluteJoint.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2RevoluteJoint.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2RopeJoint.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2RopeJoint.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2WeldJoint.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2WeldJoint.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2WheelJoint.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2WheelJoint.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
+﻿  Drawable.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Drawable.cpp(266,77): warning C4244: 'argument': conversion from 'const T' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+          and
+          [
+              T=int
+          ]
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Drawable.cpp(266,68): warning C4244: 'argument': conversion from 'const T' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+          and
+          [
+              T=int
+          ]
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Drawable.cpp(266,59): warning C4244: 'argument': conversion from 'const T' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+          and
+          [
+              T=int
+          ]
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Drawable.cpp(266,46): warning C4244: 'argument': conversion from 'const T' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+          and
+          [
+              T=int
+          ]
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Drawable.cpp(277,67): warning C4244: 'argument': conversion from 'const T' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+          and
+          [
+              T=int
+          ]
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Drawable.cpp(277,58): warning C4244: 'argument': conversion from 'const T' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+          and
+          [
+              T=int
+          ]
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Drawable.cpp(277,49): warning C4244: 'argument': conversion from 'const T' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+          and
+          [
+              T=int
+          ]
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Drawable.cpp(277,36): warning C4244: 'argument': conversion from 'const T' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+          and
+          [
+              T=int
+          ]
+  SplashState.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(926,39): warning C4244: 'return': conversion from 'int64_t' to 'size_t', possible loss of data
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(951,61): warning C4244: 'argument': conversion from 'const int64_t' to 'size_t', possible loss of data
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(972,13): warning C4244: 'argument': conversion from 'const int64_t' to 'SIZE_T', possible loss of data
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(6786,24): warning C4244: 'return': conversion from 'std::streamoff' to 'size_t', possible loss of data
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(6139,39): warning C4244: '=': conversion from 'std::streamoff' to 'size_t', possible loss of data
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(6127): message : while compiling class template member function 'void csv::internals::StreamParser<std::stringstream>::next(size_t)'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(7192): message : see reference to function template instantiation 'void csv::internals::StreamParser<std::stringstream>::next(size_t)' being compiled
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(7190): message : see reference to class template instantiation 'csv::internals::StreamParser<std::stringstream>' being compiled
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(6147,43): warning C4244: '=': conversion from 'std::streamoff' to 'size_t', possible loss of data
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(570,29): warning C4244: 'argument': conversion from 'int64_t' to 'const mio::basic_mmap<mio::access_mode::read,char>::size_type', possible loss of data
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(585): message : see reference to function template instantiation 'MMap mio::make_mmap<mio::mmap_source,MappingToken>(const MappingToken &,int64_t,int64_t,std::error_code &)' being compiled
+          with
+          [
+              MMap=mio::mmap_source,
+              MappingToken=std::string
+          ]
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(6798): message : see reference to function template instantiation 'mio::mmap_source mio::make_mmap_source<std::string>(const MappingToken &,mio::basic_mmap<mio::access_mode::read,char>::size_type,mio::basic_mmap<mio::access_mode::read,char>::size_type,std::error_code &)' being compiled
+          with
+          [
+              MappingToken=std::string
+          ]
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(570,21): warning C4244: 'argument': conversion from 'int64_t' to 'const mio::basic_mmap<mio::access_mode::read,char>::size_type', possible loss of data
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(1138,22): warning C4244: '=': conversion from 'const int64_t' to 'mio::basic_mmap<mio::access_mode::read,char>::size_type', possible loss of data
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(1104): message : while compiling class template member function 'void mio::basic_mmap<mio::access_mode::read,char>::map(const mio::basic_mmap<mio::access_mode::read,char>::handle_type,const mio::basic_mmap<mio::access_mode::read,char>::size_type,const mio::basic_mmap<mio::access_mode::read,char>::size_type,std::error_code &)'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(1093): message : see reference to function template instantiation 'void mio::basic_mmap<mio::access_mode::read,char>::map(const mio::basic_mmap<mio::access_mode::read,char>::handle_type,const mio::basic_mmap<mio::access_mode::read,char>::size_type,const mio::basic_mmap<mio::access_mode::read,char>::size_type,std::error_code &)' being compiled
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(1017): message : while compiling class template member function 'mio::basic_mmap<mio::access_mode::read,char>::basic_mmap(mio::basic_mmap<mio::access_mode::read,char> &&)'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(571): message : see reference to function template instantiation 'mio::basic_mmap<mio::access_mode::read,char>::basic_mmap(mio::basic_mmap<mio::access_mode::read,char> &&)' being compiled
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(1181): message : while compiling class template member function 'void mio::basic_mmap<mio::access_mode::read,char>::unmap(void)'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(1012): message : see reference to function template instantiation 'void mio::basic_mmap<mio::access_mode::read,char>::unmap(void)' being compiled
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(1010): message : while compiling class template member function 'mio::basic_mmap<mio::access_mode::read,char>::~basic_mmap(void)'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(6798): message : see reference to function template instantiation 'mio::basic_mmap<mio::access_mode::read,char>::~basic_mmap(void)' being compiled
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(582): message : see reference to class template instantiation 'mio::basic_mmap<mio::access_mode::read,char>' being compiled
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(1139,29): warning C4244: '=': conversion from 'const int64_t' to 'mio::basic_mmap<mio::access_mode::read,char>::size_type', possible loss of data
+  Generating Code...
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Drawable.cpp(281): warning C4715: 'Sonar::Drawable::IsMouseOver': not all control paths return a value
   SFML Template.vcxproj -> C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\SFML Template.exe

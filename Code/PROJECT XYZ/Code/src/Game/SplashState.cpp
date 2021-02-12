@@ -11,6 +11,16 @@ namespace Sonar
 		rectangle->SetInsideColor( Color::Red );
 
 		rectangle->SetPosition( 400, 300 );
+
+		label = new Label( _data );
+
+		label->SetFontFilePath( "Resources/Youtube star.ttf" );
+		label->SetInsideColor( Color::Red );
+		label->SetBorderColor( Color::Black );
+		label->SetBorderThickness( 23 );
+		label->SetCharacterSize( 256 );
+		label->SetText( "HELLO World" );
+		label->SetPosition( 200, 300 );
 	} 
 
 	SplashState::~SplashState( )
@@ -38,15 +48,6 @@ namespace Sonar
         //player->Update( dt );
         
         //physicsWorld->Update( dt );
-
-		if ( rectangle->IsMouseOver( ) )
-		{
-			spdlog::info( "INSIDE" );
-		}
-		else
-		{
-			spdlog::info( "OUTSIDE" );
-		}
 	}
 
 	void SplashState::Draw( const float &dt )
@@ -54,6 +55,7 @@ namespace Sonar
         //player->Draw( dt );
 		//physicsWorld->Draw( dt );
 
-		rectangle->Draw( );
+		//rectangle->Draw( );
+		label->Draw( );
 	}
 }

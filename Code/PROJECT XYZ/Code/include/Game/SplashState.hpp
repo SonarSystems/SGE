@@ -32,5 +32,7 @@ namespace Sonar
 
 		Rectangle *rectangle;
 
+		Label *label;
+
 	};
 }

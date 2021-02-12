@@ -262,7 +262,7 @@ namespace Sonar
         *
         * \return Output returns SFML sprite object
         */
-        sf::Sprite GetSFMLSprite( ) const;
+        const sf::Sprite &GetSFMLSprite( ) const;
 
     private:
         /**

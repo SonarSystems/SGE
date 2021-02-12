@@ -229,7 +229,7 @@ namespace Sonar
 	bool Sprite::PixelPerfectCollisionCheck( const Sprite &object, const sf::Uint8 &alphaLimit /*= 0 */ )
 	{ return Collision::PixelPerfectTest( _sprite, object.GetSFMLSprite( ), alphaLimit ); }
 
-	sf::Sprite Sprite::GetSFMLSprite( ) const
+	const sf::Sprite &Sprite::GetSFMLSprite( ) const
 	{ return _sprite; }
 }
 

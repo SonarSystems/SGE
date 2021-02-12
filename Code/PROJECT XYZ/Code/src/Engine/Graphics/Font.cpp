@@ -27,5 +27,8 @@ namespace Sonar
 
 	float Font::GetUnderlineThickness( const unsigned int &characterSize ) const
 	{ return _font.getUnderlineThickness( characterSize ); }
+
+	const sf::Font &Font::GetSFMLFont( ) const
+	{ return _font; }
 }
 

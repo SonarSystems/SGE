@@ -19,6 +19,8 @@
 //#include "External/pugixml/pugixml.hpp"
 #include "Graphics/Color.hpp"
 #include "Graphics/Drawable.hpp"
+#include "Graphics/Font.hpp"
+#include "Graphics/Label.hpp"
 #include "Graphics/Parallax.hpp"
 #include "Graphics/ScrollingBackground.hpp"
 #include "Graphics/Shapes/Circle.hpp"
