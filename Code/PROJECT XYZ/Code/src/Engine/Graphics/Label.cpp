@@ -10,6 +10,8 @@ namespace Sonar
 		SetText( _string );
 
 		_globalBounds = _text.getGlobalBounds( );
+
+		isRegular = isBold = isItalic = isUnderlined = isStrikeThrough = STYLE::Regular;
 	}
 
 	Label::Label( GameDataRef data, const std::string &filepath ) : Drawable( data )
@@ -21,6 +23,8 @@ namespace Sonar
 		SetText( _string );
 
 		_globalBounds = _text.getGlobalBounds( );
+
+		isRegular = isBold = isItalic = isUnderlined = isStrikeThrough = STYLE::Regular;
 	}
 
 	Label::~Label( ) { }
@@ -260,8 +264,53 @@ namespace Sonar
 		SetSize( _text.getLocalBounds( ).width, _text.getLocalBounds( ).height );
 	}
 
-	void Label::SetStyle( const unsigned int &style )
-	{ _text.setStyle( style ); }
+	void Label::SetStyle( const STYLE &style, const bool &isActivated )
+	{
+		switch ( style )
+		{
+			case STYLE::Bold:
+				if ( isActivated )
+				{ isBold = STYLE::Bold; }
+				else
+				{ isBold = STYLE::Regular; }
+
+				break;
+
+			case STYLE::Italic:
+				if ( isActivated )
+				{ isItalic = STYLE::Bold; }
+				else
+				{ isItalic = STYLE::Regular; }
+
+				break;
+
+			case STYLE::Regular:
+				if ( isActivated )
+				{ isRegular = STYLE::Bold; }
+				else
+				{ isRegular = STYLE::Regular; }
+
+				break;
+
+			case STYLE::StrikeThrough:
+				if ( isActivated )
+				{ isStrikeThrough = STYLE::Bold; }
+				else
+				{ isStrikeThrough = STYLE::Regular; }
+
+				break;
+
+			case STYLE::Underlined:
+				if ( isActivated )
+				{ isUnderlined = STYLE::Bold; }
+				else
+				{ isUnderlined = STYLE::Regular; }
+
+				break;
+		}
+
+		_text.setStyle( isRegular | isBold | isItalic | isUnderlined | isStrikeThrough );
+	}
 
 	const std::string &Label::GetString( ) const
 	{ return _string; }

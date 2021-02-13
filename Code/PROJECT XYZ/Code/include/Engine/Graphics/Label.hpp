@@ -14,6 +14,18 @@ namespace Sonar
     {
     public:
         /**
+        * \brief Style of the text in the label
+        */
+        enum STYLE
+        {
+			Regular = 0,            //< Regular characters, no style
+			Bold = 1 << 0,          //< Bold characters
+			Italic = 1 << 1,        //< Italic characters
+			Underlined = 1 << 2,    //< Underlined characters
+			StrikeThrough = 1 << 3  //< Strike through characters
+        };
+
+        /**
         * \brief Class constructor
         *
         * \param data Game data object
@@ -275,7 +287,7 @@ namespace Sonar
         // NEEDS A NEWER VERSION OF SFML - COMMENT THEN
 		//void SetLetterSpacing( const float &spacingFactor );
 
-		void SetStyle( const unsigned int &style );
+		void SetStyle( const STYLE &style, const bool &isActivated );
 
 		const std::string &GetString( ) const;
 
@@ -299,6 +311,8 @@ namespace Sonar
         sf::Text _text;
 
         std::string _string;
+
+        STYLE isRegular, isBold, isItalic, isUnderlined, isStrikeThrough;
 
     };
 }

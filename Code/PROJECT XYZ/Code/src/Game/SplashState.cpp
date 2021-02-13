@@ -14,13 +14,15 @@ namespace Sonar
 
 		label = new Label( _data );
 
-		label->SetFontFilePath( "Resources/Youtube star.ttf" );
+		label->SetFontFilePath( "Resources/arial.ttf" );
 		label->SetInsideColor( Color::Red );
-		label->SetBorderColor( Color::Black );
-		label->SetBorderThickness( 23 );
-		label->SetCharacterSize( 256 );
+		//label->SetBorderColor( Color::Black );
+		//label->SetBorderThickness( 23 );
+		label->SetCharacterSize( 128 );
 		label->SetText( "HELLO World" );
 		label->SetPosition( 200, 300 );
+
+		label->SetStyle( Label::STYLE::Bold, false );
 	} 
 
 	SplashState::~SplashState( )
