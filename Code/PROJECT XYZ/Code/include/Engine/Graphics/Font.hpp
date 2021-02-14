@@ -10,8 +10,6 @@ namespace Sonar
     public:
         /**
         * \brief Class constructor
-        *
-        * \param data Game data object
         */
         Font(  );
 

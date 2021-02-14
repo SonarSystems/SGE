@@ -7,10 +7,11 @@
 #include "Graphics/Color.hpp"
 #include "Graphics/Drawable.hpp"
 #include "Graphics/Font.hpp"
+#include "Graphics/MenuComponent.hpp"
 
 namespace Sonar
 {
-    class Label : public Drawable
+    class Label : public Drawable, MenuComponent
     {
     public:
         /**

@@ -147,6 +147,9 @@
     <ClInclude Include="..\..\..\Code\include\Engine\Graphics\Label.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\Code\include\Engine\Graphics\MenuComponent.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\Code\src\Engine\Core\Clock.cpp">
@@ -261,6 +264,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Code\src\Engine\Graphics\Label.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\src\Engine\Graphics\MenuComponent.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
