@@ -11,7 +11,7 @@ namespace Sonar
 
 		_globalBounds = _text.getGlobalBounds( );
 
-		isRegular = isBold = isItalic = isUnderlined = isStrikeThrough = STYLE::Regular;
+		isBold = isItalic = isUnderlined = isStrikeThrough = STYLE::Regular;
 	}
 
 	Label::Label( GameDataRef data, const std::string &filepath ) : Drawable( data )
@@ -24,7 +24,7 @@ namespace Sonar
 
 		_globalBounds = _text.getGlobalBounds( );
 
-		isRegular = isBold = isItalic = isUnderlined = isStrikeThrough = STYLE::Regular;
+		isBold = isItalic = isUnderlined = isStrikeThrough = STYLE::Regular;
 	}
 
 	Label::~Label( ) { }
@@ -278,7 +278,7 @@ namespace Sonar
 
 			case STYLE::Italic:
 				if ( isActivated )
-				{ isItalic = STYLE::Bold; }
+				{ isItalic = STYLE::Italic; }
 				else
 				{ isItalic = STYLE::Regular; }
 
@@ -286,15 +286,13 @@ namespace Sonar
 
 			case STYLE::Regular:
 				if ( isActivated )
-				{ isRegular = STYLE::Bold; }
-				else
-				{ isRegular = STYLE::Regular; }
+				{ isBold = isItalic = isUnderlined = isStrikeThrough = STYLE::Regular; }
 
 				break;
 
 			case STYLE::StrikeThrough:
 				if ( isActivated )
-				{ isStrikeThrough = STYLE::Bold; }
+				{ isStrikeThrough = STYLE::StrikeThrough; }
 				else
 				{ isStrikeThrough = STYLE::Regular; }
 
@@ -302,17 +300,20 @@ namespace Sonar
 
 			case STYLE::Underlined:
 				if ( isActivated )
-				{ isUnderlined = STYLE::Bold; }
+				{ isUnderlined = STYLE::Underlined; }
 				else
 				{ isUnderlined = STYLE::Regular; }
 
 				break;
 		}
-
-		_text.setStyle( isRegular | isBold | isItalic | isUnderlined | isStrikeThrough );
+		
+		_text.setStyle( isBold | isItalic | isUnderlined | isStrikeThrough );
 	}
 
-	const std::string &Label::GetString( ) const
+	void Label::SetStyle( const unsigned int &style )
+	{ _text.setStyle( style ); }
+
+	const std::string &Label::GetText( ) const
 	{ return _string; }
 
 	const Sonar::Font &Label::GetFont( ) const
@@ -320,6 +321,53 @@ namespace Sonar
 
 	unsigned int Label::GetStyle( ) const
 	{ return _text.getStyle( ); }
+
+	bool Label::IsStyleEnabled( const STYLE &style ) const
+	{
+		switch ( style )
+		{
+			case STYLE::Bold:
+				if ( STYLE::Regular == isBold )
+				{ return false; }
+				else
+				{ return true; }
+
+				break;
+
+			case STYLE::Italic:
+				if ( STYLE::Regular == isItalic )
+				{ return false; }
+				else
+				{ return true; }
+
+				break;
+
+			case STYLE::Regular:
+				if ( STYLE::Regular == isBold && STYLE::Regular == isItalic &&
+					STYLE::Regular == isStrikeThrough && STYLE::Regular == isUnderlined )
+				{ return true; }
+				else
+				{ return false; }
+
+				break;
+
+			case STYLE::StrikeThrough:
+				if ( STYLE::Regular == isStrikeThrough )
+				{ return false; }
+				else
+				{ return true; }
+
+				break;
+
+			case STYLE::Underlined:
+				if ( STYLE::Regular == isUnderlined )
+				{ return false; }
+				else
+				{ return true; }
+
+				break;
+		}
+	}
 
 	glm::vec2 Label::FindCharacterPos( const std::size_t &index ) const
 	{

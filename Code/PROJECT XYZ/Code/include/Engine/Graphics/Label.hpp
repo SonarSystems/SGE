@@ -18,7 +18,7 @@ namespace Sonar
         */
         enum STYLE
         {
-			Regular = 0,            //< Regular characters, no style
+			Regular = 0,            //< Regular characters, no style, disables all other styling
 			Bold = 1 << 0,          //< Bold characters
 			Italic = 1 << 1,        //< Italic characters
 			Underlined = 1 << 2,    //< Underlined characters
@@ -275,10 +275,25 @@ namespace Sonar
         */
         glm::vec4 GetGlobalBounds( ) const;
 
+        /**
+        * \brief Set the label's text
+        *
+        * \param string The string for the text to be displayed
+        */
 		void SetText( const std::string &string );
 
+        /**
+        * \brief Set the label's font
+        *
+        * \param font Font for the label
+        */
 		void SetFont( const Font &font );
 
+        /**
+        * \brief Set the character size in pixels
+        *
+        * \param size Size of the characters in pixels
+        */
 		void SetCharacterSize( const unsigned int &size );
 
         // NEEDS A NEWER VERSION OF SFML - COMMENT THEN
@@ -287,14 +302,58 @@ namespace Sonar
         // NEEDS A NEWER VERSION OF SFML - COMMENT THEN
 		//void SetLetterSpacing( const float &spacingFactor );
 
+        /**
+        * \brief Set a particular style for the label
+        *
+		* \param style Which style to change
+		* \param isActivated True to enable the style and false to disable it
+        */
 		void SetStyle( const STYLE &style, const bool &isActivated );
 
-		const std::string &GetString( ) const;
+        /**
+        * \brief Set a particular style for the label
+        *
+        * \param style Style int to use
+        */
+        void SetStyle( const unsigned int &style );
 
+        /**
+        * \brief Get the label's text
+        *
+        * \return Output returns the label's text
+        */
+		const std::string &GetText( ) const;
+
+        /**
+        * \brief Get the label's font object
+        *
+        * \return Output returns the font used for the label
+        */
 		const Font &GetFont( ) const;
 
+        /**
+        * \brief Get the overall style
+        *
+        * \return Output returns the overall style
+        */
 		unsigned int GetStyle( ) const;
 
+        /**
+        * \brief Check if a particular style is enabled
+        *
+        * \param style Style to check
+        *
+        * \return Output returns true if the style is enabled and false if it is disabled
+        */
+        bool IsStyleEnabled( const STYLE &style ) const;
+
+        /**
+        * \brief Get the position of a particular character
+        *
+        * \param index Which character to check, 0 is the first character
+        *
+        * \return Output returns the characters position
+        */
 		glm::vec2 FindCharacterPos( const std::size_t &index ) const;
 
     private:
@@ -308,11 +367,20 @@ namespace Sonar
         */
         Font _font;
 
+        /**
+        * \brief SFML text object
+        */
         sf::Text _text;
 
+        /**
+        * \brief Label's string to be displayed
+        */
         std::string _string;
 
-        STYLE isRegular, isBold, isItalic, isUnderlined, isStrikeThrough;
+        /**
+        * \brief Is a particular style enabled
+        */
+        STYLE isBold, isItalic, isUnderlined, isStrikeThrough;
 
     };
 }

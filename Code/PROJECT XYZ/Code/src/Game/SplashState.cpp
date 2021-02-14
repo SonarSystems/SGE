@@ -22,7 +22,10 @@ namespace Sonar
 		label->SetText( "HELLO World" );
 		label->SetPosition( 200, 300 );
 
-		label->SetStyle( Label::STYLE::Bold, false );
+		label->SetStyle( Label::STYLE::Italic, true );
+		label->SetStyle( Label::STYLE::StrikeThrough, true );
+		label->SetStyle( Label::STYLE::Bold, true );
+		label->SetStyle( Label::STYLE::Underlined, true );
 	} 
 
 	SplashState::~SplashState( )

@@ -1,4 +1,75 @@
-﻿  SplashState.cpp
+﻿  Game.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(926,39): warning C4244: 'return': conversion from 'int64_t' to 'size_t', possible loss of data
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(951,61): warning C4244: 'argument': conversion from 'const int64_t' to 'size_t', possible loss of data
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(972,13): warning C4244: 'argument': conversion from 'const int64_t' to 'SIZE_T', possible loss of data
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(6786,24): warning C4244: 'return': conversion from 'std::streamoff' to 'size_t', possible loss of data
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(7891,25): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(6139,39): warning C4244: '=': conversion from 'std::streamoff' to 'size_t', possible loss of data
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(6127): message : while compiling class template member function 'void csv::internals::StreamParser<std::stringstream>::next(size_t)'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(7192): message : see reference to function template instantiation 'void csv::internals::StreamParser<std::stringstream>::next(size_t)' being compiled
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(7190): message : see reference to class template instantiation 'csv::internals::StreamParser<std::stringstream>' being compiled
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(6147,43): warning C4244: '=': conversion from 'std::streamoff' to 'size_t', possible loss of data
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(570,29): warning C4244: 'argument': conversion from 'int64_t' to 'const mio::basic_mmap<mio::access_mode::read,char>::size_type', possible loss of data
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(585): message : see reference to function template instantiation 'MMap mio::make_mmap<mio::mmap_source,MappingToken>(const MappingToken &,int64_t,int64_t,std::error_code &)' being compiled
+          with
+          [
+              MMap=mio::mmap_source,
+              MappingToken=std::string
+          ]
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(6798): message : see reference to function template instantiation 'mio::mmap_source mio::make_mmap_source<std::string>(const MappingToken &,mio::basic_mmap<mio::access_mode::read,char>::size_type,mio::basic_mmap<mio::access_mode::read,char>::size_type,std::error_code &)' being compiled
+          with
+          [
+              MappingToken=std::string
+          ]
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(570,21): warning C4244: 'argument': conversion from 'int64_t' to 'const mio::basic_mmap<mio::access_mode::read,char>::size_type', possible loss of data
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(1138,22): warning C4244: '=': conversion from 'const int64_t' to 'mio::basic_mmap<mio::access_mode::read,char>::size_type', possible loss of data
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(1104): message : while compiling class template member function 'void mio::basic_mmap<mio::access_mode::read,char>::map(const mio::basic_mmap<mio::access_mode::read,char>::handle_type,const mio::basic_mmap<mio::access_mode::read,char>::size_type,const mio::basic_mmap<mio::access_mode::read,char>::size_type,std::error_code &)'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(1093): message : see reference to function template instantiation 'void mio::basic_mmap<mio::access_mode::read,char>::map(const mio::basic_mmap<mio::access_mode::read,char>::handle_type,const mio::basic_mmap<mio::access_mode::read,char>::size_type,const mio::basic_mmap<mio::access_mode::read,char>::size_type,std::error_code &)' being compiled
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(1017): message : while compiling class template member function 'mio::basic_mmap<mio::access_mode::read,char>::basic_mmap(mio::basic_mmap<mio::access_mode::read,char> &&)'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(571): message : see reference to function template instantiation 'mio::basic_mmap<mio::access_mode::read,char>::basic_mmap(mio::basic_mmap<mio::access_mode::read,char> &&)' being compiled
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(1181): message : while compiling class template member function 'void mio::basic_mmap<mio::access_mode::read,char>::unmap(void)'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(1012): message : see reference to function template instantiation 'void mio::basic_mmap<mio::access_mode::read,char>::unmap(void)' being compiled
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(1010): message : while compiling class template member function 'mio::basic_mmap<mio::access_mode::read,char>::~basic_mmap(void)'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(6798): message : see reference to function template instantiation 'mio::basic_mmap<mio::access_mode::read,char>::~basic_mmap(void)' being compiled
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(582): message : see reference to class template instantiation 'mio::basic_mmap<mio::access_mode::read,char>' being compiled
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(1139,29): warning C4244: '=': conversion from 'const int64_t' to 'mio::basic_mmap<mio::access_mode::read,char>::size_type', possible loss of data
+  Label.cpp
+  PhysicsWorld.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(926,39): warning C4244: 'return': conversion from 'int64_t' to 'size_t', possible loss of data
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(951,61): warning C4244: 'argument': conversion from 'const int64_t' to 'size_t', possible loss of data
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(972,13): warning C4244: 'argument': conversion from 'const int64_t' to 'SIZE_T', possible loss of data
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(6786,24): warning C4244: 'return': conversion from 'std::streamoff' to 'size_t', possible loss of data
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(7891,25): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(6139,39): warning C4244: '=': conversion from 'std::streamoff' to 'size_t', possible loss of data
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(6127): message : while compiling class template member function 'void csv::internals::StreamParser<std::stringstream>::next(size_t)'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(7192): message : see reference to function template instantiation 'void csv::internals::StreamParser<std::stringstream>::next(size_t)' being compiled
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(7190): message : see reference to class template instantiation 'csv::internals::StreamParser<std::stringstream>' being compiled
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(6147,43): warning C4244: '=': conversion from 'std::streamoff' to 'size_t', possible loss of data
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(570,29): warning C4244: 'argument': conversion from 'int64_t' to 'const mio::basic_mmap<mio::access_mode::read,char>::size_type', possible loss of data
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(585): message : see reference to function template instantiation 'MMap mio::make_mmap<mio::mmap_source,MappingToken>(const MappingToken &,int64_t,int64_t,std::error_code &)' being compiled
+          with
+          [
+              MMap=mio::mmap_source,
+              MappingToken=std::string
+          ]
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(6798): message : see reference to function template instantiation 'mio::mmap_source mio::make_mmap_source<std::string>(const MappingToken &,mio::basic_mmap<mio::access_mode::read,char>::size_type,mio::basic_mmap<mio::access_mode::read,char>::size_type,std::error_code &)' being compiled
+          with
+          [
+              MappingToken=std::string
+          ]
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(570,21): warning C4244: 'argument': conversion from 'int64_t' to 'const mio::basic_mmap<mio::access_mode::read,char>::size_type', possible loss of data
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(1138,22): warning C4244: '=': conversion from 'const int64_t' to 'mio::basic_mmap<mio::access_mode::read,char>::size_type', possible loss of data
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(1104): message : while compiling class template member function 'void mio::basic_mmap<mio::access_mode::read,char>::map(const mio::basic_mmap<mio::access_mode::read,char>::handle_type,const mio::basic_mmap<mio::access_mode::read,char>::size_type,const mio::basic_mmap<mio::access_mode::read,char>::size_type,std::error_code &)'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(1093): message : see reference to function template instantiation 'void mio::basic_mmap<mio::access_mode::read,char>::map(const mio::basic_mmap<mio::access_mode::read,char>::handle_type,const mio::basic_mmap<mio::access_mode::read,char>::size_type,const mio::basic_mmap<mio::access_mode::read,char>::size_type,std::error_code &)' being compiled
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(1017): message : while compiling class template member function 'mio::basic_mmap<mio::access_mode::read,char>::basic_mmap(mio::basic_mmap<mio::access_mode::read,char> &&)'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(571): message : see reference to function template instantiation 'mio::basic_mmap<mio::access_mode::read,char>::basic_mmap(mio::basic_mmap<mio::access_mode::read,char> &&)' being compiled
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(1181): message : while compiling class template member function 'void mio::basic_mmap<mio::access_mode::read,char>::unmap(void)'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(1012): message : see reference to function template instantiation 'void mio::basic_mmap<mio::access_mode::read,char>::unmap(void)' being compiled
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(1010): message : while compiling class template member function 'mio::basic_mmap<mio::access_mode::read,char>::~basic_mmap(void)'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(6798): message : see reference to function template instantiation 'mio::basic_mmap<mio::access_mode::read,char>::~basic_mmap(void)' being compiled
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(582): message : see reference to class template instantiation 'mio::basic_mmap<mio::access_mode::read,char>' being compiled
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(1139,29): warning C4244: '=': conversion from 'const int64_t' to 'mio::basic_mmap<mio::access_mode::read,char>::size_type', possible loss of data
+  Player.cpp
 C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(926,39): warning C4244: 'return': conversion from 'int64_t' to 'size_t', possible loss of data
 C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(951,61): warning C4244: 'argument': conversion from 'const int64_t' to 'size_t', possible loss of data
 C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(972,13): warning C4244: 'argument': conversion from 'const int64_t' to 'SIZE_T', possible loss of data
@@ -32,4 +103,40 @@ C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine
 C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(6798): message : see reference to function template instantiation 'mio::basic_mmap<mio::access_mode::read,char>::~basic_mmap(void)' being compiled
 C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(582): message : see reference to class template instantiation 'mio::basic_mmap<mio::access_mode::read,char>' being compiled
 C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(1139,29): warning C4244: '=': conversion from 'const int64_t' to 'mio::basic_mmap<mio::access_mode::read,char>::size_type', possible loss of data
+  SplashState.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(926,39): warning C4244: 'return': conversion from 'int64_t' to 'size_t', possible loss of data
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(951,61): warning C4244: 'argument': conversion from 'const int64_t' to 'size_t', possible loss of data
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(972,13): warning C4244: 'argument': conversion from 'const int64_t' to 'SIZE_T', possible loss of data
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(6786,24): warning C4244: 'return': conversion from 'std::streamoff' to 'size_t', possible loss of data
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(6139,39): warning C4244: '=': conversion from 'std::streamoff' to 'size_t', possible loss of data
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(6127): message : while compiling class template member function 'void csv::internals::StreamParser<std::stringstream>::next(size_t)'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(7192): message : see reference to function template instantiation 'void csv::internals::StreamParser<std::stringstream>::next(size_t)' being compiled
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(7190): message : see reference to class template instantiation 'csv::internals::StreamParser<std::stringstream>' being compiled
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(6147,43): warning C4244: '=': conversion from 'std::streamoff' to 'size_t', possible loss of data
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(570,29): warning C4244: 'argument': conversion from 'int64_t' to 'const mio::basic_mmap<mio::access_mode::read,char>::size_type', possible loss of data
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(585): message : see reference to function template instantiation 'MMap mio::make_mmap<mio::mmap_source,MappingToken>(const MappingToken &,int64_t,int64_t,std::error_code &)' being compiled
+          with
+          [
+              MMap=mio::mmap_source,
+              MappingToken=std::string
+          ]
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(6798): message : see reference to function template instantiation 'mio::mmap_source mio::make_mmap_source<std::string>(const MappingToken &,mio::basic_mmap<mio::access_mode::read,char>::size_type,mio::basic_mmap<mio::access_mode::read,char>::size_type,std::error_code &)' being compiled
+          with
+          [
+              MappingToken=std::string
+          ]
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(570,21): warning C4244: 'argument': conversion from 'int64_t' to 'const mio::basic_mmap<mio::access_mode::read,char>::size_type', possible loss of data
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(1138,22): warning C4244: '=': conversion from 'const int64_t' to 'mio::basic_mmap<mio::access_mode::read,char>::size_type', possible loss of data
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(1104): message : while compiling class template member function 'void mio::basic_mmap<mio::access_mode::read,char>::map(const mio::basic_mmap<mio::access_mode::read,char>::handle_type,const mio::basic_mmap<mio::access_mode::read,char>::size_type,const mio::basic_mmap<mio::access_mode::read,char>::size_type,std::error_code &)'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(1093): message : see reference to function template instantiation 'void mio::basic_mmap<mio::access_mode::read,char>::map(const mio::basic_mmap<mio::access_mode::read,char>::handle_type,const mio::basic_mmap<mio::access_mode::read,char>::size_type,const mio::basic_mmap<mio::access_mode::read,char>::size_type,std::error_code &)' being compiled
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(1017): message : while compiling class template member function 'mio::basic_mmap<mio::access_mode::read,char>::basic_mmap(mio::basic_mmap<mio::access_mode::read,char> &&)'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(571): message : see reference to function template instantiation 'mio::basic_mmap<mio::access_mode::read,char>::basic_mmap(mio::basic_mmap<mio::access_mode::read,char> &&)' being compiled
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(1181): message : while compiling class template member function 'void mio::basic_mmap<mio::access_mode::read,char>::unmap(void)'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(1012): message : see reference to function template instantiation 'void mio::basic_mmap<mio::access_mode::read,char>::unmap(void)' being compiled
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(1010): message : while compiling class template member function 'mio::basic_mmap<mio::access_mode::read,char>::~basic_mmap(void)'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(6798): message : see reference to function template instantiation 'mio::basic_mmap<mio::access_mode::read,char>::~basic_mmap(void)' being compiled
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(582): message : see reference to class template instantiation 'mio::basic_mmap<mio::access_mode::read,char>' being compiled
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(1139,29): warning C4244: '=': conversion from 'const int64_t' to 'mio::basic_mmap<mio::access_mode::read,char>::size_type', possible loss of data
+  Generating Code...
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Label.cpp(370): warning C4715: 'Sonar::Label::IsStyleEnabled': not all control paths return a value
   SFML Template.vcxproj -> C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\SFML Template.exe

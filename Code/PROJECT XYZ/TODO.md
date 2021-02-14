@@ -5,8 +5,6 @@ ENGINE
 -----------------------------------------------------------------
 * GUI - USE DRAWABLE CLASS, MAYBE HAVE A GUI CLASS THAT INHERITS DRAWABLE AND BUTTON INHERITS GUI FOR EXAMPLE
     - Labels - sf::Text - INHERIT FROM DRAWABLE AND IMPLEMENT THOSE FUNCTIONS
-        - ABSTRACT SETSTYLE FROM THIS
-            text.setStyle( sf::Text::Style::Bold | sf::Text::Style::Underlined ); to something cleaner
     - INHERIT FROM A MENUCOMPONENT CLASS SO THE MENU SYSTEM CAN USE IT
     - Buttons - Sonar::Label & Sonar::Rectangle
     - Textbox
