@@ -11,7 +11,7 @@
 
 namespace Sonar
 {
-    class Label : public Drawable, MenuComponent
+    class Label : public MenuComponent
     {
     public:
         /**

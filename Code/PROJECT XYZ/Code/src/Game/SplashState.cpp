@@ -12,6 +12,7 @@ namespace Sonar
 
 		rectangle->SetPosition( 400, 300 );
 
+		menu = new Menu( _data );
 		label = new Label( _data );
 
 		label->SetFontFilePath( "Resources/arial.ttf" );
@@ -26,6 +27,20 @@ namespace Sonar
 		label->SetStyle( Label::STYLE::StrikeThrough, true );
 		label->SetStyle( Label::STYLE::Bold, true );
 		label->SetStyle( Label::STYLE::Underlined, true );
+
+		menu->AddComponent( *label );
+
+		label2 = new Label( _data );
+
+		label2->SetFontFilePath( "Resources/arial.ttf" );
+		label2->SetInsideColor( Color::Blue );
+		//label->SetBorderColor( Color::Black );
+		//label->SetBorderThickness( 23 );
+		label2->SetCharacterSize( 64 );
+		label2->SetText( "SECOND" );
+		label2->SetPosition( 100, 30 );
+
+		menu->AddComponent( *label2 );
 	} 
 
 	SplashState::~SplashState( )
@@ -44,6 +59,7 @@ namespace Sonar
 
 		if ( Event::MouseWheelScrolled == event.type )
 		{
+			label->MoveX( 10 );
 			//physicsWorld->CreateDynamicBody( event.mouseButton.x, event.mouseButton.y, 32, 32 );
 		}
 	}
@@ -61,6 +77,7 @@ namespace Sonar
 		//physicsWorld->Draw( dt );
 
 		//rectangle->Draw( );
-		label->Draw( );
+		//label->Draw( );
+		menu->Draw( );
 	}
 }

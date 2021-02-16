@@ -32,7 +32,9 @@ namespace Sonar
 
 		Rectangle *rectangle;
 
-		Label *label;
+		Label *label, *label2;
+
+		Menu *menu;
 
 	};
 }

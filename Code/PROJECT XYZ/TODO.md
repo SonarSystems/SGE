@@ -4,15 +4,15 @@ GAME
 ENGINE
 -----------------------------------------------------------------
 * GUI - USE DRAWABLE CLASS, MAYBE HAVE A GUI CLASS THAT INHERITS DRAWABLE AND BUTTON INHERITS GUI FOR EXAMPLE
+    - Buttons - Sonar::Label & Sonar::Rectangle
+    - Textbox
+    - Radio button
+    - Checkbox
     - Menu system - https://www.youtube.com/watch?v=4Vg9d1pjL20
         - Keyboard support - Up and down, stops when at the end of the list or switches sides
         - Textures for buttons
             - Hover
             - Colour masking
-    - Buttons - Sonar::Label & Sonar::Rectangle
-    - Textbox
-    - Radio button
-    - Checkbox
     - FPS counter - https://github.com/Hopson97/SFML-Game-Framework/blob/master/Source/Util/FPSCounter.cpp
         - **Part of DEBUG CLASS**
         - **MAKE IT LIKE DOOM'S**

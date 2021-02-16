@@ -2,7 +2,7 @@
 
 namespace Sonar
 {
-	MenuComponent::MenuComponent( ) { }
+	MenuComponent::MenuComponent( GameDataRef data ) : Drawable( data ) { }
 
 	MenuComponent::~MenuComponent( ) { }
 }

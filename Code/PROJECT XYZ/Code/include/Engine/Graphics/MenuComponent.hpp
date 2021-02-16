@@ -1,21 +1,26 @@
 #pragma once
 
+#include "Core/Game.hpp"
+#include "Graphics/Drawable.hpp"
+
 namespace Sonar
 {
-    class MenuComponent
+    class MenuComponent : public Drawable
     {
-    protected:
+    public:
         /**
         * \brief Class constructor
         *
         * \param data Game data object
         */
-        MenuComponent(  );
+        MenuComponent( GameDataRef data );
 
         /**
         * \brief Class destructor
         */
         ~MenuComponent( );
+    
+    protected:
 
     };
 }

@@ -34,10 +34,12 @@
     <ClInclude Include="..\..\..\Code\include\Engine\External\json.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\External\pugixml\pugiconfig.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\External\pugixml\pugixml.hpp" />
+    <ClInclude Include="..\..\..\Code\include\Engine\Graphics\Button.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\Graphics\Color.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\Graphics\Drawable.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\Graphics\Font.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\Graphics\Label.hpp" />
+    <ClInclude Include="..\..\..\Code\include\Engine\Graphics\Menu.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\Graphics\MenuComponent.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\Graphics\Parallax.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\Graphics\ScrollingBackground.hpp" />
@@ -75,10 +77,12 @@
     <ClCompile Include="..\..\..\Code\src\Engine\External\Collision.cpp" />
     <ClCompile Include="..\..\..\Code\src\Engine\External\Gamepad.cpp" />
     <ClCompile Include="..\..\..\Code\src\Engine\External\pugixml\pugixml.cpp" />
+    <ClCompile Include="..\..\..\Code\src\Engine\Graphics\Button.cpp" />
     <ClCompile Include="..\..\..\Code\src\Engine\Graphics\Color.cpp" />
     <ClCompile Include="..\..\..\Code\src\Engine\Graphics\Drawable.cpp" />
     <ClCompile Include="..\..\..\Code\src\Engine\Graphics\Font.cpp" />
     <ClCompile Include="..\..\..\Code\src\Engine\Graphics\Label.cpp" />
+    <ClCompile Include="..\..\..\Code\src\Engine\Graphics\Menu.cpp" />
     <ClCompile Include="..\..\..\Code\src\Engine\Graphics\MenuComponent.cpp" />
     <ClCompile Include="..\..\..\Code\src\Engine\Graphics\Parallax.cpp" />
     <ClCompile Include="..\..\..\Code\src\Engine\Graphics\ScrollingBackground.cpp" />

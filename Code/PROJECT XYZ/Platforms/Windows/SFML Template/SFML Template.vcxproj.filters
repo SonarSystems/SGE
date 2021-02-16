@@ -150,6 +150,12 @@
     <ClInclude Include="..\..\..\Code\include\Engine\Graphics\MenuComponent.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\Code\include\Engine\Graphics\Menu.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\include\Engine\Graphics\Button.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\Code\src\Engine\Core\Clock.cpp">
@@ -267,6 +273,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Code\src\Engine\Graphics\MenuComponent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\src\Engine\Graphics\Menu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\src\Engine\Graphics\Button.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

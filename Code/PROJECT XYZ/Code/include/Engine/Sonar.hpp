@@ -21,6 +21,8 @@
 #include "Graphics/Drawable.hpp"
 #include "Graphics/Font.hpp"
 #include "Graphics/Label.hpp"
+#include "Graphics/Menu.hpp"
+#include "Graphics/MenuComponent.hpp"
 #include "Graphics/Parallax.hpp"
 #include "Graphics/ScrollingBackground.hpp"
 #include "Graphics/Shapes/Circle.hpp"

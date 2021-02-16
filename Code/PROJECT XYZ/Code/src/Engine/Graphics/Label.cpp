@@ -2,7 +2,7 @@
 
 namespace Sonar
 {
-	Label::Label( GameDataRef data ) : Drawable( data )
+	Label::Label( GameDataRef data ) : MenuComponent( data )
 	{
 		_object = &_text;
 
@@ -14,7 +14,7 @@ namespace Sonar
 		isBold = isItalic = isUnderlined = isStrikeThrough = STYLE::Regular;
 	}
 
-	Label::Label( GameDataRef data, const std::string &filepath ) : Drawable( data )
+	Label::Label( GameDataRef data, const std::string &filepath ) : MenuComponent( data )
 	{
 		_object = &_text;
 		SetFontFilePath( filepath );
