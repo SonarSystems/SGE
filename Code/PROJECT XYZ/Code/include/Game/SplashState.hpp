@@ -36,5 +36,7 @@ namespace Sonar
 
 		Menu *menu;
 
+		Button *button;
+
 	};
 }

@@ -22,14 +22,14 @@ namespace Sonar
         */
         ~Menu( );
 
-        void AddComponent( const MenuComponent &component );
+        void AddComponent(  MenuComponent *component );
 
         void Draw( );
 
     private:
         GameDataRef _data;
 
-        std::vector<MenuComponent> _menuComponents;
+        std::vector<MenuComponent *> _menuComponents;
 
     };
 }

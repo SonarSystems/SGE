@@ -34,6 +34,8 @@ namespace Sonar
         */
         ~Button( );
 
+        void Draw( );
+
     private:
         Rectangle *_buttonBackground;
 
