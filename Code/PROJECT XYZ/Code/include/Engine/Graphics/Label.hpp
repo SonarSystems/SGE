@@ -4,6 +4,7 @@
 #include <string>
 
 #include <External/glm/glm.hpp>
+#include "Core/ENGINEDEFINITIONS.hpp"
 #include "Graphics/Color.hpp"
 #include "Graphics/Drawable.hpp"
 #include "Graphics/Font.hpp"
@@ -11,7 +12,7 @@
 
 namespace Sonar
 {
-    class Label : public MenuComponent
+    class Label : public MenuComponent, Drawable
     {
     public:
         /**
@@ -44,6 +45,11 @@ namespace Sonar
         * \brief Class destructor
         */
         ~Label( );
+
+        /**
+        * \brief Draw the classes objects
+        */
+        void Draw( );
 
         /**
         * \brief Sets the font file
@@ -358,6 +364,13 @@ namespace Sonar
 		glm::vec2 FindCharacterPos( const std::size_t &index ) const;
 
     private:
+        /**
+        * \brief Initialise the class (used to abstract common code from all constructors)
+        *
+		* \param data Game data object
+        */
+        void Init( GameDataRef data );
+
         /**
         * \brief File path of the font
         */

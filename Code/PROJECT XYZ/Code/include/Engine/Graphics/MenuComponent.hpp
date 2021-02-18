@@ -5,7 +5,7 @@
 
 namespace Sonar
 {
-    class MenuComponent : public Drawable
+    class MenuComponent
     {
     public:
         /**
@@ -13,12 +13,17 @@ namespace Sonar
         *
         * \param data Game data object
         */
-        MenuComponent( GameDataRef data );
+        MenuComponent(  );
 
         /**
         * \brief Class destructor
         */
         ~MenuComponent( );
+
+        /**
+        * \brief Draw method to be overridden in child classes
+        */
+        virtual void Draw( ) = 0;
     
     protected:
 

@@ -23,17 +23,13 @@ namespace Sonar
         Button( GameDataRef data );
 
         /**
-        * \brief Class constructor
-        *
-        * \param filePath Font file path
-        */
-        Button( GameDataRef data, const std::string &filepath );
-
-        /**
         * \brief Class destructor
         */
         ~Button( );
 
+        /**
+        * \brief Draw the classes objects
+        */
         void Draw( );
 
     private:

@@ -2,8 +2,13 @@
 
 namespace Sonar
 {
-	MenuComponent::MenuComponent( GameDataRef data ) : Drawable( data ) { }
-
+	MenuComponent::MenuComponent(  ) //: Drawable( data ) { }
+	{}
 	MenuComponent::~MenuComponent( ) { }
+
+	void MenuComponent::Draw()
+	{
+		spdlog::info( "2" );
+	}
 }
 

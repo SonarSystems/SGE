@@ -2,30 +2,33 @@
 
 namespace Sonar
 {
-	Label::Label( GameDataRef data ) : MenuComponent( data )
+	Label::Label( GameDataRef data ) : Drawable( data )
+	{ Init( data ); }
+
+	Label::Label( GameDataRef data, const std::string &filepath ) : Drawable( data )
 	{
-		_object = &_text;
-
-		_string = "";
-		SetText( _string );
-
-		_globalBounds = _text.getGlobalBounds( );
-
-		isBold = isItalic = isUnderlined = isStrikeThrough = STYLE::Regular;
-	}
-
-	Label::Label( GameDataRef data, const std::string &filepath ) : MenuComponent( data )
-	{
-		_object = &_text;
 		SetFontFilePath( filepath );
 
-		_string = "";
+		Init( data );
+	}
+
+	void Label::Init( GameDataRef data )
+	{
+		_object = &_text;
+
+		_string = DEFAULT_LABEL_TEXT;
+		SetCharacterSize( DEFAULT_LABEL_CHARACTER_SIZE );
+		SetInsideColor( DEFAULT_LABEL_TEXT_COLOR );
+
 		SetText( _string );
 
 		_globalBounds = _text.getGlobalBounds( );
 
 		isBold = isItalic = isUnderlined = isStrikeThrough = STYLE::Regular;
 	}
+
+	void Label::Draw( )
+	{ Drawable::Draw( ); }
 
 	Label::~Label( ) { }
 
