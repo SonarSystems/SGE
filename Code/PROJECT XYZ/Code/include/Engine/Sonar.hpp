@@ -13,7 +13,7 @@
 #include "Core/StateMachine.hpp"
 #include "Core/Time.hpp"
 #include "External/b2GLDraw.h"
-#include "External/csv.hpp"
+//#include "External/csv.hpp"
 #include "External/glext.h"
 #include "External/json.hpp"
 //#include "External/pugixml/pugixml.hpp"
@@ -44,5 +44,5 @@
 #include "Managers/AssetManager.hpp"
 #include "Managers/FileManager.hpp"
 #include "Managers/HighScoreManager.hpp"
-#include "Managers/MapManager.hpp"
+//#include "Managers/MapManager.hpp"
 

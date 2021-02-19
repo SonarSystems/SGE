@@ -5,6 +5,25 @@ ENGINE
 -----------------------------------------------------------------
 * GUI - USE DRAWABLE CLASS, MAYBE HAVE A GUI CLASS THAT INHERITS DRAWABLE AND BUTTON INHERITS GUI FOR EXAMPLE
     - Buttons - Sonar::Label & Sonar::Rectangle
+        - Automatic sizing of the rectangle based on the text
+            - Padding (optional)
+        - Text positioning (left, center, right)
+        - Set & get text - resize the background
+        - Set & get position
+        - Set & Get character size
+        - Set background color
+        - Move
+        - Rotation
+        - Scale
+        - Pivot
+        - Local & global bounds
+        - Set & get font
+        - Set & get style
+        - Hover
+            - Background color
+            - Border color
+            - Text color
+            - Text border color
     - Textbox
     - Radio button
     - Checkbox

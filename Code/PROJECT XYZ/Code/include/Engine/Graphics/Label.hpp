@@ -12,7 +12,7 @@
 
 namespace Sonar
 {
-    class Label : public MenuComponent, Drawable
+    class Label : public Drawable, MenuComponent
     {
     public:
         /**
@@ -302,6 +302,13 @@ namespace Sonar
         * \param size Size of the characters in pixels
         */
 		void SetCharacterSize( const unsigned int &size );
+
+        /**
+        * \brief Get the characters size in pixels
+        *
+        * \return Output returns the character size
+        */
+        unsigned int GetCharacterSize( ) const;
 
         // NEEDS A NEWER VERSION OF SFML - COMMENT THEN
 		//void SetLineSpacing( const float &spacingFactor );

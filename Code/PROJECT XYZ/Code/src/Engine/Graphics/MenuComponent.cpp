@@ -2,13 +2,10 @@
 
 namespace Sonar
 {
-	MenuComponent::MenuComponent(  ) //: Drawable( data ) { }
-	{}
+	MenuComponent::MenuComponent(  ) { }
+
 	MenuComponent::~MenuComponent( ) { }
 
-	void MenuComponent::Draw()
-	{
-		spdlog::info( "2" );
-	}
+	void MenuComponent::Draw() { }
 }
 

@@ -38,8 +38,6 @@ namespace Sonar
 
 		_font.SetFontFile( _filePath );
 		SetFont( _font );
-
-		_text.setFont( _font.GetSFMLFont( ) );
 	}
 
 	std::string Label::GetFontFilePath( ) const
@@ -266,6 +264,9 @@ namespace Sonar
 		SetPosition( _text.getPosition( ).x, _text.getPosition( ).y );
 		SetSize( _text.getLocalBounds( ).width, _text.getLocalBounds( ).height );
 	}
+
+	unsigned int Label::GetCharacterSize( ) const
+	{ return _text.getCharacterSize( ); }
 
 	void Label::SetStyle( const STYLE &style, const bool &isActivated )
 	{

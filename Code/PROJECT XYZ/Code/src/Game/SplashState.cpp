@@ -28,7 +28,7 @@ namespace Sonar
 		label->SetStyle( Label::STYLE::Bold, true );
 		label->SetStyle( Label::STYLE::Underlined, true );
 
-		menu->AddComponent( label );
+		//menu->AddComponent( label );
 
 		label2 = new Label( _data );
 
@@ -40,7 +40,7 @@ namespace Sonar
 		label2->SetText( "SECOND" );
 		label2->SetPosition( 100, 30 );
 
-		menu->AddComponent( label2 );
+		//menu->AddComponent( label2 );
 
 		button = new Button( _data );
 
