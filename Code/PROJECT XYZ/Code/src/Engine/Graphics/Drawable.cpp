@@ -52,13 +52,16 @@ namespace Sonar
     glm::vec2 Drawable::GetPosition( ) const
     { return _position; }
 
+	void Drawable::SetSize( const glm::vec2 &size )
+	{ _size = size; }
+
     void Drawable::SetSize( const float &width, const float &height )
     {
         _size.x = width;
         _size.y = height;
     }
 
-    void Drawable::SetWidth( const float &width )
+	void Drawable::SetWidth( const float &width )
     { _size.x = width; }
 
     void Drawable::SetHeight( const float &height )

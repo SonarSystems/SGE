@@ -43,6 +43,7 @@ namespace Sonar
 		//menu->AddComponent( label2 );
 
 		button = new Button( _data );
+		button->SetPadding( 200, 200 );
 
 		menu->AddComponent( button );
 	} 
@@ -64,7 +65,19 @@ namespace Sonar
 		if ( Event::MouseWheelScrolled == event.type )
 		{
 			label->MoveX( 10 );
+			button->SetPadding( button->GetPadding( ) + glm::vec2( 0.5, 0.5 ) );
 			//physicsWorld->CreateDynamicBody( event.mouseButton.x, event.mouseButton.y, 32, 32 );
+		}
+
+		//spdlog::info( rectangle->IsMouseOver( ) );
+
+		if ( rectangle->IsMouseOver( ) )
+		{
+			rectangle->SetInsideColor( Color::Green );
+		}
+		else
+		{
+			rectangle->SetInsideColor( Color::Red );
 		}
 	}
 

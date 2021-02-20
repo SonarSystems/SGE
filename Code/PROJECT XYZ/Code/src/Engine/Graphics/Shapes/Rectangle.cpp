@@ -51,7 +51,14 @@ namespace Sonar
 		_globalBounds = _shape.getGlobalBounds( );
     }
 
-    void Rectangle::SetWidth( const float &width )
+	void Rectangle::SetSize( const glm::vec2 &size )
+	{
+		Drawable::SetSize( size );
+		_shape.setSize( sf::Vector2f( size.x, size.y ) );
+		_globalBounds = _shape.getGlobalBounds( );
+	}
+
+	void Rectangle::SetWidth( const float &width )
     {
         Drawable::SetWidth( width );
         _shape.setSize( sf::Vector2f( width, _shape.getSize( ).y ) );

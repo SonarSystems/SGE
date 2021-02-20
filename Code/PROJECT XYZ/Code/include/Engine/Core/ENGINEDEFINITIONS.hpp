@@ -39,3 +39,9 @@
 * \brief Default label text color
 */
 #define DEFAULT_LABEL_TEXT_COLOR Color::Black
+
+/**
+* \brief Default button padding
+*/
+#define DEFAULT_BUTTON_PADDING_X_RATIO 0.5f
+#define DEFAULT_BUTTON_PADDING_Y_RATIO 0.5f

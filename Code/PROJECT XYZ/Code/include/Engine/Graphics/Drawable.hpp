@@ -74,6 +74,13 @@ namespace Sonar
          * \return Output returns the position vector
         */
         glm::vec2 GetPosition( ) const;
+
+        /**
+        * \brief Set width and height
+        *
+        * \param size Size of the drawable object
+        */
+        void SetSize( const glm::vec2 &size );
         
         /**
          * \brief Set width and height
