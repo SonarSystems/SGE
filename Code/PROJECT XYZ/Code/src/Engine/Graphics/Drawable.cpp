@@ -31,13 +31,16 @@ namespace Sonar
 		_data->window.draw( *_object );
 	}
 
+	void Drawable::SetPosition( const glm::vec2 &position )
+	{ _position = position; }
+
     void Drawable::SetPosition( const float &x, const float &y )
     {
         _position.x = x;
         _position.y = y;
     }
 
-    void Drawable::SetPositionX( const float &x )
+	void Drawable::SetPositionX( const float &x )
     { _position.x = x; }
 
     void Drawable::SetPositionY( const float &y )
@@ -94,13 +97,16 @@ namespace Sonar
     float Drawable::GetBorderThickness( ) const
     { return _borderThickness; }
 
-    void Drawable::Move( const float &x, const float &y )
+	void Drawable::Move( const glm::vec2 &offset )
+	{ _position += offset; }
+
+	void Drawable::Move( const float &x, const float &y )
     {
         _position.x += x;
         _position.y += y;
     }
 
-    void Drawable::MoveX( const float &x )
+	void Drawable::MoveX( const float &x )
     { _position.x += x; }
 
     void Drawable::MoveY( const float &y )

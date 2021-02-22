@@ -23,6 +23,13 @@ namespace Sonar
 
     Rectangle::~Rectangle( ) { }
 
+	void Rectangle::SetPosition( const glm::vec2 &position )
+	{
+		Drawable::SetPosition( position );
+		_shape.setPosition( position.x, position.y );
+		_globalBounds = _shape.getGlobalBounds( );
+	}
+
     void Rectangle::SetPosition( const float &x, const float &y )
     {
         Drawable::SetPosition( x, y );
@@ -30,7 +37,7 @@ namespace Sonar
 		_globalBounds = _shape.getGlobalBounds( );
     }
 
-    void Rectangle::SetPositionX( const float &x )
+	void Rectangle::SetPositionX( const float &x )
     {
         Drawable::SetPositionX( x );
         _shape.setPosition( x, _shape.getPosition( ).y );
@@ -100,6 +107,13 @@ namespace Sonar
 	float Rectangle::GetBorderThickness( ) const
     { return _shape.getOutlineThickness( ); }
 
+	void Rectangle::Move( const glm::vec2 &offset )
+	{
+		Drawable::Move( offset );
+		_shape.move( offset.x, offset.y );
+		_globalBounds = _shape.getGlobalBounds( );
+	}
+
 	void Rectangle::Move( const float &x, const float &y )
     {
         Drawable::Move( x, y );
@@ -107,7 +121,7 @@ namespace Sonar
 		_globalBounds = _shape.getGlobalBounds( );
     }
 
-    void Rectangle::MoveX( const float &x )
+	void Rectangle::MoveX( const float &x )
     {
         Drawable::MoveX( x );
         _shape.move( x, 0 );

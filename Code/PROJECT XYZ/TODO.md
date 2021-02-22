@@ -5,15 +5,10 @@ ENGINE
 -----------------------------------------------------------------
 * GUI - USE DRAWABLE CLASS, MAYBE HAVE A GUI CLASS THAT INHERITS DRAWABLE AND BUTTON INHERITS GUI FOR EXAMPLE
     - Buttons - Sonar::Label & Sonar::Rectangle
-        - Set & get text - resize the background (call set size method using _buttonLabel size after)
-        - Set & get position
-        - Set & Get character size (factor in padding, call set size method using the _buttonlabel size after setting the characxter size)
-        - Set background color
-        - Move
         - Rotation
         - Scale
         - Pivot
-        - Local & global bounds
+        - Local & global bounds (do we need it ????????)
         - Set & get font
         - Set & get style
         - Turn background off and on (don't draw it)
@@ -22,6 +17,11 @@ ENGINE
             - Border color
             - Text color
             - Text border color
+
+    -REMOVE ALL DOUBLE CODE THAT ONE METHOD COULD BE CALLED FROM ANOTHER IN CLASSES
+    -ADD SET POSITION WITH VEC2 AS PARAMETER FROM DRAWABLE TO ALL CHILD CLASSES
+    -ADD MOVE WITH VEC2 AS PARAMETER FROM DRAWABLE TO ALL CHILD CLASSES
+
     - Textbox
     - Radio button
     - Checkbox

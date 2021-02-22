@@ -52,6 +52,13 @@ namespace Sonar
 	float Label::GetUnderlineThickness( const unsigned int &characterSize ) const
 	{ return _font.GetUnderlineThickness( characterSize ); }
 
+	void Label::SetPosition( const glm::vec2 &position )
+	{
+		Drawable::SetPosition( position );
+		_text.setPosition( position.x, position.y );
+		_globalBounds = _text.getGlobalBounds( );
+	}
+
 	void Label::SetPosition( const float &x, const float &y )
 	{
 		Drawable::SetPosition( x, y );
@@ -100,6 +107,13 @@ namespace Sonar
 
 	float Label::GetBorderThickness( ) const
 	{ return _text.getOutlineThickness( ); }
+
+	void Label::Move( const glm::vec2 &offset )
+	{
+		Drawable::Move( offset );
+		_text.move( offset.x, offset.y );
+		_globalBounds = _text.getGlobalBounds( );
+	}
 
 	void Label::Move( const float &x, const float &y )
 	{

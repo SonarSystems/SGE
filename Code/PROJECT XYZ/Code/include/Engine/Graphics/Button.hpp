@@ -187,11 +187,217 @@ namespace Sonar
         */
         void SetLabelAnchorY( const LABEL_ANCHOR_Y &anchor, const bool &usePadding = false );
 
+        /**
+        * \brief Set the button's text
+        *
+        * \param string The string for the text to be displayed
+        */
+        void SetText( const std::string &string, const bool &resetButtonSize = false );
+
+        /**
+        * \brief Get the button's text
+        *
+        * \return Output returns the button's text
+        */
+        const std::string &GetText( ) const;
+
+        /**
+        * \brief Set x and y position
+        *
+        * \param position X and Y position
+        */
+        void SetPosition( const glm::vec2 &position );
+
+        /**
+        * \brief Set x and y position
+        *
+        * \param x X position
+        * \param y Y position
+        */
+        void SetPosition( const float &x, const float &y );
+
+        /**
+        * \brief Set x position
+        *
+        * \param x X position
+        */
+        void SetPositionX( const float &x );
+
+        /**
+        * \brief Set y position
+        *
+        * \param y Y position
+        */
+        void SetPositionY( const float &y );
+
+        /**
+        * \brief Get the x position
+        *
+        * \return Output returns the x position
+        */
+        float GetPositionX( ) const;
+
+        /**
+        * \brief Get the y position
+        *
+        * \return Output returns the y position
+        */
+        float GetPositionY( ) const;
+
+        /**
+        * \brief Get the position vector
+        *
+        * \return Output returns the position vector
+        */
+        glm::vec2 GetPosition( ) const;
+
+        /**
+        * \brief Set the character size in pixels
+        *
+        * \param size Size of the characters in pixels
+        */
+        void SetCharacterSize( const unsigned int &size, const bool &usePadding = true );
+
+        /**
+        * \brief Get the characters size in pixels
+        *
+        * \return Output returns the character size
+        */
+        unsigned int GetCharacterSize( ) const;
+
+        /**
+        * \brief Set the background's inside color (fill color)
+        *
+        * \param color Color object
+        */
+        void SetBackgroundInsideColor( const Color &color );
+
+        /**
+        * \brief Set the background's border color
+        *
+        * \param color Color object
+        *
+        * SetBorderThickness method required as well
+        */
+        void SetBackgroundBorderColor( const Color &color );
+
+        /**
+        * \brief Set the background's border thickness
+        *
+        * \param thickness Thickness of the border
+        *
+        * Required for border, otherwise border is to set 0 thickness and cannot be seen
+        */
+        void SetBackgroundBorderThickness( const float &thickness );
+
+        /**
+        * \brief Get the background's inside color (fill color)
+        *
+        * \return Output returns the inside color
+        */
+        Color GetBackgroundInsideColor( ) const;
+
+        /**
+        * \brief Get the background's border color
+        *
+        * \return Output returns the border color
+        */
+        Color GetBackgroundBorderColor( ) const;
+
+        /**
+        * \brief Get the background's border thickness
+        *
+        * \return Output returns the border thickness
+        */
+        float GetBackgroundBorderThickness( ) const;
+
+        /**
+        * \brief Set the label's inside color (fill color)
+        *
+        * \param color Color object
+        */
+        void SetLabelInsideColor( const Color &color );
+
+        /**
+        * \brief Set the label's border color
+        *
+        * \param color Color object
+        *
+        * SetBorderThickness method required as well
+        */
+        void SetLabelBorderColor( const Color &color );
+
+        /**
+        * \brief Set the label's border thickness
+        *
+        * \param thickness Thickness of the border
+        *
+        * Required for border, otherwise border is to set 0 thickness and cannot be seen
+        */
+        void SetLabelBorderThickness( const float &thickness );
+
+        /**
+        * \brief Get the label's inside color (fill color)
+        *
+        * \return Output returns the inside color
+        */
+        Color GetLabelInsideColor( ) const;
+
+        /**
+        * \brief Get the label's border color
+        *
+        * \return Output returns the border color
+        */
+        Color GetLabelBorderColor( ) const;
+
+        /**
+        * \brief Get the label's border thickness
+        *
+        * \return Output returns the border thickness
+        */
+        float GetLabelBorderThickness( ) const;
+
+        /**
+        * \brief Move the object relative to it's current position in the x and y axis
+        *
+        * \param offset Offset in x and y axis
+        */
+        void Move( const glm::vec2 &offset );
+
+        /**
+        * \brief Move the object relative to it's current position in the x and y axis
+        *
+        * \param x Offset in x axis
+        * \param y Offset in y axis
+        */
+        void Move( const float &x, const float &y );
+
+        /**
+        * \brief Move the object relative to it's current position in the x axis
+        *
+        * \param x Offset in x axis
+        */
+        void MoveX( const float &x );
+
+        /**
+        * \brief Move the object relative to it's current position in the y axis
+        *
+        * \param y Offset in y axis
+        */
+        void MoveY( const float &y );
+
     private:
         /**
         * \brief Reset the labels position within the background
+        *
+        * \param usePadding Whether or not to factor in padding around the label
         */
-        void ResetLabelPosition( const bool &usePadding = false );
+        void ResetLabelPosition( const bool &usePadding = true );
+
+        /**
+        * \brief Recalculates the padding
+        */
+        void RecalculatePadding( );
 
         /**
         * \brief Button background
