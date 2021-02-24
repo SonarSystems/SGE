@@ -4,11 +4,8 @@ GAME
 ENGINE
 -----------------------------------------------------------------
 * GUI - USE DRAWABLE CLASS, MAYBE HAVE A GUI CLASS THAT INHERITS DRAWABLE AND BUTTON INHERITS GUI FOR EXAMPLE
-    - Buttons - Sonar::Label & Sonar::Rectangle
-        - Rotation
+    - Buttons - Sonar::Label & Sonar::Rectangle (WEDNESDAY)
         - Scale
-        - Pivot
-        - Local & global bounds (do we need it ????????)
         - Set & get font
         - Set & get style
         - Turn background off and on (don't draw it)
@@ -21,8 +18,11 @@ ENGINE
     -REMOVE ALL DOUBLE CODE THAT ONE METHOD COULD BE CALLED FROM ANOTHER IN CLASSES
     -ADD SET POSITION WITH VEC2 AS PARAMETER FROM DRAWABLE TO ALL CHILD CLASSES
     -ADD MOVE WITH VEC2 AS PARAMETER FROM DRAWABLE TO ALL CHILD CLASSES
+    -ADD ROTATE (RELATIVE TO CURRENT ROTATION)
+    -ADD SCALE (RELATIVE TO CURRENT SCALE)
+    (THURSDAY)
 
-    - Textbox
+    - Textbox (START FRIDAY)
     - Radio button
     - Checkbox
     - Slider
@@ -79,3 +79,4 @@ ENGINE
 SKIPPED
 -----------------------------------------------------------------
 * Input manager - Motion (Wii, PS3+)
+* Buttons (rotation, pivot)

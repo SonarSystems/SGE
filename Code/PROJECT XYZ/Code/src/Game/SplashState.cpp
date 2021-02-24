@@ -7,7 +7,9 @@ namespace Sonar
         player = new Player( _data );
         physicsWorld = new PhysicsWorld( _data );
 
-		rectangle = new Rectangle( _data, 200, 75 );
+		rectangle = new Rectangle( _data );
+		rectangle->SetSize( 200, 75 );
+		rectangle->SetPivot( OBJECT_POINTS::CENTER );
 		rectangle->SetInsideColor( Color::Red );
 
 		rectangle->SetPosition( 400, 300 );
@@ -43,9 +45,10 @@ namespace Sonar
 		//menu->AddComponent( label2 );
 
 		button = new Button( _data );
-		button->SetPadding( 50, 50 );
+		//button->SetPosition( 300, 300 );
+		button->SetScale( 2.5, 2.5 );
+		//button->SetPadding( 50, 50 );
 		button->SetText( "BOB", true );
-		button->SetLabelAnchorX( Button::LABEL_ANCHOR_X::RIGHT, false );
 
 		menu->AddComponent( button );
 	} 
@@ -68,7 +71,6 @@ namespace Sonar
 		{
 			//physicsWorld->CreateDynamicBody( event.mouseButton.x, event.mouseButton.y, 32, 32 );
 			
-			button->Move( 1, 3 );
 		}
 
 

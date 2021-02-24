@@ -386,6 +386,56 @@ namespace Sonar
         */
         void MoveY( const float &y );
 
+        /**
+        * \brief Set the scale factor
+        *
+        * \param xScale Scale in x axis
+        * \param yScale Scale in y axis
+        */
+        void SetScale( const float &xScale, const float &yScale );
+
+        /**
+        * \brief Set the scale factor
+        *
+        * \param scale Scale in x and y axes
+        */
+        void SetScale( const glm::vec2 &scale );
+
+        /**
+        * \brief Set the x axis scale factor
+        *
+        * \param xScale Scale in x axis
+        */
+        void SetScaleX( const float &xScale );
+
+        /**
+        * \brief Set the y axis scale factor
+        *
+        * \param yScale Scale in y axis
+        */
+        void SetScaleY( const float &yScale );
+
+        /**
+        * \brief Get the scale factor for both axes
+        *
+        * \return Output returns scale factor for both axes
+        */
+        glm::vec2 GetScale( ) const;
+
+        /**
+        * \brief Get the scale factor for x axis
+        *
+        * \return Output returns scale factor for the x axis
+        */
+        float GetScaleX( ) const;
+
+        /**
+        * \brief Get the scale factor for y axis
+        *
+        * \return Output returns scale factor for the y axis
+        */
+        float GetScaleY( ) const;
+
     private:
         /**
         * \brief Reset the labels position within the background
@@ -402,12 +452,12 @@ namespace Sonar
         /**
         * \brief Button background
         */
-        Rectangle *_buttonBackground;
+        Rectangle *_background;
 
         /**
         * \brief Button label
         */
-        Label *_buttonLabel;
+        Label *_label;
 
         /**
         * \brief Padding around the label

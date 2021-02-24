@@ -9,22 +9,22 @@ namespace Sonar
 		_anchorX = LABEL_ANCHOR_X::CENTER_X;
 		_anchorY = LABEL_ANCHOR_Y::CENTER_Y;
 
-		_buttonBackground = new Rectangle( data );
-		_buttonBackground->SetInsideColor( Color::Black );
-		_buttonBackground->SetPosition( 50, 100);
+		_background = new Rectangle( data );
+		_background->SetInsideColor( Color::Black );
 
-		_buttonLabel = new Label( data );
-		_buttonLabel->SetFontFilePath( "Resources/consola.ttf" );
-		_buttonLabel->SetInsideColor( Color::Red );
-		_buttonLabel->SetCharacterSize( 64 );
+
+		_label = new Label( data );
+		_label->SetFontFilePath( "Resources/arial.ttf" );
+		_label->SetInsideColor( Color::Red );
+		_label->SetCharacterSize( 64 );
 
 		RecalculatePadding( );
 
-		SetSize( _buttonLabel->GetSize( ) );
+		SetSize( _label->GetSize( ) );
 
 		ResetLabelPosition( );
 
-		_buttonLabel->SetText( DEFAULT_LABEL_TEXT );
+		_label->SetText( DEFAULT_LABEL_TEXT );
 		
 	}
 
@@ -32,45 +32,45 @@ namespace Sonar
 
 	void Button::Draw( )
 	{
-		_buttonBackground->Draw( );
-		_buttonLabel->Draw( );
+		_background->Draw( );
+		_label->Draw( );
 	}
 
 	void Button::SetRectangleBackground( Rectangle *rectangle )
-	{ _buttonBackground = rectangle; }
+	{ _background = rectangle; }
 
 	void Button::SetLabelBackground( Label *label )
-	{ _buttonLabel = label; }
+	{ _label = label; }
 
 	Rectangle *Button::GetRectangleBackground( ) const
-	{ return _buttonBackground; }
+	{ return _background; }
 
 	Label *Button::GetRectangleLabel( ) const
-	{ return _buttonLabel; }
+	{ return _label; }
 
 	void Button::SetPadding( const glm::vec2 &padding )
 	{
 		_padding = padding;
-		SetSize( _buttonBackground->GetSize( ) );
+		SetSize( _background->GetSize( ) );
 	}
 
 	void Button::SetPadding( const float &x, const float &y )
 	{
 		_padding.x = x;
 		_padding.y = y;
-		SetSize( _buttonBackground->GetSize( ) );
+		SetSize( _background->GetSize( ) );
 	}
 
 	void Button::SetPaddingX( const float &x )
 	{
 		_padding.x = x;
-		SetSize( _buttonBackground->GetSize( ) );
+		SetSize( _background->GetSize( ) );
 	}
 
 	void Button::SetPaddingY( const float &y )
 	{
 		_padding.y = y;
-		SetSize( _buttonBackground->GetSize( ) );
+		SetSize( _background->GetSize( ) );
 	}
 
 	const glm::vec2 &Button::GetPadding( ) const
@@ -84,7 +84,7 @@ namespace Sonar
 
 	void Button::SetSize( const glm::vec2 &size )
 	{
-		_buttonBackground->SetSize( size + ( _padding * 2.0f ) );
+		_background->SetSize( size + ( _padding * 2.0f ) );
 		ResetLabelPosition( );
 	}
 
@@ -92,19 +92,19 @@ namespace Sonar
 	{ SetSize( glm::vec2( width, height ) ); }
 
 	void Button::SetWidth( const float &width )
-	{ SetSize( glm::vec2( width, _buttonBackground->GetHeight( ) ) ); }
+	{ SetSize( glm::vec2( width, _background->GetHeight( ) ) ); }
 
 	void Button::SetHeight( const float &height )
-	{ SetSize( glm::vec2( _buttonBackground->GetWidth( ), height ) ); }
+	{ SetSize( glm::vec2( _background->GetWidth( ), height ) ); }
 
 	glm::vec2 Button::GetSize( ) const
-	{ return _buttonBackground->GetSize( ); }
+	{ return _background->GetSize( ); }
 
 	float Button::GetWidth( ) const
-	{ return _buttonBackground->GetWidth( ); }
+	{ return _background->GetWidth( ); }
 
 	float Button::GetHeight( ) const
-	{ return _buttonBackground->GetHeight( ); }
+	{ return _background->GetHeight( ); }
 
 	void Button::SetLabelAnchorX( const LABEL_ANCHOR_X &anchor, const bool &usePadding )
 	{
@@ -120,127 +120,166 @@ namespace Sonar
 
 	void Button::SetText( const std::string &string, const bool &resetButtonSize )
 	{
-		_buttonLabel->SetText( string );
+		_label->SetText( string );
 
 		if ( resetButtonSize )
-		{ SetSize( _buttonLabel->GetSize( ) ); }
+		{ SetSize( _label->GetSize( ) ); }
 
 		ResetLabelPosition( true );
 	}
 
 	const std::string &Button::GetText( ) const
-	{ return _buttonLabel->GetText( ); }
+	{ return _label->GetText( ); }
 
 	void Button::SetPosition( const glm::vec2 &position )
 	{
-		_buttonBackground->SetPosition( position );
+		_background->SetPosition( position );
 
 		ResetLabelPosition( true );
 	}
 
 	void Button::SetPosition( const float &x, const float &y )
 	{
-		_buttonBackground->SetPosition( x, y );
+		_background->SetPosition( x, y );
 
 		ResetLabelPosition( true );
 	}
 
 	void Button::SetPositionX( const float &x )
 	{
-		_buttonBackground->SetPositionX( x );
+		_background->SetPositionX( x );
 
 		ResetLabelPosition( true );
 	}
 
 	void Button::SetPositionY( const float &y )
 	{
-		_buttonBackground->SetPositionY( y );
+		_background->SetPositionY( y );
 
 		ResetLabelPosition( true );
 	}
 
 	float Button::GetPositionX( ) const
-	{ return _buttonBackground->GetPositionX( ); }
+	{ return _background->GetPositionX( ); }
 
 	float Button::GetPositionY( ) const
-	{ return _buttonBackground->GetPositionY( ); } 
+	{ return _background->GetPositionY( ); } 
 
 	glm::vec2 Button::GetPosition( ) const
-	{ return _buttonBackground->GetPosition( ); }
+	{ return _background->GetPosition( ); }
 
 	void Button::SetCharacterSize( const unsigned int &size, const bool &usePadding )
 	{
-		_buttonLabel->SetCharacterSize( size );
+		_label->SetCharacterSize( size );
 
 		RecalculatePadding( );
 
-		SetSize( _buttonLabel->GetSize( ) );
+		SetSize( _label->GetSize( ) );
 
 		ResetLabelPosition( usePadding );
 	}
 
 	unsigned int Button::GetCharacterSize( ) const
-	{ return _buttonLabel->GetCharacterSize( ); }
+	{ return _label->GetCharacterSize( ); }
 
 	void Button::SetBackgroundInsideColor( const Color &color )
-	{ _buttonBackground->SetInsideColor( color ); }
+	{ _background->SetInsideColor( color ); }
 
 	void Button::SetBackgroundBorderColor( const Color &color )
-	{ _buttonBackground->SetBorderColor( color ); }
+	{ _background->SetBorderColor( color ); }
 
 	void Button::SetBackgroundBorderThickness( const float &thickness )
-	{ _buttonBackground->SetBorderThickness( thickness ); }
+	{ _background->SetBorderThickness( thickness ); }
 
 	Color Button::GetBackgroundInsideColor( ) const
-	{ return _buttonBackground->GetInsideColor( ); }
+	{ return _background->GetInsideColor( ); }
 
 	Color Button::GetBackgroundBorderColor( ) const
-	{ return _buttonBackground->GetBorderColor( ); }
+	{ return _background->GetBorderColor( ); }
 
 	float Button::GetBackgroundBorderThickness( ) const
-	{ return _buttonBackground->GetBorderThickness( ); }
+	{ return _background->GetBorderThickness( ); }
 
 	void Button::SetLabelInsideColor( const Color &color )
-	{ _buttonLabel->SetInsideColor( color ); }
+	{ _label->SetInsideColor( color ); }
 
 	void Button::SetLabelBorderColor( const Color &color )
-	{ _buttonLabel->SetBorderColor( color ); }
+	{ _label->SetBorderColor( color ); }
 
 	void Button::SetLabelBorderThickness( const float &thickness )
-	{ _buttonLabel->SetBorderThickness( thickness ); }
+	{ _label->SetBorderThickness( thickness ); }
 
 	Color Button::GetLabelInsideColor( ) const
-	{ return _buttonLabel->GetInsideColor( ); }
+	{ return _label->GetInsideColor( ); }
 
 	Color Button::GetLabelBorderColor( ) const
-	{ return _buttonLabel->GetBorderColor( ); }
+	{ return _label->GetBorderColor( ); }
 
 	float Button::GetLabelBorderThickness( ) const
-	{ return _buttonLabel->GetBorderThickness( ); }
+	{ return _label->GetBorderThickness( ); }
 
 	void Button::Move( const glm::vec2 &offset )
 	{
-		_buttonBackground->Move( offset );
-		_buttonLabel->Move( offset );
+		_background->Move( offset );
+		_label->Move( offset );
 	}
 
 	void Button::Move( const float &x, const float &y )
 	{
-		_buttonBackground->Move( x, y );
-		_buttonLabel->Move( x, y );
+		_background->Move( x, y );
+		_label->Move( x, y );
 	}
 
 	void Button::MoveX( const float &x )
 	{
-		_buttonBackground->MoveX( x );
-		_buttonLabel->MoveX( x );
+		_background->MoveX( x );
+		_label->MoveX( x );
 	}
 
 	void Button::MoveY( const float &y )
 	{
-		_buttonBackground->MoveY( y );
-		_buttonLabel->MoveY( y );
+		_background->MoveY( y );
+		_label->MoveY( y );
 	}
+
+	void Button::SetScale( const float &xScale, const float &yScale )
+	{
+		_background->SetScale( xScale, yScale );
+		_label->SetScale( xScale, yScale );
+
+		RecalculatePadding( );
+
+		SetSize( _label->GetSize( ) );
+
+		ResetLabelPosition( );
+	}
+
+	void Button::SetScale( const glm::vec2 &scale )
+	{
+		_background->SetScale( scale );
+		_label->SetScale( scale );
+	}
+
+	void Button::SetScaleX( const float &xScale )
+	{
+		_background->SetScaleX( xScale );
+		_label->SetScaleX( xScale );
+	}
+
+	void Button::SetScaleY( const float &yScale )
+	{
+		_background->SetScaleY( yScale );
+		_label->SetScaleY( yScale );
+	}
+
+	glm::vec2 Button::GetScale( ) const
+	{ return _background->GetScale( ); }
+
+	float Button::GetScaleX( ) const
+	{ return _background->GetScaleX( ); }
+
+	float Button::GetScaleY( ) const
+	{ return _background->GetScaleY( ); }
 
 	void Button::ResetLabelPosition( const bool &usePadding )
 	{
@@ -257,17 +296,17 @@ namespace Sonar
 		switch ( _anchorX )
 		{
 			case LABEL_ANCHOR_X::LEFT:
-				positionX = _buttonBackground->GetPositionX( ) + ( _buttonLabel->GetWidth( ) * 0.5f ) + paddingX;
+				positionX = _background->GetPositionX( ) + ( _label->GetWidth( ) * 0.5f ) + paddingX - _background->GetPivotX( );
 
 				break;
 
 			case LABEL_ANCHOR_X::CENTER_X:
-				positionX = _buttonBackground->GetPositionX( ) + ( _buttonBackground->GetWidth( ) * 0.5f );
+				positionX = _background->GetPositionX( ) + ( _background->GetWidth( ) * GetScaleX( ) * 0.5f ) - _background->GetPivotX( );
 
 				break;
 
 			case LABEL_ANCHOR_X::RIGHT:
-				positionX = _buttonBackground->GetPositionX( ) + _buttonBackground->GetWidth( ) - ( _buttonLabel->GetWidth( ) * 0.5f ) - paddingX;
+				positionX = _background->GetPositionX( ) + _background->GetWidth( ) - ( _label->GetWidth( ) * 0.5f ) - paddingX - _background->GetPivotX( );
 
 				break;
 		}
@@ -275,30 +314,30 @@ namespace Sonar
 		switch ( _anchorY )
 		{
 			case LABEL_ANCHOR_Y::TOP:
-				positionY = _buttonBackground->GetPositionY( ) + ( _buttonLabel->GetHeight( ) * 0.5f ) + paddingY - ( _buttonLabel->GetCharacterSize( ) * 0.5f ) + ( _buttonLabel->GetCharacterSize( ) * DODGY_LABEL_TEXT_HEIGHT_RATIO_FIX );
+				positionY = _background->GetPositionY( ) + ( _label->GetHeight( ) * 0.5f ) + paddingY - ( _label->GetCharacterSize( ) * 0.5f ) + ( _label->GetCharacterSize( ) * DODGY_LABEL_TEXT_HEIGHT_RATIO_FIX ) - _background->GetPivotY( );
 
 				break;
 
 			case LABEL_ANCHOR_Y::CENTER_Y:
-				positionY = _buttonBackground->GetPositionY( ) + ( _buttonBackground->GetHeight( ) * 0.5f ) - ( _buttonLabel->GetCharacterSize( ) * 0.5f ) + ( _buttonLabel->GetCharacterSize( ) * DODGY_LABEL_TEXT_HEIGHT_RATIO_FIX );
+				positionY = _background->GetPositionY( ) + ( _background->GetHeight( ) * GetScaleY( ) * 0.5f ) - ( _label->GetCharacterSize( ) * GetScaleY( ) * 0.5f ) + ( _label->GetCharacterSize( ) * GetScaleY( ) * DODGY_LABEL_TEXT_HEIGHT_RATIO_FIX ) - _background->GetPivotY( );
 
 				break;
 
 			case LABEL_ANCHOR_Y::BOTTOM:
-				positionY = _buttonBackground->GetPositionY( ) + _buttonBackground->GetHeight( ) - ( _buttonLabel->GetHeight( ) * 0.5f ) - paddingY - ( _buttonLabel->GetCharacterSize( ) * 0.5f ) + ( _buttonLabel->GetCharacterSize( ) * DODGY_LABEL_TEXT_HEIGHT_RATIO_FIX );
+				positionY = _background->GetPositionY( ) + _background->GetHeight( ) - ( _label->GetHeight( ) * 0.5f ) - paddingY - ( _label->GetCharacterSize( ) * 0.5f ) + ( _label->GetCharacterSize( ) * DODGY_LABEL_TEXT_HEIGHT_RATIO_FIX ) - _background->GetPivotY( );
 
 				break;
 		}
 
-		_buttonLabel->SetPosition( positionX, positionY );
+		_label->SetPosition( positionX, positionY );
 		
-		_buttonLabel->SetPivot( OBJECT_POINTS::CENTER );
+		_label->SetPivot( OBJECT_POINTS::CENTER );
 	}
 
 	void Button::RecalculatePadding( )
 	{
-		_padding.x = _buttonLabel->GetCharacterSize( ) * DEFAULT_BUTTON_PADDING_X_RATIO;
-		_padding.y = _buttonLabel->GetCharacterSize( ) * DEFAULT_BUTTON_PADDING_Y_RATIO;
+		_padding.x = _label->GetCharacterSize( ) * DEFAULT_BUTTON_PADDING_X_RATIO;
+		_padding.y = _label->GetCharacterSize( ) * DEFAULT_BUTTON_PADDING_Y_RATIO;
 	}
 }
 
