@@ -32,6 +32,19 @@ namespace Sonar
 			BOTTOM
 		};
 
+        struct InteractStyle
+        {
+            Color _backgroundColor = Color::Red;
+            Color _borderColor = Color::Magenta;
+            Color _labelColor = Color::Blue;
+            Color _labelBorderColor = Color::Yellow;
+
+            unsigned int _characterSize = 32;
+            unsigned int _textStyle = 0;
+
+            glm::vec2 _scale = glm::vec2( 1.0f, 1.0f );
+        };
+
         /**
         * \brief Class constructor
         *
@@ -586,6 +599,8 @@ namespace Sonar
         * \brief Is the button background enabled or disabled
         */
         bool _isBackgroundEnabled;
+
+        InteractStyle _hoverStyle;
 
     };
 }

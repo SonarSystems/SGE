@@ -49,9 +49,6 @@ namespace Sonar
 		button->SetScale( 2.5, 2.5 );
 		//button->SetPadding( 50, 50 );
 		button->SetText( "BOB", true );
-		button->SetLabelAnchorX( Button::LABEL_ANCHOR_X::LEFT, false );
-		button->SetLabelAnchorY( Button::LABEL_ANCHOR_Y::BOTTOM, false );
-
 		menu->AddComponent( button );
 	} 
 
@@ -84,9 +81,11 @@ namespace Sonar
         
         //physicsWorld->Update( dt );
 
-		spdlog::info( "Clicked: {0}", button->IsClicked( Mouse::Button::Left ) );
+		/*spdlog::info( "Clicked: {0}", button->IsClicked( Mouse::Button::Left ) );
 		spdlog::info( "Hover: {0}", button->IsMouseOver( ) );
-		spdlog::info( "------------------------------------------------" );
+		spdlog::info( "------------------------------------------------" );*/
+
+		button->Update( );
 	}
 
 	void SplashState::Draw( const float &dt )

@@ -260,18 +260,36 @@ namespace Sonar
 	{
 		_background->SetScale( scale );
 		_label->SetScale( scale );
+
+		RecalculatePadding( );
+
+		SetSize( _label->GetSize( ) );
+
+		ResetLabelPosition( );
 	}
 
 	void Button::SetScaleX( const float &xScale )
 	{
 		_background->SetScaleX( xScale );
 		_label->SetScaleX( xScale );
+
+		RecalculatePadding( );
+
+		SetSize( _label->GetSize( ) );
+
+		ResetLabelPosition( );
 	}
 
 	void Button::SetScaleY( const float &yScale )
 	{
 		_background->SetScaleY( yScale );
 		_label->SetScaleY( yScale );
+
+		RecalculatePadding( );
+
+		SetSize( _label->GetSize( ) );
+
+		ResetLabelPosition( );
 	}
 
 	glm::vec2 Button::GetScale( ) const
@@ -430,7 +448,24 @@ namespace Sonar
 
 	void Button::Update( )
 	{
+		if ( IsMouseOver( ) )
+		{
+			spdlog::info( "{0}/{1}/{2}", _hoverStyle._backgroundColor.GetRed( ), _hoverStyle._backgroundColor.GetGreen( ), _hoverStyle._backgroundColor.GetBlue( ) );
 
+			SetBackgroundInsideColor( Color( _hoverStyle._backgroundColor.GetRed( ), _hoverStyle._backgroundColor.GetGreen( ), _hoverStyle._backgroundColor.GetBlue( ) ) );
+			SetBackgroundBorderColor( Color( _hoverStyle._borderColor.GetRed( ), _hoverStyle._borderColor.GetGreen( ), _hoverStyle._borderColor.GetBlue( ) ) );
+			SetLabelInsideColor( Color( _hoverStyle._labelColor.GetRed( ), _hoverStyle._labelColor.GetGreen( ), _hoverStyle._labelColor.GetBlue( ) ) );
+			SetLabelBorderColor( Color( _hoverStyle._labelBorderColor.GetRed( ), _hoverStyle._labelBorderColor.GetGreen( ), _hoverStyle._labelBorderColor.GetBlue( ) ) );
+
+			SetCharacterSize( _hoverStyle._characterSize, false );
+			SetStyle( _hoverStyle._textStyle );
+
+			SetScale( _hoverStyle._scale );
+		}
+		else
+		{
+
+		}
 	}
 
 }
