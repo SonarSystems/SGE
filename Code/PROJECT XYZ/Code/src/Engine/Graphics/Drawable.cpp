@@ -272,7 +272,7 @@ namespace Sonar
     {
         if ( sf::Mouse::isButtonPressed( ( sf::Mouse::Button )button ) )
         {
-            sf::IntRect buttonRect( _position.x, _position.y, _size.x, _size.y );
+            sf::IntRect buttonRect( _position.x, _position.y, _size.x * _scale.x, _size.y * _scale.y );
 
             if ( buttonRect.contains( sf::Mouse::getPosition( _data->window ) ) )
             { return true; }
@@ -283,7 +283,7 @@ namespace Sonar
 	
 	bool Drawable::IsMouseOver( ) const
 	{
-		sf::IntRect buttonRect( _position.x, _position.y, _size.x, _size.y );
+		sf::IntRect buttonRect( _position.x, _position.y, _size.x * _scale.x, _size.y * _scale.y );
 
 		if ( buttonRect.contains( sf::Mouse::getPosition( _data->window ) ) )
 		{ return true; }

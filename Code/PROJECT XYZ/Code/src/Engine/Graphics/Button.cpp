@@ -32,7 +32,9 @@ namespace Sonar
 
 	void Button::Draw( )
 	{
-		_background->Draw( );
+		if ( _isBackgroundEnabled )
+		{ _background->Draw( ); }
+
 		_label->Draw( );
 	}
 
@@ -281,6 +283,74 @@ namespace Sonar
 	float Button::GetScaleY( ) const
 	{ return _background->GetScaleY( ); }
 
+	void Button::SetFont( const Font &font, const bool &resize )
+	{
+		_label->SetFont( font );
+
+		if ( resize )
+		{
+			RecalculatePadding( );
+
+			SetSize( _label->GetSize( ) );
+
+			ResetLabelPosition( );
+		}
+	}
+
+	void Button::SetFontFilePath( const std::string &filepath, const bool &resize )
+	{
+		_label->SetFontFilePath( filepath );
+
+		if ( resize )
+		{
+			RecalculatePadding( );
+
+			SetSize( _label->GetSize( ) );
+
+			ResetLabelPosition( );
+		}
+	}
+
+	const Font &Button::GetFont( ) const
+	{ return _label->GetFont( ); }
+
+	std::string Button::GetFontFilePath( ) const
+	{ return _label->GetFontFilePath( ); }
+
+	void Button::SetStyle( const Label::STYLE &style, const bool &isActivated, const bool &resize )
+	{
+		_label->SetStyle( style, isActivated );
+
+		if ( resize )
+		{
+			RecalculatePadding( );
+
+			SetSize( _label->GetSize( ) );
+
+			ResetLabelPosition( );
+		}
+	}
+
+	void Button::SetStyle( const unsigned int &style, const bool &resize )
+	{
+		_label->SetStyle( style );
+
+		if ( resize )
+		{
+			RecalculatePadding( );
+
+			SetSize( _label->GetSize( ) );
+
+			ResetLabelPosition( );
+		}
+	}
+
+	unsigned int Button::GetStyle( ) const
+	{ return _label->GetStyle( ); }
+
+	bool Button::IsStyleEnabled( const Label::STYLE &style ) const
+	{ return _label->IsStyleEnabled( style ); }
+
 	void Button::ResetLabelPosition( const bool &usePadding )
 	{
 		float positionX, positionY;
@@ -296,7 +366,7 @@ namespace Sonar
 		switch ( _anchorX )
 		{
 			case LABEL_ANCHOR_X::LEFT:
-				positionX = _background->GetPositionX( ) + ( _label->GetWidth( ) * 0.5f ) + paddingX - _background->GetPivotX( );
+				positionX = _background->GetPositionX( ) + ( _label->GetWidth( ) * GetScaleX( ) * 0.5f ) + ( paddingX * GetScaleX( ) ) - _background->GetPivotX( );
 
 				break;
 
@@ -306,7 +376,7 @@ namespace Sonar
 				break;
 
 			case LABEL_ANCHOR_X::RIGHT:
-				positionX = _background->GetPositionX( ) + _background->GetWidth( ) - ( _label->GetWidth( ) * 0.5f ) - paddingX - _background->GetPivotX( );
+				positionX = _background->GetPositionX( ) + ( _background->GetWidth( ) * GetScaleX( ) ) - ( _label->GetWidth( ) * GetScaleX( ) * 0.5f ) - ( paddingX * GetScaleX( ) ) - _background->GetPivotX( );
 
 				break;
 		}
@@ -314,7 +384,7 @@ namespace Sonar
 		switch ( _anchorY )
 		{
 			case LABEL_ANCHOR_Y::TOP:
-				positionY = _background->GetPositionY( ) + ( _label->GetHeight( ) * 0.5f ) + paddingY - ( _label->GetCharacterSize( ) * 0.5f ) + ( _label->GetCharacterSize( ) * DODGY_LABEL_TEXT_HEIGHT_RATIO_FIX ) - _background->GetPivotY( );
+				positionY = _background->GetPositionY( ) + ( _label->GetHeight( ) * GetScaleY( ) * 0.5f ) + ( paddingY * GetScaleY( ) ) - ( _label->GetCharacterSize( ) * GetScaleY( ) * 0.5f ) + ( _label->GetCharacterSize( ) * GetScaleY( ) * DODGY_LABEL_TEXT_HEIGHT_RATIO_FIX ) - _background->GetPivotY( );
 
 				break;
 
@@ -324,7 +394,7 @@ namespace Sonar
 				break;
 
 			case LABEL_ANCHOR_Y::BOTTOM:
-				positionY = _background->GetPositionY( ) + _background->GetHeight( ) - ( _label->GetHeight( ) * 0.5f ) - paddingY - ( _label->GetCharacterSize( ) * 0.5f ) + ( _label->GetCharacterSize( ) * DODGY_LABEL_TEXT_HEIGHT_RATIO_FIX ) - _background->GetPivotY( );
+				positionY = _background->GetPositionY( ) + ( _background->GetHeight( ) * GetScaleY( ) ) - ( _label->GetHeight( ) * GetScaleY( ) * 0.5f ) - ( paddingY * GetScaleY( ) ) - ( _label->GetCharacterSize( ) * GetScaleY( ) * 0.5f ) + ( _label->GetCharacterSize( ) * GetScaleY( ) * DODGY_LABEL_TEXT_HEIGHT_RATIO_FIX ) - _background->GetPivotY( );
 
 				break;
 		}
@@ -339,5 +409,29 @@ namespace Sonar
 		_padding.x = _label->GetCharacterSize( ) * DEFAULT_BUTTON_PADDING_X_RATIO;
 		_padding.y = _label->GetCharacterSize( ) * DEFAULT_BUTTON_PADDING_Y_RATIO;
 	}
+
+	void Button::ToggleBackground( )
+	{ _isBackgroundEnabled = !_isBackgroundEnabled; }
+
+	void Button::EnableBackground( )
+	{ _isBackgroundEnabled = true; }
+
+	void Button::DisableBackground( )
+	{ _isBackgroundEnabled = false; }
+
+	const bool &Button::IsBackgroundEnabled( ) const
+	{ return _isBackgroundEnabled; }
+
+	bool Button::IsClicked( const Mouse::Button &button ) const
+	{ return _background->IsClicked( button ); }
+
+	bool Button::IsMouseOver( ) const
+	{ return _background->IsMouseOver( ); }
+
+	void Button::Update( )
+	{
+
+	}
+
 }
 

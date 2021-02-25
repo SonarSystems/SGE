@@ -265,6 +265,7 @@ namespace Sonar
 	void Label::SetFont( const Font &font )
 	{
 		_font = font;
+		_filePath = _font.GetFontFilePath( );
 		_text.setFont( _font.GetSFMLFont( ) );
 
 		SetPosition( _text.getPosition( ).x, _text.getPosition( ).y );

@@ -436,7 +436,69 @@ namespace Sonar
         */
         float GetScaleY( ) const;
 
-    private:
+        /**
+        * \brief Set the label's font
+        *
+        * \param font Font for the label
+        * \param resize Whether or not to resize the button
+        */
+        void SetFont( const Font &font, const bool &resize = false );
+
+        /**
+        * \brief Sets the font file
+        *
+		* \param filePath Font file path
+		* \param resize Whether or not to resize the button
+        */
+        void SetFontFilePath( const std::string &filepath, const bool &resize = false );
+
+        /**
+        * \brief Get the label's font object
+        *
+        * \return Output returns the font used for the label
+        */
+        const Font &GetFont( ) const;
+
+        /**
+        * \brief Gets the font's file path
+        *
+        * \return Output returns the font's file path
+        */
+        std::string GetFontFilePath( ) const;
+
+        /**
+        * \brief Set a particular style for the label
+        *
+        * \param style Which style to change
+		* \param isActivated True to enable the style and false to disable it
+		* \param resize Whether or not to resize the button
+        */
+        void SetStyle( const Label::STYLE &style, const bool &isActivated, const bool &resize = false );
+
+        /**
+        * \brief Set a particular style for the label
+        *
+		* \param style Style int to use
+		* \param resize Whether or not to resize the button
+        */
+        void SetStyle( const unsigned int &style, const bool &resize = false );
+
+        /**
+        * \brief Get the overall style
+        *
+        * \return Output returns the overall style
+        */
+        unsigned int GetStyle( ) const;
+
+        /**
+        * \brief Check if a particular style is enabled
+        *
+        * \param style Style to check
+        *
+        * \return Output returns true if the style is enabled and false if it is disabled
+        */
+        bool IsStyleEnabled( const Label::STYLE &style ) const;
+
         /**
         * \brief Reset the labels position within the background
         *
@@ -448,6 +510,52 @@ namespace Sonar
         * \brief Recalculates the padding
         */
         void RecalculatePadding( );
+
+        /**
+        * \brief Toggle the button background
+        */
+        void ToggleBackground( );
+
+        /**
+        * \brief Enable the button background
+        */
+        void EnableBackground( );
+
+        /**
+        * \brief Disable the button background
+        */
+        void DisableBackground( );
+
+        /**
+        * \brief Is the button background enabled
+        *
+        * \return Output returns the button background enabled status
+        */
+        const bool &IsBackgroundEnabled( ) const;
+
+        /**
+        * \brief Check if the object is clicked by the mouse
+        *
+        * \param button The mouse button to check
+        *
+        * \return Output returns true if the mouse is being clicked over the object and false otherwise
+        */
+        bool IsClicked( const Mouse::Button &button ) const;
+
+        /**
+        * \brief Is the mouse hovering
+        *
+        * \return Out
+        put returns the mouse hover status, true if the mouse is in the item and false if it isn't
+        */
+        bool IsMouseOver( ) const;
+
+        /**
+        * \brief Update the button
+        */
+        void Update( );
+
+    private:
 
         /**
         * \brief Button background
@@ -473,6 +581,11 @@ namespace Sonar
         * \brief Anchor of the label with in the button's background in the y axis
         */
 		LABEL_ANCHOR_Y _anchorY;
+
+        /**
+        * \brief Is the button background enabled or disabled
+        */
+        bool _isBackgroundEnabled;
 
     };
 }

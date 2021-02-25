@@ -383,7 +383,8 @@ namespace Sonar
         /**
         * \brief Is the mouse hovering
         *
-        * \return Output returns the mouse hover status, true if the mouse is in the item and false if it isn't
+        * \return Out
+        put returns the mouse hover status, true if the mouse is in the item and false if it isn't
         */
         bool IsMouseOver( ) const;
 

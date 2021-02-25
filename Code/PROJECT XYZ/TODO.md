@@ -5,15 +5,22 @@ ENGINE
 -----------------------------------------------------------------
 * GUI - USE DRAWABLE CLASS, MAYBE HAVE A GUI CLASS THAT INHERITS DRAWABLE AND BUTTON INHERITS GUI FOR EXAMPLE
     - Buttons - Sonar::Label & Sonar::Rectangle (WEDNESDAY)
-        - Scale
-        - Set & get font
-        - Set & get style
-        - Turn background off and on (don't draw it)
         - Hover
             - Background color
             - Border color
             - Text color
             - Text border color
+            - Text size
+            - Text style
+            - Scale
+        - Click
+            - Background color
+            - Border color
+            - Text color
+            - Text border color
+            - Text size
+            - Text style
+            - Scale
 
     -REMOVE ALL DOUBLE CODE THAT ONE METHOD COULD BE CALLED FROM ANOTHER IN CLASSES
     -ADD SET POSITION WITH VEC2 AS PARAMETER FROM DRAWABLE TO ALL CHILD CLASSES
