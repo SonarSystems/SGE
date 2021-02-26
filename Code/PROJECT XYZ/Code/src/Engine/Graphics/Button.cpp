@@ -12,7 +12,6 @@ namespace Sonar
 		_background = new Rectangle( data );
 		_background->SetInsideColor( Color::Black );
 
-
 		_label = new Label( data );
 		_label->SetFontFilePath( "Resources/arial.ttf" );
 		_label->SetInsideColor( Color::Red );
@@ -25,7 +24,8 @@ namespace Sonar
 		ResetLabelPosition( );
 
 		_label->SetText( DEFAULT_LABEL_TEXT );
-		
+
+		UpdateDefaultStyle( );
 	}
 
 	Button::~Button( ) { }
@@ -38,11 +38,21 @@ namespace Sonar
 		_label->Draw( );
 	}
 
-	void Button::SetRectangleBackground( Rectangle *rectangle )
-	{ _background = rectangle; }
+	void Button::SetRectangleBackground( Rectangle *rectangle, const bool &updateDefaultStyle )
+	{
+		_background = rectangle;
 
-	void Button::SetLabelBackground( Label *label )
-	{ _label = label; }
+		if ( updateDefaultStyle )
+		{ UpdateDefaultStyle( ); }
+	}
+
+	void Button::SetLabelBackground( Label *label, const bool &updateDefaultStyle )
+	{
+		_label = label;
+
+		if ( updateDefaultStyle )
+		{ UpdateDefaultStyle( ); }
+	}
 
 	Rectangle *Button::GetRectangleBackground( ) const
 	{ return _background; }
@@ -50,29 +60,41 @@ namespace Sonar
 	Label *Button::GetRectangleLabel( ) const
 	{ return _label; }
 
-	void Button::SetPadding( const glm::vec2 &padding )
+	void Button::SetPadding( const glm::vec2 &padding, const bool &updateDefaultStyle )
 	{
 		_padding = padding;
-		SetSize( _background->GetSize( ) );
+		SetSize( _background->GetSize( ), updateDefaultStyle );
+
+		if ( updateDefaultStyle )
+		{ UpdateDefaultStyle( ); }
 	}
 
-	void Button::SetPadding( const float &x, const float &y )
+	void Button::SetPadding( const float &x, const float &y, const bool &updateDefaultStyle )
 	{
 		_padding.x = x;
 		_padding.y = y;
-		SetSize( _background->GetSize( ) );
+		SetSize( _background->GetSize( ), updateDefaultStyle );
+
+		if ( updateDefaultStyle )
+		{ UpdateDefaultStyle( ); }
 	}
 
-	void Button::SetPaddingX( const float &x )
+	void Button::SetPaddingX( const float &x, const bool &updateDefaultStyle )
 	{
 		_padding.x = x;
-		SetSize( _background->GetSize( ) );
+		SetSize( _background->GetSize( ), updateDefaultStyle );
+
+		if ( updateDefaultStyle )
+		{ UpdateDefaultStyle( ); }
 	}
 
-	void Button::SetPaddingY( const float &y )
+	void Button::SetPaddingY( const float &y, const bool &updateDefaultStyle )
 	{
 		_padding.y = y;
-		SetSize( _background->GetSize( ) );
+		SetSize( _background->GetSize( ), updateDefaultStyle );
+
+		if ( updateDefaultStyle )
+		{ UpdateDefaultStyle( ); }
 	}
 
 	const glm::vec2 &Button::GetPadding( ) const
@@ -84,20 +106,38 @@ namespace Sonar
 	float Button::GetPaddingY( ) const
 	{ return _padding.y; }
 
-	void Button::SetSize( const glm::vec2 &size )
+	void Button::SetSize( const glm::vec2 &size, const bool &updateDefaultStyle )
 	{
 		_background->SetSize( size + ( _padding * 2.0f ) );
 		ResetLabelPosition( );
+
+		if ( updateDefaultStyle )
+		{ UpdateDefaultStyle( ); }
 	}
 
-	void Button::SetSize( const float &width, const float &height )
-	{ SetSize( glm::vec2( width, height ) ); }
+	void Button::SetSize( const float &width, const float &height, const bool &updateDefaultStyle )
+	{
+		SetSize( glm::vec2( width, height ), updateDefaultStyle );
 
-	void Button::SetWidth( const float &width )
-	{ SetSize( glm::vec2( width, _background->GetHeight( ) ) ); }
+		if ( updateDefaultStyle )
+		{ UpdateDefaultStyle( ); }
+	}
 
-	void Button::SetHeight( const float &height )
-	{ SetSize( glm::vec2( _background->GetWidth( ), height ) ); }
+	void Button::SetWidth( const float &width, const bool &updateDefaultStyle )
+	{
+		SetSize( glm::vec2( width, _background->GetHeight( ) ), updateDefaultStyle );
+
+		if ( updateDefaultStyle )
+		{ UpdateDefaultStyle( ); }
+	}
+
+	void Button::SetHeight( const float &height, const bool &updateDefaultStyle )
+	{
+		SetSize( glm::vec2( _background->GetWidth( ), height ), updateDefaultStyle );
+
+		if ( updateDefaultStyle )
+		{ UpdateDefaultStyle( ); }
+	}
 
 	glm::vec2 Button::GetSize( ) const
 	{ return _background->GetSize( ); }
@@ -108,26 +148,35 @@ namespace Sonar
 	float Button::GetHeight( ) const
 	{ return _background->GetHeight( ); }
 
-	void Button::SetLabelAnchorX( const LABEL_ANCHOR_X &anchor, const bool &usePadding )
+	void Button::SetLabelAnchorX( const LABEL_ANCHOR_X &anchor, const bool &usePadding, const bool &updateDefaultStyle )
 	{
 		_anchorX = anchor;
 		ResetLabelPosition( usePadding );
+
+		if ( updateDefaultStyle )
+		{ UpdateDefaultStyle( ); }
 	}
 
-	void Button::SetLabelAnchorY( const LABEL_ANCHOR_Y &anchor, const bool &usePadding )
+	void Button::SetLabelAnchorY( const LABEL_ANCHOR_Y &anchor, const bool &usePadding, const bool &updateDefaultStyle )
 	{
 		_anchorY = anchor;
 		ResetLabelPosition( usePadding );
+
+		if ( updateDefaultStyle )
+		{ UpdateDefaultStyle( ); }
 	}
 
-	void Button::SetText( const std::string &string, const bool &resetButtonSize )
+	void Button::SetText( const std::string &string, const bool &resetButtonSize, const bool &updateDefaultStyle )
 	{
 		_label->SetText( string );
 
 		if ( resetButtonSize )
-		{ SetSize( _label->GetSize( ) ); }
+		{ SetSize( _label->GetSize( ), updateDefaultStyle ); }
 
 		ResetLabelPosition( true );
+
+		if ( updateDefaultStyle )
+		{ UpdateDefaultStyle( ); }
 	}
 
 	const std::string &Button::GetText( ) const
@@ -165,33 +214,51 @@ namespace Sonar
 	{ return _background->GetPositionX( ); }
 
 	float Button::GetPositionY( ) const
-	{ return _background->GetPositionY( ); } 
+	{ return _background->GetPositionY( ); }
 
 	glm::vec2 Button::GetPosition( ) const
 	{ return _background->GetPosition( ); }
 
-	void Button::SetCharacterSize( const unsigned int &size, const bool &usePadding )
+	void Button::SetCharacterSize( const unsigned int &size, const bool &usePadding, const bool &updateDefaultStyle )
 	{
 		_label->SetCharacterSize( size );
 
 		RecalculatePadding( );
 
-		SetSize( _label->GetSize( ) );
+		SetSize( _label->GetSize( ), updateDefaultStyle );
 
 		ResetLabelPosition( usePadding );
+
+		if ( updateDefaultStyle )
+		{ UpdateDefaultStyle( ); }
 	}
 
 	unsigned int Button::GetCharacterSize( ) const
 	{ return _label->GetCharacterSize( ); }
 
-	void Button::SetBackgroundInsideColor( const Color &color )
-	{ _background->SetInsideColor( color ); }
+	void Button::SetBackgroundInsideColor( const Color &color, const bool &updateDefaultStyle )
+	{
+		_background->SetInsideColor( color );
 
-	void Button::SetBackgroundBorderColor( const Color &color )
-	{ _background->SetBorderColor( color ); }
+		if ( updateDefaultStyle )
+		{ UpdateDefaultStyle( ); }
+	}
 
-	void Button::SetBackgroundBorderThickness( const float &thickness )
-	{ _background->SetBorderThickness( thickness ); }
+	void Button::SetBackgroundBorderColor( const Color &color, const bool &updateDefaultStyle )
+	{
+		_background->SetBorderColor( color );
+
+		if ( updateDefaultStyle )
+		{ UpdateDefaultStyle( ); }
+	}
+
+	void Button::SetBackgroundBorderThickness( const float &thickness, const bool &updateDefaultStyle )
+	{
+		_background->SetBorderThickness( thickness );
+
+		if ( updateDefaultStyle )
+		{ UpdateDefaultStyle( ); }
+	}
 
 	Color Button::GetBackgroundInsideColor( ) const
 	{ return _background->GetInsideColor( ); }
@@ -202,14 +269,29 @@ namespace Sonar
 	float Button::GetBackgroundBorderThickness( ) const
 	{ return _background->GetBorderThickness( ); }
 
-	void Button::SetLabelInsideColor( const Color &color )
-	{ _label->SetInsideColor( color ); }
+	void Button::SetLabelInsideColor( const Color &color, const bool &updateDefaultStyle )
+	{
+		_label->SetInsideColor( color );
 
-	void Button::SetLabelBorderColor( const Color &color )
-	{ _label->SetBorderColor( color ); }
+		if ( updateDefaultStyle )
+		{ UpdateDefaultStyle( ); }
+	}
 
-	void Button::SetLabelBorderThickness( const float &thickness )
-	{ _label->SetBorderThickness( thickness ); }
+	void Button::SetLabelBorderColor( const Color &color, const bool &updateDefaultStyle )
+	{
+		_label->SetBorderColor( color );
+
+		if ( updateDefaultStyle )
+		{ UpdateDefaultStyle( ); }
+	}
+
+	void Button::SetLabelBorderThickness( const float &thickness, const bool &updateDefaultStyle )
+	{
+		_label->SetBorderThickness( thickness );
+
+		if ( updateDefaultStyle )
+		{ UpdateDefaultStyle( ); }
+	}
 
 	Color Button::GetLabelInsideColor( ) const
 	{ return _label->GetInsideColor( ); }
@@ -244,52 +326,64 @@ namespace Sonar
 		_label->MoveY( y );
 	}
 
-	void Button::SetScale( const float &xScale, const float &yScale )
+	void Button::SetScale( const float &xScale, const float &yScale, const bool &updateDefaultStyle )
 	{
 		_background->SetScale( xScale, yScale );
 		_label->SetScale( xScale, yScale );
 
 		RecalculatePadding( );
 
-		SetSize( _label->GetSize( ) );
+		SetSize( _label->GetSize( ), updateDefaultStyle );
 
 		ResetLabelPosition( );
+
+		if ( updateDefaultStyle )
+		{ UpdateDefaultStyle( ); }
 	}
 
-	void Button::SetScale( const glm::vec2 &scale )
+	void Button::SetScale( const glm::vec2 &scale, const bool &updateDefaultStyle )
 	{
 		_background->SetScale( scale );
 		_label->SetScale( scale );
 
 		RecalculatePadding( );
 
-		SetSize( _label->GetSize( ) );
+		SetSize( _label->GetSize( ), updateDefaultStyle );
 
 		ResetLabelPosition( );
+
+		if ( updateDefaultStyle )
+		{ UpdateDefaultStyle( ); }
 	}
 
-	void Button::SetScaleX( const float &xScale )
+	void Button::SetScaleX( const float &xScale, const bool &updateDefaultStyle )
 	{
 		_background->SetScaleX( xScale );
 		_label->SetScaleX( xScale );
 
 		RecalculatePadding( );
 
-		SetSize( _label->GetSize( ) );
+		SetSize( _label->GetSize( ), updateDefaultStyle );
 
 		ResetLabelPosition( );
+
+		if ( updateDefaultStyle )
+		{ UpdateDefaultStyle( ); }
 	}
 
-	void Button::SetScaleY( const float &yScale )
+	void Button::SetScaleY( const float &yScale, const bool &updateDefaultStyle )
 	{
 		_background->SetScaleY( yScale );
 		_label->SetScaleY( yScale );
 
 		RecalculatePadding( );
 
-		SetSize( _label->GetSize( ) );
+		SetSize( _label->GetSize( ), updateDefaultStyle );
 
 		ResetLabelPosition( );
+
+		if ( updateDefaultStyle )
+		{ UpdateDefaultStyle( ); }
 	}
 
 	glm::vec2 Button::GetScale( ) const
@@ -301,7 +395,7 @@ namespace Sonar
 	float Button::GetScaleY( ) const
 	{ return _background->GetScaleY( ); }
 
-	void Button::SetFont( const Font &font, const bool &resize )
+	void Button::SetFont( const Font &font, const bool &resize, const bool &updateDefaultStyle )
 	{
 		_label->SetFont( font );
 
@@ -309,13 +403,16 @@ namespace Sonar
 		{
 			RecalculatePadding( );
 
-			SetSize( _label->GetSize( ) );
+			SetSize( _label->GetSize( ), updateDefaultStyle );
 
 			ResetLabelPosition( );
 		}
+
+		if ( updateDefaultStyle )
+		{ UpdateDefaultStyle( ); }
 	}
 
-	void Button::SetFontFilePath( const std::string &filepath, const bool &resize )
+	void Button::SetFontFilePath( const std::string &filepath, const bool &resize, const bool &updateDefaultStyle )
 	{
 		_label->SetFontFilePath( filepath );
 
@@ -323,10 +420,13 @@ namespace Sonar
 		{
 			RecalculatePadding( );
 
-			SetSize( _label->GetSize( ) );
+			SetSize( _label->GetSize( ), updateDefaultStyle );
 
 			ResetLabelPosition( );
 		}
+
+		if ( updateDefaultStyle )
+		{ UpdateDefaultStyle( ); }
 	}
 
 	const Font &Button::GetFont( ) const
@@ -335,7 +435,7 @@ namespace Sonar
 	std::string Button::GetFontFilePath( ) const
 	{ return _label->GetFontFilePath( ); }
 
-	void Button::SetStyle( const Label::STYLE &style, const bool &isActivated, const bool &resize )
+	void Button::SetLabelStyle( const Label::STYLE &style, const bool &isActivated, const bool &resize, const bool &updateDefaultStyle )
 	{
 		_label->SetStyle( style, isActivated );
 
@@ -343,13 +443,16 @@ namespace Sonar
 		{
 			RecalculatePadding( );
 
-			SetSize( _label->GetSize( ) );
+			SetSize( _label->GetSize( ), updateDefaultStyle );
 
 			ResetLabelPosition( );
 		}
+
+		if ( updateDefaultStyle )
+		{ UpdateDefaultStyle( ); }
 	}
 
-	void Button::SetStyle( const unsigned int &style, const bool &resize )
+	void Button::SetLabelStyle( const unsigned int &style, const bool &resize, const bool &updateDefaultStyle )
 	{
 		_label->SetStyle( style );
 
@@ -357,13 +460,16 @@ namespace Sonar
 		{
 			RecalculatePadding( );
 
-			SetSize( _label->GetSize( ) );
+			SetSize( _label->GetSize( ), updateDefaultStyle );
 
 			ResetLabelPosition( );
 		}
+
+		if ( updateDefaultStyle )
+		{ UpdateDefaultStyle( ); }
 	}
 
-	unsigned int Button::GetStyle( ) const
+	unsigned int Button::GetLabelStyle( ) const
 	{ return _label->GetStyle( ); }
 
 	bool Button::IsStyleEnabled( const Label::STYLE &style ) const
@@ -418,7 +524,7 @@ namespace Sonar
 		}
 
 		_label->SetPosition( positionX, positionY );
-		
+
 		_label->SetPivot( OBJECT_POINTS::CENTER );
 	}
 
@@ -450,23 +556,36 @@ namespace Sonar
 	{
 		if ( IsMouseOver( ) )
 		{
-			spdlog::info( "{0}/{1}/{2}", _hoverStyle._backgroundColor.GetRed( ), _hoverStyle._backgroundColor.GetGreen( ), _hoverStyle._backgroundColor.GetBlue( ) );
-
-			SetBackgroundInsideColor( Color( _hoverStyle._backgroundColor.GetRed( ), _hoverStyle._backgroundColor.GetGreen( ), _hoverStyle._backgroundColor.GetBlue( ) ) );
-			SetBackgroundBorderColor( Color( _hoverStyle._borderColor.GetRed( ), _hoverStyle._borderColor.GetGreen( ), _hoverStyle._borderColor.GetBlue( ) ) );
-			SetLabelInsideColor( Color( _hoverStyle._labelColor.GetRed( ), _hoverStyle._labelColor.GetGreen( ), _hoverStyle._labelColor.GetBlue( ) ) );
-			SetLabelBorderColor( Color( _hoverStyle._labelBorderColor.GetRed( ), _hoverStyle._labelBorderColor.GetGreen( ), _hoverStyle._labelBorderColor.GetBlue( ) ) );
-
-			SetCharacterSize( _hoverStyle._characterSize, false );
-			SetStyle( _hoverStyle._textStyle );
-
-			SetScale( _hoverStyle._scale );
+			SetButtonStyle( _hoverStyle, false );
 		}
 		else
 		{
-
+			SetButtonStyle( _defaultStyle );
 		}
 	}
 
+	void Button::SetButtonStyle( const Button::InteractStyle &style, const bool &updateDefaultStyle )
+	{
+		SetBackgroundInsideColor( Color( style._backgroundColor.GetRed( ), style._backgroundColor.GetGreen( ), style._backgroundColor.GetBlue( ) ), updateDefaultStyle );
+		SetBackgroundBorderColor( Color( style._borderColor.GetRed( ), style._borderColor.GetGreen( ), style._borderColor.GetBlue( ) ), updateDefaultStyle );
+		SetLabelInsideColor( Color( style._labelColor.GetRed( ), style._labelColor.GetGreen( ), style._labelColor.GetBlue( ) ), updateDefaultStyle );
+		//SetLabelBorderColor( Color( style._labelBorderColor.GetRed( ), style._labelBorderColor.GetGreen( ), style._labelBorderColor.GetBlue( ) ), updateDefaultStyle );
+
+		//SetCharacterSize( style._characterSize, false, updateDefaultStyle );
+		//SetLabelStyle( style._textStyle, updateDefaultStyle );
+
+		//SetScale( style._scale, updateDefaultStyle );
+	}
+
+	void Button::UpdateDefaultStyle( )
+	{
+		_defaultStyle._backgroundColor = _background->GetInsideColor( );
+		_defaultStyle._borderColor = _background->GetBorderColor( );
+		_defaultStyle._labelColor = _label->GetInsideColor( );
+		_defaultStyle._labelBorderColor = _label->GetBorderColor( );
+		_defaultStyle._characterSize = _label->GetCharacterSize( );
+		_defaultStyle._textStyle = _label->GetStyle( );
+		_defaultStyle._scale = _background->GetScale( );
+	}
 }
 
