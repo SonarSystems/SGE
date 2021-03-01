@@ -34,15 +34,18 @@ namespace Sonar
 
         struct InteractStyle
         {
-            Color _backgroundColor = Color::Red;
-            Color _borderColor = Color::Magenta;
-            Color _labelColor = Color::Blue;
-            Color _labelBorderColor = Color::Yellow;
+            Color _backgroundColor = DEFAULT_BUTTON_HOVER_BACKGROUND_COLOR;
+            Color _borderColor = DEFAULT_BUTTON_HOVER_BORDER_COLOR;
+            Color _labelColor = DEFAULT_BUTTON_HOVER_LABEL_COLOR;
+            Color _labelBorderColor = DEFAULT_BUTTON_HOVER_LABEL_BORDER_COLOR;
 
-            unsigned int _characterSize = 32;
-            unsigned int _textStyle = 0;
+            unsigned int _characterSize = DEFAULT_BUTTON_HOVER_LABEL_CHARACTER_SIZE;
+            unsigned int _textStyle = DEFAULT_BUTTON_HOVER_LABEL_TEXT_STYLE;
 
-            glm::vec2 _scale = glm::vec2( 1.0f, 1.0f );
+            unsigned int _borderThickness = DEFAULT_BUTTON_HOVER_BORDER_THICKNESS;
+            unsigned int _labelBorderThickness = DEFAULT_BUTTON_HOVER_LABEL_BORDER_THICKNESS;
+
+            glm::vec2 _scale = DEFAULT_BUTTON_HOVER_SCALE;
         };
 
         /**
@@ -73,7 +76,8 @@ namespace Sonar
         /**
         * \brief Set the button's label (most of the time leave as is)
         *
-        * \param label Pointer to the label
+		* \param label Pointer to the label
+		* \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
         */
         void SetLabelBackground( Label *label, const bool &updateDefaultStyle = true );
 
@@ -94,7 +98,8 @@ namespace Sonar
         /**
         * \brief Set extra padding around the text
         *
-        * \param padding Background padding
+		* \param padding Background padding
+		* \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
         */
 		void SetPadding( const glm::vec2 &padding, const bool &updateDefaultStyle = true );
 
@@ -102,14 +107,16 @@ namespace Sonar
         * \brief Set extra padding around the text
         *
         * \param x Background padding x axis (left and right)
-        * \param y Background padding y axis (top and bottom)
+		* \param y Background padding y axis (top and bottom)
+		* \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
         */
 		void SetPadding( const float &x, const float &y, const bool &updateDefaultStyle = true );
 
         /**
         * \brief Set extra padding around the text's x axis (left and right)
         *
-        * \param x Background padding x axis (left and right)
+		* \param x Background padding x axis (left and right)
+		* \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
         */
 		void SetPaddingX( const float &x, const bool &updateDefaultStyle = true );
 
@@ -117,6 +124,7 @@ namespace Sonar
         * \brief Set extra padding around the text's y axis (top and bottom)
         *
 		* \param y Background padding y axis (top and bottom)
+		* \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
         */
 		void SetPaddingY( const float &y, const bool &updateDefaultStyle = true );
 
@@ -144,7 +152,8 @@ namespace Sonar
         /**
         * \brief Set width and height
         *
-        * \param size Size of the object
+		* \param size Size of the object
+		* \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
         */
         void SetSize( const glm::vec2 &size, const bool &updateDefaultStyle = true );
 
@@ -152,21 +161,24 @@ namespace Sonar
         * \brief Set width and height
         *
         * \param width Width of the object
-        * \param height Height of the object
+		* \param height Height of the object
+		* \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
         */
         void SetSize( const float &width, const float &height, const bool &updateDefaultStyle = true );
 
         /**
         * \brief Set width
         *
-        * \param width Width of the object
+		* \param width Width of the object
+		* \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
         */
         void SetWidth( const float &width, const bool &updateDefaultStyle = true );
 
         /**
         * \brief Set height
         *
-        * \param height Height of the object
+		* \param height Height of the object
+		* \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
         */
         void SetHeight( const float &height, const bool &updateDefaultStyle = true );
 
@@ -193,18 +205,28 @@ namespace Sonar
 
         /**
         * \brief Set the label's x anchor
+        *
+        * \param anchor Which position to anchor the label in the x axis
+        * \param usePadding Whether or not to use padding
+        * \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
         */
         void SetLabelAnchorX( const LABEL_ANCHOR_X &anchor, const bool &usePadding = false, const bool &updateDefaultStyle = true );
 
         /**
-        * \brief Set the label's y anchor
+		* \brief Set the label's y anchor
+		*
+		* \param anchor Which position to anchor the label in the x axis
+		* \param usePadding Whether or not to use padding
+		* \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
         */
         void SetLabelAnchorY( const LABEL_ANCHOR_Y &anchor, const bool &usePadding = false, const bool &updateDefaultStyle = true );
 
         /**
         * \brief Set the button's text
         *
-        * \param string The string for the text to be displayed
+		* \param string The string for the text to be displayed
+		* \param resetButtonSize Whether or not to reset the button size
+		* \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
         */
         void SetText( const std::string &string, const bool &resetButtonSize = false, const bool &updateDefaultStyle = true );
 
@@ -268,7 +290,9 @@ namespace Sonar
         /**
         * \brief Set the character size in pixels
         *
-        * \param size Size of the characters in pixels
+		* \param size Size of the characters in pixels
+		* \param usePadding Whether or not to use padding
+		* \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
         */
         void SetCharacterSize( const unsigned int &size, const bool &usePadding = true, const bool &updateDefaultStyle = true );
 
@@ -282,14 +306,16 @@ namespace Sonar
         /**
         * \brief Set the background's inside color (fill color)
         *
-        * \param color Color object
+		* \param color Color object
+		* \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
         */
         void SetBackgroundInsideColor( const Color &color, const bool &updateDefaultStyle = true );
 
         /**
         * \brief Set the background's border color
         *
-        * \param color Color object
+		* \param color Color object
+		* \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
         *
         * SetBorderThickness method required as well
         */
@@ -298,7 +324,8 @@ namespace Sonar
         /**
         * \brief Set the background's border thickness
         *
-        * \param thickness Thickness of the border
+		* \param thickness Thickness of the border
+		* \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
         *
         * Required for border, otherwise border is to set 0 thickness and cannot be seen
         */
@@ -328,14 +355,16 @@ namespace Sonar
         /**
         * \brief Set the label's inside color (fill color)
         *
-        * \param color Color object
+		* \param color Color object
+		* \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
         */
         void SetLabelInsideColor( const Color &color, const bool &updateDefaultStyle = true );
 
         /**
         * \brief Set the label's border color
         *
-        * \param color Color object
+		* \param color Color object
+		* \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
         *
         * SetBorderThickness method required as well
         */
@@ -344,7 +373,8 @@ namespace Sonar
         /**
         * \brief Set the label's border thickness
         *
-        * \param thickness Thickness of the border
+		* \param thickness Thickness of the border
+		* \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
         *
         * Required for border, otherwise border is to set 0 thickness and cannot be seen
         */
@@ -404,28 +434,32 @@ namespace Sonar
         * \brief Set the scale factor
         *
         * \param xScale Scale in x axis
-        * \param yScale Scale in y axis
+		* \param yScale Scale in y axis
+		* \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
         */
         void SetScale( const float &xScale, const float &yScale, const bool &updateDefaultStyle = true );
 
         /**
         * \brief Set the scale factor
         *
-        * \param scale Scale in x and y axes
+		* \param scale Scale in x and y axes
+		* \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
         */
         void SetScale( const glm::vec2 &scale, const bool &updateDefaultStyle = true );
 
         /**
         * \brief Set the x axis scale factor
         *
-        * \param xScale Scale in x axis
+		* \param xScale Scale in x axis
+		* \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
         */
         void SetScaleX( const float &xScale, const bool &updateDefaultStyle = true );
 
         /**
         * \brief Set the y axis scale factor
         *
-        * \param yScale Scale in y axis
+		* \param yScale Scale in y axis
+		* \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
         */
         void SetScaleY( const float &yScale, const bool &updateDefaultStyle = true );
 
@@ -454,7 +488,8 @@ namespace Sonar
         * \brief Set the label's font
         *
         * \param font Font for the label
-        * \param resize Whether or not to resize the button
+		* \param resize Whether or not to resize the button
+		* \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
         */
         void SetFont( const Font &font, const bool &resize = false, const bool &updateDefaultStyle = true );
 
@@ -463,6 +498,7 @@ namespace Sonar
         *
 		* \param filePath Font file path
 		* \param resize Whether or not to resize the button
+		* \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
         */
         void SetFontFilePath( const std::string &filepath, const bool &resize = false, const bool &updateDefaultStyle = true );
 
@@ -486,6 +522,7 @@ namespace Sonar
         * \param style Which style to change
 		* \param isActivated True to enable the style and false to disable it
 		* \param resize Whether or not to resize the button
+		* \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
         */
         void SetLabelStyle( const Label::STYLE &style, const bool &isActivated, const bool &resize = false, const bool &updateDefaultStyle = true );
 
@@ -494,6 +531,7 @@ namespace Sonar
         *
 		* \param style Style int to use
 		* \param resize Whether or not to resize the button
+		* \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
         */
         void SetLabelStyle( const unsigned int &style, const bool &resize = false, const bool &updateDefaultStyle = true );
 
@@ -559,8 +597,7 @@ namespace Sonar
         /**
         * \brief Is the mouse hovering
         *
-        * \return Out
-        put returns the mouse hover status, true if the mouse is in the item and false if it isn't
+        * \return Output returns the mouse hover status, true if the mouse is in the item and false if it isn't
         */
         bool IsMouseOver( ) const;
 
@@ -569,9 +606,39 @@ namespace Sonar
         */
         void Update( );
 
+        /**
+        * \brief Set the overall button style
+        *
+		* \param style Style to be applied to the button
+		* \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
+        */
         void SetButtonStyle( const Button::InteractStyle &style, const bool &updateDefaultStyle = true );
 
+        /**
+        * \brief Set the hover button style
+        *
+        * \param style Style to be applied to the button's hover event
+        */
+        void SetHoverButtonStyle( const Button::InteractStyle &style );
+
+        /**
+        * \brief Get the default button style
+        *
+        * \return Output returns the default button style
+        */
+        const InteractStyle &GetDefaultButtonStyle( ) const;
+
+        /**
+        * \brief Get the hover button style
+        *
+        * \return Output returns the hover button style
+        */
+        const InteractStyle &GetHoverButtonStyle( ) const;
+
     private:
+        /**
+        * \brief Updates the buttons default style
+        */
         void UpdateDefaultStyle( );
 
         /**
@@ -604,6 +671,9 @@ namespace Sonar
         */
         bool _isBackgroundEnabled;
 
+        /**
+        * \brief Hover and default styles
+        */
         InteractStyle _hoverStyle, _defaultStyle;
 
     };

@@ -5,14 +5,6 @@ ENGINE
 -----------------------------------------------------------------
 * GUI - USE DRAWABLE CLASS, MAYBE HAVE A GUI CLASS THAT INHERITS DRAWABLE AND BUTTON INHERITS GUI FOR EXAMPLE
     - Buttons - Sonar::Label & Sonar::Rectangle (WEDNESDAY)
-        - Hover
-            - Background color
-            - Border color
-            - Text color
-            - Text border color
-            - Text size
-            - Text style
-            - Scale
         - Click
             - Background color
             - Border color

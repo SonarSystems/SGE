@@ -10,12 +10,12 @@ namespace Sonar
 		_anchorY = LABEL_ANCHOR_Y::CENTER_Y;
 
 		_background = new Rectangle( data );
-		_background->SetInsideColor( Color::Black );
+		_background->SetInsideColor( DEFAULT_BUTTON_BACKGROUND_COLOR );
 
 		_label = new Label( data );
 		_label->SetFontFilePath( "Resources/arial.ttf" );
-		_label->SetInsideColor( Color::Red );
-		_label->SetCharacterSize( 64 );
+		_label->SetInsideColor( DEFAULT_BUTTON_LABEL_COLOR );
+		_label->SetCharacterSize( DEFAULT_BUTTON_LABEL_CHARACTER_SIZE );
 
 		RecalculatePadding( );
 
@@ -465,6 +465,8 @@ namespace Sonar
 			ResetLabelPosition( );
 		}
 
+
+
 		if ( updateDefaultStyle )
 		{ UpdateDefaultStyle( ); }
 	}
@@ -555,13 +557,9 @@ namespace Sonar
 	void Button::Update( )
 	{
 		if ( IsMouseOver( ) )
-		{
-			SetButtonStyle( _hoverStyle, false );
-		}
+		{ SetButtonStyle( _hoverStyle, false ); }
 		else
-		{
-			SetButtonStyle( _defaultStyle );
-		}
+		{ SetButtonStyle( _defaultStyle, false ); }
 	}
 
 	void Button::SetButtonStyle( const Button::InteractStyle &style, const bool &updateDefaultStyle )
@@ -569,13 +567,25 @@ namespace Sonar
 		SetBackgroundInsideColor( Color( style._backgroundColor.GetRed( ), style._backgroundColor.GetGreen( ), style._backgroundColor.GetBlue( ) ), updateDefaultStyle );
 		SetBackgroundBorderColor( Color( style._borderColor.GetRed( ), style._borderColor.GetGreen( ), style._borderColor.GetBlue( ) ), updateDefaultStyle );
 		SetLabelInsideColor( Color( style._labelColor.GetRed( ), style._labelColor.GetGreen( ), style._labelColor.GetBlue( ) ), updateDefaultStyle );
-		//SetLabelBorderColor( Color( style._labelBorderColor.GetRed( ), style._labelBorderColor.GetGreen( ), style._labelBorderColor.GetBlue( ) ), updateDefaultStyle );
+		SetLabelBorderColor( Color( style._labelBorderColor.GetRed( ), style._labelBorderColor.GetGreen( ), style._labelBorderColor.GetBlue( ) ), updateDefaultStyle );
 
-		//SetCharacterSize( style._characterSize, false, updateDefaultStyle );
-		//SetLabelStyle( style._textStyle, updateDefaultStyle );
+		SetCharacterSize( style._characterSize, false, updateDefaultStyle );
+		SetLabelStyle( style._textStyle, false, updateDefaultStyle );
 
-		//SetScale( style._scale, updateDefaultStyle );
+		SetBackgroundBorderThickness( style._borderThickness, updateDefaultStyle );
+		SetLabelBorderThickness( style._labelBorderThickness, updateDefaultStyle );
+
+		SetScale( style._scale, updateDefaultStyle );
 	}
+
+	void Button::SetHoverButtonStyle( const Button::InteractStyle &style )
+	{ _hoverStyle = style; }
+
+	const Sonar::Button::InteractStyle &Button::GetDefaultButtonStyle( ) const
+	{ return _defaultStyle; }
+
+	const Sonar::Button::InteractStyle &Button::GetHoverButtonStyle( ) const
+	{ return _hoverStyle; }
 
 	void Button::UpdateDefaultStyle( )
 	{
@@ -585,6 +595,8 @@ namespace Sonar
 		_defaultStyle._labelBorderColor = _label->GetBorderColor( );
 		_defaultStyle._characterSize = _label->GetCharacterSize( );
 		_defaultStyle._textStyle = _label->GetStyle( );
+		_defaultStyle._borderThickness = _background->GetBorderThickness( );
+		_defaultStyle._labelBorderThickness = _background->GetBorderThickness( );
 		_defaultStyle._scale = _background->GetScale( );
 	}
 }
