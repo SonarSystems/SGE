@@ -1,65 +1,137 @@
 ﻿  Game.cpp
+  StateMachine.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Core\StateMachine.cpp(21,19): warning C4101: 'event': unreferenced local variable
   Button.cpp
 C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Button.cpp(575,38): warning C4244: 'argument': conversion from 'const unsigned int' to 'const float', possible loss of data
 C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Button.cpp(576,33): warning C4244: 'argument': conversion from 'const unsigned int' to 'const float', possible loss of data
 C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Button.cpp(598,67): warning C4244: '=': conversion from 'float' to 'unsigned int', possible loss of data
 C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Button.cpp(599,72): warning C4244: '=': conversion from 'float' to 'unsigned int', possible loss of data
+  Drawable.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Drawable.cpp(275,91): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+          and
+          [
+              T=int
+          ]
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Drawable.cpp(275,71): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+          and
+          [
+              T=int
+          ]
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Drawable.cpp(275,59): warning C4244: 'argument': conversion from 'const T' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+          and
+          [
+              T=int
+          ]
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Drawable.cpp(275,46): warning C4244: 'argument': conversion from 'const T' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+          and
+          [
+              T=int
+          ]
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Drawable.cpp(286,81): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+          and
+          [
+              T=int
+          ]
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Drawable.cpp(286,61): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+          and
+          [
+              T=int
+          ]
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Drawable.cpp(286,49): warning C4244: 'argument': conversion from 'const T' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+          and
+          [
+              T=int
+          ]
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Drawable.cpp(286,36): warning C4244: 'argument': conversion from 'const T' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+          and
+          [
+              T=int
+          ]
   Label.cpp
-  HighScoreManager.cpp
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Managers\HighScoreManager.cpp(25,22): warning C4018: '<': signed/unsigned mismatch
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Managers\HighScoreManager.cpp(27,11): warning C4018: '<': signed/unsigned mismatch
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Managers\HighScoreManager.cpp(67,22): warning C4018: '<': signed/unsigned mismatch
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Managers\HighScoreManager.cpp(89,22): warning C4018: '<': signed/unsigned mismatch
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Managers\HighScoreManager.cpp(121,29): warning C4018: '<': signed/unsigned mismatch
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Managers\HighScoreManager.cpp(135,22): warning C4018: '<': signed/unsigned mismatch
-  MapManager.cpp
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(926,39): warning C4244: 'return': conversion from 'int64_t' to 'size_t', possible loss of data
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(951,61): warning C4244: 'argument': conversion from 'const int64_t' to 'size_t', possible loss of data
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(972,13): warning C4244: 'argument': conversion from 'const int64_t' to 'SIZE_T', possible loss of data
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(6786,24): warning C4244: 'return': conversion from 'std::streamoff' to 'size_t', possible loss of data
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(7891,25): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Managers\MapManager.cpp(27,22): warning C4018: '<': signed/unsigned mismatch
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Managers\MapManager.cpp(29,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Managers\MapManager.cpp(36,13): warning C4018: '<': signed/unsigned mismatch
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Managers\MapManager.cpp(36,37): warning C4018: '<': signed/unsigned mismatch
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Managers\MapManager.cpp(42,13): warning C4018: '<': signed/unsigned mismatch
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Managers\MapManager.cpp(42,37): warning C4018: '<': signed/unsigned mismatch
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Managers\MapManager.cpp(52,22): warning C4018: '<': signed/unsigned mismatch
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Managers\MapManager.cpp(54,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Managers\MapManager.cpp(110,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(6139,39): warning C4244: '=': conversion from 'std::streamoff' to 'size_t', possible loss of data
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(6127): message : while compiling class template member function 'void csv::internals::StreamParser<std::stringstream>::next(size_t)'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(7192): message : see reference to function template instantiation 'void csv::internals::StreamParser<std::stringstream>::next(size_t)' being compiled
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(7190): message : see reference to class template instantiation 'csv::internals::StreamParser<std::stringstream>' being compiled
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(6147,43): warning C4244: '=': conversion from 'std::streamoff' to 'size_t', possible loss of data
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(570,29): warning C4244: 'argument': conversion from 'int64_t' to 'const mio::basic_mmap<mio::access_mode::read,char>::size_type', possible loss of data
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(585): message : see reference to function template instantiation 'MMap mio::make_mmap<mio::mmap_source,MappingToken>(const MappingToken &,int64_t,int64_t,std::error_code &)' being compiled
+  Menu.cpp
+  MenuComponent.cpp
+  Parallax.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Parallax.cpp(12,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Parallax.cpp(21,22): warning C4018: '<': signed/unsigned mismatch
+  ScrollingBackground.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\ScrollingBackground.cpp(36,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\ScrollingBackground.cpp(203,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\ScrollingBackground.cpp(235,23): warning C4018: '<': signed/unsigned mismatch
+  Rectangle.cpp
+  Triangle.cpp
+  Sprite.cpp
+  Texture.cpp
+  Events.cpp
+  Input.cpp
+  Mouse.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Mouse.cpp(16,95): warning C4018: '>': signed/unsigned mismatch
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Mouse.cpp(16,197): warning C4018: '>': signed/unsigned mismatch
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Mouse.cpp(30,48): warning C4244: 'argument': conversion from 'const float' to 'T', possible loss of data
           with
           [
-              MMap=mio::mmap_source,
-              MappingToken=std::string
+              T=int
           ]
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(6798): message : see reference to function template instantiation 'mio::mmap_source mio::make_mmap_source<std::string>(const MappingToken &,mio::basic_mmap<mio::access_mode::read,char>::size_type,mio::basic_mmap<mio::access_mode::read,char>::size_type,std::error_code &)' being compiled
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Mouse.cpp(30,45): warning C4244: 'argument': conversion from 'const float' to 'T', possible loss of data
           with
           [
-              MappingToken=std::string
+              T=int
           ]
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(570,21): warning C4244: 'argument': conversion from 'int64_t' to 'const mio::basic_mmap<mio::access_mode::read,char>::size_type', possible loss of data
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(1138,22): warning C4244: '=': conversion from 'const int64_t' to 'mio::basic_mmap<mio::access_mode::read,char>::size_type', possible loss of data
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(1104): message : while compiling class template member function 'void mio::basic_mmap<mio::access_mode::read,char>::map(const mio::basic_mmap<mio::access_mode::read,char>::handle_type,const mio::basic_mmap<mio::access_mode::read,char>::size_type,const mio::basic_mmap<mio::access_mode::read,char>::size_type,std::error_code &)'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(1093): message : see reference to function template instantiation 'void mio::basic_mmap<mio::access_mode::read,char>::map(const mio::basic_mmap<mio::access_mode::read,char>::handle_type,const mio::basic_mmap<mio::access_mode::read,char>::size_type,const mio::basic_mmap<mio::access_mode::read,char>::size_type,std::error_code &)' being compiled
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(1017): message : while compiling class template member function 'mio::basic_mmap<mio::access_mode::read,char>::basic_mmap(mio::basic_mmap<mio::access_mode::read,char> &&)'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(571): message : see reference to function template instantiation 'mio::basic_mmap<mio::access_mode::read,char>::basic_mmap(mio::basic_mmap<mio::access_mode::read,char> &&)' being compiled
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(1181): message : while compiling class template member function 'void mio::basic_mmap<mio::access_mode::read,char>::unmap(void)'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(1012): message : see reference to function template instantiation 'void mio::basic_mmap<mio::access_mode::read,char>::unmap(void)' being compiled
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(1010): message : while compiling class template member function 'mio::basic_mmap<mio::access_mode::read,char>::~basic_mmap(void)'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(6798): message : see reference to function template instantiation 'mio::basic_mmap<mio::access_mode::read,char>::~basic_mmap(void)' being compiled
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(582): message : see reference to class template instantiation 'mio::basic_mmap<mio::access_mode::read,char>' being compiled
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(1139,29): warning C4244: '=': conversion from 'const int64_t' to 'mio::basic_mmap<mio::access_mode::read,char>::size_type', possible loss of data
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Mouse.cpp(33,48): warning C4244: 'argument': conversion from 'const float' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Mouse.cpp(33,45): warning C4244: 'argument': conversion from 'const float' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+  QTE.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\QTE.cpp(33,20): warning C4018: '<=': signed/unsigned mismatch
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\QTE.cpp(44,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\QTE.cpp(57,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\QTE.cpp(70,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\QTE.cpp(96,23): warning C4018: '<': signed/unsigned mismatch
+  Sequence.cpp
   main.cpp
   PhysicsWorld.cpp
+  Generating Code...
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Label.cpp(389): warning C4715: 'Sonar::Label::IsStyleEnabled': not all control paths return a value
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Drawable.cpp(290): warning C4715: 'Sonar::Drawable::IsMouseOver': not all control paths return a value
+  Compiling...
   Player.cpp
   SplashState.cpp
   Generating Code...
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Label.cpp(389): warning C4715: 'Sonar::Label::IsStyleEnabled': not all control paths return a value
   SFML Template.vcxproj -> C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\SFML Template.exe

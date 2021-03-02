@@ -46,7 +46,7 @@ namespace Sonar
 
 		button = new Button( _data );
 		//button->SetPosition( 300, 300 );
-		button->SetScale( 2.5, 2.5 );
+		//button->SetScale( 2.5, 2.5 );
 		//button->SetPadding( 50, 50 );
 		button->SetText( "BOB", true );
 		menu->AddComponent( button );

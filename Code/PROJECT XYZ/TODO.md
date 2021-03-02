@@ -13,6 +13,8 @@ ENGINE
             - Text size
             - Text style
             - Scale
+        - Changing cursor
+        - Max & min size
 
     -REMOVE ALL DOUBLE CODE THAT ONE METHOD COULD BE CALLED FROM ANOTHER IN CLASSES
     -ADD SET POSITION WITH VEC2 AS PARAMETER FROM DRAWABLE TO ALL CHILD CLASSES
@@ -42,6 +44,11 @@ ENGINE
         - Square
         - Rounded
         - Draw using shapes, ability to override using sprites
+    - Hide cursor (static method of game class)
+        - HideCursor
+        - ShowCursor
+        - ToggleCursor
+        - GetCursorStatus
 * Music and sound items
 * Port AssetManager to Sonar Classes
 * Sorting algorithms, bubble sort, quick sort, insert sort

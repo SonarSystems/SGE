@@ -32,7 +32,7 @@ namespace Sonar
 			BOTTOM
 		};
 
-        struct InteractStyle
+        struct ButtonStyle
         {
             Color _backgroundColor = DEFAULT_BUTTON_HOVER_BACKGROUND_COLOR;
             Color _borderColor = DEFAULT_BUTTON_HOVER_BORDER_COLOR;
@@ -45,7 +45,7 @@ namespace Sonar
             unsigned int _borderThickness = DEFAULT_BUTTON_HOVER_BORDER_THICKNESS;
             unsigned int _labelBorderThickness = DEFAULT_BUTTON_HOVER_LABEL_BORDER_THICKNESS;
 
-            glm::vec2 _scale = DEFAULT_BUTTON_HOVER_SCALE;
+            glm::vec2 _scale = DEFAULT_BUTTON_HOVER_SCALE; // BUYER BEWARE (SHOULDN'T BE USED UNLESS YOU WANT TO LIVE LIFE ON THE EDGE)
         };
 
         /**
@@ -612,28 +612,28 @@ namespace Sonar
 		* \param style Style to be applied to the button
 		* \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
         */
-        void SetButtonStyle( const Button::InteractStyle &style, const bool &updateDefaultStyle = true );
+        void SetButtonStyle( const Button::ButtonStyle &style, const bool &updateDefaultStyle = true );
 
         /**
         * \brief Set the hover button style
         *
         * \param style Style to be applied to the button's hover event
         */
-        void SetHoverButtonStyle( const Button::InteractStyle &style );
+        void SetHoverButtonStyle( const Button::ButtonStyle &style );
 
         /**
         * \brief Get the default button style
         *
         * \return Output returns the default button style
         */
-        const InteractStyle &GetDefaultButtonStyle( ) const;
+        const ButtonStyle &GetDefaultButtonStyle( ) const;
 
         /**
         * \brief Get the hover button style
         *
         * \return Output returns the hover button style
         */
-        const InteractStyle &GetHoverButtonStyle( ) const;
+        const ButtonStyle &GetHoverButtonStyle( ) const;
 
     private:
         /**
@@ -674,7 +674,7 @@ namespace Sonar
         /**
         * \brief Hover and default styles
         */
-        InteractStyle _hoverStyle, _defaultStyle;
+        ButtonStyle _hoverStyle, _defaultStyle, _clickedStyle;
 
     };
 }

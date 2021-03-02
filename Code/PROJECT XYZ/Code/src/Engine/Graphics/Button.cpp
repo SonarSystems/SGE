@@ -562,7 +562,7 @@ namespace Sonar
 		{ SetButtonStyle( _defaultStyle, false ); }
 	}
 
-	void Button::SetButtonStyle( const Button::InteractStyle &style, const bool &updateDefaultStyle )
+	void Button::SetButtonStyle( const Button::ButtonStyle &style, const bool &updateDefaultStyle )
 	{
 		SetBackgroundInsideColor( Color( style._backgroundColor.GetRed( ), style._backgroundColor.GetGreen( ), style._backgroundColor.GetBlue( ) ), updateDefaultStyle );
 		SetBackgroundBorderColor( Color( style._borderColor.GetRed( ), style._borderColor.GetGreen( ), style._borderColor.GetBlue( ) ), updateDefaultStyle );
@@ -578,13 +578,13 @@ namespace Sonar
 		SetScale( style._scale, updateDefaultStyle );
 	}
 
-	void Button::SetHoverButtonStyle( const Button::InteractStyle &style )
+	void Button::SetHoverButtonStyle( const Button::ButtonStyle &style )
 	{ _hoverStyle = style; }
 
-	const Sonar::Button::InteractStyle &Button::GetDefaultButtonStyle( ) const
+	const Sonar::Button::ButtonStyle &Button::GetDefaultButtonStyle( ) const
 	{ return _defaultStyle; }
 
-	const Sonar::Button::InteractStyle &Button::GetHoverButtonStyle( ) const
+	const Sonar::Button::ButtonStyle &Button::GetHoverButtonStyle( ) const
 	{ return _hoverStyle; }
 
 	void Button::UpdateDefaultStyle( )

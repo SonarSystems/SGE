@@ -32,6 +32,14 @@ namespace Sonar
         };
 
         /**
+        * \brief Different mouse cursors
+        */
+        /*enum Cursor
+        {
+            sf::Cu
+        };*/
+
+        /**
          * \brief Check if a mouse button is pressed
          *
          * \param button Button to check if it is pressed
