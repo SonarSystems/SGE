@@ -3,6 +3,7 @@
 #include <map>
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
+#include "Core/Debug.hpp"
 
 namespace Sonar
 {

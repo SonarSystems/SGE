@@ -66,15 +66,6 @@ namespace Sonar
         std::string GetFontFilePath( ) const;
 
         /**
-        * \brief Get the font's line spacing
-        *
-        * \param characterSize Reference character size
-        *
-        * \return Output returns line spacing
-        */
-        float GetLineSpacing( const unsigned int &characterSize ) const;
-
-        /**
         * \brief Get the font's underline position
         *
         * \param characterSize Reference character size
@@ -324,11 +315,33 @@ namespace Sonar
         */
         unsigned int GetCharacterSize( ) const;
 
-        // NEEDS A NEWER VERSION OF SFML - COMMENT THEN
-		//void SetLineSpacing( const float &spacingFactor );
+        /**
+        * \brief Set line spacing
+        *
+        * \param spacingFactor Amount of line spacing
+        */
+		void SetLineSpacing( const float &spacingFactor );
 
-        // NEEDS A NEWER VERSION OF SFML - COMMENT THEN
-		//void SetLetterSpacing( const float &spacingFactor );
+        /**
+        * \brief Set letter spacing
+        *
+        * \param spacingFactor Amount of letter spacing
+        */
+		void SetLetterSpacing( const float &spacingFactor );
+
+        /**
+        * \brief Get line spacing
+        *
+        * \return Output returns line spacing
+        */
+        float GetLineSpacing( ) const;
+
+        /**
+        * \brief Get letter spacing
+        *
+        * \return Output returns letter spacing
+        */
+        float GetLetterSpacing( ) const;
 
         /**
         * \brief Set a particular style for the label

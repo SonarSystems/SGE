@@ -8,21 +8,21 @@ namespace Sonar
     PhysicsWorld::PhysicsWorld( GameDataRef data ): _data( data )
     {        
         _data->assets.LoadTexture("Ground Texture", "Resources/ground.png");
-        _data->assets.LoadTexture("Box Texture", "Resources/box.png");
+        //_data->assets.LoadTexture("Box Texture", "Resources/box.png");
 
         /** Prepare the world */
-        Gravity = b2Vec2( 0.f, 9.8f );
-        World = new b2World( Gravity );
-        CreateStaticBody( 0, 952, 1920, 128 );
-        
-        World->SetDebugDraw(&fooDrawInstance);
-        uint32 flags = 0;
-        flags += b2Draw::e_shapeBit;
-        flags += b2Draw::e_jointBit;
-        flags += b2Draw::e_aabbBit;
-        flags += b2Draw::e_pairBit;
-        flags += b2Draw::e_centerOfMassBit;
-        fooDrawInstance.SetFlags(flags);
+        //Gravity = b2Vec2( 0.f, 9.8f );
+        //World = new b2World( Gravity );
+        //CreateStaticBody( 0, 952, 1920, 128 );
+        //
+        //World->SetDebugDraw(&fooDrawInstance);
+        //uint32 flags = 0;
+        //flags += b2Draw::e_shapeBit;
+        //flags += b2Draw::e_jointBit;
+        //flags += b2Draw::e_aabbBit;
+        //flags += b2Draw::e_pairBit;
+        //flags += b2Draw::e_centerOfMassBit;
+        //fooDrawInstance.SetFlags(flags);
     }
 
     void PhysicsWorld::Update( float dt )

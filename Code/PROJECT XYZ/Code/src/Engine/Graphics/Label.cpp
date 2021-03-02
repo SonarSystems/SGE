@@ -43,8 +43,11 @@ namespace Sonar
 	std::string Label::GetFontFilePath( ) const
 	{ return _filePath; }
 
-	float Label::GetLineSpacing( const unsigned int &characterSize ) const
-	{ return _font.GetLineSpacing( characterSize ); }
+	float Label::GetLineSpacing( ) const
+	{ return _text.getLineSpacing( ); }
+
+	float Label::GetLetterSpacing( ) const
+	{ return _text.getLetterSpacing( ); }
 
 	float Label::GetUnderlinePosition( const unsigned int &characterSize ) const
 	{ return _font.GetUnderlinePosition( characterSize ); }
@@ -282,6 +285,12 @@ namespace Sonar
 
 	unsigned int Label::GetCharacterSize( ) const
 	{ return _text.getCharacterSize( ); }
+
+	void Label::SetLineSpacing( const float &spacingFactor )
+	{ _text.setLineSpacing( spacingFactor ); }
+
+	void Label::SetLetterSpacing( const float &spacingFactor )
+	{ _text.setLetterSpacing( spacingFactor ); }
 
 	void Label::SetStyle( const STYLE &style, const bool &isActivated )
 	{

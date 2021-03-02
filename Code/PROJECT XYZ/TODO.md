@@ -5,6 +5,8 @@ ENGINE
 -----------------------------------------------------------------
 * GUI - USE DRAWABLE CLASS, MAYBE HAVE A GUI CLASS THAT INHERITS DRAWABLE AND BUTTON INHERITS GUI FOR EXAMPLE
     - Buttons - Sonar::Label & Sonar::Rectangle (WEDNESDAY)
+        - Hover
+            - Change cursor (add to ButtonStyle Struct)
         - Click
             - Background color
             - Border color
@@ -15,6 +17,8 @@ ENGINE
             - Scale
         - Changing cursor
         - Max & min size
+
+    - Menu update method that trickles to all objects like draw
 
     -REMOVE ALL DOUBLE CODE THAT ONE METHOD COULD BE CALLED FROM ANOTHER IN CLASSES
     -ADD SET POSITION WITH VEC2 AS PARAMETER FROM DRAWABLE TO ALL CHILD CLASSES
@@ -65,7 +69,6 @@ ENGINE
     - Box2d - MAYBE IN THE ENGINE POTENTIALLY, WILL SEE - build into the graphics classes like shapes and sprite
     - Fluid box2d
     - LiquidFun maybe, check it out
-* Update SFML
 * Borders on left and right or up and down going to center, like a movie changed from 16x9 to 21x9, use rectangle shape and ability to set colour
 * Shadows
 * Fog
