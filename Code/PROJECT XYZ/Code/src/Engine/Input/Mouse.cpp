@@ -2,6 +2,8 @@
 
 namespace Sonar
 {
+    Mouse::Cursor Mouse::_CURSOR_ = Mouse::Cursor::Arrow;
+
     bool Mouse::IsPressed( const Button &button )
     { return ( Mouse::Button )sf::Mouse::isButtonPressed( ( sf::Mouse::Button )button ); }
 
@@ -46,4 +48,19 @@ namespace Sonar
         
         return allButtonsPressed;
     }
+
+	void Mouse::ChangeCursor( const Cursor &cursor, sf::RenderWindow &window )
+	{
+		sf::Cursor cursorLoader;
+
+		if ( cursorLoader.loadFromSystem( ( sf::Cursor::Type )cursor ) )
+        {
+            window.setMouseCursor( cursorLoader );
+            _CURSOR_ = cursor;
+        }
+	}
+
+    const Mouse::Cursor &Mouse::GetCurrentCursor( )
+	{ return _CURSOR_; }
+
 }

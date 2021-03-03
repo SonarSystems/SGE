@@ -34,10 +34,22 @@ namespace Sonar
         /**
         * \brief Different mouse cursors
         */
-        /*enum Cursor
-        {
-            sf::Cu
-        };*/
+		enum Cursor
+		{
+			Arrow,                  ///< Arrow cursor (default)
+			ArrowWait,              ///< Busy arrow cursor
+			Wait,                   ///< Busy cursor
+			Text,                   ///< I-beam, cursor when hovering over a field allowing text entry
+			Hand,                   ///< Pointing hand cursor
+			SizeHorizontal,         ///< Horizontal double arrow cursor
+			SizeVertical,           ///< Vertical double arrow cursor
+			SizeTopLeftBottomRight, ///< Double arrow cursor going from top-left to bottom-right
+			SizeBottomLeftTopRight, ///< Double arrow cursor going from bottom-left to top-right
+			SizeAll,                ///< Combination of SizeHorizontal and SizeVertical
+			Cross,                  ///< Crosshair cursor
+			Help,                   ///< Help cursor
+			NotAllowed              ///< Action not allowed cursor
+		};
 
         /**
          * \brief Check if a mouse button is pressed
@@ -88,6 +100,13 @@ namespace Sonar
          * \return Output returns true if key is pressed and false otherwise
         */
         static bool ChordPressed( const std::initializer_list<Button> &buttons );
+
+        static void ChangeCursor( const Cursor &cursor, sf::RenderWindow &window );
+
+        static const Cursor &GetCurrentCursor( );
+
+    private:
+        static Mouse::Cursor _CURSOR_;
 
 	};
 }

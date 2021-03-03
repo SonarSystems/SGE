@@ -4,9 +4,7 @@ GAME
 ENGINE
 -----------------------------------------------------------------
 * GUI - USE DRAWABLE CLASS, MAYBE HAVE A GUI CLASS THAT INHERITS DRAWABLE AND BUTTON INHERITS GUI FOR EXAMPLE
-    - Buttons - Sonar::Label & Sonar::Rectangle (WEDNESDAY)
-        - Hover
-            - Change cursor (add to ButtonStyle Struct)
+    - Buttons - Sonar::Label & Sonar::Rectangle
         - Click
             - Background color
             - Border color
@@ -15,7 +13,6 @@ ENGINE
             - Text size
             - Text style
             - Scale
-        - Changing cursor
         - Max & min size
 
     - Menu update method that trickles to all objects like draw
@@ -25,7 +22,6 @@ ENGINE
     -ADD MOVE WITH VEC2 AS PARAMETER FROM DRAWABLE TO ALL CHILD CLASSES
     -ADD ROTATE (RELATIVE TO CURRENT ROTATION)
     -ADD SCALE (RELATIVE TO CURRENT SCALE)
-    (THURSDAY)
 
     - Textbox (START FRIDAY)
     - Radio button
@@ -48,7 +44,7 @@ ENGINE
         - Square
         - Rounded
         - Draw using shapes, ability to override using sprites
-    - Hide cursor (static method of game class)
+    - Hide cursor (static method of Mouse class)
         - HideCursor
         - ShowCursor
         - ToggleCursor

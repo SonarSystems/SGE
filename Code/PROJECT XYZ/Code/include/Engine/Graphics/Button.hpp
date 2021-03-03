@@ -9,6 +9,7 @@
 #include "Graphics/Label.hpp"
 #include "Graphics/MenuComponent.hpp"
 #include "Graphics/Shapes/Rectangle.hpp"
+#include "Input/Mouse.hpp"
 
 namespace Sonar
 {
@@ -46,6 +47,8 @@ namespace Sonar
             unsigned int _labelBorderThickness = DEFAULT_BUTTON_HOVER_LABEL_BORDER_THICKNESS;
 
             glm::vec2 _scale = DEFAULT_BUTTON_HOVER_SCALE; // BUYER BEWARE (SHOULDN'T BE USED UNLESS YOU WANT TO LIVE LIFE ON THE EDGE)
+
+            Mouse::Cursor _cursor = DEFAULT_BUTTON_CURSOR;
         };
 
         /**
@@ -640,6 +643,11 @@ namespace Sonar
         * \brief Updates the buttons default style
         */
         void UpdateDefaultStyle( );
+
+        /**
+        * \brief Game data object
+        */
+        GameDataRef _data;
 
         /**
         * \brief Button background

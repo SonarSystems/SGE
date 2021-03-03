@@ -9,7 +9,6 @@
 #include "Managers/AssetManager.hpp"
 #include "External/b2GLDraw.h"
 #include "Core/Debug.hpp"
-#include "Input/Events.hpp"
 #include "Graphics/Color.hpp"
 
 namespace Sonar

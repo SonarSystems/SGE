@@ -4,7 +4,7 @@
 
 namespace Sonar
 {
-	Button::Button( GameDataRef data ) //: MenuComponent( data )
+	Button::Button( GameDataRef data ) : _data( data )
 	{
 		_anchorX = LABEL_ANCHOR_X::CENTER_X;
 		_anchorY = LABEL_ANCHOR_Y::CENTER_Y;
@@ -26,6 +26,8 @@ namespace Sonar
 		_label->SetText( DEFAULT_LABEL_TEXT );
 
 		UpdateDefaultStyle( );
+
+		_hoverStyle._cursor = DEFAULT_BUTTON_HOVER_CURSOR;
 	}
 
 	Button::~Button( ) { }
@@ -576,6 +578,8 @@ namespace Sonar
 		SetLabelBorderThickness( style._labelBorderThickness, updateDefaultStyle );
 
 		SetScale( style._scale, updateDefaultStyle );
+
+		Mouse::ChangeCursor( style._cursor, _data->window );
 	}
 
 	void Button::SetHoverButtonStyle( const Button::ButtonStyle &style )
@@ -598,6 +602,7 @@ namespace Sonar
 		_defaultStyle._borderThickness = _background->GetBorderThickness( );
 		_defaultStyle._labelBorderThickness = _background->GetBorderThickness( );
 		_defaultStyle._scale = _background->GetScale( );
+		_defaultStyle._cursor = Mouse::GetCurrentCursor( );
 	}
 }
 
