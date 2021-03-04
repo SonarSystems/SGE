@@ -69,7 +69,7 @@ namespace Sonar
 		if ( Event::MouseWheelScrolled == event.type )
 		{
 			//physicsWorld->CreateDynamicBody( event.mouseButton.x, event.mouseButton.y, 32, 32 );
-			
+			button->SetText( "FRAHAAN HUSSAIN", true );
 		}
 
 

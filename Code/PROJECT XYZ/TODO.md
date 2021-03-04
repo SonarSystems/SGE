@@ -4,17 +4,6 @@ GAME
 ENGINE
 -----------------------------------------------------------------
 * GUI - USE DRAWABLE CLASS, MAYBE HAVE A GUI CLASS THAT INHERITS DRAWABLE AND BUTTON INHERITS GUI FOR EXAMPLE
-    - Buttons - Sonar::Label & Sonar::Rectangle
-        - Click
-            - Background color
-            - Border color
-            - Text color
-            - Text border color
-            - Text size
-            - Text style
-            - Scale
-        - Max & min size
-
     - Menu update method that trickles to all objects like draw
 
     -REMOVE ALL DOUBLE CODE THAT ONE METHOD COULD BE CALLED FROM ANOTHER IN CLASSES
@@ -29,9 +18,6 @@ ENGINE
     - Slider
     - Menu system - https://www.youtube.com/watch?v=4Vg9d1pjL20
         - Keyboard support - Up and down, stops when at the end of the list or switches sides
-        - Textures for buttons
-            - Hover
-            - Colour masking
     - FPS counter - https://github.com/Hopson97/SFML-Game-Framework/blob/master/Source/Util/FPSCounter.cpp
         - **Part of DEBUG CLASS**
         - **MAKE IT LIKE DOOM'S**

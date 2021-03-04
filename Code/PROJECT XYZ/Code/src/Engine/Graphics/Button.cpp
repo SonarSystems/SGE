@@ -6,6 +6,11 @@ namespace Sonar
 {
 	Button::Button( GameDataRef data ) : _data( data )
 	{
+		_minSize.x = -1; // NO MIN
+		_minSize.y = -1; // NO MIN
+		_maxSize.x = -1; // NO MIN
+		_maxSize.y = -1; // NO MIN
+
 		_anchorX = LABEL_ANCHOR_X::CENTER_X;
 		_anchorY = LABEL_ANCHOR_Y::CENTER_Y;
 
@@ -28,6 +33,22 @@ namespace Sonar
 		UpdateDefaultStyle( );
 
 		_hoverStyle._cursor = DEFAULT_BUTTON_HOVER_CURSOR;
+
+		_clickedStyle._backgroundColor = DEFAULT_BUTTON_CLICKED_BACKGROUND_COLOR;
+		_clickedStyle._borderColor = DEFAULT_BUTTON_CLICKED_BORDER_COLOR;
+		_clickedStyle._labelColor = DEFAULT_BUTTON_CLICKED_LABEL_COLOR;
+		_clickedStyle._labelBorderColor = DEFAULT_BUTTON_CLICKED_LABEL_BORDER_COLOR;
+		_clickedStyle._characterSize = DEFAULT_BUTTON_CLICKED_LABEL_CHARACTER_SIZE;
+		_clickedStyle._textStyle = DEFAULT_BUTTON_CLICKED_LABEL_TEXT_STYLE;
+		_clickedStyle._borderThickness = DEFAULT_BUTTON_CLICKED_BORDER_THICKNESS;
+		_clickedStyle._labelBorderThickness = DEFAULT_BUTTON_CLICKED_LABEL_BORDER_THICKNESS;
+		_clickedStyle._scale = DEFAULT_BUTTON_CLICKED_SCALE;
+		_clickedStyle._cursor = DEFAULT_BUTTON_CLICKED_CURSOR;
+
+		_buttonToClick = DEFAULT_BUTTON_CLICKED_MOUSE_BUTTON;
+
+		_isHoverEnabled = DEFAULT_BUTTON_HOVER_STATUS;
+		_isClickEnabled = DEFAULT_BUTTON_CLICK_STATUS;
 	}
 
 	Button::~Button( ) { }
@@ -110,7 +131,33 @@ namespace Sonar
 
 	void Button::SetSize( const glm::vec2 &size, const bool &updateDefaultStyle )
 	{
-		_background->SetSize( size + ( _padding * 2.0f ) );
+		glm::vec2 tempSize = size;
+
+		if ( _minSize.x > 0 )
+		{
+			if ( tempSize.x < _minSize.x )
+			{ tempSize.x = _minSize.x; };
+		}
+
+		if ( _minSize.y > 0 )
+		{
+			if ( tempSize.y < _minSize.y )
+			{ tempSize.y = _minSize.y; };
+		}
+
+		if ( _maxSize.x > 0 )
+		{
+			if ( _maxSize.x < tempSize.x )
+			{ tempSize.x = _maxSize.x; };
+		}
+
+		if ( _maxSize.y > 0 )
+		{
+			if ( _maxSize.y < tempSize.y )
+			{ tempSize.y = _maxSize.y; };
+		}
+
+		_background->SetSize( tempSize + ( _padding * 2.0f ) );
 		ResetLabelPosition( );
 
 		if ( updateDefaultStyle )
@@ -467,8 +514,6 @@ namespace Sonar
 			ResetLabelPosition( );
 		}
 
-
-
 		if ( updateDefaultStyle )
 		{ UpdateDefaultStyle( ); }
 	}
@@ -558,10 +603,15 @@ namespace Sonar
 
 	void Button::Update( )
 	{
-		if ( IsMouseOver( ) )
-		{ SetButtonStyle( _hoverStyle, false ); }
+		if ( IsClicked( _buttonToClick ) && _isClickEnabled )
+		{ SetButtonStyle( _clickedStyle, false ); }
 		else
-		{ SetButtonStyle( _defaultStyle, false ); }
+		{
+			if ( IsMouseOver( ) && _isHoverEnabled )
+			{ SetButtonStyle( _hoverStyle, false ); }
+			else
+			{ SetButtonStyle( _defaultStyle, false ); }
+		}
 	}
 
 	void Button::SetButtonStyle( const Button::ButtonStyle &style, const bool &updateDefaultStyle )
@@ -590,6 +640,72 @@ namespace Sonar
 
 	const Sonar::Button::ButtonStyle &Button::GetHoverButtonStyle( ) const
 	{ return _hoverStyle; }
+
+	void Button::EnableHover( )
+	{ _isHoverEnabled = true; }
+
+	void Button::DisableHover( )
+	{ _isHoverEnabled = false; }
+
+	void Button::ToggleHover( )
+	{ _isHoverEnabled = !_isHoverEnabled; }
+
+	bool Button::GetHoverStatus( )
+	{ return _isHoverEnabled; }
+
+	void Button::EnableClick( )
+	{ _isClickEnabled = true; }
+
+	void Button::DisableClick( )
+	{ _isClickEnabled = false; }
+
+	void Button::ToggleClick( )
+	{ _isClickEnabled = !_isClickEnabled; }
+
+	bool Button::GetClickStatus( )
+	{ return _isClickEnabled; }
+
+	void Button::SetMinimumSize( const glm::vec2 &size )
+	{ _minSize = size; }
+
+	void Button::SetMinimumSize( const float &width, const float &height )
+	{ SetMinimumSize( glm::vec2( width, height ) ); }
+
+	void Button::SetMinimumWidth( const float &width )
+	{ _minSize.x = width; }
+
+	void Button::SetMinimumHeight( const float &height )
+	{ _minSize.y = height; }
+
+	const glm::vec2 &Button::GetMinimumSize( ) const
+	{ return _minSize; }
+
+	float Button::GetMinimumWidth( ) const
+	{ return _minSize.x; }
+
+	float Button::GetMinimumHeight( ) const
+	{ return _minSize.y; }
+
+	void Button::SetMaximumSize( const glm::vec2 &size )
+	{ _maxSize = size; }
+
+	void Button::SetMaximumSize( const float &width, const float &height )
+	{ SetMaximumSize( glm::vec2( width, height ) ); }
+
+	void Button::SetMaximumWidth( const float &width )
+	{ _maxSize.x = width; }
+
+	void Button::SetMaximumHeight( const float &height )
+	{ _maxSize.y = height; }
+
+	const glm::vec2 &Button::GetMaximumSize( ) const
+	{ return _maxSize; }
+
+	float Button::GetMaximumWidth( ) const
+	{ return _maxSize.x; }
+
+	float Button::GetMaximumHeight( ) const
+	{ return _maxSize.y; }
 
 	void Button::UpdateDefaultStyle( )
 	{

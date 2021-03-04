@@ -638,6 +638,150 @@ namespace Sonar
         */
         const ButtonStyle &GetHoverButtonStyle( ) const;
 
+        /**
+        * \brief Enable the hover functionality
+        */
+        void EnableHover( ); 
+
+        /**
+        * \brief Disable the hover functionality
+        */
+        void DisableHover( );
+
+        /**
+        * \brief Toggle the hover functionality
+        */
+        void ToggleHover( );
+
+        /**
+        * \brief Get the hover enabled/disabled status
+        *
+        * \return Output returns the hover enabled/disabled status
+        */
+        bool GetHoverStatus( );
+
+        /**
+        * \brief Enable the click functionality
+        */
+        void EnableClick( ); 
+
+        /**
+        * \brief Disable the click functionality
+        */
+        void DisableClick( );
+
+        /**
+        * \brief Toggle the click functionality
+        */
+        void ToggleClick( );
+
+        /**
+        * \brief Get the click enabled/disabled status
+        *
+        * \return Output returns the click enabled/disabled status
+        */
+        bool GetClickStatus( );
+
+        /**
+        * \brief Set the buttons minimum size
+        *
+        * \param size Minimum size of the button
+        */
+        void SetMinimumSize( const glm::vec2 &size );
+
+        /**
+        * \brief Set the buttons minimum size
+        *
+        * \param width Minimum width
+        * \param height Minimum height
+        */
+        void SetMinimumSize( const float &width, const float &height );
+
+        /**
+        * \brief Set the buttons minimum width
+        *
+        * \param width Minimum width
+        */
+        void SetMinimumWidth( const float &width );
+
+        /**
+        * \brief Set the buttons minimum height
+        *
+        * \param width Minimum height
+        */
+        void SetMinimumHeight( const float &height );
+
+        /**
+        * \brief Get the buttons minimum size
+        *
+        * \return Output returns the minimum size
+        */
+        const glm::vec2 &GetMinimumSize( ) const;
+
+        /**
+        * \brief Get the buttons minimum width
+        *
+        * \return Output returns the minimum width
+        */
+        float GetMinimumWidth( ) const;
+
+        /**
+        * \brief Get the buttons minimum height
+        *
+        * \return Output returns the minimum height
+        */
+        float GetMinimumHeight( ) const;
+
+        /**
+        * \brief Set the buttons Maximum size
+        *
+        * \param size Maximum size of the button
+        */
+        void SetMaximumSize( const glm::vec2 &size );
+
+        /**
+        * \brief Set the buttons Maximum size
+        *
+        * \param width Maximum width
+        * \param height Maximum height
+        */
+        void SetMaximumSize( const float &width, const float &height );
+
+        /**
+        * \brief Set the buttons Maximum width
+        *
+        * \param width Maximum width
+        */
+        void SetMaximumWidth( const float &width );
+
+        /**
+        * \brief Set the buttons Maximum height
+        *
+        * \param width Maximum height
+        */
+        void SetMaximumHeight( const float &height );
+
+        /**
+        * \brief Get the buttons Maximum size
+        *
+        * \return Output returns the Maximum size
+        */
+        const glm::vec2 &GetMaximumSize( ) const;
+
+        /**
+        * \brief Get the buttons Maximum width
+        *
+        * \return Output returns the Maximum width
+        */
+        float GetMaximumWidth( ) const;
+
+        /**
+        * \brief Get the buttons Maximum height
+        *
+        * \return Output returns the Maximum height
+        */
+        float GetMaximumHeight( ) const;
+
     private:
         /**
         * \brief Updates the buttons default style
@@ -683,6 +827,21 @@ namespace Sonar
         * \brief Hover and default styles
         */
         ButtonStyle _hoverStyle, _defaultStyle, _clickedStyle;
+
+        /**
+        * \brief Which button triggers the clicked function
+        */
+        Mouse::Button _buttonToClick;
+
+        /**
+        * \brief Hover and click button enable status
+        */
+        bool _isHoverEnabled, _isClickEnabled;
+
+        /**
+        * \brief Minimum and maximum size allowed for the button
+        */
+        glm::vec2 _minSize, _maxSize;
 
     };
 }
