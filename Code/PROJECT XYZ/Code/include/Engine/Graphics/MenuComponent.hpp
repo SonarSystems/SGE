@@ -24,6 +24,11 @@ namespace Sonar
         * \brief Draw method to be overridden in child classes
         */
         virtual void Draw( ) = 0;
+
+        /**
+        * \brief Update method to be overridden in child classes
+        */
+        virtual void Update( const float &dt ) = 0;
     
     protected:
 

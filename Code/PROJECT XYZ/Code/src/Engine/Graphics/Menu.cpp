@@ -14,5 +14,11 @@ namespace Sonar
 		for ( auto component : _menuComponents )
 		{ component->Draw( ); }
 	}
+
+	void Menu::Update( const float &dt )
+	{
+		for ( auto component : _menuComponents )
+		{ component->Update( dt ); }
+	}
 }
 

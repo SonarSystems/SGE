@@ -24,11 +24,27 @@ namespace Sonar
 
         void AddComponent(  MenuComponent *component );
 
+        /**
+        * \brief Draw the classes objects
+        */
         void Draw( );
 
+        /**
+        * \brief Update the classes objects
+        *
+        * \param dt Delta time (difference between frames)
+        */
+        void Update( const float &dt );
+
     private:
+        /**
+        * \brief Game data object
+        */
         GameDataRef _data;
 
+        /**
+        * \brief All the components of the menu
+        */
         std::vector<MenuComponent *> _menuComponents;
 
     };

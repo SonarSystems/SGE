@@ -31,26 +31,21 @@ namespace Sonar
 	Sprite::~Sprite( )
 	{ delete _texture; }
 
-	void Sprite::SetPosition( const float &x, const float &y )
+	void Sprite::SetPosition( const glm::vec2 &position )
 	{
-		Drawable::SetPosition( x, y );
-		_sprite.setPosition( x, y );
+		Drawable::SetPosition( position );
+		_sprite.setPosition( position.x, position.y );
 		_globalBounds = _sprite.getGlobalBounds( );
 	}
+
+	void Sprite::SetPosition( const float &x, const float &y )
+	{ SetPosition( glm::vec2( x, y ) ); }
 
 	void Sprite::SetPositionX( const float &x )
-	{
-		Drawable::SetPositionX( x );
-		_sprite.setPosition( x, _sprite.getPosition( ).y );
-		_globalBounds = _sprite.getGlobalBounds( );
-	}
+	{ SetPosition( glm::vec2( x, GetPositionY( ) ) ); }
 
 	void Sprite::SetPositionY( const float &y )
-	{
-		Drawable::SetPositionY( y );
-		_sprite.setPosition( _sprite.getPosition( ).x, y );
-		_globalBounds = _sprite.getGlobalBounds( );
-	}
+	{ SetPosition( glm::vec2( GetPositionX( ), y ) ); }
 
 	void Sprite::SetColor( const Color &color )
 	{ _sprite.setColor( sf::Color( color.GetRed( ), color.GetGreen( ), color.GetBlue( ), color.GetAlpha( ) ) ); }
@@ -58,26 +53,21 @@ namespace Sonar
 	Color Sprite::GetColor( ) const
 	{ return Color( _sprite.getColor( ).r, _sprite.getColor( ).g, _sprite.getColor( ).b, _sprite.getColor( ).a  ); }
 
-	void Sprite::Move( const float &x, const float &y )
+	void Sprite::Move( const glm::vec2 &offset )
 	{
-		Drawable::Move( x, y );
-		_sprite.move( x, y );
+		Drawable::Move( offset );
+		_sprite.move( offset.x, offset.y );
 		_globalBounds = _sprite.getGlobalBounds( );
 	}
+
+	void Sprite::Move( const float &x, const float &y )
+	{ Move( glm::vec2( x, y ) ); }
 
 	void Sprite::MoveX( const float &x )
-	{
-		Drawable::MoveX( x );
-		_sprite.move( x, 0 );
-		_globalBounds = _sprite.getGlobalBounds( );
-	}
+	{ Move( glm::vec2( x, 0 ) ); }
 
 	void Sprite::MoveY( const float &y )
-	{
-		Drawable::MoveY( y );
-		_sprite.move( 0, y );
-		_globalBounds = _sprite.getGlobalBounds( );
-	}
+	{ Move( glm::vec2( 0, y ) ); }
 
 	void Sprite::SetRotation( const float &angle )
 	{
@@ -89,13 +79,6 @@ namespace Sonar
 	float Sprite::GetRotation( ) const
 	{ return _sprite.getRotation( ); }
 
-	void Sprite::SetScale( const float &xScale, const float &yScale )
-	{
-		Drawable::SetScale( xScale, yScale );
-		_sprite.setScale( xScale, yScale );
-		_globalBounds = _sprite.getGlobalBounds( );
-	}
-
 	void Sprite::SetScale( const glm::vec2 &scale )
 	{
 		Drawable::SetScale( scale[0], scale[1] );
@@ -103,26 +86,14 @@ namespace Sonar
 		_globalBounds = _sprite.getGlobalBounds( );
 	}
 
+	void Sprite::SetScale( const float &xScale, const float &yScale )
+	{ SetScale( glm::vec2( xScale, yScale ) ); }
+
 	void Sprite::SetScaleX( const float &xScale )
-	{
-		Drawable::SetScaleX( xScale );
-		_sprite.setScale( xScale, _sprite.getScale( ).y );
-		_globalBounds = _sprite.getGlobalBounds( );
-	}
+	{ SetScale( glm::vec2( xScale, GetScaleY( ) ) ); }
 
 	void Sprite::SetScaleY( const float &yScale )
-	{
-		Drawable::SetScaleX( yScale );
-		_sprite.setScale( _sprite.getScale( ).x, yScale );
-		_globalBounds = _sprite.getGlobalBounds( );
-	}
-
-	void Sprite::SetPivot( const float &xPoint, const float &yPoint )
-	{
-		Drawable::SetPivot( xPoint, yPoint );
-		_sprite.setOrigin( xPoint, yPoint );
-		_globalBounds = _sprite.getGlobalBounds( );
-	}
+	{ SetScale( glm::vec2( GetScaleX( ), yScale ) ); }
 
 	void Sprite::SetPivot( const glm::vec2 &pivot )
 	{
@@ -130,6 +101,9 @@ namespace Sonar
 		_sprite.setOrigin( pivot[0], pivot[1] );
 		_globalBounds = _sprite.getGlobalBounds( );
 	}
+
+	void Sprite::SetPivot( const float &xPoint, const float &yPoint )
+	{ SetPivot( glm::vec2( xPoint, yPoint ) ); }
 
 	void Sprite::SetPivot( const OBJECT_POINTS &pivot )
 	{
@@ -170,18 +144,10 @@ namespace Sonar
 	}
 
 	void Sprite::SetPivotX( const float &xPoint )
-	{
-		Drawable::SetPivotX( xPoint );
-		_sprite.setOrigin( xPoint, _sprite.getOrigin( ).y );
-		_globalBounds = _sprite.getGlobalBounds( );
-	}
+	{ SetPivot( glm::vec2( xPoint, GetPivotY( ) ) ); }
 
 	void Sprite::SetPivotY( const float &yPoint )
-	{
-		Drawable::SetPivotY( yPoint );
-		_sprite.setOrigin( _sprite.getOrigin( ).x, yPoint );
-		_globalBounds = _sprite.getGlobalBounds( );
-	}
+	{ SetPivot( glm::vec2( GetPivotX( ), yPoint ) ); }
 
 	void Sprite::Update( const float &dt )
 	{
@@ -212,7 +178,7 @@ namespace Sonar
 	{ _sprite.setTextureRect( sf::IntRect( rectangle.x, rectangle.y, rectangle.z, rectangle.w ) ); }
 
 	void Sprite::SetTextureRect( const int &left, const int &top, const int &width, const int &height )
-	{ _sprite.setTextureRect( sf::IntRect( left, top, width, height ) ); }
+	{ SetTextureRect( glm::ivec4( left, top, width, height ) ); }
 
 	Texture *Sprite::GetTexture( ) const
 	{ return _texture; }
@@ -226,7 +192,7 @@ namespace Sonar
 	glm::vec4 Sprite::GetGlobalBounds( ) const
 	{ return glm::vec4( _sprite.getGlobalBounds( ).left, _sprite.getGlobalBounds( ).top, _sprite.getGlobalBounds( ).width, _sprite.getGlobalBounds( ).height ); }
 
-	bool Sprite::PixelPerfectCollisionCheck( const Sprite &object, const sf::Uint8 &alphaLimit /*= 0 */ )
+	bool Sprite::PixelPerfectCollisionCheck( const Sprite &object, const unsigned char &alphaLimit /*= 0 */ )
 	{ return Collision::PixelPerfectTest( _sprite, object.GetSFMLSprite( ), alphaLimit ); }
 
 	const sf::Sprite &Sprite::GetSFMLSprite( ) const

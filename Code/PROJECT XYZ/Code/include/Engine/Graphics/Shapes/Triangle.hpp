@@ -36,6 +36,13 @@ namespace Sonar
         ~Triangle( );
 
         /**
+        * \brief Set x and y position
+        *
+        * \param position X and Y position
+        */
+        void SetPosition( const glm::vec2 &position );
+
+        /**
         * \brief Set the position (x and y)
         *
         * \param x X position
@@ -102,6 +109,13 @@ namespace Sonar
         * \return Output returns the border thickness
         */
         float GetBorderThickness( ) const;
+
+        /**
+        * \brief Move the object relative to it's current position in the x and y axis
+        *
+        * \param offset Offset in x and y axis
+        */
+        void Move( const glm::vec2 &offset );
 
         /**
         * \brief Move the object relative to it's current position in the x and y axis

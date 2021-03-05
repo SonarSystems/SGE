@@ -31,32 +31,13 @@ namespace Sonar
 	}
 
     void Rectangle::SetPosition( const float &x, const float &y )
-    {
-        Drawable::SetPosition( x, y );
-        _shape.setPosition( x, y );
-		_globalBounds = _shape.getGlobalBounds( );
-    }
+	{ SetPosition( glm::vec2( x, y ) ); }
 
 	void Rectangle::SetPositionX( const float &x )
-    {
-        Drawable::SetPositionX( x );
-        _shape.setPosition( x, _shape.getPosition( ).y );
-		_globalBounds = _shape.getGlobalBounds( );
-    }
+	{ SetPosition( glm::vec2( x, GetPositionY( ) ) ); }
 
     void Rectangle::SetPositionY( const float &y )
-    {
-        Drawable::SetPositionY( y );
-        _shape.setPosition( _shape.getPosition( ).x, y );
-		_globalBounds = _shape.getGlobalBounds( );
-    }
-
-    void Rectangle::SetSize( const float &width, const float &height )
-    {
-        Drawable::SetSize( width, height );
-        _shape.setSize( sf::Vector2f( width, height ) );
-		_globalBounds = _shape.getGlobalBounds( );
-    }
+	{ SetPosition( glm::vec2( GetPositionX( ), y ) ); }
 
 	void Rectangle::SetSize( const glm::vec2 &size )
 	{
@@ -65,19 +46,14 @@ namespace Sonar
 		_globalBounds = _shape.getGlobalBounds( );
 	}
 
+    void Rectangle::SetSize( const float &width, const float &height )
+	{ SetSize( glm::vec2( width, height ) ); }
+
 	void Rectangle::SetWidth( const float &width )
-    {
-        Drawable::SetWidth( width );
-        _shape.setSize( sf::Vector2f( width, _shape.getSize( ).y ) );
-		_globalBounds = _shape.getGlobalBounds( );
-    }
+	{ SetSize( glm::vec2( width, GetHeight( ) ) ); }
 
     void Rectangle::SetHeight( const float &height )
-    {
-        Drawable::SetHeight( height );
-        _shape.setSize( sf::Vector2f( _shape.getSize( ).x, height ) );
-		_globalBounds = _shape.getGlobalBounds( );
-    }
+	{ SetSize( glm::vec2( GetWidth( ), height ) ); }
 
     void Rectangle::SetInsideColor( const Color &color )
     {
@@ -115,25 +91,13 @@ namespace Sonar
 	}
 
 	void Rectangle::Move( const float &x, const float &y )
-    {
-        Drawable::Move( x, y );
-        _shape.move( x, y );
-		_globalBounds = _shape.getGlobalBounds( );
-    }
+	{ Move( glm::vec2( x, y ) ); }
 
 	void Rectangle::MoveX( const float &x )
-    {
-        Drawable::MoveX( x );
-        _shape.move( x, 0 );
-		_globalBounds = _shape.getGlobalBounds( );
-    }
+	{ Move( glm::vec2( x, 0 ) ); }
 
     void Rectangle::MoveY( const float &y )
-    {
-        Drawable::MoveY( y );
-        _shape.move( 0, y );
-		_globalBounds = _shape.getGlobalBounds( );
-    }
+	{ Move( glm::vec2( 0, y ) ); }
 
 	void Rectangle::SetRotation( const float &angle )
 	{
@@ -145,13 +109,6 @@ namespace Sonar
 	float Rectangle::GetRotation( ) const
 	{ return _shape.getRotation( ); }
 
-	void Rectangle::SetScale( const float &xScale, const float &yScale )
-	{
-		Drawable::SetScale( xScale, yScale );
-		_shape.setScale( xScale, yScale );
-		_globalBounds = _shape.getGlobalBounds( );
-	}
-
 	void Rectangle::SetScale( const glm::vec2 &scale )
 	{
 		Drawable::SetScale( scale[0], scale[1] );
@@ -159,26 +116,14 @@ namespace Sonar
 		_globalBounds = _shape.getGlobalBounds( );
 	}
 
+	void Rectangle::SetScale( const float &xScale, const float &yScale )
+	{ SetScale( glm::vec2( xScale, yScale ) ); }
+
 	void Rectangle::SetScaleX( const float &xScale )
-	{
-		Drawable::SetScaleX( xScale );
-		_shape.setScale( xScale, _shape.getScale( ).y );
-		_globalBounds = _shape.getGlobalBounds( );
-	}
+	{ SetScale( glm::vec2( xScale, GetScaleY( ) ) ); }
 
 	void Rectangle::SetScaleY( const float &yScale )
-	{
-        Rectangle::SetScaleX( yScale );
-		_shape.setScale( _shape.getScale( ).x, yScale );
-		_globalBounds = _shape.getGlobalBounds( );
-	}
-
-	void Rectangle::SetPivot( const float &xPoint, const float &yPoint )
-	{
-		Drawable::SetPivot( xPoint, yPoint );
-		_shape.setOrigin( xPoint, yPoint );
-		_globalBounds = _shape.getGlobalBounds( );
-	}
+	{ SetScale( glm::vec2( GetScaleX( ), yScale ) ); }
 
 	void Rectangle::SetPivot( const glm::vec2 &pivot )
 	{
@@ -186,6 +131,9 @@ namespace Sonar
 		_shape.setOrigin( pivot[0], pivot[1] );
 		_globalBounds = _shape.getGlobalBounds( );
 	}
+
+	void Rectangle::SetPivot( const float &xPoint, const float &yPoint )
+	{ SetPivot( glm::vec2( xPoint, yPoint ) ); }
 
 	void Rectangle::SetPivot( const OBJECT_POINTS &pivot )
 	{
@@ -226,18 +174,10 @@ namespace Sonar
 	}
 
 	void Rectangle::SetPivotX( const float &xPoint )
-	{
-		Drawable::SetPivotX( xPoint );
-		_shape.setOrigin( xPoint, _shape.getOrigin( ).y );
-		_globalBounds = _shape.getGlobalBounds( );
-	}
+	{ SetPivot( glm::vec2( xPoint, GetPivotY( ) ) ); }
 
 	void Rectangle::SetPivotY( const float &yPoint )
-	{
-		Drawable::SetPivotY( yPoint );
-		_shape.setOrigin( _shape.getOrigin( ).x, yPoint );
-		_globalBounds = _shape.getGlobalBounds( );
-	}
+	{ SetPivot( glm::vec2( GetPivotX( ), yPoint ) ); }
 
 	void Rectangle::Update( const float &dt )
 	{
@@ -266,7 +206,7 @@ namespace Sonar
 	{ _shape.setTextureRect( sf::IntRect( rectangle.x, rectangle.y, rectangle.z, rectangle.w ) ); }
 
 	void Rectangle::SetTextureRect( const int &left, const int &top, const int &width, const int &height )
-	{ _shape.setTextureRect( sf::IntRect( left, top, width, height ) ); }
+	{ SetTextureRect( glm::ivec4( left, top, width, height ) ); }
 
 	Texture *Rectangle::GetTexture( ) const
 	{ return _texture; }

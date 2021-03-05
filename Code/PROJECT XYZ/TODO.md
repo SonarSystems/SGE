@@ -3,19 +3,15 @@ GAME
 
 ENGINE
 -----------------------------------------------------------------
-* GUI - USE DRAWABLE CLASS, MAYBE HAVE A GUI CLASS THAT INHERITS DRAWABLE AND BUTTON INHERITS GUI FOR EXAMPLE
-    - Menu update method that trickles to all objects like draw
-
-    -REMOVE ALL DOUBLE CODE THAT ONE METHOD COULD BE CALLED FROM ANOTHER IN CLASSES
-    -ADD SET POSITION WITH VEC2 AS PARAMETER FROM DRAWABLE TO ALL CHILD CLASSES
-    -ADD MOVE WITH VEC2 AS PARAMETER FROM DRAWABLE TO ALL CHILD CLASSES
+* GUI
     -ADD ROTATE (RELATIVE TO CURRENT ROTATION)
     -ADD SCALE (RELATIVE TO CURRENT SCALE)
 
-    - Textbox (START FRIDAY)
+    - Textbox
     - Radio button
     - Checkbox
     - Slider
+
     - Menu system - https://www.youtube.com/watch?v=4Vg9d1pjL20
         - Keyboard support - Up and down, stops when at the end of the list or switches sides
     - FPS counter - https://github.com/Hopson97/SFML-Game-Framework/blob/master/Source/Util/FPSCounter.cpp

@@ -63,25 +63,13 @@ namespace Sonar
 	}
 
 	void Label::SetPosition( const float &x, const float &y )
-	{
-		Drawable::SetPosition( x, y );
-		_text.setPosition( x, y );
-		_globalBounds = _text.getGlobalBounds( );
-	}
+	{ SetPosition( glm::vec2( x, y ) ); }
 
 	void Label::SetPositionX( const float &x )
-	{
-		Drawable::SetPositionX( x );
-		_text.setPosition( x, _text.getPosition( ).y );
-		_globalBounds = _text.getGlobalBounds( );
-	}
+	{ SetPosition( glm::vec2( x, GetPositionY( ) ) ); }
 
 	void Label::SetPositionY( const float &y )
-	{
-		Drawable::SetPositionY( y );
-		_text.setPosition( _text.getPosition( ).x, y );
-		_globalBounds = _text.getGlobalBounds( );
-	}
+	{ SetPosition( glm::vec2( GetPositionX( ), y ) ); }
 
 	void Label::SetInsideColor( const Color &color )
 	{
@@ -119,25 +107,13 @@ namespace Sonar
 	}
 
 	void Label::Move( const float &x, const float &y )
-	{
-		Drawable::Move( x, y );
-		_text.move( x, y );
-		_globalBounds = _text.getGlobalBounds( );
-	}
+	{ Move( glm::vec2( x, y ) ); }
 
 	void Label::MoveX( const float &x )
-	{
-		Drawable::MoveX( x );
-		_text.move( x, 0 );
-		_globalBounds = _text.getGlobalBounds( );
-	}
+	{ Move( glm::vec2( x, 0 ) ); }
 
 	void Label::MoveY( const float &y )
-	{
-		Drawable::MoveY( y );
-		_text.move( 0, y );
-		_globalBounds = _text.getGlobalBounds( );
-	}
+	{ Move( glm::vec2( 0, y ) ); }
 
 	void Label::SetRotation( const float &angle )
 	{
@@ -149,40 +125,21 @@ namespace Sonar
 	float Label::GetRotation( ) const
 	{ return _text.getRotation( ); }
 
-	void Label::SetScale( const float &xScale, const float &yScale )
-	{
-		Drawable::SetScale( xScale, yScale );
-		_text.setScale( xScale, yScale );
-		_globalBounds = _text.getGlobalBounds( );
-	}
-
 	void Label::SetScale( const glm::vec2 &scale )
 	{
 		Drawable::SetScale( scale[0], scale[1] );
 		_text.setScale( scale[0], scale[1] );
 		_globalBounds = _text.getGlobalBounds( );
 	}
+	
+	void Label::SetScale( const float &xScale, const float &yScale )
+	{ SetScale( glm::vec2( xScale, yScale ) ); }
 
 	void Label::SetScaleX( const float &xScale )
-	{
-		Drawable::SetScaleX( xScale );
-		_text.setScale( xScale, _text.getScale( ).y );
-		_globalBounds = _text.getGlobalBounds( );
-	}
+	{ SetScale( glm::vec2( xScale, GetScaleY( ) ) ); }
 
 	void Label::SetScaleY( const float &yScale )
-	{
-		Drawable::SetScaleX( yScale );
-		_text.setScale( _text.getScale( ).x, yScale );
-		_globalBounds = _text.getGlobalBounds( );
-	}
-
-	void Label::SetPivot( const float &xPoint, const float &yPoint )
-	{
-		Drawable::SetPivot( xPoint, yPoint );
-		_text.setOrigin( xPoint, yPoint );
-		_globalBounds = _text.getGlobalBounds( );
-	}
+	{ SetScale( glm::vec2( GetScaleX( ), yScale ) ); }
 
 	void Label::SetPivot( const glm::vec2 &pivot )
 	{
@@ -190,6 +147,9 @@ namespace Sonar
 		_text.setOrigin( pivot[0], pivot[1] );
 		_globalBounds = _text.getGlobalBounds( );
 	}
+
+	void Label::SetPivot( const float &xPoint, const float &yPoint )
+	{ SetPivot( glm::vec2( xPoint, yPoint ) ); }
 
 	void Label::SetPivot( const OBJECT_POINTS &pivot )
 	{
@@ -230,18 +190,10 @@ namespace Sonar
 	}
 
 	void Label::SetPivotX( const float &xPoint )
-	{
-		Drawable::SetPivotX( xPoint );
-		_text.setOrigin( xPoint, _text.getOrigin( ).y );
-		_globalBounds = _text.getGlobalBounds( );
-	}
+	{ SetPivot( glm::vec2( xPoint, GetPivotY( ) ) ); }
 
 	void Label::SetPivotY( const float &yPoint )
-	{
-		Drawable::SetPivotY( yPoint );
-		_text.setOrigin( _text.getOrigin( ).x, yPoint );
-		_globalBounds = _text.getGlobalBounds( );
-	}
+	{ SetPivot( glm::vec2( GetPivotX( ), yPoint ) ); }
 
 	void Label::Update( const float &dt )
 	{
@@ -370,14 +322,7 @@ namespace Sonar
 
 				break;
 
-			case STYLE::Regular:
-				if ( STYLE::Regular == isBold && STYLE::Regular == isItalic &&
-					STYLE::Regular == isStrikeThrough && STYLE::Regular == isUnderlined )
-				{ return true; }
-				else
-				{ return false; }
-
-				break;
+			
 
 			case STYLE::StrikeThrough:
 				if ( STYLE::Regular == isStrikeThrough )
@@ -392,6 +337,16 @@ namespace Sonar
 				{ return false; }
 				else
 				{ return true; }
+
+				break;
+			
+			case STYLE::Regular:
+			default:
+				if ( STYLE::Regular == isBold && STYLE::Regular == isItalic &&
+					STYLE::Regular == isStrikeThrough && STYLE::Regular == isUnderlined )
+				{ return true; }
+				else
+				{ return false; }
 
 				break;
 		}

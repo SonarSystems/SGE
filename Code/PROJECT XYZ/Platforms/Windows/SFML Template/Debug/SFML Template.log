@@ -1,8 +1,2 @@
-﻿  Button.cpp
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Button.cpp(627,38): warning C4244: 'argument': conversion from 'const unsigned int' to 'const float', possible loss of data
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Button.cpp(628,33): warning C4244: 'argument': conversion from 'const unsigned int' to 'const float', possible loss of data
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Button.cpp(718,67): warning C4244: '=': conversion from 'float' to 'unsigned int', possible loss of data
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Button.cpp(719,72): warning C4244: '=': conversion from 'float' to 'unsigned int', possible loss of data
-  SplashState.cpp
-  Generating Code...
+﻿  Triangle.cpp
   SFML Template.vcxproj -> C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\SFML Template.exe

@@ -51,6 +51,7 @@ namespace Sonar
         */
         void Draw( );
 
+
         /**
         * \brief Sets the font file
         *

@@ -43,8 +43,8 @@ namespace Sonar
             unsigned int _characterSize = DEFAULT_BUTTON_HOVER_LABEL_CHARACTER_SIZE;
             unsigned int _textStyle = DEFAULT_BUTTON_HOVER_LABEL_TEXT_STYLE;
 
-            unsigned int _borderThickness = DEFAULT_BUTTON_HOVER_BORDER_THICKNESS;
-            unsigned int _labelBorderThickness = DEFAULT_BUTTON_HOVER_LABEL_BORDER_THICKNESS;
+            float _borderThickness = DEFAULT_BUTTON_HOVER_BORDER_THICKNESS;
+            float _labelBorderThickness = DEFAULT_BUTTON_HOVER_LABEL_BORDER_THICKNESS;
 
             glm::vec2 _scale = DEFAULT_BUTTON_HOVER_SCALE; // BUYER BEWARE (SHOULDN'T BE USED UNLESS YOU WANT TO LIVE LIFE ON THE EDGE)
 
@@ -67,6 +67,13 @@ namespace Sonar
         * \brief Draw the classes objects
         */
         void Draw( );
+
+        /**
+        * \brief Update the classes objects
+        *
+        * \param dt Delta time (difference between frames)
+        */
+        void Update( const float &dt );
 
         /**
         * \brief Set the button's background rectangle (most of the time leave as is)

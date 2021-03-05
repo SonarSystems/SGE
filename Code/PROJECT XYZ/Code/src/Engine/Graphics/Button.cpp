@@ -93,32 +93,13 @@ namespace Sonar
 	}
 
 	void Button::SetPadding( const float &x, const float &y, const bool &updateDefaultStyle )
-	{
-		_padding.x = x;
-		_padding.y = y;
-		SetSize( _background->GetSize( ), updateDefaultStyle );
-
-		if ( updateDefaultStyle )
-		{ UpdateDefaultStyle( ); }
-	}
+	{ SetPadding( glm::vec2( x, y ), updateDefaultStyle ); }
 
 	void Button::SetPaddingX( const float &x, const bool &updateDefaultStyle )
-	{
-		_padding.x = x;
-		SetSize( _background->GetSize( ), updateDefaultStyle );
-
-		if ( updateDefaultStyle )
-		{ UpdateDefaultStyle( ); }
-	}
+	{ SetPadding( glm::vec2( x, _padding.y ), updateDefaultStyle ); }
 
 	void Button::SetPaddingY( const float &y, const bool &updateDefaultStyle )
-	{
-		_padding.y = y;
-		SetSize( _background->GetSize( ), updateDefaultStyle );
-
-		if ( updateDefaultStyle )
-		{ UpdateDefaultStyle( ); }
-	}
+	{ SetPadding( glm::vec2( _padding.x, y ), updateDefaultStyle ); }
 
 	const glm::vec2 &Button::GetPadding( ) const
 	{ return _padding; }
@@ -165,28 +146,13 @@ namespace Sonar
 	}
 
 	void Button::SetSize( const float &width, const float &height, const bool &updateDefaultStyle )
-	{
-		SetSize( glm::vec2( width, height ), updateDefaultStyle );
-
-		if ( updateDefaultStyle )
-		{ UpdateDefaultStyle( ); }
-	}
+	{ SetSize( glm::vec2( width, height ), updateDefaultStyle ); }
 
 	void Button::SetWidth( const float &width, const bool &updateDefaultStyle )
-	{
-		SetSize( glm::vec2( width, _background->GetHeight( ) ), updateDefaultStyle );
-
-		if ( updateDefaultStyle )
-		{ UpdateDefaultStyle( ); }
-	}
+	{ SetSize( glm::vec2( width, _background->GetHeight( ) ), updateDefaultStyle ); }
 
 	void Button::SetHeight( const float &height, const bool &updateDefaultStyle )
-	{
-		SetSize( glm::vec2( _background->GetWidth( ), height ), updateDefaultStyle );
-
-		if ( updateDefaultStyle )
-		{ UpdateDefaultStyle( ); }
-	}
+	{ SetSize( glm::vec2( _background->GetWidth( ), height ), updateDefaultStyle ); }
 
 	glm::vec2 Button::GetSize( ) const
 	{ return _background->GetSize( ); }
@@ -239,25 +205,13 @@ namespace Sonar
 	}
 
 	void Button::SetPosition( const float &x, const float &y )
-	{
-		_background->SetPosition( x, y );
-
-		ResetLabelPosition( true );
-	}
+	{ SetPosition( glm::vec2( x, y ) ); }
 
 	void Button::SetPositionX( const float &x )
-	{
-		_background->SetPositionX( x );
-
-		ResetLabelPosition( true );
-	}
+	{ SetPosition( glm::vec2( x, GetPositionY( ) ) ); }
 
 	void Button::SetPositionY( const float &y )
-	{
-		_background->SetPositionY( y );
-
-		ResetLabelPosition( true );
-	}
+	{ SetPosition( glm::vec2( GetPositionX( ), y ) ); }
 
 	float Button::GetPositionX( ) const
 	{ return _background->GetPositionX( ); }
@@ -358,37 +312,13 @@ namespace Sonar
 	}
 
 	void Button::Move( const float &x, const float &y )
-	{
-		_background->Move( x, y );
-		_label->Move( x, y );
-	}
+	{ Move( glm::vec2( x, y ) ); }
 
 	void Button::MoveX( const float &x )
-	{
-		_background->MoveX( x );
-		_label->MoveX( x );
-	}
+	{ Move( glm::vec2( x, 0 ) ); }
 
 	void Button::MoveY( const float &y )
-	{
-		_background->MoveY( y );
-		_label->MoveY( y );
-	}
-
-	void Button::SetScale( const float &xScale, const float &yScale, const bool &updateDefaultStyle )
-	{
-		_background->SetScale( xScale, yScale );
-		_label->SetScale( xScale, yScale );
-
-		RecalculatePadding( );
-
-		SetSize( _label->GetSize( ), updateDefaultStyle );
-
-		ResetLabelPosition( );
-
-		if ( updateDefaultStyle )
-		{ UpdateDefaultStyle( ); }
-	}
+	{ Move( glm::vec2( 0, y ) ); }
 
 	void Button::SetScale( const glm::vec2 &scale, const bool &updateDefaultStyle )
 	{
@@ -405,35 +335,14 @@ namespace Sonar
 		{ UpdateDefaultStyle( ); }
 	}
 
+	void Button::SetScale( const float &xScale, const float &yScale, const bool &updateDefaultStyle )
+	{ SetScale( glm::vec2( xScale, yScale), updateDefaultStyle ); }
+
 	void Button::SetScaleX( const float &xScale, const bool &updateDefaultStyle )
-	{
-		_background->SetScaleX( xScale );
-		_label->SetScaleX( xScale );
-
-		RecalculatePadding( );
-
-		SetSize( _label->GetSize( ), updateDefaultStyle );
-
-		ResetLabelPosition( );
-
-		if ( updateDefaultStyle )
-		{ UpdateDefaultStyle( ); }
-	}
+	{ SetScale( glm::vec2( xScale, GetScaleY( ) ), updateDefaultStyle ); }
 
 	void Button::SetScaleY( const float &yScale, const bool &updateDefaultStyle )
-	{
-		_background->SetScaleY( yScale );
-		_label->SetScaleY( yScale );
-
-		RecalculatePadding( );
-
-		SetSize( _label->GetSize( ), updateDefaultStyle );
-
-		ResetLabelPosition( );
-
-		if ( updateDefaultStyle )
-		{ UpdateDefaultStyle( ); }
-	}
+	{ SetScale( glm::vec2( GetScaleX( ), yScale ), updateDefaultStyle ); }
 
 	glm::vec2 Button::GetScale( ) const
 	{ return _background->GetScale( ); }
@@ -614,6 +523,12 @@ namespace Sonar
 		}
 	}
 
+	void Button::Update( const float &dt )
+	{
+		_label->Update( dt );
+		_background->Update( dt );
+	}
+
 	void Button::SetButtonStyle( const Button::ButtonStyle &style, const bool &updateDefaultStyle )
 	{
 		SetBackgroundInsideColor( Color( style._backgroundColor.GetRed( ), style._backgroundColor.GetGreen( ), style._backgroundColor.GetBlue( ) ), updateDefaultStyle );
@@ -672,10 +587,10 @@ namespace Sonar
 	{ SetMinimumSize( glm::vec2( width, height ) ); }
 
 	void Button::SetMinimumWidth( const float &width )
-	{ _minSize.x = width; }
+	{ SetMinimumSize( glm::vec2( width, _minSize.y ) ); }
 
 	void Button::SetMinimumHeight( const float &height )
-	{ _minSize.y = height; }
+	{ SetMinimumSize( glm::vec2( _minSize.x, height ) ); }
 
 	const glm::vec2 &Button::GetMinimumSize( ) const
 	{ return _minSize; }
@@ -693,10 +608,10 @@ namespace Sonar
 	{ SetMaximumSize( glm::vec2( width, height ) ); }
 
 	void Button::SetMaximumWidth( const float &width )
-	{ _maxSize.x = width; }
+	{ SetMaximumSize( glm::vec2( width, _maxSize.y ) ); }
 
 	void Button::SetMaximumHeight( const float &height )
-	{ _maxSize.y = height; }
+	{ SetMaximumSize( glm::vec2( _maxSize.x, height ) ); }
 
 	const glm::vec2 &Button::GetMaximumSize( ) const
 	{ return _maxSize; }
