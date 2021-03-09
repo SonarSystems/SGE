@@ -122,6 +122,9 @@ namespace Sonar
 		_globalBounds = _text.getGlobalBounds( );
 	}
 
+	void Label::Rotate( const float &angle )
+	{ SetRotation( GetRotation( ) + angle ); }
+
 	float Label::GetRotation( ) const
 	{ return _text.getRotation( ); }
 
@@ -140,6 +143,18 @@ namespace Sonar
 
 	void Label::SetScaleY( const float &yScale )
 	{ SetScale( glm::vec2( GetScaleX( ), yScale ) ); }
+
+	void Label::Scale( const glm::vec2 & scale )
+	{ SetScale( GetScaleX( ) * scale ); }
+
+	void Label::Scale( const float &xScale, const float &yScale )
+	{ SetScale( glm::vec2( GetScaleX( ) * xScale, GetScaleY( ) * yScale ) ); }
+	
+	void Label::ScaleX( const float &xScale )
+	{ SetScale( glm::vec2( GetScaleX( ) * xScale, GetScaleY( ) ) ); }
+
+	void Label::ScaleY( const float &yScale )
+	{ SetScale( glm::vec2( GetScaleX( ), GetScaleY( ) * yScale ) ); }
 
 	void Label::SetPivot( const glm::vec2 &pivot )
 	{

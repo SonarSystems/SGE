@@ -115,23 +115,41 @@ namespace Sonar
 	void Drawable::SetRotation( const float &angle )
 	{ _rotation = angle; }
 
+	void Drawable::Rotate( const float &angle )
+	{ _rotation += angle; }
+
 	float Drawable::GetRotation( ) const
     { return _rotation; }
 
 	void Drawable::SetScale( const float &xScale, const float &yScale )
 	{
-        _scale[0] = xScale;
-        _scale[1] = yScale;
+        _scale.x = xScale;
+        _scale.y = yScale;
 	}
 
 	void Drawable::SetScale( const glm::vec2 &scale )
 	{ _scale = scale; }
 
 	void Drawable::SetScaleX( const float &xScale )
-	{ _scale[0] = xScale; }
+	{ _scale.x = xScale; }
 
 	void Drawable::SetScaleY( const float &yScale )
-	{ _scale[1] = yScale; }
+	{ _scale.y = yScale; }
+
+	void Drawable::Scale( const glm::vec2 &scale )
+	{ _scale * scale; }
+
+	void Drawable::Scale( const float &xScale, const float &yScale )
+	{
+		_scale.x * xScale;
+		_scale.y * yScale;
+	}
+
+	void Drawable::ScaleX( const float &xScale )
+	{ _scale.x * xScale; }
+
+	void Drawable::ScaleY( const float &yScale )
+	{ _scale.y * yScale; }
 
 	glm::vec2 Drawable::GetScale( ) const
 	{ return _scale; }

@@ -1,3 +1,13 @@
+/*
+* EVERY CLASS INHERITING DRAWABLE
+* Button
+* Circle
+* Label
+* Rectangle
+* Sprite
+* Triangle
+*/
+
 #pragma once
 
 #include <SFML/Graphics.hpp>
@@ -214,6 +224,13 @@ namespace Sonar
         */
         void SetRotation( const float &angle );
 
+		/**
+		* \brief Rotate the object relative to it's current angle
+		*
+		* \param angle Angle of the rotation
+		*/
+		void Rotate( const float &angle );
+
         /**
         * \brief Get the rotation angle
         *
@@ -249,6 +266,35 @@ namespace Sonar
         * \param yScale Scale in y axis
         */
         void SetScaleY( const float &yScale );
+
+		/**
+		* \brief Scale the object relative to it's current scale
+		*
+		* \param scale Scale in the x and y axis
+		*/
+		void Scale( const glm::vec2 &scale );
+
+		/**
+		* \brief Scale the object relative to it's current scale
+		*
+		* \param xScale Scale in x axis
+		* \param yScale Scale in y axis
+		*/
+		void Scale( const float &xScale, const float &yScale );
+
+		/**
+		* \brief Scale the object relative to it's current x scale
+		*
+		* \param xScale Scale in x axis
+		*/
+		void ScaleX( const float &xScale );
+
+		/**
+		* \brief Scale the object relative to it's current y scale
+		*
+		* \param yScale Scale in y axis
+		*/
+		void ScaleY( const float &yScale );
 
         /**
         * \brief Get the scale factor for both axes

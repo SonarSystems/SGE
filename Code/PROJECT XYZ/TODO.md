@@ -4,9 +4,6 @@ GAME
 ENGINE
 -----------------------------------------------------------------
 * GUI
-    -ADD ROTATE (RELATIVE TO CURRENT ROTATION)
-    -ADD SCALE (RELATIVE TO CURRENT SCALE)
-
     - Textbox
     - Radio button
     - Checkbox

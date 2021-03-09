@@ -106,6 +106,9 @@ namespace Sonar
 		_globalBounds = _shape.getGlobalBounds( );
 	}
 
+	void Rectangle::Rotate( const float &angle )
+	{ SetRotation( GetRotation( ) + angle ); }
+
 	float Rectangle::GetRotation( ) const
 	{ return _shape.getRotation( ); }
 
@@ -124,6 +127,18 @@ namespace Sonar
 
 	void Rectangle::SetScaleY( const float &yScale )
 	{ SetScale( glm::vec2( GetScaleX( ), yScale ) ); }
+
+	void Rectangle::Scale( const glm::vec2 & scale )
+	{ SetScale( GetScaleX( ) * scale ); }
+
+	void Rectangle::Scale( const float &xScale, const float &yScale )
+	{ SetScale( glm::vec2( GetScaleX( ) * xScale, GetScaleY( ) * yScale ) ); }
+
+	void Rectangle::ScaleX( const float &xScale )
+	{ SetScale( glm::vec2( GetScaleX( ) * xScale, GetScaleY( ) ) ); }
+
+	void Rectangle::ScaleY( const float &yScale )
+	{ SetScale( glm::vec2( GetScaleX( ), GetScaleY( ) * yScale ) ); }
 
 	void Rectangle::SetPivot( const glm::vec2 &pivot )
 	{

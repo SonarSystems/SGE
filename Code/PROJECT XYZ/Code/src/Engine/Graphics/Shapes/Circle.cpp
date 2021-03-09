@@ -116,6 +116,9 @@ namespace Sonar
 		_globalBounds = _shape.getGlobalBounds( );
 	}
 
+	void Circle::Rotate( const float &angle )
+	{ SetRotation( GetRotation( ) + angle ); }
+
 	float Circle::GetRotation( ) const
 	{ return _shape.getRotation( ); }
 
@@ -134,6 +137,18 @@ namespace Sonar
 
 	void Circle::SetScaleY( const float &yScale )
 	{ SetScale( glm::vec2( GetScaleX( ), yScale ) ); }
+
+	void Circle::Scale( const glm::vec2 &scale )
+	{ SetScale( GetScaleX( ) * scale ); }
+
+	void Circle::Scale( const float &xScale, const float &yScale )
+	{ SetScale( glm::vec2( GetScaleX( ) * xScale, GetScaleY( ) * yScale ) ); }
+
+	void Circle::ScaleX( const float &xScale )
+	{ SetScale( glm::vec2( GetScaleX( ) * xScale, GetScaleY( ) ) ); }
+
+	void Circle::ScaleY( const float &yScale )
+	{ SetScale( glm::vec2( GetScaleX( ), GetScaleY( ) * yScale ) ); }
 
 	void Circle::SetPivot( const glm::vec2 &pivot )
 	{

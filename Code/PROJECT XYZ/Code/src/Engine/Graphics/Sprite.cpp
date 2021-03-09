@@ -76,6 +76,9 @@ namespace Sonar
 		_globalBounds = _sprite.getGlobalBounds( );
 	}
 
+	void Sprite::Rotate( const float &angle )
+	{ SetRotation( GetRotation( ) + angle ); }
+
 	float Sprite::GetRotation( ) const
 	{ return _sprite.getRotation( ); }
 
@@ -94,6 +97,18 @@ namespace Sonar
 
 	void Sprite::SetScaleY( const float &yScale )
 	{ SetScale( glm::vec2( GetScaleX( ), yScale ) ); }
+
+	void Sprite::Scale( const glm::vec2 & scale )
+	{ SetScale( GetScaleX( ) * scale ); }
+
+	void Sprite::Scale( const float &xScale, const float &yScale )
+	{ SetScale( glm::vec2( GetScaleX( ) * xScale, GetScaleY( ) * yScale ) ); }
+
+	void Sprite::ScaleX( const float &xScale )
+	{ SetScale( glm::vec2( GetScaleX( ) * xScale, GetScaleY( ) ) ); }
+
+	void Sprite::ScaleY( const float &yScale )
+	{ SetScale( glm::vec2( GetScaleX( ), GetScaleY( ) * yScale ) ); }
 
 	void Sprite::SetPivot( const glm::vec2 &pivot )
 	{

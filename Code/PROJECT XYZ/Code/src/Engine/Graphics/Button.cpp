@@ -344,6 +344,18 @@ namespace Sonar
 	void Button::SetScaleY( const float &yScale, const bool &updateDefaultStyle )
 	{ SetScale( glm::vec2( GetScaleX( ), yScale ), updateDefaultStyle ); }
 
+	void Button::Scale( const glm::vec2 &scale, const bool &updateDefaultStyle )
+	{ SetScale( _label->GetScale( ) * scale, updateDefaultStyle ); }
+
+	void Button::Scale( const float &xScale, const float &yScale, const bool &updateDefaultStyle )
+	{ SetScale( glm::vec2( _label->GetScaleX( ) * xScale, _label->GetScaleY( ) * yScale), updateDefaultStyle ); }
+
+	void Button::ScaleX( const float &xScale, const bool &updateDefaultStyle )
+	{ SetScale( glm::vec2( _label->GetScaleX( ) * xScale, GetScaleY( ) ), updateDefaultStyle ); }
+
+	void Button::ScaleY( const float &yScale, const bool &updateDefaultStyle )
+	{ SetScale( glm::vec2( GetScaleX( ), _label->GetScaleY( ) * yScale ), updateDefaultStyle ); }
+
 	glm::vec2 Button::GetScale( ) const
 	{ return _background->GetScale( ); }
 
