@@ -12,7 +12,7 @@
 
 namespace Sonar
 {
-    class Label : public Drawable, MenuComponent
+    class Label : public Drawable, public MenuComponent
     {
     public:
         /**
@@ -50,7 +50,6 @@ namespace Sonar
         * \brief Draw the classes objects
         */
         void Draw( );
-
 
         /**
         * \brief Sets the font file
@@ -436,7 +435,7 @@ namespace Sonar
 
     private:
         /**
-        * \brief Initialise the class (used to abstract common code from all constructors)
+        * \brief Initialize the class (used to abstract common code from all constructors)
         *
 		* \param data Game data object
         */

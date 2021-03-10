@@ -30,6 +30,7 @@
 #include "Graphics/Shapes/Rectangle.hpp"
 #include "Graphics/Shapes/Triangle.hpp"
 #include "Graphics/Sprite.hpp"
+#include "Graphics/TextBox.hpp"
 #include "Graphics/Texture.hpp"
 #include "Input/Events.hpp"
 #include "Input/Gesture.hpp"

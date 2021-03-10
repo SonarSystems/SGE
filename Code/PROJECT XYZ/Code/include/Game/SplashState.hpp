@@ -30,13 +30,14 @@ namespace Sonar
         
 		Player *player;
 
-		Rectangle *rectangle;
 
-		Label *label, *label2;
+		Label *label;
 
 		Menu *menu;
 
 		Button *button;
+
+		TextBox *textBox;
 
 	};
 }

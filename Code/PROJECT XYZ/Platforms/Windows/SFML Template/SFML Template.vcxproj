@@ -47,6 +47,7 @@
     <ClInclude Include="..\..\..\Code\include\Engine\Graphics\Shapes\Rectangle.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\Graphics\Shapes\Triangle.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\Graphics\Sprite.hpp" />
+    <ClInclude Include="..\..\..\Code\include\Engine\Graphics\TextBox.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\Graphics\Texture.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\Input\Events.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\Input\Gesture.hpp" />
@@ -90,6 +91,7 @@
     <ClCompile Include="..\..\..\Code\src\Engine\Graphics\Shapes\Rectangle.cpp" />
     <ClCompile Include="..\..\..\Code\src\Engine\Graphics\Shapes\Triangle.cpp" />
     <ClCompile Include="..\..\..\Code\src\Engine\Graphics\Sprite.cpp" />
+    <ClCompile Include="..\..\..\Code\src\Engine\Graphics\TextBox.cpp" />
     <ClCompile Include="..\..\..\Code\src\Engine\Graphics\Texture.cpp" />
     <ClCompile Include="..\..\..\Code\src\Engine\Input\Events.cpp" />
     <ClCompile Include="..\..\..\Code\src\Engine\Input\Gesture.cpp" />

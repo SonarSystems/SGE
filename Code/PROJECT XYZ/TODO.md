@@ -5,6 +5,11 @@ ENGINE
 -----------------------------------------------------------------
 * GUI
     - Textbox
+        - Max characters
+        - Focus on it
+            - Change focus clickable size
+        - Restricted characters
+        - Backspace
     - Radio button
     - Checkbox
     - Slider
@@ -12,6 +17,7 @@ ENGINE
     - Menu system - https://www.youtube.com/watch?v=4Vg9d1pjL20
         - Keyboard support - Up and down, stops when at the end of the list or switches sides
     - FPS counter - https://github.com/Hopson97/SFML-Game-Framework/blob/master/Source/Util/FPSCounter.cpp
+        - ***LOOK INTO IMGUI ESPECIALLY FOR THE GRAPH STUFF***
         - **Part of DEBUG CLASS**
         - **MAKE IT LIKE DOOM'S**
         - Draw calls count

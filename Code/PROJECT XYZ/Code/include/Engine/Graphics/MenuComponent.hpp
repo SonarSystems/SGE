@@ -1,8 +1,5 @@
 #pragma once
 
-#include "Core/Game.hpp"
-#include "Graphics/Drawable.hpp"
-
 namespace Sonar
 {
     class MenuComponent
@@ -13,7 +10,7 @@ namespace Sonar
         *
         * \param data Game data object
         */
-        MenuComponent(  );
+        MenuComponent( );
 
         /**
         * \brief Class destructor

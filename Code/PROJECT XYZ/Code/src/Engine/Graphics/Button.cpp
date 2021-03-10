@@ -6,10 +6,10 @@ namespace Sonar
 {
 	Button::Button( GameDataRef data ) : _data( data )
 	{
-		_minSize.x = -1; // NO MIN
-		_minSize.y = -1; // NO MIN
-		_maxSize.x = -1; // NO MIN
-		_maxSize.y = -1; // NO MIN
+		_minSize.x = -1; // NO MIN X
+		_minSize.y = -1; // NO MIN Y
+		_maxSize.x = -1; // NO MAX X
+		_maxSize.y = -1; // NO MAX Y
 
 		_anchorX = LABEL_ANCHOR_X::CENTER_X;
 		_anchorY = LABEL_ANCHOR_Y::CENTER_Y;
@@ -522,7 +522,7 @@ namespace Sonar
 	bool Button::IsMouseOver( ) const
 	{ return _background->IsMouseOver( ); }
 
-	void Button::Update( )
+	void Button::Update( const float &dt )
 	{
 		if ( IsClicked( _buttonToClick ) && _isClickEnabled )
 		{ SetButtonStyle( _clickedStyle, false ); }
@@ -533,10 +533,7 @@ namespace Sonar
 			else
 			{ SetButtonStyle( _defaultStyle, false ); }
 		}
-	}
 
-	void Button::Update( const float &dt )
-	{
 		_label->Update( dt );
 		_background->Update( dt );
 	}

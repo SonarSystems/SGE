@@ -641,11 +641,6 @@ namespace Sonar
         bool IsMouseOver( ) const;
 
         /**
-        * \brief Update the button
-        */
-        void Update( );
-
-        /**
         * \brief Set the overall button style
         *
 		* \param style Style to be applied to the button

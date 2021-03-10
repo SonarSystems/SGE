@@ -7,13 +7,6 @@ namespace Sonar
         player = new Player( _data );
         physicsWorld = new PhysicsWorld( _data );
 
-		rectangle = new Rectangle( _data );
-		rectangle->SetSize( 200, 75 );
-		rectangle->SetPivot( OBJECT_POINTS::CENTER );
-		rectangle->SetInsideColor( Color::Red );
-
-		rectangle->SetPosition( 400, 300 );
-
 		menu = new Menu( _data );
 		label = new Label( _data );
 
@@ -30,19 +23,7 @@ namespace Sonar
 		label->SetStyle( Label::STYLE::Bold, true );
 		label->SetStyle( Label::STYLE::Underlined, true );
 
-		//menu->AddComponent( label );
-
-		label2 = new Label( _data );
-
-		label2->SetFontFilePath( "Resources/arial.ttf" );
-		label2->SetInsideColor( Color::Blue );
-		//label->SetBorderColor( Color::Black );
-		//label->SetBorderThickness( 23 );
-		label2->SetCharacterSize( 64 );
-		label2->SetText( "SECOND" );
-		label2->SetPosition( 100, 30 );
-
-		//menu->AddComponent( label2 );
+		menu->AddComponent( label );
 
 		button = new Button( _data );
 		//button->SetPosition( 300, 300 );
@@ -50,6 +31,18 @@ namespace Sonar
 		//button->SetPadding( 50, 50 );
 		button->SetText( "BOB", true );
 		menu->AddComponent( button );
+
+		textBox = new TextBox( _data );
+
+		textBox->SetFontFilePath( "Resources/arial.ttf" );
+		textBox->SetInsideColor( Color::Red );
+		//label->SetBorderColor( Color::Black );
+		//label->SetBorderThickness( 23 );
+		textBox->SetCharacterSize( 128 );
+		textBox->SetText( "HELLO World" );
+		textBox->SetPosition( 200, 300 );
+
+		menu->AddComponent( textBox );
 	} 
 
 	SplashState::~SplashState( )
@@ -69,7 +62,6 @@ namespace Sonar
 		if ( Event::MouseWheelScrolled == event.type )
 		{
 			//physicsWorld->CreateDynamicBody( event.mouseButton.x, event.mouseButton.y, 32, 32 );
-			button->SetText( "FRAHAAN HUSSAIN", true );
 		}
 
 
@@ -81,11 +73,9 @@ namespace Sonar
         
         //physicsWorld->Update( dt );
 
-		/*spdlog::info( "Clicked: {0}", button->IsClicked( Mouse::Button::Left ) );
-		spdlog::info( "Hover: {0}", button->IsMouseOver( ) );
-		spdlog::info( "------------------------------------------------" );*/
+		//button->Update( );
 
-		button->Update( );
+		menu->Update( dt );
 	}
 
 	void SplashState::Draw( const float &dt )
@@ -93,10 +83,8 @@ namespace Sonar
         //player->Draw( dt );
 		//physicsWorld->Draw( dt );
 
-		//rectangle->Draw( );
-		//label->Draw( );
 		menu->Draw( );
 
-		//button->Draw( );
+		//textBox->Draw( );
 	}
 }
