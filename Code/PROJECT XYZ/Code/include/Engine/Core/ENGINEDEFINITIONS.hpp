@@ -84,3 +84,5 @@
 #define DEFAULT_BUTTON_CLICKED_SCALE glm::vec2( 1.0f, 1.0f )
 #define DEFAULT_BUTTON_CLICKED_CURSOR Sonar::Mouse::Cursor::Hand
 #define DEFAULT_BUTTON_CLICKED_MOUSE_BUTTON Sonar::Mouse::Button::Left
+
+#define DEFAULT_TEXTBOX_MAXIMUM_CHARACTERS 8

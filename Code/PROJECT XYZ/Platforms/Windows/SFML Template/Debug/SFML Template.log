@@ -1,8 +1,2 @@
-﻿  Game.cpp
-  Button.cpp
-  Label.cpp
-  PhysicsWorld.cpp
-  Player.cpp
-  SplashState.cpp
-  Generating Code...
+﻿  TextBox.cpp
   SFML Template.vcxproj -> C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\SFML Template.exe

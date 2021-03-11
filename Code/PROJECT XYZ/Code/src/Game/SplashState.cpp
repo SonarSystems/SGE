@@ -23,7 +23,7 @@ namespace Sonar
 		label->SetStyle( Label::STYLE::Bold, true );
 		label->SetStyle( Label::STYLE::Underlined, true );
 
-		menu->AddComponent( label );
+		//menu->AddComponent( label );
 
 		button = new Button( _data );
 		//button->SetPosition( 300, 300 );
@@ -36,10 +36,8 @@ namespace Sonar
 
 		textBox->SetFontFilePath( "Resources/arial.ttf" );
 		textBox->SetInsideColor( Color::Red );
-		//label->SetBorderColor( Color::Black );
-		//label->SetBorderThickness( 23 );
 		textBox->SetCharacterSize( 128 );
-		textBox->SetText( "HELLO World" );
+		textBox->SetText( "" );
 		textBox->SetPosition( 200, 300 );
 
 		menu->AddComponent( textBox );
@@ -62,9 +60,10 @@ namespace Sonar
 		if ( Event::MouseWheelScrolled == event.type )
 		{
 			//physicsWorld->CreateDynamicBody( event.mouseButton.x, event.mouseButton.y, 32, 32 );
+			textBox->SetMaximumCharacters( 4 );
 		}
 
-
+		textBox->PollInput( dt, event );
 	}
 
 	void SplashState::Update( const float &dt )

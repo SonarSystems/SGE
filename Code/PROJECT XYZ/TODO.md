@@ -5,11 +5,11 @@ ENGINE
 -----------------------------------------------------------------
 * GUI
     - Textbox
-        - Max characters
-        - Focus on it
-            - Change focus clickable size
         - Restricted characters
         - Backspace
+        - Focus on it
+            - Change focus clickable size
+            - Blinking cursor when focused on
     - Radio button
     - Checkbox
     - Slider
