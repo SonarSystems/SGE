@@ -52,11 +52,69 @@ namespace Sonar
         */
         const unsigned int &GetMaximumCharacters( ) const;
 
+        /**
+        * \brief Add a character to the list of restricted characters
+        *
+        * \param unicodeCharacter Character to restrict (unicode)
+        */
+        void AddRestrictedCharacter( const unsigned int &unicodeCharacter );
+
+        /**
+        * \brief Add a character to the list of restricted characters
+        *
+        * \param character Character to restrict
+        */
+        void AddRestrictedCharacter( const char &character );
+
+        /**
+        * \brief Remove a character from the list of restricted characters
+        *
+        * \param character Character to remove from the list (unicode)
+        */
+		void RemoveRestrictedCharacter( const unsigned int &unicodeCharacter );
+
+        /**
+        * \brief Remove a character from the list of restricted characters
+        *
+        * \param character Character to remove from the list
+        */
+		void RemoveRestrictedCharacter( const char &character );
+
+        /**
+        * \brief Get a list of all the restricted characters
+        *
+        * \return Output returns all the restricted characters
+        */
+        const std::vector<unsigned int> GetRestrictedCharacterList( ) const;
+
+        /**
+        * \brief Check if a character is already restricted
+        *
+        * \param character Character to check (unicode)
+        *
+        * \return Output returns true if the character is restricted
+        */
+        bool IsRestrictedCharacter( const unsigned int &unicodeCharacter ) const;
+
+        /**
+        * \brief Check if a character is already restricted
+        *
+        * \param character Character to check
+        *
+        * \return Output returns true if the character is restricted
+        */
+        bool IsRestrictedCharacter( const char &character ) const;
+
     private:
         /**
         * \brief Maximum number of characters allowed
         */
         unsigned int _maxCharacters;
+
+        /**
+        * \brief All restricted characters
+        */
+        std::vector<unsigned int> _restrictedCharacters;
 
     };
 }

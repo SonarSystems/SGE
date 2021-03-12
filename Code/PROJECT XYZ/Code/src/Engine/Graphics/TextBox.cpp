@@ -1,5 +1,7 @@
 #include "Graphics/TextBox.hpp"
 
+#define BACKSPACE_TEXT_ENTERED_KEY_CODE 8
+
 namespace Sonar
 {
 	TextBox::TextBox( GameDataRef data ) : Label( data )
@@ -15,20 +17,20 @@ namespace Sonar
 	{
 		if ( Event::TextEntered == event.type )
 		{
-			if ( GetText( ).size( ) + 1 <= _maxCharacters )
+			if ( BACKSPACE_TEXT_ENTERED_KEY_CODE == event.key.code )
 			{
-				spdlog::info( "{0} - {1}", event.key.code, event.text.unicode );
-				SetText( GetText( ) + ( char )event.text.unicode );
-			}
-		}
-		else if ( Event::KeyReleased == event.type )
-		{
-			if ( Keyboard::Key::Backspace == event.key.code )
-			{
-				std::string str = GetText( );
-				str.resize( str.size( ) - 2 );
+				if ( GetText( ).size( ) > 0 )
+				{
+					std::string str = GetText( );
+					str.resize( str.size( ) - 1 );
 
-				SetText( str );
+					SetText( str );
+				}
+			}
+			else if ( GetText( ).size( ) + 1 <= _maxCharacters )
+			{
+				if ( !IsRestrictedCharacter( event.text.unicode ) )
+				{ SetText( GetText( ) + ( char )event.text.unicode ); }
 			}
 		}
 	}
@@ -48,5 +50,35 @@ namespace Sonar
 
 	const unsigned int &TextBox::GetMaximumCharacters( ) const
 	{ return _maxCharacters; }
+
+	void TextBox::AddRestrictedCharacter( const unsigned int &unicodeCharacter )
+	{
+		if ( !IsRestrictedCharacter( unicodeCharacter ) )
+		{ _restrictedCharacters.push_back( unicodeCharacter ); }
+	}
+
+	void TextBox::AddRestrictedCharacter( const char &character )
+	{ AddRestrictedCharacter( ( unsigned int )character ); }
+
+	void TextBox::RemoveRestrictedCharacter( const unsigned int &unicodeCharacter )
+	{
+		_restrictedCharacters.erase
+		( 
+			std::remove( _restrictedCharacters.begin( ), _restrictedCharacters.end( ), unicodeCharacter ), 
+			_restrictedCharacters.end( )
+		);
+	}
+
+	void TextBox::RemoveRestrictedCharacter( const char &character )
+	{ RemoveRestrictedCharacter( ( unsigned int )character ); }
+
+	const std::vector<unsigned int> TextBox::GetRestrictedCharacterList( ) const
+	{ return _restrictedCharacters; }
+
+	bool TextBox::IsRestrictedCharacter( const unsigned int &unicodeCharacter ) const
+	{ return std::find( _restrictedCharacters.begin( ), _restrictedCharacters.end( ), unicodeCharacter ) != _restrictedCharacters.end( ); }
+
+	bool TextBox::IsRestrictedCharacter( const char &character ) const
+	{ return IsRestrictedCharacter( ( unsigned int )character ); }
 }
 

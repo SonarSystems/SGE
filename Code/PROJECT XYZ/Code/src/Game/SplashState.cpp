@@ -37,10 +37,19 @@ namespace Sonar
 		textBox->SetFontFilePath( "Resources/arial.ttf" );
 		textBox->SetInsideColor( Color::Red );
 		textBox->SetCharacterSize( 128 );
-		textBox->SetText( "" );
+		textBox->SetText( "Hello" );
 		textBox->SetPosition( 200, 300 );
 
 		menu->AddComponent( textBox );
+
+		textBox->AddRestrictedCharacter( 'a' );
+		textBox->AddRestrictedCharacter( '5' );
+		textBox->AddRestrictedCharacter( '6' );
+		textBox->AddRestrictedCharacter( 'B' );
+		textBox->AddRestrictedCharacter( '@' );
+		textBox->AddRestrictedCharacter( '&' );
+
+		spdlog::info( (int)'A' );
 	} 
 
 	SplashState::~SplashState( )
@@ -60,7 +69,8 @@ namespace Sonar
 		if ( Event::MouseWheelScrolled == event.type )
 		{
 			//physicsWorld->CreateDynamicBody( event.mouseButton.x, event.mouseButton.y, 32, 32 );
-			textBox->SetMaximumCharacters( 4 );
+
+			textBox->RemoveRestrictedCharacter( 'a' );
 		}
 
 		textBox->PollInput( dt, event );
