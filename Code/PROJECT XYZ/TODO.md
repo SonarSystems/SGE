@@ -8,6 +8,8 @@ ENGINE
         - Focus on it
             - Blinking cursor when focused on
             - Change focus clickable size
+        - Clickable
+        - Change cursor - use button code
     - Radio button
     - Checkbox
     - Slider
@@ -18,6 +20,7 @@ ENGINE
         - ***LOOK INTO IMGUI ESPECIALLY FOR THE GRAPH STUFF***
         - **Part of DEBUG CLASS**
         - **MAKE IT LIKE DOOM'S**
+        - Choose which corner of the screen to put it in
         - Draw calls count
         - Indices count
         - Vertices count

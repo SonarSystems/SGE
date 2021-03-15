@@ -2,6 +2,7 @@
 
 #include "Core/ENGINEDEFINITIONS.hpp"
 #include "Graphics/Label.hpp"
+#include "Graphics/Shapes/Rectangle.hpp"
 #include "Input/Events.hpp"
 
 namespace Sonar
@@ -104,6 +105,18 @@ namespace Sonar
         * \return Output returns true if the character is restricted
         */
         bool IsRestrictedCharacter( const char &character ) const;
+        
+        /**
+        * \brief Update the object
+        *
+        * \param dt Delta time between frames
+        */
+        void Update( const float &dt );
+
+        /**
+        * \brief Draw the classes objects
+        */
+        void Draw( );
 
     private:
         /**
@@ -115,6 +128,12 @@ namespace Sonar
         * \brief All restricted characters
         */
         std::vector<unsigned int> _restrictedCharacters;
+
+        Rectangle *_postStringBlinker;
+
+        std::string _originalText;
+
+        bool _isVerticalPipeShown;
 
     };
 }

@@ -7,6 +7,13 @@ namespace Sonar
 	TextBox::TextBox( GameDataRef data ) : Label( data )
 	{
 		_maxCharacters = DEFAULT_TEXTBOX_MAXIMUM_CHARACTERS;
+		_isVerticalPipeShown = false;
+		_originalText = GetText( );
+
+		_postStringBlinker = new Rectangle( data );
+		_postStringBlinker->SetSize( 5, GetHeight( ) );
+		_postStringBlinker->SetPosition( GetPositionX( ) + GetWidth( ), GetPositionY( ) + ( GetHeight( ) * 0.5 ) );
+		_postStringBlinker->SetInsideColor( Color::Black );
 	}
 
 	TextBox::TextBox( GameDataRef data, const std::string &filepath ) : Label( data, filepath ) { }
@@ -80,5 +87,38 @@ namespace Sonar
 
 	bool TextBox::IsRestrictedCharacter( const char &character ) const
 	{ return IsRestrictedCharacter( ( unsigned int )character ); }
+
+	void TextBox::Update( const float &dt )
+	{
+		/*Label::Update( dt );
+
+		std::string text = GetText( );
+
+		if ( _isVerticalPipeShown )
+		{
+			text = text.substr( 0, text.size( ) - 1 );
+
+			SetText( text );
+		}
+		else
+		{
+			text += "|";
+
+			SetText( text );
+		}
+		
+
+		_isVerticalPipeShown = !_isVerticalPipeShown;*/
+	}
+
+	void TextBox::Draw( )
+	{
+		_postStringBlinker->SetHeight( GetCharacterSize( ) );
+		_postStringBlinker->SetPosition( GetPositionX( ) + GetWidth( ) + GetLetterSpacing( ), GetPositionY( ) + GetCharacterSize( ) - _postStringBlinker->GetHeight( ) );
+
+		Label::Draw( );
+		_postStringBlinker->Draw( );
+	}
+
 }
 
