@@ -30,6 +30,7 @@ namespace Sonar
 		//button->SetScale( 2.5, 2.5 );
 		//button->SetPadding( 50, 50 );
 		button->SetText( "BOB", true );
+		button->SetFontFilePath( "Resources/arial.ttf" );
 		menu->AddComponent( button );
 
 		textBox = new TextBox( _data );
@@ -41,15 +42,6 @@ namespace Sonar
 		textBox->SetPosition( 200, 300 );
 
 		menu->AddComponent( textBox );
-
-		textBox->AddRestrictedCharacter( 'a' );
-		textBox->AddRestrictedCharacter( '5' );
-		textBox->AddRestrictedCharacter( '6' );
-		textBox->AddRestrictedCharacter( 'B' );
-		textBox->AddRestrictedCharacter( '@' );
-		textBox->AddRestrictedCharacter( '&' );
-
-		spdlog::info( (int)'A' );
 	} 
 
 	SplashState::~SplashState( )
@@ -69,8 +61,6 @@ namespace Sonar
 		if ( Event::MouseWheelScrolled == event.type )
 		{
 			//physicsWorld->CreateDynamicBody( event.mouseButton.x, event.mouseButton.y, 32, 32 );
-
-			textBox->RemoveRestrictedCharacter( 'a' );
 		}
 
 		textBox->PollInput( dt, event );

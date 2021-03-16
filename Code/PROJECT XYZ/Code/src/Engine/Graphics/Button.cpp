@@ -18,7 +18,6 @@ namespace Sonar
 		_background->SetInsideColor( DEFAULT_BUTTON_BACKGROUND_COLOR );
 
 		_label = new Label( data );
-		_label->SetFontFilePath( "Resources/arial.ttf" );
 		_label->SetInsideColor( DEFAULT_BUTTON_LABEL_COLOR );
 		_label->SetCharacterSize( DEFAULT_BUTTON_LABEL_CHARACTER_SIZE );
 

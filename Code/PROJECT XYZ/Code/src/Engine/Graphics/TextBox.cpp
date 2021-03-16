@@ -113,8 +113,30 @@ namespace Sonar
 
 	void TextBox::Draw( )
 	{
+		std::string tempString = GetText( );
+		//SetText( "W" );
+
+		float width = 0;
+
+		std::string singleCharacter;
+
+		for ( int i = 0; i < tempString.size( ); i++ )
+		{
+			singleCharacter = tempString[i];
+			SetText( singleCharacter );
+			width += GetWidth( );
+		}
+
+		float maxCharacterWidth = GetWidth( );
+		SetText( tempString );
+		spdlog::info( "{0} - {1}", maxCharacterWidth, GetLetterSpacing( ) );
+
+
 		_postStringBlinker->SetHeight( GetCharacterSize( ) );
-		_postStringBlinker->SetPosition( GetPositionX( ) + GetWidth( ) + GetLetterSpacing( ), GetPositionY( ) + GetCharacterSize( ) - _postStringBlinker->GetHeight( ) );
+		//_postStringBlinker->SetPosition( GetPositionX( ) + width + ( GetLetterSpacing( ) * GetStringLength( ) ), GetPositionY( ) + GetCharacterSize( ) - _postStringBlinker->GetHeight( ) );
+		_postStringBlinker->SetPosition( GetPositionX( ) + GetWidth( ), GetPositionY( ) + GetCharacterSize( ) - _postStringBlinker->GetHeight( ) );
+		//_postStringBlinker->SetPosition( GetPositionX( ) + ( maxCharacterWidth * GetStringLength( ) ), GetPositionY( ) + GetCharacterSize( ) - _postStringBlinker->GetHeight( ) );
+
 
 		Label::Draw( );
 		_postStringBlinker->Draw( );

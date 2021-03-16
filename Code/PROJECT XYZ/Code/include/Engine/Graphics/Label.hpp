@@ -433,6 +433,13 @@ namespace Sonar
         */
 		glm::vec2 FindCharacterPos( const std::size_t &index ) const;
 
+        /**
+        * \brief Get the length of the label's string
+        * 
+        * \return Output returns the label's length
+        */
+        unsigned int GetStringLength( ) const;
+
     private:
         /**
         * \brief Initialize the class (used to abstract common code from all constructors)

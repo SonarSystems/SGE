@@ -373,5 +373,8 @@ namespace Sonar
 		return glm::vec2( characterPos.x, characterPos.y );
 	}
 
+	unsigned int Label::GetStringLength( ) const
+	{ return _string.size( ); }
+
 }
 
