@@ -1,14 +1,16 @@
 #include "Graphics/TextBox.hpp"
 
 #define BACKSPACE_TEXT_ENTERED_KEY_CODE 8
+#define CURSOR_LETTER_SPACING_MULITPLIER 15
 
 namespace Sonar
 {
 	TextBox::TextBox( GameDataRef data ) : Label( data )
 	{
 		_maxCharacters = DEFAULT_TEXTBOX_MAXIMUM_CHARACTERS;
-		_isVerticalPipeShown = false;
-		_originalText = GetText( );
+		_isPostStringBlinkerShown = false;
+
+		_blinkerTime = DEFAULT_TEXTBOX_BLINKER_TIME;
 
 		_postStringBlinker = new Rectangle( data );
 		_postStringBlinker->SetSize( 5, GetHeight( ) );
@@ -39,6 +41,9 @@ namespace Sonar
 				if ( !IsRestrictedCharacter( event.text.unicode ) )
 				{ SetText( GetText( ) + ( char )event.text.unicode ); }
 			}
+
+			_clock.Reset( );
+			_isPostStringBlinkerShown = true;
 		}
 	}
 
@@ -90,57 +95,28 @@ namespace Sonar
 
 	void TextBox::Update( const float &dt )
 	{
-		/*Label::Update( dt );
-
-		std::string text = GetText( );
-
-		if ( _isVerticalPipeShown )
+		if ( _clock.GetElapsedTime( ).AsSeconds( ) > _blinkerTime )
 		{
-			text = text.substr( 0, text.size( ) - 1 );
-
-			SetText( text );
+			_clock.Reset( );
+			_isPostStringBlinkerShown = !_isPostStringBlinkerShown;
 		}
-		else
-		{
-			text += "|";
-
-			SetText( text );
-		}
-		
-
-		_isVerticalPipeShown = !_isVerticalPipeShown;*/
 	}
 
 	void TextBox::Draw( )
 	{
-		std::string tempString = GetText( );
-		//SetText( "W" );
-
-		float width = 0;
-
-		std::string singleCharacter;
-
-		for ( int i = 0; i < tempString.size( ); i++ )
-		{
-			singleCharacter = tempString[i];
-			SetText( singleCharacter );
-			width += GetWidth( );
-		}
-
-		float maxCharacterWidth = GetWidth( );
-		SetText( tempString );
-		spdlog::info( "{0} - {1}", maxCharacterWidth, GetLetterSpacing( ) );
-
-
 		_postStringBlinker->SetHeight( GetCharacterSize( ) );
-		//_postStringBlinker->SetPosition( GetPositionX( ) + width + ( GetLetterSpacing( ) * GetStringLength( ) ), GetPositionY( ) + GetCharacterSize( ) - _postStringBlinker->GetHeight( ) );
-		_postStringBlinker->SetPosition( GetPositionX( ) + GetWidth( ), GetPositionY( ) + GetCharacterSize( ) - _postStringBlinker->GetHeight( ) );
-		//_postStringBlinker->SetPosition( GetPositionX( ) + ( maxCharacterWidth * GetStringLength( ) ), GetPositionY( ) + GetCharacterSize( ) - _postStringBlinker->GetHeight( ) );
-
+		_postStringBlinker->SetPosition( GetPositionX( ) + GetWidth( ) + GetLetterSpacing( ) * CURSOR_LETTER_SPACING_MULITPLIER, GetPositionY( ) + GetCharacterSize( ) - _postStringBlinker->GetHeight( ) );
 
 		Label::Draw( );
-		_postStringBlinker->Draw( );
+
+		if ( _isPostStringBlinkerShown )
+		{ _postStringBlinker->Draw( ); }
 	}
 
+	void TextBox::SetBlinkerTime( const float &time )
+	{ _blinkerTime = time; }
+
+	const float &TextBox::GetBlinkerTime( ) const
+	{ return _blinkerTime; }
 }
 

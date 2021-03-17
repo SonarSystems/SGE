@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Core/Clock.hpp"
 #include "Core/ENGINEDEFINITIONS.hpp"
 #include "Graphics/Label.hpp"
 #include "Graphics/Shapes/Rectangle.hpp"
@@ -118,6 +119,18 @@ namespace Sonar
         */
         void Draw( );
 
+        /**
+        * \brief Set how often the blinker turns off and on
+        *
+        * \param time Time taken to turn off/on (double to do a full cycle)
+        */
+        void SetBlinkerTime( const float &time );
+
+        /**
+        * \brief Get the blinkers time
+        */
+        const float &GetBlinkerTime( ) const;
+
     private:
         /**
         * \brief Maximum number of characters allowed
@@ -129,11 +142,25 @@ namespace Sonar
         */
         std::vector<unsigned int> _restrictedCharacters;
 
+        /**
+        * \brief Blinker for text box at the end of the string
+        */
         Rectangle *_postStringBlinker;
 
-        std::string _originalText;
+        /**
+        * \brief Is the blinker visible
+        */
+        bool _isPostStringBlinkerShown;
 
-        bool _isVerticalPipeShown;
+        /**
+        * \brief Clock
+        */
+        Clock _clock;
+
+        /**
+        * \brief Blinker time between half cycle (off/on)
+        */
+        float _blinkerTime;
 
     };
 }

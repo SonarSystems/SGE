@@ -38,7 +38,7 @@ namespace Sonar
 		textBox->SetFontFilePath( "Resources/arial.ttf" );
 		textBox->SetInsideColor( Color::Red );
 		textBox->SetCharacterSize( 128 );
-		textBox->SetText( "Hello" );
+		textBox->SetText( "" );
 		textBox->SetPosition( 200, 300 );
 
 		menu->AddComponent( textBox );
