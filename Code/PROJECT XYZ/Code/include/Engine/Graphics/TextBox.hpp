@@ -131,6 +131,84 @@ namespace Sonar
         */
         const float &GetBlinkerTime( ) const;
 
+        /**
+        * \brief Set the minimum clickable size
+        *
+        * \param size Minimum clickable area
+        */
+        void SetClickableSize( const glm::vec2 &size );
+
+        /**
+        * \brief Set the minimum clickable size
+        *
+		* \param width Minimum clickable width
+		* \param height Minimum clickable height
+        */
+        void SetClickableSize( const float &width, const float &height );
+
+        /**
+        * \brief Set the minimum clickable width
+        *
+        * \param width Minimum clickable width
+        */
+        void SetClickableWidth( const float &width );
+
+        /**
+        * \brief Set the minimum clickable height
+        *
+        * \param height Minimum clickable height
+        */
+        void SetClickableHeight( const float &height );
+
+        /**
+        * \brief Get the minimum clickable area
+        *
+        * \return Output returns the minimum clickable area
+        */
+        glm::vec2 GetClickableSize( ) const;
+
+        /**
+        * \brief Get the minimum clickable width
+        *
+        * \return Output returns the minimum clickable width
+        */
+        float GetClickableWidth( ) const;
+
+        /**
+        * \brief Get the minimum clickable height
+        *
+        * \return Output returns the minimum clickable height
+        */
+        float GetClickableHeight( ) const;
+
+        /**
+        * \brief Set the mousee button which would trigger the click function
+        *
+        * \param button Mouse button
+        */
+        void SetMouseButtonToClick( const Mouse::Button &button );
+
+        /**
+        * \brief Get the current mouse button which would trigger the click function
+        *
+        * \return Output returns the mouse button
+        */
+        const Mouse::Button &GetMouseButtonToClick( ) const;
+
+        /**
+        * \brief Set the mouse's hover cursor
+        *
+        * \param cursor Cursor to show when hovered over
+        */
+        void SetMouseHoverCursor( const Mouse::Cursor &cursor );
+
+        /**
+        * \brief Get the mouse cursor to show when hovered over
+        *
+        * \return Output returns the hover mouse cursor
+        */
+        const Mouse::Cursor &GetMouseHoverCursor( ) const;
+
     private:
         /**
         * \brief Maximum number of characters allowed
@@ -153,6 +231,11 @@ namespace Sonar
         bool _isPostStringBlinkerShown;
 
         /**
+        * \brief Is the text box focused on (is it editable essentially)
+        */
+        bool _isFocusedOn;
+
+        /**
         * \brief Clock
         */
         Clock _clock;
@@ -162,5 +245,24 @@ namespace Sonar
         */
         float _blinkerTime;
 
+        /**
+        * \brief Minimum clickable area around the text box
+        */
+        glm::vec2 _minimumClickableSize;
+
+        /**
+        * \brief Which button triggers the clicked function
+        */
+        Mouse::Button _buttonToClick;
+
+        /**
+        * \brief Clickable area to focus on the text box
+        */
+        Rectangle *_clickableRect;
+
+        /**
+        * \brief Mouse cursor when hovered over the text box
+        */
+        Mouse::Cursor _hoverCursor;
     };
 }

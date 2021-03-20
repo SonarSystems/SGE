@@ -85,5 +85,10 @@
 #define DEFAULT_BUTTON_CLICKED_CURSOR Sonar::Mouse::Cursor::Hand
 #define DEFAULT_BUTTON_CLICKED_MOUSE_BUTTON Sonar::Mouse::Button::Left
 
+/**
+* \brief Default text box properties
+*/
 #define DEFAULT_TEXTBOX_MAXIMUM_CHARACTERS 32
 #define DEFAULT_TEXTBOX_BLINKER_TIME 0.5
+#define DEFAULT_TEXTBOX_CLICKED_MOUSE_BUTTON Sonar::Mouse::Button::Left
+#define DEFAULT_TEXTBOX_HOVER_CURSOR Sonar::Mouse::Cursor::Text

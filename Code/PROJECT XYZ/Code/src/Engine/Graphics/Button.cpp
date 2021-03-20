@@ -630,6 +630,12 @@ namespace Sonar
 	float Button::GetMaximumHeight( ) const
 	{ return _maxSize.y; }
 
+	void Button::SetMouseButtonToClick( const Mouse::Button &button )
+	{ _buttonToClick = button; }
+
+	const Sonar::Mouse::Button &Button::GetMouseButtonToClick( ) const
+	{ return _buttonToClick; }
+
 	void Button::UpdateDefaultStyle( )
 	{
 		_defaultStyle._backgroundColor = _background->GetInsideColor( );

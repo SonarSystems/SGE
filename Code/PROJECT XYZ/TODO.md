@@ -4,12 +4,6 @@ GAME
 ENGINE
 -----------------------------------------------------------------
 * GUI
-    - Textbox
-        - Focus on it
-            - Blinking cursor when focused on
-            - Change focus clickable size
-        - Clickable
-        - Change cursor - use button code
     - Radio button
     - Checkbox
     - Slider

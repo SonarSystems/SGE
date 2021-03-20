@@ -40,6 +40,7 @@ namespace Sonar
 		textBox->SetCharacterSize( 128 );
 		textBox->SetText( "" );
 		textBox->SetPosition( 200, 300 );
+		textBox->SetClickableSize( 200, 200 );
 
 		menu->AddComponent( textBox );
 	} 

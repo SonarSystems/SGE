@@ -9,13 +9,21 @@ namespace Sonar
 	{
 		_maxCharacters = DEFAULT_TEXTBOX_MAXIMUM_CHARACTERS;
 		_isPostStringBlinkerShown = false;
+		_isFocusedOn = false;
 
 		_blinkerTime = DEFAULT_TEXTBOX_BLINKER_TIME;
+
+		_buttonToClick = DEFAULT_TEXTBOX_CLICKED_MOUSE_BUTTON;
+		_hoverCursor = DEFAULT_TEXTBOX_HOVER_CURSOR;
 
 		_postStringBlinker = new Rectangle( data );
 		_postStringBlinker->SetSize( 5, GetHeight( ) );
 		_postStringBlinker->SetPosition( GetPositionX( ) + GetWidth( ), GetPositionY( ) + ( GetHeight( ) * 0.5 ) );
 		_postStringBlinker->SetInsideColor( Color::Black );
+
+		_minimumClickableSize = GetSize( );
+
+		_clickableRect = new Rectangle( data );
 	}
 
 	TextBox::TextBox( GameDataRef data, const std::string &filepath ) : Label( data, filepath ) { }
@@ -24,26 +32,29 @@ namespace Sonar
 
 	void TextBox::PollInput( const float &dt, const Event &event )
 	{
-		if ( Event::TextEntered == event.type )
+		if ( _isFocusedOn )
 		{
-			if ( BACKSPACE_TEXT_ENTERED_KEY_CODE == event.key.code )
+			if ( Event::TextEntered == event.type )
 			{
-				if ( GetText( ).size( ) > 0 )
+				if ( BACKSPACE_TEXT_ENTERED_KEY_CODE == event.key.code )
 				{
-					std::string str = GetText( );
-					str.resize( str.size( ) - 1 );
+					if ( GetText( ).size( ) > 0 )
+					{
+						std::string str = GetText( );
+						str.resize( str.size( ) - 1 );
 
-					SetText( str );
+						SetText( str );
+					}
 				}
-			}
-			else if ( GetText( ).size( ) + 1 <= _maxCharacters )
-			{
-				if ( !IsRestrictedCharacter( event.text.unicode ) )
-				{ SetText( GetText( ) + ( char )event.text.unicode ); }
-			}
+				else if ( GetText( ).size( ) + 1 <= _maxCharacters )
+				{
+					if ( !IsRestrictedCharacter( event.text.unicode ) )
+					{ SetText( GetText( ) + ( char )event.text.unicode ); }
+				}
 
-			_clock.Reset( );
-			_isPostStringBlinkerShown = true;
+				_clock.Reset( );
+				_isPostStringBlinkerShown = true;
+			}
 		}
 	}
 
@@ -95,21 +106,64 @@ namespace Sonar
 
 	void TextBox::Update( const float &dt )
 	{
+		_clickableRect->SetInsideColor( Color( 0, 0, 255, 100 ) );
+	
+		if ( GetWidth( ) > _minimumClickableSize.x )
+		{ _clickableRect->SetWidth( GetWidth( ) ); }
+		else
+		{ _clickableRect->SetWidth( _minimumClickableSize.x ); }
+
+		if ( GetHeight( ) > _minimumClickableSize.y )
+		{ _clickableRect->SetHeight( GetHeight( ) ); }
+		else
+		{ _clickableRect->SetHeight( _minimumClickableSize.y ); }
+		
+		_clickableRect->SetPosition( GetPosition( ) );
+
 		if ( _clock.GetElapsedTime( ).AsSeconds( ) > _blinkerTime )
 		{
 			_clock.Reset( );
 			_isPostStringBlinkerShown = !_isPostStringBlinkerShown;
 		}
+
+		if ( _clickableRect->IsMouseOver( ) )
+		{
+			Mouse::ChangeCursor( _hoverCursor, _data->window );
+		}
+		
+		if ( _clickableRect->IsClicked( _buttonToClick ) )
+		{
+			_isFocusedOn = true;
+			_clock.Reset( );
+			_isPostStringBlinkerShown = true;
+		}
+		else
+		{
+			if ( Mouse::IsPressed( _buttonToClick ) )
+			{
+				auto mousePosition = Mouse::GetPosition( _data->window );
+
+				if ( mousePosition.x < _clickableRect->GetPositionX( ) || mousePosition.x > _clickableRect->GetPositionX( ) + _clickableRect->GetWidth( ) || 
+					mousePosition.y < _clickableRect->GetPositionY( ) || mousePosition.y > _clickableRect->GetPositionY( ) + _clickableRect->GetHeight( ) )
+				{
+					_isFocusedOn = false;
+					_isPostStringBlinkerShown = false;
+				}
+			}
+		}
 	}
 
 	void TextBox::Draw( )
 	{
+		// POSSIBILITY FOR FUTURE DRAWING
+		_clickableRect->Draw( );
+
 		_postStringBlinker->SetHeight( GetCharacterSize( ) );
 		_postStringBlinker->SetPosition( GetPositionX( ) + GetWidth( ) + GetLetterSpacing( ) * CURSOR_LETTER_SPACING_MULITPLIER, GetPositionY( ) + GetCharacterSize( ) - _postStringBlinker->GetHeight( ) );
 
 		Label::Draw( );
 
-		if ( _isPostStringBlinkerShown )
+		if ( _isPostStringBlinkerShown && _isFocusedOn )
 		{ _postStringBlinker->Draw( ); }
 	}
 
@@ -118,5 +172,38 @@ namespace Sonar
 
 	const float &TextBox::GetBlinkerTime( ) const
 	{ return _blinkerTime; }
+
+	void TextBox::SetClickableSize( const glm::vec2 &size )
+	{ _minimumClickableSize = size; }
+
+	void TextBox::SetClickableSize( const float &width, const float &height )
+	{ SetClickableSize( glm::vec2( width, height ) ); }
+
+	void TextBox::SetClickableWidth( const float &width )
+	{ SetClickableSize( glm::vec2( width, _minimumClickableSize.y ) ); }
+
+	void TextBox::SetClickableHeight( const float &height )
+	{ SetClickableSize( glm::vec2( _minimumClickableSize.x, height ) ); }
+
+	glm::vec2 TextBox::GetClickableSize( ) const
+	{ return _minimumClickableSize; }
+
+	float TextBox::GetClickableWidth( ) const
+	{ return _minimumClickableSize.x; }
+
+	float TextBox::GetClickableHeight( ) const
+	{ return _minimumClickableSize.y; }
+
+	void TextBox::SetMouseButtonToClick( const Mouse::Button &button )
+	{ _buttonToClick = button; }
+
+	const Sonar::Mouse::Button &TextBox::GetMouseButtonToClick( ) const
+	{ return _buttonToClick; }
+
+	void TextBox::SetMouseHoverCursor( const Mouse::Cursor &cursor )
+	{ _hoverCursor = cursor; }
+
+	const Sonar::Mouse::Cursor &TextBox::GetMouseHoverCursor( ) const
+	{ return _hoverCursor; }
 }
 

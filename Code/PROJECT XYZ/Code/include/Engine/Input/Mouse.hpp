@@ -101,11 +101,25 @@ namespace Sonar
         */
         static bool ChordPressed( const std::initializer_list<Button> &buttons );
 
+        /**
+        * \brief Change the mouse cursor
+        *
+		* \param cursor New cursor
+		* \param window Window to change the cursor on
+        */
         static void ChangeCursor( const Cursor &cursor, sf::RenderWindow &window );
 
+        /**
+        * \brief Get the current mouse cursor
+        *
+        * \return Output returns the current mouse cursor
+        */
         static const Cursor &GetCurrentCursor( );
 
     private:
+        /**
+        * \brief Mouse cursor to display
+        */
         static Mouse::Cursor _CURSOR_;
 
 	};

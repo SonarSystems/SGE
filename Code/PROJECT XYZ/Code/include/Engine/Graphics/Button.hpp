@@ -813,6 +813,20 @@ namespace Sonar
         */
         float GetMaximumHeight( ) const;
 
+        /**
+        * \brief Set the mousee button which would trigger the click function
+        *
+        * \param button Mouse button
+        */
+        void SetMouseButtonToClick( const Mouse::Button &button );
+
+        /**
+        * \brief Get the current mouse button which would trigger the click function
+        *
+        * \return Output returns the mouse button
+        */
+        const Mouse::Button &GetMouseButtonToClick( ) const;
+
     private:
         /**
         * \brief Updates the buttons default style
