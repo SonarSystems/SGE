@@ -18,6 +18,7 @@
 #include "External/json.hpp"
 //#include "External/pugixml/pugixml.hpp"
 #include "Graphics/Button.hpp"
+#include "Graphics/Checkbox.hpp"
 #include "Graphics/Color.hpp"
 #include "Graphics/Drawable.hpp"
 #include "Graphics/Font.hpp"

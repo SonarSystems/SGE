@@ -30,7 +30,6 @@ namespace Sonar
         
 		Player *player;
 
-
 		Label *label;
 
 		Menu *menu;
@@ -38,6 +37,8 @@ namespace Sonar
 		Button *button;
 
 		TextBox *textBox;
+
+		Checkbox *check;
 
 	};
 }

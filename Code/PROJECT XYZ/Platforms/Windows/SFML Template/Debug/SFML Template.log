@@ -1,9 +1,4 @@
-﻿  Game.cpp
-  TextBox.cpp
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\TextBox.cpp(21,83): warning C4244: 'argument': conversion from 'double' to 'const float', possible loss of data
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\TextBox.cpp(161,50): warning C4244: 'argument': conversion from 'unsigned int' to 'const float', possible loss of data
-  PhysicsWorld.cpp
-  Player.cpp
-  SplashState.cpp
-  Generating Code...
+﻿  Checkbox.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Checkbox.cpp(21,71): warning C4244: 'argument': conversion from 'double' to 'const float', possible loss of data
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Checkbox.cpp(20,70): warning C4244: 'argument': conversion from 'double' to 'const float', possible loss of data
   SFML Template.vcxproj -> C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\SFML Template.exe

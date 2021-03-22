@@ -31,7 +31,7 @@ namespace Sonar
 		//button->SetPadding( 50, 50 );
 		button->SetText( "BOB", true );
 		button->SetFontFilePath( "Resources/arial.ttf" );
-		menu->AddComponent( button );
+		//menu->AddComponent( button );
 
 		textBox = new TextBox( _data );
 
@@ -43,6 +43,10 @@ namespace Sonar
 		textBox->SetClickableSize( 200, 200 );
 
 		menu->AddComponent( textBox );
+
+		check = new Checkbox( _data );
+
+		menu->AddComponent( check );
 	} 
 
 	SplashState::~SplashState( )

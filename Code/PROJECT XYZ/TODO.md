@@ -4,8 +4,8 @@ GAME
 ENGINE
 -----------------------------------------------------------------
 * GUI
-    - Radio button
     - Checkbox
+    - Radio button
     - Slider
 
     - Menu system - https://www.youtube.com/watch?v=4Vg9d1pjL20
