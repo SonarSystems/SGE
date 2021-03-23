@@ -69,33 +69,39 @@ namespace Sonar
         void SetPositionY( const float &y );
 
         /**
-        * \brief Set width and height
+        * \brief Get the x position
         *
-        * \param size Size of the rectangle object
+        * \return Output returns the x position
         */
-        void SetSize( const glm::vec2 &size );
+        float GetPositionX( ) const;
+
+        /**
+        * \brief Get the y position
+        *
+        * \return Output returns the y position
+        */
+        float GetPositionY( ) const;
+
+        /**
+        * \brief Get the position vector
+        *
+        * \return Output returns the position vector
+        */
+        glm::vec2 GetPosition( ) const;
 
         /**
         * \brief Set width and height
         *
-        * \param width Width of the rectangle object
-        * \param height Height of the rectangle object
+        * \param size Size of the object
         */
-        void SetSize( const float &width, const float &height );
+        void SetSize( const float &size );
 
         /**
-        * \brief Set width
+        * \brief Get the size of the object
         *
-        * \param width Width of the rectangle object
+        * \return Output returns the size
         */
-        void SetWidth( const float &width );
-
-        /**
-        * \brief Set height
-        *
-        * \param height Height of the rectangle object
-        */
-        void SetHeight( const float &height );
+        float GetSize( ) const;
 
         /**
         * \brief Set the color of the border
@@ -173,119 +179,25 @@ namespace Sonar
         void MoveY( const float &y );
 
         /**
-        * \brief Set the rotation angle
-        *
-        * \param angle Angle of the rotation
-        */
-        void SetRotation( const float &angle );
-
-        /**
-        * \brief Rotate the object relative to it's current angle
-        *
-        * \param angle Angle of the rotation
-        */
-        void Rotate( const float &angle );
-
-        /**
-        * \brief Get the rotation angle
-        *
-        * \return Output returns the rotation angle
-        */
-        float GetRotation( ) const;
-
-        /**
         * \brief Set the scale factor
         *
-        * \param xScale Scale in x axis
-        * \param yScale Scale in y axis
+        * \param scale Scale factor
         */
-        void SetScale( const float &xScale, const float &yScale );
-
-        /**
-        * \brief Set the scale factor
-        *
-        * \param scale Scale in x and y axes
-        */
-        void SetScale( const glm::vec2 &scale );
-
-        /**
-        * \brief Set the x axis scale factor
-        *
-        * \param xScale Scale in x axis
-        */
-        void SetScaleX( const float &xScale );
-
-        /**
-        * \brief Set the y axis scale factor
-        *
-        * \param yScale Scale in y axis
-        */
-        void SetScaleY( const float &yScale );
+        void SetScale( const float &scale );
 
         /**
         * \brief Scale the object relative to it's current scale
         *
-        * \param scale Scale in the x and y axis
+        * \param scale Scale factor
         */
-        void Scale( const glm::vec2 &scale );
+        void Scale( const float &scale );
 
         /**
-        * \brief Scale the object relative to it's current scale
+        * \brief Get the scale factor
         *
-        * \param xScale Scale in x axis
-        * \param yScale Scale in y axis
+        * \return Output returns the scale factor
         */
-        void Scale( const float &xScale, const float &yScale );
-
-        /**
-        * \brief Scale the object relative to it's current x scale
-        *
-        * \param xScale Scale in x axis
-        */
-        void ScaleX( const float &xScale );
-
-        /**
-        * \brief Scale the object relative to it's current y scale
-        *
-        * \param yScale Scale in y axis
-        */
-        void ScaleY( const float &yScale );
-
-        /**
-        * \brief Set the pivot point
-        *
-        * \param xPoint X pivot point
-        * \param yPoint Y pivot point
-        */
-        void SetPivot( const float &xPoint, const float &yPoint );
-
-        /**
-        * \brief Set the pivot point
-        *
-        * \param pivot X and y pivot point
-        */
-        void SetPivot( const glm::vec2 &pivot );
-
-        /**
-        * \brief Set the pivot point based on predefined points (center, top left, top right, bottom left, bottom right)
-        *
-        * \param pivot Predefined pivot location
-        */
-        void SetPivot( const OBJECT_POINTS &pivot );
-
-        /**
-        * \brief Set the x pivot point
-        *
-        * \param xPoint X pivot point
-        */
-        void SetPivotX( const float &xPoint );
-
-        /**
-        * \brief Set the y pivot point
-        *
-        * \param yPoint Y pivot point
-        */
-        void SetPivotY( const float &yPoint );
+        float GetScale( ) const;
 
         /**
         * \brief Get the local bounds

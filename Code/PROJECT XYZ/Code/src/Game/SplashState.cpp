@@ -45,6 +45,11 @@ namespace Sonar
 		menu->AddComponent( textBox );
 
 		check = new Checkbox( _data );
+		check->SetColor( Color::Blue );
+		check->SetCheckedColor( Color::Yellow );
+		check->SetPosition( 400, 300 );
+		check->SetBorderThickness( 35 );
+		check->SetSize( 400 );
 
 		menu->AddComponent( check );
 	} 
