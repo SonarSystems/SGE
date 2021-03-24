@@ -127,9 +127,7 @@ namespace Sonar
 		}
 
 		if ( _clickableRect->IsMouseOver( ) )
-		{
-			Mouse::ChangeCursor( _hoverCursor, _data->window );
-		}
+		{ Mouse::ChangeCursor( _hoverCursor, _data->window ); }
 		
 		if ( _clickableRect->IsClicked( _buttonToClick ) )
 		{

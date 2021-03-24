@@ -7,19 +7,26 @@ namespace Sonar
 		_outerLayer = new Rectangle( _data );
 		_insideLayer = new Rectangle( _data );
 
-		_outerLayer->SetSize( 100, 100 );
-		_outerLayer->SetBorderThickness( 10 );
-		_outerLayer->SetBorderColor( Color::Black );
-		_outerLayer->SetInsideColor( Color::Transparent );
-		_outerLayer->SetPosition( 40, 40 );
+		_outerLayer->SetSize( DEFAULT_CHECKBOX_OUTER_LAYER_SIZE );
+		_outerLayer->SetBorderThickness( DEFAULT_CHECKBOX_OUTSIDE_LAYER_BORDER_THICKNESS );
+		_outerLayer->SetBorderColor( DEFAULT_CHECKBOX_OUTSIDE_LAYER_BORDER_COLOR );
+		_outerLayer->SetInsideColor( DEFAULT_CHECKBOX_OUTSIDE_LAYER_INSIDE_COLOR );
+		_outerLayer->SetPosition( 0, 0 );
 
-		_insideLayer->SetSize( 80, 80 );
-		_insideLayer->SetInsideColor( Color::Red );
+		_insideLayer->SetSize( DEFAULT_CHECKBOX_INSIDE_LAYER_SIZE );
+		_insideLayer->SetInsideColor( DEFAULT_CHECKBOX_INSIDE_LAYER_INSIDE_COLOR );
+		_checkedColor = _insideLayer->GetInsideColor( );
 		_insideLayer->SetPosition
 		(
 			GetPositionX( ) + ( GetSize( ) * 0.5 ) - ( _insideLayer->GetWidth( ) * 0.5 ),
 			GetPositionY( ) + ( GetSize( ) * 0.5 ) - ( _insideLayer->GetHeight( ) * 0.5 )
 		);
+
+		_buttonToClick = DEFAULT_CHECKBOX_CLICKED_MOUSE_BUTTON;
+
+		_isSelected = DEFAULT_CHECKBOX_IS_CLICKED_STATUS;
+
+		_isMouseDown = false;
 	}
 
 	Checkbox::~Checkbox( ) { }
@@ -27,13 +34,39 @@ namespace Sonar
 	void Checkbox::Draw( )
 	{
 		_outerLayer->Draw( );
-		_insideLayer->Draw( );
+
+		if ( _isSelected )
+		{ _insideLayer->Draw( ); }
 	}
 
 	void Checkbox::Update( const float &dt )
 	{
 		_outerLayer->Update( dt );
 		_insideLayer->Update( dt );
+
+		if ( _outerLayer->IsClicked( _buttonToClick ) )
+		{
+			if ( !_isMouseDown )
+			{
+				_isSelected = !_isSelected;
+				_isMouseDown = true;
+			}
+		}
+		else if ( _outerLayer->IsMouseOver( ) )
+		{
+			Color checkedColor = _checkedColor;
+			checkedColor.SetAlpha( checkedColor.GetAlpha( ) * DEFAULT_CHECKBOX_IS_MOUSE_OVER_ALPHA_MULTIPLIER );
+
+			_insideLayer->SetInsideColor( checkedColor );
+
+			_isMouseDown = false;
+		}
+		else
+		{
+			_insideLayer->SetInsideColor( _checkedColor );
+
+			_isMouseDown = false;
+		}
 	}
 
 	glm::vec4 Checkbox::GetLocalBounds( ) const
@@ -83,10 +116,15 @@ namespace Sonar
 	{ return _outerLayer->GetWidth( ); }
 
 	void Checkbox::SetColor( const Color &color )
-	{ _outerLayer->SetBorderColor( color ); }
+	{
+		_outerLayer->SetBorderColor( color );
+	}
 
 	void Checkbox::SetCheckedColor( const Color &color )
-	{ _insideLayer->SetInsideColor( color ); }
+	{
+		_insideLayer->SetInsideColor( color );
+		_checkedColor = color;
+	}
 
 	void Checkbox::SetBorderThickness( const float &thickness )
 	{
@@ -153,5 +191,7 @@ namespace Sonar
 	const Sonar::Mouse::Button &Checkbox::GetMouseButtonToClick( ) const
 	{ return _buttonToClick; }
 
+	const bool &Checkbox::IsSelected( ) const
+	{ return _isSelected; }
 }
 

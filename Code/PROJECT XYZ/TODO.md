@@ -4,12 +4,7 @@ GAME
 ENGINE
 -----------------------------------------------------------------
 * GUI
-    - Checkbox
-        - Hover styling
-        - Clicked styling
-        - On/off
-            - Trigger
-            - Get status
+
     - Radio button
     - Slider
 

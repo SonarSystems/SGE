@@ -4,6 +4,7 @@
 #include <string>
 
 #include <External/glm/glm.hpp>
+#include "Core/ENGINEDEFINITIONS.hpp"
 #include "Graphics/Color.hpp"
 #include "Graphics/Drawable.hpp"
 #include "Graphics/MenuComponent.hpp"
@@ -227,6 +228,13 @@ namespace Sonar
         */
         const Mouse::Button &GetMouseButtonToClick( ) const;
 
+        /**
+        * \brief Is the checkbox selected
+        *
+        * \return Output returns the selected status
+        */
+        const bool &IsSelected( ) const;
+
     private:
         /**
         * \brief Game data object
@@ -242,6 +250,21 @@ namespace Sonar
         * \brief Button background
         */
         Rectangle *_outerLayer, *_insideLayer;
+
+        /**
+        * \brief Color of the inside layer
+        */
+        Color _checkedColor;
+
+        /**
+        * \brief Tracks the selected status
+        */
+        bool _isSelected;
+
+        /**
+        * \brief Is the mouse currently down
+        */
+        bool _isMouseDown;
 
     };
 }

@@ -46,10 +46,10 @@ namespace Sonar
 
 		check = new Checkbox( _data );
 		check->SetColor( Color::Blue );
-		check->SetCheckedColor( Color::Yellow );
-		check->SetPosition( 400, 300 );
-		check->SetBorderThickness( 35 );
-		check->SetSize( 400 );
+		check->SetCheckedColor( Color::Red );
+		check->SetPosition( 500, 300 );
+		check->SetBorderThickness( 5 );
+		check->SetSize( 55 );
 
 		menu->AddComponent( check );
 	} 
