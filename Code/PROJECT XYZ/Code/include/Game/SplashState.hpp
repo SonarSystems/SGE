@@ -38,7 +38,7 @@ namespace Sonar
 
 		TextBox *textBox;
 
-		Checkbox *check;
+		RadioButton *radio;
 
 	};
 }

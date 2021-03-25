@@ -13,7 +13,8 @@ namespace Sonar
 		_outerLayer->SetInsideColor( DEFAULT_CHECKBOX_OUTSIDE_LAYER_INSIDE_COLOR );
 		_outerLayer->SetPosition( 0, 0 );
 
-		_insideLayer->SetSize( DEFAULT_CHECKBOX_INSIDE_LAYER_SIZE );
+		SetSize( GetSize( ) );
+
 		_insideLayer->SetInsideColor( DEFAULT_CHECKBOX_INSIDE_LAYER_INSIDE_COLOR );
 		_checkedColor = _insideLayer->GetInsideColor( );
 		_insideLayer->SetPosition

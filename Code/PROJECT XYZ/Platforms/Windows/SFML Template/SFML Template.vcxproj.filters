@@ -162,6 +162,9 @@
     <ClInclude Include="..\..\..\Code\include\Engine\Graphics\Checkbox.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\Code\include\Engine\Graphics\RadioButton.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\Code\src\Engine\Core\Clock.cpp">
@@ -291,6 +294,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Code\src\Engine\Graphics\Checkbox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\src\Engine\Graphics\RadioButton.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

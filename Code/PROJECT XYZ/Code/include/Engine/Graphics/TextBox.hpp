@@ -209,6 +209,28 @@ namespace Sonar
         */
         const Mouse::Cursor &GetMouseHoverCursor( ) const;
 
+        /**
+        * \brief Enables the debug drawing
+        */
+        void EnableDebugDraw( );
+
+        /**
+        * \brief Disables the debug drawing
+        */
+        void DisableDebugDraw( );
+
+        /**
+        * \brief Toggle the debug drawing
+        */
+        void ToggleDebugDraw( );
+
+        /**
+        * \brief Get the debug drawing status
+        *
+        * \return Output returns the debug drawing status
+        */
+        const bool &IsDebugDrawing( ) const;
+
     private:
         /**
         * \brief Maximum number of characters allowed
@@ -264,5 +286,11 @@ namespace Sonar
         * \brief Mouse cursor when hovered over the text box
         */
         Mouse::Cursor _hoverCursor;
+
+        /**
+        * \brief Tracks whether or not the debug background should draw
+        */
+        bool _isDebugDrawing;
+
     };
 }

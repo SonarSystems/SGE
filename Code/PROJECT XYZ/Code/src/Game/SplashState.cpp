@@ -44,14 +44,14 @@ namespace Sonar
 
 		menu->AddComponent( textBox );
 
-		check = new Checkbox( _data );
-		check->SetColor( Color::Blue );
-		check->SetCheckedColor( Color::Red );
-		check->SetPosition( 500, 300 );
-		check->SetBorderThickness( 5 );
-		check->SetSize( 55 );
+		radio = new RadioButton( _data );
+		radio->SetColor( Color::Blue );
+		radio->SetCheckedColor( Color::Red );
+		radio->SetPosition( 500, 300 );
+		radio->SetBorderThickness( 5 );
+		radio->SetRadius( 50 );
 
-		menu->AddComponent( check );
+		menu->AddComponent( radio );
 	} 
 
 	SplashState::~SplashState( )

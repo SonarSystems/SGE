@@ -26,6 +26,7 @@
 #include "Graphics/Menu.hpp"
 #include "Graphics/MenuComponent.hpp"
 #include "Graphics/Parallax.hpp"
+#include "Graphics/RadioButton.hpp"
 #include "Graphics/ScrollingBackground.hpp"
 #include "Graphics/Shapes/Circle.hpp"
 #include "Graphics/Shapes/Rectangle.hpp"

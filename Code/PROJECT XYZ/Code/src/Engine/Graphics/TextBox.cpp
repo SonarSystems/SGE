@@ -24,6 +24,8 @@ namespace Sonar
 		_minimumClickableSize = GetSize( );
 
 		_clickableRect = new Rectangle( data );
+
+		_isDebugDrawing = DEFAULT_TEXTBOX_IS_DEBUG_DRAWING;
 	}
 
 	TextBox::TextBox( GameDataRef data, const std::string &filepath ) : Label( data, filepath ) { }
@@ -128,6 +130,8 @@ namespace Sonar
 
 		if ( _clickableRect->IsMouseOver( ) )
 		{ Mouse::ChangeCursor( _hoverCursor, _data->window ); }
+		else
+		{ Mouse::ChangeCursor( DEFAULT_TEXTBOX_NO_HOVER_CURSOR, _data->window ); }
 		
 		if ( _clickableRect->IsClicked( _buttonToClick ) )
 		{
@@ -153,8 +157,8 @@ namespace Sonar
 
 	void TextBox::Draw( )
 	{
-		// POSSIBILITY FOR FUTURE DRAWING
-		_clickableRect->Draw( );
+		if ( _isDebugDrawing )
+		{ _clickableRect->Draw( ); }
 
 		_postStringBlinker->SetHeight( GetCharacterSize( ) );
 		_postStringBlinker->SetPosition( GetPositionX( ) + GetWidth( ) + GetLetterSpacing( ) * CURSOR_LETTER_SPACING_MULITPLIER, GetPositionY( ) + GetCharacterSize( ) - _postStringBlinker->GetHeight( ) );
@@ -203,5 +207,17 @@ namespace Sonar
 
 	const Sonar::Mouse::Cursor &TextBox::GetMouseHoverCursor( ) const
 	{ return _hoverCursor; }
+
+	void TextBox::EnableDebugDraw( )
+	{ _isDebugDrawing = true; }
+
+	void TextBox::DisableDebugDraw( )
+	{ _isDebugDrawing = false; }
+
+	void TextBox::ToggleDebugDraw( )
+	{ _isDebugDrawing = !_isDebugDrawing; }
+
+	const bool &TextBox::IsDebugDrawing( ) const
+	{ return _isDebugDrawing; }
 }
 

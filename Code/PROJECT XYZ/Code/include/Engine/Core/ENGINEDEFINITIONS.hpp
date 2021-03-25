@@ -92,6 +92,8 @@
 #define DEFAULT_TEXTBOX_BLINKER_TIME 0.5
 #define DEFAULT_TEXTBOX_CLICKED_MOUSE_BUTTON Sonar::Mouse::Button::Left
 #define DEFAULT_TEXTBOX_HOVER_CURSOR Sonar::Mouse::Cursor::Text
+#define DEFAULT_TEXTBOX_NO_HOVER_CURSOR Sonar::Mouse::Cursor::Arrow
+#define DEFAULT_TEXTBOX_IS_DEBUG_DRAWING false
 
 /**
 * \brief Default checkbox properties
