@@ -7,25 +7,25 @@ namespace Sonar
 		_outerLayer = new Circle( _data );
 		_insideLayer = new Circle( _data );
 
-		_outerLayer->SetRadius( 50 );
-		_outerLayer->SetBorderThickness( DEFAULT_CHECKBOX_OUTSIDE_LAYER_BORDER_THICKNESS );
-		_outerLayer->SetBorderColor( DEFAULT_CHECKBOX_OUTSIDE_LAYER_BORDER_COLOR );
-		_outerLayer->SetInsideColor( DEFAULT_CHECKBOX_OUTSIDE_LAYER_INSIDE_COLOR );
+		_outerLayer->SetRadius( DEFAULT_RADIO_BUTTON_RADIUS );
+		_outerLayer->SetBorderThickness( DEFAULT_RADIO_BUTTON_OUTSIDE_LAYER_BORDER_THICKNESS );
+		_outerLayer->SetBorderColor( DEFAULT_RADIO_BUTTON_OUTSIDE_LAYER_BORDER_COLOR );
+		_outerLayer->SetInsideColor( DEFAULT_RADIO_BUTTON_OUTSIDE_LAYER_INSIDE_COLOR );
 		_outerLayer->SetPosition( 0, 0 );
 
 		SetRadius( GetRadius( ) );
 
-		_insideLayer->SetInsideColor( DEFAULT_CHECKBOX_INSIDE_LAYER_INSIDE_COLOR );
+		_insideLayer->SetInsideColor( DEFAULT_RADIO_BUTTON_INSIDE_LAYER_INSIDE_COLOR );
 		_checkedColor = _insideLayer->GetInsideColor( );
 		_insideLayer->SetPosition
 		(
-			GetPositionX( ) + ( GetRadius( ) * 0.5 ) - ( _insideLayer->GetWidth( ) * 0.5 ),
-			GetPositionY( ) + ( GetRadius( ) * 0.5 ) - ( _insideLayer->GetHeight( ) * 0.5 )
+			GetPositionX( ) + GetRadius( ) - _insideLayer->GetRadius( ),
+			GetPositionY( ) + GetRadius( ) - _insideLayer->GetRadius( )
 		);
 
-		_buttonToClick = DEFAULT_CHECKBOX_CLICKED_MOUSE_BUTTON;
+		_buttonToClick = DEFAULT_RADIO_BUTTON_CLICKED_MOUSE_BUTTON;
 
-		_isSelected = DEFAULT_CHECKBOX_IS_CLICKED_STATUS;
+		_isSelected = DEFAULT_RADIO_BUTTON_IS_CLICKED_STATUS;
 
 		_isMouseDown = false;
 	}
@@ -56,7 +56,7 @@ namespace Sonar
 		else if ( _outerLayer->IsMouseOver( ) )
 		{
 			Color checkedColor = _checkedColor;
-			checkedColor.SetAlpha( checkedColor.GetAlpha( ) * DEFAULT_CHECKBOX_IS_MOUSE_OVER_ALPHA_MULTIPLIER );
+			checkedColor.SetAlpha( checkedColor.GetAlpha( ) * DEFAULT_RADIO_BUTTON_IS_MOUSE_OVER_ALPHA_MULTIPLIER );
 
 			_insideLayer->SetInsideColor( checkedColor );
 
@@ -82,8 +82,8 @@ namespace Sonar
 
 		_insideLayer->SetPosition
 		(
-			position.x + ( GetRadius( ) * 0.5 ) - ( _insideLayer->GetWidth( ) * 0.5 ),
-			position.y + ( GetRadius( ) * 0.5 ) - ( _insideLayer->GetHeight( ) * 0.5 )
+			position.x + GetRadius( ) - _insideLayer->GetRadius( ),
+			position.y + GetRadius( ) - _insideLayer->GetRadius( )
 		);
 	}
 
@@ -194,5 +194,14 @@ namespace Sonar
 
 	const bool &RadioButton::IsSelected( ) const
 	{ return _isSelected; }
+
+	void RadioButton::EnableSelection( )
+	{ _isSelected = true; };
+
+	void RadioButton::DisableSelection( )
+	{ _isSelected = false; }
+
+	void RadioButton::ToggleSelection( )
+	{ _isSelected = !_isSelected; }
 }
 

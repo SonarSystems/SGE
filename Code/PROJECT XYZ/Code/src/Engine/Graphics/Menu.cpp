@@ -6,7 +6,7 @@ namespace Sonar
 
 	Menu::~Menu( ) { }
 
-	void Menu::AddComponent(  MenuComponent *component )
+	void Menu::AddComponent( MenuComponent *component )
 	{ _menuComponents.push_back( component ); }
 
 	void Menu::Draw( )

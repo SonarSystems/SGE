@@ -38,7 +38,9 @@ namespace Sonar
 
 		TextBox *textBox;
 
-		RadioButton *radio;
+		RadioButton *radio, *radio2, *radio3;
+
+		RadioButtonGroup *group;
 
 	};
 }

@@ -26,7 +26,10 @@ namespace Sonar
 			|| _position.y + ( _size.y * _scale[1] ) < 0 // Check if it's beyond the top boundary
 			|| _position.y > _data->window.getSize( ).y // Check if it's beyond the bottom boundary
 			)
-		{ return; }
+		{
+			std::cout << _position.x << ":" << _position.y << "   -   " << _size.x << ":" << _size.y << "CULLING" << std::endl;
+			return;
+		}
 
 		_data->window.draw( *_object );
 	}

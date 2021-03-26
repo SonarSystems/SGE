@@ -235,6 +235,22 @@ namespace Sonar
         */
         const bool &IsSelected( ) const;
 
+        /**
+        * \brief Enable the radio button
+        */
+        void EnableSelection( );
+
+        /**
+        * \brief Disable the radio button
+        */
+        void DisableSelection( );
+
+        /**
+        * \brief Toggle the radio button
+        */
+        void ToggleSelection( );
+
+
     private:
         /**
         * \brief Game data object

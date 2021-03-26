@@ -28,7 +28,7 @@ namespace Sonar
 	void Circle::SetRadius( const float &radius )
 	{
 		_shape.setRadius( radius );
-		_globalBounds = _shape.getGlobalBounds( );
+		SetSize( radius );
 	}
 
 	float Circle::GetRadius( ) const

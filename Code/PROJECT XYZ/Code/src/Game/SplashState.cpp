@@ -42,16 +42,36 @@ namespace Sonar
 		textBox->SetPosition( 200, 300 );
 		textBox->SetClickableSize( 200, 200 );
 
-		menu->AddComponent( textBox );
+		//menu->AddComponent( textBox );
+
+		group = new RadioButtonGroup( _data );
 
 		radio = new RadioButton( _data );
 		radio->SetColor( Color::Blue );
 		radio->SetCheckedColor( Color::Red );
-		radio->SetPosition( 500, 300 );
+		radio->SetPosition( 100, 300 );
 		radio->SetBorderThickness( 5 );
 		radio->SetRadius( 50 );
 
-		menu->AddComponent( radio );
+		radio2 = new RadioButton( _data );
+		radio2->SetColor( Color::Magenta );
+		radio2->SetCheckedColor( Color::Black );
+		radio2->SetPosition( 300, 300 );
+		radio2->SetBorderThickness( 10 );
+		radio2->SetRadius( 70 );
+
+		radio3 = new RadioButton( _data );
+		radio3->SetColor( Color::Magenta );
+		radio3->SetCheckedColor( Color::Black );
+		radio3->SetPosition( 700, 300 );
+		radio3->SetBorderThickness( 15 );
+		radio3->SetRadius( 40 );
+		
+		group->AddRadioButton( radio );
+		group->AddRadioButton( radio2 );
+		group->AddRadioButton( radio3 );
+
+		menu->AddComponent( group );
 	} 
 
 	SplashState::~SplashState( )
