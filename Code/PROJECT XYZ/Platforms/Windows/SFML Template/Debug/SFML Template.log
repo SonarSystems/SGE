@@ -1,4 +1,5 @@
-﻿  RadioButtonGroup.cpp
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\RadioButtonGroup.cpp(19,22): warning C4018: '<': signed/unsigned mismatch
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\RadioButtonGroup.cpp(32,23): warning C4018: '<': signed/unsigned mismatch
+﻿  RadioButton.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\RadioButton.cpp(58,52): warning C4244: '=': conversion from '__int64' to 'unsigned int', possible loss of data
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\RadioButton.cpp(64,52): warning C4244: 'argument': conversion from 'double' to 'const uint8_t', possible loss of data
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\RadioButton.cpp(207,48): warning C4244: '=': conversion from '__int64' to 'unsigned int', possible loss of data
   SFML Template.vcxproj -> C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\SFML Template.exe

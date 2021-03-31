@@ -4,7 +4,6 @@ GAME
 ENGINE
 -----------------------------------------------------------------
 * GUI
-    - Radio button
     - Slider
         - Horizontal
         - Vertical

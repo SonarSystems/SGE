@@ -28,6 +28,8 @@ namespace Sonar
 		_isSelected = DEFAULT_RADIO_BUTTON_IS_CLICKED_STATUS;
 
 		_isMouseDown = false;
+
+		_timeSelected = 0;
 	}
 
 	RadioButton::~RadioButton( ) { }
@@ -49,8 +51,11 @@ namespace Sonar
 		{
 			if ( !_isMouseDown )
 			{
-				_isSelected = !_isSelected;
+				_isSelected = true;
 				_isMouseDown = true;
+
+				if ( _isSelected )
+				{ _timeSelected = Time::GetCurrentEpochDateTime( ); }
 			}
 		}
 		else if ( _outerLayer->IsMouseOver( ) )
@@ -196,12 +201,19 @@ namespace Sonar
 	{ return _isSelected; }
 
 	void RadioButton::EnableSelection( )
-	{ _isSelected = true; };
+	{
+		_isSelected = true;
+
+		_timeSelected = Time::GetCurrentEpochDateTime( );
+	};
 
 	void RadioButton::DisableSelection( )
 	{ _isSelected = false; }
 
 	void RadioButton::ToggleSelection( )
 	{ _isSelected = !_isSelected; }
+
+	const unsigned int &RadioButton::GetSelectedTime( ) const
+	{ return _timeSelected; }
 }
 

@@ -15,14 +15,16 @@ namespace Sonar
 	void RadioButtonGroup::Update( const float &dt )
 	{
 		int selectedIndex = -1;
+		unsigned int timeSelected = 0;
 
 		for ( int i = 0; i < _radioButtons.size( ); i++ )
 		{
 			_radioButtons.at( i )->Update( dt );
 
-			if ( _radioButtons.at( i )->IsSelected( ) )
+			if ( _radioButtons.at( i )->GetSelectedTime( ) > timeSelected )
 			{
-				spdlog::info( selectedIndex );
+				timeSelected = _radioButtons.at( i )->GetSelectedTime( );
+
 				selectedIndex = i;
 			}
 		}
@@ -34,6 +36,11 @@ namespace Sonar
 				if ( i != selectedIndex )
 				{ _radioButtons.at( i )->DisableSelection( ); }
 			}
+		}
+		else
+		{
+			if ( _radioButtons.size( ) >= 0 )
+			{ _radioButtons.front( )->EnableSelection( ); }
 		}
 	}
 

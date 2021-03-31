@@ -250,6 +250,12 @@ namespace Sonar
         */
         void ToggleSelection( );
 
+        /**
+        * \brief Get the last time this radio button was selected
+        *
+        * \return Output returns the selected time
+        */
+        const unsigned int &GetSelectedTime( ) const;
 
     private:
         /**
@@ -281,6 +287,11 @@ namespace Sonar
         * \brief Is the mouse currently down
         */
         bool _isMouseDown;
+
+        /**
+        * \brief The time the radio button was selected
+        */
+        unsigned int _timeSelected;
 
     };
 }
