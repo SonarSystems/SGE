@@ -351,7 +351,7 @@ namespace Sonar
 
     private:
         /**
-        * \brief Set width and height
+        * \brief Set radius
         *
         * \param radius Radius of the circle object
         */

@@ -203,14 +203,14 @@ namespace Sonar
         /**
         * \brief Get the local bounds
         *
-        * \return Output returns the shape's texture local bounds
+        * \return Output returns the shape's local bounds
         */
         glm::vec4 GetLocalBounds( ) const;
 
         /**
         * \brief Get the global bounds
         *
-        * \return Output returns the shape's texture global bounds
+        * \return Output returns the shape's global bounds
         */
         glm::vec4 GetGlobalBounds( ) const;
 

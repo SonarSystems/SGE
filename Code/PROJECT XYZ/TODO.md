@@ -5,13 +5,27 @@ ENGINE
 -----------------------------------------------------------------
 * GUI
     - Slider
-        - Horizontal
-        - Vertical
-        - Movement
+        - Colors
+            - Background color
+                - Filled color
+                - Not filled color
+            - Knob color
+        - Values
+            - Current value
+            - Minimum
+            - Maximum
+        - Movement of the knob
             - Different amount of incremenets
             - Smooth
+            - Clickable
+                - Knob
+                - Background and the knob goes to the clicked position (nearest position for increment based)
+        - Orientation
+            - Horizontal
+            - Vertical
 
     - Menu system - https://www.youtube.com/watch?v=4Vg9d1pjL20
+        - Remove component
         - Keyboard support - Up and down, stops when at the end of the list or switches sides
     - FPS counter - https://github.com/Hopson97/SFML-Game-Framework/blob/master/Source/Util/FPSCounter.cpp
         - ***LOOK INTO IMGUI ESPECIALLY FOR THE GRAPH STUFF***
