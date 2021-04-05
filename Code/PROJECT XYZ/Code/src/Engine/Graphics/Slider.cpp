@@ -6,6 +6,24 @@ namespace Sonar
 	{
 		_background = new Rectangle( _data );
 		_knob = new Circle( _data );
+
+		_value = DEFAULT_SLIDER_CURRENT_VALUE;
+		_minimumValue = DEFAULT_SLIDER_MINIMUM_VALUE;
+		_maximumValue = DEFAULT_SLIDER_MAXIMUM_VALUE;
+
+		SetBackgroundColor( DEFAULT_SLIDER_BACKGROUND_COLOR );
+		SetBackgroundBorderThickness( DEFAULT_SLIDER_BACKGROUND_BORDER_THICKNESS );
+		SetBackgroundBorderColor( DEFAULT_SLIDER_BACKGROUND_BORDER_COLOR );
+
+		SetKnobColor( DEFAULT_SLIDER_KNOB_COLOR );
+		SetKnobBorderThickness( DEFAULT_SLIDER_KNOB_BORDER_THICKNESS );
+		SetKnobBorderColor( DEFAULT_SLIDER_KNOB_BORDER_COLOR );
+
+		SetBackgroundSize( DEFAULT_SLIDER_BACKGROUND_WIDTH, DEFAULT_SLIDER_BACKGROUND_HEIGHT );
+		SetKnobRadius( DEFAULT_SLIDER_KNOB_RADIUS );
+
+		_background->SetPosition( 100, 100 );
+		SetPosition( _background->GetPosition( ) );
 	}
 
 	Slider::~Slider( ) { }
@@ -30,23 +48,25 @@ namespace Sonar
 
 	void Slider::SetPosition( const glm::vec2 &position )
 	{
-		
+		_background->SetPosition( position );
+
+		float percentAlongNormalised = ( _value - _minimumValue ) / ( _maximumValue - _minimumValue );
+
+		_knob->SetPosition
+		(
+			position.x - ( _knob->GetWidth( ) * 0.5 ) + ( _background->GetWidth( ) * percentAlongNormalised ),
+			position.y + ( _background->GetHeight( ) * 0.5 ) - ( _knob->GetHeight( ) * 0.5 )
+		);
 	}
 
 	void Slider::SetPosition( const float &x, const float &y )
-	{
-
-	}
+	{ SetPosition( glm::vec2( x, y ) ); }
 
 	void Slider::SetPositionX( const float &x )
-	{
-
-	}
+	{ SetPosition( glm::vec2( x, GetPositionY( ) ) ); }
 
 	void Slider::SetPositionY( const float &y )
-	{
-
-	}
+	{ SetPosition( glm::vec2( GetPositionX( ), y ) ); }
 
 	glm::vec2 Slider::GetPosition( ) const
 	{ return _background->GetPosition( ); }
@@ -84,35 +104,41 @@ namespace Sonar
 	float Slider::GetKnobRadius( ) const
 	{ return _knob->GetRadius( ); }
 
-	void Slider::SetColor( const Color &color )
-	{
-		
-	}
+	void Slider::SetBackgroundColor( const Color &color )
+	{ _background->SetInsideColor( color ); }
 
-	void Slider::SetCheckedColor( const Color &color )
-	{
-		
-	}
+	void Slider::SetBackgroundBorderThickness( const float &thickness )
+	{ _background->SetBorderThickness( thickness ); }
 
-	void Slider::SetBorderThickness( const float &thickness )
-	{
-		
-	}
+	void Slider::SetBackgroundBorderColor( const Color &color )
+	{ _background->SetBorderColor( color ); }
 
-	Color Slider::GetColor( ) const
-	{
+	Color Slider::GetBackgroundColor( ) const
+	{ return _background->GetInsideColor( ); }
 
-	}
+	float Slider::GetBackgroundBorderThickness( ) const
+	{ return _background->GetBorderThickness( ); }
 
-	Color Slider::GetCheckedColor( ) const
-	{
+	Color Slider::GetBackgroundBorderColor( ) const
+	{ return _background->GetBorderColor( ); }
 
-	}
+	void Slider::SetKnobColor( const Color &color )
+	{ _knob->SetInsideColor( color ); }
 
-	float Slider::GetBorderThickness( ) const
-	{
+	void Slider::SetKnobBorderThickness( const float &thickness )
+	{ _knob->SetBorderThickness( thickness ); }
 
-	}
+	void Slider::SetKnobBorderColor( const Color &color )
+	{ _knob->SetBorderColor( color ); }
+
+	Color Slider::GetKnobColor( ) const
+	{ return _knob->GetInsideColor( ); }
+
+	float Slider::GetKnobBorderThickness( ) const
+	{ return _knob->GetBorderThickness( ); }
+
+	Color Slider::GetKnobBorderColor( ) const
+	{ return _knob->GetBorderColor( ); }
 
 	void Slider::Move( const glm::vec2 &offset )
 	{
@@ -156,5 +182,49 @@ namespace Sonar
 
 	const Mouse::Button &Slider::GetMouseButtonToClick( ) const
 	{ return _buttonToClick; }
+
+	void Slider::SetValue( const float &value )
+	{
+		if ( value >= _minimumValue && value <= _maximumValue )
+		{
+			_value = value;
+			SetPosition( GetPosition( ) );
+		}
+	}
+
+	const float &Slider::GetValue( ) const
+	{ return _value; }
+
+	void Slider::SetMinimumValue( const float &value )
+	{
+		if ( value < _maximumValue )
+		{
+			_minimumValue = value;
+
+			SetValue( _value );
+		}
+	}
+
+	void Slider::SetMaximumValue( const float &value )
+	{
+		if ( value > _minimumValue )
+		{
+			_maximumValue = value;
+
+			SetValue( _value );
+		}
+	}
+
+	const float &Slider::GetMinimumValue( ) const
+	{ return _minimumValue; }
+
+	const float &Slider::GetMaximumValue( ) const
+	{ return _maximumValue; }
+
+	void Slider::Increment( )
+	{ SetValue( _value + 1 ); }
+
+	void Slider::Decrement( )
+	{ SetValue( _value - 1 ); }
 }
 

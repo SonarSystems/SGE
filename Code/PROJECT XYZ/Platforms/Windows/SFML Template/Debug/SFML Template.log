@@ -1,6 +1,6 @@
 ﻿  Slider.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Slider.cpp(58,53): warning C4244: 'argument': conversion from 'double' to 'const float', possible loss of data
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Slider.cpp(57,46): warning C4244: 'argument': conversion from 'double' to 'const float', possible loss of data
   SplashState.cpp
   Generating Code...
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Slider.cpp(110): error C4716: 'Sonar::Slider::GetCheckedColor': must return a value
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Slider.cpp(115): error C4716: 'Sonar::Slider::GetBorderThickness': must return a value
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Slider.cpp(105): error C4716: 'Sonar::Slider::GetColor': must return a value
+  SFML Template.vcxproj -> C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\SFML Template.exe

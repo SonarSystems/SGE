@@ -71,7 +71,11 @@ namespace Sonar
 		group->AddRadioButton( radio2 );
 		group->AddRadioButton( radio3 );
 
-		menu->AddComponent( group );
+		//menu->AddComponent( group );
+
+		slider = new Slider( data );
+
+		menu->AddComponent( slider );
 	} 
 
 	SplashState::~SplashState( )
@@ -90,6 +94,10 @@ namespace Sonar
 
 		if ( Event::MouseWheelScrolled == event.type )
 		{
+			if ( event.mouseWheelScroll.delta > 0 )
+			{ slider->Increment( ); }
+			else if ( event.mouseWheelScroll.delta < 0 )
+			{ slider->Decrement( ); }
 			//physicsWorld->CreateDynamicBody( event.mouseButton.x, event.mouseButton.y, 32, 32 );
 		}
 

@@ -156,50 +156,92 @@ namespace Sonar
         float GetKnobRadius( ) const;
 
         /**
-        * \brief Set the color of the border
+        * \brief Set the color of the background
         *
         * \param color Color object
         */
-        void SetColor( const Color &color );
+        void SetBackgroundColor( const Color &color );
 
         /**
-        * \brief Set the checked status color
-        *
-        * \param color Color object
-        *
-        * SetBorderThickness method required aswell
-        */
-        void SetCheckedColor( const Color &color );
-
-        /**
-        * \brief Set the border thickness
+        * \brief Set the background border thickness
         *
         * \param thickness Thickness of the border
         *
         * Required for border, otherwise border is to set 0 thickness and cannot be seen
         */
-        void SetBorderThickness( const float &thickness );
+        void SetBackgroundBorderThickness( const float &thickness );
 
         /**
-        * \brief Get the inside color (fill color)
+        * \brief Set the color of the background border
         *
-        * \return Output returns the inside color
+        * \param color Color object
         */
-        Color GetColor( ) const;
+        void SetBackgroundBorderColor( const Color &color );
 
         /**
-        * \brief Get the checked color
+        * \brief Get the background color
         *
-        * \return Output returns the checked color
+        * \return Output returns the background color
         */
-        Color GetCheckedColor( ) const;
+        Color GetBackgroundColor( ) const;
 
         /**
-        * \brief Get the border thickness
+        * \brief Get the background border thickness
         *
         * \return Output returns the border thickness
         */
-        float GetBorderThickness( ) const;
+        float GetBackgroundBorderThickness( ) const;
+
+        /**
+        * \brief Get the background border color
+        *
+        * \return Output returns the checked color
+        */
+        Color GetBackgroundBorderColor( ) const;
+
+        /**
+        * \brief Set the color of the knob
+        *
+        * \param color Color object
+        */
+        void SetKnobColor( const Color &color );
+
+        /**
+        * \brief Set the knob border thickness
+        *
+        * \param thickness Thickness of the border
+        *
+        * Required for border, otherwise border is to set 0 thickness and cannot be seen
+        */
+        void SetKnobBorderThickness( const float &thickness );
+
+        /**
+        * \brief Set the color of the knob border
+        *
+        * \param color Color object
+        */
+        void SetKnobBorderColor( const Color &color );
+
+        /**
+        * \brief Get the knob color
+        *
+        * \return Output returns the knob color
+        */
+        Color GetKnobColor( ) const;
+
+        /**
+        * \brief Get the knob border thickness
+        *
+        * \return Output returns the border thickness
+        */
+        float GetKnobBorderThickness( ) const;
+
+        /**
+        * \brief Get the knob border color
+        *
+        * \return Output returns the checked color
+        */
+        Color GetKnobBorderColor( ) const;
 
         /**
         * \brief Move the object relative to it's current position in the x and y axis
@@ -279,6 +321,58 @@ namespace Sonar
         */
         const Mouse::Button &GetMouseButtonToClick( ) const;
 
+        /**
+        * \brief Set the sliders current value
+        *
+        * \param value Current value
+        */
+        void SetValue( const float &value );
+
+        /**
+        * \brief Get the sliders current value
+        *
+        * \return Output returns the sliders current value
+        */
+        const float &GetValue( ) const;
+
+        /**
+        * \brief Set sliders minimum value
+        *
+        * \param value Minimum value
+        */
+        void SetMinimumValue( const float &value );
+
+        /**
+        * \brief Set sliders maximum value
+        *
+        * \param value Maximum value
+        */
+        void SetMaximumValue( const float &value );
+
+        /**
+        * \brief Get the sliders minimum value
+        *
+        * \return Output returns the sliders minimum value
+        */
+        const float &GetMinimumValue( ) const;
+
+        /**
+        * \brief Get the sliders maximum value
+        *
+        * \return Output returns the sliders maximum value
+        */
+        const float &GetMaximumValue( ) const;
+
+        /**
+        * \brief Increment the sliders current value
+        */
+        void Increment( );
+
+        /**
+        * \brief Decrement the sliders current value
+        */
+        void Decrement( );
+
     private:
         /**
         * \brief Game data object
@@ -304,6 +398,11 @@ namespace Sonar
         * \brief Is the mouse currently down
         */
         bool _isMouseDown;
+
+        /**
+        * \brief Current, minimum & maximum slider values
+        */
+        float _value, _minimumValue, _maximumValue;
 
     };
 }

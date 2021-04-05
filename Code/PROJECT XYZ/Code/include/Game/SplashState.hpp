@@ -42,5 +42,7 @@ namespace Sonar
 
 		RadioButtonGroup *group;
 
+		Slider *slider;
+
 	};
 }

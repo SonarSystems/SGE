@@ -5,17 +5,11 @@ ENGINE
 -----------------------------------------------------------------
 * GUI
     - Slider
-        - Colors
-            - Background color
-                - Filled color
-                - Not filled color
-            - Knob color
-        - Values
-            - Current value
-            - Minimum
-            - Maximum
+        - Scale
+            - Set Scale
+            - Relative Scale
         - Movement of the knob
-            - Different amount of incremenets
+            - Different amount of increments
             - Smooth
             - Clickable
                 - Knob
