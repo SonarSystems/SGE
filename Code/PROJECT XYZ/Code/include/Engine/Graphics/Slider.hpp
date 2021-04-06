@@ -42,6 +42,14 @@ namespace Sonar
         void Update( const float &dt );
 
         /**
+        * \brief Poll the input from the Joystick, Keyboard and Mouse
+        *
+        * \param dt Delta time (difference between frames)
+        * \param event Event to poll
+        */
+        void PollInput( const float &dt, const Event &event );
+
+        /**
         * \brief Set x and y position
         *
         * \param position X and Y position
@@ -373,6 +381,20 @@ namespace Sonar
         */
         void Decrement( );
 
+        /**
+        * \brief Set the jump amount for the increment and decrement functions
+        *
+        * \param value Jump amount value
+        */
+        void SetJumpAmount( const float &value );
+
+        /**
+        * \brief Get the jump amount value
+        *
+        * \return Output returns the jump amount value
+        */
+        const float &GetJumpAmount( ) const;
+
     private:
         /**
         * \brief Game data object
@@ -403,6 +425,16 @@ namespace Sonar
         * \brief Current, minimum & maximum slider values
         */
         float _value, _minimumValue, _maximumValue;
+
+        /**
+        * \brief The amount the increment/decrement methods increase/decrease the value by
+        */
+        float _jumpAmount;
+        
+        /**
+        * \brief Is the mouse clicked down on the slider's knob
+        */
+        bool _isMouseDownOverKnob;
 
     };
 }

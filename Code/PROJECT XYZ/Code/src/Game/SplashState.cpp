@@ -74,6 +74,7 @@ namespace Sonar
 		//menu->AddComponent( group );
 
 		slider = new Slider( data );
+		//slider->SetScale( 4 );
 
 		menu->AddComponent( slider );
 	} 
@@ -102,6 +103,7 @@ namespace Sonar
 		}
 
 		textBox->PollInput( dt, event );
+		slider->PollInput( dt, event );
 	}
 
 	void SplashState::Update( const float &dt )

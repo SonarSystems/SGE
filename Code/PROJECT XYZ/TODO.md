@@ -5,15 +5,12 @@ ENGINE
 -----------------------------------------------------------------
 * GUI
     - Slider
-        - Scale
-            - Set Scale
-            - Relative Scale
         - Movement of the knob
             - Different amount of increments
-            - Smooth
             - Clickable
                 - Knob
                 - Background and the knob goes to the clicked position (nearest position for increment based)
+        - Hover
         - Orientation
             - Horizontal
             - Vertical

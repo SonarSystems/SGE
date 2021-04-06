@@ -7,9 +7,14 @@ namespace Sonar
 		_background = new Rectangle( _data );
 		_knob = new Circle( _data );
 
+		_isMouseDownOverKnob = false;
+
 		_value = DEFAULT_SLIDER_CURRENT_VALUE;
 		_minimumValue = DEFAULT_SLIDER_MINIMUM_VALUE;
 		_maximumValue = DEFAULT_SLIDER_MAXIMUM_VALUE;
+		_jumpAmount = DEFAULT_SLIDER_JUMP_AMOUNT;
+
+		_buttonToClick = DEFAULT_SLIDER_MOUSE_BUTTON;
 
 		SetBackgroundColor( DEFAULT_SLIDER_BACKGROUND_COLOR );
 		SetBackgroundBorderThickness( DEFAULT_SLIDER_BACKGROUND_BORDER_THICKNESS );
@@ -38,6 +43,56 @@ namespace Sonar
 	{
 		_background->Update( dt );
 		_knob->Update( dt );
+
+		if ( _knob->IsClicked( _buttonToClick ) )
+		{
+			//spdlog::info( true );
+		}
+
+		if ( Mouse::IsPressed( _buttonToClick ) )
+		{
+			auto mousePosition = Mouse::GetPosition( _data->window );
+
+			if ( mousePosition.x < _knob->GetPositionX( ) || mousePosition.x > _knob->GetPositionX( ) + _knob->GetWidth( ) ||
+				mousePosition.y < _knob->GetPositionY( ) || mousePosition.y > _knob->GetPositionY( ) + _knob->GetHeight( ) )
+			{
+				//spdlog::info( false );
+			}
+			else
+			{
+				
+			}
+		}
+	}
+
+	void Slider::PollInput( const float &dt, const Event &event )
+	{
+		if ( Event::MouseButtonPressed == event.type )
+		{
+			if ( event.mouseButton.button == _buttonToClick )
+			{
+				if ( _knob->IsClicked( _buttonToClick ) )
+				{ _isMouseDownOverKnob = true; }
+			}
+		}
+		else if ( Event::MouseButtonReleased == event.type )
+		{
+			if ( event.mouseButton.button == _buttonToClick )
+			{ _isMouseDownOverKnob = false; }
+		}
+		else if ( Event::MouseMoved == event.type )
+		{
+			if ( _isMouseDownOverKnob )
+			{
+				if ( event.mouseMove.x - _knob->GetRadius( ) >= _background->GetPositionX( ) - _knob->GetRadius( )
+					&& event.mouseMove.x - _knob->GetRadius( ) <= _background->GetPositionX( ) + _background->GetWidth( ) - _knob->GetRadius( ) )
+				{ _knob->SetPositionX( event.mouseMove.x - _knob->GetRadius( ) ); }
+			}
+
+			// UPDATE _VALUE
+			// INCREMENTS
+			// FACTOR IN SCALE
+		}
 	}
 
 	glm::vec4 Slider::GetLocalBounds( ) const
@@ -54,8 +109,8 @@ namespace Sonar
 
 		_knob->SetPosition
 		(
-			position.x - ( _knob->GetWidth( ) * 0.5 ) + ( _background->GetWidth( ) * percentAlongNormalised ),
-			position.y + ( _background->GetHeight( ) * 0.5 ) - ( _knob->GetHeight( ) * 0.5 )
+			position.x - ( _knob->GetWidth( ) * 0.5 * _knob->GetScaleX( ) ) + ( _background->GetWidth( ) * percentAlongNormalised * _background->GetScaleX( ) ),
+			position.y + ( _background->GetHeight( ) * 0.5 * _background->GetScaleX( ) ) - ( _knob->GetHeight( ) * 0.5 * _knob->GetScaleX( ) )
 		);
 	}
 
@@ -78,16 +133,19 @@ namespace Sonar
 	{ return _background->GetPositionY( ); }
 
 	void Slider::SetBackgroundSize( const glm::vec2 &size )
-	{ _background->SetSize( size ); }
+	{
+		_background->SetSize( size );
+		SetPosition( _background->GetPosition( ) );
+	}
 
 	void Slider::SetBackgroundSize( const float &width, const float &height )
-	{ _background->SetSize( width, height ); }
+	{ SetBackgroundSize( glm::vec2( width, height ) ); }
 
 	void Slider::SetBackgroundWidth( const float &width )
-	{ _background->SetWidth( width ); }
+	{ SetBackgroundSize( glm::vec2( width, _background->GetHeight( ) ) ); }
 
 	void Slider::SetBackgroundHeight( const float &height )
-	{ _background->SetHeight( height ); }
+	{ SetBackgroundSize(glm::vec2(  _background->GetWidth( ), height ) ); }
 
 	glm::vec2 Slider::GetBackgroundSize( ) const
 	{ return _background->GetSize( ); }
@@ -99,7 +157,10 @@ namespace Sonar
 	{ return _background->GetHeight( ); }
 
 	void Slider::SetKnobRadius( const float &radius )
-	{ _knob->SetRadius( radius ); }
+	{
+		_knob->SetRadius( radius );
+		SetPosition( _background->GetPosition( ) );
+	}
 
 	float Slider::GetKnobRadius( ) const
 	{ return _knob->GetRadius( ); }
@@ -166,12 +227,18 @@ namespace Sonar
 
 	void Slider::SetScale( const float &scale )
 	{
-		
+		_background->SetScale( scale, scale );
+		_knob->SetScale( scale, scale );
+
+		SetPosition( _background->GetPosition( ) );
 	}
 
 	void Slider::Scale( const float &scale )
 	{
-		
+		_background->Scale( scale, scale );
+		_knob->Scale( scale, scale );
+
+		SetPosition( _background->GetPosition( ) );
 	}
 
 	float Slider::GetScale( ) const
@@ -222,9 +289,15 @@ namespace Sonar
 	{ return _maximumValue; }
 
 	void Slider::Increment( )
-	{ SetValue( _value + 1 ); }
+	{ SetValue( _value + _jumpAmount ); }
 
 	void Slider::Decrement( )
-	{ SetValue( _value - 1 ); }
+	{ SetValue( _value - _jumpAmount ); }
+
+	void Slider::SetJumpAmount( const float &value )
+	{ _jumpAmount = value; }
+
+	const float &Slider::GetJumpAmount( ) const
+	{ return _jumpAmount; }
 }
 
