@@ -86,11 +86,17 @@ namespace Sonar
 			{
 				if ( event.mouseMove.x - _knob->GetRadius( ) >= _background->GetPositionX( ) - _knob->GetRadius( )
 					&& event.mouseMove.x - _knob->GetRadius( ) <= _background->GetPositionX( ) + _background->GetWidth( ) - _knob->GetRadius( ) )
-				{ _knob->SetPositionX( event.mouseMove.x - _knob->GetRadius( ) ); }
-			}
+				{
+					_knob->SetPositionX( event.mouseMove.x - _knob->GetRadius( ) );
 
-			// UPDATE _VALUE
-			// INCREMENTS
+					float percentageMovedNormalised = ( ( _knob->GetPositionX( ) + _knob->GetRadius( ) ) - _background->GetPositionX( ) ) / ( ( _background->GetPositionX( ) + _background->GetWidth( ) ) - _background->GetPositionX( ) );
+					_value = ( _maximumValue - _minimumValue ) * percentageMovedNormalised;
+
+					_value = _jumpAmount * round( _value / _jumpAmount );
+
+					SetPosition( _background->GetPosition( ) );
+				}
+			}
 			// FACTOR IN SCALE
 		}
 	}
@@ -255,6 +261,16 @@ namespace Sonar
 		if ( value >= _minimumValue && value <= _maximumValue )
 		{
 			_value = value;
+			SetPosition( GetPosition( ) );
+		}
+		else if ( value < _minimumValue )
+		{
+			_value = _minimumValue;
+			SetPosition( GetPosition( ) );
+		}
+		else if ( value > _maximumValue )
+		{
+			_value = _maximumValue;
 			SetPosition( GetPosition( ) );
 		}
 	}

@@ -6,17 +6,20 @@ ENGINE
 * GUI
     - Slider
         - Movement of the knob
-            - Different amount of increments
             - Clickable
-                - Knob
                 - Background and the knob goes to the clicked position (nearest position for increment based)
-        - Hover
+        - Hover state
         - Orientation
             - Horizontal
             - Vertical
 
     - Menu system - https://www.youtube.com/watch?v=4Vg9d1pjL20
         - Remove component
+        - Styling
+            - Few generic styles
+            - Light and dark theme
+            - Ability to override all children
+            - Needs to be updated on adding a component and changing the style
         - Keyboard support - Up and down, stops when at the end of the list or switches sides
     - FPS counter - https://github.com/Hopson97/SFML-Game-Framework/blob/master/Source/Util/FPSCounter.cpp
         - ***LOOK INTO IMGUI ESPECIALLY FOR THE GRAPH STUFF***
