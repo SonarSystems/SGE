@@ -43,26 +43,6 @@ namespace Sonar
 	{
 		_background->Update( dt );
 		_knob->Update( dt );
-
-		if ( _knob->IsClicked( _buttonToClick ) )
-		{
-			//spdlog::info( true );
-		}
-
-		if ( Mouse::IsPressed( _buttonToClick ) )
-		{
-			auto mousePosition = Mouse::GetPosition( _data->window );
-
-			if ( mousePosition.x < _knob->GetPositionX( ) || mousePosition.x > _knob->GetPositionX( ) + _knob->GetWidth( ) ||
-				mousePosition.y < _knob->GetPositionY( ) || mousePosition.y > _knob->GetPositionY( ) + _knob->GetHeight( ) )
-			{
-				//spdlog::info( false );
-			}
-			else
-			{
-				
-			}
-		}
 	}
 
 	void Slider::PollInput( const float &dt, const Event &event )
@@ -71,8 +51,11 @@ namespace Sonar
 		{
 			if ( event.mouseButton.button == _buttonToClick )
 			{
-				if ( _knob->IsClicked( _buttonToClick ) )
-				{ _isMouseDownOverKnob = true; }
+				if ( _knob->IsClicked( _buttonToClick ) || _background->IsClicked( _buttonToClick ) )
+				{
+					_isMouseDownOverKnob = true;
+					MoveKnob( event );
+				}
 			}
 		}
 		else if ( Event::MouseButtonReleased == event.type )
@@ -83,21 +66,34 @@ namespace Sonar
 		else if ( Event::MouseMoved == event.type )
 		{
 			if ( _isMouseDownOverKnob )
-			{
-				if ( event.mouseMove.x - _knob->GetRadius( ) >= _background->GetPositionX( ) - _knob->GetRadius( )
-					&& event.mouseMove.x - _knob->GetRadius( ) <= _background->GetPositionX( ) + _background->GetWidth( ) - _knob->GetRadius( ) )
-				{
-					_knob->SetPositionX( event.mouseMove.x - _knob->GetRadius( ) );
+			{ MoveKnob( event ); }
+		}
+	}
 
-					float percentageMovedNormalised = ( ( _knob->GetPositionX( ) + _knob->GetRadius( ) ) - _background->GetPositionX( ) ) / ( ( _background->GetPositionX( ) + _background->GetWidth( ) ) - _background->GetPositionX( ) );
-					_value = ( _maximumValue - _minimumValue ) * percentageMovedNormalised;
+	void Slider::MoveKnob( const Event &event )
+	{
+		float scale = _background->GetScaleX( );
+		float knobRadiusScaled = _knob->GetRadius( ) * scale;
+		float backgroundWidthScaled = _background->GetWidth( ) * scale;
+		float backgroundXPosition = _background->GetPositionX( );
 
-					_value = _jumpAmount * round( _value / _jumpAmount );
+		if ( event.mouseMove.x - knobRadiusScaled >= backgroundXPosition - knobRadiusScaled
+			&& event.mouseMove.x - knobRadiusScaled <= backgroundXPosition + backgroundWidthScaled - knobRadiusScaled )
+		{
+			_knob->SetPositionX( event.mouseMove.x - knobRadiusScaled );
 
-					SetPosition( _background->GetPosition( ) );
-				}
-			}
-			// FACTOR IN SCALE
+			float percentageMovedNormalised = ( ( _knob->GetPositionX( ) + knobRadiusScaled ) - backgroundXPosition ) / ( ( backgroundXPosition + backgroundWidthScaled ) - backgroundXPosition );
+
+			_value = ( _maximumValue - _minimumValue ) * percentageMovedNormalised;
+
+			_value = _jumpAmount * round( _value / _jumpAmount );
+
+			if ( _value > _maximumValue )
+			{ _value = _maximumValue; }
+			else if ( _value < _minimumValue )
+			{ _value = _minimumValue; }
+
+			SetPosition( _background->GetPosition( ) );
 		}
 	}
 

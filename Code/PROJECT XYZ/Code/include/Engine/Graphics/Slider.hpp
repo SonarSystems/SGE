@@ -397,6 +397,11 @@ namespace Sonar
 
     private:
         /**
+        * \brief Moves the knob, plain and simplessss
+        */
+        void MoveKnob( const Event &event );
+
+        /**
         * \brief Game data object
         */
         GameDataRef _data;

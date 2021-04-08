@@ -74,7 +74,7 @@ namespace Sonar
 		//menu->AddComponent( group );
 
 		slider = new Slider( data );
-		slider->SetJumpAmount( 50 );
+		slider->SetJumpAmount( 15 );
 		//slider->SetScale( 4 );
 
 		menu->AddComponent( slider );
