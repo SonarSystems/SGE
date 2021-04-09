@@ -4,11 +4,6 @@ GAME
 ENGINE
 -----------------------------------------------------------------
 * GUI
-    - Slider
-        - Orientation
-            - Horizontal
-            - Vertical
-
     - Menu system - https://www.youtube.com/watch?v=4Vg9d1pjL20
         - Remove component
         - Styling

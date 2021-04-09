@@ -2,7 +2,7 @@
 
 namespace Sonar
 {
-	Slider::Slider( GameDataRef data ) : _data( data )
+	Slider::Slider( GameDataRef data, const Orientation &orientation ) : _data( data ), _orientation( orientation )
 	{
 		_background = new Rectangle( _data );
 		_knob = new Circle( _data );
@@ -24,7 +24,11 @@ namespace Sonar
 		SetKnobBorderThickness( DEFAULT_SLIDER_KNOB_BORDER_THICKNESS );
 		SetKnobBorderColor( DEFAULT_SLIDER_KNOB_BORDER_COLOR );
 
-		SetBackgroundSize( DEFAULT_SLIDER_BACKGROUND_WIDTH, DEFAULT_SLIDER_BACKGROUND_HEIGHT );
+		if ( Orientation::HORIZONTAL == _orientation )
+		{ SetBackgroundSize( DEFAULT_SLIDER_HORIZONTAL_BACKGROUND_WIDTH, DEFAULT_SLIDER_HORIZONTAL_BACKGROUND_HEIGHT ); }
+		else if ( Orientation::VERTICAL == _orientation )
+		{ SetBackgroundSize( DEFAULT_SLIDER_VERTICAL_BACKGROUND_WIDTH, DEFAULT_SLIDER_VERTICAL_BACKGROUND_HEIGHT ); }
+
 		SetKnobRadius( DEFAULT_SLIDER_KNOB_RADIUS );
 
 		SetPosition( _background->GetPosition( ) );
@@ -53,7 +57,11 @@ namespace Sonar
 				if ( _knob->IsClicked( _buttonToClick ) || _background->IsClicked( _buttonToClick ) )
 				{
 					_isMouseDownOverKnob = true;
-					MoveKnob( event.mouseButton.x );
+
+					if ( Orientation::HORIZONTAL == _orientation )
+					{ MoveKnob( event.mouseButton.x ); }
+					else if ( Orientation::VERTICAL == _orientation )
+					{ MoveKnob( event.mouseButton.y ); }
 				}
 			}
 		}
@@ -65,23 +73,50 @@ namespace Sonar
 		else if ( Event::MouseMoved == event.type )
 		{
 			if ( _isMouseDownOverKnob )
-			{ MoveKnob( event.mouseMove.x ); }
+			{
+				if ( Orientation::HORIZONTAL == _orientation )
+				{ MoveKnob( event.mouseMove.x ); }
+				else if ( Orientation::VERTICAL == _orientation )
+				{ MoveKnob( event.mouseMove.y ); }
+			}
 		}
 	}
 
-	void Slider::MoveKnob( const float &xPosition )
+	void Slider::MoveKnob( const float &position )
 	{
 		float scale = _background->GetScaleX( );
 		float knobRadiusScaled = _knob->GetRadius( ) * scale;
-		float backgroundWidthScaled = _background->GetWidth( ) * scale;
-		float backgroundXPosition = _background->GetPositionX( );
 
-		if ( xPosition - knobRadiusScaled >= backgroundXPosition - knobRadiusScaled
-			&& xPosition - knobRadiusScaled <= backgroundXPosition + backgroundWidthScaled - knobRadiusScaled )
+		float backgroundScaled;
+		float backgroundPosition, knobPosition;
+
+		if ( Orientation::HORIZONTAL == _orientation )
 		{
-			_knob->SetPositionX( xPosition - knobRadiusScaled );
+			backgroundScaled = _background->GetWidth( ) * scale;
+			backgroundPosition = _background->GetPositionX( );
+			
+		}
+		else if ( Orientation::VERTICAL == _orientation )
+		{
+			backgroundScaled = _background->GetHeight( ) * scale;
+			backgroundPosition = _background->GetPositionY( );
+		}
 
-			float percentageMovedNormalised = ( ( _knob->GetPositionX( ) + knobRadiusScaled ) - backgroundXPosition ) / ( ( backgroundXPosition + backgroundWidthScaled ) - backgroundXPosition );
+		if ( position - knobRadiusScaled >= backgroundPosition - knobRadiusScaled
+			&& position - knobRadiusScaled <= backgroundPosition + backgroundScaled - knobRadiusScaled )
+		{
+			if ( Orientation::HORIZONTAL == _orientation )
+			{
+				_knob->SetPositionX( position - knobRadiusScaled );
+				knobPosition = _knob->GetPositionX( );
+			}
+			else if ( Orientation::VERTICAL == _orientation )
+			{
+				_knob->SetPositionY( position - knobRadiusScaled );
+				knobPosition = _knob->GetPositionY( );
+			}
+
+			float percentageMovedNormalised = ( ( knobPosition + knobRadiusScaled ) - backgroundPosition ) / ( ( backgroundPosition + backgroundScaled ) - backgroundPosition );
 
 			_value = ( _maximumValue - _minimumValue ) * percentageMovedNormalised;
 
@@ -91,6 +126,7 @@ namespace Sonar
 			{ _value = _maximumValue; }
 			else if ( _value < _minimumValue )
 			{ _value = _minimumValue; }
+
 
 			SetPosition( _background->GetPosition( ) );
 		}
@@ -108,11 +144,20 @@ namespace Sonar
 
 		float percentAlongNormalised = ( _value - _minimumValue ) / ( _maximumValue - _minimumValue );
 
-		_knob->SetPosition
-		(
-			position.x - ( _knob->GetWidth( ) * 0.5 * _knob->GetScaleX( ) ) + ( _background->GetWidth( ) * percentAlongNormalised * _background->GetScaleX( ) ),
-			position.y + ( _background->GetHeight( ) * 0.5 * _background->GetScaleX( ) ) - ( _knob->GetHeight( ) * 0.5 * _knob->GetScaleX( ) )
-		);
+		glm::vec2 knobPosition;
+
+		if ( Orientation::HORIZONTAL == _orientation )
+		{
+			knobPosition.x = position.x - ( _knob->GetRadius( ) * _knob->GetScaleX( ) ) + ( _background->GetWidth( ) * percentAlongNormalised * _background->GetScaleX( ) );
+			knobPosition.y = position.y + ( _background->GetHeight( ) * 0.5 * _background->GetScaleX( ) ) - ( _knob->GetRadius( ) * _knob->GetScaleX( ) );
+		}
+		else if ( Orientation::VERTICAL == _orientation )
+		{
+			knobPosition.x = position.x + ( _background->GetWidth( ) * 0.5 * _background->GetScaleX( ) ) - ( _knob->GetRadius( ) * _knob->GetScaleX( ) );
+			knobPosition.y = position.y - ( _knob->GetRadius( ) * _knob->GetScaleX( ) ) + ( _background->GetHeight( ) * percentAlongNormalised * _background->GetScaleX( ) );
+		}
+
+		_knob->SetPosition( knobPosition );
 	}
 
 	void Slider::SetPosition( const float &x, const float &y )
@@ -313,5 +358,8 @@ namespace Sonar
 
 	bool Slider::IsMouseOver( ) const
 	{ return _background->IsMouseOver( ) || _knob->IsMouseOver( ); }
+
+	const Sonar::Slider::Orientation &Slider::GetOrientation( ) const
+	{ return _orientation; }
 }
 

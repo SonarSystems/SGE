@@ -116,8 +116,6 @@ namespace Sonar
 		//button->Update( );
 
 		menu->Update( dt );
-
-		spdlog::info( slider->IsMouseOver( ) );
 	}
 
 	void SplashState::Draw( const float &dt )

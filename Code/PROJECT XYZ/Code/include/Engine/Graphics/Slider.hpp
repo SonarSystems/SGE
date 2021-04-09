@@ -18,11 +18,21 @@ namespace Sonar
     {
     public:
         /**
+        * \brief Slider's orientation
+        */
+        enum Orientation
+        {
+            HORIZONTAL = 0,
+            VERTICAL
+        };
+
+        /**
         * \brief Class constructor
         *
-        * \param data Game data object
+		* \param data Game data object
+		* \param orientation Slider's orientation (to change the orientation, the slider must be reinitialized)
         */
-        Slider( GameDataRef data );
+        Slider( GameDataRef data, const Orientation &orientation = Orientation::HORIZONTAL );
 
         /**
         * \brief Class destructor
@@ -402,11 +412,18 @@ namespace Sonar
         */
         bool IsMouseOver( ) const;
 
+        /**
+        * \brief Get the slider's orientation (to change the orientation, the slider must be reinitialized)
+        *
+        * \return Output returns which orientation the slider is in
+        */
+        const Orientation &GetOrientation( ) const;
+
     private:
         /**
         * \brief Moves the knob, plain and simplessss
         */
-        void MoveKnob( const float &xPosition );
+        void MoveKnob( const float &position );
 
         /**
         * \brief Game data object
@@ -447,6 +464,11 @@ namespace Sonar
         * \brief Is the mouse clicked down on the slider's knob
         */
         bool _isMouseDownOverKnob;
+
+        /**
+        * \brief Slider's orientation
+        */
+        Orientation _orientation;
 
     };
 }
