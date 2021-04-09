@@ -395,11 +395,18 @@ namespace Sonar
         */
         const float &GetJumpAmount( ) const;
 
+        /**
+        * \brief Is the mouse hovering over the slider
+        *
+        * \return Output returns the true or false for the hover event
+        */
+        bool IsMouseOver( ) const;
+
     private:
         /**
         * \brief Moves the knob, plain and simplessss
         */
-        void MoveKnob( const Event &event );
+        void MoveKnob( const float &xPosition );
 
         /**
         * \brief Game data object

@@ -5,10 +5,6 @@ ENGINE
 -----------------------------------------------------------------
 * GUI
     - Slider
-        - Movement of the knob
-            - Clickable
-                - Background and the knob goes to the clicked position (nearest position for increment based)
-        - Hover state
         - Orientation
             - Horizontal
             - Vertical

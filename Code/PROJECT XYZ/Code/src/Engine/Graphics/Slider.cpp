@@ -27,7 +27,6 @@ namespace Sonar
 		SetBackgroundSize( DEFAULT_SLIDER_BACKGROUND_WIDTH, DEFAULT_SLIDER_BACKGROUND_HEIGHT );
 		SetKnobRadius( DEFAULT_SLIDER_KNOB_RADIUS );
 
-		_background->SetPosition( 100, 100 );
 		SetPosition( _background->GetPosition( ) );
 	}
 
@@ -54,7 +53,7 @@ namespace Sonar
 				if ( _knob->IsClicked( _buttonToClick ) || _background->IsClicked( _buttonToClick ) )
 				{
 					_isMouseDownOverKnob = true;
-					MoveKnob( event );
+					MoveKnob( event.mouseButton.x );
 				}
 			}
 		}
@@ -66,21 +65,21 @@ namespace Sonar
 		else if ( Event::MouseMoved == event.type )
 		{
 			if ( _isMouseDownOverKnob )
-			{ MoveKnob( event ); }
+			{ MoveKnob( event.mouseMove.x ); }
 		}
 	}
 
-	void Slider::MoveKnob( const Event &event )
+	void Slider::MoveKnob( const float &xPosition )
 	{
 		float scale = _background->GetScaleX( );
 		float knobRadiusScaled = _knob->GetRadius( ) * scale;
 		float backgroundWidthScaled = _background->GetWidth( ) * scale;
 		float backgroundXPosition = _background->GetPositionX( );
 
-		if ( event.mouseMove.x - knobRadiusScaled >= backgroundXPosition - knobRadiusScaled
-			&& event.mouseMove.x - knobRadiusScaled <= backgroundXPosition + backgroundWidthScaled - knobRadiusScaled )
+		if ( xPosition - knobRadiusScaled >= backgroundXPosition - knobRadiusScaled
+			&& xPosition - knobRadiusScaled <= backgroundXPosition + backgroundWidthScaled - knobRadiusScaled )
 		{
-			_knob->SetPositionX( event.mouseMove.x - knobRadiusScaled );
+			_knob->SetPositionX( xPosition - knobRadiusScaled );
 
 			float percentageMovedNormalised = ( ( _knob->GetPositionX( ) + knobRadiusScaled ) - backgroundXPosition ) / ( ( backgroundXPosition + backgroundWidthScaled ) - backgroundXPosition );
 
@@ -311,5 +310,8 @@ namespace Sonar
 
 	const float &Slider::GetJumpAmount( ) const
 	{ return _jumpAmount; }
+
+	bool Slider::IsMouseOver( ) const
+	{ return _background->IsMouseOver( ) || _knob->IsMouseOver( ); }
 }
 
