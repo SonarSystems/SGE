@@ -31,7 +31,7 @@ namespace Sonar
 		//button->SetPadding( 50, 50 );
 		button->SetText( "BOB", true );
 		button->SetFontFilePath( "Resources/arial.ttf" );
-		//menu->AddComponent( button );
+		menu->AddComponent( button );
 
 		textBox = new TextBox( _data );
 
@@ -42,7 +42,7 @@ namespace Sonar
 		textBox->SetPosition( 200, 300 );
 		textBox->SetClickableSize( 200, 200 );
 
-		//menu->AddComponent( textBox );
+		menu->AddComponent( textBox );
 
 		group = new RadioButtonGroup( _data );
 
@@ -71,7 +71,7 @@ namespace Sonar
 		group->AddRadioButton( radio2 );
 		group->AddRadioButton( radio3 );
 
-		//menu->AddComponent( group );
+		menu->AddComponent( group );
 
 		slider = new Slider( data );
 		slider->SetJumpAmount( 15 );
@@ -96,10 +96,7 @@ namespace Sonar
 
 		if ( Event::MouseWheelScrolled == event.type )
 		{
-			if ( event.mouseWheelScroll.delta > 0 )
-			{ slider->Increment( ); }
-			else if ( event.mouseWheelScroll.delta < 0 )
-			{ slider->Decrement( ); }
+			menu->RemoveLastComponent();
 			//physicsWorld->CreateDynamicBody( event.mouseButton.x, event.mouseButton.y, 32, 32 );
 		}
 

@@ -5,7 +5,6 @@ ENGINE
 -----------------------------------------------------------------
 * GUI
     - Menu system - https://www.youtube.com/watch?v=4Vg9d1pjL20
-        - Remove component
         - Styling
             - Few generic styles
             - Light and dark theme

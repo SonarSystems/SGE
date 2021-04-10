@@ -3,3 +3,4 @@
 # pugixml
 # vincentlaucsb csv - https://github.com/vincentlaucsb/csv-parser#single-header
 # nlohmann json
+# https://iq.opengenus.org/ways-to-remove-elements-from-vector-cpp/

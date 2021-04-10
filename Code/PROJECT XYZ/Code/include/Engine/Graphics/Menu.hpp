@@ -22,8 +22,6 @@ namespace Sonar
         */
         ~Menu( );
 
-        void AddComponent(  MenuComponent *component );
-
         /**
         * \brief Draw the classes objects
         */
@@ -35,6 +33,37 @@ namespace Sonar
         * \param dt Delta time (difference between frames)
         */
         void Update( const float &dt );
+
+        /**
+        * \brief Add component to the menu
+        *
+        * \param component Component to add
+        */
+        void AddComponent( MenuComponent *component );
+
+        /**
+        * \brief Remove component from the menu
+        *
+        * \param component Component to remove
+        */
+        void RemoveComponent( MenuComponent *component );
+
+        /**
+        * \brief Remove component at a specific index from the menu
+        *
+        * \param index Index of component to remove
+        */
+        void RemoveComponent( const int &index );
+
+        /**
+        * \brief Remove the first component from the menu
+        */
+        void RemoveFirstComponent( );
+
+        /**
+        * \brief Remove the last component from the menu
+        */
+        void RemoveLastComponent( );
 
     private:
         /**
