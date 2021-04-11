@@ -75,6 +75,26 @@ namespace Sonar
 		}
 	}
 
+	void RadioButton::SetTheme( const MenuComponent::Theme &theme )
+	{
+		switch ( theme )
+		{
+			case MenuComponent::Theme::DARK:
+				SetColor( Color::Black );
+				SetCheckedColor( Color::Black );
+				SetInsideColor( Color::White );
+
+				break;
+
+			case MenuComponent::Theme::LIGHT:
+				SetColor( Color::White );
+				SetCheckedColor( Color::White );
+				SetInsideColor( Color::Black );
+
+				break;
+		}
+	}
+
 	glm::vec4 RadioButton::GetLocalBounds( ) const
 	{ return _outerLayer->GetLocalBounds( ); }
 
@@ -122,9 +142,10 @@ namespace Sonar
 	{ return _outerLayer->GetRadius( ); }
 
 	void RadioButton::SetColor( const Color &color )
-	{
-		_outerLayer->SetBorderColor( color );
-	}
+	{ _outerLayer->SetBorderColor( color ); }
+
+	void RadioButton::SetInsideColor( const Color &color )
+	{ _outerLayer->SetInsideColor( color ); }
 
 	void RadioButton::SetCheckedColor( const Color &color )
 	{
@@ -141,6 +162,9 @@ namespace Sonar
 
 	Sonar::Color RadioButton::GetColor( ) const
 	{ return _outerLayer->GetBorderColor( ); }
+
+	Sonar::Color RadioButton::GetInsideColor( ) const
+	{ return _outerLayer->GetInsideColor( ); }
 
 	Sonar::Color RadioButton::GetCheckedColor( ) const
 	{ return _insideLayer->GetInsideColor( ); }

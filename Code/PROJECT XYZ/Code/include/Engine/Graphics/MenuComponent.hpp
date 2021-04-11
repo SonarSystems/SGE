@@ -5,6 +5,12 @@ namespace Sonar
     class MenuComponent
     {
     public:
+        enum Theme
+        {
+            DARK = 0,
+            LIGHT,
+        };
+
         /**
         * \brief Class constructor
         *
@@ -26,6 +32,11 @@ namespace Sonar
         * \brief Update method to be overridden in child classes
         */
         virtual void Update( const float &dt ) = 0;
+
+        /**
+        * \brief Set theme method to be overriden in child classes
+        */
+        virtual void SetTheme( const MenuComponent::Theme &theme ) = 0;
     
     protected:
 

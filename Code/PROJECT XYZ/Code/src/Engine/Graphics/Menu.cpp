@@ -2,7 +2,8 @@
 
 namespace Sonar
 {
-	Menu::Menu( GameDataRef data ) : _data( data ) { }
+	Menu::Menu( GameDataRef data ) : _data( data )
+	{ _theme = DEFAULT_MENU_THEME; }
 
 	Menu::~Menu( ) { }
 
@@ -18,8 +19,13 @@ namespace Sonar
 		{ component->Update( dt ); }
 	}
 
-	void Menu::AddComponent( MenuComponent * component )
-	{ _menuComponents.push_back( component ); }
+	void Menu::AddComponent( MenuComponent *component, const bool &overrideStyle )
+	{
+		if ( overrideStyle )
+		{ component->SetTheme( _theme ); }
+
+		_menuComponents.push_back( component );
+	}
 
 	void Menu::RemoveComponent( MenuComponent *component )
 	{
@@ -52,5 +58,21 @@ namespace Sonar
 		if ( _menuComponents.size( ) > 0 )
 		{ _menuComponents.erase( _menuComponents.end( ) - 1 ); }
 	}
+
+	void Menu::SetTheme( const MenuComponent::Theme &theme )
+	{
+		_theme = theme;
+
+		ResetThemeForAllComponents( );
+	}
+
+	void Menu::ResetThemeForAllComponents( )
+	{
+		for ( auto component : _menuComponents )
+		{ component->SetTheme( _theme ); }
+	}
+
+	const Sonar::MenuComponent::Theme &Menu::GetTheme( ) const
+	{ return _theme; }
 }
 

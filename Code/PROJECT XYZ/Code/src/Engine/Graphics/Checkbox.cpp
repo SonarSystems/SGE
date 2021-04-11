@@ -70,6 +70,26 @@ namespace Sonar
 		}
 	}
 
+	void Checkbox::SetTheme( const MenuComponent::Theme &theme )
+	{
+		switch ( theme )
+		{
+			case MenuComponent::Theme::DARK:
+				SetColor( Color::Black );
+				SetCheckedColor( Color::Black );
+				SetInsideColor( Color::White );
+
+				break;
+
+			case MenuComponent::Theme::LIGHT:
+				SetColor( Color::White );
+				SetCheckedColor( Color::White );
+				SetInsideColor( Color::Black );
+
+				break;
+		}
+	}
+
 	glm::vec4 Checkbox::GetLocalBounds( ) const
 	{ return _outerLayer->GetLocalBounds( ); }
 
@@ -117,9 +137,10 @@ namespace Sonar
 	{ return _outerLayer->GetWidth( ); }
 
 	void Checkbox::SetColor( const Color &color )
-	{
-		_outerLayer->SetBorderColor( color );
-	}
+	{ _outerLayer->SetBorderColor( color ); }
+
+	void Checkbox::SetInsideColor( const Color &color )
+	{ _outerLayer->SetInsideColor( color ); }
 
 	void Checkbox::SetCheckedColor( const Color &color )
 	{
@@ -136,6 +157,9 @@ namespace Sonar
 
 	Sonar::Color Checkbox::GetColor( ) const
 	{ return _outerLayer->GetBorderColor( ); }
+
+	Sonar::Color Checkbox::GetInsideColor( ) const
+	{ return _outerLayer->GetInsideColor( ); }
 
 	Sonar::Color Checkbox::GetCheckedColor( ) const
 	{ return _insideLayer->GetInsideColor( ); }

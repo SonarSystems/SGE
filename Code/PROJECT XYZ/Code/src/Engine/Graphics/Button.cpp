@@ -537,6 +537,28 @@ namespace Sonar
 		_background->Update( dt );
 	}
 
+	void Button::SetTheme( const MenuComponent::Theme &theme )
+	{
+		switch ( theme )
+		{
+			case MenuComponent::Theme::DARK:
+				SetBackgroundInsideColor( Color::Black, true );
+				SetBackgroundBorderColor( Color::White, true );
+				SetLabelInsideColor( Color::White, true );
+				SetLabelBorderColor( Color::Black, true );
+
+				break;
+
+			case MenuComponent::Theme::LIGHT:
+				SetBackgroundInsideColor( Color::White, true );
+				SetBackgroundBorderColor( Color::Black, true );
+				SetLabelInsideColor( Color::Black, true );
+				SetLabelBorderColor( Color::White, true );
+
+				break;
+		}
+	}
+
 	void Button::SetButtonStyle( const Button::ButtonStyle &style, const bool &updateDefaultStyle )
 	{
 		SetBackgroundInsideColor( Color( style._backgroundColor.GetRed( ), style._backgroundColor.GetGreen( ), style._backgroundColor.GetBlue( ) ), updateDefaultStyle );

@@ -6,11 +6,17 @@ ENGINE
 * GUI
     - Menu system - https://www.youtube.com/watch?v=4Vg9d1pjL20
         - Styling
-            - Few generic styles
-            - Light and dark theme
-            - Ability to override all children
-            - Needs to be updated on adding a component and changing the style
+            - BUTTON - IMPLEMENT CLICKED AND HOVER SETTERS AND GETTERS FOR COLOR AND OTHER STYLES, CHECK STYLE STRUCT
         - Keyboard support - Up and down, stops when at the end of the list or switches sides
+    - Hide cursor (static method of Mouse class)
+        - HideCursor
+        - ShowCursor
+        - ToggleCursor
+        - GetCursorStatus
+    - Mini map
+        - Square
+        - Rounded
+        - Draw using shapes, ability to override using sprites
     - FPS counter - https://github.com/Hopson97/SFML-Game-Framework/blob/master/Source/Util/FPSCounter.cpp
         - ***LOOK INTO IMGUI ESPECIALLY FOR THE GRAPH STUFF***
         - **Part of DEBUG CLASS**
@@ -21,15 +27,6 @@ ENGINE
         - Vertices count
         - Triangles count
         - Quads count
-    - Mini map
-        - Square
-        - Rounded
-        - Draw using shapes, ability to override using sprites
-    - Hide cursor (static method of Mouse class)
-        - HideCursor
-        - ShowCursor
-        - ToggleCursor
-        - GetCursorStatus
 * Music and sound items
 * Port AssetManager to Sonar Classes
 * Sorting algorithms, bubble sort, quick sort, insert sort

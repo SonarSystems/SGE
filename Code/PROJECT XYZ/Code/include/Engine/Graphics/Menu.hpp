@@ -2,6 +2,7 @@
 
 #include <vector>
 
+#include "Core/ENGINEDEFINITIONS.hpp"
 #include "Core/Game.hpp"
 #include "Graphics/MenuComponent.hpp"
 
@@ -37,9 +38,10 @@ namespace Sonar
         /**
         * \brief Add component to the menu
         *
-        * \param component Component to add
+		* \param component Component to add
+		* \param overrideStyle Should the component's style be overriden using the Menu's style
         */
-        void AddComponent( MenuComponent *component );
+        void AddComponent( MenuComponent *component, const bool &overrideStyle = true );
 
         /**
         * \brief Remove component from the menu
@@ -65,6 +67,25 @@ namespace Sonar
         */
         void RemoveLastComponent( );
 
+        /**
+        * \brief Set all the components theme
+        *
+        * \param theme Theme to apply to all components
+        */
+        void SetTheme( const MenuComponent::Theme &theme );
+
+        /**
+        * \brief Reset all components theme to the menu's current theme
+        */
+        void ResetThemeForAllComponents( );
+
+        /**
+        * \brief Get the menu's current theme
+        *
+        * \return Output returns the menu's theme
+        */
+        const MenuComponent::Theme &GetTheme( ) const;
+
     private:
         /**
         * \brief Game data object
@@ -75,6 +96,11 @@ namespace Sonar
         * \brief All the components of the menu
         */
         std::vector<MenuComponent *> _menuComponents;
+
+        /**
+        * \brief Style of the menu
+        */
+        MenuComponent::Theme _theme;
 
     };
 }

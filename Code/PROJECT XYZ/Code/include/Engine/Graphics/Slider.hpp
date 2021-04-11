@@ -52,6 +52,13 @@ namespace Sonar
         void Update( const float &dt );
 
         /**
+        * \brief Set the components theme
+        *
+        * \param theme Theme to set
+        */
+        void SetTheme( const MenuComponent::Theme &theme );
+
+        /**
         * \brief Poll the input from the Joystick, Keyboard and Mouse
         *
         * \param dt Delta time (difference between frames)

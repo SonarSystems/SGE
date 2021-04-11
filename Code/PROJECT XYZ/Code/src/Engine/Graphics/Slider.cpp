@@ -48,6 +48,28 @@ namespace Sonar
 		_knob->Update( dt );
 	}
 
+	void Slider::SetTheme( const MenuComponent::Theme &theme )
+	{
+		switch ( theme )
+		{
+			case MenuComponent::Theme::DARK:
+				SetBackgroundColor( Color::Black );
+				SetBackgroundBorderColor( Color::White );
+				SetKnobColor( Color::White );
+				SetKnobBorderColor( Color::Black );
+
+				break;
+
+			case MenuComponent::Theme::LIGHT:
+				SetBackgroundColor( Color::White );
+				SetBackgroundBorderColor( Color::Black );
+				SetKnobColor( Color::Black );
+				SetKnobBorderColor( Color::White );
+
+				break;
+		}
+	}
+
 	void Slider::PollInput( const float &dt, const Event &event )
 	{
 		if ( Event::MouseButtonPressed == event.type )

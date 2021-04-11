@@ -52,6 +52,13 @@ namespace Sonar
         void Draw( );
 
         /**
+        * \brief Set the components theme
+        *
+        * \param theme Theme to set
+        */
+        void SetTheme( const MenuComponent::Theme &theme );
+
+        /**
         * \brief Sets the font file
         *
         * \param filePath Font file path

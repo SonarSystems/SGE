@@ -49,5 +49,12 @@ namespace Sonar
 
 	unsigned int RadioButtonGroup::GetSize( ) const
 	{ return _radioButtons.size( ); }
+
+	void RadioButtonGroup::SetTheme( const MenuComponent::Theme &theme )
+	{
+		for ( auto &button : _radioButtons )
+		{ button->SetTheme( theme ); }
+	}
+
 }
 

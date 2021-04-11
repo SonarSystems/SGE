@@ -53,6 +53,13 @@ namespace Sonar
         */
         unsigned int GetSize( ) const;
 
+        /**
+        * \brief Set the components theme
+        *
+        * \param theme Theme to set
+        */
+        void SetTheme( const MenuComponent::Theme &theme );
+
     private:
         /**
         * \brief Game data object

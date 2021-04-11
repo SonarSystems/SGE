@@ -141,3 +141,8 @@
 #define DEFAULT_SLIDER_VERTICAL_BACKGROUND_HEIGHT 200.0f
 #define DEFAULT_SLIDER_KNOB_RADIUS 12.0f
 #define DEFAULT_SLIDER_MOUSE_BUTTON Sonar::Mouse::Button::Left
+
+/**
+* \brief Default menu properties
+*/
+#define DEFAULT_MENU_THEME Sonar::MenuComponent::Theme::DARK

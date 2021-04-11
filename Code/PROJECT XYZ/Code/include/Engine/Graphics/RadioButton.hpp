@@ -41,6 +41,13 @@ namespace Sonar
         void Update( const float &dt );
 
         /**
+        * \brief Set the components theme
+        *
+        * \param theme Theme to set
+        */
+        void SetTheme( const MenuComponent::Theme &theme );
+
+        /**
         * \brief Set x and y position
         *
         * \param position X and Y position
@@ -112,6 +119,13 @@ namespace Sonar
         void SetColor( const Color &color );
 
         /**
+        * \brief Set the inside color of the outer circle (border circle)
+        *
+        * \param color Color object
+        */
+        void SetInsideColor( const Color &color );
+
+        /**
         * \brief Set the checked status color
         *
         * \param color Color object
@@ -130,11 +144,18 @@ namespace Sonar
         void SetBorderThickness( const float &thickness );
 
         /**
+        * \brief Get the border color
+        *
+        * \return Output returns the border color
+        */
+        Color GetColor( ) const;
+
+        /**
         * \brief Get the inside color (fill color)
         *
         * \return Output returns the inside color
         */
-        Color GetColor( ) const;
+        Color GetInsideColor( ) const;
 
         /**
         * \brief Get the checked color

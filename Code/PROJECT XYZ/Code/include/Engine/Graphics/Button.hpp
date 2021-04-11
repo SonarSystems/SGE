@@ -76,6 +76,13 @@ namespace Sonar
         void Update( const float &dt );
 
         /**
+        * \brief Set the components theme
+        *
+        * \param theme Theme to set
+        */
+        void SetTheme( const MenuComponent::Theme &theme );
+
+        /**
         * \brief Set the button's background rectangle (most of the time leave as is)
         *
 		* \param rectangle Pointer to the rectangle
@@ -410,6 +417,8 @@ namespace Sonar
         * \return Output returns the border thickness
         */
         float GetLabelBorderThickness( ) const;
+
+        
 
         /**
         * \brief Move the object relative to it's current position in the x and y axis

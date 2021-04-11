@@ -30,6 +30,24 @@ namespace Sonar
 	void Label::Draw( )
 	{ Drawable::Draw( ); }
 
+	void Label::SetTheme( const MenuComponent::Theme &theme )
+	{
+		switch ( theme )
+		{
+			case MenuComponent::Theme::DARK:
+				SetInsideColor( Color::Black );
+				SetBorderColor( Color::White );
+
+				break;
+
+			case MenuComponent::Theme::LIGHT:
+				SetInsideColor( Color::White );
+				SetBorderColor( Color::Black );
+
+				break;
+		}
+	}
+
 	Label::~Label( ) { }
 
 	void Label::SetFontFilePath( const std::string &filepath )

@@ -120,6 +120,13 @@ namespace Sonar
         void Draw( );
 
         /**
+        * \brief Set the components theme
+        *
+        * \param theme Theme to set
+        */
+        void SetTheme( const MenuComponent::Theme &theme );
+
+        /**
         * \brief Set how often the blinker turns off and on
         *
         * \param time Time taken to turn off/on (double to do a full cycle)
@@ -230,6 +237,20 @@ namespace Sonar
         * \return Output returns the debug drawing status
         */
         const bool &IsDebugDrawing( ) const;
+
+        /**
+        * \brief Set the blinker's color
+        *
+        * \param color Color object
+        */
+        void SetBlinkerColor( const Color &color );
+
+        /**
+        * \brief Get the blinker's color
+        *
+        * \return Output returns the blinker color
+        */
+        Color GetBlinkerColor( ) const;
 
     private:
         /**

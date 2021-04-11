@@ -169,6 +169,24 @@ namespace Sonar
 		{ _postStringBlinker->Draw( ); }
 	}
 
+	void TextBox::SetTheme( const MenuComponent::Theme &theme )
+	{
+		Label::SetTheme( theme );
+
+		switch ( theme )
+		{
+			case MenuComponent::Theme::DARK:
+				SetBlinkerColor( Color::Black );
+
+				break;
+
+			case MenuComponent::Theme::LIGHT:
+				SetBlinkerColor( Color::White );
+
+				break;
+		}
+	}
+
 	void TextBox::SetBlinkerTime( const float &time )
 	{ _blinkerTime = time; }
 
@@ -219,5 +237,11 @@ namespace Sonar
 
 	const bool &TextBox::IsDebugDrawing( ) const
 	{ return _isDebugDrawing; }
+
+	void TextBox::SetBlinkerColor( const Color &color )
+	{ _postStringBlinker->SetInsideColor( color ); }
+
+	Sonar::Color TextBox::GetBlinkerColor( ) const
+	{ return _postStringBlinker->GetInsideColor( ); }
 }
 
