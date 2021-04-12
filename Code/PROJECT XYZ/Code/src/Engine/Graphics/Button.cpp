@@ -304,6 +304,168 @@ namespace Sonar
 	float Button::GetLabelBorderThickness( ) const
 	{ return _label->GetBorderThickness( ); }
 
+	void Button::SetHoverCharacterSize( const unsigned int &size )
+	{ _hoverStyle._characterSize = size; }
+
+	unsigned int Button::GetHoverCharacterSize( ) const
+	{ return _hoverStyle._characterSize; }
+
+	void Button::SetHoverBackgroundInsideColor( const Color &color )
+	{ _hoverStyle._backgroundColor = color; }
+
+	void Button::SetHoverBackgroundBorderColor( const Color &color )
+	{ _hoverStyle._borderColor = color; }
+
+	void Button::SetHoverBackgroundBorderThickness( const float &thickness )
+	{ _hoverStyle._borderThickness = thickness; }
+
+	Color Button::GetHoverBackgroundInsideColor( ) const
+	{ return _hoverStyle._backgroundColor; }
+
+	Color Button::GetHoverBackgroundBorderColor( ) const
+	{ return _hoverStyle._borderColor; }
+
+	float Button::GetHoverBackgroundBorderThickness( ) const
+	{ return _hoverStyle._borderThickness; }
+
+	void Button::SetHoverLabelInsideColor( const Color &color )
+	{ _hoverStyle._labelColor = color; }
+
+	void Button::SetHoverLabelBorderColor( const Color &color )
+	{ _hoverStyle._labelBorderColor = color; }
+
+	void Button::SetHoverLabelBorderThickness( const float &thickness )
+	{ _hoverStyle._labelBorderThickness = thickness; }
+
+	Color Button::GetHoverLabelInsideColor( ) const
+	{ return _hoverStyle._labelColor; }
+
+	Color Button::GetHoverLabelBorderColor( ) const
+	{ return _hoverStyle._labelBorderColor; }
+
+	float Button::GetHoverLabelBorderThickness( ) const
+	{ return _hoverStyle._labelBorderThickness; }
+
+	void Button::SetHoverLabelStyle( const unsigned int &style )
+	{ _hoverStyle._textStyle = style; }
+
+	unsigned int Button::GetHoverLabelStyle( ) const
+	{ return _hoverStyle._textStyle; }
+
+	void Button::SetHoverScale( const float &xScale, const float &yScale )
+	{ _hoverStyle._scale = glm::vec2( xScale, yScale ); }
+
+	void Button::SetHoverScale( const glm::vec2 &scale )
+	{ _hoverStyle._scale = scale; }
+
+	void Button::SetHoverScaleX( const float &xScale )
+	{ _hoverStyle._scale.x = xScale; }
+
+	void Button::SetHoverScaleY( const float &yScale )
+	{ _hoverStyle._scale.y = yScale; }
+
+	void Button::HoverScale( const glm::vec2 &scale )
+	{ _hoverStyle._scale *= scale; }
+
+	void Button::HoverScale( const float &xScale, const float &yScale )
+	{ _hoverStyle._scale *= glm::vec2( xScale, yScale ); }
+
+	void Button::HoverScaleX( const float &xScale )
+	{ _hoverStyle._scale.x *= xScale; }
+
+	void Button::HoverScaleY( const float &yScale )
+	{ _hoverStyle._scale.y *= yScale; }
+
+	glm::vec2 Button::GetHoverScale( ) const
+	{ return _hoverStyle._scale; }
+
+	float Button::GetHoverScaleX( ) const
+	{ return _hoverStyle._scale.x; }
+
+	float Button::GetHoverScaleY( ) const
+	{ return _hoverStyle._scale.y; }
+
+	void Button::SetClickedCharacterSize( const unsigned int &size )
+	{ _clickedStyle._characterSize = size; }
+
+	unsigned int Button::GetClickedCharacterSize( ) const
+	{ return _clickedStyle._characterSize; }
+
+	void Button::SetClickedBackgroundInsideColor( const Color &color )
+	{ _clickedStyle._backgroundColor = color; }
+
+	void Button::SetClickedBackgroundBorderColor( const Color &color )
+	{ _clickedStyle._borderColor = color; }
+
+	void Button::SetClickedBackgroundBorderThickness( const float &thickness )
+	{ _clickedStyle._borderThickness = thickness; }
+
+	Color Button::GetClickedBackgroundInsideColor( ) const
+	{ return _clickedStyle._backgroundColor; }
+
+	Color Button::GetClickedBackgroundBorderColor( ) const
+	{ return _clickedStyle._borderColor; }
+
+	float Button::GetClickedBackgroundBorderThickness( ) const
+	{ return _clickedStyle._borderThickness; }
+
+	void Button::SetClickedLabelInsideColor( const Color &color )
+	{ _clickedStyle._labelColor = color; }
+
+	void Button::SetClickedLabelBorderColor( const Color &color )
+	{ _clickedStyle._labelBorderColor = color; }
+
+	void Button::SetClickedLabelBorderThickness( const float &thickness )
+	{ _clickedStyle._labelBorderThickness = thickness; }
+
+	Color Button::GetClickedLabelInsideColor( ) const
+	{ return _clickedStyle._labelColor; }
+
+	Color Button::GetClickedLabelBorderColor( ) const
+	{ return _clickedStyle._labelBorderColor; }
+
+	float Button::GetClickedLabelBorderThickness( ) const
+	{ return _clickedStyle._labelBorderThickness; }
+
+	void Button::SetClickedLabelStyle( const unsigned int &style )
+	{ _clickedStyle._textStyle = style; }
+
+	unsigned int Button::GetClickedLabelStyle( ) const
+	{ return _clickedStyle._textStyle; }
+
+	void Button::SetClickedScale( const float &xScale, const float &yScale )
+	{ _clickedStyle._scale = glm::vec2( xScale, yScale ); }
+
+	void Button::SetClickedScale( const glm::vec2 &scale )
+	{ _clickedStyle._scale = scale; }
+
+	void Button::SetClickedScaleX( const float &xScale )
+	{ _clickedStyle._scale.x = xScale; }
+
+	void Button::SetClickedScaleY( const float &yScale )
+	{ _clickedStyle._scale.y = yScale; }
+
+	void Button::ClickedScale( const glm::vec2 &scale )
+	{ _clickedStyle._scale *= scale; }
+
+	void Button::ClickedScale( const float &xScale, const float &yScale )
+	{ _clickedStyle._scale *= glm::vec2( xScale, yScale ); }
+
+	void Button::ClickedScaleX( const float &xScale )
+	{ _clickedStyle._scale.x *= xScale; }
+
+	void Button::ClickedScaleY( const float &yScale )
+	{ _clickedStyle._scale.y *= yScale; }
+
+	glm::vec2 Button::GetClickedScale( ) const
+	{ return _clickedStyle._scale; }
+
+	float Button::GetClickedScaleX( ) const
+	{ return _clickedStyle._scale.x; }
+
+	float Button::GetClickedScaleY( ) const
+	{ return _clickedStyle._scale.y; }
+
 	void Button::Move( const glm::vec2 &offset )
 	{
 		_background->Move( offset );
@@ -547,6 +709,16 @@ namespace Sonar
 				SetLabelInsideColor( Color::White, true );
 				SetLabelBorderColor( Color::Black, true );
 
+				SetHoverBackgroundInsideColor( Color( 100, 100, 100, 255 ) );
+				SetHoverBackgroundBorderColor( Color::White );
+				SetHoverLabelInsideColor( Color::White );
+				SetHoverLabelBorderColor( Color( 100, 100, 100, 255 ) );
+
+				SetClickedBackgroundInsideColor( Color( 50, 50, 50, 255 ) );
+				SetClickedBackgroundBorderColor( Color::White );
+				SetClickedLabelInsideColor( Color::White );
+				SetClickedLabelBorderColor( Color( 50, 50, 50, 255 ) );
+
 				break;
 
 			case MenuComponent::Theme::LIGHT:
@@ -554,6 +726,16 @@ namespace Sonar
 				SetBackgroundBorderColor( Color::Black, true );
 				SetLabelInsideColor( Color::Black, true );
 				SetLabelBorderColor( Color::White, true );
+
+				SetHoverBackgroundInsideColor( Color( 155, 155, 155, 255 ) );
+				SetHoverBackgroundBorderColor( Color::Black );
+				SetHoverLabelInsideColor( Color::Black );
+				SetHoverLabelBorderColor( Color( 155, 155, 155, 255 ) );
+
+				SetClickedBackgroundInsideColor( Color( 205, 205, 205, 255 ) );
+				SetClickedBackgroundBorderColor( Color::Black );
+				SetClickedLabelInsideColor( Color::Black );
+				SetClickedLabelBorderColor( Color( 205, 205, 205, 255 ) );
 
 				break;
 		}
@@ -665,9 +847,9 @@ namespace Sonar
 		_defaultStyle._labelColor = _label->GetInsideColor( );
 		_defaultStyle._labelBorderColor = _label->GetBorderColor( );
 		_defaultStyle._characterSize = _label->GetCharacterSize( );
-		_defaultStyle._textStyle = _label->GetStyle( );
 		_defaultStyle._borderThickness = _background->GetBorderThickness( );
 		_defaultStyle._labelBorderThickness = _background->GetBorderThickness( );
+		_defaultStyle._textStyle = _label->GetStyle( );
 		_defaultStyle._scale = _background->GetScale( );
 		_defaultStyle._cursor = Mouse::GetCurrentCursor( );
 	}

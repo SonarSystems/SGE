@@ -5,8 +5,6 @@ ENGINE
 -----------------------------------------------------------------
 * GUI
     - Menu system - https://www.youtube.com/watch?v=4Vg9d1pjL20
-        - Styling
-            - BUTTON - IMPLEMENT CLICKED AND HOVER SETTERS AND GETTERS FOR COLOR AND OTHER STYLES, CHECK STYLE STRUCT
         - Keyboard support - Up and down, stops when at the end of the list or switches sides
     - Hide cursor (static method of Mouse class)
         - HideCursor

@@ -307,9 +307,9 @@ namespace Sonar
         /**
         * \brief Set the character size in pixels
         *
-		* \param size Size of the characters in pixels
-		* \param usePadding Whether or not to use padding
-		* \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
+        * \param size Size of the characters in pixels
+        * \param usePadding Whether or not to use padding
+        * \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
         */
         void SetCharacterSize( const unsigned int &size, const bool &usePadding = true, const bool &updateDefaultStyle = true );
 
@@ -323,16 +323,16 @@ namespace Sonar
         /**
         * \brief Set the background's inside color (fill color)
         *
-		* \param color Color object
-		* \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
+        * \param color Color object
+        * \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
         */
         void SetBackgroundInsideColor( const Color &color, const bool &updateDefaultStyle = true );
 
         /**
         * \brief Set the background's border color
         *
-		* \param color Color object
-		* \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
+        * \param color Color object
+        * \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
         *
         * SetBorderThickness method required as well
         */
@@ -341,8 +341,8 @@ namespace Sonar
         /**
         * \brief Set the background's border thickness
         *
-		* \param thickness Thickness of the border
-		* \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
+        * \param thickness Thickness of the border
+        * \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
         *
         * Required for border, otherwise border is to set 0 thickness and cannot be seen
         */
@@ -372,16 +372,16 @@ namespace Sonar
         /**
         * \brief Set the label's inside color (fill color)
         *
-		* \param color Color object
-		* \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
+        * \param color Color object
+        * \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
         */
         void SetLabelInsideColor( const Color &color, const bool &updateDefaultStyle = true );
 
         /**
         * \brief Set the label's border color
         *
-		* \param color Color object
-		* \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
+        * \param color Color object
+        * \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
         *
         * SetBorderThickness method required as well
         */
@@ -390,8 +390,8 @@ namespace Sonar
         /**
         * \brief Set the label's border thickness
         *
-		* \param thickness Thickness of the border
-		* \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
+        * \param thickness Thickness of the border
+        * \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
         *
         * Required for border, otherwise border is to set 0 thickness and cannot be seen
         */
@@ -418,7 +418,431 @@ namespace Sonar
         */
         float GetLabelBorderThickness( ) const;
 
-        
+		/**
+		* \brief Set the hover character size in pixels
+		*
+		* \param size Size of the characters in pixels
+		* \param usePadding Whether or not to use padding
+		* \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
+		*/
+		void SetHoverCharacterSize( const unsigned int &size );
+
+		/**
+		* \brief Get the hover characters size in pixels
+		*
+		* \return Output returns the character size
+		*/
+		unsigned int GetHoverCharacterSize( ) const;
+
+		/**
+		* \brief Set the hover background's inside color (fill color)
+		*
+		* \param color Color object
+		* \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
+		*/
+		void SetHoverBackgroundInsideColor( const Color &color );
+
+		/**
+		* \brief Set the hover background's border color
+		*
+		* \param color Color object
+		* \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
+		*
+		* SetBorderThickness method required as well
+		*/
+		void SetHoverBackgroundBorderColor( const Color &color );
+
+		/**
+		* \brief Set the hover background's border thickness
+		*
+		* \param thickness Thickness of the border
+		* \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
+		*
+		* Required for border, otherwise border is to set 0 thickness and cannot be seen
+		*/
+		void SetHoverBackgroundBorderThickness( const float &thickness );
+
+		/**
+		* \brief Get the hover background's inside color (fill color)
+		*
+		* \return Output returns the inside color
+		*/
+		Color GetHoverBackgroundInsideColor( ) const;
+
+		/**
+		* \brief Get the hover background's border color
+		*
+		* \return Output returns the border color
+		*/
+		Color GetHoverBackgroundBorderColor( ) const;
+
+		/**
+		* \brief Get the hover background's border thickness
+		*
+		* \return Output returns the border thickness
+		*/
+		float GetHoverBackgroundBorderThickness( ) const;
+
+		/**
+		* \brief Set the hover label's inside color (fill color)
+		*
+		* \param color Color object
+		* \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
+		*/
+		void SetHoverLabelInsideColor( const Color &color );
+
+		/**
+		* \brief Set the hover label's border color
+		*
+		* \param color Color object
+		* \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
+		*
+		* SetBorderThickness method required as well
+		*/
+		void SetHoverLabelBorderColor( const Color &color );
+
+		/**
+		* \brief Set the hover label's border thickness
+		*
+		* \param thickness Thickness of the border
+		* \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
+		*
+		* Required for border, otherwise border is to set 0 thickness and cannot be seen
+		*/
+		void SetHoverLabelBorderThickness( const float &thickness );
+
+		/**
+		* \brief Get the hover label's inside color (fill color)
+		*
+		* \return Output returns the inside color
+		*/
+		Color GetHoverLabelInsideColor( ) const;
+
+		/**
+		* \brief Get the hover label's border color
+		*
+		* \return Output returns the border color
+		*/
+		Color GetHoverLabelBorderColor( ) const;
+
+		/**
+		* \brief Get the hover label's border thickness
+		*
+		* \return Output returns the border thickness
+		*/
+		float GetHoverLabelBorderThickness( ) const;
+
+		/**
+		* \brief Set a particular style for the hover label
+		*
+		* \param style Style int to use
+		* \param resize Whether or not to resize the button
+		* \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
+		*/
+		void SetHoverLabelStyle( const unsigned int &style );
+
+		/**
+		* \brief Get the overall hover style
+		*
+		* \return Output returns the overall style
+		*/
+		unsigned int GetHoverLabelStyle( ) const;
+
+		/**
+		* \brief Set the hover scale factor
+		*
+		* \param xScale Scale in x axis
+		* \param yScale Scale in y axis
+		* \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
+		*/
+		void SetHoverScale( const float &xScale, const float &yScale );
+
+		/**
+		* \brief Set the hover scale factor
+		*
+		* \param scale Scale in x and y axes
+		* \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
+		*/
+		void SetHoverScale( const glm::vec2 &scale );
+
+		/**
+		* \brief Set the x axis hover scale factor
+		*
+		* \param xScale Scale in x axis
+		* \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
+		*/
+		void SetHoverScaleX( const float &xScale );
+
+		/**
+		* \brief Set the y axis hover scale factor
+		*
+		* \param yScale Scale in y axis
+		* \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
+		*/
+		void SetHoverScaleY( const float &yScale );
+
+		/**
+		* \brief Scale the hover object relative to it's current scale
+		*
+		* \param scale Scale in the x and y axis
+		*/
+		void HoverScale( const glm::vec2 &scale );
+
+		/**
+		* \brief Scale the hover object relative to it's current scale
+		*
+		* \param xScale Scale in x axis
+		* \param yScale Scale in y axis
+		*/
+		void HoverScale( const float &xScale, const float &yScale );
+
+		/**
+		* \brief Scale the hover object relative to it's current x scale
+		*
+		* \param xScale Scale in x axis
+		*/
+		void HoverScaleX( const float &xScale );
+
+		/**
+		* \brief Scale the hover object relative to it's current y scale
+		*
+		* \param yScale Scale in y axis
+		*/
+		void HoverScaleY( const float &yScale );
+
+		/**
+		* \brief Get the hover scale factor for both axes
+		*
+		* \return Output returns scale factor for both axes
+		*/
+		glm::vec2 GetHoverScale( ) const;
+
+		/**
+		* \brief Get the hover scale factor for x axis
+		*
+		* \return Output returns scale factor for the x axis
+		*/
+		float GetHoverScaleX( ) const;
+
+		/**
+		* \brief Get the hover scale factor for y axis
+		*
+		* \return Output returns scale factor for the y axis
+		*/
+		float GetHoverScaleY( ) const;
+
+		/**
+		* \brief Set the clicked character size in pixels
+		*
+		* \param size Size of the characters in pixels
+		* \param usePadding Whether or not to use padding
+		* \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
+		*/
+		void SetClickedCharacterSize( const unsigned int &size );
+
+		/**
+		* \brief Get the clicked characters size in pixels
+		*
+		* \return Output returns the character size
+		*/
+		unsigned int GetClickedCharacterSize( ) const;
+
+		/**
+		* \brief Set the clicked background's inside color (fill color)
+		*
+		* \param color Color object
+		* \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
+		*/
+		void SetClickedBackgroundInsideColor( const Color &color );
+
+		/**
+		* \brief Set the clicked background's border color
+		*
+		* \param color Color object
+		* \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
+		*
+		* SetBorderThickness method required as well
+		*/
+		void SetClickedBackgroundBorderColor( const Color &color );
+
+		/**
+		* \brief Set the clicked background's border thickness
+		*
+		* \param thickness Thickness of the border
+		* \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
+		*
+		* Required for border, otherwise border is to set 0 thickness and cannot be seen
+		*/
+		void SetClickedBackgroundBorderThickness( const float &thickness );
+
+		/**
+		* \brief Get the clicked background's inside color (fill color)
+		*
+		* \return Output returns the inside color
+		*/
+		Color GetClickedBackgroundInsideColor( ) const;
+
+		/**
+		* \brief Get the clicked background's border color
+		*
+		* \return Output returns the border color
+		*/
+		Color GetClickedBackgroundBorderColor( ) const;
+
+		/**
+		* \brief Get the clicked background's border thickness
+		*
+		* \return Output returns the border thickness
+		*/
+		float GetClickedBackgroundBorderThickness( ) const;
+
+		/**
+		* \brief Set the clicked label's inside color (fill color)
+		*
+		* \param color Color object
+		* \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
+		*/
+		void SetClickedLabelInsideColor( const Color &color );
+
+		/**
+		* \brief Set the clicked label's border color
+		*
+		* \param color Color object
+		* \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
+		*
+		* SetBorderThickness method required as well
+		*/
+		void SetClickedLabelBorderColor( const Color &color );
+
+		/**
+		* \brief Set the clicked label's border thickness
+		*
+		* \param thickness Thickness of the border
+		* \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
+		*
+		* Required for border, otherwise border is to set 0 thickness and cannot be seen
+		*/
+		void SetClickedLabelBorderThickness( const float &thickness );
+
+		/**
+		* \brief Get the clicked label's inside color (fill color)
+		*
+		* \return Output returns the inside color
+		*/
+		Color GetClickedLabelInsideColor( ) const;
+
+		/**
+		* \brief Get the clicked label's border color
+		*
+		* \return Output returns the border color
+		*/
+		Color GetClickedLabelBorderColor( ) const;
+
+		/**
+		* \brief Get the clicked label's border thickness
+		*
+		* \return Output returns the border thickness
+		*/
+		float GetClickedLabelBorderThickness( ) const;
+
+		/**
+		* \brief Set a particular style for the clicked label
+		*
+		* \param style Style int to use
+		* \param resize Whether or not to resize the button
+		* \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
+		*/
+		void SetClickedLabelStyle( const unsigned int &style );
+
+		/**
+		* \brief Get the overall clicked style
+		*
+		* \return Output returns the overall style
+		*/
+		unsigned int GetClickedLabelStyle( ) const;
+
+		/**
+		* \brief Set the clicked scale factor
+		*
+		* \param xScale Scale in x axis
+		* \param yScale Scale in y axis
+		* \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
+		*/
+		void SetClickedScale( const float &xScale, const float &yScale );
+
+		/**
+		* \brief Set the clicked scale factor
+		*
+		* \param scale Scale in x and y axes
+		* \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
+		*/
+		void SetClickedScale( const glm::vec2 &scale );
+
+		/**
+		* \brief Set the x axis clicked scale factor
+		*
+		* \param xScale Scale in x axis
+		* \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
+		*/
+		void SetClickedScaleX( const float &xScale );
+
+		/**
+		* \brief Set the y axis clicked scale factor
+		*
+		* \param yScale Scale in y axis
+		* \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
+		*/
+		void SetClickedScaleY( const float &yScale );
+
+		/**
+		* \brief Scale the clicked object relative to it's current scale
+		*
+		* \param scale Scale in the x and y axis
+		*/
+		void ClickedScale( const glm::vec2 &scale );
+
+		/**
+		* \brief Scale the clicked object relative to it's current scale
+		*
+		* \param xScale Scale in x axis
+		* \param yScale Scale in y axis
+		*/
+		void ClickedScale( const float &xScale, const float &yScale );
+
+		/**
+		* \brief Scale the clicked object relative to it's current x scale
+		*
+		* \param xScale Scale in x axis
+		*/
+		void ClickedScaleX( const float &xScale );
+
+		/**
+		* \brief Scale the clicked object relative to it's current y scale
+		*
+		* \param yScale Scale in y axis
+		*/
+		void ClickedScaleY( const float &yScale );
+
+		/**
+		* \brief Get the clicked scale factor for both axes
+		*
+		* \return Output returns scale factor for both axes
+		*/
+		glm::vec2 GetClickedScale( ) const;
+
+		/**
+		* \brief Get the clicked scale factor for x axis
+		*
+		* \return Output returns scale factor for the x axis
+		*/
+		float GetClickedScaleX( ) const;
+
+		/**
+		* \brief Get the clicked scale factor for y axis
+		*
+		* \return Output returns scale factor for the y axis
+		*/
+		float GetClickedScaleY( ) const;
 
         /**
         * \brief Move the object relative to it's current position in the x and y axis
