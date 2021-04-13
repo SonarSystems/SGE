@@ -35,7 +35,7 @@ namespace Sonar
         /**
         * \brief Update the classes objects
         *
-        * \param dt Delta time (difference between frames)
+		* \param dt Delta time (difference between frames)
         */
         void Update( const float &dt );
 
@@ -43,8 +43,33 @@ namespace Sonar
         * \brief Add a radio button
         *
         * \param radioButton Radio button to add
+		* \param overrideStyle Should the radio button's style be overriden using the group's style
         */
-        void AddRadioButton( RadioButton *radioButton );
+        void AddRadioButton( RadioButton *radioButton, const bool &overrideStyle = true );
+
+        /**
+        * \brief Remove radio button
+        *
+        * \param radioButton Radio button to remove
+        */
+        void RemoveRadioButton( RadioButton *radioButton );
+
+        /**
+        * \brief Remove radio button at a specific index
+        *
+        * \param index Index of radio button to remove
+        */
+        void RemoveRadioButton( const int &index );
+
+        /**
+        * \brief Remove the first radio button
+        */
+        void RemoveFirstRadioButton( );
+
+        /**
+        * \brief Remove the last radio button from the menu
+        */
+        void RemoveLastRadioButton( );
 
         /**
         * \brief Get the number of radio buttons
@@ -70,6 +95,11 @@ namespace Sonar
         * \brief Vector of radio buttons
         */
         std::vector<RadioButton *> _radioButtons;
+
+        /**
+        * \brief Style of the menu
+        */
+        MenuComponent::Theme _theme;
 
     };
 }

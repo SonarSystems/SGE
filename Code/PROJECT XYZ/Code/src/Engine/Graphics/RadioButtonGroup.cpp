@@ -44,16 +44,55 @@ namespace Sonar
 		}
 	}
 
-	void RadioButtonGroup::AddRadioButton( RadioButton *radioButton )
-	{ _radioButtons.push_back( radioButton ); }
+	void RadioButtonGroup::AddRadioButton( RadioButton *radioButton, const bool &overrideStyle )
+	{
+		if ( overrideStyle )
+		{ radioButton->SetTheme( _theme ); }
+
+		_radioButtons.push_back( radioButton );
+	}
+
+	void RadioButtonGroup::RemoveRadioButton( RadioButton *radioButton )
+	{
+		std::vector<RadioButton *> newMenuComponentsVector( _radioButtons.size( ) );
+
+		std::remove_copy( _radioButtons.begin( ), _radioButtons.end( ), newMenuComponentsVector.begin( ), radioButton );
+
+		if ( newMenuComponentsVector.at( newMenuComponentsVector.size( ) - 1 ) == NULL )
+		{
+			newMenuComponentsVector.pop_back( );
+
+			_radioButtons = newMenuComponentsVector;
+		}
+	}
+
+	void RadioButtonGroup::RemoveRadioButton( const int &index )
+	{
+		if ( index < _radioButtons.size( ) )
+		{ _radioButtons.erase( _radioButtons.begin( ) + index ); }
+	}
+
+	void RadioButtonGroup::RemoveFirstRadioButton( )
+	{
+		if ( 0 < _radioButtons.size( ) )
+		{ _radioButtons.erase( _radioButtons.begin( ) ); }
+	}
+
+	void RadioButtonGroup::RemoveLastRadioButton( )
+	{
+		if ( _radioButtons.size( ) > 0 )
+		{ _radioButtons.erase( _radioButtons.end( ) - 1 ); }
+	}
 
 	unsigned int RadioButtonGroup::GetSize( ) const
 	{ return _radioButtons.size( ); }
 
 	void RadioButtonGroup::SetTheme( const MenuComponent::Theme &theme )
 	{
+		_theme = theme;
+
 		for ( auto &button : _radioButtons )
-		{ button->SetTheme( theme ); }
+		{ button->SetTheme( _theme ); }
 	}
 
 }
