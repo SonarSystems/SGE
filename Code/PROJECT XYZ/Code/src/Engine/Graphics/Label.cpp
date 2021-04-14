@@ -30,6 +30,8 @@ namespace Sonar
 	void Label::Draw( )
 	{ Drawable::Draw( ); }
 
+	void Label::PollInput( const float &dt, const Event &event ) { }
+
 	void Label::SetTheme( const MenuComponent::Theme &theme )
 	{
 		switch ( theme )

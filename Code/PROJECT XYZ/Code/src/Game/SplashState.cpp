@@ -31,7 +31,7 @@ namespace Sonar
 		//button->SetPadding( 50, 50 );
 		button->SetText( "BOB", true );
 		button->SetFontFilePath( "Resources/arial.ttf" );
-		menu->AddComponent( button );
+		//menu->AddComponent( button );
 
 		textBox = new TextBox( _data );
 
@@ -42,7 +42,7 @@ namespace Sonar
 		textBox->SetPosition( 200, 300 );
 		textBox->SetClickableSize( 200, 200 );
 
-		menu->AddComponent( textBox );
+		//menu->AddComponent( textBox );
 
 		group = new RadioButtonGroup( _data );
 
@@ -71,13 +71,37 @@ namespace Sonar
 		group->AddRadioButton( radio2 );
 		group->AddRadioButton( radio3 );
 
-		menu->AddComponent( group );
+		//menu->AddComponent( group );
 
 		slider = new Slider( data );
 		slider->SetJumpAmount( 15 );
 		//slider->SetScale( 4 );
 
-		menu->AddComponent( slider );
+		//menu->AddComponent( slider );
+
+		buttonGroup = new ButtonGroup( _data );
+
+		button = new Button( _data );
+		button2 = new Button( _data );
+		button3 = new Button( _data );
+
+		button->SetPosition( 100, 100 );
+		button->SetText( "PLAY", true );
+		button->SetFontFilePath( "Resources/arial.ttf" );
+
+		button2->SetPosition( 100, 300 );
+		button2->SetText( "LOAD", true );
+		button2->SetFontFilePath( "Resources/arial.ttf" );
+			  
+		button3->SetPosition( 100, 500 );
+		button3->SetText( "EXIT", true );
+		button3->SetFontFilePath( "Resources/arial.ttf" );
+
+		buttonGroup->AddButton( button );
+		buttonGroup->AddButton( button2 );
+		buttonGroup->AddButton( button3 );
+
+		menu->AddComponent( buttonGroup );
 	} 
 
 	SplashState::~SplashState( )
@@ -100,8 +124,7 @@ namespace Sonar
 			//physicsWorld->CreateDynamicBody( event.mouseButton.x, event.mouseButton.y, 32, 32 );
 		}
 
-		textBox->PollInput( dt, event );
-		slider->PollInput( dt, event );
+		menu->PollInput( dt, event );
 	}
 
 	void SplashState::Update( const float &dt )

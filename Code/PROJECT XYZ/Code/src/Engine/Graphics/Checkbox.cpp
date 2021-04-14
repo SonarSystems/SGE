@@ -70,6 +70,8 @@ namespace Sonar
 		}
 	}
 
+	void Checkbox::PollInput( const float &dt, const Event &event ) { }
+
 	void Checkbox::SetTheme( const MenuComponent::Theme &theme )
 	{
 		switch ( theme )

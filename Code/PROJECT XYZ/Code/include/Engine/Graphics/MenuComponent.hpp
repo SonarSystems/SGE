@@ -1,5 +1,19 @@
 #pragma once
 
+#include "Input/Events.hpp"
+
+/* All MenuComponent Children
+* 
+* Button
+* ButtonGroup
+* Checkbox
+* Label
+* RadioButton
+* RadioButtonGroup
+* Slider
+* TextBox
+*/
+
 namespace Sonar
 {
     class MenuComponent
@@ -32,6 +46,11 @@ namespace Sonar
         * \brief Update method to be overridden in child classes
         */
         virtual void Update( const float &dt ) = 0;
+
+        /**
+        * \brief Poll input method to be overridden in child classes
+        */
+        virtual void PollInput( const float &dt, const Event &event ) = 0;
 
         /**
         * \brief Set theme method to be overriden in child classes

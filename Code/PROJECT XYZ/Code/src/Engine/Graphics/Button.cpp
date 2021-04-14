@@ -31,6 +31,8 @@ namespace Sonar
 
 		UpdateDefaultStyle( );
 
+		_highlightedStyle = _defaultStyle;
+
 		_hoverStyle._cursor = DEFAULT_BUTTON_HOVER_CURSOR;
 
 		_clickedStyle._backgroundColor = DEFAULT_BUTTON_CLICKED_BACKGROUND_COLOR;
@@ -466,6 +468,87 @@ namespace Sonar
 	float Button::GetClickedScaleY( ) const
 	{ return _clickedStyle._scale.y; }
 
+	void Button::SetHighlightedCharacterSize( const unsigned int &size )
+	{ _highlightedStyle._characterSize = size; }
+
+	unsigned int Button::GetHighlightedCharacterSize( ) const
+	{ return _highlightedStyle._characterSize; }
+
+	void Button::SetHighlightedBackgroundInsideColor( const Color &color )
+	{ _highlightedStyle._backgroundColor = color; }
+
+	void Button::SetHighlightedBackgroundBorderColor( const Color &color )
+	{ _highlightedStyle._borderColor = color; }
+
+	void Button::SetHighlightedBackgroundBorderThickness( const float &thickness )
+	{ _highlightedStyle._borderThickness = thickness; }
+
+	Color Button::GetHighlightedBackgroundInsideColor( ) const
+	{ return _highlightedStyle._backgroundColor; }
+
+	Color Button::GetHighlightedBackgroundBorderColor( ) const
+	{ return _highlightedStyle._borderColor; }
+
+	float Button::GetHighlightedBackgroundBorderThickness( ) const
+	{ return _highlightedStyle._borderThickness; }
+
+	void Button::SetHighlightedLabelInsideColor( const Color &color )
+	{ _highlightedStyle._labelColor = color; }
+
+	void Button::SetHighlightedLabelBorderColor( const Color &color )
+	{ _highlightedStyle._labelBorderColor = color; }
+
+	void Button::SetHighlightedLabelBorderThickness( const float &thickness )
+	{ _highlightedStyle._labelBorderThickness = thickness; }
+
+	Color Button::GetHighlightedLabelInsideColor( ) const
+	{ return _highlightedStyle._labelColor; }
+
+	Color Button::GetHighlightedLabelBorderColor( ) const
+	{ return _highlightedStyle._labelBorderColor; }
+
+	float Button::GetHighlightedLabelBorderThickness( ) const
+	{ return _highlightedStyle._labelBorderThickness; }
+
+	void Button::SetHighlightedLabelStyle( const unsigned int &style )
+	{ _highlightedStyle._textStyle = style; }
+
+	unsigned int Button::GetHighlightedLabelStyle( ) const
+	{ return _highlightedStyle._textStyle; }
+
+	void Button::SetHighlightedScale( const float &xScale, const float &yScale )
+	{ _highlightedStyle._scale = glm::vec2( xScale, yScale ); }
+
+	void Button::SetHighlightedScale( const glm::vec2 &scale )
+	{ _highlightedStyle._scale = scale; }
+
+	void Button::SetHighlightedScaleX( const float &xScale )
+	{ _highlightedStyle._scale.x = xScale; }
+
+	void Button::SetHighlightedScaleY( const float &yScale )
+	{ _highlightedStyle._scale.y = yScale; }
+
+	void Button::HighlightedScale( const glm::vec2 &scale )
+	{ _highlightedStyle._scale *= scale; }
+
+	void Button::HighlightedScale( const float &xScale, const float &yScale )
+	{ _highlightedStyle._scale *= glm::vec2( xScale, yScale ); }
+
+	void Button::HighlightedScaleX( const float &xScale )
+	{ _highlightedStyle._scale.x *= xScale; }
+
+	void Button::HighlightedScaleY( const float &yScale )
+	{ _highlightedStyle._scale.y *= yScale; }
+
+	glm::vec2 Button::GetHighlightedScale( ) const
+	{ return _highlightedStyle._scale; }
+
+	float Button::GetHighlightedScaleX( ) const
+	{ return _highlightedStyle._scale.x; }
+
+	float Button::GetHighlightedScaleY( ) const
+	{ return _highlightedStyle._scale.y; }
+
 	void Button::Move( const glm::vec2 &offset )
 	{
 		_background->Move( offset );
@@ -699,6 +782,8 @@ namespace Sonar
 		_background->Update( dt );
 	}
 
+	void Button::PollInput( const float &dt, const Event &event ) { }
+
 	void Button::SetTheme( const MenuComponent::Theme &theme )
 	{
 		switch ( theme )
@@ -719,6 +804,11 @@ namespace Sonar
 				SetClickedLabelInsideColor( Color::White );
 				SetClickedLabelBorderColor( Color( 50, 50, 50, 255 ) );
 
+				SetHighlightedBackgroundInsideColor( Color( 100, 100, 100, 255 ) );
+				SetHighlightedBackgroundBorderColor( Color::White );
+				SetHighlightedLabelInsideColor( Color::White );
+				SetHighlightedLabelBorderColor( Color( 100, 100, 100, 255 ) );
+
 				break;
 
 			case MenuComponent::Theme::LIGHT:
@@ -736,6 +826,11 @@ namespace Sonar
 				SetClickedBackgroundBorderColor( Color::Black );
 				SetClickedLabelInsideColor( Color::Black );
 				SetClickedLabelBorderColor( Color( 205, 205, 205, 255 ) );
+
+				SetHighlightedBackgroundInsideColor( Color( 155, 155, 155, 255 ) );
+				SetHighlightedBackgroundBorderColor( Color::Black );
+				SetHighlightedLabelInsideColor( Color::Black );
+				SetHighlightedLabelBorderColor( Color( 155, 155, 155, 255 ) );
 
 				break;
 		}
@@ -762,11 +857,23 @@ namespace Sonar
 	void Button::SetHoverButtonStyle( const Button::ButtonStyle &style )
 	{ _hoverStyle = style; }
 
+	void Button::SetClickedButtonStyle( const Button::ButtonStyle &style )
+	{ _clickedStyle = style; }
+
+	void Button::SetHighlightedButtonStyle( const Button::ButtonStyle &style )
+	{ _highlightedStyle = style; }
+
 	const Sonar::Button::ButtonStyle &Button::GetDefaultButtonStyle( ) const
 	{ return _defaultStyle; }
 
 	const Sonar::Button::ButtonStyle &Button::GetHoverButtonStyle( ) const
 	{ return _hoverStyle; }
+
+	const Sonar::Button::ButtonStyle &Button::GetClickedButtonStyle( ) const
+	{ return _clickedStyle; }
+
+	const Sonar::Button::ButtonStyle &Button::GetHighlightedButtonStyle( ) const
+	{ return _highlightedStyle; }
 
 	void Button::EnableHover( )
 	{ _isHoverEnabled = true; }

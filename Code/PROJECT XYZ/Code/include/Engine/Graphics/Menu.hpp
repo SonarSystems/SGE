@@ -36,6 +36,14 @@ namespace Sonar
         void Update( const float &dt );
 
         /**
+        * \brief Poll the input from the Joystick, Keyboard and Mouse
+        *
+        * \param dt Delta time (difference between frames)
+        * \param event Event to poll
+        */
+        void PollInput( const float &dt, const Event &event );
+
+        /**
         * \brief Add component to the menu
         *
 		* \param component Component to add

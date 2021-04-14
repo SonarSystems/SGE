@@ -34,7 +34,9 @@ namespace Sonar
 
 		Menu *menu;
 
-		Button *button;
+		Button *button, *button2, *button3;
+
+		ButtonGroup *buttonGroup;
 
 		TextBox *textBox;
 

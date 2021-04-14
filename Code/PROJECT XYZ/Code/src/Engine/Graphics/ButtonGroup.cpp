@@ -21,12 +21,35 @@ namespace Sonar
 		{ _buttons.at( i )->Update( dt ); }
 	}
 
+	void ButtonGroup::PollInput( const float &dt, const Event &event )
+	{
+		for ( auto &button : _buttons )
+		{ button->PollInput( dt, event ); }
+
+		if ( Event::KeyReleased == event.type )
+		{
+			if ( Keyboard::Up == event.key.code )
+			{
+				MoveUp( );
+				spdlog::info( "Up" );
+			}
+			else if ( Keyboard::Down == event.key.code )
+			{
+				MoveDown( );
+
+				spdlog::info( "Down" );
+			}
+		}
+	}
+
 	void ButtonGroup::AddButton( Button *button, const bool &overrideStyle )
 	{
 		if ( overrideStyle )
 		{ button->SetTheme( _theme ); }
 
 		_buttons.push_back( button );
+
+		UpdateButtons( );
 	}
 
 	void ButtonGroup::RemoveButton( Button *button )
@@ -107,7 +130,19 @@ namespace Sonar
 
 	void ButtonGroup::UpdateButtons( )
 	{
-
+		for ( int i = 0; i < _buttons.size( ); i++ )
+		{
+			if ( i == _currentIndex )
+			{ 
+				auto button = _buttons.at( i );
+				button->SetButtonStyle( button->GetHighlightedButtonStyle( ), false );
+			}
+			else
+			{
+				auto button = _buttons.at( i );
+				button->SetButtonStyle( button->GetDefaultButtonStyle( ), false );
+			}
+		}
 	}
 }
 

@@ -33,6 +33,9 @@ namespace Sonar
 			BOTTOM
 		};
 
+        /**
+        * \brief Button style struct
+        */
         struct ButtonStyle
         {
             Color _backgroundColor = DEFAULT_BUTTON_HOVER_BACKGROUND_COLOR;
@@ -74,6 +77,14 @@ namespace Sonar
         * \param dt Delta time (difference between frames)
         */
         void Update( const float &dt );
+
+        /**
+        * \brief Poll the input from the Joystick, Keyboard and Mouse
+        *
+        * \param dt Delta time (difference between frames)
+        * \param event Event to poll
+        */
+        void PollInput( const float &dt, const Event &event );
 
         /**
         * \brief Set the components theme
@@ -631,218 +642,431 @@ namespace Sonar
 		*/
 		float GetHoverScaleY( ) const;
 
+        /**
+        * \brief Set the clicked character size in pixels
+        *
+        * \param size Size of the characters in pixels
+        * \param usePadding Whether or not to use padding
+        * \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
+        */
+        void SetClickedCharacterSize( const unsigned int &size );
+
+        /**
+        * \brief Get the clicked characters size in pixels
+        *
+        * \return Output returns the character size
+        */
+        unsigned int GetClickedCharacterSize( ) const;
+
+        /**
+        * \brief Set the clicked background's inside color (fill color)
+        *
+        * \param color Color object
+        * \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
+        */
+        void SetClickedBackgroundInsideColor( const Color &color );
+
+        /**
+        * \brief Set the clicked background's border color
+        *
+        * \param color Color object
+        * \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
+        *
+        * SetBorderThickness method required as well
+        */
+        void SetClickedBackgroundBorderColor( const Color &color );
+
+        /**
+        * \brief Set the clicked background's border thickness
+        *
+        * \param thickness Thickness of the border
+        * \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
+        *
+        * Required for border, otherwise border is to set 0 thickness and cannot be seen
+        */
+        void SetClickedBackgroundBorderThickness( const float &thickness );
+
+        /**
+        * \brief Get the clicked background's inside color (fill color)
+        *
+        * \return Output returns the inside color
+        */
+        Color GetClickedBackgroundInsideColor( ) const;
+
+        /**
+        * \brief Get the clicked background's border color
+        *
+        * \return Output returns the border color
+        */
+        Color GetClickedBackgroundBorderColor( ) const;
+
+        /**
+        * \brief Get the clicked background's border thickness
+        *
+        * \return Output returns the border thickness
+        */
+        float GetClickedBackgroundBorderThickness( ) const;
+
+        /**
+        * \brief Set the clicked label's inside color (fill color)
+        *
+        * \param color Color object
+        * \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
+        */
+        void SetClickedLabelInsideColor( const Color &color );
+
+        /**
+        * \brief Set the clicked label's border color
+        *
+        * \param color Color object
+        * \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
+        *
+        * SetBorderThickness method required as well
+        */
+        void SetClickedLabelBorderColor( const Color &color );
+
+        /**
+        * \brief Set the clicked label's border thickness
+        *
+        * \param thickness Thickness of the border
+        * \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
+        *
+        * Required for border, otherwise border is to set 0 thickness and cannot be seen
+        */
+        void SetClickedLabelBorderThickness( const float &thickness );
+
+        /**
+        * \brief Get the clicked label's inside color (fill color)
+        *
+        * \return Output returns the inside color
+        */
+        Color GetClickedLabelInsideColor( ) const;
+
+        /**
+        * \brief Get the clicked label's border color
+        *
+        * \return Output returns the border color
+        */
+        Color GetClickedLabelBorderColor( ) const;
+
+        /**
+        * \brief Get the clicked label's border thickness
+        *
+        * \return Output returns the border thickness
+        */
+        float GetClickedLabelBorderThickness( ) const;
+
+        /**
+        * \brief Set a particular style for the clicked label
+        *
+        * \param style Style int to use
+        * \param resize Whether or not to resize the button
+        * \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
+        */
+        void SetClickedLabelStyle( const unsigned int &style );
+
+        /**
+        * \brief Get the overall clicked style
+        *
+        * \return Output returns the overall style
+        */
+        unsigned int GetClickedLabelStyle( ) const;
+
+        /**
+        * \brief Set the clicked scale factor
+        *
+        * \param xScale Scale in x axis
+        * \param yScale Scale in y axis
+        * \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
+        */
+        void SetClickedScale( const float &xScale, const float &yScale );
+
+        /**
+        * \brief Set the clicked scale factor
+        *
+        * \param scale Scale in x and y axes
+        * \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
+        */
+        void SetClickedScale( const glm::vec2 &scale );
+
+        /**
+        * \brief Set the x axis clicked scale factor
+        *
+        * \param xScale Scale in x axis
+        * \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
+        */
+        void SetClickedScaleX( const float &xScale );
+
+        /**
+        * \brief Set the y axis clicked scale factor
+        *
+        * \param yScale Scale in y axis
+        * \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
+        */
+        void SetClickedScaleY( const float &yScale );
+
+        /**
+        * \brief Scale the clicked object relative to it's current scale
+        *
+        * \param scale Scale in the x and y axis
+        */
+        void ClickedScale( const glm::vec2 &scale );
+
+        /**
+        * \brief Scale the clicked object relative to it's current scale
+        *
+        * \param xScale Scale in x axis
+        * \param yScale Scale in y axis
+        */
+        void ClickedScale( const float &xScale, const float &yScale );
+
+        /**
+        * \brief Scale the clicked object relative to it's current x scale
+        *
+        * \param xScale Scale in x axis
+        */
+        void ClickedScaleX( const float &xScale );
+
+        /**
+        * \brief Scale the clicked object relative to it's current y scale
+        *
+        * \param yScale Scale in y axis
+        */
+        void ClickedScaleY( const float &yScale );
+
+        /**
+        * \brief Get the clicked scale factor for both axes
+        *
+        * \return Output returns scale factor for both axes
+        */
+        glm::vec2 GetClickedScale( ) const;
+
+        /**
+        * \brief Get the clicked scale factor for x axis
+        *
+        * \return Output returns scale factor for the x axis
+        */
+        float GetClickedScaleX( ) const;
+
+        /**
+        * \brief Get the clicked scale factor for y axis
+        *
+        * \return Output returns scale factor for the y axis
+        */
+        float GetClickedScaleY( ) const;
+
 		/**
-		* \brief Set the clicked character size in pixels
+		* \brief Set the highlighted character size in pixels
 		*
 		* \param size Size of the characters in pixels
 		* \param usePadding Whether or not to use padding
 		* \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
 		*/
-		void SetClickedCharacterSize( const unsigned int &size );
+		void SetHighlightedCharacterSize( const unsigned int &size );
 
 		/**
-		* \brief Get the clicked characters size in pixels
+		* \brief Get the highlighted characters size in pixels
 		*
 		* \return Output returns the character size
 		*/
-		unsigned int GetClickedCharacterSize( ) const;
+		unsigned int GetHighlightedCharacterSize( ) const;
 
 		/**
-		* \brief Set the clicked background's inside color (fill color)
+		* \brief Set the highlighted background's inside color (fill color)
 		*
 		* \param color Color object
 		* \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
 		*/
-		void SetClickedBackgroundInsideColor( const Color &color );
+		void SetHighlightedBackgroundInsideColor( const Color &color );
 
 		/**
-		* \brief Set the clicked background's border color
-		*
-		* \param color Color object
-		* \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
-		*
-		* SetBorderThickness method required as well
-		*/
-		void SetClickedBackgroundBorderColor( const Color &color );
-
-		/**
-		* \brief Set the clicked background's border thickness
-		*
-		* \param thickness Thickness of the border
-		* \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
-		*
-		* Required for border, otherwise border is to set 0 thickness and cannot be seen
-		*/
-		void SetClickedBackgroundBorderThickness( const float &thickness );
-
-		/**
-		* \brief Get the clicked background's inside color (fill color)
-		*
-		* \return Output returns the inside color
-		*/
-		Color GetClickedBackgroundInsideColor( ) const;
-
-		/**
-		* \brief Get the clicked background's border color
-		*
-		* \return Output returns the border color
-		*/
-		Color GetClickedBackgroundBorderColor( ) const;
-
-		/**
-		* \brief Get the clicked background's border thickness
-		*
-		* \return Output returns the border thickness
-		*/
-		float GetClickedBackgroundBorderThickness( ) const;
-
-		/**
-		* \brief Set the clicked label's inside color (fill color)
-		*
-		* \param color Color object
-		* \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
-		*/
-		void SetClickedLabelInsideColor( const Color &color );
-
-		/**
-		* \brief Set the clicked label's border color
+		* \brief Set the highlighted background's border color
 		*
 		* \param color Color object
 		* \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
 		*
 		* SetBorderThickness method required as well
 		*/
-		void SetClickedLabelBorderColor( const Color &color );
+		void SetHighlightedBackgroundBorderColor( const Color &color );
 
 		/**
-		* \brief Set the clicked label's border thickness
+		* \brief Set the highlighted background's border thickness
 		*
 		* \param thickness Thickness of the border
 		* \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
 		*
 		* Required for border, otherwise border is to set 0 thickness and cannot be seen
 		*/
-		void SetClickedLabelBorderThickness( const float &thickness );
+		void SetHighlightedBackgroundBorderThickness( const float &thickness );
 
 		/**
-		* \brief Get the clicked label's inside color (fill color)
+		* \brief Get the highlighted background's inside color (fill color)
 		*
 		* \return Output returns the inside color
 		*/
-		Color GetClickedLabelInsideColor( ) const;
+		Color GetHighlightedBackgroundInsideColor( ) const;
 
 		/**
-		* \brief Get the clicked label's border color
+		* \brief Get the highlighted background's border color
 		*
 		* \return Output returns the border color
 		*/
-		Color GetClickedLabelBorderColor( ) const;
+		Color GetHighlightedBackgroundBorderColor( ) const;
 
 		/**
-		* \brief Get the clicked label's border thickness
+		* \brief Get the highlighted background's border thickness
 		*
 		* \return Output returns the border thickness
 		*/
-		float GetClickedLabelBorderThickness( ) const;
+		float GetHighlightedBackgroundBorderThickness( ) const;
 
 		/**
-		* \brief Set a particular style for the clicked label
+		* \brief Set the highlighted label's inside color (fill color)
+		*
+		* \param color Color object
+		* \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
+		*/
+		void SetHighlightedLabelInsideColor( const Color &color );
+
+		/**
+		* \brief Set the highlighted label's border color
+		*
+		* \param color Color object
+		* \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
+		*
+		* SetBorderThickness method required as well
+		*/
+		void SetHighlightedLabelBorderColor( const Color &color );
+
+		/**
+		* \brief Set the highlighted label's border thickness
+		*
+		* \param thickness Thickness of the border
+		* \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
+		*
+		* Required for border, otherwise border is to set 0 thickness and cannot be seen
+		*/
+		void SetHighlightedLabelBorderThickness( const float &thickness );
+
+		/**
+		* \brief Get the highlighted label's inside color (fill color)
+		*
+		* \return Output returns the inside color
+		*/
+		Color GetHighlightedLabelInsideColor( ) const;
+
+		/**
+		* \brief Get the highlighted label's border color
+		*
+		* \return Output returns the border color
+		*/
+		Color GetHighlightedLabelBorderColor( ) const;
+
+		/**
+		* \brief Get the highlighted label's border thickness
+		*
+		* \return Output returns the border thickness
+		*/
+		float GetHighlightedLabelBorderThickness( ) const;
+
+		/**
+		* \brief Set a particular style for the highlighted label
 		*
 		* \param style Style int to use
 		* \param resize Whether or not to resize the button
 		* \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
 		*/
-		void SetClickedLabelStyle( const unsigned int &style );
+		void SetHighlightedLabelStyle( const unsigned int &style );
 
 		/**
-		* \brief Get the overall clicked style
+		* \brief Get the overall highlighted style
 		*
 		* \return Output returns the overall style
 		*/
-		unsigned int GetClickedLabelStyle( ) const;
+		unsigned int GetHighlightedLabelStyle( ) const;
 
 		/**
-		* \brief Set the clicked scale factor
+		* \brief Set the highlighted scale factor
 		*
 		* \param xScale Scale in x axis
 		* \param yScale Scale in y axis
 		* \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
 		*/
-		void SetClickedScale( const float &xScale, const float &yScale );
+		void SetHighlightedScale( const float &xScale, const float &yScale );
 
 		/**
-		* \brief Set the clicked scale factor
+		* \brief Set the highlighted scale factor
 		*
 		* \param scale Scale in x and y axes
 		* \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
 		*/
-		void SetClickedScale( const glm::vec2 &scale );
+		void SetHighlightedScale( const glm::vec2 &scale );
 
 		/**
-		* \brief Set the x axis clicked scale factor
+		* \brief Set the x axis highlighted scale factor
 		*
 		* \param xScale Scale in x axis
 		* \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
 		*/
-		void SetClickedScaleX( const float &xScale );
+		void SetHighlightedScaleX( const float &xScale );
 
 		/**
-		* \brief Set the y axis clicked scale factor
+		* \brief Set the y axis highlighted scale factor
 		*
 		* \param yScale Scale in y axis
 		* \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
 		*/
-		void SetClickedScaleY( const float &yScale );
+		void SetHighlightedScaleY( const float &yScale );
 
 		/**
-		* \brief Scale the clicked object relative to it's current scale
+		* \brief Scale the highlighted object relative to it's current scale
 		*
 		* \param scale Scale in the x and y axis
 		*/
-		void ClickedScale( const glm::vec2 &scale );
+		void HighlightedScale( const glm::vec2 &scale );
 
 		/**
-		* \brief Scale the clicked object relative to it's current scale
+		* \brief Scale the highlighted object relative to it's current scale
 		*
 		* \param xScale Scale in x axis
 		* \param yScale Scale in y axis
 		*/
-		void ClickedScale( const float &xScale, const float &yScale );
+		void HighlightedScale( const float &xScale, const float &yScale );
 
 		/**
-		* \brief Scale the clicked object relative to it's current x scale
+		* \brief Scale the highlighted object relative to it's current x scale
 		*
 		* \param xScale Scale in x axis
 		*/
-		void ClickedScaleX( const float &xScale );
+		void HighlightedScaleX( const float &xScale );
 
 		/**
-		* \brief Scale the clicked object relative to it's current y scale
+		* \brief Scale the highlighted object relative to it's current y scale
 		*
 		* \param yScale Scale in y axis
 		*/
-		void ClickedScaleY( const float &yScale );
+		void HighlightedScaleY( const float &yScale );
 
 		/**
-		* \brief Get the clicked scale factor for both axes
+		* \brief Get the highlighted scale factor for both axes
 		*
 		* \return Output returns scale factor for both axes
 		*/
-		glm::vec2 GetClickedScale( ) const;
+		glm::vec2 GetHighlightedScale( ) const;
 
 		/**
-		* \brief Get the clicked scale factor for x axis
+		* \brief Get the highlighted scale factor for x axis
 		*
 		* \return Output returns scale factor for the x axis
 		*/
-		float GetClickedScaleX( ) const;
+		float GetHighlightedScaleX( ) const;
 
 		/**
-		* \brief Get the clicked scale factor for y axis
+		* \brief Get the highlighted scale factor for y axis
 		*
 		* \return Output returns scale factor for the y axis
 		*/
-		float GetClickedScaleY( ) const;
+		float GetHighlightedScaleY( ) const;
 
         /**
         * \brief Move the object relative to it's current position in the x and y axis
@@ -1089,6 +1313,20 @@ namespace Sonar
         void SetHoverButtonStyle( const Button::ButtonStyle &style );
 
         /**
+        * \brief Set the clicked button style
+        *
+        * \param style Style to be applied to the button's clicked event
+        */
+        void SetClickedButtonStyle( const Button::ButtonStyle &style );
+
+        /**
+        * \brief Set the highlighted button style
+        *
+        * \param style Style to be applied to the button's highlighted event
+        */
+        void SetHighlightedButtonStyle( const Button::ButtonStyle &style );
+
+        /**
         * \brief Get the default button style
         *
         * \return Output returns the default button style
@@ -1101,6 +1339,20 @@ namespace Sonar
         * \return Output returns the hover button style
         */
         const ButtonStyle &GetHoverButtonStyle( ) const;
+
+        /**
+        * \brief Get the clicked button style
+        *
+        * \return Output returns the clicked button style
+        */
+        const ButtonStyle &GetClickedButtonStyle( ) const;
+
+        /**
+        * \brief Get the highlighted button style
+        *
+        * \return Output returns the highlighted button style
+        */
+        const ButtonStyle &GetHighlightedButtonStyle( ) const;
 
         /**
         * \brief Enable the hover functionality
@@ -1302,9 +1554,14 @@ namespace Sonar
         bool _isBackgroundEnabled;
 
         /**
-        * \brief Hover and default styles
+        * \brief Button styles
+        * 
+        * Hover style - when the mosue is hovering over the button
+        * Default style - normal style
+        * Clicked style - when the button is clicked
+        * Highlighted style - when grouped in a ButtonGroup component
         */
-        ButtonStyle _hoverStyle, _defaultStyle, _clickedStyle;
+        ButtonStyle _hoverStyle, _defaultStyle, _clickedStyle, _highlightedStyle;
 
         /**
         * \brief Which button triggers the clicked function

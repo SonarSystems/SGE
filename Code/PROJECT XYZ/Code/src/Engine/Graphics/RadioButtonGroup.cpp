@@ -44,6 +44,12 @@ namespace Sonar
 		}
 	}
 
+	void RadioButtonGroup::PollInput( const float &dt, const Event &event )
+	{
+		for ( auto &button : _radioButtons )
+		{ button->PollInput( dt, event ); }
+	}
+
 	void RadioButtonGroup::AddRadioButton( RadioButton *radioButton, const bool &overrideStyle )
 	{
 		if ( overrideStyle )

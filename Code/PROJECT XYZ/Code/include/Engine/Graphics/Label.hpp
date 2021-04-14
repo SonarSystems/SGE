@@ -52,6 +52,14 @@ namespace Sonar
         void Draw( );
 
         /**
+        * \brief Poll the input from the Joystick, Keyboard and Mouse
+        *
+        * \param dt Delta time (difference between frames)
+        * \param event Event to poll
+        */
+        void PollInput( const float &dt, const Event &event );
+
+        /**
         * \brief Set the components theme
         *
         * \param theme Theme to set

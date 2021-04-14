@@ -19,6 +19,12 @@ namespace Sonar
 		{ component->Update( dt ); }
 	}
 
+	void Menu::PollInput( const float &dt, const Event &event )
+	{
+		for ( auto component : _menuComponents )
+		{ component->PollInput( dt, event ); }
+	}
+
 	void Menu::AddComponent( MenuComponent *component, const bool &overrideStyle )
 	{
 		if ( overrideStyle )

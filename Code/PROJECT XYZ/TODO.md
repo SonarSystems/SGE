@@ -6,7 +6,12 @@ ENGINE
 * GUI
     - Menu system - https://www.youtube.com/watch?v=4Vg9d1pjL20
         - Keyboard support - Up and down, stops when at the end of the list or switches sides
-            - Button highlight style
+        - ButtonGroup
+            - Match all button widths - optional
+            - Enter key
+                - Ability to set multiple enter/trigger keys
+            - Up and down keys
+                - Ability to set multiple up and down keys
     - Hide cursor (static method of Mouse class)
         - HideCursor
         - ShowCursor
@@ -26,6 +31,7 @@ ENGINE
         - Vertices count
         - Triangles count
         - Quads count
+* Fix all warnings
 * Music and sound items
 * Port AssetManager to Sonar Classes
 * Sorting algorithms, bubble sort, quick sort, insert sort

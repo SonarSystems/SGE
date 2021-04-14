@@ -75,6 +75,8 @@ namespace Sonar
 		}
 	}
 
+	void RadioButton::PollInput( const float &dt, const Event &event ) { }
+
 	void RadioButton::SetTheme( const MenuComponent::Theme &theme )
 	{
 		switch ( theme )
