@@ -79,6 +79,13 @@ namespace Sonar
         void Update( const float &dt );
 
         /**
+        * \brief Update the classes objects
+        *
+        * \param dt Delta time (difference between frames)
+        */
+        void UpdateForButtonGroup( const float &dt, const bool &isDefaultStyleEnabled );
+
+        /**
         * \brief Poll the input from the Joystick, Keyboard and Mouse
         *
         * \param dt Delta time (difference between frames)

@@ -767,6 +767,9 @@ namespace Sonar
 	{ return _background->IsMouseOver( ); }
 
 	void Button::Update( const float &dt )
+	{ UpdateForButtonGroup( dt, true ); }
+
+	void Button::UpdateForButtonGroup( const float &dt, const bool &isDefaultStyleEnabled )
 	{
 		if ( IsClicked( _buttonToClick ) && _isClickEnabled )
 		{ SetButtonStyle( _clickedStyle, false ); }
@@ -774,7 +777,7 @@ namespace Sonar
 		{
 			if ( IsMouseOver( ) && _isHoverEnabled )
 			{ SetButtonStyle( _hoverStyle, false ); }
-			else
+			else if ( isDefaultStyleEnabled )
 			{ SetButtonStyle( _defaultStyle, false ); }
 		}
 

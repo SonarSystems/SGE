@@ -18,7 +18,18 @@ namespace Sonar
 	void ButtonGroup::Update( const float &dt )
 	{
 		for ( int i = 0; i < _buttons.size( ); i++ )
-		{ _buttons.at( i )->Update( dt ); }
+		{
+			if ( _currentIndex == i )
+			{
+				_buttons.at( i )->UpdateForButtonGroup( dt, true );
+			}
+			else
+			{
+				_buttons.at( i )->UpdateForButtonGroup( dt, false );
+			}
+		}
+
+		UpdateButtons( );
 	}
 
 	void ButtonGroup::PollInput( const float &dt, const Event &event )
@@ -31,13 +42,14 @@ namespace Sonar
 			if ( Keyboard::Up == event.key.code )
 			{
 				MoveUp( );
-				spdlog::info( "Up" );
+
+				//spdlog::info( "Up" );
 			}
 			else if ( Keyboard::Down == event.key.code )
 			{
 				MoveDown( );
 
-				spdlog::info( "Down" );
+				//spdlog::info( "Down" );
 			}
 		}
 	}
@@ -63,25 +75,63 @@ namespace Sonar
 			newMenuComponentsVector.pop_back( );
 
 			_buttons = newMenuComponentsVector;
+
+			UpdateButtons( );
 		}
 	}
 
 	void ButtonGroup::RemoveButton( const int &index )
 	{
 		if ( index < _buttons.size( ) )
-		{ _buttons.erase( _buttons.begin( ) + index ); }
+		{
+			_buttons.erase( _buttons.begin( ) + index );
+
+			if ( _buttons.size( ) <= _currentIndex )
+			{
+				_currentIndex = _buttons.size( ) - 1;
+
+				if ( 0 > _currentIndex )
+				{ _currentIndex = 0; }
+			}
+
+			UpdateButtons( );
+		}
 	}
 
 	void ButtonGroup::RemoveFirstButton( )
 	{
 		if ( 0 < _buttons.size( ) )
-		{ _buttons.erase( _buttons.begin( ) ); }
+		{
+			_buttons.erase( _buttons.begin( ) );
+
+			if ( _buttons.size( ) <= _currentIndex )
+			{
+				_currentIndex = _buttons.size( ) - 1;
+
+				if ( 0 > _currentIndex )
+				{ _currentIndex = 0; }
+			}
+
+			UpdateButtons( );
+		}
 	}
 
 	void ButtonGroup::RemoveLastButton( )
 	{
 		if ( _buttons.size( ) > 0 )
-		{ _buttons.erase( _buttons.end( ) - 1 ); }
+		{
+			_buttons.erase( _buttons.end( ) - 1 );
+
+			if ( _buttons.size( ) <= _currentIndex )
+			{
+				_currentIndex = _buttons.size( ) - 1;
+
+				if ( 0 > _currentIndex )
+				{ _currentIndex = 0; }
+			}
+
+			UpdateButtons( );
+		}
 	}
 
 	unsigned int ButtonGroup::GetSize( ) const
@@ -97,13 +147,17 @@ namespace Sonar
 
 	void ButtonGroup::MoveUp( const bool &cycleDown, const unsigned int &moveAmount )
 	{
-		if ( _currentIndex - moveAmount >= 0 )
+		if ( _currentIndex - ( int )moveAmount >= 0 )
 		{
 			//menu[selectedItemIndex].setColor( sf::Color::White );
 			_currentIndex -= moveAmount;
-			UpdateButtons( );
+			//spdlog::info( _currentIndex );
 			//menu[selectedItemIndex].setColor( sf::Color::Red );
 		}
+		else if ( cycleDown && _buttons.size( ) > 0 )
+		{ _currentIndex = _buttons.size( ) - 1; }
+			
+		UpdateButtons( );
 	}
 
 	void ButtonGroup::MoveDown( const bool &cycleUp, const unsigned int &moveAmount )
@@ -112,17 +166,21 @@ namespace Sonar
 		{
 			//menu[selectedItemIndex].setColor( sf::Color::White );
 			_currentIndex += moveAmount;
-			UpdateButtons( );
+			//spdlog::info( _currentIndex );
 			//menu[selectedItemIndex].setColor( sf::Color::Red );
 		}
+		else if ( cycleUp && _buttons.size( ) > 0 )
+		{ _currentIndex = 0; }
+		
+		UpdateButtons( );
 	}
 
 	void ButtonGroup::JumpToIndex( const unsigned int &index )
 	{
 		if ( index < _buttons.size( ) )
-		{
-			_currentIndex = index;
-		}
+		{ _currentIndex = index; }
+
+		UpdateButtons( );
 	}
 
 	unsigned int ButtonGroup::GetCurrentIndex( ) const
@@ -134,15 +192,19 @@ namespace Sonar
 		{
 			if ( i == _currentIndex )
 			{ 
+				//spdlog::info( "CURRENT" );
 				auto button = _buttons.at( i );
 				button->SetButtonStyle( button->GetHighlightedButtonStyle( ), false );
 			}
 			else
 			{
+				//spdlog::info( "NOT CURRENT" );
 				auto button = _buttons.at( i );
 				button->SetButtonStyle( button->GetDefaultButtonStyle( ), false );
 			}
 		}
+
+		//spdlog::warn( "--------------------------" );
 	}
 }
 

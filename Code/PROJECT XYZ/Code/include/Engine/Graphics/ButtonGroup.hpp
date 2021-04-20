@@ -147,7 +147,7 @@ namespace Sonar
         /**
         * \brief Current selected button
         */
-        unsigned int _currentIndex;
+        int _currentIndex;
 
     };
 }
