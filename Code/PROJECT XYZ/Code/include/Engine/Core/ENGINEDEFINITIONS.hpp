@@ -146,3 +146,8 @@
 * \brief Default menu properties
 */
 #define DEFAULT_MENU_THEME Sonar::MenuComponent::Theme::DARK
+
+/**
+* \brief Default button group properties
+*/
+#define DEFAULT_BUTTON_GROUP_KEYBOARD_ENABLED true;

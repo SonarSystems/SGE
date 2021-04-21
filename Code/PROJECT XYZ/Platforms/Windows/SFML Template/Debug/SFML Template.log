@@ -1,8 +1,8 @@
 ﻿  ButtonGroup.cpp
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\ButtonGroup.cpp(20,22): warning C4018: '<': signed/unsigned mismatch
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\ButtonGroup.cpp(85,14): warning C4018: '<': signed/unsigned mismatch
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\ButtonGroup.cpp(89,26): warning C4018: '<=': signed/unsigned mismatch
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\ButtonGroup.cpp(107,26): warning C4018: '<=': signed/unsigned mismatch
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\ButtonGroup.cpp(125,26): warning C4018: '<=': signed/unsigned mismatch
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\ButtonGroup.cpp(191,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\ButtonGroup.cpp(23,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\ButtonGroup.cpp(106,14): warning C4018: '<': signed/unsigned mismatch
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\ButtonGroup.cpp(110,26): warning C4018: '<=': signed/unsigned mismatch
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\ButtonGroup.cpp(128,26): warning C4018: '<=': signed/unsigned mismatch
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\ButtonGroup.cpp(146,26): warning C4018: '<=': signed/unsigned mismatch
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\ButtonGroup.cpp(232,22): warning C4018: '<': signed/unsigned mismatch
   SFML Template.vcxproj -> C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\SFML Template.exe

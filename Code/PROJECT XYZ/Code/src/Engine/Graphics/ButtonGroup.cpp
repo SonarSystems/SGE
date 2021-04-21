@@ -5,6 +5,9 @@ namespace Sonar
 	ButtonGroup::ButtonGroup( GameDataRef data ) : _data( data )
 	{
 		_currentIndex = 0;
+
+		_isKeyboardEnabled = DEFAULT_BUTTON_GROUP_KEYBOARD_ENABLED;
+		_isCurrentButtonClicked = false;
 	}
 
 	ButtonGroup::~ButtonGroup( ) { }
@@ -19,17 +22,35 @@ namespace Sonar
 	{
 		for ( int i = 0; i < _buttons.size( ); i++ )
 		{
-			if ( _currentIndex == i )
+			Button::MOUSE_STATE mouseState = _buttons.at( i )->UpdateForButtonGroup( dt, !_isKeyboardEnabled );
+
+			switch ( mouseState )
 			{
-				_buttons.at( i )->UpdateForButtonGroup( dt, true );
-			}
-			else
-			{
-				_buttons.at( i )->UpdateForButtonGroup( dt, false );
+				case Button::MOUSE_STATE::NOT_INTERACTING:
+					if ( i == _currentIndex )
+					{ _isCurrentButtonClicked = false; }
+
+					UpdateButtons( );
+
+					break;
+
+				case Button::MOUSE_STATE::CLICKED:
+					if ( i == _currentIndex )
+					{ _isCurrentButtonClicked = false; }
+
+					UpdateButtons( );
+
+					break;
+
+				case Button::MOUSE_STATE::HOVER:
+					_currentIndex = i;
+					UpdateButtons( );
+
+					break;
 			}
 		}
 
-		UpdateButtons( );
+		//UpdateButtons( );
 	}
 
 	void ButtonGroup::PollInput( const float &dt, const Event &event )
@@ -147,6 +168,9 @@ namespace Sonar
 
 	void ButtonGroup::MoveUp( const bool &cycleDown, const unsigned int &moveAmount )
 	{
+
+		spdlog::info( _currentIndex );
+
 		if ( _currentIndex - ( int )moveAmount >= 0 )
 		{
 			//menu[selectedItemIndex].setColor( sf::Color::White );
@@ -162,6 +186,8 @@ namespace Sonar
 
 	void ButtonGroup::MoveDown( const bool &cycleUp, const unsigned int &moveAmount )
 	{
+		spdlog::info( _currentIndex );
+
 		if ( _currentIndex + moveAmount < _buttons.size( ) )
 		{
 			//menu[selectedItemIndex].setColor( sf::Color::White );
@@ -186,6 +212,21 @@ namespace Sonar
 	unsigned int ButtonGroup::GetCurrentIndex( ) const
 	{ return _currentIndex; }
 
+	void ButtonGroup::SetKeyboadEnabled( const bool &isEnabled )
+	{ _isKeyboardEnabled = isEnabled; }
+
+	void ButtonGroup::EnableKeyboard( )
+	{ _isKeyboardEnabled = true; }
+
+	void ButtonGroup::DisableKeyboard( )
+	{ _isKeyboardEnabled = false; }
+
+	void ButtonGroup::ToggleKeyboard( )
+	{ _isKeyboardEnabled = !_isKeyboardEnabled; }
+
+	const bool &ButtonGroup::IsKeyboardEnabled( )
+	{ return _isKeyboardEnabled; }
+
 	void ButtonGroup::UpdateButtons( )
 	{
 		for ( int i = 0; i < _buttons.size( ); i++ )
@@ -194,7 +235,11 @@ namespace Sonar
 			{ 
 				//spdlog::info( "CURRENT" );
 				auto button = _buttons.at( i );
-				button->SetButtonStyle( button->GetHighlightedButtonStyle( ), false );
+
+				if ( _isCurrentButtonClicked )
+				{ button->SetButtonStyle( button->GetClickedButtonStyle( ), false ); }
+				else
+				{ button->SetButtonStyle( button->GetHighlightedButtonStyle( ), false ); }
 			}
 			else
 			{

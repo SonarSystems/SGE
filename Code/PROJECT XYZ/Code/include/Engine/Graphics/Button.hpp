@@ -34,6 +34,16 @@ namespace Sonar
 		};
 
         /**
+        * \brief State of the mouse on the button
+        */
+        enum MOUSE_STATE
+        {
+            NOT_INTERACTING = 0,
+            HOVER,
+            CLICKED
+        };
+
+        /**
         * \brief Button style struct
         */
         struct ButtonStyle
@@ -83,7 +93,7 @@ namespace Sonar
         *
         * \param dt Delta time (difference between frames)
         */
-        void UpdateForButtonGroup( const float &dt, const bool &isDefaultStyleEnabled );
+        MOUSE_STATE UpdateForButtonGroup( const float &dt, const bool &isDefaultStyleEnabled );
 
         /**
         * \brief Poll the input from the Joystick, Keyboard and Mouse

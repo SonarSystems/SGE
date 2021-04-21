@@ -123,6 +123,35 @@ namespace Sonar
         */
         unsigned int GetCurrentIndex( ) const;
 
+        /**
+        * \brief Enable/disable the keyboard state for the button group
+        *
+        * \param variableName Variable description
+        */
+        void SetKeyboadEnabled( const bool &isEnabled );
+
+        /**
+        * \brief Enable the keyboard state for the button group
+        */
+        void EnableKeyboard( );
+
+        /**
+        * \brief Disable the keyboard state for the button group
+        */
+        void DisableKeyboard( );
+
+        /**
+        * \brief Toggle the keyboard state for the button group
+        */
+        void ToggleKeyboard( );
+
+        /**
+        * \brief Is the keyboard enabled for the button group
+        *
+        * \return Output returns the keyboard enabled state
+        */
+        const bool &IsKeyboardEnabled( );
+
     private:
         /**
         * \brief Update the buttons to show which one is selected
@@ -148,6 +177,16 @@ namespace Sonar
         * \brief Current selected button
         */
         int _currentIndex;
+
+        /**
+        * \brief Is the keyboard enabled
+        */
+        bool _isKeyboardEnabled;
+
+        /**
+        * \brief Is the current button clicked
+        */
+        bool _isCurrentButtonClicked;
 
     };
 }

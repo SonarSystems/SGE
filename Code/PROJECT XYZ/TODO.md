@@ -6,6 +6,8 @@ ENGINE
 * GUI
     - Menu system - https://www.youtube.com/watch?v=4Vg9d1pjL20
         - Mouse hover and click no longer working
+            - First button not highlighted - TRY SINGLE UPDATEBUTTON METHOD IN UPDATE USING BOOL TO TRACK
+            - Clicked state not reverting back
         - Mouse cursor flashing/blinkning
         - ButtonGroup
             - Match all button widths - optional

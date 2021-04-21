@@ -769,20 +769,36 @@ namespace Sonar
 	void Button::Update( const float &dt )
 	{ UpdateForButtonGroup( dt, true ); }
 
-	void Button::UpdateForButtonGroup( const float &dt, const bool &isDefaultStyleEnabled )
+	Button::MOUSE_STATE Button::UpdateForButtonGroup( const float &dt, const bool &isDefaultStyleEnabled )
 	{
+		MOUSE_STATE mouseState = MOUSE_STATE::NOT_INTERACTING;;
+
 		if ( IsClicked( _buttonToClick ) && _isClickEnabled )
-		{ SetButtonStyle( _clickedStyle, false ); }
+		{
+			SetButtonStyle( _clickedStyle, false );
+
+			mouseState = MOUSE_STATE::CLICKED;
+		}
 		else
 		{
 			if ( IsMouseOver( ) && _isHoverEnabled )
-			{ SetButtonStyle( _hoverStyle, false ); }
+			{
+				SetButtonStyle( _hoverStyle, false );
+
+				mouseState = MOUSE_STATE::HOVER;
+			}
 			else if ( isDefaultStyleEnabled )
-			{ SetButtonStyle( _defaultStyle, false ); }
+			{
+				SetButtonStyle( _defaultStyle, false );
+
+				mouseState = MOUSE_STATE::NOT_INTERACTING;
+			}
 		}
 
 		_label->Update( dt );
 		_background->Update( dt );
+
+		return mouseState;
 	}
 
 	void Button::PollInput( const float &dt, const Event &event ) { }
