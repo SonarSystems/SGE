@@ -7,13 +7,23 @@ namespace Sonar
 		_currentIndex = 0;
 
 		_isKeyboardEnabled = DEFAULT_BUTTON_GROUP_KEYBOARD_ENABLED;
+
 		_isCurrentButtonClicked = false;
+		_hasButtonGroupLoaded = false;
+
+		_currentMouseState = Button::MOUSE_STATE::NOT_INTERACTING;
 	}
 
 	ButtonGroup::~ButtonGroup( ) { }
 
 	void ButtonGroup::Draw( )
 	{
+		if ( !_hasButtonGroupLoaded )
+		{
+			_hasButtonGroupLoaded = true;
+			UpdateButtons( );
+		}
+
 		for ( auto &button : _buttons )
 		{ button->Draw( ); }
 	}
@@ -28,29 +38,53 @@ namespace Sonar
 			{
 				case Button::MOUSE_STATE::NOT_INTERACTING:
 					if ( i == _currentIndex )
-					{ _isCurrentButtonClicked = false; }
+					{
+						_isCurrentButtonClicked = false;
 
-					UpdateButtons( );
+						if ( Button::MOUSE_STATE::NOT_INTERACTING != _currentMouseState )
+						{
+							_currentMouseState = Button::MOUSE_STATE::NOT_INTERACTING;
+
+							UpdateButtons( );
+						}
+					}
 
 					break;
 
 				case Button::MOUSE_STATE::CLICKED:
 					if ( i == _currentIndex )
-					{ _isCurrentButtonClicked = false; }
+					{
+						_isCurrentButtonClicked = true;
+					
 
-					UpdateButtons( );
+						if ( Button::MOUSE_STATE::CLICKED != _currentMouseState )
+						{
+							_currentMouseState = Button::MOUSE_STATE::CLICKED;
+
+							UpdateButtons( );
+						}
+					}
 
 					break;
 
 				case Button::MOUSE_STATE::HOVER:
 					_currentIndex = i;
-					UpdateButtons( );
+
+					if ( i == _currentIndex )
+					{
+						_isCurrentButtonClicked = false;
+
+						if ( Button::MOUSE_STATE::HOVER != _currentMouseState )
+						{
+							_currentMouseState = Button::MOUSE_STATE::HOVER;
+
+							UpdateButtons( );
+						}
+					}
 
 					break;
 			}
 		}
-
-		//UpdateButtons( );
 	}
 
 	void ButtonGroup::PollInput( const float &dt, const Event &event )
@@ -61,17 +95,9 @@ namespace Sonar
 		if ( Event::KeyReleased == event.type )
 		{
 			if ( Keyboard::Up == event.key.code )
-			{
-				MoveUp( );
-
-				//spdlog::info( "Up" );
-			}
+			{ MoveUp( ); }
 			else if ( Keyboard::Down == event.key.code )
-			{
-				MoveDown( );
-
-				//spdlog::info( "Down" );
-			}
+			{ MoveDown( ); }
 		}
 	}
 
@@ -168,16 +194,8 @@ namespace Sonar
 
 	void ButtonGroup::MoveUp( const bool &cycleDown, const unsigned int &moveAmount )
 	{
-
-		spdlog::info( _currentIndex );
-
 		if ( _currentIndex - ( int )moveAmount >= 0 )
-		{
-			//menu[selectedItemIndex].setColor( sf::Color::White );
-			_currentIndex -= moveAmount;
-			//spdlog::info( _currentIndex );
-			//menu[selectedItemIndex].setColor( sf::Color::Red );
-		}
+		{ _currentIndex -= moveAmount; }
 		else if ( cycleDown && _buttons.size( ) > 0 )
 		{ _currentIndex = _buttons.size( ) - 1; }
 			
@@ -186,15 +204,8 @@ namespace Sonar
 
 	void ButtonGroup::MoveDown( const bool &cycleUp, const unsigned int &moveAmount )
 	{
-		spdlog::info( _currentIndex );
-
 		if ( _currentIndex + moveAmount < _buttons.size( ) )
-		{
-			//menu[selectedItemIndex].setColor( sf::Color::White );
-			_currentIndex += moveAmount;
-			//spdlog::info( _currentIndex );
-			//menu[selectedItemIndex].setColor( sf::Color::Red );
-		}
+		{ _currentIndex += moveAmount; }
 		else if ( cycleUp && _buttons.size( ) > 0 )
 		{ _currentIndex = 0; }
 		
@@ -229,11 +240,12 @@ namespace Sonar
 
 	void ButtonGroup::UpdateButtons( )
 	{
+		spdlog::error( "NONNONONONONO" );
+
 		for ( int i = 0; i < _buttons.size( ); i++ )
 		{
 			if ( i == _currentIndex )
 			{ 
-				//spdlog::info( "CURRENT" );
 				auto button = _buttons.at( i );
 
 				if ( _isCurrentButtonClicked )
@@ -243,13 +255,10 @@ namespace Sonar
 			}
 			else
 			{
-				//spdlog::info( "NOT CURRENT" );
 				auto button = _buttons.at( i );
 				button->SetButtonStyle( button->GetDefaultButtonStyle( ), false );
 			}
 		}
-
-		//spdlog::warn( "--------------------------" );
 	}
 }
 

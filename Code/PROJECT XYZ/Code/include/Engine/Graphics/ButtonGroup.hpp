@@ -188,5 +188,12 @@ namespace Sonar
         */
         bool _isCurrentButtonClicked;
 
+        /**
+        * \brief Has the button group's been updated/loaded initially
+        */
+        bool _hasButtonGroupLoaded;
+
+        Button::MOUSE_STATE _currentMouseState;
+
     };
 }
