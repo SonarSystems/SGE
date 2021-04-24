@@ -50,6 +50,10 @@ namespace Sonar
 
 		_isHoverEnabled = DEFAULT_BUTTON_HOVER_STATUS;
 		_isClickEnabled = DEFAULT_BUTTON_CLICK_STATUS;
+
+		SetButtonStyle( _defaultStyle, false );
+
+		spdlog::info( GetWidth( ) );
 	}
 
 	Button::~Button( ) { }

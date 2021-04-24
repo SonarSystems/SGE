@@ -88,14 +88,17 @@ namespace Sonar
 		button->SetPosition( 100, 100 );
 		button->SetText( "PLAY", true );
 		button->SetFontFilePath( "Resources/arial.ttf" );
+		//button->Update(1);
 
 		button2->SetPosition( 100, 300 );
 		button2->SetText( "LOAD", true );
 		button2->SetFontFilePath( "Resources/arial.ttf" );
-			  
+		//button2->Update(1 );
+
 		button3->SetPosition( 100, 500 );
 		button3->SetText( "EXIT", true );
 		button3->SetFontFilePath( "Resources/arial.ttf" );
+		//button3->Update( 1);
 
 		buttonGroup->AddButton( button );
 		buttonGroup->AddButton( button2 );

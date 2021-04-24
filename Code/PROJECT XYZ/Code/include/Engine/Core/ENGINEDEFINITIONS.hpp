@@ -150,4 +150,5 @@
 /**
 * \brief Default button group properties
 */
-#define DEFAULT_BUTTON_GROUP_KEYBOARD_ENABLED true;
+#define DEFAULT_BUTTON_GROUP_KEYBOARD_ENABLED true
+#define DEFAULT_BUTTON_GROUP_MINIMUM_WIDTH 0

@@ -12,6 +12,8 @@ namespace Sonar
 		_hasButtonGroupLoaded = false;
 
 		_currentMouseState = Button::MOUSE_STATE::NOT_INTERACTING;
+
+		_minimumWidth = DEFAULT_BUTTON_GROUP_MINIMUM_WIDTH;
 	}
 
 	ButtonGroup::~ButtonGroup( ) { }
@@ -25,7 +27,12 @@ namespace Sonar
 		}
 
 		for ( auto &button : _buttons )
-		{ button->Draw( ); }
+		{
+			//spdlog::info( button->GetWidth( ) );
+			button->Draw( );
+
+			
+		}
 	}
 
 	void ButtonGroup::Update( const float &dt )
@@ -55,7 +62,6 @@ namespace Sonar
 					if ( i == _currentIndex )
 					{
 						_isCurrentButtonClicked = true;
-					
 
 						if ( Button::MOUSE_STATE::CLICKED != _currentMouseState )
 						{
@@ -101,12 +107,25 @@ namespace Sonar
 		}
 	}
 
-	void ButtonGroup::AddButton( Button *button, const bool &overrideStyle )
+	void ButtonGroup::AddButton( Button *button, const bool &overrideStyle, const bool &resetWidthForAllButtons )
 	{
 		if ( overrideStyle )
 		{ button->SetTheme( _theme ); }
+		
+		float buttonWidth = button->GetWidth( );
+
+		//spdlog::info( buttonWidth );
+
+		if ( buttonWidth > _minimumWidth )
+		{ _minimumWidth = buttonWidth; }
 
 		_buttons.push_back( button );
+
+		if ( resetWidthForAllButtons )
+		{
+			for ( auto &button : _buttons )
+			{ button->SetMinimumWidth( buttonWidth ); }
+		}
 
 		UpdateButtons( );
 	}
@@ -240,8 +259,6 @@ namespace Sonar
 
 	void ButtonGroup::UpdateButtons( )
 	{
-		spdlog::error( "NONNONONONONO" );
-
 		for ( int i = 0; i < _buttons.size( ); i++ )
 		{
 			if ( i == _currentIndex )

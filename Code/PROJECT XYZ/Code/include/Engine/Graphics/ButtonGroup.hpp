@@ -52,8 +52,9 @@ namespace Sonar
         *
 		* \param button button to add
 		* \param overrideStyle Should the button's style be overriden using the group's style
+		* \param resetWidthForAllButtons Should the buttons have the same width
         */
-        void AddButton( Button *button, const bool &overrideStyle = true );
+        void AddButton( Button *button, const bool &overrideStyle = true, const bool &resetWidthForAllButtons = true );
 
         /**
         * \brief Remove button
@@ -193,7 +194,15 @@ namespace Sonar
         */
         bool _hasButtonGroupLoaded;
 
+        /**
+        * \brief Current mouse state
+        */
         Button::MOUSE_STATE _currentMouseState;
+
+        /**
+        * \brief Minimum button width
+        */
+        float _minimumWidth;
 
     };
 }
