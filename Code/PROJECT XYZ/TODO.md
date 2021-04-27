@@ -6,8 +6,6 @@ ENGINE
 * GUI
     - Menu system - https://www.youtube.com/watch?v=4Vg9d1pjL20
         - ButtonGroup
-            - Match all button widths - optional
-            - Setter and getter for minimum button width
             - Button positioning (inline horizontally and vertically) method
                 - Gap amount parameter
             - Enter key/Mouse click
@@ -15,6 +13,7 @@ ENGINE
                 - Ability to set multiple enter/trigger keys
             - Up and down keys
                 - Ability to set multiple up and down keys
+        - Progress bar
     - Hide cursor (static method of Mouse class)
         - HideCursor
         - ShowCursor

@@ -151,7 +151,21 @@ namespace Sonar
         *
         * \return Output returns the keyboard enabled state
         */
-        const bool &IsKeyboardEnabled( );
+        const bool &IsKeyboardEnabled( ) const;
+
+        /**
+        * \brief Set the button groups minimum width
+        *
+        * \param width Variable description
+        */
+        void SetMinimumWidth( const float &width );
+
+        /**
+        * \brief Get the button groups minimum width
+        *
+        * \return Output returns the minimum width of the button group
+        */
+        const float &GetMinimumWidth( ) const;
 
     private:
         /**

@@ -1,10 +1,8 @@
-﻿  Button.cpp
-  ButtonGroup.cpp
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\ButtonGroup.cpp(40,22): warning C4018: '<': signed/unsigned mismatch
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\ButtonGroup.cpp(151,14): warning C4018: '<': signed/unsigned mismatch
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\ButtonGroup.cpp(155,26): warning C4018: '<=': signed/unsigned mismatch
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\ButtonGroup.cpp(173,26): warning C4018: '<=': signed/unsigned mismatch
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\ButtonGroup.cpp(191,26): warning C4018: '<=': signed/unsigned mismatch
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\ButtonGroup.cpp(262,22): warning C4018: '<': signed/unsigned mismatch
-  Generating Code...
+﻿  ButtonGroup.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\ButtonGroup.cpp(35,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\ButtonGroup.cpp(146,14): warning C4018: '<': signed/unsigned mismatch
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\ButtonGroup.cpp(150,26): warning C4018: '<=': signed/unsigned mismatch
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\ButtonGroup.cpp(168,26): warning C4018: '<=': signed/unsigned mismatch
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\ButtonGroup.cpp(186,26): warning C4018: '<=': signed/unsigned mismatch
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\ButtonGroup.cpp(267,22): warning C4018: '<': signed/unsigned mismatch
   SFML Template.vcxproj -> C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\SFML Template.exe

@@ -27,12 +27,7 @@ namespace Sonar
 		}
 
 		for ( auto &button : _buttons )
-		{
-			//spdlog::info( button->GetWidth( ) );
-			button->Draw( );
-
-			
-		}
+		{ button->Draw( ); }
 	}
 
 	void ButtonGroup::Update( const float &dt )
@@ -109,20 +104,20 @@ namespace Sonar
 
 	void ButtonGroup::AddButton( Button *button, const bool &overrideStyle, const bool &resetWidthForAllButtons )
 	{
+		button->Update( 0 );
+
 		if ( overrideStyle )
 		{ button->SetTheme( _theme ); }
-		
-		float buttonWidth = button->GetWidth( );
-
-		//spdlog::info( buttonWidth );
-
-		if ( buttonWidth > _minimumWidth )
-		{ _minimumWidth = buttonWidth; }
 
 		_buttons.push_back( button );
 
 		if ( resetWidthForAllButtons )
 		{
+			float buttonWidth = button->GetWidth( );
+
+			if ( buttonWidth > _minimumWidth )
+			{ _minimumWidth = buttonWidth; }
+
 			for ( auto &button : _buttons )
 			{ button->SetMinimumWidth( buttonWidth ); }
 		}
@@ -254,8 +249,18 @@ namespace Sonar
 	void ButtonGroup::ToggleKeyboard( )
 	{ _isKeyboardEnabled = !_isKeyboardEnabled; }
 
-	const bool &ButtonGroup::IsKeyboardEnabled( )
+	const bool &ButtonGroup::IsKeyboardEnabled( ) const
 	{ return _isKeyboardEnabled; }
+
+	void ButtonGroup::SetMinimumWidth( const float &width )
+	{
+		_minimumWidth = width;
+
+		UpdateButtons( );
+	}
+
+	const float &ButtonGroup::GetMinimumWidth( ) const
+	{ return _minimumWidth; }
 
 	void ButtonGroup::UpdateButtons( )
 	{
