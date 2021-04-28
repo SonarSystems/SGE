@@ -7,13 +7,15 @@ namespace Sonar
 		_currentIndex = 0;
 
 		_isKeyboardEnabled = DEFAULT_BUTTON_GROUP_KEYBOARD_ENABLED;
+		_minimumWidth = DEFAULT_BUTTON_GROUP_MINIMUM_WIDTH;
+		_orientation = DEFAULT_BUTTON_GROUP_ORIENTATION;
+		_gap = DEFAULT_BUTTON_GROUP_GAP;
+		_position = DEFAULT_BUTTON_GROUP_POSITION;
 
 		_isCurrentButtonClicked = false;
 		_hasButtonGroupLoaded = false;
 
 		_currentMouseState = Button::MOUSE_STATE::NOT_INTERACTING;
-
-		_minimumWidth = DEFAULT_BUTTON_GROUP_MINIMUM_WIDTH;
 	}
 
 	ButtonGroup::~ButtonGroup( ) { }
@@ -102,8 +104,32 @@ namespace Sonar
 		}
 	}
 
-	void ButtonGroup::AddButton( Button *button, const bool &overrideStyle, const bool &resetWidthForAllButtons )
+	void ButtonGroup::AddButton( Button *button, const bool &overrideStyle, const bool &resetWidthForAllButtons, const bool &autoOrient )
 	{
+		if ( autoOrient )
+		{
+			int numberOfButtons = _buttons.size( );
+
+			if ( numberOfButtons > 0 )
+			{
+				auto lastButton = _buttons.at( numberOfButtons - 1 );
+				glm::vec2 position;
+
+				if ( ORIENTATION::VERTICAL == _orientation )
+				{
+					position.x = lastButton->GetPositionX( );
+					position.y = lastButton->GetPositionY( ) + lastButton->GetHeight( ) + _gap;
+				}
+				else if ( ORIENTATION::HORIZONTAL == _orientation )
+				{
+					position.x = lastButton->GetPositionX( ) + lastButton->GetWidth( ) + _gap;
+					position.y = lastButton->GetPositionY( );
+				}
+
+				button->SetPosition( position );
+			}
+		}
+
 		button->Update( 0 );
 
 		if ( overrideStyle )
@@ -261,6 +287,70 @@ namespace Sonar
 
 	const float &ButtonGroup::GetMinimumWidth( ) const
 	{ return _minimumWidth; }
+
+	void ButtonGroup::SetOrientation( const ORIENTATION &orientation )
+	{ _orientation = orientation; }
+
+	const Sonar::ButtonGroup::ORIENTATION &ButtonGroup::GetOrientation( ) const
+	{ return _orientation; }
+
+	void ButtonGroup::SetGap( const float &gap )
+	{ _gap = gap; }
+
+	const float &ButtonGroup::GetGap( ) const
+	{ return _gap; }
+
+	void ButtonGroup::SetPosition( const glm::vec2 &position )
+	{
+		_position = position;
+
+		int numberOfButtons = _buttons.size( );
+
+		if ( numberOfButtons > 0 )
+		{
+			for ( int i = 0; i < numberOfButtons; i++ )
+			{
+				if ( 0 == i )
+				{ _buttons.at( i )->SetPosition( position ); }
+				else
+				{
+					auto previousButton = _buttons.at( i - 1 );
+					glm::vec2 position;
+
+					if ( ORIENTATION::VERTICAL == _orientation )
+					{
+						position.x = previousButton->GetPositionX( );
+						position.y = previousButton->GetPositionY( ) + previousButton->GetHeight( ) + _gap;
+					}
+					else if ( ORIENTATION::HORIZONTAL == _orientation )
+					{
+						position.x = previousButton->GetPositionX( ) + previousButton->GetWidth( ) + _gap;
+						position.y = previousButton->GetPositionY( );
+					}
+
+					_buttons.at( i )->SetPosition( position );
+				}
+			}
+		}
+	}
+
+	void ButtonGroup::SetPosition( const float &x, const float &y )
+	{ SetPosition( glm::vec2( x, y ) ); }
+
+	void ButtonGroup::SetPositionX( const float &x )
+	{ SetPosition( glm::vec2( x, GetPositionY( ) ) ); }
+
+	void ButtonGroup::SetPositionY( const float &y )
+	{ SetPosition( glm::vec2( GetPositionX( ), y ) ); }
+
+	float ButtonGroup::GetPositionX( ) const
+	{ return _position.x; }
+
+	float ButtonGroup::GetPositionY( ) const
+	{ return _position.y; }
+
+	glm::vec2 ButtonGroup::GetPosition( ) const
+	{ return _position; }
 
 	void ButtonGroup::UpdateButtons( )
 	{

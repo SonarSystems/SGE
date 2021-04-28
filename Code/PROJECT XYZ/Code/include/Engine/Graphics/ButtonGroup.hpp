@@ -16,6 +16,15 @@ namespace Sonar
     {
     public:
         /**
+        * \brief The orientation of the buttons in the button group
+        */
+        enum ORIENTATION
+        {
+            VERTICAL = 0,
+            HORIZONTAL
+        };
+
+        /**
         * \brief Class constructor
         *
         * \param data Game data object
@@ -48,13 +57,13 @@ namespace Sonar
         void PollInput( const float &dt, const Event &event );
 
         /**
-        * \brief Add a button
+        * \brief Add a button (orientation and gap must be set before adding any buttons or default values will be used)
         *
 		* \param button button to add
 		* \param overrideStyle Should the button's style be overriden using the group's style
 		* \param resetWidthForAllButtons Should the buttons have the same width
         */
-        void AddButton( Button *button, const bool &overrideStyle = true, const bool &resetWidthForAllButtons = true );
+        void AddButton( Button *button, const bool &overrideStyle = true, const bool &resetWidthForAllButtons = true, const bool &autoOrient = true );
 
         /**
         * \brief Remove button
@@ -167,6 +176,84 @@ namespace Sonar
         */
         const float &GetMinimumWidth( ) const;
 
+        /**
+        * \brief Set the orientation of the buttons in the button group (NEEDS TO BE SET BEFORE ADDING ANY BUTTONS)
+        *
+        * \param orientation Orientation of the buttons
+        */
+        void SetOrientation( const ORIENTATION &orientation );
+
+        /**
+        * \brief Get the orientation of the buttons
+        *
+        * \return Output returns the orientation
+        */
+        const ORIENTATION &GetOrientation( ) const;
+
+        /**
+        * \brief Set the gap between the buttons in the button group (NEEDS TO BE SET BEFORE ADDING ANY BUTTONS)
+        *
+        * \param gap Gap between the buttons
+        */
+        void SetGap( const float &gap );
+
+        /**
+        * \brief Get the gap between the buttons
+        *
+        * \return Output returns the gap between the buttons
+        */
+        const float &GetGap( ) const;
+
+        /**
+        * \brief Set x and y position
+        *
+        * \param position X and Y position
+        */
+        void SetPosition( const glm::vec2 &position );
+
+        /**
+        * \brief Set x and y position
+        *
+        * \param x X position
+        * \param y Y position
+        */
+        void SetPosition( const float &x, const float &y );
+
+        /**
+        * \brief Set x position
+        *
+        * \param x X position
+        */
+        void SetPositionX( const float &x );
+
+        /**
+        * \brief Set y position
+        *
+        * \param y Y position
+        */
+        void SetPositionY( const float &y );
+
+        /**
+        * \brief Get the x position
+        *
+        * \return Output returns the x position
+        */
+        float GetPositionX( ) const;
+
+        /**
+        * \brief Get the y position
+        *
+        * \return Output returns the y position
+        */
+        float GetPositionY( ) const;
+
+        /**
+        * \brief Get the position vector
+        *
+        * \return Output returns the position vector
+        */
+        glm::vec2 GetPosition( ) const;
+
     private:
         /**
         * \brief Update the buttons to show which one is selected
@@ -217,6 +304,21 @@ namespace Sonar
         * \brief Minimum button width
         */
         float _minimumWidth;
+
+        /**
+        * \brief Orientation of the buttons inside the button group
+        */
+        ORIENTATION _orientation;
+
+        /**
+        * \brief Gap between the buttons when using auto position
+        */
+        float _gap;
+
+        /**
+        * \brief Position of the button group (aka the position of the first button)
+        */
+        glm::vec2 _position;
 
     };
 }

@@ -7,12 +7,13 @@ ENGINE
     - Menu system - https://www.youtube.com/watch?v=4Vg9d1pjL20
         - ButtonGroup
             - Button positioning (inline horizontally and vertically) method
-                - Gap amount parameter
+                - Position/move them all using methods in from the ButtonGroup
             - Enter key/Mouse click
                 - Getter to get which button is clicked from the button group
                 - Ability to set multiple enter/trigger keys
             - Up and down keys
                 - Ability to set multiple up and down keys
+                - Orientation specific PERHAPS
         - Progress bar
     - Hide cursor (static method of Mouse class)
         - HideCursor
