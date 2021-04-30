@@ -140,6 +140,13 @@ namespace Sonar
 		//button->Update( );
 
 		menu->Update( dt );
+
+		if ( buttonGroup->GetButtonClickedIndex( ) == 0 )
+		{ spdlog::info( "PLAY" ); }
+		else if ( buttonGroup->GetButtonClickedIndex( ) == 1 )
+		{ spdlog::info( "SETTINGS" ); }
+		else if ( buttonGroup->GetButtonClickedIndex( ) == 2 )
+		{ spdlog::info( "QUIT" ); }
 	}
 
 	void SplashState::Draw( const float &dt )

@@ -5,6 +5,7 @@ namespace Sonar
 	ButtonGroup::ButtonGroup( GameDataRef data ) : _data( data )
 	{
 		_currentIndex = 0;
+		_clickedIndex = -1;
 
 		_isKeyboardEnabled = DEFAULT_BUTTON_GROUP_KEYBOARD_ENABLED;
 		_minimumWidth = DEFAULT_BUTTON_GROUP_MINIMUM_WIDTH;
@@ -16,6 +17,8 @@ namespace Sonar
 		_hasButtonGroupLoaded = false;
 
 		_currentMouseState = Button::MOUSE_STATE::NOT_INTERACTING;
+
+		_isMosueButtonPressedOutsideOfButton = false;
 	}
 
 	ButtonGroup::~ButtonGroup( ) { }
@@ -50,6 +53,8 @@ namespace Sonar
 							_currentMouseState = Button::MOUSE_STATE::NOT_INTERACTING;
 
 							UpdateButtons( );
+
+							_clickedIndex = -1;
 						}
 					}
 
@@ -65,6 +70,9 @@ namespace Sonar
 							_currentMouseState = Button::MOUSE_STATE::CLICKED;
 
 							UpdateButtons( );
+
+							if ( !_isMosueButtonPressedOutsideOfButton )
+							{ _clickedIndex = i; }
 						}
 					}
 
@@ -82,6 +90,8 @@ namespace Sonar
 							_currentMouseState = Button::MOUSE_STATE::HOVER;
 
 							UpdateButtons( );
+
+							_clickedIndex = -1;
 						}
 					}
 
@@ -92,6 +102,8 @@ namespace Sonar
 
 	void ButtonGroup::PollInput( const float &dt, const Event &event )
 	{
+		//_clickedIndex = -1;
+
 		for ( auto &button : _buttons )
 		{ button->PollInput( dt, event ); }
 
@@ -101,6 +113,23 @@ namespace Sonar
 			{ MoveUp( ); }
 			else if ( Keyboard::Down == event.key.code )
 			{ MoveDown( ); }
+			else if ( Keyboard::Enter == event.key.code )
+			{ _clickedIndex = _currentIndex; }
+		}
+		else if ( Event::MouseButtonPressed == event.type )
+		{
+			if ( Mouse::Button::Left == event.key.code )
+			{
+				_isMosueButtonPressedOutsideOfButton = true;
+
+				for ( auto button : _buttons )
+				{
+					if ( button->IsMouseOver( ) )
+					{ _isMosueButtonPressedOutsideOfButton = false; }
+				}
+				/*if ( _buttons.at( 0 )->IsMouseOver( ) )
+				{ _clickedIndex = _currentIndex; }*/
+			}
 		}
 	}
 
@@ -351,6 +380,26 @@ namespace Sonar
 
 	glm::vec2 ButtonGroup::GetPosition( ) const
 	{ return _position; }
+
+	void ButtonGroup::Move( const glm::vec2 &offset )
+	{
+		_position += offset;
+
+		for ( auto button : _buttons )
+		{ button->Move( offset ); }
+	}
+
+	void ButtonGroup::Move( const float &x, const float &y )
+	{ Move( x, y ); }
+
+	void ButtonGroup::MoveX( const float &x )
+	{ Move( x, 0 ); }
+
+	void ButtonGroup::MoveY( const float &y )
+	{ Move( 0, y ); }
+
+	const int &ButtonGroup::GetButtonClickedIndex( ) const
+	{ return _clickedIndex; }
 
 	void ButtonGroup::UpdateButtons( )
 	{

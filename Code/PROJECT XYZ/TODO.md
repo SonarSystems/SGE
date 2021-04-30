@@ -6,10 +6,9 @@ ENGINE
 * GUI
     - Menu system - https://www.youtube.com/watch?v=4Vg9d1pjL20
         - ButtonGroup
-            - Button positioning (inline horizontally and vertically) method
-                - Position/move them all using methods in from the ButtonGroup
+            - Fix mouse click
+                - Use something like _isMosueButtonPressedOutsideOfButton but reverse if it started inside
             - Enter key/Mouse click
-                - Getter to get which button is clicked from the button group
                 - Ability to set multiple enter/trigger keys
             - Up and down keys
                 - Ability to set multiple up and down keys

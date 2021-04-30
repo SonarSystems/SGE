@@ -254,6 +254,42 @@ namespace Sonar
         */
         glm::vec2 GetPosition( ) const;
 
+        /**
+        * \brief Move the object relative to it's current position in the x and y axis
+        *
+        * \param offset Offset in x and y axis
+        */
+        void Move( const glm::vec2 &offset );
+
+        /**
+        * \brief Move the object relative to it's current position in the x and y axis
+        *
+        * \param x Offset in x axis
+        * \param y Offset in y axis
+        */
+        void Move( const float &x, const float &y );
+
+        /**
+        * \brief Move the object relative to it's current position in the x axis
+        *
+        * \param x Offset in x axis
+        */
+        void MoveX( const float &x );
+
+        /**
+        * \brief Move the object relative to it's current position in the y axis
+        *
+        * \param y Offset in y axis
+        */
+        void MoveY( const float &y );
+
+        /**
+        * \brief Which button was last clicked (will reset to -1 after click has finished
+        *
+        * \return Output returns the last button clicked
+        */
+        const int &GetButtonClickedIndex( ) const;
+
     private:
         /**
         * \brief Update the buttons to show which one is selected
@@ -319,6 +355,13 @@ namespace Sonar
         * \brief Position of the button group (aka the position of the first button)
         */
         glm::vec2 _position;
+
+        /**
+        * \brief Index of the last button clicked (reset to -1 after click event has finished)
+        */
+        int _clickedIndex;
+
+        bool _isMosueButtonPressedOutsideOfButton;
 
     };
 }
