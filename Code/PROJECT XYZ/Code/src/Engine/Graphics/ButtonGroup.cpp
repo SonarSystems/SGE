@@ -18,7 +18,7 @@ namespace Sonar
 
 		_currentMouseState = Button::MOUSE_STATE::NOT_INTERACTING;
 
-		_isMosueButtonPressedOutsideOfButton = false;
+		_isMouseButtonPressedOutsideOfButton = _wasMouseButtonClicked = false;
 	}
 
 	ButtonGroup::~ButtonGroup( ) { }
@@ -37,6 +37,8 @@ namespace Sonar
 
 	void ButtonGroup::Update( const float &dt )
 	{
+		//_clickedIndex = -1;
+
 		for ( int i = 0; i < _buttons.size( ); i++ )
 		{
 			Button::MOUSE_STATE mouseState = _buttons.at( i )->UpdateForButtonGroup( dt, !_isKeyboardEnabled );
@@ -53,8 +55,13 @@ namespace Sonar
 							_currentMouseState = Button::MOUSE_STATE::NOT_INTERACTING;
 
 							UpdateButtons( );
-
-							_clickedIndex = -1;
+						}
+						else if ( Button::MOUSE_STATE::NOT_INTERACTING == _currentMouseState )
+						{
+							if ( _wasMouseButtonClicked )
+							{ _wasMouseButtonClicked = false; }
+							else
+							{ _clickedIndex = -1; }
 						}
 					}
 
@@ -71,8 +78,8 @@ namespace Sonar
 
 							UpdateButtons( );
 
-							if ( !_isMosueButtonPressedOutsideOfButton )
-							{ _clickedIndex = i; }
+							if ( !_isMouseButtonPressedOutsideOfButton )
+							{ _wasMouseButtonClicked = true; }
 						}
 					}
 
@@ -91,7 +98,16 @@ namespace Sonar
 
 							UpdateButtons( );
 
-							_clickedIndex = -1;
+						}
+						else if ( Button::MOUSE_STATE::HOVER == _currentMouseState )
+						{
+							if ( _wasMouseButtonClicked )
+							{
+								_clickedIndex = i;
+								_wasMouseButtonClicked = false;
+							}
+							else
+							{ _clickedIndex = -1; }
 						}
 					}
 
@@ -102,8 +118,6 @@ namespace Sonar
 
 	void ButtonGroup::PollInput( const float &dt, const Event &event )
 	{
-		//_clickedIndex = -1;
-
 		for ( auto &button : _buttons )
 		{ button->PollInput( dt, event ); }
 
@@ -114,21 +128,22 @@ namespace Sonar
 			else if ( Keyboard::Down == event.key.code )
 			{ MoveDown( ); }
 			else if ( Keyboard::Enter == event.key.code )
-			{ _clickedIndex = _currentIndex; }
+			{
+				_clickedIndex = _currentIndex;
+				spdlog::info( "HELLO: {0}", _clickedIndex );
+			}
 		}
 		else if ( Event::MouseButtonPressed == event.type )
 		{
 			if ( Mouse::Button::Left == event.key.code )
 			{
-				_isMosueButtonPressedOutsideOfButton = true;
+				_isMouseButtonPressedOutsideOfButton = true;
 
 				for ( auto button : _buttons )
 				{
 					if ( button->IsMouseOver( ) )
-					{ _isMosueButtonPressedOutsideOfButton = false; }
+					{ _isMouseButtonPressedOutsideOfButton = false; }
 				}
-				/*if ( _buttons.at( 0 )->IsMouseOver( ) )
-				{ _clickedIndex = _currentIndex; }*/
 			}
 		}
 	}

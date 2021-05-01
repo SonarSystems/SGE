@@ -361,7 +361,15 @@ namespace Sonar
         */
         int _clickedIndex;
 
-        bool _isMosueButtonPressedOutsideOfButton;
+        /**
+        * \brief Was the mouse button pressed outside of the button
+        */
+		bool _isMouseButtonPressedOutsideOfButton;
+
+        /**
+        * \brief Was the mouse button clicked
+        */
+        bool _wasMouseButtonClicked;
 
     };
 }

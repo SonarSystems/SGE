@@ -6,13 +6,17 @@ ENGINE
 * GUI
     - Menu system - https://www.youtube.com/watch?v=4Vg9d1pjL20
         - ButtonGroup
-            - Fix mouse click
-                - Use something like _isMosueButtonPressedOutsideOfButton but reverse if it started inside
             - Enter key/Mouse click
+                - ENTER KEY NOT WORKING, _clickedIndex keeps getting reset
                 - Ability to set multiple enter/trigger keys
+                - Ability to set multiple mouse keys
             - Up and down keys
                 - Ability to set multiple up and down keys
                 - Orientation specific PERHAPS
+            - Method to position button group in center 
+                - x axis
+                - y axis
+                - Both axes
         - Progress bar
     - Hide cursor (static method of Mouse class)
         - HideCursor
