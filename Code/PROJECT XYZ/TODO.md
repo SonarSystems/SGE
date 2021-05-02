@@ -7,8 +7,6 @@ ENGINE
     - Menu system - https://www.youtube.com/watch?v=4Vg9d1pjL20
         - ButtonGroup
             - Enter key/Mouse click
-                - ENTER KEY NOT WORKING, _clickedIndex keeps getting reset
-                - Ability to set multiple enter/trigger keys
                 - Ability to set multiple mouse keys
             - Up and down keys
                 - Ability to set multiple up and down keys

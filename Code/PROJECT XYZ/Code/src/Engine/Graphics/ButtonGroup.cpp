@@ -19,6 +19,9 @@ namespace Sonar
 		_currentMouseState = Button::MOUSE_STATE::NOT_INTERACTING;
 
 		_isMouseButtonPressedOutsideOfButton = _wasMouseButtonClicked = false;
+
+		_validTriggerKeys.push_back( DEFAULT_BUTTON_GROUP_KEYBOARD_TRIGGER_KEY );
+		_validMouseClickButtons.push_back( DEFAULT_BUTTON_GROUP_MOUSE_CLICK_BUTTON );
 	}
 
 	ButtonGroup::~ButtonGroup( ) { }
@@ -59,9 +62,7 @@ namespace Sonar
 						else if ( Button::MOUSE_STATE::NOT_INTERACTING == _currentMouseState )
 						{
 							if ( _wasMouseButtonClicked )
-							{ _wasMouseButtonClicked = false; }
-							else
-							{ _clickedIndex = -1; }
+							{ _wasMouseButtonClicked = false;  }
 						}
 					}
 
@@ -106,8 +107,6 @@ namespace Sonar
 								_clickedIndex = i;
 								_wasMouseButtonClicked = false;
 							}
-							else
-							{ _clickedIndex = -1; }
 						}
 					}
 
@@ -127,22 +126,28 @@ namespace Sonar
 			{ MoveUp( ); }
 			else if ( Keyboard::Down == event.key.code )
 			{ MoveDown( ); }
-			else if ( Keyboard::Enter == event.key.code )
+			else
 			{
-				_clickedIndex = _currentIndex;
-				spdlog::info( "HELLO: {0}", _clickedIndex );
+				for ( auto key : _validTriggerKeys )
+				{
+					if ( key == event.key.code )
+					{ _clickedIndex = _currentIndex; }
+				}
 			}
 		}
 		else if ( Event::MouseButtonPressed == event.type )
 		{
-			if ( Mouse::Button::Left == event.key.code )
+			for ( auto mouseButton : _validMouseClickButtons )
 			{
-				_isMouseButtonPressedOutsideOfButton = true;
-
-				for ( auto button : _buttons )
+				if ( mouseButton == event.key.code )
 				{
-					if ( button->IsMouseOver( ) )
-					{ _isMouseButtonPressedOutsideOfButton = false; }
+					_isMouseButtonPressedOutsideOfButton = true;
+
+					for ( auto button : _buttons )
+					{
+						if ( button->IsMouseOver( ) )
+						{ _isMouseButtonPressedOutsideOfButton = false; }
+					}
 				}
 			}
 		}
@@ -415,6 +420,68 @@ namespace Sonar
 
 	const int &ButtonGroup::GetButtonClickedIndex( ) const
 	{ return _clickedIndex; }
+
+	void ButtonGroup::AddValidKeyboardTriggerKey( const Keyboard::Key key )
+	{
+		for ( auto validKey : _validTriggerKeys )
+		{
+			if ( validKey == key )
+			{ return; }
+		}
+
+		_validTriggerKeys.push_back( key );
+	}
+
+	const std::vector<Sonar::Keyboard::Key> ButtonGroup::GetValidKeyboardTriggerKeys( ) const
+	{ return _validTriggerKeys; }
+
+	void ButtonGroup::RemoveKeyFromValidKeyboardTriggerKeys( const Keyboard::Key key )
+	{
+		std::vector<Keyboard::Key> newKeysVector( _validTriggerKeys.size( ) );
+
+		std::remove_copy( _validTriggerKeys.begin( ), _validTriggerKeys.end( ), newKeysVector.begin( ), key );
+
+		if ( newKeysVector.at( newKeysVector.size( ) - 1 ) == NULL )
+		{
+			newKeysVector.pop_back( );
+
+			_validTriggerKeys = newKeysVector;
+		}
+	}
+
+	void ButtonGroup::RemoveAllValidKeyboardTriggerKeys( )
+	{ _validTriggerKeys.empty( ); }
+
+	void ButtonGroup::AddValidMouseClickButton( const Mouse::Button button )
+	{
+		for ( auto validButton : _validMouseClickButtons )
+		{
+			if ( validButton == button )
+			{ return; }
+		}
+
+		_validMouseClickButtons.push_back( button );
+	}
+
+	const std::vector<Sonar::Mouse::Button> ButtonGroup::GetValidMouseClickButtons( ) const
+	{ return _validMouseClickButtons; }
+
+	void ButtonGroup::RemoveButtonFromValidMouseClickButtons( const Mouse::Button button )
+	{
+		std::vector<Mouse::Button> newButtonsVector( _validMouseClickButtons.size( ) );
+
+		std::remove_copy( _validMouseClickButtons.begin( ), _validMouseClickButtons.end( ), newButtonsVector.begin( ), button );
+
+		if ( newButtonsVector.at( newButtonsVector.size( ) - 1 ) == NULL )
+		{
+			newButtonsVector.pop_back( );
+
+			_validMouseClickButtons = newButtonsVector;
+		}
+	}
+
+	void ButtonGroup::RemoveAllValidMouseClickButtons( )
+	{ _validMouseClickButtons.empty( ); }
 
 	void ButtonGroup::UpdateButtons( )
 	{

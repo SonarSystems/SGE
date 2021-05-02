@@ -290,6 +290,59 @@ namespace Sonar
         */
         const int &GetButtonClickedIndex( ) const;
 
+        /**
+        * \brief Add a valid keyboard key to trigger the buttons
+        *
+        * \param key Keyboard key
+        */
+        void AddValidKeyboardTriggerKey( const Keyboard::Key key );
+
+        /**
+        * \brief Get all the valid keyboard trigger keys
+        *
+        * \return Output returns the valid keyboard trigger keys
+        */
+        const std::vector<Keyboard::Key> GetValidKeyboardTriggerKeys( ) const;
+
+        /**
+        * \brief Remove a keyboard key from the list of valid trigger keys
+        *
+        * \param key Keyboard key
+        */
+        void RemoveKeyFromValidKeyboardTriggerKeys( const Keyboard::Key key );
+
+        /**
+        * \brief Removes all the valid keyboard trigger keys (DO AT YOUR OWN RISK, WITHOUT ANY, THE KEYBOARD WILL NOT WORK ON BUTTON GROUPS)
+        */
+        void RemoveAllValidKeyboardTriggerKeys( );
+
+
+        /**
+        * \brief Add a valid mouse button to click the buttons
+        *
+        * \param button Mouse button
+        */
+        void AddValidMouseClickButton( const Mouse::Button button );
+
+        /**
+        * \brief Get all the valid mouse click buttons
+        *
+        * \return Output returns the valid mouse click buttons
+        */
+        const std::vector<Mouse::Button> GetValidMouseClickButtons( ) const;
+
+        /**
+        * \brief Remove a mouse button from the list of valid click buttons
+        *
+        * \param button Mouse button
+        */
+        void RemoveButtonFromValidMouseClickButtons( const Mouse::Button button );
+
+        /**
+        * \brief Removes all the valid mouse click buttons (DO AT YOUR OWN RISK, WITHOUT ANY, THE MOUSE WILL NOT WORK ON BUTTON GROUPS)
+        */
+        void RemoveAllValidMouseClickButtons( );
+
     private:
         /**
         * \brief Update the buttons to show which one is selected
@@ -370,6 +423,16 @@ namespace Sonar
         * \brief Was the mouse button clicked
         */
         bool _wasMouseButtonClicked;
+
+        /**
+        * \brief Keyboard keys that will trigger a button
+        */
+        std::vector<Keyboard::Key> _validTriggerKeys;
+
+        /**
+        * \brief Mouse buttons that will trigger a click event on the button
+        */
+        std::vector<Mouse::Button> _validMouseClickButtons;
 
     };
 }
