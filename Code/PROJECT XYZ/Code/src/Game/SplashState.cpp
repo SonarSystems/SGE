@@ -104,7 +104,7 @@ namespace Sonar
 		buttonGroup->AddButton( button2 );
 		buttonGroup->AddButton( button3 );
 
-		buttonGroup->AddValidMouseClickButton( Mouse::Button::Middle );
+		buttonGroup->AddNavigationKeyPair( Keyboard::Key::A, Keyboard::Key::D );
 
 		menu->AddComponent( buttonGroup );
 	} 

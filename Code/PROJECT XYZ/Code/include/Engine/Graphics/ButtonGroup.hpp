@@ -295,53 +295,69 @@ namespace Sonar
         *
         * \param key Keyboard key
         */
-        void AddValidKeyboardTriggerKey( const Keyboard::Key key );
+        void AddValidKeyboardTriggerKey( const Keyboard::Key &key );
 
         /**
         * \brief Get all the valid keyboard trigger keys
         *
         * \return Output returns the valid keyboard trigger keys
         */
-        const std::vector<Keyboard::Key> GetValidKeyboardTriggerKeys( ) const;
+        const std::vector<Keyboard::Key> &GetValidKeyboardTriggerKeys( ) const;
 
         /**
         * \brief Remove a keyboard key from the list of valid trigger keys
         *
         * \param key Keyboard key
         */
-        void RemoveKeyFromValidKeyboardTriggerKeys( const Keyboard::Key key );
+        void RemoveKeyFromValidKeyboardTriggerKeys( const Keyboard::Key &key );
 
         /**
         * \brief Removes all the valid keyboard trigger keys (DO AT YOUR OWN RISK, WITHOUT ANY, THE KEYBOARD WILL NOT WORK ON BUTTON GROUPS)
         */
         void RemoveAllValidKeyboardTriggerKeys( );
 
-
         /**
-        * \brief Add a valid mouse button to click the buttons
+        * \brief Set the mouse click buttons
         *
         * \param button Mouse button
         */
-        void AddValidMouseClickButton( const Mouse::Button button );
+        void SetMouseClickButton( const Mouse::Button &button );
 
         /**
-        * \brief Get all the valid mouse click buttons
+        * \brief Get the valid mouse click button
         *
-        * \return Output returns the valid mouse click buttons
+        * \return Output returns the valid mouse click button
         */
-        const std::vector<Mouse::Button> GetValidMouseClickButtons( ) const;
+        const Mouse::Button &GetMouseClickButton( ) const;
 
         /**
-        * \brief Remove a mouse button from the list of valid click buttons
+        * \brief Add keyboard navigation key pair
         *
-        * \param button Mouse button
+        * \param keyPair Pair of navigation keys (first one goes up/left, second one goes down/right)
         */
-        void RemoveButtonFromValidMouseClickButtons( const Mouse::Button button );
+        void AddNavigationKeyPair( const std::pair<Keyboard::Key, Keyboard::Key> &keyPair );
 
         /**
-        * \brief Removes all the valid mouse click buttons (DO AT YOUR OWN RISK, WITHOUT ANY, THE MOUSE WILL NOT WORK ON BUTTON GROUPS)
+        * \brief Add keyboard navigation key pair
+        *
+		* \param up Up/left/back key
+		* \param down Down/right/forward key
         */
-        void RemoveAllValidMouseClickButtons( );
+        void AddNavigationKeyPair( const Keyboard::Key &up, const Keyboard::Key &down );
+
+        /**
+        * \brief Remove keyboard navigation key pair
+        *
+        * \param keyPair Pair of navigation keys (first one goes up/left, second one goes down/right)
+        */
+        void RemoveNavigationKeyPair( const std::pair<Keyboard::Key, Keyboard::Key> &keyPair );
+
+        /**
+        * \brief Get all the navigation key pairs
+        *
+        * \return Output returns the navigation key pairs
+        */
+        const std::vector<std::pair<Keyboard::Key, Keyboard::Key>> &GetAllNavigationKeyPairs( ) const;
 
     private:
         /**
@@ -430,9 +446,14 @@ namespace Sonar
         std::vector<Keyboard::Key> _validTriggerKeys;
 
         /**
-        * \brief Mouse buttons that will trigger a click event on the button
+        * \brief Mouse button that will trigger a click event on the button
         */
-        std::vector<Mouse::Button> _validMouseClickButtons;
+        Mouse::Button _mouseClickButton;
+
+        /**
+        * \brief All the keys that can be used for navigation
+        */
+		std::vector<std::pair<Keyboard::Key, Keyboard::Key>> _validNavigationKeys;
 
     };
 }

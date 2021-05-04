@@ -152,8 +152,10 @@
 */
 #define DEFAULT_BUTTON_GROUP_KEYBOARD_ENABLED true
 #define DEFAULT_BUTTON_GROUP_MINIMUM_WIDTH 0
-#define DEFAULT_BUTTON_GROUP_ORIENTATION Sonar::ButtonGroup::ORIENTATION::VERTICAL
+#define DEFAULT_BUTTON_GROUP_ORIENTATION Sonar::ButtonGroup::ORIENTATION::HORIZONTAL
 #define DEFAULT_BUTTON_GROUP_GAP 64
 #define DEFAULT_BUTTON_GROUP_POSITION glm::vec2( 0, 0 )
 #define DEFAULT_BUTTON_GROUP_KEYBOARD_TRIGGER_KEY Sonar::Keyboard::Key::Enter
 #define DEFAULT_BUTTON_GROUP_MOUSE_CLICK_BUTTON Sonar::Mouse::Button::Left
+#define DEFAULT_BUTTON_GROUP_KEYBOARD_VERTIICAL_NAVIGATION_KEYS std::pair<Sonar::Keyboard::Key, Sonar::Keyboard::Key> { Keyboard::Key::Up, Keyboard::Key::Down }
+#define DEFAULT_BUTTON_GROUP_KEYBOARD_HORIZONTAL_NAVIGATION_KEYS std::pair<Sonar::Keyboard::Key, Sonar::Keyboard::Key> { Keyboard::Key::Left, Keyboard::Key::Right }

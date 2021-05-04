@@ -21,7 +21,9 @@ namespace Sonar
 		_isMouseButtonPressedOutsideOfButton = _wasMouseButtonClicked = false;
 
 		_validTriggerKeys.push_back( DEFAULT_BUTTON_GROUP_KEYBOARD_TRIGGER_KEY );
-		_validMouseClickButtons.push_back( DEFAULT_BUTTON_GROUP_MOUSE_CLICK_BUTTON );
+		_mouseClickButton = DEFAULT_BUTTON_GROUP_MOUSE_CLICK_BUTTON;
+
+		SetOrientation( _orientation );
 	}
 
 	ButtonGroup::~ButtonGroup( ) { }
@@ -122,32 +124,30 @@ namespace Sonar
 
 		if ( Event::KeyReleased == event.type )
 		{
-			if ( Keyboard::Up == event.key.code )
-			{ MoveUp( ); }
-			else if ( Keyboard::Down == event.key.code )
-			{ MoveDown( ); }
-			else
+			for ( auto navigationPair : _validNavigationKeys )
 			{
-				for ( auto key : _validTriggerKeys )
-				{
-					if ( key == event.key.code )
-					{ _clickedIndex = _currentIndex; }
-				}
+				if ( navigationPair.first == event.key.code )
+				{ MoveUp( ); }
+				else if ( navigationPair.second == event.key.code )
+				{ MoveDown( ); }
+			}
+
+			for ( auto key : _validTriggerKeys )
+			{
+				if ( key == event.key.code )
+				{ _clickedIndex = _currentIndex; }
 			}
 		}
 		else if ( Event::MouseButtonPressed == event.type )
 		{
-			for ( auto mouseButton : _validMouseClickButtons )
+			if ( _mouseClickButton == event.key.code )
 			{
-				if ( mouseButton == event.key.code )
-				{
-					_isMouseButtonPressedOutsideOfButton = true;
+				_isMouseButtonPressedOutsideOfButton = true;
 
-					for ( auto button : _buttons )
-					{
-						if ( button->IsMouseOver( ) )
-						{ _isMouseButtonPressedOutsideOfButton = false; }
-					}
+				for ( auto button : _buttons )
+				{
+					if ( button->IsMouseOver( ) )
+					{ _isMouseButtonPressedOutsideOfButton = false; }
 				}
 			}
 		}
@@ -178,6 +178,8 @@ namespace Sonar
 				button->SetPosition( position );
 			}
 		}
+		
+		button->SetMouseButtonToClick( _mouseClickButton );
 
 		button->Update( 0 );
 
@@ -338,7 +340,14 @@ namespace Sonar
 	{ return _minimumWidth; }
 
 	void ButtonGroup::SetOrientation( const ORIENTATION &orientation )
-	{ _orientation = orientation; }
+	{
+		_orientation = orientation;
+
+		if ( ORIENTATION::VERTICAL == _orientation )
+		{ _validNavigationKeys.push_back( DEFAULT_BUTTON_GROUP_KEYBOARD_VERTIICAL_NAVIGATION_KEYS ); }
+		else if ( ORIENTATION::HORIZONTAL == _orientation )
+		{ _validNavigationKeys.push_back( DEFAULT_BUTTON_GROUP_KEYBOARD_HORIZONTAL_NAVIGATION_KEYS ); }
+	}
 
 	const Sonar::ButtonGroup::ORIENTATION &ButtonGroup::GetOrientation( ) const
 	{ return _orientation; }
@@ -421,7 +430,7 @@ namespace Sonar
 	const int &ButtonGroup::GetButtonClickedIndex( ) const
 	{ return _clickedIndex; }
 
-	void ButtonGroup::AddValidKeyboardTriggerKey( const Keyboard::Key key )
+	void ButtonGroup::AddValidKeyboardTriggerKey( const Keyboard::Key &key )
 	{
 		for ( auto validKey : _validTriggerKeys )
 		{
@@ -432,10 +441,10 @@ namespace Sonar
 		_validTriggerKeys.push_back( key );
 	}
 
-	const std::vector<Sonar::Keyboard::Key> ButtonGroup::GetValidKeyboardTriggerKeys( ) const
+	const std::vector<Keyboard::Key> &ButtonGroup::GetValidKeyboardTriggerKeys( ) const
 	{ return _validTriggerKeys; }
 
-	void ButtonGroup::RemoveKeyFromValidKeyboardTriggerKeys( const Keyboard::Key key )
+	void ButtonGroup::RemoveKeyFromValidKeyboardTriggerKeys( const Keyboard::Key &key )
 	{
 		std::vector<Keyboard::Key> newKeysVector( _validTriggerKeys.size( ) );
 
@@ -452,36 +461,54 @@ namespace Sonar
 	void ButtonGroup::RemoveAllValidKeyboardTriggerKeys( )
 	{ _validTriggerKeys.empty( ); }
 
-	void ButtonGroup::AddValidMouseClickButton( const Mouse::Button button )
+	void ButtonGroup::SetMouseClickButton( const Mouse::Button &button )
 	{
-		for ( auto validButton : _validMouseClickButtons )
-		{
-			if ( validButton == button )
-			{ return; }
-		}
+		_mouseClickButton = button;
 
-		_validMouseClickButtons.push_back( button );
+		for ( auto buttonObj : _buttons )
+		{ buttonObj->SetMouseButtonToClick( button ); }
 	}
 
-	const std::vector<Sonar::Mouse::Button> ButtonGroup::GetValidMouseClickButtons( ) const
-	{ return _validMouseClickButtons; }
+	const Mouse::Button &ButtonGroup::GetMouseClickButton( ) const
+	{ return _mouseClickButton; }
 
-	void ButtonGroup::RemoveButtonFromValidMouseClickButtons( const Mouse::Button button )
+	void ButtonGroup::AddNavigationKeyPair( const std::pair<Keyboard::Key, Keyboard::Key> &keyPair )
 	{
-		std::vector<Mouse::Button> newButtonsVector( _validMouseClickButtons.size( ) );
+		bool alreadyExists = false;
 
-		std::remove_copy( _validMouseClickButtons.begin( ), _validMouseClickButtons.end( ), newButtonsVector.begin( ), button );
-
-		if ( newButtonsVector.at( newButtonsVector.size( ) - 1 ) == NULL )
+		for ( auto keys : _validNavigationKeys )
 		{
-			newButtonsVector.pop_back( );
+			if ( keyPair == keys )
+			{
+				alreadyExists = true;
 
-			_validMouseClickButtons = newButtonsVector;
+				break;
+			}
+		}
+
+		if ( !alreadyExists )
+		{ _validNavigationKeys.push_back( keyPair ); }
+	}
+
+	void ButtonGroup::AddNavigationKeyPair( const Keyboard::Key &up, const Keyboard::Key &down )
+	{ AddNavigationKeyPair( std::pair( up, down ) ); }
+
+	void ButtonGroup::RemoveNavigationKeyPair( const std::pair<Keyboard::Key, Keyboard::Key> &keyPair )
+	{
+		std::vector<std::pair<Keyboard::Key, Keyboard::Key>> newKeysVector( _validNavigationKeys.size( ) );
+
+		std::remove_copy( _validNavigationKeys.begin( ), _validNavigationKeys.end( ), newKeysVector.begin( ), keyPair );
+
+		if ( newKeysVector.at( newKeysVector.size( ) - 1 ).first == NULL )
+		{
+			newKeysVector.pop_back( );
+
+			_validNavigationKeys = newKeysVector;
 		}
 	}
 
-	void ButtonGroup::RemoveAllValidMouseClickButtons( )
-	{ _validMouseClickButtons.empty( ); }
+	const std::vector<std::pair<Keyboard::Key, Keyboard::Key>> &ButtonGroup::GetAllNavigationKeyPairs( ) const
+	{ return _validNavigationKeys; }
 
 	void ButtonGroup::UpdateButtons( )
 	{

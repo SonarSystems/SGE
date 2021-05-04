@@ -6,11 +6,6 @@ ENGINE
 * GUI
     - Menu system - https://www.youtube.com/watch?v=4Vg9d1pjL20
         - ButtonGroup
-            - Enter key/Mouse click
-                - Ability to set multiple mouse keys
-            - Up and down keys
-                - Ability to set multiple up and down keys
-                - Orientation specific PERHAPS
             - Method to position button group in center 
                 - x axis
                 - y axis
