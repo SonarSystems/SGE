@@ -272,8 +272,63 @@ namespace Sonar
 		}
 	}
 
-	unsigned int ButtonGroup::GetSize( ) const
+	unsigned int ButtonGroup::GetNumberOfButtons( ) const
 	{ return _buttons.size( ); }
+
+	glm::vec2 ButtonGroup::GetSize( )
+	{ return glm::vec2( GetWidth( ), GetHeight( ) ); }
+
+	float ButtonGroup::GetWidth( )
+	{
+		float width = 0;
+
+		if ( ORIENTATION::VERTICAL == _orientation )
+		{
+			for ( auto button : _buttons )
+			{
+				if ( button->GetWidth( ) > width )
+				{ width = button->GetWidth( ); }
+			}
+		}
+		else if ( ORIENTATION::HORIZONTAL == _orientation )
+		{
+			for ( auto button : _buttons )
+			{ width += button->GetWidth( ); }
+
+			int numberOfButtons = _buttons.size( );
+
+			if ( numberOfButtons > 0 )
+			{ width += _gap * ( numberOfButtons - 1 ); }
+		}
+
+		return width;
+	}
+
+	float ButtonGroup::GetHeight( )
+	{
+		float height = 0;
+
+		if ( ORIENTATION::VERTICAL == _orientation )
+		{
+			for ( auto button : _buttons )
+			{ height += button->GetHeight( ); }
+
+			int numberOfButtons = _buttons.size( );
+
+			if ( numberOfButtons > 0 )
+			{ height += _gap * ( numberOfButtons - 1 ); }
+		}
+		else if ( ORIENTATION::HORIZONTAL == _orientation )
+		{
+			for ( auto button : _buttons )
+			{
+				if ( button->GetHeight( ) > height )
+				{ height = button->GetHeight( ); }
+			}
+		}
+
+		return height;
+	}
 
 	void ButtonGroup::SetTheme( const MenuComponent::Theme &theme )
 	{
@@ -390,6 +445,15 @@ namespace Sonar
 				}
 			}
 		}
+	}
+
+	void ButtonGroup::SetPositionToCenter( const bool &setCenterInXAxis, const bool &setCenterInYAxis )
+	{
+		if ( setCenterInXAxis )
+		{ SetPositionX( ( _data->window.getSize( ).x * 0.5 ) - ( GetWidth( ) * 0.5 ) ); }
+
+		if ( setCenterInYAxis )
+		{ SetPositionY( ( _data->window.getSize( ).y * 0.5 ) - ( GetHeight( ) * 0.5 ) ); }
 	}
 
 	void ButtonGroup::SetPosition( const float &x, const float &y )

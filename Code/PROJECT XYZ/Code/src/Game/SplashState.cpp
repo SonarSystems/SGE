@@ -105,6 +105,7 @@ namespace Sonar
 		buttonGroup->AddButton( button3 );
 
 		buttonGroup->AddNavigationKeyPair( Keyboard::Key::A, Keyboard::Key::D );
+		buttonGroup->SetPositionToCenter( true, true );
 
 		menu->AddComponent( buttonGroup );
 	} 

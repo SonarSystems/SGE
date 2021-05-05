@@ -5,11 +5,6 @@ ENGINE
 -----------------------------------------------------------------
 * GUI
     - Menu system - https://www.youtube.com/watch?v=4Vg9d1pjL20
-        - ButtonGroup
-            - Method to position button group in center 
-                - x axis
-                - y axis
-                - Both axes
         - Progress bar
     - Hide cursor (static method of Mouse class)
         - HideCursor
@@ -36,6 +31,7 @@ ENGINE
 * Sorting algorithms, bubble sort, quick sort, insert sort
 * Anti Aliasing and other settings for SFML
 * Abstract dt into GameData struct in the Game.hpp, only for Sonar classes not states, states still get dt
+* Set background color of the clear method (currently set in Game.hpp in the struct)
 * Get points of screen - RETURN AS glm::vec2
     - Center
     - Top left

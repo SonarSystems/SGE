@@ -94,7 +94,28 @@ namespace Sonar
         *
         * \return Output returns the size of the button vector
         */
-        unsigned int GetSize( ) const;
+        unsigned int GetNumberOfButtons( ) const;
+
+        /**
+        * \brief Get the width and height of the button group (for vertical the width is determined by the largest button width, for horizontal the height is determined by the largest button height)
+        *
+        * \return Output returns the size
+        */
+        glm::vec2 GetSize( );
+
+        /**
+        * \brief Get the width (for vertical the width)
+        *
+        * \return Output returns the width
+        */
+        float GetWidth( );
+
+        /**
+        * \brief Get the height of the button group (for horizontal the height is determined by the largest button height)
+        *
+        * \return Output returns the height
+        */
+        float GetHeight( );
 
         /**
         * \brief Set the components theme
@@ -203,6 +224,14 @@ namespace Sonar
         * \return Output returns the gap between the buttons
         */
         const float &GetGap( ) const;
+
+        /**
+        * \brief Set the button groups position so it is centered (must be run after adding all buttons, if a new button is added then must be redone if realigning)
+        *
+        * \param setCenterInXAxis Whether or not to center in the x axis (if set to false the x position will not change)
+        * \param setCenterInYAxis Whether or not to center in the y axis (if set to false the y position will not change)
+        */
+        void SetPositionToCenter( const bool &setCenterInXAxis, const bool &setCenterInYAxis );
 
         /**
         * \brief Set x and y position
