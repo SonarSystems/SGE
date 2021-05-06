@@ -483,7 +483,7 @@ namespace Sonar
 	}
 
 	void ButtonGroup::Move( const float &x, const float &y )
-	{ Move( x, y ); }
+	{ Move( glm::vec2( x, y ) ); }
 
 	void ButtonGroup::MoveX( const float &x )
 	{ Move( x, 0 ); }
