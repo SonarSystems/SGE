@@ -46,5 +46,7 @@ namespace Sonar
 
 		Slider *slider;
 
+		ProgressBar *progressBar;
+
 	};
 }

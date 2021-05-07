@@ -107,7 +107,13 @@ namespace Sonar
 		buttonGroup->AddNavigationKeyPair( Keyboard::Key::A, Keyboard::Key::D );
 		buttonGroup->SetPositionToCenter( true, true );
 
-		menu->AddComponent( buttonGroup );
+		//menu->AddComponent( buttonGroup );
+
+		progressBar = new ProgressBar( _data );
+		progressBar->SetPosition( 200, 200 );
+		progressBar->SetBackgroundSize( 400, 50 );
+
+		menu->AddComponent( progressBar );
 	} 
 
 	SplashState::~SplashState( )
@@ -126,8 +132,8 @@ namespace Sonar
 
 		if ( Event::MouseWheelScrolled == event.type )
 		{
-			//menu->RemoveLastComponent();
-			buttonGroup->SetPosition( 200, 40 );
+			progressBar->Increment( );
+
 			//physicsWorld->CreateDynamicBody( event.mouseButton.x, event.mouseButton.y, 32, 32 );
 		}
 

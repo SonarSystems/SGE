@@ -52,6 +52,14 @@ namespace Sonar
         void Update( const float &dt );
 
         /**
+        * \brief Poll the input from the Joystick, Keyboard and Mouse
+        *
+        * \param dt Delta time (difference between frames)
+        * \param event Event to poll
+        */
+        void PollInput( const float &dt, const Event &event );
+
+        /**
         * \brief Set the components theme
         *
         * \param theme Theme to set
@@ -391,6 +399,11 @@ namespace Sonar
         const Orientation &GetOrientation( ) const;
 
     private:
+        /**
+        * \brief Calculates the size of the progress bar
+        */
+        void CalculateProgressBarSize( );
+
         /**
         * \brief Game data object
         */

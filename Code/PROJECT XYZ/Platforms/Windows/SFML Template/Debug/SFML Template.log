@@ -1,13 +1,2 @@
-﻿  ButtonGroup.cpp
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\ButtonGroup.cpp(47,22): warning C4018: '<': signed/unsigned mismatch
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\ButtonGroup.cpp(223,14): warning C4018: '<': signed/unsigned mismatch
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\ButtonGroup.cpp(227,26): warning C4018: '<=': signed/unsigned mismatch
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\ButtonGroup.cpp(245,26): warning C4018: '<=': signed/unsigned mismatch
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\ButtonGroup.cpp(263,26): warning C4018: '<=': signed/unsigned mismatch
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\ButtonGroup.cpp(453,56): warning C4244: 'argument': conversion from 'double' to 'const float', possible loss of data
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\ButtonGroup.cpp(456,56): warning C4244: 'argument': conversion from 'double' to 'const float', possible loss of data
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\ButtonGroup.cpp(526,27): warning C4834: discarding return value of function with 'nodiscard' attribute
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\ButtonGroup.cpp(579,22): warning C4018: '<': signed/unsigned mismatch
-  ProgressBar.cpp
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\ProgressBar.cpp(21,28): error C2661: 'Sonar::Rectangle::SetSize': no overloaded function takes 0 arguments
-  Generating Code...
+﻿  ProgressBar.cpp
+  SFML Template.vcxproj -> C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\SFML Template.exe

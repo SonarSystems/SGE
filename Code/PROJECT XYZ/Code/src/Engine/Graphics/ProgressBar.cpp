@@ -5,6 +5,7 @@ namespace Sonar
 	ProgressBar::ProgressBar( GameDataRef data, const Orientation &orientation ) : _data( data ), _orientation( orientation )
 	{
 		_background = new Rectangle( _data );
+		_progressBar = new Rectangle( _data );
 
 		_value = DEFAULT_PROGRESS_BAR_CURRENT_VALUE;
 		_minimumValue = DEFAULT_PROGRESS_BAR_MINIMUM_VALUE;
@@ -15,15 +16,16 @@ namespace Sonar
 		SetBackgroundBorderThickness( DEFAULT_PROGRESS_BAR_BACKGROUND_BORDER_THICKNESS );
 		SetBackgroundBorderColor( DEFAULT_PROGRESS_BAR_BACKGROUND_BORDER_COLOR );
 
+		SetProgressBarColor( DEFAULT_PROGRESS_BAR_BACKGROUND_COLOR );
+		SetProgressBarBorderThickness( DEFAULT_PROGRESS_BAR_BACKGROUND_BORDER_THICKNESS );
+		SetProgressBarBorderColor( DEFAULT_PROGRESS_BAR_BACKGROUND_BORDER_COLOR );
+
 		if ( Orientation::HORIZONTAL == _orientation )
-		{
-			SetBackgroundSize( DEFAULT_PROGRESS_BAR_HORIZONTAL_BACKGROUND_WIDTH, DEFAULT_PROGRESS_BAR_HORIZONTAL_BACKGROUND_HEIGHT );
-			_progressBar->SetSize(  );
-		}
+		{ SetBackgroundSize( DEFAULT_PROGRESS_BAR_HORIZONTAL_BACKGROUND_WIDTH, DEFAULT_PROGRESS_BAR_HORIZONTAL_BACKGROUND_HEIGHT ); }
 		else if ( Orientation::VERTICAL == _orientation )
-		{
-			SetBackgroundSize( DEFAULT_PROGRESS_BAR_VERTICAL_BACKGROUND_WIDTH, DEFAULT_PROGRESS_BAR_VERTICAL_BACKGROUND_HEIGHT );
-		}
+		{ SetBackgroundSize( DEFAULT_PROGRESS_BAR_VERTICAL_BACKGROUND_WIDTH, DEFAULT_PROGRESS_BAR_VERTICAL_BACKGROUND_HEIGHT ); }
+
+		CalculateProgressBarSize( );
 
 		SetPosition( _background->GetPosition( ) );
 	}
@@ -31,10 +33,18 @@ namespace Sonar
 	ProgressBar::~ProgressBar( ) { }
 
 	void ProgressBar::Draw( )
-	{ _background->Draw( ); }
+	{
+		_background->Draw( );
+		_progressBar->Draw( );
+	}
 
 	void ProgressBar::Update( const float &dt )
-	{ _background->Update( dt ); }
+	{
+		_background->Update( dt );
+		_progressBar->Update( dt );
+	}
+
+	void ProgressBar::PollInput( const float &dt, const Event &event ) { }
 
 	void ProgressBar::SetTheme( const MenuComponent::Theme &theme )
 	{
@@ -43,12 +53,14 @@ namespace Sonar
 			case MenuComponent::Theme::DARK:
 				SetBackgroundColor( Color::Black );
 				SetBackgroundBorderColor( Color::White );
+				SetProgressBarColor( Color:: White );
 
 				break;
 
 			case MenuComponent::Theme::LIGHT:
 				SetBackgroundColor( Color::White );
 				SetBackgroundBorderColor( Color::Black );
+				SetProgressBarColor( Color:: Black );
 
 				break;
 		}
@@ -64,10 +76,10 @@ namespace Sonar
 	{
 		_background->SetPosition( position );
 
-		float range = _maximumValue - _minimumValue;
-		float percent = ( _value - _minimumValue ) / range;
+		float readjustmentAmountPercent = 1.0f - DEFAULT_PROGRESS_BAR_VALUE_BAR_SIZE_PERCENT;
+		glm::vec2 readjustmentAmount = _background->GetSize( ) * readjustmentAmountPercent * 0.5f;
 
-
+		_progressBar->SetPosition( position + readjustmentAmount );
 	}
 
 	void ProgressBar::SetPosition( const float &x, const float &y )
@@ -91,7 +103,8 @@ namespace Sonar
 	void ProgressBar::SetBackgroundSize( const glm::vec2 &size )
 	{
 		_background->SetSize( size );
-		SetPosition( _background->GetPosition( ) );
+
+		CalculateProgressBarSize( );
 	}
 
 	void ProgressBar::SetBackgroundSize( const float &width, const float &height )
@@ -149,20 +162,24 @@ namespace Sonar
 	{ return _progressBar->GetBorderColor( ); }
 
 	void ProgressBar::Move( const glm::vec2 &offset )
-	{ _background->Move( offset ); }
+	{
+		_background->Move( offset );
+		_progressBar->Move( offset );
+	}
 
 	void ProgressBar::Move( const float &x, const float &y )
-	{ _background->Move( x, y ); }
+	{ Move( glm::vec2( x, y ) ); }
 
 	void ProgressBar::MoveX( const float &x )
-	{ _background->MoveX( x ); }
+	{ Move( glm::vec2( x, 0 ) ); }
 
 	void ProgressBar::MoveY( const float &y )
-	{ _background->MoveY( y ); }
+	{ Move( glm::vec2( 0, y ) ); }
 
 	void ProgressBar::SetScale( const float &scale )
 	{
 		_background->SetScale( scale, scale );
+		_progressBar->SetScale( scale, scale );
 
 		SetPosition( _background->GetPosition( ) );
 	}
@@ -170,6 +187,7 @@ namespace Sonar
 	void ProgressBar::Scale( const float &scale )
 	{
 		_background->Scale( scale, scale );
+		_progressBar->Scale( scale, scale );
 
 		SetPosition( _background->GetPosition( ) );
 	}
@@ -194,6 +212,8 @@ namespace Sonar
 			_value = _maximumValue;
 			SetPosition( GetPosition( ) );
 		}
+
+		CalculateProgressBarSize( );
 	}
 
 	const float &ProgressBar::GetValue( ) const
@@ -242,5 +262,23 @@ namespace Sonar
 
 	const Sonar::ProgressBar::Orientation &ProgressBar::GetOrientation( ) const
 	{ return _orientation; }
+
+	void ProgressBar::CalculateProgressBarSize( )
+	{
+		float range = _maximumValue - _minimumValue;
+		float percent = ( _value - _minimumValue ) / range;
+
+		float readjustmentAmountPercent = 1.0f - DEFAULT_PROGRESS_BAR_VALUE_BAR_SIZE_PERCENT;
+		glm::vec2 readjustmentAmount = _background->GetSize( ) * readjustmentAmountPercent;
+
+		_progressBar->SetSize
+		(
+			_background->GetWidth( ) * percent * ( 1.0f - readjustmentAmountPercent ),
+			_background->GetHeight( ) * ( 1.0f - readjustmentAmountPercent )
+		);
+
+		SetPosition( _background->GetPosition( ) );
+	}
+
 }
 
