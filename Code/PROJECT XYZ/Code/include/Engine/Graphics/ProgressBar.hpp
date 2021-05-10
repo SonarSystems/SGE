@@ -398,6 +398,20 @@ namespace Sonar
         */
         const Orientation &GetOrientation( ) const;
 
+        /**
+        * \brief Set the progress bar's size percentage (0 is 0%, 1.0 is 100%)
+        *
+        * \param percentage Progress bar size relative to background size
+        */
+        void SetProgressBarSizePercentage( const float &percentage );
+
+        /**
+        * \brief Get the progress bar's size percentage
+        *
+        * \return Output returns the progress bar size percentage 
+        */
+        const float &GetProgressBarSizePercentage( ) const;
+
     private:
         /**
         * \brief Calculates the size of the progress bar
@@ -433,6 +447,11 @@ namespace Sonar
         * \brief Slider's orientation
         */
         Orientation _orientation;
+
+        /**
+        * \brief Progress bar's size as a percentage relative to the background size
+        */
+        float _progressBarPercentageSize;
 
     };
 }

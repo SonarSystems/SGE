@@ -109,11 +109,15 @@ namespace Sonar
 
 		//menu->AddComponent( buttonGroup );
 
-		progressBar = new ProgressBar( _data );
+		progressBar = new ProgressBar( _data, ProgressBar::Orientation::HORIZONTAL );
 		progressBar->SetPosition( 200, 200 );
 		progressBar->SetBackgroundSize( 400, 50 );
+		progressBar->SetProgressBarSizePercentage( 1 );
 
-		menu->AddComponent( progressBar );
+		menu->AddComponent( progressBar, true );
+
+		progressBar->SetBackgroundBorderColor( Color::Red );
+		progressBar->SetBackgroundBorderThickness( 20 );
 	} 
 
 	SplashState::~SplashState( )

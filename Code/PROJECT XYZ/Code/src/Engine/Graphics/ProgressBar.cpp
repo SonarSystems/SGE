@@ -12,6 +12,8 @@ namespace Sonar
 		_maximumValue = DEFAULT_PROGRESS_BAR_MAXIMUM_VALUE;
 		_jumpAmount = DEFAULT_PROGRESS_BAR_JUMP_AMOUNT;
 
+		_progressBarPercentageSize = DEFAULT_PROGRESS_BAR_VALUE_BAR_SIZE_PERCENT;
+
 		SetBackgroundColor( DEFAULT_PROGRESS_BAR_BACKGROUND_COLOR );
 		SetBackgroundBorderThickness( DEFAULT_PROGRESS_BAR_BACKGROUND_BORDER_THICKNESS );
 		SetBackgroundBorderColor( DEFAULT_PROGRESS_BAR_BACKGROUND_BORDER_COLOR );
@@ -76,7 +78,7 @@ namespace Sonar
 	{
 		_background->SetPosition( position );
 
-		float readjustmentAmountPercent = 1.0f - DEFAULT_PROGRESS_BAR_VALUE_BAR_SIZE_PERCENT;
+		float readjustmentAmountPercent = 1.0f - _progressBarPercentageSize;
 		glm::vec2 readjustmentAmount = _background->GetSize( ) * readjustmentAmountPercent * 0.5f;
 
 		_progressBar->SetPosition( position + readjustmentAmount );
@@ -263,19 +265,40 @@ namespace Sonar
 	const Sonar::ProgressBar::Orientation &ProgressBar::GetOrientation( ) const
 	{ return _orientation; }
 
+	void ProgressBar::SetProgressBarSizePercentage( const float &percentage )
+	{
+		_progressBarPercentageSize = percentage;
+
+		CalculateProgressBarSize( );
+	}
+
+	const float &ProgressBar::GetProgressBarSizePercentage( ) const
+	{ return _progressBarPercentageSize; }
+
 	void ProgressBar::CalculateProgressBarSize( )
 	{
 		float range = _maximumValue - _minimumValue;
 		float percent = ( _value - _minimumValue ) / range;
 
-		float readjustmentAmountPercent = 1.0f - DEFAULT_PROGRESS_BAR_VALUE_BAR_SIZE_PERCENT;
+		float readjustmentAmountPercent = 1.0f - _progressBarPercentageSize;
 		glm::vec2 readjustmentAmount = _background->GetSize( ) * readjustmentAmountPercent;
 
-		_progressBar->SetSize
-		(
-			_background->GetWidth( ) * percent * ( 1.0f - readjustmentAmountPercent ),
-			_background->GetHeight( ) * ( 1.0f - readjustmentAmountPercent )
-		);
+		if ( Orientation::HORIZONTAL == _orientation )
+		{
+			_progressBar->SetSize
+			(
+				_background->GetWidth( ) * percent * ( 1.0f - readjustmentAmountPercent ),
+				_background->GetHeight( ) * ( 1.0f - readjustmentAmountPercent )
+			);
+		}
+		else if ( Orientation::VERTICAL == _orientation )
+		{
+			_progressBar->SetSize
+			(
+				_background->GetWidth( ) * ( 1.0f - readjustmentAmountPercent ),
+				_background->GetHeight( ) * percent * ( 1.0f - readjustmentAmountPercent )
+			);
+		}
 
 		SetPosition( _background->GetPosition( ) );
 	}

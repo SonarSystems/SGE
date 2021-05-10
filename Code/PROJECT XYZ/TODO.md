@@ -4,9 +4,6 @@ GAME
 ENGINE
 -----------------------------------------------------------------
 * GUI
-    - Menu system - https://www.youtube.com/watch?v=4Vg9d1pjL20
-        - Progress bar
-            - Saem gap on top/bottom and left/right
     - Hide cursor (static method of Mouse class)
         - HideCursor
         - ShowCursor
