@@ -116,11 +116,38 @@ namespace Sonar
         */
         static const Cursor &GetCurrentCursor( );
 
+        /**
+        * \brief Show the mouse cursor
+        */
+        static void ShowCursor( sf::RenderWindow &window );
+
+        /**
+        * \brief Hide the mouse cursor
+        */
+        static void HideCursor( sf::RenderWindow &window );
+
+        /**
+        * \brief Toggle the mouse cursor
+        */
+        static void ToggleCursor( sf::RenderWindow &window );
+
+        /**
+        * \brief Get the status of the cursor
+        *
+        * \return Output returns the cursor status (false if not show and true if shown)
+        */
+        static bool GetCursorStatus( sf::RenderWindow &window );
+
     private:
         /**
         * \brief Mouse cursor to display
         */
         static Mouse::Cursor _CURSOR_;
+
+        /**
+        * \brief Is the mouse cursor visible
+        */
+        static bool _IS_MOUSE_CURSOR_VISIBLE_;
 
 	};
 }

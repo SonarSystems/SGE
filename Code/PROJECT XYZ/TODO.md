@@ -4,11 +4,6 @@ GAME
 ENGINE
 -----------------------------------------------------------------
 * GUI
-    - Hide cursor (static method of Mouse class)
-        - HideCursor
-        - ShowCursor
-        - ToggleCursor
-        - GetCursorStatus
     - Mini map
         - Square
         - Rounded

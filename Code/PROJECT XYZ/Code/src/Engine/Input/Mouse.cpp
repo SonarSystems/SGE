@@ -3,8 +3,9 @@
 namespace Sonar
 {
     Mouse::Cursor Mouse::_CURSOR_ = Mouse::Cursor::Arrow;
+    bool Mouse::_IS_MOUSE_CURSOR_VISIBLE_ = true;
 
-    bool Mouse::IsPressed( const Button &button )
+	bool Mouse::IsPressed( const Button &button )
     { return ( Mouse::Button )sf::Mouse::isButtonPressed( ( sf::Mouse::Button )button ); }
 
     glm::vec2 Mouse::GetPosition( const sf::RenderWindow &window, const bool &windowOnly )
@@ -63,4 +64,27 @@ namespace Sonar
     const Mouse::Cursor &Mouse::GetCurrentCursor( )
 	{ return _CURSOR_; }
 
+	void Mouse::ShowCursor( sf::RenderWindow &window )
+	{
+		_IS_MOUSE_CURSOR_VISIBLE_ = true;
+
+		window.setMouseCursorVisible( _IS_MOUSE_CURSOR_VISIBLE_ );
+	}
+
+	void Mouse::HideCursor( sf::RenderWindow &window )
+	{
+		_IS_MOUSE_CURSOR_VISIBLE_ = false;
+
+		window.setMouseCursorVisible( _IS_MOUSE_CURSOR_VISIBLE_ );
+	}
+
+	void Mouse::ToggleCursor( sf::RenderWindow &window )
+	{
+        _IS_MOUSE_CURSOR_VISIBLE_ = !_IS_MOUSE_CURSOR_VISIBLE_;
+
+        window.setMouseCursorVisible( _IS_MOUSE_CURSOR_VISIBLE_ );
+	}
+
+	bool Mouse::GetCursorStatus( sf::RenderWindow &window )
+	{ return _IS_MOUSE_CURSOR_VISIBLE_; }
 }
