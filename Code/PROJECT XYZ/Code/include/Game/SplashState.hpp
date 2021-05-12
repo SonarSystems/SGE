@@ -48,5 +48,7 @@ namespace Sonar
 
 		ProgressBar *progressBar;
 
+		Minimap *mm;
+
 	};
 }

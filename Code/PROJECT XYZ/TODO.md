@@ -6,8 +6,8 @@ ENGINE
 * GUI
     - Mini map
         - Square
-        - Rounded
-        - Draw using shapes, ability to override using sprites
+        - Draw using shapes
+        - Zoom level
     - FPS counter - https://github.com/Hopson97/SFML-Game-Framework/blob/master/Source/Util/FPSCounter.cpp
         - ***LOOK INTO IMGUI ESPECIALLY FOR THE GRAPH STUFF***
         - **Part of DEBUG CLASS**

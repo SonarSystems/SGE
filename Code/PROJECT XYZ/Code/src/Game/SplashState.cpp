@@ -118,6 +118,9 @@ namespace Sonar
 
 		progressBar->SetBackgroundBorderColor( Color::Red );
 		progressBar->SetBackgroundBorderThickness( 20 );
+
+		mm = new Minimap( _data );
+		mm->SetPosition( Minimap::POSITION::BOTTOM_RIGHT );
 	} 
 
 	SplashState::~SplashState( )
@@ -154,6 +157,8 @@ namespace Sonar
 
 		menu->Update( dt );
 
+		mm->Update( dt );
+
 		if ( buttonGroup->GetButtonClickedIndex( ) == 0 )
 		{ spdlog::info( "PLAY" ); }
 		else if ( buttonGroup->GetButtonClickedIndex( ) == 1 )
@@ -168,6 +173,8 @@ namespace Sonar
 		//physicsWorld->Draw( dt );
 
 		menu->Draw( );
+
+		mm->Draw( );
 
 		//textBox->Draw( );
 	}

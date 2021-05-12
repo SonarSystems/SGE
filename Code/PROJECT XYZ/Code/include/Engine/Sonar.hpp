@@ -26,6 +26,7 @@
 #include "Graphics/Label.hpp"
 #include "Graphics/Menu.hpp"
 #include "Graphics/MenuComponent.hpp"
+#include "Graphics/Minimap.hpp"
 #include "Graphics/Parallax.hpp"
 #include "Graphics/ProgressBar.hpp"
 #include "Graphics/RadioButton.hpp"
