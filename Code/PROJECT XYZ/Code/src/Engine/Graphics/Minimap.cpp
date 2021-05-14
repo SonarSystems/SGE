@@ -19,6 +19,16 @@ namespace Sonar
 	void Minimap::Draw( )
 	{
 		_background->Draw( );
+
+		for ( auto object : _objects )
+		{
+			glm::vec2 positionPercentage;
+			positionPercentage = object._position / _mapSize;
+
+			object._shape->SetPosition( _background->GetPosition( ) + ( _background->GetSize( ) * positionPercentage ) );
+
+			object._shape->Draw( );
+		}
 	}
 
 	void Minimap::Update( const float &dt )
@@ -57,6 +67,20 @@ namespace Sonar
 
 	float Minimap::GetMapHeight( ) const
 	{ return _mapSize.y; }
+
+	void Minimap::AddObject( const std::string &type, const glm::vec2 &position, const float &radius, const Color &color )
+	{
+		ObjectProperty objectProperty;
+
+		objectProperty._type = type;
+		objectProperty._position = position;
+
+		objectProperty._shape = new Circle( _data );
+		objectProperty._shape->SetRadius( radius );
+		objectProperty._shape->SetInsideColor( color );
+
+		_objects.push_back( objectProperty );
+	}
 
 	void Minimap::SetPosition( const glm::vec2 &position )
 	{

@@ -2,6 +2,7 @@
 
 #include <SFML/Graphics.hpp>
 #include <string>
+#include <vector>
 
 #include <External/glm/glm.hpp>
 #include "Core/ENGINEDEFINITIONS.hpp"
@@ -31,6 +32,16 @@ namespace Sonar
             BOTTOM_LEFT,
             LEFT_CENTER,
             CENTER
+        };
+
+        /**
+        * \brief Object properties struct
+        */
+        struct ObjectProperty
+        {
+            Circle *_shape;
+            std::string _type;
+            glm::vec2 _position;
         };
 
         /**
@@ -329,6 +340,8 @@ namespace Sonar
 		*/
 		float GetMapHeight( ) const;
 
+		void AddObject( const std::string &type, const glm::vec2 &position, const float &radius = DEFAULT_MINIMAP_OBJECT_RADIUS, const Color &color = DEFAULT_MINIMAP_OBJECT_COLOR );
+
     private:
         /**
         * \brief Game data object
@@ -344,6 +357,8 @@ namespace Sonar
         * \brief Internal map size
         */
         glm::vec2 _mapSize;
+
+        std::vector<ObjectProperty> _objects;
 
     };
 }
