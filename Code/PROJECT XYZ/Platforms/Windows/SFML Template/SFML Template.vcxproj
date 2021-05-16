@@ -56,6 +56,7 @@
     <ClInclude Include="..\..\..\Code\include\Engine\Graphics\Sprite.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\Graphics\TextBox.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\Graphics\Texture.hpp" />
+    <ClInclude Include="..\..\..\Code\include\Engine\Graphics\View.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\Input\Events.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\Input\Gesture.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\Input\Input.hpp" />
@@ -107,6 +108,7 @@
     <ClCompile Include="..\..\..\Code\src\Engine\Graphics\Sprite.cpp" />
     <ClCompile Include="..\..\..\Code\src\Engine\Graphics\TextBox.cpp" />
     <ClCompile Include="..\..\..\Code\src\Engine\Graphics\Texture.cpp" />
+    <ClCompile Include="..\..\..\Code\src\Engine\Graphics\View.cpp" />
     <ClCompile Include="..\..\..\Code\src\Engine\Input\Events.cpp" />
     <ClCompile Include="..\..\..\Code\src\Engine\Input\Gesture.cpp" />
     <ClCompile Include="..\..\..\Code\src\Engine\Input\Input.cpp" />

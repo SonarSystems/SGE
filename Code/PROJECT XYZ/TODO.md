@@ -5,9 +5,11 @@ ENGINE
 -----------------------------------------------------------------
 * GUI
     - Mini map
+        - Use Sonar::View
         - Prevent objects outside of the background from being drawm
         - Method for removing objects
         - Method for updating existing objects positions, maybe use the object struct and pass in using pointers so they are linked
+        - Method for hiding objects of a particular name/type
         - Zoom level
     - FPS counter - https://github.com/Hopson97/SFML-Game-Framework/blob/master/Source/Util/FPSCounter.cpp
         - ***LOOK INTO IMGUI ESPECIALLY FOR THE GRAPH STUFF***

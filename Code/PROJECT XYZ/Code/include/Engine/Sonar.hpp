@@ -39,6 +39,7 @@
 #include "Graphics/Sprite.hpp"
 #include "Graphics/TextBox.hpp"
 #include "Graphics/Texture.hpp"
+#include "Graphics/View.hpp"
 #include "Input/Events.hpp"
 #include "Input/Gesture.hpp"
 #include "Input/Input.hpp"

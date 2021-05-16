@@ -339,7 +339,7 @@ namespace Sonar
 		* \return Output returns the map height
 		*/
 		float GetMapHeight( ) const;
-
+        
 		void AddObject( const std::string &type, const glm::vec2 &position, const float &radius = DEFAULT_MINIMAP_OBJECT_RADIUS, const Color &color = DEFAULT_MINIMAP_OBJECT_COLOR );
 
     private:

@@ -27,7 +27,10 @@ namespace Sonar
 
 			object._shape->SetPosition( _background->GetPosition( ) + ( _background->GetSize( ) * positionPercentage ) );
 
-			object._shape->Draw( );
+			if ( object._shape->BoundingBoxCollision( *_background ) )
+			{
+				object._shape->Draw( );
+			}
 		}
 	}
 
