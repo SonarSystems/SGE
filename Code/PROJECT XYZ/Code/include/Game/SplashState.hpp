@@ -50,5 +50,7 @@ namespace Sonar
 
 		Minimap *mm;
 
+		View *view;
+
 	};
 }

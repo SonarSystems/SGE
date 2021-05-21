@@ -4,6 +4,8 @@
 #include <string>
 
 #include <External/glm/glm.hpp>
+#include "Core/Game.hpp"
+#include "Graphics/Shapes/Circle.hpp"
 
 namespace Sonar
 {
@@ -11,29 +13,45 @@ namespace Sonar
     {
     public:
         /**
-         * \brief Default class constructor (creates a default view of 0, 0, 1000, 1000)
+        * \brief Default class constructor (creates a default view of 0, 0, 1000, 1000)
+		* 
+		* \param data Game data object
         */
-        View( );
+        View( GameDataRef data );
         
 		/**
 		* \brief Explicit class constructor
 		*
+		* \param data Game data object
 		* \param rectangle View's new rectangle to set to
 		*/
-		explicit View( const glm::vec4 &rectangle );
+		explicit View( GameDataRef data, const glm::vec4 &rectangle );
 
 		/**
 		* \brief Class constructor with center and size parameters
 		*
+		* \param data Game data object
 		* \param center Center of the view
 		* \param size Size of the view
 		*/
-		View( const glm::vec2 &center, const glm::vec2 &size );
+		View( GameDataRef data, const glm::vec2 &center, const glm::vec2 &size );
 
         /**
          * \brief Class destructor
         */
         ~View( );
+
+		/**
+		* \brief Draw the classes objects
+		*/
+		void Draw( );
+
+		/**
+		* \brief Update the classes objects
+		*
+		* \param dt Delta time (difference between frames)
+		*/
+		void Update( const float &dt );
 
 		/**
 		* \brief Set the center of the view
@@ -159,9 +177,16 @@ namespace Sonar
         
     private:
 		/**
+		* \brief Game data object
+		*/
+		GameDataRef _data;
+
+		/**
 		* \brief Local SFML View object
 		*/
         sf::View *_view;
+
+		Circle *c1;
 
     };
 }

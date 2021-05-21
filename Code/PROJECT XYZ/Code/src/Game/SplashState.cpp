@@ -123,7 +123,12 @@ namespace Sonar
 		mm->SetPosition( Minimap::POSITION::BOTTOM_RIGHT );
 		mm->AddObject( "Enemy", glm::vec2( -48, 96 ), 10 );
 		mm->AddObject( "Enemy", glm::vec2( 240, 85 ), 10 );
-	} 
+
+		view = new View( _data );
+		view->Reset( glm::vec4( 0, 0, 128, 72 ) );
+		//view->SetCenter( glm::vec2( 0, 0) );
+		view->SetViewport( glm::vec4( 0, 0, 0.1, 0.1 ) );
+	}
 
 	SplashState::~SplashState( )
 	{
@@ -174,9 +179,11 @@ namespace Sonar
         //player->Draw( dt );
 		//physicsWorld->Draw( dt );
 
-		menu->Draw( );
+		//menu->Draw( );
 
-		mm->Draw( );
+		//mm->Draw( );
+
+		view->Draw( );
 
 		//textBox->Draw( );
 	}

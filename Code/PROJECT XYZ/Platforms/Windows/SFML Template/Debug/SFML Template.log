@@ -1,9 +1,2 @@
-﻿  View.cpp
-  Player.cpp
-  SplashState.cpp
-  Generating Code...
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\View.cpp(53): warning C4172: returning address of local variable or temporary
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\View.cpp(46): warning C4172: returning address of local variable or temporary
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\View.cpp(63): warning C4172: returning address of local variable or temporary
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\View.cpp(57): warning C4172: returning address of local variable or temporary
+﻿  SplashState.cpp
   SFML Template.vcxproj -> C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\SFML Template.exe

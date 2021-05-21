@@ -2,13 +2,18 @@
 
 namespace Sonar
 {   
-    View::View( )
-    { _view = new sf::View( ); }
+    View::View( GameDataRef data ) : _data( data )
+    {
+		_view = new sf::View( );
+
+		c1 = new Circle( _data, 10 );
+		c1->SetInsideColor( Color::Red );
+	}
     
-	View::View( const glm::vec4 &rectangle )
+	View::View( GameDataRef data, const glm::vec4 &rectangle ) : _data( data )
 	{ _view = new sf::View( sf::FloatRect( rectangle.x, rectangle.y, rectangle.z, rectangle.w ) ); }
 
-	View::View( const glm::vec2 &center, const glm::vec2 &size )
+	View::View( GameDataRef data, const glm::vec2 &center, const glm::vec2 &size ) : _data( data )
 	{ _view = new sf::View( sf::Vector2f( center.x, center.y ), sf::Vector2f( size.x, size.y ) ); }
 
 	View::~View( )
@@ -17,6 +22,19 @@ namespace Sonar
 
 		delete _view;
 	}
+
+	void View::Draw( )
+	{
+		_data->window.setView( *_view );
+
+		// DRAW ALL THE OBJECTS IN THE VIEW SET ABOVE
+		c1->Draw( );
+		//c1->MoveX( 0.1f );
+
+		_data->window.setView( _data->window.getDefaultView( ) );
+	}
+
+	void View::Update( const float &dt ) { }
 
 	void View::SetCenter( const float &x, const float &y )
 	{ _view->setCenter( x, y ); }
