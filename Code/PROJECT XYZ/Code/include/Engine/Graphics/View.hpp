@@ -4,6 +4,7 @@
 #include <string>
 
 #include <External/glm/glm.hpp>
+#include "Core/ENGINEDEFINITIONS.hpp"
 #include "Core/Game.hpp"
 #include "Graphics/Shapes/Circle.hpp"
 
@@ -185,8 +186,6 @@ namespace Sonar
 		* \brief Local SFML View object
 		*/
         sf::View *_view;
-
-		Circle *c1;
 
     };
 }

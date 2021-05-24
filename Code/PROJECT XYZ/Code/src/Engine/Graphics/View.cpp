@@ -3,12 +3,7 @@
 namespace Sonar
 {   
     View::View( GameDataRef data ) : _data( data )
-    {
-		_view = new sf::View( );
-
-		c1 = new Circle( _data, 10 );
-		c1->SetInsideColor( Color::Red );
-	}
+    { _view = new sf::View( ); }
     
 	View::View( GameDataRef data, const glm::vec4 &rectangle ) : _data( data )
 	{ _view = new sf::View( sf::FloatRect( rectangle.x, rectangle.y, rectangle.z, rectangle.w ) ); }
@@ -28,8 +23,7 @@ namespace Sonar
 		_data->window.setView( *_view );
 
 		// DRAW ALL THE OBJECTS IN THE VIEW SET ABOVE
-		c1->Draw( );
-		//c1->MoveX( 0.1f );
+		
 
 		_data->window.setView( _data->window.getDefaultView( ) );
 	}
