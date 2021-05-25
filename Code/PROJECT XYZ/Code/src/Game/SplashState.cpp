@@ -121,7 +121,7 @@ namespace Sonar
 
 		mm = new Minimap( _data );
 		mm->SetPosition( Minimap::POSITION::BOTTOM_RIGHT );
-		mm->AddObject( "Enemy", glm::vec2( -48, 96 ), 10 );
+		mm->AddObject( "Enemy", glm::vec2( -10, 96 ), 10 );
 		mm->AddObject( "Enemy", glm::vec2( 240, 85 ), 10 );
 
 		view = new View( _data );

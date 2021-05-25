@@ -49,14 +49,39 @@ namespace Sonar
     void Drawable::SetPositionY( const float &y )
     { _position.y = y; }
 
-    float Drawable::GetPositionX( ) const
-    { return _position.x; }
+    float Drawable::GetPositionX( const OBJECT_POINTS &point ) const
+    { return GetPosition( point ).x; }
 
-    float Drawable::GetPositionY( ) const
-    { return _position.y; }
+    float Drawable::GetPositionY( const OBJECT_POINTS &point ) const
+	{ return GetPosition( point ).y; }
 
-    glm::vec2 Drawable::GetPosition( ) const
-    { return _position; }
+    glm::vec2 Drawable::GetPosition( const OBJECT_POINTS &point ) const
+    {
+		/*switch ( point )
+		{
+			case OBJECT_POINTS::TOP_LEFT:
+				return _position;
+				break;
+
+			case OBJECT_POINTS::TOP_RIGHT:
+				return glm::vec2( _position.x + _size.x, _position.y );
+				break;
+
+			case OBJECT_POINTS::BOTTOM_RIGHT:
+				return glm::vec2( _position.x + _size.x, _position.y + _size.y );
+				break;
+
+			case OBJECT_POINTS::BOTTOM_LEFT:
+				return glm::vec2( _position.x, _position.y + _size.y );
+				break;
+
+			case OBJECT_POINTS::CENTER:
+				return glm::vec2( _position.x + ( _size.x * 0.5 ), _position.y + ( _size.y * 0.5 ) );
+				break;
+		}*/
+
+		return _position;
+	}
 
 	void Drawable::SetSize( const glm::vec2 &size )
 	{ _size = size; }

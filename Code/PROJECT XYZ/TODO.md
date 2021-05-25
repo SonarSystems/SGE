@@ -5,7 +5,6 @@ ENGINE
 -----------------------------------------------------------------
 * GUI
     - Mini map
-        - Use Sonar::View
         - Prevent objects outside of the background from being drawm
         - Method for removing objects
         - Method for updating existing objects positions, maybe use the object struct and pass in using pointers so they are linked

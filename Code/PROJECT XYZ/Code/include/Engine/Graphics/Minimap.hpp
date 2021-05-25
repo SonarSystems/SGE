@@ -343,6 +343,8 @@ namespace Sonar
 		void AddObject( const std::string &type, const glm::vec2 &position, const float &radius = DEFAULT_MINIMAP_OBJECT_RADIUS, const Color &color = DEFAULT_MINIMAP_OBJECT_COLOR );
 
     private:
+        bool IsPointWithinRange( const float &point, const float &x, const float &y );
+
         /**
         * \brief Game data object
         */
@@ -358,6 +360,9 @@ namespace Sonar
         */
         glm::vec2 _mapSize;
 
+        /**
+        * \brief Objects to be displayed on the minimap
+        */
         std::vector<ObjectProperty> _objects;
 
     };

@@ -27,10 +27,18 @@ namespace Sonar
 
 			object._shape->SetPosition( _background->GetPosition( ) + ( _background->GetSize( ) * positionPercentage ) );
 
-			if ( object._shape->BoundingBoxCollision( *_background ) )
+			/*if ( object._shape->BoundingBoxCollision( *_background ) )
 			{
+				if ( IsPointWithinRange( object._shape->GetPositionX( ), _background->GetPositionX( OBJECT_POINTS::TOP_LEFT ), _background->GetPositionX( OBJECT_POINTS::TOP_RIGHT ) )
+					|| IsPointWithinRange( object._shape->GetPositionY( ), _background->GetPositionY( OBJECT_POINTS::TOP_LEFT ), _background->GetPositionY( OBJECT_POINTS::BOTTOM_LEFT ) )
+					|| IsPointWithinRange( object._shape->GetPositionX( OBJECT_POINTS::TOP_RIGHT ), _background->GetPositionX( OBJECT_POINTS::TOP_LEFT ), _background->GetPositionX( OBJECT_POINTS::TOP_RIGHT ) )
+					|| IsPointWithinRange( object._shape->GetPositionY( OBJECT_POINTS::TOP_RIGHT ), _background->GetPositionY( OBJECT_POINTS::TOP_LEFT ), _background->GetPositionY( OBJECT_POINTS::BOTTOM_LEFT ) )
+					|| IsPointWithinRange( object._shape->GetPositionX( OBJECT_POINTS::BOTTOM_RIGHT ), _background->GetPositionX( OBJECT_POINTS::TOP_LEFT ), _background->GetPositionX( OBJECT_POINTS::TOP_RIGHT ) )
+					|| IsPointWithinRange( object._shape->GetPositionY( OBJECT_POINTS::BOTTOM_RIGHT ), _background->GetPositionY( OBJECT_POINTS::TOP_LEFT ), _background->GetPositionY( OBJECT_POINTS::BOTTOM_LEFT ) )
+					|| IsPointWithinRange( object._shape->GetPositionX( OBJECT_POINTS::BOTTOM_LEFT ), _background->GetPositionX( OBJECT_POINTS::TOP_LEFT ), _background->GetPositionX( OBJECT_POINTS::TOP_RIGHT ) )
+					|| IsPointWithinRange( object._shape->GetPositionY( OBJECT_POINTS::BOTTOM_LEFT ), _background->GetPositionY( OBJECT_POINTS::TOP_LEFT ), _background->GetPositionY( OBJECT_POINTS::BOTTOM_LEFT ) ) )
 				object._shape->Draw( );
-			}
+			}*/
 		}
 	}
 
@@ -83,6 +91,14 @@ namespace Sonar
 		objectProperty._shape->SetInsideColor( color );
 
 		_objects.push_back( objectProperty );
+	}
+
+	bool Minimap::IsPointWithinRange( const float &point, const float &x, const float &y )
+	{
+		if ( point >= x && point <= y )
+		{ return true; }
+		else
+		{ return false; }
 	}
 
 	void Minimap::SetPosition( const glm::vec2 &position )

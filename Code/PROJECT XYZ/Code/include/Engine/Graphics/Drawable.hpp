@@ -72,25 +72,31 @@ namespace Sonar
         void SetPositionY( const float &y );
 
         /**
-        * \brief Get the x position
+		* \brief Get the x position
+		*
+		* \param point Point on the object to get the position for (default is top left)
         *
         * \return Output returns the x position
         */
-        float GetPositionX( ) const;
+        float GetPositionX( const OBJECT_POINTS &point = OBJECT_POINTS::TOP_LEFT ) const;
 
         /**
-        * \brief Get the y position
+		* \brief Get the y position
+		*
+		* \param point Point on the object to get the position for (default is top left)
         *
         * \return Output returns the y position
         */
-        float GetPositionY( ) const;
+        float GetPositionY( const OBJECT_POINTS &point = OBJECT_POINTS::TOP_LEFT ) const;
 
         /**
         * \brief Get the position vector
+        * 
+        * \param point Point on the object to get the position for (default is top left)
         *
         * \return Output returns the position vector
         */
-        glm::vec2 GetPosition( ) const;
+        glm::vec2 GetPosition( const OBJECT_POINTS &point = OBJECT_POINTS::TOP_LEFT ) const;
 
         /**
         * \brief Set width and height
