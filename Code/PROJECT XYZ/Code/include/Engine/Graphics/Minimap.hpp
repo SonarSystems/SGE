@@ -340,10 +340,43 @@ namespace Sonar
 		*/
 		float GetMapHeight( ) const;
         
-		void AddObject( const std::string &type, const glm::vec2 &position, const float &radius = DEFAULT_MINIMAP_OBJECT_RADIUS, const Color &color = DEFAULT_MINIMAP_OBJECT_COLOR );
+        /**
+        * \brief Add an object to the minimap
+        *
+		* \param type Type of object
+		* \param position Position of the object
+		* \param radius Radius of the object
+		* \param color Background color of the object
+        *
+        * \return Output returns the ID of the object just added
+        */
+		[[nodiscard]] unsigned int AddObject( const std::string &type, const glm::vec2 &position, const float &radius = DEFAULT_MINIMAP_OBJECT_RADIUS, const Color &color = DEFAULT_MINIMAP_OBJECT_COLOR );
+
+        /**
+        * \brief Remove object by ID
+        *
+        * \param id ID of the object to be removed
+        */
+        void RemoveObjectByID( const unsigned int &id );
+
+        /**
+        * \brief Remove object(s) by type
+        *
+        * \param type Type of the object(s) to be removed
+        */
+        void RemoveObjectByType( const std::string &type );
 
     private:
-        bool IsPointWithinRange( const float &point, const float &x, const float &y );
+        /**
+        * \brief Is point within specified range range
+        *
+        * \param point Point to check within range
+        * \param start Start of the range
+        * \param end End of the range
+        *
+        * \return Output returns the true if the point is within the range and false if it is not
+        */
+        bool IsPointWithinRange( const float &point, const float &start, const float &end ) const;
 
         /**
         * \brief Game data object
@@ -363,7 +396,7 @@ namespace Sonar
         /**
         * \brief Objects to be displayed on the minimap
         */
-        std::vector<ObjectProperty> _objects;
+        std::unordered_map<unsigned int, ObjectProperty> _objects;
 
     };
 }

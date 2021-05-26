@@ -20,25 +20,25 @@ namespace Sonar
 	{
 		_background->Draw( );
 
-		for ( auto object : _objects )
+		for ( const auto &object : _objects )
 		{
 			glm::vec2 positionPercentage;
-			positionPercentage = object._position / _mapSize;
+			positionPercentage = object.second._position / _mapSize;
 
-			object._shape->SetPosition( _background->GetPosition( ) + ( _background->GetSize( ) * positionPercentage ) );
+			object.second._shape->SetPosition( _background->GetPosition( ) + ( _background->GetSize( ) * positionPercentage ) );
 
-			/*if ( object._shape->BoundingBoxCollision( *_background ) )
+			if ( object.second._shape->BoundingBoxCollision( *_background ) )
 			{
-				if ( IsPointWithinRange( object._shape->GetPositionX( ), _background->GetPositionX( OBJECT_POINTS::TOP_LEFT ), _background->GetPositionX( OBJECT_POINTS::TOP_RIGHT ) )
-					|| IsPointWithinRange( object._shape->GetPositionY( ), _background->GetPositionY( OBJECT_POINTS::TOP_LEFT ), _background->GetPositionY( OBJECT_POINTS::BOTTOM_LEFT ) )
-					|| IsPointWithinRange( object._shape->GetPositionX( OBJECT_POINTS::TOP_RIGHT ), _background->GetPositionX( OBJECT_POINTS::TOP_LEFT ), _background->GetPositionX( OBJECT_POINTS::TOP_RIGHT ) )
-					|| IsPointWithinRange( object._shape->GetPositionY( OBJECT_POINTS::TOP_RIGHT ), _background->GetPositionY( OBJECT_POINTS::TOP_LEFT ), _background->GetPositionY( OBJECT_POINTS::BOTTOM_LEFT ) )
-					|| IsPointWithinRange( object._shape->GetPositionX( OBJECT_POINTS::BOTTOM_RIGHT ), _background->GetPositionX( OBJECT_POINTS::TOP_LEFT ), _background->GetPositionX( OBJECT_POINTS::TOP_RIGHT ) )
-					|| IsPointWithinRange( object._shape->GetPositionY( OBJECT_POINTS::BOTTOM_RIGHT ), _background->GetPositionY( OBJECT_POINTS::TOP_LEFT ), _background->GetPositionY( OBJECT_POINTS::BOTTOM_LEFT ) )
-					|| IsPointWithinRange( object._shape->GetPositionX( OBJECT_POINTS::BOTTOM_LEFT ), _background->GetPositionX( OBJECT_POINTS::TOP_LEFT ), _background->GetPositionX( OBJECT_POINTS::TOP_RIGHT ) )
-					|| IsPointWithinRange( object._shape->GetPositionY( OBJECT_POINTS::BOTTOM_LEFT ), _background->GetPositionY( OBJECT_POINTS::TOP_LEFT ), _background->GetPositionY( OBJECT_POINTS::BOTTOM_LEFT ) ) )
-				object._shape->Draw( );
-			}*/
+				if ( IsPointWithinRange( object.second._shape->GetPositionX( ), _background->GetPositionX( OBJECT_POINTS::TOP_LEFT ), _background->GetPositionX( OBJECT_POINTS::TOP_RIGHT ) )
+					&& IsPointWithinRange( object.second._shape->GetPositionY( ), _background->GetPositionY( OBJECT_POINTS::TOP_LEFT ), _background->GetPositionY( OBJECT_POINTS::BOTTOM_LEFT ) )
+					&& IsPointWithinRange( object.second._shape->GetPositionX( OBJECT_POINTS::TOP_RIGHT ), _background->GetPositionX( OBJECT_POINTS::TOP_LEFT ), _background->GetPositionX( OBJECT_POINTS::TOP_RIGHT ) )
+					&& IsPointWithinRange( object.second._shape->GetPositionY( OBJECT_POINTS::TOP_RIGHT ), _background->GetPositionY( OBJECT_POINTS::TOP_LEFT ), _background->GetPositionY( OBJECT_POINTS::BOTTOM_LEFT ) )
+					&& IsPointWithinRange( object.second._shape->GetPositionX( OBJECT_POINTS::BOTTOM_RIGHT ), _background->GetPositionX( OBJECT_POINTS::TOP_LEFT ), _background->GetPositionX( OBJECT_POINTS::TOP_RIGHT ) )
+					&& IsPointWithinRange( object.second._shape->GetPositionY( OBJECT_POINTS::BOTTOM_RIGHT ), _background->GetPositionY( OBJECT_POINTS::TOP_LEFT ), _background->GetPositionY( OBJECT_POINTS::BOTTOM_LEFT ) )
+					&& IsPointWithinRange( object.second._shape->GetPositionX( OBJECT_POINTS::BOTTOM_LEFT ), _background->GetPositionX( OBJECT_POINTS::TOP_LEFT ), _background->GetPositionX( OBJECT_POINTS::TOP_RIGHT ) )
+					&& IsPointWithinRange( object.second._shape->GetPositionY( OBJECT_POINTS::BOTTOM_LEFT ), _background->GetPositionY( OBJECT_POINTS::TOP_LEFT ), _background->GetPositionY( OBJECT_POINTS::BOTTOM_LEFT ) ) )
+				object.second._shape->Draw( );
+			}
 		}
 	}
 
@@ -79,7 +79,7 @@ namespace Sonar
 	float Minimap::GetMapHeight( ) const
 	{ return _mapSize.y; }
 
-	void Minimap::AddObject( const std::string &type, const glm::vec2 &position, const float &radius, const Color &color )
+	unsigned int Minimap::AddObject( const std::string &type, const glm::vec2 &position, const float &radius, const Color &color )
 	{
 		ObjectProperty objectProperty;
 
@@ -90,12 +90,26 @@ namespace Sonar
 		objectProperty._shape->SetRadius( radius );
 		objectProperty._shape->SetInsideColor( color );
 
-		_objects.push_back( objectProperty );
+		_objects[_objects.size( )] = objectProperty;
+
+		return _objects.size( ) - 1;
 	}
 
-	bool Minimap::IsPointWithinRange( const float &point, const float &x, const float &y )
+	void Minimap::RemoveObjectByID( const unsigned int &id )
+	{ _objects.erase( id ); }
+
+	void Minimap::RemoveObjectByType( const std::string &type )
 	{
-		if ( point >= x && point <= y )
+		for ( int i = 0; i < _objects.size( ); i++ )
+		{
+			if ( type == _objects.at( i )._type )
+			{ RemoveObjectByID( i ); }
+		}
+	}
+
+	bool Minimap::IsPointWithinRange( const float &point, const float &start, const float &end ) const
+	{
+		if ( point >= start && point <= end )
 		{ return true; }
 		else
 		{ return false; }

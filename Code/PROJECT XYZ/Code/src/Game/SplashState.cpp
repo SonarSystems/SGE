@@ -121,13 +121,12 @@ namespace Sonar
 
 		mm = new Minimap( _data );
 		mm->SetPosition( Minimap::POSITION::BOTTOM_RIGHT );
-		mm->AddObject( "Enemy", glm::vec2( -10, 96 ), 10 );
-		mm->AddObject( "Enemy", glm::vec2( 240, 85 ), 10 );
-
-		view = new View( _data );
-		view->Reset( glm::vec4( 0, 0, 1280, 720 ) );
-		//view->SetCenter( glm::vec2( 0, 0) );
-		view->SetViewport( glm::vec4( 0.5, 0.5, 0.5, 0.5 ) );
+		mm->AddObject( "Enemy", glm::vec2( 100, 0 ), 10 );
+		mm->AddObject( "Friendly", glm::vec2( 100, 200 ), 10 );
+		mm->AddObject( "Enemy", glm::vec2( 150, 0 ), 10 );
+		mm->AddObject( "Friendly", glm::vec2( 150, 200 ), 10 );
+		mm->AddObject( "Enemy", glm::vec2( 200, 0 ), 10 );
+		mm->AddObject( "Friendly", glm::vec2( 200, 200 ), 10 );
 	}
 
 	SplashState::~SplashState( )
@@ -147,6 +146,8 @@ namespace Sonar
 		if ( Event::MouseWheelScrolled == event.type )
 		{
 			progressBar->Increment( );
+
+			mm->RemoveObjectByType( "Friendly" );
 
 			//physicsWorld->CreateDynamicBody( event.mouseButton.x, event.mouseButton.y, 32, 32 );
 		}

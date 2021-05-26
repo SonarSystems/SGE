@@ -5,10 +5,9 @@ ENGINE
 -----------------------------------------------------------------
 * GUI
     - Mini map
-        - Prevent objects outside of the background from being drawm
-        - Method for removing objects
-        - Method for updating existing objects positions, maybe use the object struct and pass in using pointers so they are linked
+        - Method for removing objects by type
         - Method for hiding objects of a particular name/type
+        - Method for updating existing objects positions, maybe use the object struct and pass in using pointers so they are linked
         - Zoom level
     - FPS counter - https://github.com/Hopson97/SFML-Game-Framework/blob/master/Source/Util/FPSCounter.cpp
         - ***LOOK INTO IMGUI ESPECIALLY FOR THE GRAPH STUFF***
@@ -21,6 +20,7 @@ ENGINE
         - Triangles count
         - Quads count
 * Fix all warnings
+* Add [[nodiscard]] to all functions that return a value
 * Music and sound items
 * Port AssetManager to Sonar Classes
 * Sorting algorithms, bubble sort, quick sort, insert sort

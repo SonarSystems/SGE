@@ -57,7 +57,7 @@ namespace Sonar
 
     glm::vec2 Drawable::GetPosition( const OBJECT_POINTS &point ) const
     {
-		/*switch ( point )
+		switch ( point )
 		{
 			case OBJECT_POINTS::TOP_LEFT:
 				return _position;
@@ -78,9 +78,7 @@ namespace Sonar
 			case OBJECT_POINTS::CENTER:
 				return glm::vec2( _position.x + ( _size.x * 0.5 ), _position.y + ( _size.y * 0.5 ) );
 				break;
-		}*/
-
-		return _position;
+		}
 	}
 
 	void Drawable::SetSize( const glm::vec2 &size )
