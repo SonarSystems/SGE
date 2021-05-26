@@ -100,10 +100,12 @@ namespace Sonar
 
 	void Minimap::RemoveObjectByType( const std::string &type )
 	{
-		for ( int i = 0; i < _objects.size( ); i++ )
+		for ( auto it = _objects.begin( ); it != _objects.end( ); ) 
 		{
-			if ( type == _objects.at( i )._type )
-			{ RemoveObjectByID( i ); }
+			if ( it->second._type == type )
+			{ it = _objects.erase( it ); }
+			else
+			{ ++it; }
 		}
 	}
 

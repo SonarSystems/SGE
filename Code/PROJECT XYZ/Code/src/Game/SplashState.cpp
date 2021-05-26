@@ -147,7 +147,7 @@ namespace Sonar
 		{
 			progressBar->Increment( );
 
-			mm->RemoveObjectByType( "Friendly" );
+			mm->RemoveObjectByType( "Enemy" );
 
 			//physicsWorld->CreateDynamicBody( event.mouseButton.x, event.mouseButton.y, 32, 32 );
 		}

@@ -5,7 +5,6 @@ ENGINE
 -----------------------------------------------------------------
 * GUI
     - Mini map
-        - Method for removing objects by type
         - Method for hiding objects of a particular name/type
         - Method for updating existing objects positions, maybe use the object struct and pass in using pointers so they are linked
         - Zoom level
