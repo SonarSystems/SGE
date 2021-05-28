@@ -1,6 +1,7 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
+#include <algorithm>
 #include <string>
 #include <vector>
 
@@ -366,6 +367,120 @@ namespace Sonar
         */
         void RemoveObjectByType( const std::string &type );
 
+        /**
+        * \brief Hide object(s) by type
+        *
+        * \param type Type of the object(s) to be hidden
+        */
+        void HideObjectByType( const std::string &type );
+
+        /**
+        * \brief Show object(s) by type
+        *
+        * \param type Type of the object(s) to be shown
+        */
+        void ShowObjectByType( const std::string &type );
+
+        /**
+        * \brief Hide object
+        *
+        * \param id ID of the object to be removed
+        */
+        void HideObjectByID( const unsigned int &id );
+
+        /**
+        * \brief Show object
+        *
+        * \param id ID of the object to be removed
+        */
+        void ShowObjectByID( const unsigned int &id );
+
+        /**
+        * \brief Update an object's properties
+		*
+		* \param id ID of the object
+        * \param type Type of object
+        * \param position Position of the object
+        * \param radius Radius of the object
+        * \param color Background color of the object
+        */
+        void UpdateObjectByID( const unsigned int &id, const std::string &type, const glm::vec2 &position, const float &radius, const Color &color );
+
+        /**
+        * \brief Update an object's type
+		*
+		* \param id ID of the object
+        * \param type Type of object
+        */
+		void UpdateObjectTypeByID( const unsigned int &id, const std::string &type );
+
+        /**
+        * \brief Update an object's position
+		*
+		* \param id ID of the object
+        * \param position Position of the object
+        */
+		void UpdateObjectPositionByID( const unsigned int &id, const glm::vec2 &position );
+
+        /**
+        * \brief Update an object's radius/size
+		*
+		* \param id ID of the object
+        * \param radius Radius of the object
+        */
+        void UpdateObjectRadiusByID( const unsigned int &id, const float &radius );
+
+        /**
+        * \brief Update an objects color
+		*
+		* \param id ID of the object
+        * \param color Background color of the object
+        */
+        void UpdateObjectColorByID( const unsigned int &id, const Color &color );
+
+        /**
+        * \brief Update an object's properties
+        *
+        * \param oldType Type of the current object(s)
+        * \param type Type of object
+        * \param position Position of the object
+        * \param radius Radius of the object
+        * \param color Background color of the object
+        */
+        void UpdateObjectByType( const std::string &oldType, const std::string &type, const glm::vec2 &position, const float &radius, const Color &color );
+
+        /**
+        * \brief Update an object's type
+		*
+		* \param type oldType of the current object(s)
+        * \param type Type of object
+        */
+        void UpdateObjectTypeByType( const std::string &oldType, const std::string &type );
+
+        /**
+        * \brief Update an object's position
+		*
+		* \param type Type of the current object(s)
+        * \param position Position of the object
+        */
+        void UpdateObjectPositionByType( const std::string &type, const glm::vec2 &position );
+
+        /**
+        * \brief Update an object's radius/size
+		*
+		* \param type Type of the current object(s)
+        * \param radius Radius of the object
+        */
+        void UpdateObjectRadiusByType( const std::string &type, const float &radius );
+
+        /**
+        * \brief Update an object's color
+		*
+		* \param type Type of the current object(s)
+        * \param color Background color of the object
+        */
+        void UpdateObjectColorByType( const std::string &type, const Color &color );
+
     private:
         /**
         * \brief Is point within specified range range
@@ -397,6 +512,11 @@ namespace Sonar
         * \brief Objects to be displayed on the minimap
         */
         std::unordered_map<unsigned int, ObjectProperty> _objects;
+
+        /**
+        * \brief The type of objects that won't be drawn but aren't removed
+        */
+        std::vector<std::string> _typesToHide;
 
     };
 }

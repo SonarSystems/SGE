@@ -14,7 +14,17 @@ namespace Sonar
 		_mapSize = glm::vec2( DEFAULT_MINIMAP_INTERNAL_MAP_WIDTH, DEFAULT_MINIMAP_INTERNAL_MAP_HEIGHT );
 	}
 
-	Minimap::~Minimap( ) { }
+	Minimap::~Minimap( )
+	{
+		delete _background;
+		_background = nullptr;
+
+		for ( auto &object : _objects )
+		{
+			delete object.second._shape;
+			object.second._shape = nullptr;
+		}
+	}
 
 	void Minimap::Draw( )
 	{
@@ -22,22 +32,25 @@ namespace Sonar
 
 		for ( const auto &object : _objects )
 		{
-			glm::vec2 positionPercentage;
-			positionPercentage = object.second._position / _mapSize;
-
-			object.second._shape->SetPosition( _background->GetPosition( ) + ( _background->GetSize( ) * positionPercentage ) );
-
-			if ( object.second._shape->BoundingBoxCollision( *_background ) )
+			if ( std::find( _typesToHide.begin( ), _typesToHide.end( ), object.second._type ) == _typesToHide.end( ) )
 			{
-				if ( IsPointWithinRange( object.second._shape->GetPositionX( ), _background->GetPositionX( OBJECT_POINTS::TOP_LEFT ), _background->GetPositionX( OBJECT_POINTS::TOP_RIGHT ) )
-					&& IsPointWithinRange( object.second._shape->GetPositionY( ), _background->GetPositionY( OBJECT_POINTS::TOP_LEFT ), _background->GetPositionY( OBJECT_POINTS::BOTTOM_LEFT ) )
-					&& IsPointWithinRange( object.second._shape->GetPositionX( OBJECT_POINTS::TOP_RIGHT ), _background->GetPositionX( OBJECT_POINTS::TOP_LEFT ), _background->GetPositionX( OBJECT_POINTS::TOP_RIGHT ) )
-					&& IsPointWithinRange( object.second._shape->GetPositionY( OBJECT_POINTS::TOP_RIGHT ), _background->GetPositionY( OBJECT_POINTS::TOP_LEFT ), _background->GetPositionY( OBJECT_POINTS::BOTTOM_LEFT ) )
-					&& IsPointWithinRange( object.second._shape->GetPositionX( OBJECT_POINTS::BOTTOM_RIGHT ), _background->GetPositionX( OBJECT_POINTS::TOP_LEFT ), _background->GetPositionX( OBJECT_POINTS::TOP_RIGHT ) )
-					&& IsPointWithinRange( object.second._shape->GetPositionY( OBJECT_POINTS::BOTTOM_RIGHT ), _background->GetPositionY( OBJECT_POINTS::TOP_LEFT ), _background->GetPositionY( OBJECT_POINTS::BOTTOM_LEFT ) )
-					&& IsPointWithinRange( object.second._shape->GetPositionX( OBJECT_POINTS::BOTTOM_LEFT ), _background->GetPositionX( OBJECT_POINTS::TOP_LEFT ), _background->GetPositionX( OBJECT_POINTS::TOP_RIGHT ) )
-					&& IsPointWithinRange( object.second._shape->GetPositionY( OBJECT_POINTS::BOTTOM_LEFT ), _background->GetPositionY( OBJECT_POINTS::TOP_LEFT ), _background->GetPositionY( OBJECT_POINTS::BOTTOM_LEFT ) ) )
-				object.second._shape->Draw( );
+				glm::vec2 positionPercentage;
+				positionPercentage = object.second._position / _mapSize;
+
+				object.second._shape->SetPosition( _background->GetPosition( ) + ( _background->GetSize( ) * positionPercentage ) );
+
+				if ( object.second._shape->BoundingBoxCollision( *_background ) )
+				{
+					if ( IsPointWithinRange( object.second._shape->GetPositionX( ), _background->GetPositionX( OBJECT_POINTS::TOP_LEFT ), _background->GetPositionX( OBJECT_POINTS::TOP_RIGHT ) )
+						&& IsPointWithinRange( object.second._shape->GetPositionY( ), _background->GetPositionY( OBJECT_POINTS::TOP_LEFT ), _background->GetPositionY( OBJECT_POINTS::BOTTOM_LEFT ) )
+						&& IsPointWithinRange( object.second._shape->GetPositionX( OBJECT_POINTS::TOP_RIGHT ), _background->GetPositionX( OBJECT_POINTS::TOP_LEFT ), _background->GetPositionX( OBJECT_POINTS::TOP_RIGHT ) )
+						&& IsPointWithinRange( object.second._shape->GetPositionY( OBJECT_POINTS::TOP_RIGHT ), _background->GetPositionY( OBJECT_POINTS::TOP_LEFT ), _background->GetPositionY( OBJECT_POINTS::BOTTOM_LEFT ) )
+						&& IsPointWithinRange( object.second._shape->GetPositionX( OBJECT_POINTS::BOTTOM_RIGHT ), _background->GetPositionX( OBJECT_POINTS::TOP_LEFT ), _background->GetPositionX( OBJECT_POINTS::TOP_RIGHT ) )
+						&& IsPointWithinRange( object.second._shape->GetPositionY( OBJECT_POINTS::BOTTOM_RIGHT ), _background->GetPositionY( OBJECT_POINTS::TOP_LEFT ), _background->GetPositionY( OBJECT_POINTS::BOTTOM_LEFT ) )
+						&& IsPointWithinRange( object.second._shape->GetPositionX( OBJECT_POINTS::BOTTOM_LEFT ), _background->GetPositionX( OBJECT_POINTS::TOP_LEFT ), _background->GetPositionX( OBJECT_POINTS::TOP_RIGHT ) )
+						&& IsPointWithinRange( object.second._shape->GetPositionY( OBJECT_POINTS::BOTTOM_LEFT ), _background->GetPositionY( OBJECT_POINTS::TOP_LEFT ), _background->GetPositionY( OBJECT_POINTS::BOTTOM_LEFT ) ) )
+					object.second._shape->Draw( );
+				}
 			}
 		}
 	}
@@ -96,18 +109,43 @@ namespace Sonar
 	}
 
 	void Minimap::RemoveObjectByID( const unsigned int &id )
-	{ _objects.erase( id ); }
+	{
+		if ( id < _objects.size( ) )
+		{
+			if ( _objects.find( id ) != _objects.end( ) )
+			{
+				delete _objects.at( id )._shape;
+				_objects.at( id )._shape = nullptr;
+
+				_objects.erase( id );
+			}
+		}
+	}
 
 	void Minimap::RemoveObjectByType( const std::string &type )
 	{
 		for ( auto it = _objects.begin( ); it != _objects.end( ); ) 
 		{
 			if ( it->second._type == type )
-			{ it = _objects.erase( it ); }
+			{
+				delete it->second._shape;
+				it->second._shape = nullptr;
+
+				it = _objects.erase( it );
+			}
 			else
 			{ ++it; }
 		}
 	}
+
+	void Minimap::HideObjectByType( const std::string &type )
+	{
+		if ( std::find( _typesToHide.begin( ), _typesToHide.end( ), type ) == _typesToHide.end( ) )
+		{ _typesToHide.push_back( type ); }
+	}
+
+	void Minimap::ShowObjectByType( const std::string &type )
+	{ _typesToHide.erase( std::remove( _typesToHide.begin( ), _typesToHide.end( ), type ), _typesToHide.end( ) ); }
 
 	bool Minimap::IsPointWithinRange( const float &point, const float &start, const float &end ) const
 	{

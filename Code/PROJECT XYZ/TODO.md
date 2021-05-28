@@ -5,7 +5,7 @@ ENGINE
 -----------------------------------------------------------------
 * GUI
     - Mini map
-        - Method for hiding objects of a particular name/type
+        - Implement remaining methods
         - Method for updating existing objects positions, maybe use the object struct and pass in using pointers so they are linked
         - Zoom level
     - FPS counter - https://github.com/Hopson97/SFML-Game-Framework/blob/master/Source/Util/FPSCounter.cpp
@@ -18,6 +18,10 @@ ENGINE
         - Vertices count
         - Triangles count
         - Quads count
+* Look into smart pointers
+* Delete all pointers in all custom classes including methods where stuff is removed (release memory)
+    - delete pointer;
+    - pointer = nullptr;
 * Fix all warnings
 * Add [[nodiscard]] to all functions that return a value
 * Music and sound items
