@@ -77,7 +77,7 @@ namespace Sonar
         *
         * \param index Index of button to remove
         */
-        void RemoveButton( const int &index );
+        void RemoveButton( const unsigned int &index );
 
         /**
         * \brief Remove the first button
@@ -412,7 +412,7 @@ namespace Sonar
         /**
         * \brief Current selected button
         */
-        int _currentIndex;
+        unsigned int _currentIndex;
 
         /**
         * \brief Is the keyboard enabled

@@ -36,7 +36,7 @@ namespace Sonar
 			UpdateButtons( );
 		}
 
-		for ( auto &button : _buttons )
+		for ( const auto &button : _buttons )
 		{ button->Draw( ); }
 	}
 
@@ -44,7 +44,7 @@ namespace Sonar
 	{
 		//_clickedIndex = -1;
 
-		for ( int i = 0; i < _buttons.size( ); i++ )
+		for ( unsigned int i = 0; i < _buttons.size( ); i++ )
 		{
 			Button::MOUSE_STATE mouseState = _buttons.at( i )->UpdateForButtonGroup( dt, !_isKeyboardEnabled );
 
@@ -119,12 +119,12 @@ namespace Sonar
 
 	void ButtonGroup::PollInput( const float &dt, const Event &event )
 	{
-		for ( auto &button : _buttons )
+		for ( const auto &button : _buttons )
 		{ button->PollInput( dt, event ); }
 
 		if ( Event::KeyReleased == event.type )
 		{
-			for ( auto navigationPair : _validNavigationKeys )
+			for ( const auto &navigationPair : _validNavigationKeys )
 			{
 				if ( navigationPair.first == event.key.code )
 				{ MoveUp( ); }
@@ -132,7 +132,7 @@ namespace Sonar
 				{ MoveDown( ); }
 			}
 
-			for ( auto key : _validTriggerKeys )
+			for ( const auto &key : _validTriggerKeys )
 			{
 				if ( key == event.key.code )
 				{ _clickedIndex = _currentIndex; }
@@ -144,7 +144,7 @@ namespace Sonar
 			{
 				_isMouseButtonPressedOutsideOfButton = true;
 
-				for ( auto button : _buttons )
+				for ( const auto &button : _buttons )
 				{
 					if ( button->IsMouseOver( ) )
 					{ _isMouseButtonPressedOutsideOfButton = false; }
@@ -162,7 +162,7 @@ namespace Sonar
 			if ( numberOfButtons > 0 )
 			{
 				auto lastButton = _buttons.at( numberOfButtons - 1 );
-				glm::vec2 position;
+				glm::vec2 position = { 0, 0 };
 
 				if ( ORIENTATION::VERTICAL == _orientation )
 				{
@@ -195,7 +195,7 @@ namespace Sonar
 			if ( buttonWidth > _minimumWidth )
 			{ _minimumWidth = buttonWidth; }
 
-			for ( auto &button : _buttons )
+			for ( const auto &button : _buttons )
 			{ button->SetMinimumWidth( buttonWidth ); }
 		}
 
@@ -218,7 +218,7 @@ namespace Sonar
 		}
 	}
 
-	void ButtonGroup::RemoveButton( const int &index )
+	void ButtonGroup::RemoveButton( const unsigned int &index )
 	{
 		if ( index < _buttons.size( ) )
 		{
@@ -284,7 +284,7 @@ namespace Sonar
 
 		if ( ORIENTATION::VERTICAL == _orientation )
 		{
-			for ( auto button : _buttons )
+			for ( const auto &button : _buttons )
 			{
 				if ( button->GetWidth( ) > width )
 				{ width = button->GetWidth( ); }
@@ -292,7 +292,7 @@ namespace Sonar
 		}
 		else if ( ORIENTATION::HORIZONTAL == _orientation )
 		{
-			for ( auto button : _buttons )
+			for ( const auto &button : _buttons )
 			{ width += button->GetWidth( ); }
 
 			int numberOfButtons = _buttons.size( );
@@ -310,7 +310,7 @@ namespace Sonar
 
 		if ( ORIENTATION::VERTICAL == _orientation )
 		{
-			for ( auto button : _buttons )
+			for ( const auto &button : _buttons )
 			{ height += button->GetHeight( ); }
 
 			int numberOfButtons = _buttons.size( );
@@ -320,7 +320,7 @@ namespace Sonar
 		}
 		else if ( ORIENTATION::HORIZONTAL == _orientation )
 		{
-			for ( auto button : _buttons )
+			for ( const auto &button : _buttons )
 			{
 				if ( button->GetHeight( ) > height )
 				{ height = button->GetHeight( ); }
@@ -334,7 +334,7 @@ namespace Sonar
 	{
 		_theme = theme;
 
-		for ( auto &button : _buttons )
+		for ( const auto &button : _buttons )
 		{ button->SetTheme( theme ); }
 	}
 
@@ -428,7 +428,7 @@ namespace Sonar
 				else
 				{
 					auto previousButton = _buttons.at( i - 1 );
-					glm::vec2 position;
+					glm::vec2 position = { 0, 0 };
 
 					if ( ORIENTATION::VERTICAL == _orientation )
 					{
@@ -450,10 +450,10 @@ namespace Sonar
 	void ButtonGroup::SetPositionToCenter( const bool &setCenterInXAxis, const bool &setCenterInYAxis )
 	{
 		if ( setCenterInXAxis )
-		{ SetPositionX( ( _data->window.getSize( ).x * 0.5 ) - ( GetWidth( ) * 0.5 ) ); }
+		{ SetPositionX( ( _data->window.getSize( ).x * 0.5f ) - ( GetWidth( ) * 0.5f ) ); }
 
 		if ( setCenterInYAxis )
-		{ SetPositionY( ( _data->window.getSize( ).y * 0.5 ) - ( GetHeight( ) * 0.5 ) ); }
+		{ SetPositionY( ( _data->window.getSize( ).y * 0.5f ) - ( GetHeight( ) * 0.5f ) ); }
 	}
 
 	void ButtonGroup::SetPosition( const float &x, const float &y )
@@ -478,7 +478,7 @@ namespace Sonar
 	{
 		_position += offset;
 
-		for ( auto button : _buttons )
+		for ( const auto &button : _buttons )
 		{ button->Move( offset ); }
 	}
 
@@ -496,7 +496,7 @@ namespace Sonar
 
 	void ButtonGroup::AddValidKeyboardTriggerKey( const Keyboard::Key &key )
 	{
-		for ( auto validKey : _validTriggerKeys )
+		for ( const auto &validKey : _validTriggerKeys )
 		{
 			if ( validKey == key )
 			{ return; }
@@ -523,13 +523,13 @@ namespace Sonar
 	}
 
 	void ButtonGroup::RemoveAllValidKeyboardTriggerKeys( )
-	{ _validTriggerKeys.empty( ); }
+	{ _validTriggerKeys.clear( ); }
 
 	void ButtonGroup::SetMouseClickButton( const Mouse::Button &button )
 	{
 		_mouseClickButton = button;
 
-		for ( auto buttonObj : _buttons )
+		for ( const auto &buttonObj : _buttons )
 		{ buttonObj->SetMouseButtonToClick( button ); }
 	}
 
@@ -540,7 +540,7 @@ namespace Sonar
 	{
 		bool alreadyExists = false;
 
-		for ( auto keys : _validNavigationKeys )
+		for ( const auto &keys : _validNavigationKeys )
 		{
 			if ( keyPair == keys )
 			{
@@ -576,7 +576,7 @@ namespace Sonar
 
 	void ButtonGroup::UpdateButtons( )
 	{
-		for ( int i = 0; i < _buttons.size( ); i++ )
+		for ( unsigned int i = 0; i < _buttons.size( ); i++ )
 		{
 			if ( i == _currentIndex )
 			{ 

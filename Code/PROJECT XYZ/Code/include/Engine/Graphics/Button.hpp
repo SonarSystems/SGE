@@ -36,7 +36,7 @@ namespace Sonar
         /**
         * \brief State of the mouse on the button
         */
-        enum MOUSE_STATE
+        enum class MOUSE_STATE
         {
             NOT_INTERACTING = 0,
             HOVER,

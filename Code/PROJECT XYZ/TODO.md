@@ -3,12 +3,8 @@ GAME
 
 ENGINE
 -----------------------------------------------------------------
-* GUI
-    - Mini map
-        - Implement remaining methods
-        - Method for updating existing objects positions, maybe use the object struct and pass in using pointers so they are linked
-        - Zoom level
 * Fix all warnings
+* GUI
     - FPS counter - https://github.com/Hopson97/SFML-Game-Framework/blob/master/Source/Util/FPSCounter.cpp
         - ***LOOK INTO IMGUI ESPECIALLY FOR THE GRAPH STUFF***
         - **Part of DEBUG CLASS**
@@ -61,3 +57,5 @@ SKIPPED
 -----------------------------------------------------------------
 * Input manager - Motion (Wii, PS3+)
 * Buttons (rotation, pivot)
+* Mini map
+    - Zoom level
