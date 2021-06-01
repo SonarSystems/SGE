@@ -43,6 +43,7 @@ namespace Sonar
             Circle *_shape;
             std::string _type;
             glm::vec2 _position;
+            bool _isShowing;
         };
 
         /**
@@ -492,6 +493,15 @@ namespace Sonar
         * \return Output returns the true if the point is within the range and false if it is not
         */
         bool IsPointWithinRange( const float &point, const float &start, const float &end ) const;
+
+        /**
+        * \brief Does the object exist
+        *
+        * \param id ID of the object
+        *
+        * \return Output returns true if the object exists and false if it does not
+        */
+        bool DoesObjectExist( const unsigned int &id );
 
         /**
         * \brief Game data object

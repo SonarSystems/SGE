@@ -149,13 +149,13 @@ namespace Sonar
 
 			//mm->RemoveObjectByType( "Test" );
 
-			mm->HideObjectByType( "Enemy" );
+			mm->HideObjectByID( 0 );
 
 			//physicsWorld->CreateDynamicBody( event.mouseButton.x, event.mouseButton.y, 32, 32 );
 		}
 		else if ( Event::MouseButtonReleased == event.type )
 		{
-			mm->ShowObjectByType( "Enemy" );
+			mm->UpdateObjectColorByType( "Enemy", Color::Cyan );
 		}
 
 		menu->PollInput( dt, event );

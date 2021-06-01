@@ -8,6 +8,7 @@ ENGINE
         - Implement remaining methods
         - Method for updating existing objects positions, maybe use the object struct and pass in using pointers so they are linked
         - Zoom level
+* Fix all warnings
     - FPS counter - https://github.com/Hopson97/SFML-Game-Framework/blob/master/Source/Util/FPSCounter.cpp
         - ***LOOK INTO IMGUI ESPECIALLY FOR THE GRAPH STUFF***
         - **Part of DEBUG CLASS**
@@ -18,12 +19,11 @@ ENGINE
         - Vertices count
         - Triangles count
         - Quads count
+* Add [[nodiscard]] to all functions that return a value
 * Look into smart pointers
 * Delete all pointers in all custom classes including methods where stuff is removed (release memory)
     - delete pointer;
     - pointer = nullptr;
-* Fix all warnings
-* Add [[nodiscard]] to all functions that return a value
 * Music and sound items
 * Port AssetManager to Sonar Classes
 * Sorting algorithms, bubble sort, quick sort, insert sort
