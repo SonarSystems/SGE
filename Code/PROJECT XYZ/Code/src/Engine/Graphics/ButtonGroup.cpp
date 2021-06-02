@@ -10,6 +10,7 @@ namespace Sonar
 		_isKeyboardEnabled = DEFAULT_BUTTON_GROUP_KEYBOARD_ENABLED;
 		_minimumWidth = DEFAULT_BUTTON_GROUP_MINIMUM_WIDTH;
 		_orientation = DEFAULT_BUTTON_GROUP_ORIENTATION;
+
 		_gap = DEFAULT_BUTTON_GROUP_GAP;
 		_position = DEFAULT_BUTTON_GROUP_POSITION;
 
@@ -140,7 +141,7 @@ namespace Sonar
 		}
 		else if ( Event::MouseButtonPressed == event.type )
 		{
-			if ( _mouseClickButton == event.key.code )
+			if ( _mouseClickButton == event.mouseButton.button )
 			{
 				_isMouseButtonPressedOutsideOfButton = true;
 
@@ -514,7 +515,7 @@ namespace Sonar
 
 		std::remove_copy( _validTriggerKeys.begin( ), _validTriggerKeys.end( ), newKeysVector.begin( ), key );
 
-		if ( newKeysVector.at( newKeysVector.size( ) - 1 ) == NULL )
+		if ( static_cast<int>( newKeysVector.at( newKeysVector.size( ) - 1 ) ) == NULL )
 		{
 			newKeysVector.pop_back( );
 
@@ -563,7 +564,7 @@ namespace Sonar
 
 		std::remove_copy( _validNavigationKeys.begin( ), _validNavigationKeys.end( ), newKeysVector.begin( ), keyPair );
 
-		if ( newKeysVector.at( newKeysVector.size( ) - 1 ).first == NULL )
+		if ( static_cast<int>( newKeysVector.at( newKeysVector.size( ) - 1 ).first ) == NULL )
 		{
 			newKeysVector.pop_back( );
 

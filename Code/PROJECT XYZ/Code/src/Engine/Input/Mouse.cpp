@@ -6,7 +6,7 @@ namespace Sonar
     bool Mouse::_IS_MOUSE_CURSOR_VISIBLE_ = true;
 
 	bool Mouse::IsPressed( const Button &button )
-    { return ( Mouse::Button )sf::Mouse::isButtonPressed( ( sf::Mouse::Button )button ); }
+    { return sf::Mouse::isButtonPressed( ( sf::Mouse::Button )button ); }
 
     glm::vec2 Mouse::GetPosition( const sf::RenderWindow &window, const bool &windowOnly )
 	{

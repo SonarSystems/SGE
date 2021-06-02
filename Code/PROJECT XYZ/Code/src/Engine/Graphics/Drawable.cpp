@@ -163,19 +163,19 @@ namespace Sonar
 	{ _scale.y = yScale; }
 
 	void Drawable::Scale( const glm::vec2 &scale )
-	{ _scale * scale; }
+	{ _scale *= scale; }
 
 	void Drawable::Scale( const float &xScale, const float &yScale )
 	{
-		_scale.x * xScale;
-		_scale.y * yScale;
+		_scale.x *= xScale;
+		_scale.y *= yScale;
 	}
 
 	void Drawable::ScaleX( const float &xScale )
-	{ _scale.x * xScale; }
+	{ _scale.x *= xScale; }
 
 	void Drawable::ScaleY( const float &yScale )
-	{ _scale.y * yScale; }
+	{ _scale.y *= yScale; }
 
 	glm::vec2 Drawable::GetScale( ) const
 	{ return _scale; }

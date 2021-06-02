@@ -18,7 +18,7 @@ namespace Sonar
         /**
         * \brief The orientation of the buttons in the button group
         */
-        enum ORIENTATION
+        enum class ORIENTATION
         {
             VERTICAL = 0,
             HORIZONTAL

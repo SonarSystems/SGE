@@ -11,7 +11,7 @@ namespace Sonar
         /**
          * \brief Buttons supported by the mouse
         */
-        enum Button
+        enum class Button
         {
             Left,       // The left mouse button
             Right,      // The right mouse button
@@ -25,7 +25,7 @@ namespace Sonar
         /**
          * \brief Wheels supported by the mouse
         */
-        enum Wheel
+        enum class Wheel
         {
             VerticalWheel,  // The vertical mouse wheel
             HorizontalWheel // The horizontal mouse wheel
@@ -34,7 +34,7 @@ namespace Sonar
         /**
         * \brief Different mouse cursors
         */
-		enum Cursor
+		enum class Cursor
 		{
 			Arrow,                  ///< Arrow cursor (default)
 			ArrowWait,              ///< Busy arrow cursor

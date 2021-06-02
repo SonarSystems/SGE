@@ -38,7 +38,7 @@ namespace Sonar
 		{
 			if ( Event::TextEntered == event.type )
 			{
-				if ( BACKSPACE_TEXT_ENTERED_KEY_CODE == event.key.code )
+				if ( BACKSPACE_TEXT_ENTERED_KEY_CODE == static_cast<int>( event.key.code ) )
 				{
 					if ( GetText( ).size( ) > 0 )
 					{

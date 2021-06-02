@@ -25,7 +25,7 @@ namespace Sonar
     /**
     * \brief Points on the object
     */
-    enum OBJECT_POINTS
+    enum class OBJECT_POINTS
     {
         CENTER,
         TOP_LEFT,

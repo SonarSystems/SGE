@@ -19,7 +19,7 @@ namespace Sonar
     class MenuComponent
     {
     public:
-        enum Theme
+        enum class Theme
         {
             DARK = 0,
             LIGHT,
