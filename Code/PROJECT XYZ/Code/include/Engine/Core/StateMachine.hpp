@@ -16,11 +16,11 @@ namespace Sonar
         /**
          * \brief Class constructor
         */
-		StateMachine( ) { }
+		StateMachine( );
         /**
          * \brief Class destructor
         */
-		~StateMachine( ) { }
+		~StateMachine( );
 
         /**
          * \brief Add a new state onto the stack

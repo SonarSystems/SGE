@@ -19,8 +19,8 @@ namespace Sonar
 		_checkedColor = _insideLayer->GetInsideColor( );
 		_insideLayer->SetPosition
 		(
-			GetPositionX( ) + ( GetSize( ) * 0.5 ) - ( _insideLayer->GetWidth( ) * 0.5 ),
-			GetPositionY( ) + ( GetSize( ) * 0.5 ) - ( _insideLayer->GetHeight( ) * 0.5 )
+			GetPositionX( ) + ( GetSize( ) * 0.5f ) - ( _insideLayer->GetWidth( ) * 0.5f ),
+			GetPositionY( ) + ( GetSize( ) * 0.5f ) - ( _insideLayer->GetHeight( ) * 0.5f )
 		);
 
 		_buttonToClick = DEFAULT_CHECKBOX_CLICKED_MOUSE_BUTTON;
@@ -56,7 +56,7 @@ namespace Sonar
 		else if ( _outerLayer->IsMouseOver( ) )
 		{
 			Color checkedColor = _checkedColor;
-			checkedColor.SetAlpha( checkedColor.GetAlpha( ) * DEFAULT_CHECKBOX_IS_MOUSE_OVER_ALPHA_MULTIPLIER );
+			checkedColor.SetAlpha( ( unsigned int )( checkedColor.GetAlpha( ) * DEFAULT_CHECKBOX_IS_MOUSE_OVER_ALPHA_MULTIPLIER ) );
 
 			_insideLayer->SetInsideColor( checkedColor );
 
@@ -104,8 +104,8 @@ namespace Sonar
 
 		_insideLayer->SetPosition
 		(
-			position.x + ( GetSize( ) * 0.5 ) - ( _insideLayer->GetWidth( ) * 0.5 ),
-			position.y + ( GetSize( ) * 0.5 ) - ( _insideLayer->GetHeight( ) * 0.5 )
+			position.x + ( GetSize( ) * 0.5f ) - ( _insideLayer->GetWidth( ) * 0.5f ),
+			position.y + ( GetSize( ) * 0.5f ) - ( _insideLayer->GetHeight( ) * 0.5f )
 		);
 	}
 

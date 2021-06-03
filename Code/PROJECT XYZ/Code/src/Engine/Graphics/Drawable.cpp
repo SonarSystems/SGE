@@ -4,12 +4,16 @@ namespace Sonar
 {
     Drawable::Drawable( GameDataRef data ) : _data( data )
     {
+		_object = nullptr;
+		_size[0] = _size[1] = 0;
+		_borderThickness = 0;
         _rotation = 0;
-        _scale[0] = _scale[1] = 1;
+        _scale[0] = _scale[1] = 1.0f;
         _pivot[0] = _pivot[1] = 0;
+		_position[0] = _position[1] = 0;
 
-		_initialPulseScale[0] = _initialPulseScale[1] = 1;
-        _endPulseScale[0] = _endPulseScale[1] = 1;
+		_initialPulseScale[0] = _initialPulseScale[1] = 1.0f;
+        _endPulseScale[0] = _endPulseScale[1] = 1.0f;
         _timeBetweenPulses = Seconds( 0 );
         _pulseAmount = 0;
         _pulseCounter = 0;
@@ -59,8 +63,8 @@ namespace Sonar
     {
 		switch ( point )
 		{
-			case OBJECT_POINTS::TOP_LEFT:
-				return _position;
+			case OBJECT_POINTS::CENTER:
+				return glm::vec2( _position.x + ( _size.x * 0.5 ), _position.y + ( _size.y * 0.5 ) );
 				break;
 
 			case OBJECT_POINTS::TOP_RIGHT:
@@ -75,8 +79,9 @@ namespace Sonar
 				return glm::vec2( _position.x, _position.y + _size.y );
 				break;
 
-			case OBJECT_POINTS::CENTER:
-				return glm::vec2( _position.x + ( _size.x * 0.5 ), _position.y + ( _size.y * 0.5 ) );
+			case OBJECT_POINTS::TOP_LEFT:
+			default:
+				return _position;
 				break;
 		}
 	}
@@ -316,9 +321,9 @@ namespace Sonar
     {
         if ( sf::Mouse::isButtonPressed( ( sf::Mouse::Button )button ) )
         {
-            sf::IntRect buttonRect( _position.x, _position.y, _size.x * _scale.x, _size.y * _scale.y );
+            sf::FloatRect buttonRect( _position.x, _position.y, _size.x * _scale.x, _size.y * _scale.y );
 
-            if ( buttonRect.contains( sf::Mouse::getPosition( _data->window ) ) )
+            if ( buttonRect.contains( ( sf::Vector2f )sf::Mouse::getPosition( _data->window ) ) )
             { return true; }
         }
 
@@ -327,10 +332,12 @@ namespace Sonar
 	
 	bool Drawable::IsMouseOver( ) const
 	{
-		sf::IntRect buttonRect( _position.x, _position.y, _size.x * _scale.x, _size.y * _scale.y );
+		sf::FloatRect buttonRect( _position.x, _position.y, _size.x * _scale.x, _size.y * _scale.y );
 
-		if ( buttonRect.contains( sf::Mouse::getPosition( _data->window ) ) )
+		if ( buttonRect.contains( ( sf::Vector2f )sf::Mouse::getPosition( _data->window ) ) )
 		{ return true; }
+		else
+		{ return false; }
 	}
 
 	bool Drawable::BoundingBoxCollision( const Drawable &object ) const

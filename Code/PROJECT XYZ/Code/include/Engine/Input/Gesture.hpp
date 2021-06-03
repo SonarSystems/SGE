@@ -206,7 +206,7 @@ namespace Sonar
 		/**
 		* \brief What stage of the gesture is currently active
 		*/
-		int _loopCounter;
+		unsigned int _loopCounter;
 
 		/**
 		* \brief ID of the joystick to be checked

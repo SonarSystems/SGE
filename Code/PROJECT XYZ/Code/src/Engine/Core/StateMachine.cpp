@@ -3,59 +3,54 @@
 
 namespace Sonar
 {
+	StateMachine::StateMachine( )
+	{
+		_isAdding = false;
+		_isRemoving = false;
+		_isReplacing = false;
+	}
+
+	StateMachine::~StateMachine( ) { }
+
 	void StateMachine::AddState( StateRef newState, const bool &isReplacing )
 	{
-		this->_isAdding = true;
-		this->_isReplacing = isReplacing;
+		_isAdding = true;
+		_isReplacing = isReplacing;
 
-		this->_newState = std::move( newState );
+		_newState = std::move( newState );
 	}
 
 	void StateMachine::RemoveState( )
-	{
-		this->_isRemoving = true;
-	}
+	{ _isRemoving = true; }
 
 	void StateMachine::ProcessStateChanges( )
 	{
-        sf::Event event;
-        
-        
-        
-		if ( this->_isRemoving && !this->_states.empty( ) )
+		if ( _isRemoving && !_states.empty( ) )
 		{
-			this->_states.pop( );
+			_states.pop( );
 
-			if ( !this->_states.empty( ) )
-			{
-				this->_states.top( )->Resume( );
-			}
+			if ( !_states.empty( ) )
+			{ _states.top( )->Resume( ); }
 
-			this->_isRemoving = false;
+			_isRemoving = false;
 		}
 
-		if ( this->_isAdding )
+		if ( _isAdding )
 		{
-			if ( !this->_states.empty( ) )
+			if ( !_states.empty( ) )
 			{
-				if ( this->_isReplacing )
-				{
-					this->_states.pop( );
-				}
+				if ( _isReplacing )
+				{ _states.pop( ); }
 				else
-				{
-					this->_states.top( )->Pause();
-				}
+				{ _states.top( )->Pause( ); }
 			}
 
-			this->_states.push( std::move( this->_newState ) );
-			this->_states.top( )->Init( );
-			this->_isAdding = false;
+			_states.push( std::move( _newState ) );
+			_states.top( )->Init( );
+			_isAdding = false;
 		}
 	}
 
 	StateRef &StateMachine::GetActiveState( )
-	{
-		return this->_states.top( );
-	}
+	{ return _states.top( ); }
 }

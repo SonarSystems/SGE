@@ -18,7 +18,7 @@ namespace Sonar
 
 		_postStringBlinker = new Rectangle( data );
 		_postStringBlinker->SetSize( 5, GetHeight( ) );
-		_postStringBlinker->SetPosition( GetPositionX( ) + GetWidth( ), GetPositionY( ) + ( GetHeight( ) * 0.5 ) );
+		_postStringBlinker->SetPosition( GetPositionX( ) + GetWidth( ), GetPositionY( ) + ( GetHeight( ) * 0.5f ) );
 		_postStringBlinker->SetInsideColor( Color::Black );
 
 		_minimumClickableSize = GetSize( );
@@ -160,7 +160,7 @@ namespace Sonar
 		if ( _isDebugDrawing )
 		{ _clickableRect->Draw( ); }
 
-		_postStringBlinker->SetHeight( GetCharacterSize( ) );
+		_postStringBlinker->SetHeight( ( float )GetCharacterSize( ) );
 		_postStringBlinker->SetPosition( GetPositionX( ) + GetWidth( ) + GetLetterSpacing( ) * CURSOR_LETTER_SPACING_MULITPLIER, GetPositionY( ) + GetCharacterSize( ) - _postStringBlinker->GetHeight( ) );
 
 		Label::Draw( );

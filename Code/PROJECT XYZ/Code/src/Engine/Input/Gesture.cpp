@@ -248,7 +248,7 @@ namespace Sonar
 				{ -30, 30 },
 				Direction::Left,
 				Direction::NONE,
-				{ 0.2 },
+				{ 0.2f },
 			} );
 
 			_gesturePattern.steps.push_back(
@@ -257,7 +257,7 @@ namespace Sonar
 				{ -30, 30 },
 				Direction::Left,
 				Direction::NONE,
-				{ 0.2 }
+				{ 0.2f }
 			} );
 
 			_gesturePattern.steps.push_back(
@@ -266,7 +266,7 @@ namespace Sonar
 				{ -45, -45 },
 				Direction::Right,
 				Direction::Up,
-				{ 0.45 }
+				{ 0.45f }
 			} );
 
 			_gesturePattern.steps.push_back(
@@ -275,7 +275,7 @@ namespace Sonar
 				{ -90, -90 },
 				Direction::Right,
 				Direction::Up,
-				{ 0.45 }
+				{ 0.45f }
 			} );
 
 			_gesturePattern.resetPos = -15;
@@ -288,7 +288,7 @@ namespace Sonar
 				{ -30, 30 },
 				Direction::Left,
 				Direction::NONE,
-				{ 0.2 },
+				{ 0.2f },
 			} );
 
 			_gesturePattern.steps.push_back(
@@ -297,7 +297,7 @@ namespace Sonar
 				{ -30, 30 },
 				Direction::Left,
 				Direction::NONE,
-				{ 0.2 }
+				{ 0.2f }
 			} );
 
 			_gesturePattern.steps.push_back(
@@ -306,7 +306,7 @@ namespace Sonar
 				{ 45, 45 },
 				Direction::Right,
 				Direction::Down,
-				{ 0.45 }
+				{ 0.45f }
 			} );
 
 			_gesturePattern.steps.push_back(
@@ -315,7 +315,7 @@ namespace Sonar
 				{ 90, 90 },
 				Direction::Right,
 				Direction::Down,
-				{ 0.45 }
+				{ 0.45f }
 			} );
 
 			_gesturePattern.resetPos = -15;
@@ -328,7 +328,7 @@ namespace Sonar
 				{ -30, 30 },
 				Direction::Right,
 				Direction::NONE,
-				{ 0.2 },
+				{ 0.2f },
 			} );
 
 			_gesturePattern.steps.push_back(
@@ -337,7 +337,7 @@ namespace Sonar
 				{ -30, 30 },
 				Direction::Right,
 				Direction::NONE,
-				{ 0.2 }
+				{ 0.2f }
 			} );
 
 			_gesturePattern.steps.push_back(
@@ -346,7 +346,7 @@ namespace Sonar
 				{ -45, -45 },
 				Direction::Left,
 				Direction::Up,
-				{ 0.45 }
+				{ 0.45f }
 			} );
 
 			_gesturePattern.steps.push_back(
@@ -355,7 +355,7 @@ namespace Sonar
 				{ -90, -90 },
 				Direction::Left,
 				Direction::Up,
-				{ 0.45 }
+				{ 0.45f }
 			} );
 
 			_gesturePattern.resetPos = 15;
@@ -368,7 +368,7 @@ namespace Sonar
 				{ -30, 30 },
 				Direction::Right,
 				Direction::NONE,
-				{ 0.2 },
+				{ 0.2f },
 			} );
 
 			_gesturePattern.steps.push_back(
@@ -377,7 +377,7 @@ namespace Sonar
 				{ -30, 30 },
 				Direction::Right,
 				Direction::NONE,
-				{ 0.2 }
+				{ 0.2f }
 			} );
 
 			_gesturePattern.steps.push_back(
@@ -386,7 +386,7 @@ namespace Sonar
 				{ 45, 45 },
 				Direction::Left,
 				Direction::Down,
-				{ 0.45 }
+				{ 0.45f }
 			} );
 
 			_gesturePattern.steps.push_back(
@@ -395,7 +395,7 @@ namespace Sonar
 				{ 90, 90 },
 				Direction::Left,
 				Direction::Down,
-				{ 0.45 }
+				{ 0.45f }
 			} );
 
 			_gesturePattern.resetPos = 15;
@@ -408,7 +408,7 @@ namespace Sonar
 				{ -50, -50 },
 				Direction::NONE,
 				Direction::Up,
-				{ 0.2 },
+				{ 0.2f },
 			} );
 
 			_gesturePattern.steps.push_back(
@@ -417,7 +417,7 @@ namespace Sonar
 				{ -90, -90 },
 				Direction::NONE,
 				Direction::Up,
-				{ 0.2 }
+				{ 0.2f }
 			} );
 
 			_gesturePattern.steps.push_back(
@@ -426,7 +426,7 @@ namespace Sonar
 				{ -45, -45 },
 				Direction::Left,
 				Direction::Down,
-				{ 0.45 }
+				{ 0.45f }
 			} );
 
 			_gesturePattern.steps.push_back(
@@ -435,7 +435,7 @@ namespace Sonar
 				{ -20, -20 },
 				Direction::Left,
 				Direction::Down,
-				{ 0.45 }
+				{ 0.45f }
 			} );
 
 			_gesturePattern.resetPos = -15;
@@ -448,7 +448,7 @@ namespace Sonar
 				{ -50, -50 },
 				Direction::NONE,
 				Direction::Up,
-				{ 0.2 },
+				{ 0.2f },
 			} );
 
 			_gesturePattern.steps.push_back(
@@ -457,7 +457,7 @@ namespace Sonar
 				{ -90, -90 },
 				Direction::NONE,
 				Direction::Up,
-				{ 0.2 }
+				{ 0.2f }
 			} );
 
 			_gesturePattern.steps.push_back(
@@ -466,7 +466,7 @@ namespace Sonar
 				{ -45, -45 },
 				Direction::Right,
 				Direction::Down,
-				{ 0.45 }
+				{ 0.45f }
 			} );
 
 			_gesturePattern.steps.push_back(
@@ -475,7 +475,7 @@ namespace Sonar
 				{ -20, -20 },
 				Direction::Right,
 				Direction::Down,
-				{ 0.45 }
+				{ 0.45f }
 			} );
 
 			_gesturePattern.resetPos = -15;
@@ -488,7 +488,7 @@ namespace Sonar
 				{ 50, 50 },
 				Direction::NONE,
 				Direction::Down,
-				{ 0.2 },
+				{ 0.2f },
 			} );
 
 			_gesturePattern.steps.push_back(
@@ -497,7 +497,7 @@ namespace Sonar
 				{ 90, 90 },
 				Direction::NONE,
 				Direction::Down,
-				{ 0.2 }
+				{ 0.2f }
 			} );
 
 			_gesturePattern.steps.push_back(
@@ -506,7 +506,7 @@ namespace Sonar
 				{ 45, 45 },
 				Direction::Left,
 				Direction::Up,
-				{ 0.45 }
+				{ 0.45f }
 			} );
 
 			_gesturePattern.steps.push_back(
@@ -515,7 +515,7 @@ namespace Sonar
 				{ 20, 20 },
 				Direction::Left,
 				Direction::Up,
-				{ 0.45 }
+				{ 0.45f }
 			} );
 
 			_gesturePattern.resetPos = 15;
@@ -528,7 +528,7 @@ namespace Sonar
 				{ 50, 50 },
 				Direction::NONE,
 				Direction::Down,
-				{ 0.2 },
+				{ 0.2f },
 			} );
 
 			_gesturePattern.steps.push_back(
@@ -537,7 +537,7 @@ namespace Sonar
 				{ 90, 90 },
 				Direction::NONE,
 				Direction::Down,
-				{ 0.2 }
+				{ 0.2f }
 			} );
 
 			_gesturePattern.steps.push_back(
@@ -546,7 +546,7 @@ namespace Sonar
 				{ 45, 45 },
 				Direction::Right,
 				Direction::Up,
-				{ 0.45 }
+				{ 0.45f }
 			} );
 
 			_gesturePattern.steps.push_back(
@@ -555,7 +555,7 @@ namespace Sonar
 				{ 20, 20 },
 				Direction::Right,
 				Direction::Up,
-				{ 0.45 }
+				{ 0.45f }
 			} );
 
 			_gesturePattern.resetPos = 15;
@@ -574,7 +574,7 @@ namespace Sonar
 	bool Gesture::GetTotalDegreesTurned( const bool &isDegrees /*= true */ ) const
 	{
 		if ( !isDegrees )
-		{ return _totalDegreesTurned * ( 3.14159f / 180 ); }
+		{ return _totalDegreesTurned * ( 3.14159f / 180.0f ); }
 		else
 		{ return _totalDegreesTurned; }
 	}

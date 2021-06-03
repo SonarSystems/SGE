@@ -94,7 +94,7 @@ namespace Sonar
 
 	void Debug::RemoveCategory( const std::string &category )
 	{
-		for ( int i = 0; i < _categories.size( ); i++ )
+		for ( unsigned int i = 0; i < _categories.size( ); i++ )
 		{
 			if ( ToLower( _categories.at( i ).first ) == ToLower( category ) )
 			{ _categories.erase( _categories.begin( ) + i ); }
@@ -103,7 +103,7 @@ namespace Sonar
 
 	void Debug::UpdateCategory( const std::string &category, const bool &isEnabled )
 	{
-		for ( int i = 0; i < _categories.size( ); i++ )
+		for ( unsigned int i = 0; i < _categories.size( ); i++ )
 		{
 			if ( ToLower( _categories.at( i ).first ) == ToLower( category ) )
 			{ _categories.at( i ).second = isEnabled; }
@@ -112,7 +112,7 @@ namespace Sonar
 
 	bool Debug::IsCategoryEnabled( const std::string &category )
 	{
-		for ( int i = 0; i < _categories.size( ); i++ )
+		for ( unsigned int i = 0; i < _categories.size( ); i++ )
 		{
 			if ( ToLower( _categories.at( i ).first ) == ToLower( category ) )
 			{ return _categories.at( i ).second; }
