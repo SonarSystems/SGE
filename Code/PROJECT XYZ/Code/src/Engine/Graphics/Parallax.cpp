@@ -9,7 +9,7 @@ namespace Sonar
 
 	void Parallax::Update( const float &dt )
 	{
-		for ( int i = 0; i < _layers.size( ); i++ )
+		for ( unsigned int i = 0; i < _layers.size( ); i++ )
 		{
 			if ( _layerStatus.at( i ).first )
 			{ _layers.at( i ).Update( dt ); }
@@ -18,7 +18,7 @@ namespace Sonar
 
 	void Parallax::Draw( )
 	{
-		for ( int i = 0; i < _layers.size( ); i++ )
+		for ( unsigned int i = 0; i < _layers.size( ); i++ )
 		{
 			if ( _layerStatus.at( i ).first )
 			{ _layers.at( i ).Draw( ); }

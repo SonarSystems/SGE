@@ -165,17 +165,17 @@ namespace Sonar
 		/**
 		* \brief Clock to track the QTE countdown between events
 		*/
-		unsigned int _resetAmount;
+		int _resetAmount;
 
 		/**
 		* \brief How many times has the QTE failed
 		*/
-		unsigned int _failureCount;
+		int _failureCount;
 
 		/**
 		* \brief Number of events
 		*/
-		unsigned int _eventCount;
+		int _eventCount;
 
 	};
 }

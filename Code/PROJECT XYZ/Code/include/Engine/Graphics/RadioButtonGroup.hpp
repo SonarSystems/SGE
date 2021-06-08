@@ -67,7 +67,7 @@ namespace Sonar
         *
         * \param index Index of radio button to remove
         */
-        void RemoveRadioButton( const int &index );
+        void RemoveRadioButton( const unsigned int &index );
 
         /**
         * \brief Remove the first radio button

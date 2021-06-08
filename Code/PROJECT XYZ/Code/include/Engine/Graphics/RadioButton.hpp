@@ -284,7 +284,7 @@ namespace Sonar
         *
         * \return Output returns the selected time
         */
-        const unsigned int &GetSelectedTime( ) const;
+        const long long GetSelectedTime( ) const;
 
     private:
         /**
@@ -320,7 +320,7 @@ namespace Sonar
         /**
         * \brief The time the radio button was selected
         */
-        unsigned int _timeSelected;
-
+        long long _timeSelected;
+        
     };
 }

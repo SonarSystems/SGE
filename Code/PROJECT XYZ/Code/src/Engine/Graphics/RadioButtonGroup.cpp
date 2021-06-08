@@ -17,7 +17,7 @@ namespace Sonar
 		int selectedIndex = -1;
 		unsigned int timeSelected = 0;
 
-		for ( int i = 0; i < _radioButtons.size( ); i++ )
+		for ( unsigned int i = 0; i < _radioButtons.size( ); i++ )
 		{
 			_radioButtons.at( i )->Update( dt );
 
@@ -31,7 +31,7 @@ namespace Sonar
 
 		if ( selectedIndex >= 0 )
 		{
-			for ( int i = 0; i < _radioButtons.size( ); i++ )
+			for ( unsigned int i = 0; i < _radioButtons.size( ); i++ )
 			{
 				if ( i != selectedIndex )
 				{ _radioButtons.at( i )->DisableSelection( ); }
@@ -72,7 +72,7 @@ namespace Sonar
 		}
 	}
 
-	void RadioButtonGroup::RemoveRadioButton( const int &index )
+	void RadioButtonGroup::RemoveRadioButton( const unsigned int &index )
 	{
 		if ( index < _radioButtons.size( ) )
 		{ _radioButtons.erase( _radioButtons.begin( ) + index ); }

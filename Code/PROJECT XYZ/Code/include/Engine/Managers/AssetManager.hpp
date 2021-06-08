@@ -15,7 +15,7 @@ namespace Sonar
 		*/
 		AssetManager( ) { }
 
-		/**
+		/** 
 		 * \brief Class destructor
 		*/
 		~AssetManager( ) { }

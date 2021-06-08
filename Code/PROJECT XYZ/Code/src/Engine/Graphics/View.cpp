@@ -51,24 +51,24 @@ namespace Sonar
 	void View::Reset( const glm::vec4 &rectangle )
 	{ _view->reset( sf::FloatRect( rectangle.x, rectangle.y, rectangle.z, rectangle.w ) ); }
 
-	const glm::vec2 &View::GetCenter( ) const
+	const glm::vec2 View::GetCenter( ) const
 	{
 		sf::Vector2f center = _view->getCenter( );
 
 		return glm::vec2( center.x, center.y );
 	}
 
-	const glm::vec2 &View::GetSize( ) const
+	const glm::vec2 View::GetSize( ) const
 	{
 		sf::Vector2f size = _view->getSize( );
 
 		return glm::vec2( size.x, size.y );
 	}
 
-	const float &View::GetRotation( ) const
+	const float View::GetRotation( ) const
 	{ return _view->getRotation( ); }
 
-	const glm::vec4 &View::GetViewport( ) const
+	const glm::vec4 View::GetViewport( ) const
 	{
 		sf::FloatRect viewport = _view->getViewport( );
 

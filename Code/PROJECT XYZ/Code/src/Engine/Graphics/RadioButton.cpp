@@ -61,7 +61,7 @@ namespace Sonar
 		else if ( _outerLayer->IsMouseOver( ) )
 		{
 			Color checkedColor = _checkedColor;
-			checkedColor.SetAlpha( checkedColor.GetAlpha( ) * DEFAULT_RADIO_BUTTON_IS_MOUSE_OVER_ALPHA_MULTIPLIER );
+			checkedColor.SetAlpha( ( uint8_t )( checkedColor.GetAlpha( ) * DEFAULT_RADIO_BUTTON_IS_MOUSE_OVER_ALPHA_MULTIPLIER ) );
 
 			_insideLayer->SetInsideColor( checkedColor );
 
@@ -239,7 +239,7 @@ namespace Sonar
 	void RadioButton::ToggleSelection( )
 	{ _isSelected = !_isSelected; }
 
-	const unsigned int &RadioButton::GetSelectedTime( ) const
+	const long long RadioButton::GetSelectedTime( ) const
 	{ return _timeSelected; }
 }
 

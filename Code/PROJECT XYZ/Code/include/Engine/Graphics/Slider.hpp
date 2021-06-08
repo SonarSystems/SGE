@@ -430,7 +430,7 @@ namespace Sonar
         /**
         * \brief Moves the knob, plain and simplessss
         */
-        void MoveKnob( const float &position );
+        void MoveKnob( const int &position );
 
         /**
         * \brief Game data object

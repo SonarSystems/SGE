@@ -104,7 +104,7 @@ namespace Sonar
 		}
 	}
 
-	void Slider::MoveKnob( const float &position )
+	void Slider::MoveKnob( const int &position )
 	{
 		float scale = _background->GetScaleX( );
 		float knobRadiusScaled = _knob->GetRadius( ) * scale;
@@ -171,11 +171,11 @@ namespace Sonar
 		if ( Orientation::HORIZONTAL == _orientation )
 		{
 			knobPosition.x = position.x - ( _knob->GetRadius( ) * _knob->GetScaleX( ) ) + ( _background->GetWidth( ) * percentAlongNormalised * _background->GetScaleX( ) );
-			knobPosition.y = position.y + ( _background->GetHeight( ) * 0.5 * _background->GetScaleX( ) ) - ( _knob->GetRadius( ) * _knob->GetScaleX( ) );
+			knobPosition.y = position.y + ( _background->GetHeight( ) * 0.5f * _background->GetScaleX( ) ) - ( _knob->GetRadius( ) * _knob->GetScaleX( ) );
 		}
 		else if ( Orientation::VERTICAL == _orientation )
 		{
-			knobPosition.x = position.x + ( _background->GetWidth( ) * 0.5 * _background->GetScaleX( ) ) - ( _knob->GetRadius( ) * _knob->GetScaleX( ) );
+			knobPosition.x = position.x + ( _background->GetWidth( ) * 0.5f * _background->GetScaleX( ) ) - ( _knob->GetRadius( ) * _knob->GetScaleX( ) );
 			knobPosition.y = position.y - ( _knob->GetRadius( ) * _knob->GetScaleX( ) ) + ( _background->GetHeight( ) * percentAlongNormalised * _background->GetScaleX( ) );
 		}
 

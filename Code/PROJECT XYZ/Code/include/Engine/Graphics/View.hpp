@@ -110,28 +110,28 @@ namespace Sonar
 		*
 		* \return Output returns the view's center vector
 		*/
-		const glm::vec2 &GetCenter( ) const;
+		const glm::vec2 GetCenter( ) const;
 
 		/**
 		* \brief Get the view's size
 		*
 		* \return Output returns the view's size vector
 		*/
-		const glm::vec2 &GetSize( ) const;
+		const glm::vec2 GetSize( ) const;
 
 		/**
 		* \brief Get the view's rotation angle
 		*
 		* \return Output returns the view's rotation angle
 		*/
-		const float &GetRotation( ) const;
+		const float GetRotation( ) const;
 
 		/**
 		* \brief Get the view's viewport
 		*
 		* \return Output returns the view's viewport vector
 		*/
-		const glm::vec4 &GetViewport( ) const;
+		const glm::vec4 GetViewport( ) const;
 
 		/**
 		* \brief Move the view

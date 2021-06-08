@@ -33,7 +33,7 @@ namespace Sonar
 
 	void ScrollingBackground::Update( const float &dt )
 	{
-		for ( int i = 0; i < _backgrounds.size( ); i++ )
+		for ( unsigned int i = 0; i < _backgrounds.size( ); i++ )
 		{
 			if ( ScrollingBackground::DIRECTION::LEFT == _direction )
 			{
@@ -200,7 +200,7 @@ namespace Sonar
 	{
 		if ( ScrollingBackground::DIRECTION::LEFT == _direction )
 		{
-			for ( int i = 0; i < _backgrounds.size( ); i++ )
+			for ( unsigned int i = 0; i < _backgrounds.size( ); i++ )
 			{
 				if ( 0 == i )
 				{ _backgrounds.at( i )->SetPosition( _offsetX, _offsetY ); }
@@ -232,7 +232,7 @@ namespace Sonar
 		}
 		else if ( ScrollingBackground::DIRECTION::UP == _direction )
 		{
-			for ( int i = 0; i < _backgrounds.size( ); i++ )
+			for ( unsigned int i = 0; i < _backgrounds.size( ); i++ )
 			{
 				if ( 0 == i )
 				{ _backgrounds.at( i )->SetPosition( _offsetX, _offsetY ); }

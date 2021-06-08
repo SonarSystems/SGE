@@ -16,7 +16,7 @@ namespace Sonar
         if ( windowOnly )
         {
             // check if the mouse is outside of the window
-            if ( sf::Mouse::getPosition( window ).x < 0 || sf::Mouse::getPosition( window ).x > window.getSize( ).x || sf::Mouse::getPosition( window ).y < 0 || sf::Mouse::getPosition( window ).y > window.getSize( ).y )
+            if ( sf::Mouse::getPosition( window ).x < 0 || sf::Mouse::getPosition( window ).x > ( int )window.getSize( ).x || sf::Mouse::getPosition( window ).y < 0 || sf::Mouse::getPosition( window ).y > ( int )window.getSize( ).y )
             {
                 position.x = -1;
                 position.y = -1;

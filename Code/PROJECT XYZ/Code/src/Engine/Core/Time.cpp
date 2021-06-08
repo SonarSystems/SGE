@@ -2,11 +2,9 @@
 
 namespace Sonar
 {
-	Time::Time( ) : _time( 0 )
-	{ }
+	Time::Time( ) : _time( 0 ) { }
 
-	Time::Time( const long long &microseconds ) : _time( microseconds )
-	{ }
+	Time::Time( const long long &microseconds ) : _time( microseconds ) { }
 
 	float Time::AsSeconds( ) const
 	{ return _time * 0.000001f; }
@@ -36,13 +34,13 @@ namespace Sonar
 	{ return seconds * 1000.0f; }
 
 	static long long SecondsToMicroseconds( float seconds )
-	{ return seconds * 1000000; }
+	{ return ( long long )( seconds * 1000000.0f ); }
 
 	static float MillisecondsToSeconds( float milliseconds )
 	{ return milliseconds * 0.001f; }
 
 	static long long MillisecondsToMicroseconds( float milliseconds )
-	{ return milliseconds * 1000; }
+	{ return ( long long )( milliseconds * 1000 ); }
 
 	static float MicrosecondsToSeconds( long long microseconds )
 	{ return microseconds * 0.000001f; }
