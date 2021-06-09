@@ -22,7 +22,7 @@ namespace Sonar
 
 		ScoreInfo scoreInfo;
 
-		for ( int i = 0; i < _maxNumOfHighScores; i++ )
+		for ( unsigned int i = 0; i < _maxNumOfHighScores; i++ )
 		{
 			if ( i < scoreFileData.size( ) )
 			{
@@ -64,7 +64,7 @@ namespace Sonar
 
 	int HighScoreManager::CheckScore( const std::vector<long long> &scores, const long long &score ) const
 	{
-		for ( int i = 0; i < scores.size( ); i++ )
+		for ( unsigned int i = 0; i < scores.size( ); i++ )
 		{
 			if ( score > scores.at( i ) )
 			{ return i; }
@@ -86,7 +86,7 @@ namespace Sonar
 
 		ScoreInfo scoreInfo;
 
-		for ( int i = 0; i < maxNumOfHighScores; i++ )
+		for ( unsigned int i = 0; i < maxNumOfHighScores; i++ )
 		{
 			scoreInfo._name = defaultName;
 			scoreInfo._dateTime = defaultDateTime;
@@ -99,12 +99,12 @@ namespace Sonar
 		SaveFile( filepath );
 	}
 
-	void HighScoreManager::UpdateScores( const int &position, const long long &score, const std::string &name )
+	void HighScoreManager::UpdateScores( const unsigned int &position, const long long &score, const std::string &name )
 	{
 		std::vector<ScoreInfo> newScoresList;
 		std::vector<long long> newScores;
 
-		for ( int i = 0; i < position; i++ )
+		for ( unsigned int i = 0; i < position; i++ )
 		{
 			newScoresList.push_back( _scoresList.at( i ) );
 			newScores.push_back( _scores.at( i ) );
@@ -118,7 +118,7 @@ namespace Sonar
 		newScoresList.push_back( newScoreinfo );
 		newScores.push_back( score );
 
-		for ( int i = position; i < _scoresList.size( ) - 1; i++ )
+		for ( unsigned int i = position; i < _scoresList.size( ) - 1; i++ )
 		{
 			newScoresList.push_back( _scoresList.at( i ) );
 			newScores.push_back( _scores.at( i ) );
@@ -132,7 +132,7 @@ namespace Sonar
 	{
 		nlohmann::json scoreListJSON;
 
-		for ( int i = 0; i < _scoresList.size( ); i++ )
+		for ( unsigned int i = 0; i < _scoresList.size( ); i++ )
 		{
 			scoreListJSON[std::to_string( i + 1 )] =
 			{

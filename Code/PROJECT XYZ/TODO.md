@@ -3,7 +3,6 @@ GAME
 
 ENGINE
 -----------------------------------------------------------------
-* Fix all warnings
 * GUI
     - FPS counter - https://github.com/Hopson97/SFML-Game-Framework/blob/master/Source/Util/FPSCounter.cpp
         - ***LOOK INTO IMGUI ESPECIALLY FOR THE GRAPH STUFF***

@@ -29,13 +29,13 @@ namespace Sonar
 	*/
 
 
-	Joystick::Joystick( const float &joystickID )
+	Joystick::Joystick( const int &joystickID )
 	{
 		_gamepad = Gamepad( joystickID );
 
 		_leftRumble = _rightRumble = 0.0f;
 
-		_joystickID = 0.0f;
+		_joystickID = 0;
 	}
 
 	Joystick::~Joystick(  ) { }
@@ -179,13 +179,15 @@ namespace Sonar
 			else
 			{ return false; }
 		}
-		else
+		/*else
 		{
 			if ( IsGestureTriggered( joystickID, analogueStick, Direction::Left ) )
 			{
 
 			}
-		}
+		}*/
+
+		return false;
 	}
 
 	float Joystick::GetJoystickAngle( const unsigned int &joystick, const Axis &xAxis, const Axis &yAxis, const bool &isDegrees, const std::pair<float, float> &deadzone )
@@ -194,7 +196,7 @@ namespace Sonar
 		float yCoord = Joystick::GetAxisPosition( joystick, yAxis, deadzone.second );
 
 		if ( 0 == xCoord )
-		{ xCoord = 0.0001; }
+		{ xCoord = 0.0001f; }
 
 		float angle = atan( yCoord / -xCoord );
 

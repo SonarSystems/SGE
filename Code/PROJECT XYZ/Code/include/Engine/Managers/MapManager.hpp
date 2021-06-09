@@ -37,7 +37,7 @@ namespace Sonar
 		* \param posX X position in the map
 		* \param posY Y position in the map
 		*/
-		void SetValue( const char &value, const int &posX, const int &posY );
+		void SetValue( const char &value, const unsigned int &posX, const unsigned int &posY );
 
 		/**
 		* \brief Get a map value at a specific position
@@ -47,7 +47,7 @@ namespace Sonar
 		*
 		* \return Output returns a map value
 		*/
-		char GetValue( const int &posX, const int &posY ) const;
+		char GetValue( const unsigned int &posX, const unsigned int &posY ) const;
 
 		/**
 		* \brief Save the map array

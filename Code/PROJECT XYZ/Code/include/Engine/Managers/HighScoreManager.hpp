@@ -99,7 +99,7 @@ namespace Sonar
 		* \param score Score to add
 		* \param name Name of the player who has achieved greatness
 		*/
-		void UpdateScores( const int &position, const long long &score, const std::string &name );
+		void UpdateScores( const unsigned int &position, const long long &score, const std::string &name );
 
 		/**
 		* \brief Save the file with the local scores

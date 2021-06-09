@@ -148,6 +148,7 @@ namespace Sonar
 		CloseFile( );
 
 		_fileStatus = FILE_STATUS::UNKNOWN_ERROR;
+		
 		return "";
 	}
 

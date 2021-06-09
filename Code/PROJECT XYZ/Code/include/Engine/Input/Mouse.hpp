@@ -82,7 +82,7 @@ namespace Sonar
          * \param x Screen's x coordinate
          * \param y Screen's y coordinate
         */
-        static void SetPosition( const float &x, const float &y );
+        static void SetPosition( const int &x, const int &y );
         /**
          * \brief Set the mouse position relative to the game window
          *
@@ -90,7 +90,7 @@ namespace Sonar
          * \param y Screen's y coordinate
          * \param window Game window
         */
-        static void SetPosition( const float &x, const float &y, const sf::RenderWindow &window );
+        static void SetPosition( const int &x, const int &y, const sf::RenderWindow &window );
         
         /**
          * \brief Check if multiple buttons have been pressed

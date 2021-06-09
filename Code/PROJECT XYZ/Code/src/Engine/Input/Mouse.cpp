@@ -29,10 +29,10 @@ namespace Sonar
     glm::vec2 Mouse::GetScreenPosition( )
     { return glm::vec2( sf::Mouse::getPosition( ).x, sf::Mouse::getPosition( ).y ); }
 
-    void Mouse::SetPosition( const float &x, const float &y )
+    void Mouse::SetPosition( const int &x, const int &y )
     { sf::Mouse::setPosition( sf::Vector2i( x, y ) ); }
 
-    void Mouse::SetPosition( const float &x, const float &y, const sf::RenderWindow &window )
+    void Mouse::SetPosition( const int &x, const int &y, const sf::RenderWindow &window )
     { sf::Mouse::setPosition( sf::Vector2i( x, y ), window ); }
 
     bool Mouse::ChordPressed( const std::initializer_list<Button> &buttons )

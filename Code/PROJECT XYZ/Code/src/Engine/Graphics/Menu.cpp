@@ -9,19 +9,19 @@ namespace Sonar
 
 	void Menu::Draw( )
 	{
-		for ( auto component : _menuComponents )
+		for ( const auto &component : _menuComponents )
 		{ component->Draw( ); }
 	}
 
 	void Menu::Update( const float &dt )
 	{
-		for ( auto component : _menuComponents )
+		for ( const auto &component : _menuComponents )
 		{ component->Update( dt ); }
 	}
 
 	void Menu::PollInput( const float &dt, const Event &event )
 	{
-		for ( auto component : _menuComponents )
+		for ( const auto &component : _menuComponents )
 		{ component->PollInput( dt, event ); }
 	}
 
@@ -47,7 +47,7 @@ namespace Sonar
 		}
 	}
 
-	void Menu::RemoveComponent( const int &index )
+	void Menu::RemoveComponent( const unsigned int &index )
 	{
 		if ( index < _menuComponents.size( ) )
 		{ _menuComponents.erase( _menuComponents.begin( ) + index ); }

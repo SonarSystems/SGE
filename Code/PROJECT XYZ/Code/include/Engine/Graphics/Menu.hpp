@@ -63,7 +63,7 @@ namespace Sonar
         *
         * \param index Index of component to remove
         */
-        void RemoveComponent( const int &index );
+        void RemoveComponent( const unsigned int &index );
 
         /**
         * \brief Remove the first component from the menu

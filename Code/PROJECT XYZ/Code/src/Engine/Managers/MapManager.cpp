@@ -24,20 +24,20 @@ namespace Sonar
 
 	void MapManager::InitializeMapWithAValue( const char &value )
 	{
-		for ( int y = 0; y < _arraySize[1]; y++ )
+		for ( unsigned int y = 0; y < _arraySize[1]; y++ )
 		{
-			for ( int x = 0; x < _arraySize[0]; x++ )
+			for ( unsigned int x = 0; x < _arraySize[0]; x++ )
 			{ _map[y][x] = value; }
 		}
 	}
 
-	void MapManager::SetValue( const char &value, const int &posX, const int &posY )
+	void MapManager::SetValue( const char &value, const unsigned int &posX, const unsigned int &posY )
 	{
 		if ( posX < _arraySize[0] && posY < _arraySize[1] )
 		{ _map[posY][posX] = value; }
 	}
 
-	char MapManager::GetValue( const int &posX, const int &posY ) const
+	char MapManager::GetValue( const unsigned int &posX, const unsigned int &posY ) const
 	{
 		if ( posX < _arraySize[0] && posY < _arraySize[1] )
 		{ return _map[posY][posX]; }
@@ -49,9 +49,9 @@ namespace Sonar
 	{
 		std::string mapCSV = "";
 
-		for ( int y = 0; y < _arraySize[1]; y++ )
+		for ( unsigned int y = 0; y < _arraySize[1]; y++ )
 		{
-			for ( int x = 0; x < _arraySize[0]; x++ )
+			for ( unsigned int x = 0; x < _arraySize[0]; x++ )
 			{
 				mapCSV += _map[x][y];
 
@@ -107,7 +107,7 @@ namespace Sonar
 			
 			_map[y] = new char[x];
 
-			for ( int i = 0; i < allCharsInARow.size( ); i++ )
+			for ( unsigned int i = 0; i < allCharsInARow.size( ); i++ )
 			{ _map[y][i] = allCharsInARow.at( i ); }
 
 			y++;

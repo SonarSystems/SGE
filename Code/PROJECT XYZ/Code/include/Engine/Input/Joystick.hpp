@@ -38,7 +38,7 @@ namespace Sonar
         /**
         * \brief Class constructor
         */
-        Joystick( const float &joystickID );
+        Joystick( const int &joystickID );
 
         /**
         * \brief Class destructor
@@ -208,7 +208,7 @@ namespace Sonar
         *
         * \return Output returns the joystick angle
         */
-        static float GetJoystickAngle( const unsigned int &joystick, const Axis &xAxis, const Axis &yAxis, const bool &isDegrees = true, const std::pair<float, float> &deadzone = { 0.0, 0.0 } );
+        static float GetJoystickAngle( const unsigned int &joystick, const Axis &xAxis, const Axis &yAxis, const bool &isDegrees = true, const std::pair<float, float> &deadzone = { 0.0f, 0.0f } );
 
         /**
         * \brief Get the distance of the joystick from the center/origin
@@ -220,7 +220,7 @@ namespace Sonar
         *
         * \return Output returns the joystick distance
         */
-        static float GetJoystickDistanceFromCenter( const unsigned int &joystick, const Axis &xAxis, const Axis &yAxis, const std::pair<float, float> &deadzone = { 0.0, 0.0 } );
+        static float GetJoystickDistanceFromCenter( const unsigned int &joystick, const Axis &xAxis, const Axis &yAxis, const std::pair<float, float> &deadzone = { 0.0f, 0.0f } );
 
         /**
         * \brief Identify a joysticks manufacturer and product description

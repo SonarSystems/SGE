@@ -15,7 +15,7 @@ namespace Sonar
 	void RadioButtonGroup::Update( const float &dt )
 	{
 		int selectedIndex = -1;
-		unsigned int timeSelected = 0;
+		long long timeSelected = 0;
 
 		for ( unsigned int i = 0; i < _radioButtons.size( ); i++ )
 		{

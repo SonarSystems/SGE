@@ -244,8 +244,8 @@ namespace Sonar
 		{
 			_gesturePattern.steps.push_back(
 			{
-				{ -50, -50 },
-				{ -30, 30 },
+				{ -50.0f, -50.0f },
+				{ -30.0f, 30.0f },
 				Direction::Left,
 				Direction::NONE,
 				{ 0.2f },
@@ -253,8 +253,8 @@ namespace Sonar
 
 			_gesturePattern.steps.push_back(
 			{
-				{ -90, -90 },
-				{ -30, 30 },
+				{ -90.0f, -90.0f },
+				{ -30.0f, 30.0f },
 				Direction::Left,
 				Direction::NONE,
 				{ 0.2f }
@@ -262,8 +262,8 @@ namespace Sonar
 
 			_gesturePattern.steps.push_back(
 			{
-				{ -45, -45 },
-				{ -45, -45 },
+				{ -45.0f, -45.0f },
+				{ -45.0f, -45.0f },
 				Direction::Right,
 				Direction::Up,
 				{ 0.45f }
@@ -271,21 +271,21 @@ namespace Sonar
 
 			_gesturePattern.steps.push_back(
 			{
-				{ -20, -20 },
-				{ -90, -90 },
+				{ -20.0f, -20.0f },
+				{ -90.0f, -90.0f },
 				Direction::Right,
 				Direction::Up,
 				{ 0.45f }
 			} );
 
-			_gesturePattern.resetPos = -15;
+			_gesturePattern.resetPos = -15.0f;
 		}
 		else if ( Pattern::LeftCounterClockwiseDown == _gesturePattern.pattern )
 		{
 			_gesturePattern.steps.push_back(
 			{
-				{ -50, -50 },
-				{ -30, 30 },
+				{ -50.0f, -50.0f },
+				{ -30.0f, 30.0f },
 				Direction::Left,
 				Direction::NONE,
 				{ 0.2f },
@@ -293,8 +293,8 @@ namespace Sonar
 
 			_gesturePattern.steps.push_back(
 			{
-				{ -90, -90 },
-				{ -30, 30 },
+				{ -90.0f, -90.0f },
+				{ -30.0f, 30.0f },
 				Direction::Left,
 				Direction::NONE,
 				{ 0.2f }
@@ -302,8 +302,8 @@ namespace Sonar
 
 			_gesturePattern.steps.push_back(
 			{
-				{ -45, -45 },
-				{ 45, 45 },
+				{ -45.0f, -45.0f },
+				{ 45.0f, 45.0f },
 				Direction::Right,
 				Direction::Down,
 				{ 0.45f }
@@ -311,21 +311,21 @@ namespace Sonar
 
 			_gesturePattern.steps.push_back(
 			{
-				{ -20, -20 },
-				{ 90, 90 },
+				{ -20.0f, -20.0f },
+				{ 90.0f, 90.0f },
 				Direction::Right,
 				Direction::Down,
 				{ 0.45f }
 			} );
 
-			_gesturePattern.resetPos = -15;
+			_gesturePattern.resetPos = -15.0f;
 		}
 		else if ( Pattern::RightCounterClockwiseUp == _gesturePattern.pattern )
 		{
 			_gesturePattern.steps.push_back(
 			{
-				{ 50, 50 },
-				{ -30, 30 },
+				{ 50.0f, 50.0f },
+				{ -30.0f, 30.0f },
 				Direction::Right,
 				Direction::NONE,
 				{ 0.2f },
@@ -333,8 +333,8 @@ namespace Sonar
 
 			_gesturePattern.steps.push_back(
 			{
-				{ 90, 90 },
-				{ -30, 30 },
+				{ 90.0f, 90.0f },
+				{ -30.0f, 30.0f },
 				Direction::Right,
 				Direction::NONE,
 				{ 0.2f }
@@ -342,8 +342,8 @@ namespace Sonar
 
 			_gesturePattern.steps.push_back(
 			{
-				{ 45, 45 },
-				{ -45, -45 },
+				{ 45.0f, 45.0f },
+				{ -45.0f, -45.0f },
 				Direction::Left,
 				Direction::Up,
 				{ 0.45f }
@@ -351,21 +351,21 @@ namespace Sonar
 
 			_gesturePattern.steps.push_back(
 			{
-				{ 20, 20 },
-				{ -90, -90 },
+				{ 20.0f, 20.0f },
+				{ -90.0f, -90.0f },
 				Direction::Left,
 				Direction::Up,
 				{ 0.45f }
 			} );
 
-			_gesturePattern.resetPos = 15;
+			_gesturePattern.resetPos = 15.0f;
 		}
 		else if ( Pattern::RightClockwiseDown == _gesturePattern.pattern )
 		{
 			_gesturePattern.steps.push_back(
 			{
-				{ 50, 50 },
-				{ -30, 30 },
+				{ 50.0f, 50.0f },
+				{ -30.0f, 30.0f },
 				Direction::Right,
 				Direction::NONE,
 				{ 0.2f },
@@ -373,8 +373,8 @@ namespace Sonar
 
 			_gesturePattern.steps.push_back(
 			{
-				{ 90, 90 },
-				{ -30, 30 },
+				{ 90.0f, 90.0f },
+				{ -30.0f, 30.0f },
 				Direction::Right,
 				Direction::NONE,
 				{ 0.2f }
@@ -382,8 +382,8 @@ namespace Sonar
 
 			_gesturePattern.steps.push_back(
 			{
-				{ 45, 45 },
-				{ 45, 45 },
+				{ 45.0f, 45.0f },
+				{ 45.0f, 45.0f },
 				Direction::Left,
 				Direction::Down,
 				{ 0.45f }
@@ -391,21 +391,21 @@ namespace Sonar
 
 			_gesturePattern.steps.push_back(
 			{
-				{ 20, 20 },
-				{ 90, 90 },
+				{ 20.0f, 20.0f },
+				{ 90.0f, 90.0f },
 				Direction::Left,
 				Direction::Down,
 				{ 0.45f }
 			} );
 
-			_gesturePattern.resetPos = 15;
+			_gesturePattern.resetPos = 15.0f;
 		}
 		else if ( Pattern::UpCounterClockwiseLeft == _gesturePattern.pattern )
 		{
 			_gesturePattern.steps.push_back(
 			{
-				{ -30, 30 },
-				{ -50, -50 },
+				{ -30.0f, 30.0f },
+				{ -50.0f, -50.0f },
 				Direction::NONE,
 				Direction::Up,
 				{ 0.2f },
@@ -413,8 +413,8 @@ namespace Sonar
 
 			_gesturePattern.steps.push_back(
 			{
-				{ -30, 30 },
-				{ -90, -90 },
+				{ -30.0f, 30.0f },
+				{ -90.0f, -90.0f },
 				Direction::NONE,
 				Direction::Up,
 				{ 0.2f }
@@ -422,8 +422,8 @@ namespace Sonar
 
 			_gesturePattern.steps.push_back(
 			{
-				{ -45, -45 },
-				{ -45, -45 },
+				{ -45.0f, -45.0f },
+				{ -45.0f, -45.0f },
 				Direction::Left,
 				Direction::Down,
 				{ 0.45f }
@@ -431,21 +431,21 @@ namespace Sonar
 
 			_gesturePattern.steps.push_back(
 			{
-				{ -90, -90 },
-				{ -20, -20 },
+				{ -90.0f, -90.0f },
+				{ -20.0f, -20.0f },
 				Direction::Left,
 				Direction::Down,
 				{ 0.45f }
 			} );
 
-			_gesturePattern.resetPos = -15;
+			_gesturePattern.resetPos = -15.0f;
 		}
 		else if ( Pattern::UpClockwiseRight == _gesturePattern.pattern )
 		{
 			_gesturePattern.steps.push_back(
 			{
-				{ -30, 30 },
-				{ -50, -50 },
+				{ -30.0f, 30.0f },
+				{ -50.0f, -50.0f },
 				Direction::NONE,
 				Direction::Up,
 				{ 0.2f },
@@ -453,8 +453,8 @@ namespace Sonar
 
 			_gesturePattern.steps.push_back(
 			{
-				{ -30, 30 },
-				{ -90, -90 },
+				{ -30.0f, 30.0f },
+				{ -90.0f, -90.0f },
 				Direction::NONE,
 				Direction::Up,
 				{ 0.2f }
@@ -462,8 +462,8 @@ namespace Sonar
 
 			_gesturePattern.steps.push_back(
 			{
-				{ 45, 45 },
-				{ -45, -45 },
+				{ 45.0f, 45.0f },
+				{ -45.0f, -45.0f },
 				Direction::Right,
 				Direction::Down,
 				{ 0.45f }
@@ -471,21 +471,21 @@ namespace Sonar
 
 			_gesturePattern.steps.push_back(
 			{
-				{ 90, 90 },
-				{ -20, -20 },
+				{ 90.0f, 90.0f },
+				{ -20.0f, -20.0f },
 				Direction::Right,
 				Direction::Down,
 				{ 0.45f }
 			} );
 
-			_gesturePattern.resetPos = -15;
+			_gesturePattern.resetPos = -15.0f;
 		}
 		else if ( Pattern::DownClockwiseLeft == _gesturePattern.pattern )
 		{
 			_gesturePattern.steps.push_back(
 			{
-				{ -30, 30 },
-				{ 50, 50 },
+				{ -30.0f, 30.0f },
+				{ 50.0f, 50.0f },
 				Direction::NONE,
 				Direction::Down,
 				{ 0.2f },
@@ -493,8 +493,8 @@ namespace Sonar
 
 			_gesturePattern.steps.push_back(
 			{
-				{ -30, 30 },
-				{ 90, 90 },
+				{ -30.0f, 30.0f },
+				{ 90.0f, 90.0f },
 				Direction::NONE,
 				Direction::Down,
 				{ 0.2f }
@@ -502,8 +502,8 @@ namespace Sonar
 
 			_gesturePattern.steps.push_back(
 			{
-				{ -45, -45 },
-				{ 45, 45 },
+				{ -45.0f, -45.0f },
+				{ 45.0f, 45.0f },
 				Direction::Left,
 				Direction::Up,
 				{ 0.45f }
@@ -511,21 +511,21 @@ namespace Sonar
 
 			_gesturePattern.steps.push_back(
 			{
-				{ -90, -90 },
-				{ 20, 20 },
+				{ -90.0f, -90.0f },
+				{ 20.0f, 20.0f },
 				Direction::Left,
 				Direction::Up,
 				{ 0.45f }
 			} );
 
-			_gesturePattern.resetPos = 15;
+			_gesturePattern.resetPos = 15.0f;
 		}
 		else if ( Pattern::DownCounterClockwiseRight == _gesturePattern.pattern )
 		{
 			_gesturePattern.steps.push_back(
 			{
-				{ -30, 30 },
-				{ 50, 50 },
+				{ -30.0f, 30.0f },
+				{ 50.0f, 50.0f },
 				Direction::NONE,
 				Direction::Down,
 				{ 0.2f },
@@ -533,8 +533,8 @@ namespace Sonar
 
 			_gesturePattern.steps.push_back(
 			{
-				{ -30, 30 },
-				{ 90, 90 },
+				{ -30.0f, 30.0f },
+				{ 90.0f, 90.0f },
 				Direction::NONE,
 				Direction::Down,
 				{ 0.2f }
@@ -542,8 +542,8 @@ namespace Sonar
 
 			_gesturePattern.steps.push_back(
 			{
-				{ 45, 45 },
-				{ 45, 45 },
+				{ 45.0f, 45.0f },
+				{ 45.0f, 45.0f },
 				Direction::Right,
 				Direction::Up,
 				{ 0.45f }
@@ -551,14 +551,14 @@ namespace Sonar
 
 			_gesturePattern.steps.push_back(
 			{
-				{ 90, 90 },
-				{ 20, 20 },
+				{ 90.0f, 90.0f },
+				{ 20.0f, 20.0f },
 				Direction::Right,
 				Direction::Up,
 				{ 0.45f }
 			} );
 
-			_gesturePattern.resetPos = 15;
+			_gesturePattern.resetPos = 15.0f;
 		}
 
 		SetResetAxis( );
