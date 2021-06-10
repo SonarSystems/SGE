@@ -5,7 +5,7 @@ ENGINE
 -----------------------------------------------------------------
 * GUI
     - FPS counter - https://github.com/Hopson97/SFML-Game-Framework/blob/master/Source/Util/FPSCounter.cpp
-        - ***LOOK INTO IMGUI ESPECIALLY FOR THE GRAPH STUFF***
+        - ***LOOK INTO IMGUI ESPECIALLY FOR THE GRAPH STUFF*** - https://github.com/eliasdaler/imgui-sfml
         - **Part of DEBUG CLASS**
         - **MAKE IT LIKE DOOM'S**
         - Choose which corner of the screen to put it in
