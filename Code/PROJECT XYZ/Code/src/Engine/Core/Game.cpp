@@ -8,23 +8,23 @@ namespace Sonar
         _data->debug = Debug::getInstance( );
         
 		_data->window.create( sf::VideoMode( width, height ), title, sf::Style::Close | sf::Style::Titlebar );
-		_data->machine.AddState( StateRef( new SplashState( this->_data ) ) );
+		_data->machine.AddState( StateRef( new SplashState( _data ) ) );
 
-		this->Run( );
+		Run( );
 	}
 
 	void Game::Run( )
 	{
 		float newTime, frameTime, interpolation;
 
-		float currentTime = this->_clock.getElapsedTime( ).asSeconds( );
+		float currentTime = _clock.getElapsedTime( ).asSeconds( );
 		float accumulator = 0.0f;
 
-		while ( this->_data->window.isOpen( ) )
+		while ( _data->window.isOpen( ) )
 		{
-			this->_data->machine.ProcessStateChanges( );
+			_data->machine.ProcessStateChanges( );
 
-			newTime = this->_clock.getElapsedTime( ).asSeconds( );
+			newTime = _clock.getElapsedTime( ).asSeconds( );
 			frameTime = newTime - currentTime;
 
 			if ( frameTime > 0.25f )
@@ -37,26 +37,26 @@ namespace Sonar
 			{
                 sf::Event event;
                 
-                while ( this->_data->window.pollEvent( event ) )
+                while ( _data->window.pollEvent( event ) )
                 {
                     if ( sf::Event::Closed == event.type )
-                    { this->_data->window.close( ); }
+                    { _data->window.close( ); }
                                         
-                    this->_data->machine.GetActiveState( )->PollInput( dt, Event( event ) );
+                    _data->machine.GetActiveState( )->PollInput( dt, Event( event ) );
                 }
                 
-				this->_data->machine.GetActiveState( )->Update( dt );
+				_data->machine.GetActiveState( )->Update( dt );
 
 				accumulator -= dt;
 			}
 
 			interpolation = accumulator / dt;
             
-            this->_data->window.clear( sf::Color( _data->backgroundColor.GetRed( ), _data->backgroundColor.GetGreen( ), _data->backgroundColor.GetBlue( ), _data->backgroundColor.GetAlpha( ) ) );
+			_data->window.clear( sf::Color( _data->backgroundColor.GetRed( ), _data->backgroundColor.GetGreen( ), _data->backgroundColor.GetBlue( ), _data->backgroundColor.GetAlpha( ) ) );
+			
+			_data->machine.GetActiveState( )->Draw( interpolation );
             
-			this->_data->machine.GetActiveState( )->Draw( interpolation );
-            
-            this->_data->window.display( );
+            _data->window.display( );
 		}
 	}
 }

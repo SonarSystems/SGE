@@ -196,5 +196,7 @@ namespace Sonar
             SensorEvent           sensor;            // Sensor event parameters (Event::SensorChanged)
         };
 
+        sf::Event _event;
+
     };
 }

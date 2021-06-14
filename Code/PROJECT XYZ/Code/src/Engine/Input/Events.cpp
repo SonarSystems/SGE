@@ -8,6 +8,8 @@ namespace Sonar
      */
     Event::Event( const sf::Event &event )
     {
+        _event = event;
+
         this->type = ( EventType )event.type;
         
         this->size.width = event.size.width;

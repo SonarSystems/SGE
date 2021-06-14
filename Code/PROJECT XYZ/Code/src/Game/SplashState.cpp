@@ -4,6 +4,8 @@ namespace Sonar
 {
 	SplashState::SplashState( GameDataRef data ) : _data( data )
 	{
+		ImGui::SFML::Init( _data->window );
+
         player = new Player( _data );
         physicsWorld = new PhysicsWorld( _data );
 
@@ -141,6 +143,10 @@ namespace Sonar
 
 	void SplashState::PollInput( const float &dt, const Event &event )
 	{
+
+		ImGui::SFML::ProcessEvent( event._event );
+
+
         player->HandleInput( dt );
 
 		if ( Event::MouseWheelScrolled == event.type )
@@ -163,6 +169,7 @@ namespace Sonar
 
 	void SplashState::Update( const float &dt )
 	{
+		
         //player->Update( dt );
         
         //physicsWorld->Update( dt );
@@ -179,12 +186,14 @@ namespace Sonar
 		{ spdlog::info( "SETTINGS" ); }
 		else if ( buttonGroup->GetButtonClickedIndex( ) == 2 )
 		{ spdlog::info( "QUIT" ); }
+
 	}
 
 	void SplashState::Draw( const float &dt )
 	{
         //player->Draw( dt );
 		//physicsWorld->Draw( dt );
+
 
 		menu->Draw( );
 
@@ -193,5 +202,31 @@ namespace Sonar
 		//view->Draw( );
 
 		//textBox->Draw( );
+
+		ImGui::SFML::Update( _data->window, deltaClock.restart( ) );
+
+		ImGui::Begin( "Sample window" ); // begin window
+
+										 // Background color edit
+		if ( ImGui::ColorEdit3( "Background color", color ) ) {
+			// this code gets called if color value changes, so
+			// the background color is upgraded automatically!
+			bgColor.r = static_cast< sf::Uint8 >( color[0] * 255.f );
+			bgColor.g = static_cast< sf::Uint8 >( color[1] * 255.f );
+			bgColor.b = static_cast< sf::Uint8 >( color[2] * 255.f );
+		}
+
+		// Window title text edit
+		ImGui::InputText( "Window title", windowTitle, 255 );
+
+		if ( ImGui::Button( "Update window title" ) ) {
+			// this code gets if user clicks on the button
+			// yes, you could have written if(ImGui::InputText(...))
+			// but I do this to show how buttons work :)
+			_data->window.setTitle( windowTitle );
+		}
+		ImGui::End( ); // end window
+
+		ImGui::SFML::Render( _data->window );
 	}
 }
