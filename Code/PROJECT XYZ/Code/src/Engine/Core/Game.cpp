@@ -17,14 +17,14 @@ namespace Sonar
 	{
 		float newTime, frameTime, interpolation;
 
-		float currentTime = _clock.getElapsedTime( ).asSeconds( );
+		float currentTime = _clock.GetElapsedTime( ).AsSeconds( );
 		float accumulator = 0.0f;
 
 		while ( _data->window.isOpen( ) )
 		{
 			_data->machine.ProcessStateChanges( );
 
-			newTime = _clock.getElapsedTime( ).asSeconds( );
+			newTime = _clock.GetElapsedTime( ).AsSeconds( );
 			frameTime = newTime - currentTime;
 
 			if ( frameTime > 0.25f )

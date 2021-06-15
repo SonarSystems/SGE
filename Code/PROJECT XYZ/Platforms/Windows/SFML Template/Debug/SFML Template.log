@@ -1,10 +1,7 @@
-﻿  Game.cpp
-  SplashState.cpp
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(126,16): warning C4834: discarding return value of function with 'nodiscard' attribute
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(127,16): warning C4834: discarding return value of function with 'nodiscard' attribute
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(128,16): warning C4834: discarding return value of function with 'nodiscard' attribute
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(129,16): warning C4834: discarding return value of function with 'nodiscard' attribute
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(130,16): warning C4834: discarding return value of function with 'nodiscard' attribute
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(131,16): warning C4834: discarding return value of function with 'nodiscard' attribute
-  Generating Code...
-  SFML Template.vcxproj -> C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\SFML Template.exe
+﻿  Window.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Core\Window.cpp(42): error C4716: 'Sonar::Window::PollEvent': must return a value
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Core\Window.cpp(52): error C4716: 'Sonar::Window::GetPosition': must return a value
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Core\Window.cpp(47): error C4716: 'Sonar::Window::WaitEvent': must return a value
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Core\Window.cpp(62): error C4716: 'Sonar::Window::GetSize': must return a value
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Core\Window.cpp(117): error C4716: 'Sonar::Window::SetActive': must return a value
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Core\Window.cpp(127): error C4716: 'Sonar::Window::HasFocus': must return a value

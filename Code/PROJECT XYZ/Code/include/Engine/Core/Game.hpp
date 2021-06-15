@@ -8,6 +8,7 @@
 #include "StateMachine.hpp"
 #include "Managers/AssetManager.hpp"
 #include "External/b2GLDraw.h"
+#include "Core/Clock.hpp"
 #include "Core/Debug.hpp"
 #include "Graphics/Color.hpp"
 
@@ -51,7 +52,7 @@ namespace Sonar
         /**
          * \brief Game clock
         */
-		sf::Clock _clock;
+		Clock _clock;
 
         /**
          * \brief Game data variable for use within the game code

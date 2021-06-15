@@ -4,6 +4,9 @@ GAME
 ENGINE
 -----------------------------------------------------------------
 * GUI
+    - Window Abstraction
+    - Game.hpp/Game.cpp Abstraction
+    - Fix ImGui clock stuff and abstract so using Sonar Clock and Color Classes
     - FPS counter - https://github.com/Hopson97/SFML-Game-Framework/blob/master/Source/Util/FPSCounter.cpp
         - ***LOOK INTO IMGUI ESPECIALLY FOR THE GRAPH STUFF*** - https://github.com/eliasdaler/imgui-sfml
         - **Part of DEBUG CLASS**

@@ -26,6 +26,7 @@
     <ClInclude Include="..\..\..\Code\include\Engine\Core\State.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\Core\StateMachine.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\Core\Time.hpp" />
+    <ClInclude Include="..\..\..\Code\include\Engine\Core\Window.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\External\b2GLDraw.h" />
     <ClInclude Include="..\..\..\Code\include\Engine\External\Collision.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\External\csv.hpp" />
@@ -82,6 +83,7 @@
     <ClCompile Include="..\..\..\Code\src\Engine\Core\Game.cpp" />
     <ClCompile Include="..\..\..\Code\src\Engine\Core\StateMachine.cpp" />
     <ClCompile Include="..\..\..\Code\src\Engine\Core\Time.cpp" />
+    <ClCompile Include="..\..\..\Code\src\Engine\Core\Window.cpp" />
     <ClCompile Include="..\..\..\Code\src\Engine\External\b2GLDraw.cpp" />
     <ClCompile Include="..\..\..\Code\src\Engine\External\Collision.cpp" />
     <ClCompile Include="..\..\..\Code\src\Engine\External\Gamepad.cpp" />
