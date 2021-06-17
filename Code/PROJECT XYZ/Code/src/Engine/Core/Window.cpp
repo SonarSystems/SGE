@@ -37,24 +37,20 @@ namespace Sonar
 	}
 
 	bool Window::PollEvent( const Event &event )
-	{
-
-	}
+	{ return _window.pollEvent( event.GetSFMLEventObject( ) ); }
 
 	bool Window::WaitEvent( const Event &event )
-	{
-
-	}
+	{ return _window.waitEvent( event.GetSFMLEventObject( ) ); }
 
 	glm::ivec2 Window::GetPosition( ) const
 	{
+		auto position = _window.getPosition( );
 
+		return glm::ivec2( position.x, position.y );
 	}
 
 	void Window::SetPosition( const glm::ivec2 &position )
-	{
-
-	}
+	{ _window.setPosition( sf::Vector2i( position.x, position.y ) ); }
 
 	glm::uvec2 Window::GetSize( ) const
 	{

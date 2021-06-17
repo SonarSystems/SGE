@@ -57,4 +57,7 @@ namespace Sonar
         this->sensor.y = event.sensor.y;
         this->sensor.z = event.sensor.z;
     }
+
+	sf::Event &Event::GetSFMLEventObject( ) const
+	{ return _event; }
 }

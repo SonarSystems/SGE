@@ -196,6 +196,17 @@ namespace Sonar
             SensorEvent           sensor;            // Sensor event parameters (Event::SensorChanged)
         };
 
+        /**
+        * \brief Get the underlying SFML event object
+        *
+        * \return Output returns the SFML event object
+        */
+        sf::Event &GetSFMLEventObject( ) const;
+
+    private:
+        /**
+        * \brief SFML event object
+        */
         sf::Event _event;
 
     };
