@@ -201,7 +201,7 @@ namespace Sonar
         *
         * \return Output returns the SFML event object
         */
-        sf::Event &GetSFMLEventObject( ) const;
+        sf::Event GetSFMLEventObject( ) const;
 
     private:
         /**

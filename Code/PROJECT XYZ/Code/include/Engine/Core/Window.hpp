@@ -93,29 +93,159 @@ namespace Sonar
 		*/
         ~Window( );
 
-		void ShowWindow( );
+		/**
+		* \brief Close the window and destroy all the attached resources
+		*/
 		void CloseWindow( );
+
+		/**
+		* \brief Display on screen what has been rendered to the window so far
+		*/
+		void DrawContent( );
+
+		/**
+		* \brief Tell whether or not the window is open
+		*
+		* \return Output returns true if the window is open and false if it has been closed
+		*/
 		bool IsOpen( ) const;
+
+		/**
+		* \brief Get the settings of the OpenGL context of the window
+		*
+		* \return Output returns the OpenGL settings
+		*/
 		const ContextSettings &GetSettings( );
+
+		/**
+		* \brief Pop the event on top of the event queue, if any, and return it
+		*
+		* \param event Event object to poll
+		*
+		* \return Output returns true if an event was detected and false if not events were detected
+		*/
 		bool PollEvent( const Event &event );
+
+		/**
+		* \brief Wait for an event and return it
+		*
+		* \param event Event object to wait on
+		*
+		* \return Output returns false if any error occured and true if it did not
+		*/
 		bool WaitEvent( const Event &event );
+
+		/**
+		* \brief Get the position of the window
+		*
+		* \return Output returns window's position
+		*/
 		glm::ivec2 GetPosition( ) const;
+
+		/**
+		* \brief Change the position of the window on screen
+		*
+		* \param position Window's new position
+		*/
 		void SetPosition( const glm::ivec2 &position );
+
+		/**
+		* \brief Get the size of the rendering region of the window
+		*
+		* \return Output returns the window size
+		*/
 		glm::uvec2 GetSize( ) const;
+
+		/**
+		* \brief Change the size of the rendering region of the window
+		*
+		* \param size Window's new size
+		*/
 		void SetSize( const glm::uvec2 &size );
+
+		/**
+		* \brief Change the title of the window
+		*
+		* \param title Window's title
+		*/
 		void SetTitle( const std::string &title );
+
+		/**
+		* \brief Change the window's icon
+		*
+		* \param width Width of the icon
+		* \param height Height of the icon
+		* \param pixels Pointer to the array of pixels in memory
+		*/
 		void SetIcon( const unsigned int &width, const unsigned int &height, const unsigned char *pixels );
+
+		/**
+		* \brief Show or hide the window
+		*
+		* \param visible True shows the window and false hides it
+		*/
 		void SetVisible( const bool &visible );
+
+		/**
+		* \brief Enable or disable vertical synchronization
+		*
+		* \param enabled True enables v-sync and false disables v-sync
+		*/
 		void SetVerticalSyncEnabled( const bool &enabled );
+
+		/**
+		* \brief Show or hide the mouse cursor
+		*
+		* \param visible rue to show the mouse cursor, false to hide it
+		*/
 		void SetMouseCursorVisible( const bool &visible );
+
+		/**
+		* \brief Grab or release the mouse cursor
+		*
+		* \param grabbed True to enable, false to disable
+		*/
 		void SetMouseCursorGrabbed( const bool &grabbed );
+
+		/**
+		* \brief Enable or disable automatic key-repeat
+		*
+		* \param enabled True to enable, false to disable
+		*/
 		void SetKeyRepeatEnabled( const bool &enabled );
+
+		/**
+		* \brief Limit the framerate to a maximum fixed frequency
+		*
+		* \param limit Framerate limit, in frames per seconds (use 0 to disable limit)
+		*/
 		void SetFramerateLimit( const unsigned int &limit );
+
+		/**
+		* \brief Change the joystick threshold
+		*
+		* \param threshold New threshold, in the range [0, 100]
+		*/
 		void SetJoystickThreshold( const float &threshold );
-		bool SetActive( const bool &active = true ) const;
+
+		/**
+		* \brief Activate or deactivate the window as the current target for OpenGL rendering
+		*
+		* \param True if operation was successful, false otherwise
+		*/
+		void SetActive( const bool &active = true ) const;
+
+		/**
+		* \brief Request the current window to be made the active foreground window
+		*/
 		void RequestFocus( );
+
+		/**
+		* \brief Check whether the window has the input focus
+		*
+		* \return Output return true if window has focus, false otherwise
+		*/
 		bool HasFocus( ) const;
-		void DisplayWindowContent( );
                         
 	private:
 		/**
@@ -137,6 +267,9 @@ namespace Sonar
 		*/
         sf::Window _window;
 
+		/**
+		* \brief OpenGL settings
+		*/
 		ContextSettings _contextSettings;
 
 	};

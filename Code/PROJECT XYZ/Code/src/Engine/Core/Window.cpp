@@ -16,13 +16,11 @@ namespace Sonar
 
 	Window::~Window( ) { }
 
-	void Window::ShowWindow( )
-	{
-
-	}
-
 	void Window::CloseWindow( )
 	{ _window.close( ); }
+
+	void Window::DrawContent( )
+	{ _window.display( ); }
 
 	bool Window::IsOpen( ) const
 	{ return _window.isOpen( ); }
@@ -54,77 +52,47 @@ namespace Sonar
 
 	glm::uvec2 Window::GetSize( ) const
 	{
+		auto size = _window.getSize( );
 
+		return glm::uvec2( size.x, size.y );
 	}
 
 	void Window::SetSize( const glm::uvec2 &size )
-	{
-
-	}
+	{ _window.setSize( sf::Vector2u( size.x, size.y ) ); }
 
 	void Window::SetTitle( const std::string &title )
-	{
-
-	}
+	{ _window.setTitle( title ); }
 
 	void Window::SetIcon( const unsigned int &width, const unsigned int &height, const unsigned char *pixels )
-	{
-
-	}
+	{ _window.setIcon( width, height, pixels ); }
 
 	void Window::SetVisible( const bool &visible )
-	{
-
-	}
+	{ _window.setVisible( visible ); }
 
 	void Window::SetVerticalSyncEnabled( const bool &enabled )
-	{
-
-	}
+	{ _window.setVerticalSyncEnabled( enabled ); }
 
 	void Window::SetMouseCursorVisible( const bool &visible )
-	{
-
-	}
+	{ _window.setMouseCursorVisible( visible ); }
 
 	void Window::SetMouseCursorGrabbed( const bool &grabbed )
-	{
-
-	}
+	{ _window.setMouseCursorGrabbed( grabbed ); }
 
 	void Window::SetKeyRepeatEnabled( const bool &enabled )
-	{
-
-	}
+	{ _window.setKeyRepeatEnabled( enabled ); }
 
 	void Window::SetFramerateLimit( const unsigned int &limit )
-	{
-
-	}
+	{ _window.setFramerateLimit( limit ); }
 
 	void Window::SetJoystickThreshold( const float &threshold )
-	{
+	{ _window.setJoystickThreshold( threshold ); }
 
-	}
-
-	bool Window::SetActive( const bool &active /*= true */ ) const
-	{
-
-	}
+	void Window::SetActive( const bool &active ) const
+	{ _window.setActive( active ); }
 
 	void Window::RequestFocus( )
-	{
-
-	}
+	{ _window.requestFocus( ); }
 
 	bool Window::HasFocus( ) const
-	{
-
-	}
-
-	void Window::DisplayWindowContent( )
-	{
-
-	}
-
+	{ return _window.hasFocus( ); }
 }

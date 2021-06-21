@@ -1,47 +1,10 @@
-﻿  Game.cpp
-  StateMachine.cpp
-  Window.cpp
-  Button.cpp
+﻿  Button.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Button.cpp(875,53): error C2664: 'void Sonar::Mouse::ChangeCursor(const Sonar::Mouse::Cursor &,sf::RenderWindow &)': cannot convert argument 2 from 'Sonar::Window' to 'sf::RenderWindow &'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Input\Mouse.hpp(110,21): message : see declaration of 'Sonar::Mouse::ChangeCursor'
   ButtonGroup.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\ButtonGroup.cpp(454,35): error C2039: 'getSize': is not a member of 'Sonar::Window'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(11): message : see declaration of 'Sonar::Window'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\ButtonGroup.cpp(457,35): error C2039: 'getSize': is not a member of 'Sonar::Window'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(11): message : see declaration of 'Sonar::Window'
   Checkbox.cpp
   Drawable.cpp
-  Label.cpp
-  Menu.cpp
-  MenuComponent.cpp
-  Minimap.cpp
-  Parallax.cpp
-  ProgressBar.cpp
-  RadioButton.cpp
-  RadioButtonGroup.cpp
-  ScrollingBackground.cpp
-  Circle.cpp
-  Rectangle.cpp
-  Triangle.cpp
-  Slider.cpp
-  Generating Code...
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Core\Window.cpp(58): error C4716: 'Sonar::Window::GetSize': must return a value
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Core\Window.cpp(113): error C4716: 'Sonar::Window::SetActive': must return a value
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Core\Window.cpp(123): error C4716: 'Sonar::Window::HasFocus': must return a value
-  Compiling...
-  Sprite.cpp
-  TextBox.cpp
-  Texture.cpp
-  View.cpp
-  Events.cpp
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Events.cpp(62,17): error C2440: 'return': cannot convert from 'const sf::Event' to 'sf::Event &'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Events.cpp(62,11): message : Conversion loses qualifiers
-  Input.cpp
-  main.cpp
-  PhysicsWorld.cpp
-  Player.cpp
-  SplashState.cpp
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(126,16): warning C4834: discarding return value of function with 'nodiscard' attribute
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(127,16): warning C4834: discarding return value of function with 'nodiscard' attribute
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(128,16): warning C4834: discarding return value of function with 'nodiscard' attribute
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(129,16): warning C4834: discarding return value of function with 'nodiscard' attribute
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(130,16): warning C4834: discarding return value of function with 'nodiscard' attribute
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(131,16): warning C4834: discarding return value of function with 'nodiscard' attribute
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(147,35): error C2248: 'Sonar::Event::_event': cannot access private member declared in class 'Sonar::Event'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Input\Events.hpp(210): message : see declaration of 'Sonar::Event::_event'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Input\Events.hpp(12): message : see declaration of 'Sonar::Event'
-  Generating Code...

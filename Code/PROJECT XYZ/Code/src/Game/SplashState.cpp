@@ -144,7 +144,7 @@ namespace Sonar
 	void SplashState::PollInput( const float &dt, const Event &event )
 	{
 
-		ImGui::SFML::ProcessEvent( event._event );
+		ImGui::SFML::ProcessEvent( event.GetSFMLEventObject( ) );
 
 
         player->HandleInput( dt );

@@ -10,6 +10,7 @@
 #include "External/b2GLDraw.h"
 #include "Core/Clock.hpp"
 #include "Core/Debug.hpp"
+#include "Core/Window.hpp"
 #include "Graphics/Color.hpp"
 
 namespace Sonar
@@ -20,7 +21,7 @@ namespace Sonar
 	struct GameData
 	{
 		StateMachine machine; // State machine to handle the states
-		sf::RenderWindow window; // Game window
+		Window window; // Game window
 		AssetManager assets; // Asset manager
         Debug *debug; // Debugger
         Color backgroundColor = Color::White;
