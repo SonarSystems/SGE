@@ -26,16 +26,17 @@ namespace Sonar
 		// Check if the object is within the visible window
 		// If not cull it
 		if ( _position.x + ( _size.x * _scale[0] ) < 0 // Check if it's beyond the left boundary
-			|| _position.x > _data->window.getSize( ).x // Check if it's beyond the right boundary
+			|| _position.x > _data->window.GetSize( ).x // Check if it's beyond the right boundary
 			|| _position.y + ( _size.y * _scale[1] ) < 0 // Check if it's beyond the top boundary
-			|| _position.y > _data->window.getSize( ).y // Check if it's beyond the bottom boundary
+			|| _position.y > _data->window.GetSize( ).y // Check if it's beyond the bottom boundary
 			)
 		{
 			//std::cout << _position.x << ":" << _position.y << "   -   " << _size.x << ":" << _size.y << "CULLING" << std::endl;
 			return;
 		}
+		sf::Window w;
 
-		_data->window.draw( *_object );
+		_data->window.GetSFMLWindowObject( ).draw( *_object );
 	}
 
 	void Drawable::SetPosition( const glm::vec2 &position )
@@ -323,7 +324,7 @@ namespace Sonar
         {
             sf::FloatRect buttonRect( _position.x, _position.y, _size.x * _scale.x, _size.y * _scale.y );
 
-            if ( buttonRect.contains( ( sf::Vector2f )sf::Mouse::getPosition( _data->window ) ) )
+            if ( buttonRect.contains( ( sf::Vector2f )sf::Mouse::getPosition( _data->window.GetSFMLWindowObject( ) ) ) )
             { return true; }
         }
 
@@ -334,7 +335,7 @@ namespace Sonar
 	{
 		sf::FloatRect buttonRect( _position.x, _position.y, _size.x * _scale.x, _size.y * _scale.y );
 
-		if ( buttonRect.contains( ( sf::Vector2f )sf::Mouse::getPosition( _data->window ) ) )
+		if ( buttonRect.contains( ( sf::Vector2f )sf::Mouse::getPosition( _data->window.GetSFMLWindowObject( ) ) ) )
 		{ return true; }
 		else
 		{ return false; }
@@ -368,6 +369,9 @@ namespace Sonar
 
 	glm::vec4 Drawable::GetGlobalBounds( ) const
 	{ return glm::vec4( _globalBounds.left, _globalBounds.top, _globalBounds.width, _globalBounds.height); }
+
+	sf::Drawable *Drawable::GetSFMLDrawable( ) const
+	{ return _object; }
 
 }
 

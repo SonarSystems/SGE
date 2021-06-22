@@ -1,10 +1,15 @@
-﻿  Button.cpp
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Button.cpp(875,53): error C2664: 'void Sonar::Mouse::ChangeCursor(const Sonar::Mouse::Cursor &,sf::RenderWindow &)': cannot convert argument 2 from 'Sonar::Window' to 'sf::RenderWindow &'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Input\Mouse.hpp(110,21): message : see declaration of 'Sonar::Mouse::ChangeCursor'
-  ButtonGroup.cpp
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\ButtonGroup.cpp(454,35): error C2039: 'getSize': is not a member of 'Sonar::Window'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(11): message : see declaration of 'Sonar::Window'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\ButtonGroup.cpp(457,35): error C2039: 'getSize': is not a member of 'Sonar::Window'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(11): message : see declaration of 'Sonar::Window'
-  Checkbox.cpp
-  Drawable.cpp
+﻿  Window.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Input\Mouse.hpp(73,46): error C2039: 'Window': is not a member of 'Sonar'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Input\Mouse.hpp(8): message : see declaration of 'Sonar'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Input\Mouse.hpp(73,53): error C2061: syntax error: identifier 'Window'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Input\Mouse.hpp(95,62): error C2061: syntax error: identifier 'Window'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Input\Mouse.hpp(95,78): error C2535: 'void Sonar::Mouse::SetPosition(const int &,const int &)': member function already defined or declared
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Input\Mouse.hpp(87): message : see declaration of 'Sonar::Mouse::SetPosition'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Input\Mouse.hpp(112,57): error C2061: syntax error: identifier 'Window'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Input\Mouse.hpp(124,33): error C2061: syntax error: identifier 'Window'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Input\Mouse.hpp(129,33): error C2061: syntax error: identifier 'Window'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Input\Mouse.hpp(134,35): error C2061: syntax error: identifier 'Window'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Input\Mouse.hpp(141,38): error C2061: syntax error: identifier 'Window'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Game.hpp(24,10): error C3646: 'window': unknown override specifier
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Game.hpp(24,16): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Core\Window.cpp(29,103): error C2143: syntax error: missing ')' before ';'

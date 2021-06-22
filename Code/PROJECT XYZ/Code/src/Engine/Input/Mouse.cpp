@@ -8,15 +8,15 @@ namespace Sonar
 	bool Mouse::IsPressed( const Button &button )
     { return sf::Mouse::isButtonPressed( ( sf::Mouse::Button )button ); }
 
-    glm::vec2 Mouse::GetPosition( const sf::RenderWindow &window, const bool &windowOnly )
+    glm::vec2 Mouse::GetPosition( Window &window, const bool &windowOnly )
 	{
-        glm::vec2 position( sf::Mouse::getPosition( window ).x, sf::Mouse::getPosition( window ).y );
+        glm::vec2 position( sf::Mouse::getPosition( window.GetSFMLWindowObject( ) ).x, sf::Mouse::getPosition( window.GetSFMLWindowObject( ) ).y );
         
         // for mouse over window only
         if ( windowOnly )
         {
             // check if the mouse is outside of the window
-            if ( sf::Mouse::getPosition( window ).x < 0 || sf::Mouse::getPosition( window ).x > ( int )window.getSize( ).x || sf::Mouse::getPosition( window ).y < 0 || sf::Mouse::getPosition( window ).y > ( int )window.getSize( ).y )
+            if ( sf::Mouse::getPosition( window.GetSFMLWindowObject( ) ).x < 0 || sf::Mouse::getPosition( window.GetSFMLWindowObject( ) ).x > ( int )window.getSize( ).x || sf::Mouse::getPosition( window.GetSFMLWindowObject( ) ).y < 0 || sf::Mouse::getPosition( window.GetSFMLWindowObject( ) ).y > ( int )window.getSize( ).y )
             {
                 position.x = -1;
                 position.y = -1;
@@ -32,8 +32,8 @@ namespace Sonar
     void Mouse::SetPosition( const int &x, const int &y )
     { sf::Mouse::setPosition( sf::Vector2i( x, y ) ); }
 
-    void Mouse::SetPosition( const int &x, const int &y, const sf::RenderWindow &window )
-    { sf::Mouse::setPosition( sf::Vector2i( x, y ), window ); }
+    void Mouse::SetPosition( const int &x, const int &y, Window &window )
+    { sf::Mouse::setPosition( sf::Vector2i( x, y ), window.GetSFMLWindowObject( ) ); }
 
     bool Mouse::ChordPressed( const std::initializer_list<Button> &buttons )
     {
@@ -50,13 +50,13 @@ namespace Sonar
         return allButtonsPressed;
     }
 
-	void Mouse::ChangeCursor( const Cursor &cursor, sf::RenderWindow &window )
+	void Mouse::ChangeCursor( const Cursor &cursor, Window &window )
 	{
 		sf::Cursor cursorLoader;
 
 		if ( cursorLoader.loadFromSystem( ( sf::Cursor::Type )cursor ) )
         {
-            window.setMouseCursor( cursorLoader );
+            window.SetMouseCursor( cursor );
             _CURSOR_ = cursor;
         }
 	}
@@ -64,27 +64,27 @@ namespace Sonar
     const Mouse::Cursor &Mouse::GetCurrentCursor( )
 	{ return _CURSOR_; }
 
-	void Mouse::ShowCursor( sf::RenderWindow &window )
+	void Mouse::ShowCursor( Window &window )
 	{
 		_IS_MOUSE_CURSOR_VISIBLE_ = true;
 
-		window.setMouseCursorVisible( _IS_MOUSE_CURSOR_VISIBLE_ );
+		window.SetMouseCursorVisible( _IS_MOUSE_CURSOR_VISIBLE_ );
 	}
 
-	void Mouse::HideCursor( sf::RenderWindow &window )
+	void Mouse::HideCursor( Window &window )
 	{
 		_IS_MOUSE_CURSOR_VISIBLE_ = false;
 
-		window.setMouseCursorVisible( _IS_MOUSE_CURSOR_VISIBLE_ );
+		window.SetMouseCursorVisible( _IS_MOUSE_CURSOR_VISIBLE_ );
 	}
 
-	void Mouse::ToggleCursor( sf::RenderWindow &window )
+	void Mouse::ToggleCursor( Window &window )
 	{
         _IS_MOUSE_CURSOR_VISIBLE_ = !_IS_MOUSE_CURSOR_VISIBLE_;
 
-        window.setMouseCursorVisible( _IS_MOUSE_CURSOR_VISIBLE_ );
+        window.SetMouseCursorVisible( _IS_MOUSE_CURSOR_VISIBLE_ );
 	}
 
-	bool Mouse::GetCursorStatus( sf::RenderWindow &window )
+	bool Mouse::GetCursorStatus( Window &window )
 	{ return _IS_MOUSE_CURSOR_VISIBLE_; }
 }

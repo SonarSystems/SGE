@@ -451,10 +451,10 @@ namespace Sonar
 	void ButtonGroup::SetPositionToCenter( const bool &setCenterInXAxis, const bool &setCenterInYAxis )
 	{
 		if ( setCenterInXAxis )
-		{ SetPositionX( ( _data->window.getSize( ).x * 0.5f ) - ( GetWidth( ) * 0.5f ) ); }
+		{ SetPositionX( ( _data->window.GetSize( ).x * 0.5f ) - ( GetWidth( ) * 0.5f ) ); }
 
 		if ( setCenterInYAxis )
-		{ SetPositionY( ( _data->window.getSize( ).y * 0.5f ) - ( GetHeight( ) * 0.5f ) ); }
+		{ SetPositionY( ( _data->window.GetSize( ).y * 0.5f ) - ( GetHeight( ) * 0.5f ) ); }
 	}
 
 	void ButtonGroup::SetPosition( const float &x, const float &y )

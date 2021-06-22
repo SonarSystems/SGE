@@ -3,6 +3,8 @@
 #include <SFML/Graphics.hpp>
 #include <External/glm/glm.hpp>
 
+#include "Core/Window.hpp"
+
 namespace Sonar
 {
 	class Mouse
@@ -68,7 +70,7 @@ namespace Sonar
          *
          * \return Output returns the mouse position relative to the game window
          */
-        static glm::vec2 GetPosition( const sf::RenderWindow &window, const bool &windowOnly = true );
+        static glm::vec2 GetPosition( Sonar::Window &window, const bool &windowOnly = true );
         /**
          * \brief Get the mouse position relative to the screen
          *
@@ -90,7 +92,7 @@ namespace Sonar
          * \param y Screen's y coordinate
          * \param window Game window
         */
-        static void SetPosition( const int &x, const int &y, const sf::RenderWindow &window );
+        static void SetPosition( const int &x, const int &y, Window &window );
         
         /**
          * \brief Check if multiple buttons have been pressed
@@ -107,7 +109,7 @@ namespace Sonar
 		* \param cursor New cursor
 		* \param window Window to change the cursor on
         */
-        static void ChangeCursor( const Cursor &cursor, sf::RenderWindow &window );
+        static void ChangeCursor( const Cursor &cursor, Window &window );
 
         /**
         * \brief Get the current mouse cursor
@@ -119,24 +121,24 @@ namespace Sonar
         /**
         * \brief Show the mouse cursor
         */
-        static void ShowCursor( sf::RenderWindow &window );
+        static void ShowCursor( Window &window );
 
         /**
         * \brief Hide the mouse cursor
         */
-        static void HideCursor( sf::RenderWindow &window );
+        static void HideCursor( Window &window );
 
         /**
         * \brief Toggle the mouse cursor
         */
-        static void ToggleCursor( sf::RenderWindow &window );
+        static void ToggleCursor( Window &window );
 
         /**
         * \brief Get the status of the cursor
         *
         * \return Output returns the cursor status (false if not show and true if shown)
         */
-        static bool GetCursorStatus( sf::RenderWindow &window );
+        static bool GetCursorStatus( Window &window );
 
     private:
         /**

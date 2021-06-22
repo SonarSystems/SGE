@@ -16,11 +16,17 @@ namespace Sonar
 
 	Window::~Window( ) { }
 
+	sf::RenderWindow &Window::GetSFMLWindowObject( )
+	{ return _window; }
+
 	void Window::CloseWindow( )
 	{ _window.close( ); }
 
-	void Window::DrawContent( )
+	void Window::Display( )
 	{ _window.display( ); }
+
+	void Window::Clear( const Color &color )
+	{ _window.clear( sf::Color( color.GetRed( ), color.GetGreen( ), color.GetBlue( ), color.GetAlpha( ) ); }
 
 	bool Window::IsOpen( ) const
 	{ return _window.isOpen( ); }
@@ -78,6 +84,14 @@ namespace Sonar
 	void Window::SetMouseCursorGrabbed( const bool &grabbed )
 	{ _window.setMouseCursorGrabbed( grabbed ); }
 
+	void Window::SetMouseCursor( const Mouse::Cursor &cursor )
+	{
+		sf::Cursor sfmlCursor;
+		sfmlCursor.loadFromSystem( ( sf::Cursor::Type )cursor );
+
+		_window.setMouseCursor( sfmlCursor );
+	}
+
 	void Window::SetKeyRepeatEnabled( const bool &enabled )
 	{ _window.setKeyRepeatEnabled( enabled ); }
 
@@ -87,7 +101,7 @@ namespace Sonar
 	void Window::SetJoystickThreshold( const float &threshold )
 	{ _window.setJoystickThreshold( threshold ); }
 
-	void Window::SetActive( const bool &active ) const
+	void Window::SetActive( const bool &active )
 	{ _window.setActive( active ); }
 
 	void Window::RequestFocus( )

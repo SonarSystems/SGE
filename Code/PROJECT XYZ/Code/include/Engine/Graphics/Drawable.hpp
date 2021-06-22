@@ -465,6 +465,13 @@ namespace Sonar
         */
         glm::vec4 GetGlobalBounds( ) const;
 
+        /**
+        * \brief Get the SFML drawable object
+        *
+        * \return Output returns the SFML drawable object
+        */
+        sf::Drawable *GetSFMLDrawable( ) const;
+
     protected:
         /**
         * \brief Class constructor

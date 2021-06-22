@@ -4,6 +4,8 @@
 #include <SFML/Graphics.hpp>
 
 #include "Core/ENGINEDEFINITIONS.hpp"
+#include "Graphics/Color.hpp"
+#include "Graphics/Drawable.hpp"
 #include "Input/Events.hpp"
 
 namespace Sonar
@@ -94,6 +96,13 @@ namespace Sonar
         ~Window( );
 
 		/**
+		* \brief Get the underlying SFML Window object
+		*
+		* \return Output returns the SFML Window object
+		*/
+		sf::RenderWindow &GetSFMLWindowObject( );
+
+		/**
 		* \brief Close the window and destroy all the attached resources
 		*/
 		void CloseWindow( );
@@ -101,7 +110,14 @@ namespace Sonar
 		/**
 		* \brief Display on screen what has been rendered to the window so far
 		*/
-		void DrawContent( );
+		void Display( );
+
+		/**
+		* \brief Clear the screen
+		*
+		* \param color Color of the screen background, black by default
+		*/
+		void Clear( const Color &color = Color( 0, 0, 0, 255 ) );
 
 		/**
 		* \brief Tell whether or not the window is open
@@ -208,6 +224,13 @@ namespace Sonar
 		void SetMouseCursorGrabbed( const bool &grabbed );
 
 		/**
+		* \brief Set the displayed cursor to a native system cursor
+		*
+		* \param cursor Native system cursor type to display
+		*/
+		void SetMouseCursor( const Mouse::Cursor &cursor );
+
+		/**
 		* \brief Enable or disable automatic key-repeat
 		*
 		* \param enabled True to enable, false to disable
@@ -233,7 +256,7 @@ namespace Sonar
 		*
 		* \param True if operation was successful, false otherwise
 		*/
-		void SetActive( const bool &active = true ) const;
+		void SetActive( const bool &active = true );
 
 		/**
 		* \brief Request the current window to be made the active foreground window
@@ -265,7 +288,7 @@ namespace Sonar
 		/**
 		* \brief SFML Window object
 		*/
-        sf::Window _window;
+        sf::RenderWindow _window;
 
 		/**
 		* \brief OpenGL settings
