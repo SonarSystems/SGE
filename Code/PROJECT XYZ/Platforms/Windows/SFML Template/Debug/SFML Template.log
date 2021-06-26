@@ -1,15 +1,303 @@
-﻿  Window.cpp
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Input\Mouse.hpp(73,46): error C2039: 'Window': is not a member of 'Sonar'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Input\Mouse.hpp(8): message : see declaration of 'Sonar'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Input\Mouse.hpp(73,53): error C2061: syntax error: identifier 'Window'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Input\Mouse.hpp(95,62): error C2061: syntax error: identifier 'Window'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Input\Mouse.hpp(95,78): error C2535: 'void Sonar::Mouse::SetPosition(const int &,const int &)': member function already defined or declared
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Input\Mouse.hpp(87): message : see declaration of 'Sonar::Mouse::SetPosition'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Input\Mouse.hpp(112,57): error C2061: syntax error: identifier 'Window'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Input\Mouse.hpp(124,33): error C2061: syntax error: identifier 'Window'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Input\Mouse.hpp(129,33): error C2061: syntax error: identifier 'Window'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Input\Mouse.hpp(134,35): error C2061: syntax error: identifier 'Window'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Input\Mouse.hpp(141,38): error C2061: syntax error: identifier 'Window'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Game.hpp(24,10): error C3646: 'window': unknown override specifier
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Game.hpp(24,16): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Core\Window.cpp(29,103): error C2143: syntax error: missing ')' before ';'
+﻿  StateMachine.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,30): error C2653: 'Mouse': is not a class or namespace name
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C2143: syntax error: missing ',' before '&'
+  Window.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,30): error C2653: 'Mouse': is not a class or namespace name
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Core\Window.cpp(43,38): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Core\Window.cpp(43,38): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Core\Window.cpp(44,30): error C2065: 'event': undeclared identifier
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Core\Window.cpp(46,38): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Core\Window.cpp(46,38): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Core\Window.cpp(47,30): error C2065: 'event': undeclared identifier
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Core\Window.cpp(87,37): error C2653: 'Mouse': is not a class or namespace name
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Core\Window.cpp(87,51): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Core\Window.cpp(87,51): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Core\Window.cpp(90,50): error C2065: 'cursor': undeclared identifier
+  Button.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,30): error C2653: 'Mouse': is not a class or namespace name
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C2143: syntax error: missing ',' before '&'
+  ButtonGroup.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,30): error C2653: 'Mouse': is not a class or namespace name
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C2143: syntax error: missing ',' before '&'
+  Drawable.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,30): error C2653: 'Mouse': is not a class or namespace name
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C2143: syntax error: missing ',' before '&'
+  Label.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,30): error C2653: 'Mouse': is not a class or namespace name
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C2143: syntax error: missing ',' before '&'
+  Menu.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,30): error C2653: 'Mouse': is not a class or namespace name
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C2143: syntax error: missing ',' before '&'
+  MenuComponent.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,30): error C2653: 'Mouse': is not a class or namespace name
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C2143: syntax error: missing ',' before '&'
+  Minimap.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,30): error C2653: 'Mouse': is not a class or namespace name
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C2143: syntax error: missing ',' before '&'
+  Parallax.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,30): error C2653: 'Mouse': is not a class or namespace name
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C2143: syntax error: missing ',' before '&'
+  ProgressBar.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,30): error C2653: 'Mouse': is not a class or namespace name
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C2143: syntax error: missing ',' before '&'
+  RadioButton.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,30): error C2653: 'Mouse': is not a class or namespace name
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C2143: syntax error: missing ',' before '&'
+  RadioButtonGroup.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,30): error C2653: 'Mouse': is not a class or namespace name
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C2143: syntax error: missing ',' before '&'
+  ScrollingBackground.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,30): error C2653: 'Mouse': is not a class or namespace name
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\ScrollingBackground.cpp(62,64): error C2039: 'getSize': is not a member of 'Sonar::Window'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(11): message : see declaration of 'Sonar::Window'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\ScrollingBackground.cpp(102,64): error C2039: 'getSize': is not a member of 'Sonar::Window'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(11): message : see declaration of 'Sonar::Window'
+  Circle.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,30): error C2653: 'Mouse': is not a class or namespace name
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C2143: syntax error: missing ',' before '&'
+  Rectangle.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,30): error C2653: 'Mouse': is not a class or namespace name
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C2143: syntax error: missing ',' before '&'
+  Triangle.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,30): error C2653: 'Mouse': is not a class or namespace name
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C2143: syntax error: missing ',' before '&'
+  Slider.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,30): error C2653: 'Mouse': is not a class or namespace name
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C2143: syntax error: missing ',' before '&'
+  Sprite.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,30): error C2653: 'Mouse': is not a class or namespace name
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C2143: syntax error: missing ',' before '&'
+  TextBox.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,30): error C2653: 'Mouse': is not a class or namespace name
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C2143: syntax error: missing ',' before '&'
+  Generating Code...
+  Compiling...
+  Texture.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,30): error C2653: 'Mouse': is not a class or namespace name
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C2143: syntax error: missing ',' before '&'
+  View.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,30): error C2653: 'Mouse': is not a class or namespace name
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\View.cpp(23,17): error C2039: 'setView': is not a member of 'Sonar::Window'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(11): message : see declaration of 'Sonar::Window'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\View.cpp(28,17): error C2039: 'setView': is not a member of 'Sonar::Window'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(11): message : see declaration of 'Sonar::Window'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\View.cpp(28,40): error C2039: 'getDefaultView': is not a member of 'Sonar::Window'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(11): message : see declaration of 'Sonar::Window'
+  Events.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,30): error C2653: 'Mouse': is not a class or namespace name
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C2143: syntax error: missing ',' before '&'
+  Input.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,30): error C2653: 'Mouse': is not a class or namespace name
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C2143: syntax error: missing ',' before '&'
+  Mouse.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,30): error C2653: 'Mouse': is not a class or namespace name
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Mouse.cpp(19,157): error C2039: 'getSize': is not a member of 'Sonar::Window'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(11): message : see declaration of 'Sonar::Window'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Mouse.cpp(19,312): error C2039: 'getSize': is not a member of 'Sonar::Window'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(11): message : see declaration of 'Sonar::Window'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Mouse.cpp(59,43): error C2664: 'void Sonar::Window::SetMouseCursor(const int)': cannot convert argument 1 from 'const Sonar::Mouse::Cursor' to 'const int'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Mouse.cpp(59,36): message : This conversion requires an explicit cast (static_cast, C-style cast or function-style cast)
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,8): message : see declaration of 'Sonar::Window::SetMouseCursor'
+  QTE.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,30): error C2653: 'Mouse': is not a class or namespace name
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C2143: syntax error: missing ',' before '&'
+  Sequence.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,30): error C2653: 'Mouse': is not a class or namespace name
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C2143: syntax error: missing ',' before '&'
+  main.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,30): error C2653: 'Mouse': is not a class or namespace name
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C2143: syntax error: missing ',' before '&'
+  PhysicsWorld.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,30): error C2653: 'Mouse': is not a class or namespace name
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C2143: syntax error: missing ',' before '&'
+  Player.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,30): error C2653: 'Mouse': is not a class or namespace name
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\Player.cpp(45,50): error C2039: 'getSize': is not a member of 'Sonar::Window'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(11): message : see declaration of 'Sonar::Window'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\Player.cpp(47,82): error C2039: 'getSize': is not a member of 'Sonar::Window'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(11): message : see declaration of 'Sonar::Window'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\Player.cpp(54,50): error C2039: 'getSize': is not a member of 'Sonar::Window'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(11): message : see declaration of 'Sonar::Window'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\Player.cpp(56,84): error C2039: 'getSize': is not a member of 'Sonar::Window'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(11): message : see declaration of 'Sonar::Window'
+  SplashState.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,30): error C2653: 'Mouse': is not a class or namespace name
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C2143: syntax error: missing ',' before '&'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(7,36): error C2665: 'ImGui::SFML::Init': none of the 3 overloads could convert all the argument types
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\External Libraries\imgui-sfml\include\imgui-SFML.h(24,21): message : could be 'void ImGui::SFML::Init(sf::RenderWindow &,bool)'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(7,36): message : while trying to match the argument list '(Sonar::Window)'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(126,16): warning C4834: discarding return value of function with 'nodiscard' attribute
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(127,16): warning C4834: discarding return value of function with 'nodiscard' attribute
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(128,16): warning C4834: discarding return value of function with 'nodiscard' attribute
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(129,16): warning C4834: discarding return value of function with 'nodiscard' attribute
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(130,16): warning C4834: discarding return value of function with 'nodiscard' attribute
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(131,16): warning C4834: discarding return value of function with 'nodiscard' attribute
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(206,61): error C2665: 'ImGui::SFML::Update': none of the 3 overloads could convert all the argument types
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\External Libraries\imgui-sfml\include\imgui-SFML.h(31,21): message : could be 'void ImGui::SFML::Update(sf::RenderWindow &,sf::Time)'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(206,61): message : while trying to match the argument list '(Sonar::Window, sf::Time)'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(226,18): error C2039: 'setTitle': is not a member of 'Sonar::Window'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(11): message : see declaration of 'Sonar::Window'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(230,38): error C2665: 'ImGui::SFML::Render': none of the 2 overloads could convert all the argument types
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\External Libraries\imgui-sfml\include\imgui-SFML.h(36,21): message : could be 'void ImGui::SFML::Render(sf::RenderTarget &)'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(230,38): message : while trying to match the argument list '(Sonar::Window)'
+  Generating Code...

@@ -285,22 +285,22 @@ namespace Sonar
 			case POSITION::TOP_CENTER:
 				_background->SetPosition
 				(
-					( _data->window.getSize( ).x * 0.5f ) - ( _background->GetWidth( ) * 0.5f ),
+					( _data->window.GetSize( ).x * 0.5f ) - ( _background->GetWidth( ) * 0.5f ),
 					0
 				);
 
 				break;
 
 			case POSITION::TOP_RIGHT:
-				_background->SetPosition( _data->window.getSize( ).x - _background->GetWidth( ), 0 );
+				_background->SetPosition( _data->window.GetSize( ).x - _background->GetWidth( ), 0 );
 
 				break;
 
 			case POSITION::RIGHT_CENTER:
 				_background->SetPosition
 				(
-					_data->window.getSize( ).x - _background->GetWidth( ), 
-					( _data->window.getSize( ).y * 0.5f ) - ( _background->GetHeight( ) * 0.5f )
+					_data->window.GetSize( ).x - _background->GetWidth( ), 
+					( _data->window.GetSize( ).y * 0.5f ) - ( _background->GetHeight( ) * 0.5f )
 				);
 
 				break;
@@ -308,8 +308,8 @@ namespace Sonar
 			case POSITION::BOTTOM_RIGHT:
 				_background->SetPosition
 				(
-					_data->window.getSize( ).x - _background->GetWidth( ),
-					_data->window.getSize( ).y - _background->GetHeight( )
+					_data->window.GetSize( ).x - _background->GetWidth( ),
+					_data->window.GetSize( ).y - _background->GetHeight( )
 				);
 
 				break;
@@ -317,8 +317,8 @@ namespace Sonar
 			case POSITION::BOTTOM_CENTER:
 				_background->SetPosition
 				(
-					( _data->window.getSize( ).x * 0.5f ) - ( _background->GetWidth( ) * 0.5f ),
-					_data->window.getSize( ).y - _background->GetHeight( )
+					( _data->window.GetSize( ).x * 0.5f ) - ( _background->GetWidth( ) * 0.5f ),
+					_data->window.GetSize( ).y - _background->GetHeight( )
 				);
 
 				break;
@@ -327,7 +327,7 @@ namespace Sonar
 				_background->SetPosition
 				(
 					0, 
-					_data->window.getSize( ).y - _background->GetHeight( )
+					_data->window.GetSize( ).y - _background->GetHeight( )
 				);
 
 				break;
@@ -336,7 +336,7 @@ namespace Sonar
 				_background->SetPosition
 				(
 					0,
-					( _data->window.getSize( ).y * 0.5f ) - ( _background->GetHeight( ) * 0.5f )
+					( _data->window.GetSize( ).y * 0.5f ) - ( _background->GetHeight( ) * 0.5f )
 				);
 
 				break;
@@ -344,8 +344,8 @@ namespace Sonar
 			case POSITION::CENTER:
 				_background->SetPosition
 				(
-					( _data->window.getSize( ).x * 0.5f ) - ( _background->GetWidth( ) * 0.5f ),
-					( _data->window.getSize( ).y * 0.5f ) - ( _background->GetHeight( ) * 0.5f )
+					( _data->window.GetSize( ).x * 0.5f ) - ( _background->GetWidth( ) * 0.5f ),
+					( _data->window.GetSize( ).y * 0.5f ) - ( _background->GetHeight( ) * 0.5f )
 				);
 
 				break;
@@ -409,9 +409,7 @@ namespace Sonar
 	{ return _background->GetBorderColor( ); }
 
 	void Minimap::Move( const glm::vec2 &offset )
-	{
-		_background->Move( offset );
-	}
+	{ _background->Move( offset ); }
 
 	void Minimap::Move( const float &x, const float &y )
 	{ Move( glm::vec2( x, y ) ); }

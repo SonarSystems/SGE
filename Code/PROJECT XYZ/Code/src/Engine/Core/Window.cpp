@@ -26,7 +26,7 @@ namespace Sonar
 	{ _window.display( ); }
 
 	void Window::Clear( const Color &color )
-	{ _window.clear( sf::Color( color.GetRed( ), color.GetGreen( ), color.GetBlue( ), color.GetAlpha( ) ); }
+	{ _window.clear( sf::Color( color.GetRed( ), color.GetGreen( ), color.GetBlue( ), color.GetAlpha( ) ) ); }
 
 	bool Window::IsOpen( ) const
 	{ return _window.isOpen( ); }

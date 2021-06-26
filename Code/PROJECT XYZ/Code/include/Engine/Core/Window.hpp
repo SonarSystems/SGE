@@ -5,8 +5,6 @@
 
 #include "Core/ENGINEDEFINITIONS.hpp"
 #include "Graphics/Color.hpp"
-#include "Graphics/Drawable.hpp"
-#include "Input/Events.hpp"
 
 namespace Sonar
 {
