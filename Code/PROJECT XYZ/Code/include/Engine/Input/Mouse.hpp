@@ -3,10 +3,10 @@
 #include <SFML/Graphics.hpp>
 #include <External/glm/glm.hpp>
 
-#include "Core/Window.hpp"
-
 namespace Sonar
 {
+    class Window;
+
 	class Mouse
 	{
 	public:

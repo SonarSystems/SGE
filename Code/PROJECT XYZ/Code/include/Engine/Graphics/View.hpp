@@ -175,6 +175,8 @@ namespace Sonar
 		* \return Output returns the view's inverse transform
 		*/
 		const sf::Transform &GetInverseTransform( ) const;
+
+		const sf::View &GetSFMLViewObject( ) const;
         
     private:
 		/**

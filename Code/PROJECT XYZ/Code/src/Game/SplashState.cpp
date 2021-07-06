@@ -4,7 +4,7 @@ namespace Sonar
 {
 	SplashState::SplashState( GameDataRef data ) : _data( data )
 	{
-		ImGui::SFML::Init( _data->window );
+		ImGui::SFML::Init( _data->window.GetSFMLWindowObject( ) );
 
         player = new Player( _data );
         physicsWorld = new PhysicsWorld( _data );
@@ -203,7 +203,7 @@ namespace Sonar
 
 		//textBox->Draw( );
 
-		ImGui::SFML::Update( _data->window, deltaClock.restart( ) );
+		ImGui::SFML::Update( _data->window.GetSFMLWindowObject( ), deltaClock.restart( ) );
 
 		ImGui::Begin( "Sample window" ); // begin window
 
@@ -223,10 +223,10 @@ namespace Sonar
 			// this code gets if user clicks on the button
 			// yes, you could have written if(ImGui::InputText(...))
 			// but I do this to show how buttons work :)
-			_data->window.setTitle( windowTitle );
+			_data->window.SetTitle( windowTitle );
 		}
 		ImGui::End( ); // end window
 
-		ImGui::SFML::Render( _data->window );
+		ImGui::SFML::Render( _data->window.GetSFMLWindowObject( ) );
 	}
 }

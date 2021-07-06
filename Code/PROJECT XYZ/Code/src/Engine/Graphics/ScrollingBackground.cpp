@@ -59,7 +59,7 @@ namespace Sonar
 			{
 				_backgrounds.at( i )->MoveX( dt * _speed );
 
-				if ( _backgrounds.at( i )->GetPositionX( ) > _data->window.getSize( ).x )
+				if ( _backgrounds.at( i )->GetPositionX( ) > _data->window.GetSize( ).x )
 				{
 					if ( _backgrounds.size( ) - 1 == i )
 					{
@@ -99,7 +99,7 @@ namespace Sonar
 			{
 				_backgrounds.at( i )->MoveY( dt * _speed );
 
-				if ( _backgrounds.at( i )->GetPositionY( ) > _data->window.getSize( ).y )
+				if ( _backgrounds.at( i )->GetPositionY( ) > _data->window.GetSize( ).y )
 				{
 					if ( _backgrounds.size( ) - 1 == i )
 					{

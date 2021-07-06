@@ -92,4 +92,8 @@ namespace Sonar
 
 	const sf::Transform &View::GetInverseTransform( ) const
 	{ return _view->getInverseTransform( ); }
+
+	const sf::View &View::GetSFMLViewObject( ) const
+	{ return *_view; }
+
 }

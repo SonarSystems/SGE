@@ -2,19 +2,21 @@
 
 namespace Sonar
 {
-	Window::Window( )
-	{ _window.create( sf::VideoMode( SCREEN_WIDTH, SCREEN_HEIGHT ), WINDOW_TITLE, Style::Close | Style::Titlebar ); }
-
-	Window::Window( const unsigned int &width, const unsigned int &height )
-	{ _window.create( sf::VideoMode( width, height ), WINDOW_TITLE, Style::Close | Style::Titlebar ); }
-
-	Window::Window( const unsigned int &width, const unsigned int &height, const std::string &title )
-	{ _window.create( sf::VideoMode( width, height ), title, Style::Close | Style::Titlebar ); }
-
-	Window::Window( const std::string &title )
-	{ _window.create( sf::VideoMode( SCREEN_WIDTH, SCREEN_HEIGHT ), title, Style::Close | Style::Titlebar ); }
+	Window::Window( ) { }
 
 	Window::~Window( ) { }
+
+	void Window::Setup( )
+	{ _window.create( sf::VideoMode( SCREEN_WIDTH, SCREEN_HEIGHT ), WINDOW_TITLE, Style::Close | Style::Titlebar ); }
+
+	void Window::Setup( const unsigned int &width, const unsigned int &height, const std::string &title )
+	{ _window.create( sf::VideoMode( width, height ), title, Style::Close | Style::Titlebar ); }
+
+	void Window::Setup( const unsigned int &width, const unsigned int &height )
+	{ _window.create( sf::VideoMode( width, height ), WINDOW_TITLE, Style::Close | Style::Titlebar ); }
+
+	void Window::Setup( const std::string &title )
+	{ _window.create( sf::VideoMode( SCREEN_WIDTH, SCREEN_HEIGHT ), title, Style::Close | Style::Titlebar ); }
 
 	sf::RenderWindow &Window::GetSFMLWindowObject( )
 	{ return _window; }
@@ -109,4 +111,15 @@ namespace Sonar
 
 	bool Window::HasFocus( ) const
 	{ return _window.hasFocus( ); }
+
+	void Window::SetView( const View view )
+	{
+		_window.setView( view.GetSFMLViewObject( ) );
+	}
+
+	const View &Window::GetDefaultView( ) const
+	{
+		return View( _window.getDefaultView( ) );
+	}
+
 }

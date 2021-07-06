@@ -353,10 +353,10 @@
     <ClCompile Include="..\..\..\External Libraries\imgui\include\imgui.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Chrome\ImGui\imgui\include\imgui_tables.cpp">
+    <ClCompile Include="..\..\..\Code\src\Engine\Core\Window.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Code\src\Engine\Core\Window.cpp">
+    <ClCompile Include="..\..\..\External Libraries\imgui\include\imgui_tables.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

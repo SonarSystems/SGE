@@ -42,18 +42,18 @@ namespace Sonar
     {
         if ( _player->GetPositionX( ) < -_player->GetWidth( ) )
         {
-            _player->SetPositionX( _data->window.getSize( ).x + _player->GetWidth( ) );
+            _player->SetPositionX( _data->window.GetSize( ).x + _player->GetWidth( ) );
         }
-        else if ( _player->GetPositionX( ) -_player->GetWidth( ) > _data->window.getSize( ).x )
+        else if ( _player->GetPositionX( ) -_player->GetWidth( ) > _data->window.GetSize( ).x )
         {
             _player->SetPositionX( -_player->GetWidth( ) );
         }
 
         if ( _player->GetPositionY( ) < -_player->GetHeight( ) )
         {
-            _player->SetPositionY( _data->window.getSize( ).y + _player->GetHeight( ) );
+            _player->SetPositionY( _data->window.GetSize( ).y + _player->GetHeight( ) );
         }
-        else if ( _player->GetPositionY( ) - _player->GetHeight( ) > _data->window.getSize( ).y )
+        else if ( _player->GetPositionY( ) - _player->GetHeight( ) > _data->window.GetSize( ).y )
         {
             _player->SetPositionY( -_player->GetHeight( ) );
         }

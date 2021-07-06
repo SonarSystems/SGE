@@ -1,4 +1,5 @@
 #include "Input/Mouse.hpp"
+#include "Core/Window.hpp"
 
 namespace Sonar
 {
@@ -16,7 +17,7 @@ namespace Sonar
         if ( windowOnly )
         {
             // check if the mouse is outside of the window
-            if ( sf::Mouse::getPosition( window.GetSFMLWindowObject( ) ).x < 0 || sf::Mouse::getPosition( window.GetSFMLWindowObject( ) ).x > ( int )window.getSize( ).x || sf::Mouse::getPosition( window.GetSFMLWindowObject( ) ).y < 0 || sf::Mouse::getPosition( window.GetSFMLWindowObject( ) ).y > ( int )window.getSize( ).y )
+            if ( sf::Mouse::getPosition( window.GetSFMLWindowObject( ) ).x < 0 || sf::Mouse::getPosition( window.GetSFMLWindowObject( ) ).x > ( int )window.GetSize( ).x || sf::Mouse::getPosition( window.GetSFMLWindowObject( ) ).y < 0 || sf::Mouse::getPosition( window.GetSFMLWindowObject( ) ).y > ( int )window.GetSize( ).y )
             {
                 position.x = -1;
                 position.y = -1;

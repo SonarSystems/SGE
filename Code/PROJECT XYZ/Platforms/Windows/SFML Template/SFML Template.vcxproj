@@ -133,8 +133,8 @@
     <ClCompile Include="..\..\..\External Libraries\imgui\include\imgui.cpp" />
     <ClCompile Include="..\..\..\External Libraries\imgui\include\imgui_demo.cpp" />
     <ClCompile Include="..\..\..\External Libraries\imgui\include\imgui_draw.cpp" />
+    <ClCompile Include="..\..\..\External Libraries\imgui\include\imgui_tables.cpp" />
     <ClCompile Include="..\..\..\External Libraries\imgui\include\imgui_widgets.cpp" />
-    <ClCompile Include="E:\Chrome\ImGui\imgui\include\imgui_tables.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{A960721E-6826-4F22-9735-A7E885AB2CDD}</ProjectGuid>

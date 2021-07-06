@@ -5,6 +5,9 @@
 
 #include "Core/ENGINEDEFINITIONS.hpp"
 #include "Graphics/Color.hpp"
+#include "Input/Events.hpp"
+#include "Input/Mouse.hpp"
+#include "Graphics/View.hpp"
 
 namespace Sonar
 {
@@ -65,33 +68,38 @@ namespace Sonar
 		Window( );
 
 		/**
-		* \brief Class constructor with width, height & title parameters (Recommended version of the constructor)
-		*
-		* \param width Width of the window
-		* \param height Height of the window
-		* \param title Title of the window
-		*/
-		Window( const unsigned int &width, const unsigned int &height, const std::string &title );
-
-		/**
-		* \brief Class constructor with width and height parameters (title will be set by default properties in ENGINEDEFINITIONS.hpp)
-		*
-		* \param width Width of the window
-		* \param height Height of the window
-		*/
-		Window( const unsigned int &width, const unsigned int &height );
-
-		/**
-		* \brief Class constructor with title parameters (width and height will be set by default properties in ENGINEDEFINITIONS.hpp)
-		* 
-		* \param title Title of the window
-		*/
-		Window( const std::string &title );
-
-		/**
 		* \brief Class destructor
 		*/
         ~Window( );
+
+		/**
+		* \brief Setup function - recommended to use overloaded version with parameters (width, height & title will be set by default properties in ENGINEDEFINITIONS.hpp)
+		*/
+		void Setup( );
+
+		/**
+		* \brief Setup function with width, height & title parameters (Recommended version of the constructor)
+		*
+		* \param width Width of the window
+		* \param height Height of the window
+		* \param title Title of the window
+		*/
+		void Setup( const unsigned int &width, const unsigned int &height, const std::string &title );
+
+		/**
+		* \brief Setup function with width and height parameters (title will be set by default properties in ENGINEDEFINITIONS.hpp)
+		*
+		* \param width Width of the window
+		* \param height Height of the window
+		*/
+		void Setup( const unsigned int &width, const unsigned int &height );
+
+		/**
+		* \brief Setup function with title parameters (width and height will be set by default properties in ENGINEDEFINITIONS.hpp)
+		* 
+		* \param title Title of the window
+		*/
+		void Setup( const std::string &title );
 
 		/**
 		* \brief Get the underlying SFML Window object
@@ -267,6 +275,10 @@ namespace Sonar
 		* \return Output return true if window has focus, false otherwise
 		*/
 		bool HasFocus( ) const;
+
+		void SetView( const View view );
+
+		const View &GetDefaultView( ) const;
                         
 	private:
 		/**

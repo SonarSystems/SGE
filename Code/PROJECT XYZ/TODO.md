@@ -5,6 +5,7 @@ ENGINE
 -----------------------------------------------------------------
 * GUI
     - Window Abstraction
+        - Setting window style aka close button etc, see original create method for sf::Window
     - Game.hpp/Game.cpp Abstraction
     - Fix ImGui capslock crashing the InputText
     - Fix ImGui clock stuff and abstract so using Sonar Clock and Color Classes

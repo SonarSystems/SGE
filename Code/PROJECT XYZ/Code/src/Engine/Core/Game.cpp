@@ -7,7 +7,7 @@ namespace Sonar
 	{
         _data->debug = Debug::getInstance( );
         
-		_data->window.create( sf::VideoMode( width, height ), title, sf::Style::Close | sf::Style::Titlebar );
+		_data->window.Setup( width, height, title );
 		_data->machine.AddState( StateRef( new SplashState( _data ) ) );
 
 		Run( );
@@ -20,7 +20,7 @@ namespace Sonar
 		float currentTime = _clock.GetElapsedTime( ).AsSeconds( );
 		float accumulator = 0.0f;
 
-		while ( _data->window.isOpen( ) )
+		while ( _data->window.IsOpen( ) )
 		{
 			_data->machine.ProcessStateChanges( );
 
@@ -37,10 +37,10 @@ namespace Sonar
 			{
                 sf::Event event;
                 
-                while ( _data->window.pollEvent( event ) )
+                while ( _data->window.PollEvent( event ) )
                 {
                     if ( sf::Event::Closed == event.type )
-                    { _data->window.close( ); }
+                    { _data->window.CloseWindow( ); }
                                         
                     _data->machine.GetActiveState( )->PollInput( dt, Event( event ) );
                 }
@@ -52,11 +52,11 @@ namespace Sonar
 
 			interpolation = accumulator / dt;
             
-			_data->window.clear( sf::Color( _data->backgroundColor.GetRed( ), _data->backgroundColor.GetGreen( ), _data->backgroundColor.GetBlue( ), _data->backgroundColor.GetAlpha( ) ) );
+			_data->window.Clear( _data->backgroundColor );
 			
 			_data->machine.GetActiveState( )->Draw( interpolation );
             
-            _data->window.display( );
+            _data->window.Display( );
 		}
 	}
 }

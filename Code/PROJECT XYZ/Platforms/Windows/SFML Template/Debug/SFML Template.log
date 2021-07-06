@@ -1,303 +1,514 @@
-﻿  StateMachine.cpp
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C2143: syntax error: missing ',' before '&'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C2143: syntax error: missing ',' before '&'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,30): error C2653: 'Mouse': is not a class or namespace name
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C2143: syntax error: missing ',' before '&'
+﻿  Game.cpp
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Drawable.hpp(481,19): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Drawable.hpp(501,21): error C3646: '_data': unknown override specifier
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Drawable.hpp(501,26): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(21,17): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(30,17): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(30,15): error C2535: 'Sonar::Circle::Circle(void)': member function already defined or declared
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(21): message : see declaration of 'Sonar::Circle::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(21,15): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(29,18): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(29,16): error C2535: 'Sonar::View::View(void)': member function already defined or declared
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(21): message : see declaration of 'Sonar::View::View'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(38,9): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(38,7): error C2535: 'Sonar::View::View(void)': member function already defined or declared
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(21): message : see declaration of 'Sonar::View::View'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(185,15): error C3646: '_data': unknown override specifier
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(185,20): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
   Window.cpp
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C2143: syntax error: missing ',' before '&'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C2143: syntax error: missing ',' before '&'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,30): error C2653: 'Mouse': is not a class or namespace name
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C2143: syntax error: missing ',' before '&'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Core\Window.cpp(43,38): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Core\Window.cpp(43,38): error C2143: syntax error: missing ',' before '&'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Core\Window.cpp(44,30): error C2065: 'event': undeclared identifier
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Core\Window.cpp(46,38): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Core\Window.cpp(46,38): error C2143: syntax error: missing ',' before '&'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Core\Window.cpp(47,30): error C2065: 'event': undeclared identifier
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Core\Window.cpp(87,37): error C2653: 'Mouse': is not a class or namespace name
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Core\Window.cpp(87,51): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Core\Window.cpp(87,51): error C2143: syntax error: missing ',' before '&'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Core\Window.cpp(90,50): error C2065: 'cursor': undeclared identifier
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Game.hpp(24,10): error C2079: 'Sonar::GameData::window' uses undefined class 'Sonar::Window'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Core\Window.cpp(122,42): error C2440: '<function-style-cast>': cannot convert from 'const sf::View' to 'Sonar::View'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Core\Window.cpp(122,42): message : No constructor could take the source type, or constructor overload resolution was ambiguous
   Button.cpp
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C2143: syntax error: missing ',' before '&'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C2143: syntax error: missing ',' before '&'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,30): error C2653: 'Mouse': is not a class or namespace name
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C2143: syntax error: missing ',' before '&'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(14,5): error C2504: 'Drawable': base class undefined
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(21,17): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(30,17): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(30,15): error C2535: 'Sonar::Circle::Circle(void)': member function already defined or declared
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(21): message : see declaration of 'Sonar::Circle::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(268,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(268,44): error C2143: syntax error: missing ',' before '&'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(21,15): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(29,18): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(29,16): error C2535: 'Sonar::View::View(void)': member function already defined or declared
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(21): message : see declaration of 'Sonar::View::View'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(38,9): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(38,7): error C2535: 'Sonar::View::View(void)': member function already defined or declared
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(21): message : see declaration of 'Sonar::View::View'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(185,15): error C3646: '_data': unknown override specifier
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(185,20): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
   ButtonGroup.cpp
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C2143: syntax error: missing ',' before '&'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C2143: syntax error: missing ',' before '&'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,30): error C2653: 'Mouse': is not a class or namespace name
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C2143: syntax error: missing ',' before '&'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Drawable.hpp(481,19): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Drawable.hpp(501,21): error C3646: '_data': unknown override specifier
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Drawable.hpp(501,26): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(21,17): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(30,17): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(30,15): error C2535: 'Sonar::Circle::Circle(void)': member function already defined or declared
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(21): message : see declaration of 'Sonar::Circle::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(21,15): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(29,18): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(29,16): error C2535: 'Sonar::View::View(void)': member function already defined or declared
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(21): message : see declaration of 'Sonar::View::View'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(38,9): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(38,7): error C2535: 'Sonar::View::View(void)': member function already defined or declared
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(21): message : see declaration of 'Sonar::View::View'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(185,15): error C3646: '_data': unknown override specifier
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(185,20): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  Checkbox.cpp
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(14,5): error C2504: 'Drawable': base class undefined
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(21,17): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(30,17): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(30,15): error C2535: 'Sonar::Circle::Circle(void)': member function already defined or declared
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(21): message : see declaration of 'Sonar::Circle::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(268,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(268,44): error C2143: syntax error: missing ',' before '&'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(21,15): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(29,18): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(29,16): error C2535: 'Sonar::View::View(void)': member function already defined or declared
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(21): message : see declaration of 'Sonar::View::View'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(38,9): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(38,7): error C2535: 'Sonar::View::View(void)': member function already defined or declared
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(21): message : see declaration of 'Sonar::View::View'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(185,15): error C3646: '_data': unknown override specifier
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(185,20): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
   Drawable.cpp
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C2143: syntax error: missing ',' before '&'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C2143: syntax error: missing ',' before '&'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,30): error C2653: 'Mouse': is not a class or namespace name
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C2143: syntax error: missing ',' before '&'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(14,5): error C2504: 'Drawable': base class undefined
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(21,17): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(30,17): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(30,15): error C2535: 'Sonar::Circle::Circle(void)': member function already defined or declared
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(21): message : see declaration of 'Sonar::Circle::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(268,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(268,44): error C2143: syntax error: missing ',' before '&'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(21,15): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(29,18): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(29,16): error C2535: 'Sonar::View::View(void)': member function already defined or declared
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(21): message : see declaration of 'Sonar::View::View'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(38,9): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(38,7): error C2535: 'Sonar::View::View(void)': member function already defined or declared
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(21): message : see declaration of 'Sonar::View::View'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(185,15): error C3646: '_data': unknown override specifier
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(185,20): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
   Label.cpp
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C2143: syntax error: missing ',' before '&'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C2143: syntax error: missing ',' before '&'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,30): error C2653: 'Mouse': is not a class or namespace name
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C2143: syntax error: missing ',' before '&'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(14,5): error C2504: 'Drawable': base class undefined
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(21,17): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(30,17): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(30,15): error C2535: 'Sonar::Circle::Circle(void)': member function already defined or declared
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(21): message : see declaration of 'Sonar::Circle::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(268,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(268,44): error C2143: syntax error: missing ',' before '&'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(21,15): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(29,18): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(29,16): error C2535: 'Sonar::View::View(void)': member function already defined or declared
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(21): message : see declaration of 'Sonar::View::View'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(38,9): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(38,7): error C2535: 'Sonar::View::View(void)': member function already defined or declared
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(21): message : see declaration of 'Sonar::View::View'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(185,15): error C3646: '_data': unknown override specifier
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(185,20): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
   Menu.cpp
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C2143: syntax error: missing ',' before '&'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C2143: syntax error: missing ',' before '&'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,30): error C2653: 'Mouse': is not a class or namespace name
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C2143: syntax error: missing ',' before '&'
-  MenuComponent.cpp
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C2143: syntax error: missing ',' before '&'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C2143: syntax error: missing ',' before '&'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,30): error C2653: 'Mouse': is not a class or namespace name
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C2143: syntax error: missing ',' before '&'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Drawable.hpp(481,19): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Drawable.hpp(501,21): error C3646: '_data': unknown override specifier
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Drawable.hpp(501,26): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(21,17): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(30,17): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(30,15): error C2535: 'Sonar::Circle::Circle(void)': member function already defined or declared
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(21): message : see declaration of 'Sonar::Circle::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(21,15): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(29,18): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(29,16): error C2535: 'Sonar::View::View(void)': member function already defined or declared
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(21): message : see declaration of 'Sonar::View::View'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(38,9): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(38,7): error C2535: 'Sonar::View::View(void)': member function already defined or declared
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(21): message : see declaration of 'Sonar::View::View'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(185,15): error C3646: '_data': unknown override specifier
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(185,20): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
   Minimap.cpp
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C2143: syntax error: missing ',' before '&'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C2143: syntax error: missing ',' before '&'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,30): error C2653: 'Mouse': is not a class or namespace name
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C2143: syntax error: missing ',' before '&'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(14,5): error C2504: 'Drawable': base class undefined
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(21,17): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(30,17): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(30,15): error C2535: 'Sonar::Circle::Circle(void)': member function already defined or declared
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(21): message : see declaration of 'Sonar::Circle::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(268,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(268,44): error C2143: syntax error: missing ',' before '&'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(21,15): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(29,18): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(29,16): error C2535: 'Sonar::View::View(void)': member function already defined or declared
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(21): message : see declaration of 'Sonar::View::View'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(38,9): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(38,7): error C2535: 'Sonar::View::View(void)': member function already defined or declared
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(21): message : see declaration of 'Sonar::View::View'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(185,15): error C3646: '_data': unknown override specifier
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(185,20): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+E:\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Minimap.cpp(44,33): error C2039: 'BoundingBoxCollision': is not a member of 'Sonar::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(13): message : see declaration of 'Sonar::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Minimap.cpp(46,54): error C2039: 'GetPositionX': is not a member of 'Sonar::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(13): message : see declaration of 'Sonar::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Minimap.cpp(47,53): error C2039: 'GetPositionY': is not a member of 'Sonar::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(13): message : see declaration of 'Sonar::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Minimap.cpp(48,53): error C2039: 'GetPositionX': is not a member of 'Sonar::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(13): message : see declaration of 'Sonar::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Minimap.cpp(49,53): error C2039: 'GetPositionY': is not a member of 'Sonar::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(13): message : see declaration of 'Sonar::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Minimap.cpp(50,53): error C2039: 'GetPositionX': is not a member of 'Sonar::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(13): message : see declaration of 'Sonar::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Minimap.cpp(51,53): error C2039: 'GetPositionY': is not a member of 'Sonar::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(13): message : see declaration of 'Sonar::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Minimap.cpp(52,53): error C2039: 'GetPositionX': is not a member of 'Sonar::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(13): message : see declaration of 'Sonar::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Minimap.cpp(53,53): error C2039: 'GetPositionY': is not a member of 'Sonar::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(13): message : see declaration of 'Sonar::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Minimap.cpp(54,31): error C2039: 'Draw': is not a member of 'Sonar::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(13): message : see declaration of 'Sonar::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Minimap.cpp(105,46): error C2664: 'Sonar::Circle::Circle(const Sonar::Circle &)': cannot convert argument 1 from 'Sonar::GameDataRef' to 'const Sonar::Circle &'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Minimap.cpp(105,46): message : Reason: cannot convert from 'Sonar::GameDataRef' to 'const Sonar::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Minimap.cpp(105,39): message : No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(370,5): message : see declaration of 'Sonar::Circle::Circle'
   Parallax.cpp
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C2143: syntax error: missing ',' before '&'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C2143: syntax error: missing ',' before '&'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,30): error C2653: 'Mouse': is not a class or namespace name
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C2143: syntax error: missing ',' before '&'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(14,5): error C2504: 'Drawable': base class undefined
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(21,17): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(30,17): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(30,15): error C2535: 'Sonar::Circle::Circle(void)': member function already defined or declared
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(21): message : see declaration of 'Sonar::Circle::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(268,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(268,44): error C2143: syntax error: missing ',' before '&'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(21,15): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(29,18): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(29,16): error C2535: 'Sonar::View::View(void)': member function already defined or declared
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(21): message : see declaration of 'Sonar::View::View'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(38,9): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(38,7): error C2535: 'Sonar::View::View(void)': member function already defined or declared
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(21): message : see declaration of 'Sonar::View::View'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(185,15): error C3646: '_data': unknown override specifier
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(185,20): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
   ProgressBar.cpp
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C2143: syntax error: missing ',' before '&'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C2143: syntax error: missing ',' before '&'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,30): error C2653: 'Mouse': is not a class or namespace name
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C2143: syntax error: missing ',' before '&'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(14,5): error C2504: 'Drawable': base class undefined
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(21,17): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(30,17): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(30,15): error C2535: 'Sonar::Circle::Circle(void)': member function already defined or declared
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(21): message : see declaration of 'Sonar::Circle::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(268,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(268,44): error C2143: syntax error: missing ',' before '&'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(21,15): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(29,18): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(29,16): error C2535: 'Sonar::View::View(void)': member function already defined or declared
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(21): message : see declaration of 'Sonar::View::View'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(38,9): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(38,7): error C2535: 'Sonar::View::View(void)': member function already defined or declared
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(21): message : see declaration of 'Sonar::View::View'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(185,15): error C3646: '_data': unknown override specifier
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(185,20): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
   RadioButton.cpp
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C2143: syntax error: missing ',' before '&'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C2143: syntax error: missing ',' before '&'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,30): error C2653: 'Mouse': is not a class or namespace name
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C2143: syntax error: missing ',' before '&'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(14,5): error C2504: 'Drawable': base class undefined
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(21,17): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(30,17): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(30,15): error C2535: 'Sonar::Circle::Circle(void)': member function already defined or declared
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(21): message : see declaration of 'Sonar::Circle::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(268,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(268,44): error C2143: syntax error: missing ',' before '&'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(21,15): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(29,18): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(29,16): error C2535: 'Sonar::View::View(void)': member function already defined or declared
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(21): message : see declaration of 'Sonar::View::View'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(38,9): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(38,7): error C2535: 'Sonar::View::View(void)': member function already defined or declared
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(21): message : see declaration of 'Sonar::View::View'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(185,15): error C3646: '_data': unknown override specifier
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(185,20): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+E:\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\RadioButton.cpp(7,36): error C2664: 'Sonar::Circle::Circle(const Sonar::Circle &)': cannot convert argument 1 from 'Sonar::GameDataRef' to 'const Sonar::Circle &'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\RadioButton.cpp(7,36): message : Reason: cannot convert from 'Sonar::GameDataRef' to 'const Sonar::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\RadioButton.cpp(7,29): message : No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(370,5): message : see declaration of 'Sonar::Circle::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\RadioButton.cpp(8,37): error C2664: 'Sonar::Circle::Circle(const Sonar::Circle &)': cannot convert argument 1 from 'Sonar::GameDataRef' to 'const Sonar::Circle &'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\RadioButton.cpp(8,37): message : Reason: cannot convert from 'Sonar::GameDataRef' to 'const Sonar::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\RadioButton.cpp(8,30): message : No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(370,5): message : see declaration of 'Sonar::Circle::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\RadioButton.cpp(39,16): error C2039: 'Draw': is not a member of 'Sonar::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(13): message : see declaration of 'Sonar::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\RadioButton.cpp(42,19): error C2039: 'Draw': is not a member of 'Sonar::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(13): message : see declaration of 'Sonar::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\RadioButton.cpp(50,21): error C2039: 'IsClicked': is not a member of 'Sonar::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(13): message : see declaration of 'Sonar::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\RadioButton.cpp(61,26): error C2039: 'IsMouseOver': is not a member of 'Sonar::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(13): message : see declaration of 'Sonar::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\RadioButton.cpp(121,44): error C2039: 'GetPositionY': is not a member of 'Sonar::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(13): message : see declaration of 'Sonar::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\RadioButton.cpp(124,41): error C2039: 'GetPositionX': is not a member of 'Sonar::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(13): message : see declaration of 'Sonar::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\RadioButton.cpp(127,24): error C2039: 'GetPositionX': is not a member of 'Sonar::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(13): message : see declaration of 'Sonar::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\RadioButton.cpp(130,24): error C2039: 'GetPositionY': is not a member of 'Sonar::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(13): message : see declaration of 'Sonar::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\RadioButton.cpp(133,24): error C2039: 'GetPosition': is not a member of 'Sonar::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(13): message : see declaration of 'Sonar::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\RadioButton.cpp(140,29): error C2039: 'GetPosition': is not a member of 'Sonar::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(13): message : see declaration of 'Sonar::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\RadioButton.cpp(218,24): error C2039: 'GetScaleX': is not a member of 'Sonar::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(13): message : see declaration of 'Sonar::Circle'
   RadioButtonGroup.cpp
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C2143: syntax error: missing ',' before '&'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C2143: syntax error: missing ',' before '&'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,30): error C2653: 'Mouse': is not a class or namespace name
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C2143: syntax error: missing ',' before '&'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Drawable.hpp(481,19): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Drawable.hpp(501,21): error C3646: '_data': unknown override specifier
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Drawable.hpp(501,26): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(21,17): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(30,17): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(30,15): error C2535: 'Sonar::Circle::Circle(void)': member function already defined or declared
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(21): message : see declaration of 'Sonar::Circle::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(21,15): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(29,18): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(29,16): error C2535: 'Sonar::View::View(void)': member function already defined or declared
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(21): message : see declaration of 'Sonar::View::View'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(38,9): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(38,7): error C2535: 'Sonar::View::View(void)': member function already defined or declared
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(21): message : see declaration of 'Sonar::View::View'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(185,15): error C3646: '_data': unknown override specifier
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(185,20): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
   ScrollingBackground.cpp
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C2143: syntax error: missing ',' before '&'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C2143: syntax error: missing ',' before '&'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,30): error C2653: 'Mouse': is not a class or namespace name
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C2143: syntax error: missing ',' before '&'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\ScrollingBackground.cpp(62,64): error C2039: 'getSize': is not a member of 'Sonar::Window'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(11): message : see declaration of 'Sonar::Window'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\ScrollingBackground.cpp(102,64): error C2039: 'getSize': is not a member of 'Sonar::Window'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(11): message : see declaration of 'Sonar::Window'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(14,5): error C2504: 'Drawable': base class undefined
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(21,17): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(30,17): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(30,15): error C2535: 'Sonar::Circle::Circle(void)': member function already defined or declared
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(21): message : see declaration of 'Sonar::Circle::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(268,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(268,44): error C2143: syntax error: missing ',' before '&'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(21,15): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(29,18): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(29,16): error C2535: 'Sonar::View::View(void)': member function already defined or declared
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(21): message : see declaration of 'Sonar::View::View'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(38,9): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(38,7): error C2535: 'Sonar::View::View(void)': member function already defined or declared
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(21): message : see declaration of 'Sonar::View::View'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(185,15): error C3646: '_data': unknown override specifier
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(185,20): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
   Circle.cpp
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C2143: syntax error: missing ',' before '&'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C2143: syntax error: missing ',' before '&'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,30): error C2653: 'Mouse': is not a class or namespace name
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C2143: syntax error: missing ',' before '&'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(21,15): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(29,18): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(29,16): error C2535: 'Sonar::View::View(void)': member function already defined or declared
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(21): message : see declaration of 'Sonar::View::View'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(38,9): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(38,7): error C2535: 'Sonar::View::View(void)': member function already defined or declared
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(21): message : see declaration of 'Sonar::View::View'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(185,15): error C3646: '_data': unknown override specifier
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(185,20): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
   Rectangle.cpp
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C2143: syntax error: missing ',' before '&'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C2143: syntax error: missing ',' before '&'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,30): error C2653: 'Mouse': is not a class or namespace name
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C2143: syntax error: missing ',' before '&'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(14,5): error C2504: 'Drawable': base class undefined
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(21,17): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(30,17): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(30,15): error C2535: 'Sonar::Circle::Circle(void)': member function already defined or declared
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(21): message : see declaration of 'Sonar::Circle::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(268,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(268,44): error C2143: syntax error: missing ',' before '&'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(21,15): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(29,18): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(29,16): error C2535: 'Sonar::View::View(void)': member function already defined or declared
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(21): message : see declaration of 'Sonar::View::View'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(38,9): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(38,7): error C2535: 'Sonar::View::View(void)': member function already defined or declared
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(21): message : see declaration of 'Sonar::View::View'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(185,15): error C3646: '_data': unknown override specifier
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(185,20): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
   Triangle.cpp
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C2143: syntax error: missing ',' before '&'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C2143: syntax error: missing ',' before '&'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,30): error C2653: 'Mouse': is not a class or namespace name
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C2143: syntax error: missing ',' before '&'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(14,5): error C2504: 'Drawable': base class undefined
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(21,17): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(30,17): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(30,15): error C2535: 'Sonar::Circle::Circle(void)': member function already defined or declared
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(21): message : see declaration of 'Sonar::Circle::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(268,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(268,44): error C2143: syntax error: missing ',' before '&'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(21,15): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(29,18): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(29,16): error C2535: 'Sonar::View::View(void)': member function already defined or declared
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(21): message : see declaration of 'Sonar::View::View'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(38,9): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(38,7): error C2535: 'Sonar::View::View(void)': member function already defined or declared
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(21): message : see declaration of 'Sonar::View::View'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(185,15): error C3646: '_data': unknown override specifier
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(185,20): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
   Slider.cpp
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C2143: syntax error: missing ',' before '&'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C2143: syntax error: missing ',' before '&'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,30): error C2653: 'Mouse': is not a class or namespace name
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C2143: syntax error: missing ',' before '&'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(14,5): error C2504: 'Drawable': base class undefined
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(21,17): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(30,17): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(30,15): error C2535: 'Sonar::Circle::Circle(void)': member function already defined or declared
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(21): message : see declaration of 'Sonar::Circle::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(268,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(268,44): error C2143: syntax error: missing ',' before '&'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(21,15): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(29,18): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(29,16): error C2535: 'Sonar::View::View(void)': member function already defined or declared
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(21): message : see declaration of 'Sonar::View::View'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(38,9): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(38,7): error C2535: 'Sonar::View::View(void)': member function already defined or declared
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(21): message : see declaration of 'Sonar::View::View'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(185,15): error C3646: '_data': unknown override specifier
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(185,20): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+E:\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Slider.cpp(8,30): error C2664: 'Sonar::Circle::Circle(const Sonar::Circle &)': cannot convert argument 1 from 'Sonar::GameDataRef' to 'const Sonar::Circle &'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Slider.cpp(8,30): message : Reason: cannot convert from 'Sonar::GameDataRef' to 'const Sonar::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Slider.cpp(8,23): message : No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(370,5): message : see declaration of 'Sonar::Circle::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Slider.cpp(42,10): error C2039: 'Draw': is not a member of 'Sonar::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(13): message : see declaration of 'Sonar::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Slider.cpp(79,17): error C2039: 'IsClicked': is not a member of 'Sonar::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(13): message : see declaration of 'Sonar::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Slider.cpp(133,27): error C2039: 'GetPositionX': is not a member of 'Sonar::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(13): message : see declaration of 'Sonar::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Slider.cpp(138,27): error C2039: 'GetPositionY': is not a member of 'Sonar::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(13): message : see declaration of 'Sonar::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Slider.cpp(173,65): error C2039: 'GetScaleX': is not a member of 'Sonar::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(13): message : see declaration of 'Sonar::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Slider.cpp(174,132): error C2039: 'GetScaleX': is not a member of 'Sonar::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(13): message : see declaration of 'Sonar::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Slider.cpp(178,131): error C2039: 'GetScaleX': is not a member of 'Sonar::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(13): message : see declaration of 'Sonar::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Slider.cpp(179,65): error C2039: 'GetScaleX': is not a member of 'Sonar::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(13): message : see declaration of 'Sonar::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Slider.cpp(382,49): error C2039: 'IsMouseOver': is not a member of 'Sonar::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(13): message : see declaration of 'Sonar::Circle'
   Sprite.cpp
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C2143: syntax error: missing ',' before '&'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C2143: syntax error: missing ',' before '&'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,30): error C2653: 'Mouse': is not a class or namespace name
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C2143: syntax error: missing ',' before '&'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(14,5): error C2504: 'Drawable': base class undefined
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(21,17): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(30,17): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(30,15): error C2535: 'Sonar::Circle::Circle(void)': member function already defined or declared
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(21): message : see declaration of 'Sonar::Circle::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(268,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(268,44): error C2143: syntax error: missing ',' before '&'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(21,15): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(29,18): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(29,16): error C2535: 'Sonar::View::View(void)': member function already defined or declared
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(21): message : see declaration of 'Sonar::View::View'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(38,9): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(38,7): error C2535: 'Sonar::View::View(void)': member function already defined or declared
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(21): message : see declaration of 'Sonar::View::View'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(185,15): error C3646: '_data': unknown override specifier
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(185,20): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
   TextBox.cpp
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C2143: syntax error: missing ',' before '&'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C2143: syntax error: missing ',' before '&'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,30): error C2653: 'Mouse': is not a class or namespace name
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C2143: syntax error: missing ',' before '&'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(14,5): error C2504: 'Drawable': base class undefined
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(21,17): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(30,17): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(30,15): error C2535: 'Sonar::Circle::Circle(void)': member function already defined or declared
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(21): message : see declaration of 'Sonar::Circle::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(268,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(268,44): error C2143: syntax error: missing ',' before '&'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(21,15): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(29,18): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(29,16): error C2535: 'Sonar::View::View(void)': member function already defined or declared
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(21): message : see declaration of 'Sonar::View::View'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(38,9): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(38,7): error C2535: 'Sonar::View::View(void)': member function already defined or declared
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(21): message : see declaration of 'Sonar::View::View'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(185,15): error C3646: '_data': unknown override specifier
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(185,20): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
   Generating Code...
   Compiling...
   Texture.cpp
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C2143: syntax error: missing ',' before '&'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C2143: syntax error: missing ',' before '&'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,30): error C2653: 'Mouse': is not a class or namespace name
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C2143: syntax error: missing ',' before '&'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(14,5): error C2504: 'Drawable': base class undefined
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(21,17): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(30,17): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(30,15): error C2535: 'Sonar::Circle::Circle(void)': member function already defined or declared
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(21): message : see declaration of 'Sonar::Circle::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(268,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(268,44): error C2143: syntax error: missing ',' before '&'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(305,26): error C2061: syntax error: identifier 'Texture'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(329,17): error C2143: syntax error: missing ';' before '*'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(329,17): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(329,37): error C2238: unexpected token(s) preceding ';'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(368,17): error C2143: syntax error: missing ';' before '*'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(368,17): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(368,26): error C2238: unexpected token(s) preceding ';'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(21,15): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(29,18): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(29,16): error C2535: 'Sonar::View::View(void)': member function already defined or declared
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(21): message : see declaration of 'Sonar::View::View'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(38,9): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(38,7): error C2535: 'Sonar::View::View(void)': member function already defined or declared
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(21): message : see declaration of 'Sonar::View::View'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(185,15): error C3646: '_data': unknown override specifier
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(185,20): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
   View.cpp
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C2143: syntax error: missing ',' before '&'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C2143: syntax error: missing ',' before '&'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,30): error C2653: 'Mouse': is not a class or namespace name
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C2143: syntax error: missing ',' before '&'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\View.cpp(23,17): error C2039: 'setView': is not a member of 'Sonar::Window'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(11): message : see declaration of 'Sonar::Window'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\View.cpp(28,17): error C2039: 'setView': is not a member of 'Sonar::Window'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(11): message : see declaration of 'Sonar::Window'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\View.cpp(28,40): error C2039: 'getDefaultView': is not a member of 'Sonar::Window'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(11): message : see declaration of 'Sonar::Window'
-  Events.cpp
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C2143: syntax error: missing ',' before '&'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C2143: syntax error: missing ',' before '&'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,30): error C2653: 'Mouse': is not a class or namespace name
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C2143: syntax error: missing ',' before '&'
-  Input.cpp
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C2143: syntax error: missing ',' before '&'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C2143: syntax error: missing ',' before '&'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,30): error C2653: 'Mouse': is not a class or namespace name
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C2143: syntax error: missing ',' before '&'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(279,28): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(279,28): error C2146: syntax error: missing ')' before identifier 'view'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(279,28): error C3646: 'view': unknown override specifier
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(279,33): error C2059: syntax error: ')'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(281,14): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(281,14): error C2143: syntax error: missing ';' before '&'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(281,38): error C2238: unexpected token(s) preceding ';'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\View.cpp(23,17): error C2039: 'setView': is not a member of 'Sonar::Window'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(14): message : see declaration of 'Sonar::Window'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\View.cpp(28,17): error C2039: 'setView': is not a member of 'Sonar::Window'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(14): message : see declaration of 'Sonar::Window'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\View.cpp(28,40): error C2039: 'getDefaultView': is not a member of 'Sonar::Window'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(14): message : see declaration of 'Sonar::Window'
   Mouse.cpp
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C2143: syntax error: missing ',' before '&'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C2143: syntax error: missing ',' before '&'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,30): error C2653: 'Mouse': is not a class or namespace name
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C2143: syntax error: missing ',' before '&'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Mouse.cpp(19,157): error C2039: 'getSize': is not a member of 'Sonar::Window'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(11): message : see declaration of 'Sonar::Window'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Mouse.cpp(19,312): error C2039: 'getSize': is not a member of 'Sonar::Window'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(11): message : see declaration of 'Sonar::Window'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Mouse.cpp(59,43): error C2664: 'void Sonar::Window::SetMouseCursor(const int)': cannot convert argument 1 from 'const Sonar::Mouse::Cursor' to 'const int'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Input\Mouse.cpp(59,36): message : This conversion requires an explicit cast (static_cast, C-style cast or function-style cast)
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,8): message : see declaration of 'Sonar::Window::SetMouseCursor'
-  QTE.cpp
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C2143: syntax error: missing ',' before '&'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C2143: syntax error: missing ',' before '&'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,30): error C2653: 'Mouse': is not a class or namespace name
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C2143: syntax error: missing ',' before '&'
-  Sequence.cpp
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C2143: syntax error: missing ',' before '&'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C2143: syntax error: missing ',' before '&'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,30): error C2653: 'Mouse': is not a class or namespace name
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C2143: syntax error: missing ',' before '&'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Game.hpp(24,10): error C2079: 'Sonar::GameData::window' uses undefined class 'Sonar::Window'
   main.cpp
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C2143: syntax error: missing ',' before '&'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C2143: syntax error: missing ',' before '&'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,30): error C2653: 'Mouse': is not a class or namespace name
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C2143: syntax error: missing ',' before '&'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Drawable.hpp(481,19): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Drawable.hpp(501,21): error C3646: '_data': unknown override specifier
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Drawable.hpp(501,26): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(21,17): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(30,17): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(30,15): error C2535: 'Sonar::Circle::Circle(void)': member function already defined or declared
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(21): message : see declaration of 'Sonar::Circle::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(21,15): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(29,18): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(29,16): error C2535: 'Sonar::View::View(void)': member function already defined or declared
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(21): message : see declaration of 'Sonar::View::View'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(38,9): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(38,7): error C2535: 'Sonar::View::View(void)': member function already defined or declared
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(21): message : see declaration of 'Sonar::View::View'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(185,15): error C3646: '_data': unknown override specifier
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(185,20): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
   PhysicsWorld.cpp
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C2143: syntax error: missing ',' before '&'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C2143: syntax error: missing ',' before '&'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,30): error C2653: 'Mouse': is not a class or namespace name
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C2143: syntax error: missing ',' before '&'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Drawable.hpp(481,19): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Drawable.hpp(501,21): error C3646: '_data': unknown override specifier
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Drawable.hpp(501,26): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(21,17): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(30,17): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(30,15): error C2535: 'Sonar::Circle::Circle(void)': member function already defined or declared
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(21): message : see declaration of 'Sonar::Circle::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(21,15): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(29,18): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(29,16): error C2535: 'Sonar::View::View(void)': member function already defined or declared
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(21): message : see declaration of 'Sonar::View::View'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(38,9): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(38,7): error C2535: 'Sonar::View::View(void)': member function already defined or declared
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(21): message : see declaration of 'Sonar::View::View'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(185,15): error C3646: '_data': unknown override specifier
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(185,20): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
   Player.cpp
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C2143: syntax error: missing ',' before '&'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C2143: syntax error: missing ',' before '&'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,30): error C2653: 'Mouse': is not a class or namespace name
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C2143: syntax error: missing ',' before '&'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\Player.cpp(45,50): error C2039: 'getSize': is not a member of 'Sonar::Window'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(11): message : see declaration of 'Sonar::Window'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\Player.cpp(47,82): error C2039: 'getSize': is not a member of 'Sonar::Window'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(11): message : see declaration of 'Sonar::Window'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\Player.cpp(54,50): error C2039: 'getSize': is not a member of 'Sonar::Window'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(11): message : see declaration of 'Sonar::Window'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\Player.cpp(56,84): error C2039: 'getSize': is not a member of 'Sonar::Window'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(11): message : see declaration of 'Sonar::Window'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Drawable.hpp(481,19): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Drawable.hpp(501,21): error C3646: '_data': unknown override specifier
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Drawable.hpp(501,26): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(21,17): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(30,17): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(30,15): error C2535: 'Sonar::Circle::Circle(void)': member function already defined or declared
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(21): message : see declaration of 'Sonar::Circle::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(21,15): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(29,18): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(29,16): error C2535: 'Sonar::View::View(void)': member function already defined or declared
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(21): message : see declaration of 'Sonar::View::View'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(38,9): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(38,7): error C2535: 'Sonar::View::View(void)': member function already defined or declared
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(21): message : see declaration of 'Sonar::View::View'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(185,15): error C3646: '_data': unknown override specifier
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(185,20): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
   SplashState.cpp
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(141,31): error C2143: syntax error: missing ',' before '&'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(150,31): error C2143: syntax error: missing ',' before '&'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,30): error C2653: 'Mouse': is not a class or namespace name
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(229,44): error C2143: syntax error: missing ',' before '&'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(7,36): error C2665: 'ImGui::SFML::Init': none of the 3 overloads could convert all the argument types
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\External Libraries\imgui-sfml\include\imgui-SFML.h(24,21): message : could be 'void ImGui::SFML::Init(sf::RenderWindow &,bool)'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(7,36): message : while trying to match the argument list '(Sonar::Window)'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(126,16): warning C4834: discarding return value of function with 'nodiscard' attribute
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(127,16): warning C4834: discarding return value of function with 'nodiscard' attribute
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(128,16): warning C4834: discarding return value of function with 'nodiscard' attribute
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(129,16): warning C4834: discarding return value of function with 'nodiscard' attribute
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(130,16): warning C4834: discarding return value of function with 'nodiscard' attribute
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(131,16): warning C4834: discarding return value of function with 'nodiscard' attribute
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(206,61): error C2665: 'ImGui::SFML::Update': none of the 3 overloads could convert all the argument types
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\External Libraries\imgui-sfml\include\imgui-SFML.h(31,21): message : could be 'void ImGui::SFML::Update(sf::RenderWindow &,sf::Time)'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(206,61): message : while trying to match the argument list '(Sonar::Window, sf::Time)'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(226,18): error C2039: 'setTitle': is not a member of 'Sonar::Window'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Window.hpp(11): message : see declaration of 'Sonar::Window'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(230,38): error C2665: 'ImGui::SFML::Render': none of the 2 overloads could convert all the argument types
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\External Libraries\imgui-sfml\include\imgui-SFML.h(36,21): message : could be 'void ImGui::SFML::Render(sf::RenderTarget &)'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(230,38): message : while trying to match the argument list '(Sonar::Window)'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Drawable.hpp(481,19): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Drawable.hpp(501,21): error C3646: '_data': unknown override specifier
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Drawable.hpp(501,26): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(21,17): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(30,17): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(30,15): error C2535: 'Sonar::Circle::Circle(void)': member function already defined or declared
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Circle.hpp(21): message : see declaration of 'Sonar::Circle::Circle'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(21,15): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(29,18): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(29,16): error C2535: 'Sonar::View::View(void)': member function already defined or declared
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(21): message : see declaration of 'Sonar::View::View'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(38,9): error C2061: syntax error: identifier 'GameDataRef'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(38,7): error C2535: 'Sonar::View::View(void)': member function already defined or declared
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(21): message : see declaration of 'Sonar::View::View'
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(185,15): error C3646: '_data': unknown override specifier
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\View.hpp(185,20): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+E:\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(126,16): warning C4834: discarding return value of function with 'nodiscard' attribute
+E:\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(127,16): warning C4834: discarding return value of function with 'nodiscard' attribute
+E:\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(128,16): warning C4834: discarding return value of function with 'nodiscard' attribute
+E:\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(129,16): warning C4834: discarding return value of function with 'nodiscard' attribute
+E:\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(130,16): warning C4834: discarding return value of function with 'nodiscard' attribute
+E:\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(131,16): warning C4834: discarding return value of function with 'nodiscard' attribute
+  imgui_tables.cpp
   Generating Code...
