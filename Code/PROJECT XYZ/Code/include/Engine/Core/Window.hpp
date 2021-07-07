@@ -7,10 +7,11 @@
 #include "Graphics/Color.hpp"
 #include "Input/Events.hpp"
 #include "Input/Mouse.hpp"
-#include "Graphics/View.hpp"
 
 namespace Sonar
 {
+	class View;
+
 	class Window
 	{
 	public:
@@ -63,7 +64,7 @@ namespace Sonar
 		};
 
         /**
-        * \brief Class constructor - recommended to use overloaded version with parameters (width, height & title will be set by default properties in ENGINEDEFINITIONS.hpp)
+        * \brief Class constructor
         */
 		Window( );
 
@@ -260,7 +261,7 @@ namespace Sonar
 		/**
 		* \brief Activate or deactivate the window as the current target for OpenGL rendering
 		*
-		* \param True if operation was successful, false otherwise
+		* \param active True if operation was successful, false otherwise
 		*/
 		void SetActive( const bool &active = true );
 
@@ -276,9 +277,17 @@ namespace Sonar
 		*/
 		bool HasFocus( ) const;
 
+		/**
+		* \brief Set the Window's current view to display
+		*
+		* \param view View to display
+		*/
 		void SetView( const View view );
 
-		const View &GetDefaultView( ) const;
+		/**
+		* \brief Get the Window's default view
+		*/
+		void SetDefaultView( );
                         
 	private:
 		/**

@@ -19,6 +19,8 @@ namespace Sonar
 		* \param data Game data object
         */
         View( GameDataRef data );
+
+		View( GameDataRef data, const sf::View &view );
         
 		/**
 		* \brief Explicit class constructor
@@ -176,6 +178,11 @@ namespace Sonar
 		*/
 		const sf::Transform &GetInverseTransform( ) const;
 
+		/**
+		* \brief Get the view's underlying SFML View object
+		*
+		* \return Output returns the SFML View object
+		*/
 		const sf::View &GetSFMLViewObject( ) const;
         
     private:

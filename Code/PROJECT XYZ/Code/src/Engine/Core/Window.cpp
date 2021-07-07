@@ -1,4 +1,5 @@
 #include "Core/Window.hpp"
+#include "Graphics/View.hpp"
 
 namespace Sonar
 {
@@ -113,13 +114,8 @@ namespace Sonar
 	{ return _window.hasFocus( ); }
 
 	void Window::SetView( const View view )
-	{
-		_window.setView( view.GetSFMLViewObject( ) );
-	}
+	{ _window.setView( view.GetSFMLViewObject( ) ); }
 
-	const View &Window::GetDefaultView( ) const
-	{
-		return View( _window.getDefaultView( ) );
-	}
-
+	void Window::SetDefaultView( )
+	{ _window.setView( _window.getDefaultView( ) ); }
 }

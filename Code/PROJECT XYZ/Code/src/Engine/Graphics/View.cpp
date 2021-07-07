@@ -11,6 +11,9 @@ namespace Sonar
 	View::View( GameDataRef data, const glm::vec2 &center, const glm::vec2 &size ) : _data( data )
 	{ _view = new sf::View( sf::Vector2f( center.x, center.y ), sf::Vector2f( size.x, size.y ) ); }
 
+	View::View( GameDataRef data, const sf::View &view ) : _data( data )
+	{ *_view = view; }
+
 	View::~View( )
 	{
 		_view->~View( );
@@ -20,12 +23,11 @@ namespace Sonar
 
 	void View::Draw( )
 	{
-		_data->window.setView( *_view );
+		_data->window.SetView( View( _data, *_view ) );
 
 		// DRAW ALL THE OBJECTS IN THE VIEW SET ABOVE
 		
-
-		_data->window.setView( _data->window.getDefaultView( ) );
+		_data->window.SetDefaultView( );
 	}
 
 	void View::Update( const float &dt ) { }
