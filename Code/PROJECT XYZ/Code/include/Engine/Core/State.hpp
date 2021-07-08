@@ -23,7 +23,7 @@ namespace Sonar
          * \param dt Delta time (difference between frames)
          * \param event Event to poll
         */
-		virtual void PollInput( const float &dt, const Event &event ) = 0;
+		virtual void PollInput( const float &dt, Event &event ) = 0;
         /**
          * \brief Update the state (overriding is essential)
          *

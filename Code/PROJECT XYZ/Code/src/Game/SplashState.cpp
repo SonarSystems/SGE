@@ -141,9 +141,8 @@ namespace Sonar
         
 	}
 
-	void SplashState::PollInput( const float &dt, const Event &event )
+	void SplashState::PollInput( const float &dt, Event &event )
 	{
-
 		ImGui::SFML::ProcessEvent( event.GetSFMLEventObject( ) );
 
 

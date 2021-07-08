@@ -147,7 +147,7 @@ namespace Sonar
 		*
 		* \return Output returns true if an event was detected and false if not events were detected
 		*/
-		bool PollEvent( const Event &event );
+		bool PollEvent( Event &event );
 
 		/**
 		* \brief Wait for an event and return it
@@ -156,7 +156,7 @@ namespace Sonar
 		*
 		* \return Output returns false if any error occured and true if it did not
 		*/
-		bool WaitEvent( const Event &event );
+		bool WaitEvent( Event &event );
 
 		/**
 		* \brief Get the position of the window

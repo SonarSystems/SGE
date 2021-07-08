@@ -1,29 +1,6 @@
 ﻿  Game.cpp
   Window.cpp
-  Button.cpp
-  ButtonGroup.cpp
-  Checkbox.cpp
-  Drawable.cpp
-  Label.cpp
-  Menu.cpp
-  Minimap.cpp
-  Parallax.cpp
-  ProgressBar.cpp
-  RadioButton.cpp
-  RadioButtonGroup.cpp
-  ScrollingBackground.cpp
-  Circle.cpp
-  Rectangle.cpp
-  Triangle.cpp
-  Slider.cpp
-  TextBox.cpp
-  Texture.cpp
-  Generating Code...
-  Compiling...
-  View.cpp
-  main.cpp
-  PhysicsWorld.cpp
-  Player.cpp
+  Events.cpp
   SplashState.cpp
 E:\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(126,16): warning C4834: discarding return value of function with 'nodiscard' attribute
 E:\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(127,16): warning C4834: discarding return value of function with 'nodiscard' attribute

@@ -43,11 +43,23 @@ namespace Sonar
 		return _contextSettings;
 	}
 
-	bool Window::PollEvent( const Event &event )
-	{ return _window.pollEvent( event.GetSFMLEventObject( ) ); }
+	bool Window::PollEvent( Event &event )
+	{
+		bool isEvent = _window.pollEvent( event.GetSFMLEventObject( ) );
 
-	bool Window::WaitEvent( const Event &event )
-	{ return _window.waitEvent( event.GetSFMLEventObject( ) ); }
+		event.Update( );
+
+		return isEvent;
+	}
+
+	bool Window::WaitEvent( Event &event )
+	{
+		bool isEvent = _window.waitEvent( event.GetSFMLEventObject( ) );
+
+		event.Update( );
+
+		return isEvent;
+	}
 
 	glm::ivec2 Window::GetPosition( ) const
 	{

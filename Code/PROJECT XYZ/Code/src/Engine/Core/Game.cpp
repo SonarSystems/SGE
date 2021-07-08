@@ -35,14 +35,15 @@ namespace Sonar
 
 			while ( accumulator >= dt )
 			{
-                sf::Event event;
+                sf::Event sfEvent;
+				Sonar::Event event( sfEvent );
                 
                 while ( _data->window.PollEvent( event ) )
                 {
-                    if ( sf::Event::Closed == event.type )
+                    if ( Sonar::Event::EventType::Closed == event.type )
                     { _data->window.CloseWindow( ); }
                                         
-                    _data->machine.GetActiveState( )->PollInput( dt, Event( event ) );
+                    _data->machine.GetActiveState( )->PollInput( dt, event );
                 }
                 
 				_data->machine.GetActiveState( )->Update( dt );

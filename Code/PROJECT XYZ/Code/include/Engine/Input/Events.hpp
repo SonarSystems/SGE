@@ -5,7 +5,7 @@
 #include "Keyboard.hpp"
 #include "Mouse.hpp"
 #include "Sensor.hpp"
-
+#include "Core/Debug.hpp"
 
 namespace Sonar
 {
@@ -201,7 +201,9 @@ namespace Sonar
         *
         * \return Output returns the SFML event object
         */
-        sf::Event GetSFMLEventObject( ) const;
+        sf::Event &GetSFMLEventObject( );
+
+        void Update( );
 
     private:
         /**
