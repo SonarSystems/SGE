@@ -7,7 +7,9 @@ namespace Sonar
 	{
         _data->debug = Debug::getInstance( );
         
-		_data->window.Setup( width, height, title );
+		Window::Style style;
+
+		_data->window.Setup( width, height, title, style );
 		_data->machine.AddState( StateRef( new SplashState( _data ) ) );
 
 		Run( );
@@ -35,8 +37,7 @@ namespace Sonar
 
 			while ( accumulator >= dt )
 			{
-                sf::Event sfEvent;
-				Sonar::Event event( sfEvent );
+				Sonar::Event event;
                 
                 while ( _data->window.PollEvent( event ) )
                 {

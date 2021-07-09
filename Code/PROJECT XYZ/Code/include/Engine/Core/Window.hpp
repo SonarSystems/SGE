@@ -15,12 +15,25 @@ namespace Sonar
 	class Window
 	{
 	public:
+		/**
+		* \brief Style of the window
+		*/
+		struct Style
+		{
+			bool titlebar = true;
+			bool resize = false;
+			bool close = true;
+			bool fullscreen = false;
+		};
+
+		/**
+		* \brief Window's context settings
+		*/
 		struct ContextSettings
 		{
-			////////////////////////////////////////////////////////////
-			/// \brief Enumeration of the context attribute flags
-			///
-			////////////////////////////////////////////////////////////
+			/**
+			* \brief Enumeration of the context attribute flags
+			*/
 			enum Attribute
 			{
 				Default = 0,      ///< Non-debug, compatibility context (this and the core attribute are mutually exclusive)
@@ -84,23 +97,26 @@ namespace Sonar
 		* \param width Width of the window
 		* \param height Height of the window
 		* \param title Title of the window
+		* \param style Style of the window
 		*/
-		void Setup( const unsigned int &width, const unsigned int &height, const std::string &title );
+		void Setup( const unsigned int &width, const unsigned int &height, const std::string &title, const Style &style );
 
 		/**
 		* \brief Setup function with width and height parameters (title will be set by default properties in ENGINEDEFINITIONS.hpp)
 		*
 		* \param width Width of the window
 		* \param height Height of the window
+		* \param style Style of the window
 		*/
-		void Setup( const unsigned int &width, const unsigned int &height );
+		void Setup( const unsigned int &width, const unsigned int &height, const Style &style );
 
 		/**
 		* \brief Setup function with title parameters (width and height will be set by default properties in ENGINEDEFINITIONS.hpp)
 		* 
 		* \param title Title of the window
+		* \param style Style of the window
 		*/
-		void Setup( const std::string &title );
+		void Setup( const std::string &title, const Style &style );
 
 		/**
 		* \brief Get the underlying SFML Window object
@@ -293,7 +309,7 @@ namespace Sonar
 		/**
 		* \brief Style of the window, to be OR'd with each other
 		*/
-		enum Style
+		enum StyleEnum
 		{
 			None = 0,      ///< No border / title bar (this flag and all others are mutually exclusive)
 			Titlebar = 1 << 0, ///< Title bar + fixed border
@@ -303,6 +319,15 @@ namespace Sonar
 
 			Default = Titlebar | Resize | Close ///< Default window style
 		};
+
+		/**
+		* \brief Calculate the style of the window
+		*
+		* \param style Window style properties
+		*
+		* \return Output returns the style as an enum
+		*/
+		const StyleEnum CalculateStyle( const Style &style );
 
 		/**
 		* \brief SFML Window object

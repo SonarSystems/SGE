@@ -2,12 +2,9 @@
 
 #include <memory>
 #include <string>
-#include <SFML/Graphics.hpp>
-#include <Box2D/Box2D.h>
 
 #include "StateMachine.hpp"
 #include "Managers/AssetManager.hpp"
-#include "External/b2GLDraw.h"
 #include "Core/Clock.hpp"
 #include "Core/Debug.hpp"
 #include "Core/Window.hpp"

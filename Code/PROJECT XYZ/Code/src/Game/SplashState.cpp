@@ -145,7 +145,6 @@ namespace Sonar
 	{
 		ImGui::SFML::ProcessEvent( event.GetSFMLEventObject( ) );
 
-
         player->HandleInput( dt );
 
 		if ( Event::MouseWheelScrolled == event.type )

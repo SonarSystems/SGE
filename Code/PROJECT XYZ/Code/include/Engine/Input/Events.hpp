@@ -13,9 +13,14 @@ namespace Sonar
     {
     public:
         /**
-         * \brief Constructor to setup the properties of the Event to match the format of an SFML event
-         *
-         * \param event SFML event to poll
+         * \brief Default constructor
+        */
+        Event( );
+
+        /**
+        * \brief Constructor to setup the properties of the Event to match the format of an SFML event
+        *
+        * \param event SFML event to poll
         */
         Event( const sf::Event &event );
         

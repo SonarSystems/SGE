@@ -3,10 +3,9 @@ GAME
 
 ENGINE
 -----------------------------------------------------------------
+* Look into precompiled headers
+* Fix Include issue, put all includes in the cpp files and just declare stuff in the hpp file
 * GUI
-    - Window Abstraction
-        - Setting & getting window style aka close button etc, see original create method for sf::Window
-    - Game.hpp/Game.cpp Abstraction
     - Fix ImGui capslock crashing the InputText
     - Fix ImGui clock stuff and abstract so using Sonar Clock and Color Classes
     - FPS counter - https://github.com/Hopson97/SFML-Game-Framework/blob/master/Source/Util/FPSCounter.cpp

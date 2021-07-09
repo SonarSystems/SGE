@@ -2,6 +2,14 @@
 
 namespace Sonar
 {
+	Event::Event( )
+	{
+		sf::Event event = sf::Event( );
+		_event = event;
+
+		Update( );
+	}
+
     /*
      Constructor
      Assign all the properties of the SFML event to this event
