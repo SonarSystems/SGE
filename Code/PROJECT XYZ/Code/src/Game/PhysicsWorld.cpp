@@ -1,3 +1,4 @@
+#include "pch.hpp"
 #include "PhysicsWorld.hpp"
 
 namespace Sonar

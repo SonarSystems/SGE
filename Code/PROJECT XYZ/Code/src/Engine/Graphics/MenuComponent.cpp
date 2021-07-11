@@ -1,4 +1,4 @@
-#include "Graphics/MenuComponent.hpp"
+#include "pch.hpp"
 
 namespace Sonar
 {

@@ -1,4 +1,4 @@
-#include "Managers/HighScoreManager.hpp"
+#include "pch.hpp"
 
 namespace Sonar
 {

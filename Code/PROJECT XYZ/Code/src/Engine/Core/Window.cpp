@@ -1,5 +1,4 @@
-#include "Core/Window.hpp"
-#include "Graphics/View.hpp"
+#include "pch.hpp"
 
 namespace Sonar
 {

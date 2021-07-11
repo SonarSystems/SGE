@@ -1,5 +1,4 @@
-#include "Core/ENGINEDEFINITIONS.hpp"
-#include "Core/Game.hpp"
+#include "pch.hpp"
 
 int main( )
 {

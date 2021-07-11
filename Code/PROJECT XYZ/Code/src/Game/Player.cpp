@@ -1,3 +1,4 @@
+#include "pch.hpp"
 #include "Player.hpp"
 
 namespace Sonar

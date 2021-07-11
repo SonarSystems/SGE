@@ -1,5 +1,4 @@
-#include "Input/Mouse.hpp"
-#include "Core/Window.hpp"
+#include "pch.hpp"
 
 namespace Sonar
 {

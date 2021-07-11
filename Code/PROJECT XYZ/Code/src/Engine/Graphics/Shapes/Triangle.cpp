@@ -1,4 +1,4 @@
-#include "Graphics/Shapes/Triangle.hpp"
+#include "pch.hpp"
 
 namespace Sonar
 {

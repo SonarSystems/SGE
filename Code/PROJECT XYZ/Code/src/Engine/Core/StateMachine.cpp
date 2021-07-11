@@ -1,5 +1,4 @@
-#include "Core/StateMachine.hpp"
-#include <iostream>
+#include "pch.hpp"
 
 namespace Sonar
 {

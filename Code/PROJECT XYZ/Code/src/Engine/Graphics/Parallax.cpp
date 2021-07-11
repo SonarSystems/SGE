@@ -1,4 +1,4 @@
-#include "Graphics/Parallax.hpp"
+#include "pch.hpp"
 
 namespace Sonar
 {  

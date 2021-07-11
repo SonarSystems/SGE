@@ -1,4 +1,4 @@
-#include "Graphics/Label.hpp"
+#include "pch.hpp"
 
 namespace Sonar
 {

@@ -2,9 +2,7 @@
 * File:   collision.cpp
 * Author: Nick (original version), ahnonay (SFML2 compatibility)
 */
-#include <SFML/Graphics.hpp>
-#include <map>
-#include "External/Collision.hpp"
+#include "pch.hpp"
 
 namespace Collision
 {

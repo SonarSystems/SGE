@@ -1,4 +1,4 @@
-#include "Core/Game.hpp"
+#include "pch.hpp"
 #include "SplashState.hpp"
 
 namespace Sonar

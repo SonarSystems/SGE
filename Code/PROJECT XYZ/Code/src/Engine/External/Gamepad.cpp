@@ -11,7 +11,7 @@
 // refer to the tutorial.
 //------------------------------------------------------------
 
-#include "External/Gamepad.h"
+#include "pch.hpp"
 
 // Link the 'XInput' library
 // Note: For Visual Studio 2012 and above, XInput9_1_0 is the library

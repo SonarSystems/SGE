@@ -1,5 +1,4 @@
-#include <SFML/Graphics.hpp>
-#include "Managers/AssetManager.hpp"
+#include "pch.hpp"
 
 namespace Sonar
 {

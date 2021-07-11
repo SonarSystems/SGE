@@ -1,3 +1,5 @@
+#include "pch.hpp"
+
 // dear imgui, v1.83
 // (drawing and font code)
 
@@ -21,6 +23,8 @@ Index of this file:
 // [SECTION] Default font data (ProggyClean.ttf)
 
 */
+
+#include "pch.hpp"
 
 #if defined(_MSC_VER) && !defined(_CRT_SECURE_NO_WARNINGS)
 #define _CRT_SECURE_NO_WARNINGS

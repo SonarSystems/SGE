@@ -12,6 +12,7 @@
 #include "Core/State.hpp"
 #include "Core/StateMachine.hpp"
 #include "Core/Time.hpp"
+#include "Core/Window.hpp"
 #include "External/b2GLDraw.h"
 //#include "External/csv.hpp"
 #include "External/glext.h"
