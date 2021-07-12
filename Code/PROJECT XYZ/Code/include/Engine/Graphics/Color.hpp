@@ -1,8 +1,5 @@
 #pragma once
 
-#include <SFML/Graphics.hpp>
-#include <string>
-
 namespace Sonar
 {
     class Color

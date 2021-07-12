@@ -1,13 +1,6 @@
 #pragma once
 
-#include <SFML/Window.hpp>
-#include <string>
-#include <array>
-#include <cmath>
-#include <tuple>
-#include <vector>
-
-#include "External/Gamepad.h"
+#include "External/Gamepad.h" 
 
 namespace Sonar
 {

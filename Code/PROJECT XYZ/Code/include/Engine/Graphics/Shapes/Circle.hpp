@@ -1,15 +1,9 @@
 #pragma once
 
-#include <SFML/Graphics.hpp>
-#include <string>
-
-#include <External/glm/glm.hpp>
-#include "Graphics/Color.hpp"
-#include "Graphics/Drawable.hpp"
-#include "Graphics/Texture.hpp"
-
 namespace Sonar
 {
+    class Texture;
+
     class Circle : public Drawable
     {
     public:

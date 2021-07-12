@@ -1,11 +1,5 @@
 #pragma once
 
-#include "Core/Clock.hpp"
-#include "Input/Joystick.hpp"
-
-#include <iostream>
-#include <cmath>
-
 namespace Sonar
 {
 	/**

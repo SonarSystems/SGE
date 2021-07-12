@@ -10,15 +10,7 @@
 
 #pragma once
 
-#include <SFML/Graphics.hpp>
-#include <string>
-#include <External/glm/glm.hpp>
-
-#include "Color.hpp"
-#include "Core/Clock.hpp"
 #include "Core/Game.hpp"
-#include "Core/Time.hpp"
-#include "Input/Mouse.hpp"
 
 namespace Sonar
 {

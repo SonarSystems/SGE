@@ -1,11 +1,9 @@
 #pragma once
 
-#include <SFML/Graphics.hpp>
-#include "Joystick.hpp"
-#include "Keyboard.hpp"
-#include "Mouse.hpp"
-#include "Sensor.hpp"
-#include "Core/Debug.hpp"
+#include "Input/Joystick.hpp"
+#include "Input/Keyboard.hpp"
+#include "Input/Mouse.hpp"
+#include "Input/Sensor.hpp"
 
 namespace Sonar
 {

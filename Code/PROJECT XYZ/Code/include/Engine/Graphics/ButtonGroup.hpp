@@ -1,15 +1,5 @@
 #pragma once
 
-#include <SFML/Graphics.hpp>
-#include <string>
-#include <vector>
-
-#include <External/glm/glm.hpp>
-#include "Core/ENGINEDEFINITIONS.hpp"
-#include "Core/Game.hpp"
-#include "Graphics/MenuComponent.hpp"
-#include "Graphics/Button.hpp"
-
 namespace Sonar
 {
     class ButtonGroup : public MenuComponent

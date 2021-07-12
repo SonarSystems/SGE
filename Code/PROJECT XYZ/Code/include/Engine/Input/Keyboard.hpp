@@ -1,9 +1,5 @@
 #pragma once
 
-#include <SFML/Window.hpp>
-
-#include <initializer_list>
-
 namespace Sonar
 {
     class Keyboard

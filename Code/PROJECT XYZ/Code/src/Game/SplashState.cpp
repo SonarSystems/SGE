@@ -74,7 +74,7 @@ namespace Sonar
 		group->AddRadioButton( radio2 );
 		group->AddRadioButton( radio3 );
 
-		//menu->AddComponent( group );
+		menu->AddComponent( group );
 
 		slider = new Slider( data );
 		slider->SetJumpAmount( 15 );
@@ -110,7 +110,7 @@ namespace Sonar
 		buttonGroup->AddNavigationKeyPair( Keyboard::Key::A, Keyboard::Key::D );
 		buttonGroup->SetPositionToCenter( true, true );
 
-		//menu->AddComponent( buttonGroup );
+		menu->AddComponent( buttonGroup );
 
 		progressBar = new ProgressBar( _data, ProgressBar::Orientation::HORIZONTAL );
 		progressBar->SetPosition( 200, 200 );

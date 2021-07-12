@@ -1,13 +1,5 @@
 #pragma once
 
-#include <External/glm/glm.hpp>
-#include <spdlog/spdlog.h>
-
-#include "Core/ENGINEDEFINITIONS.hpp"
-#include "Core/Time.hpp"
-#include "External/csv.hpp"
-#include "Managers/FileManager.hpp"
-
 namespace Sonar
 {
 	class MapManager

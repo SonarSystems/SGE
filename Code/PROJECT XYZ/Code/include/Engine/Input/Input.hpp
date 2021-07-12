@@ -1,15 +1,5 @@
 #pragma once
 
-#include <SFML/Window.hpp>
-#include <string>
-#include <array>
-
-#include "Joystick.hpp"
-#include "Keyboard.hpp"
-#include "Mouse.hpp"
-
-#include "Events.hpp"
-
 namespace Sonar
 {
     class Input

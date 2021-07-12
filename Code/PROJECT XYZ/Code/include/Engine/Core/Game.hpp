@@ -1,14 +1,6 @@
 #pragma once
 
-#include <memory>
-#include <string>
-
-#include "StateMachine.hpp"
 #include "Managers/AssetManager.hpp"
-#include "Core/Clock.hpp"
-#include "Core/Debug.hpp"
-#include "Core/Window.hpp"
-#include "Graphics/Color.hpp"
 
 namespace Sonar
 {

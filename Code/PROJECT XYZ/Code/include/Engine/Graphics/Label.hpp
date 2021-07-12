@@ -1,15 +1,5 @@
 #pragma once
 
-#include <SFML/Graphics.hpp>
-#include <string>
-
-#include <External/glm/glm.hpp>
-#include "Core/ENGINEDEFINITIONS.hpp"
-#include "Graphics/Color.hpp"
-#include "Graphics/Drawable.hpp"
-#include "Graphics/Font.hpp"
-#include "Graphics/MenuComponent.hpp"
-
 namespace Sonar
 {
     class Label : public Drawable, public MenuComponent

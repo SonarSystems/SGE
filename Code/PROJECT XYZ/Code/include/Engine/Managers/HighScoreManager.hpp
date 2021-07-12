@@ -1,11 +1,5 @@
 #pragma once
 
-#include <spdlog/spdlog.h>
-
-#include "Core/ENGINEDEFINITIONS.hpp"
-#include "Core/Time.hpp"
-#include "Managers/FileManager.hpp"
-
 namespace Sonar
 {
 	/**
