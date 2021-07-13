@@ -1,10 +1,5 @@
 #pragma once
 
-#include "Input/Keyboard.hpp"
-#include "Core/Clock.hpp"
-#include <vector>
-#include <iostream>
-
 namespace Sonar
 {
 	class RBM // Rapid Button Masher

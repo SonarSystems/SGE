@@ -1,10 +1,5 @@
 #pragma once
 
-#include <vector>
-
-#include <External/glm/glm.hpp>
-#include "Graphics/Sprite.hpp"
-
 namespace Sonar
 {
     class ScrollingBackground

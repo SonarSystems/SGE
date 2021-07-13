@@ -1,8 +1,5 @@
 #pragma once
 
-#include <SFML/Graphics.hpp>
-#include <External/glm/glm.hpp>
-
 namespace Sonar
 {
     class Window;

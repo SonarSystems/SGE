@@ -1,17 +1,5 @@
 #pragma once
 
-#include <SFML/Graphics.hpp>
-#include <string>
-
-#include <External/glm/glm.hpp>
-#include "Core/ENGINEDEFINITIONS.hpp"
-#include "Graphics/Color.hpp"
-#include "Graphics/Drawable.hpp"
-#include "Graphics/MenuComponent.hpp"
-#include "Graphics/Shapes/Circle.hpp"
-#include "Graphics/Shapes/Rectangle.hpp"
-#include "Input/Mouse.hpp"
-
 namespace Sonar
 {
     class Slider : public MenuComponent

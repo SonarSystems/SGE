@@ -1,15 +1,5 @@
 #pragma once
 
-#include <SFML/Graphics.hpp>
-#include <string>
-#include <vector>
-
-#include <External/glm/glm.hpp>
-#include "Core/ENGINEDEFINITIONS.hpp"
-#include "Core/Game.hpp"
-#include "Graphics/MenuComponent.hpp"
-#include "Graphics/RadioButton.hpp"
-
 namespace Sonar
 {
     class RadioButtonGroup : public MenuComponent

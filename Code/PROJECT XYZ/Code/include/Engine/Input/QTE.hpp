@@ -1,12 +1,5 @@
 #pragma once
 
-#include "Core/Clock.hpp"
-#include "Input/Joystick.hpp"
-#include "Input/Keyboard.hpp"
-#include "Input/Mouse.hpp"
-#include <iostream>
-#include <vector>
-
 namespace Sonar
 {
 	class QTE

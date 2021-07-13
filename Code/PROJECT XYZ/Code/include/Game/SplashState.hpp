@@ -1,12 +1,8 @@
 #pragma once
 
-#include <imgui.h>
-#include <imgui-SFML.h>
-
 #include "Sonar.hpp"
 #include "Player.hpp"
 #include "PhysicsWorld.hpp"
-#include <ctime>
 
 namespace Sonar
 {

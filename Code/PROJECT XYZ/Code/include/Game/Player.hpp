@@ -1,7 +1,5 @@
 #pragma once
 
-#include "Sonar.hpp"
-
 namespace Sonar
 {
     class Player

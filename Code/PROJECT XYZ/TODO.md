@@ -4,7 +4,6 @@ GAME
 ENGINE
 -----------------------------------------------------------------
 * Look into precompiled headers
-* Fix Include issue, put all includes in the cpp files and just declare stuff in the hpp file
 * GUI
     - Fix ImGui capslock crashing the InputText
     - Fix ImGui clock stuff and abstract so using Sonar Clock and Color Classes

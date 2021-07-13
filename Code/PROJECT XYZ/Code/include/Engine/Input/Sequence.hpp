@@ -1,13 +1,5 @@
 #pragma once
 
-#include "Input/Joystick.hpp"
-#include "Input/Keyboard.hpp"
-#include "Input/Mouse.hpp"
-#include "Core/Clock.hpp"
-#include "Core/Debug.hpp"
-
-#include <iostream>
-
 namespace Sonar
 {
 	/**

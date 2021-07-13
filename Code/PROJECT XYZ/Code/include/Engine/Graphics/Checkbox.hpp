@@ -1,5 +1,7 @@
 #pragma once
 
+#include "Graphics/MenuComponent.hpp"
+
 namespace Sonar
 {
     class Checkbox : public MenuComponent
