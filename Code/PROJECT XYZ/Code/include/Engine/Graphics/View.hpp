@@ -1,12 +1,6 @@
 #pragma once
 
-#include <SFML/Graphics.hpp>
-#include <string>
-
-#include <External/glm/glm.hpp>
-#include "Core/ENGINEDEFINITIONS.hpp"
 #include "Core/Game.hpp"
-#include "Graphics/Shapes/Circle.hpp"
 
 namespace Sonar
 {

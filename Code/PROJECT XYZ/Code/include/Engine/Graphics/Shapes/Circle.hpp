@@ -1,5 +1,8 @@
 #pragma once
 
+#include "Graphics/Drawable.hpp"
+#include "Core/Game.hpp"
+
 namespace Sonar
 {
     class Texture;

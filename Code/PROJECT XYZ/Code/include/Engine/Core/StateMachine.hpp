@@ -1,13 +1,9 @@
 #pragma once
 
-#include <memory>
-#include <stack>
-#include <SFML/Graphics.hpp>
-
-#include "State.hpp"
-
 namespace Sonar
 {
+    class State;
+
 	typedef std::unique_ptr<State> StateRef;
 
 	class StateMachine

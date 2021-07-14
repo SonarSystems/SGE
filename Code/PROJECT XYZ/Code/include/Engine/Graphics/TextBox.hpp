@@ -1,11 +1,5 @@
 #pragma once
 
-#include "Core/Clock.hpp"
-#include "Core/ENGINEDEFINITIONS.hpp"
-#include "Graphics/Label.hpp"
-#include "Graphics/Shapes/Rectangle.hpp"
-#include "Input/Events.hpp"
-
 namespace Sonar
 {
     class TextBox : public Label

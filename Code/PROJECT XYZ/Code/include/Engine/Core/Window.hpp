@@ -1,15 +1,10 @@
 #pragma once
 
-#include <External/glm/glm.hpp>
-#include <SFML/Graphics.hpp>
-
-#include "Core/ENGINEDEFINITIONS.hpp"
-#include "Graphics/Color.hpp"
-#include "Input/Events.hpp"
 #include "Input/Mouse.hpp"
 
 namespace Sonar
 {
+	class Event;
 	class View;
 
 	class Window

@@ -3,7 +3,6 @@ GAME
 
 ENGINE
 -----------------------------------------------------------------
-* Look into precompiled headers
 * GUI
     - Fix ImGui capslock crashing the InputText
     - Fix ImGui clock stuff and abstract so using Sonar Clock and Color Classes

@@ -1,9 +1,9 @@
 #pragma once
 
-#include "Input/Events.hpp"
-
 namespace Sonar
 {
+    class Event;
+
 	class State
 	{
 	public:

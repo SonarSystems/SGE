@@ -14,6 +14,8 @@
 
 namespace Sonar
 {
+    class Mouse;
+
     /**
     * \brief Points on the object
     */

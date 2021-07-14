@@ -1,5 +1,7 @@
 #pragma once
 
+#include "Core/StateMachine.hpp"
+#include "Core/Window.hpp"
 #include "Managers/AssetManager.hpp"
 
 namespace Sonar

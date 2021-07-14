@@ -1,7 +1,11 @@
 #pragma once
 
+#include "Core/Game.hpp"
+
 namespace Sonar
 {
+    class Sprite;
+
     class ScrollingBackground
     {
     public:

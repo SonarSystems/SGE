@@ -1,14 +1,5 @@
 #pragma once
 
-#include <SFML/Graphics.hpp>
-#include <string>
-
-#include "External/Collision.hpp"
-#include <External/glm/glm.hpp>
-#include "Graphics/Drawable.hpp"
-#include "Graphics/Texture.hpp"
-
-
 namespace Sonar
 {
     class Sprite : public Drawable

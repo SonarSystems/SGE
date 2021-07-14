@@ -33,15 +33,4 @@ E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(1010): mess
 E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(6798): message : see reference to function template instantiation 'mio::basic_mmap<mio::access_mode::read,char>::~basic_mmap(void)' being compiled
 E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(582): message : see reference to class template instantiation 'mio::basic_mmap<mio::access_mode::read,char>' being compiled
 E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\External\csv.hpp(1139,29): warning C4244: '=': conversion from 'const int64_t' to 'mio::basic_mmap<mio::access_mode::read,char>::size_type', possible loss of data
-  Game.cpp
-  PhysicsWorld.cpp
-  Player.cpp
-  SplashState.cpp
-E:\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(127,16): warning C4834: discarding return value of function with 'nodiscard' attribute
-E:\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(128,16): warning C4834: discarding return value of function with 'nodiscard' attribute
-E:\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(129,16): warning C4834: discarding return value of function with 'nodiscard' attribute
-E:\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(130,16): warning C4834: discarding return value of function with 'nodiscard' attribute
-E:\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(131,16): warning C4834: discarding return value of function with 'nodiscard' attribute
-E:\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(132,16): warning C4834: discarding return value of function with 'nodiscard' attribute
-  Generating Code...
   SFML Template.vcxproj -> E:\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\SFML Template.exe
