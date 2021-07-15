@@ -55,6 +55,8 @@ namespace Sonar
          * \brief Run the game
         */
 		void Run( );
+
+        sf::Clock deltaClock;
         
 	};
 }

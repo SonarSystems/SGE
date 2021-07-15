@@ -193,6 +193,7 @@ namespace Sonar
         //player->Draw( dt );
 		//physicsWorld->Draw( dt );
 
+		
 
 		menu->Draw( );
 
@@ -202,7 +203,6 @@ namespace Sonar
 
 		//textBox->Draw( );
 
-		ImGui::SFML::Update( _data->window.GetSFMLWindowObject( ), deltaClock.restart( ) );
 
 		ImGui::Begin( "Sample window" ); // begin window
 
@@ -224,8 +224,8 @@ namespace Sonar
 			// but I do this to show how buttons work :)
 			_data->window.SetTitle( windowTitle );
 		}
-		ImGui::End( ); // end window
 
-		ImGui::SFML::Render( _data->window.GetSFMLWindowObject( ) );
+		ImGui::End( );
+		
 	}
 }

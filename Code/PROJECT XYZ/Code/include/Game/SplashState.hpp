@@ -51,7 +51,7 @@ namespace Sonar
 
 		View *view;
 
-		sf::Clock deltaClock;
+		//sf::Clock deltaClock;
 		sf::Color bgColor;
 
 		float color[3] = { 0.f, 0.f, 0.f };

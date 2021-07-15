@@ -1,4 +1,6 @@
 #pragma once
+#pragma warning(push, 0)        
+
 /*
 CSV for C++, version 2.1.0
 https://github.com/vincentlaucsb/csv-parser
@@ -8317,3 +8319,4 @@ namespace csv {
 
 
 #endif
+#pragma warning(pop)        

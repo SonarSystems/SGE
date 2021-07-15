@@ -55,8 +55,12 @@ namespace Sonar
 			interpolation = accumulator / dt;
             
 			_data->window.Clear( _data->backgroundColor );
-			
+
+			ImGui::SFML::Update( _data->window.GetSFMLWindowObject( ), _clock.SFMLRestart( ) );
+
 			_data->machine.GetActiveState( )->Draw( interpolation );
+
+			ImGui::SFML::Render( _data->window.GetSFMLWindowObject( ) );
             
             _data->window.Display( );
 		}

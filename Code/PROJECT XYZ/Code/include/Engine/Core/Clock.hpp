@@ -21,6 +21,13 @@ namespace Sonar
 		 * \brief Resets the clocks
 		 */
 		void Reset( );
+
+		/**
+		* \brief Resets the clocks
+		* 
+		* \return Output return the SFML time after a restart
+		*/
+		sf::Time SFMLRestart( );
 		
 		/**
 		 * \brief Get elapsed time

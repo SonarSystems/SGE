@@ -4,7 +4,6 @@ GAME
 ENGINE
 -----------------------------------------------------------------
 * GUI
-    - Fix ImGui capslock crashing the InputText
     - Fix ImGui clock stuff and abstract so using Sonar Clock and Color Classes
     - Fix ButtonGroup issue when pressing up to many times
     - FPS counter - https://github.com/Hopson97/SFML-Game-Framework/blob/master/Source/Util/FPSCounter.cpp
