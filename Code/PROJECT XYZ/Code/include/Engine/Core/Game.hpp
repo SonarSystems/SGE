@@ -47,6 +47,11 @@ namespace Sonar
 		Clock _clock;
 
         /**
+        * \brief ImGUI clock
+        */
+        Clock _imGUIClock;
+
+        /**
          * \brief Game data variable for use within the game code
         */
 		GameDataRef _data = std::make_shared<GameData>( );
@@ -56,7 +61,7 @@ namespace Sonar
         */
 		void Run( );
 
-        sf::Clock deltaClock;
+        unsigned long long int frames = 0;
         
 	};
 }

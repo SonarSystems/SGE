@@ -74,7 +74,7 @@ namespace Sonar
 		group->AddRadioButton( radio2 );
 		group->AddRadioButton( radio3 );
 
-		menu->AddComponent( group );
+		//menu->AddComponent( group );
 
 		slider = new Slider( data );
 		slider->SetJumpAmount( 15 );
@@ -117,7 +117,7 @@ namespace Sonar
 		progressBar->SetBackgroundSize( 400, 50 );
 		progressBar->SetProgressBarSizePercentage( 1 );
 
-		menu->AddComponent( progressBar, true );
+		//menu->AddComponent( progressBar, true );
 
 		progressBar->SetBackgroundBorderColor( Color::Red );
 		progressBar->SetBackgroundBorderThickness( 20 );
@@ -197,35 +197,29 @@ namespace Sonar
 
 		menu->Draw( );
 
-		mm->Draw( );
+		
+
+		//mm->Draw( );
 
 		//view->Draw( );
 
 		//textBox->Draw( );
 
 
-		ImGui::Begin( "Sample window" ); // begin window
+		//ImGui::Begin( "Sample window" ); // begin window
 
-										 // Background color edit
-		if ( ImGui::ColorEdit3( "Background color", color ) ) {
-			// this code gets called if color value changes, so
-			// the background color is upgraded automatically!
-			bgColor.r = static_cast< sf::Uint8 >( color[0] * 255.f );
-			bgColor.g = static_cast< sf::Uint8 >( color[1] * 255.f );
-			bgColor.b = static_cast< sf::Uint8 >( color[2] * 255.f );
-		}
+	
+		//// Window title text edit
+		//ImGui::InputText( "Window title", windowTitle, 255 );
 
-		// Window title text edit
-		ImGui::InputText( "Window title", windowTitle, 255 );
+		//if ( ImGui::Button( "Update window title" ) ) {
+		//	// this code gets if user clicks on the button
+		//	// yes, you could have written if(ImGui::InputText(...))
+		//	// but I do this to show how buttons work :)
+		//	_data->window.SetTitle( windowTitle );
+		//}
 
-		if ( ImGui::Button( "Update window title" ) ) {
-			// this code gets if user clicks on the button
-			// yes, you could have written if(ImGui::InputText(...))
-			// but I do this to show how buttons work :)
-			_data->window.SetTitle( windowTitle );
-		}
-
-		ImGui::End( );
+		//ImGui::End( );
 		
 	}
 }

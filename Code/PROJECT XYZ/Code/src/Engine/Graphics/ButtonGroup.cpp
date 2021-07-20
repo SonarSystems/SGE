@@ -341,7 +341,7 @@ namespace Sonar
 
 	void ButtonGroup::MoveUp( const bool &cycleDown, const unsigned int &moveAmount )
 	{
-		if ( _currentIndex - ( int )moveAmount >= 0 )
+		if ( _currentIndex - moveAmount >= 0 && _currentIndex - moveAmount < _buttons.size( ) )
 		{ _currentIndex -= moveAmount; }
 		else if ( cycleDown && _buttons.size( ) > 0 )
 		{ _currentIndex = _buttons.size( ) - 1; }

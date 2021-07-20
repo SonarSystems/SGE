@@ -24,6 +24,8 @@ namespace Sonar
 
 		while ( _data->window.IsOpen( ) )
 		{
+			frames++;
+
 			_data->machine.ProcessStateChanges( );
 
 			newTime = _clock.GetElapsedTime( ).AsSeconds( );
@@ -53,10 +55,18 @@ namespace Sonar
 			}
 
 			interpolation = accumulator / dt;
+
+
+
+			spdlog::info( "FPS: {}", 1.0f / frameTime );
+			spdlog::info( "Frame Time: {}ms", frameTime * 1000 );
+			spdlog::info( "Total Number Of Frames: {}", frames );
+
+
             
 			_data->window.Clear( _data->backgroundColor );
 
-			ImGui::SFML::Update( _data->window.GetSFMLWindowObject( ), _clock.SFMLRestart( ) );
+			ImGui::SFML::Update( _data->window.GetSFMLWindowObject( ), _imGUIClock.SFMLRestart( ) );
 
 			_data->machine.GetActiveState( )->Draw( interpolation );
 
