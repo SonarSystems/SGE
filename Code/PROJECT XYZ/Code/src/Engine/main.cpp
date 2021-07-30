@@ -2,7 +2,9 @@
 
 int main( )
 {
-    Sonar::Game( SCREEN_WIDTH, SCREEN_HEIGHT, WINDOW_TITLE );
+	Sonar::Game( SCREEN_WIDTH, SCREEN_HEIGHT, WINDOW_TITLE );
 
-    return EXIT_SUCCESS;
+	return EXIT_SUCCESS;
 }
+
+

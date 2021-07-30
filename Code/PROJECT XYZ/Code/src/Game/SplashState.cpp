@@ -207,7 +207,7 @@ namespace Sonar
 
 
 		//ImGui::Begin( "Sample window" ); // begin window
-
+		ImGui::ShowDemoWindow( ); // check out simple overlay example in examples menu
 	
 		//// Window title text edit
 		//ImGui::InputText( "Window title", windowTitle, 255 );
