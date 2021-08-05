@@ -1,3 +1,1 @@
-﻿  Game.cpp
-Game.obj : error LNK2019: unresolved external symbol "public: __thiscall Sonar::SysInfo::SysInfo(enum Sonar::MemoryFormat const &,bool)" (??0SysInfo@Sonar@@QAE@ABW4MemoryFormat@1@_N@Z) referenced in function "private: void __thiscall Sonar::Game::Run(void)" (?Run@Game@Sonar@@AAEXXZ)
-E:\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\SFML Template.exe : fatal error LNK1120: 1 unresolved externals
+﻿  SFML Template.vcxproj -> E:\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\SFML Template.exe

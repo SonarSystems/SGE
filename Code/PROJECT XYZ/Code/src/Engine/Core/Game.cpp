@@ -66,10 +66,10 @@ namespace Sonar
 
 				//Timestamp + Memory Info, and eventually CPU Load percentage
 
-				//Sonar::SystemInformation info = s.GetSystemInformation( );
+				Sonar::SystemInformation info = s.GetSystemInformation( );
 
 
-				/*			std::cout
+							std::cout
 								<< info._timestamp._hour << ":"
 								<< info._timestamp._minutes << ":"
 								<< info._timestamp._seconds << ":"
@@ -83,7 +83,7 @@ namespace Sonar
 								<< info._gpus.front( )._videoArchitecture << " - "
 								<< info._gpus.front( )._videoModeDescription << " - "
 								<< info._gpus.front( )._videoProcessor << " - "
-								<< std::endl;*/
+								<< std::endl;
             
 			_data->window.Clear( _data->backgroundColor );
 

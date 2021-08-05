@@ -41,7 +41,7 @@
 */
 #include <External/Collision.hpp>
 #include <External/glm/glm.hpp>
-#include <SysInfo.hpp>
+#include "SysInfo.hpp"
 
 /**
 * \brief Custom files (including external libraries manually included and not linked)

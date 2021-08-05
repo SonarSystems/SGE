@@ -151,6 +151,11 @@
     <ClCompile Include="..\..\..\External Libraries\imgui\include\imgui_tables.cpp" />
     <ClCompile Include="..\..\..\External Libraries\imgui\include\imgui_widgets.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\System Information\System Information.vcxproj">
+      <Project>{a955da42-8b21-4e74-b2d7-3fbff621cf7a}</Project>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{A960721E-6826-4F22-9735-A7E885AB2CDD}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
@@ -220,7 +225,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)/../../External Libraries/spdlog/include/;$(SolutionDir)/../../External Libraries/Windows/Box2D/include;$(SolutionDir)/../../External Libraries/Windows/SFML/include;$(SolutionDir)/../../Code/include/Engine;$(SolutionDir)/../../Code/include/Game;$(SolutionDir)/../../External Libraries/imgui/include;$(SolutionDir)/../../External Libraries/imgui-sfml/include;$(SolutionDir)/../../External Libraries/SysInfo/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)/../../External Libraries/spdlog/include/;$(SolutionDir)/../../External Libraries/Windows/Box2D/include;$(SolutionDir)/../../External Libraries/Windows/SFML/include;$(SolutionDir)/../../Code/include/Engine;$(SolutionDir)/../../Code/include/Game;$(SolutionDir)/../../External Libraries/imgui/include;$(SolutionDir)/../../External Libraries/imgui-sfml/include;%(AdditionalIncludeDirectories);$(SolutionDir)/System Information/include</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <PrecompiledHeaderFile>pch.hpp</PrecompiledHeaderFile>
       <AdditionalOptions>/Zm1000 %(AdditionalOptions)</AdditionalOptions>
@@ -243,7 +248,7 @@
       <PrecompiledHeaderFile>pch.hpp</PrecompiledHeaderFile>
       <AdditionalOptions>/Zm1000 %(AdditionalOptions)</AdditionalOptions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <AdditionalIncludeDirectories>;$(SolutionDir)/../../External Libraries/infoware/include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>;$(SolutionDir)/../../External Libraries/infoware/include;$(SolutionDir)/System Information/include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -260,7 +265,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)/../../External Libraries/spdlog/include/;$(SolutionDir)/../../External Libraries/Windows/Box2D/include;$(SolutionDir)/../../External Libraries/Windows/SFML/include;$(SolutionDir)/../../Code/include/engine;$(SolutionDir)/../../Code/include/game;$(SolutionDir)/../../External Libraries/imgui/include/;$(SolutionDir)/../../External Libraries/imgui-sfml/include/;%(AdditionalIncludeDirectories);$(SolutionDir)/../../External Libraries/infoware/include;$(SolutionDir)/../../External Libraries/infoware/include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)/../../External Libraries/spdlog/include/;$(SolutionDir)/../../External Libraries/Windows/Box2D/include;$(SolutionDir)/../../External Libraries/Windows/SFML/include;$(SolutionDir)/../../Code/include/engine;$(SolutionDir)/../../Code/include/game;$(SolutionDir)/../../External Libraries/imgui/include/;$(SolutionDir)/../../External Libraries/imgui-sfml/include/;%(AdditionalIncludeDirectories);$(SolutionDir)/../../External Libraries/infoware/include;$(SolutionDir)/../../External Libraries/infoware/include;$(SolutionDir)/System Information/include</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <PrecompiledHeaderFile>pch.hpp</PrecompiledHeaderFile>
       <AdditionalOptions>/Zm1000 %(AdditionalOptions)</AdditionalOptions>
@@ -287,7 +292,7 @@
       <PrecompiledHeaderFile>pch.hpp</PrecompiledHeaderFile>
       <AdditionalOptions>/Zm1000 %(AdditionalOptions)</AdditionalOptions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <AdditionalIncludeDirectories>;$(SolutionDir)/../../External Libraries/infoware/include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>;$(SolutionDir)/../../External Libraries/infoware/include;$(SolutionDir)/System Information/include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
