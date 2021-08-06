@@ -61,7 +61,7 @@ namespace Sonar
         */
 		void Run( );
 
-        unsigned long long int frames = 0;
+        
         
 	};
 }

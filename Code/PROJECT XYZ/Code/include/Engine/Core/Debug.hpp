@@ -9,6 +9,13 @@
 
 namespace Sonar
 {
+    struct FrameData
+    {
+        float _FPS;
+        float _frameTime; // CALCULATED AND STORED IN MILLISECONDS
+        unsigned long long int _totalFrames = 0;
+    };
+
     class Debug
     {
     public:
@@ -120,6 +127,29 @@ namespace Sonar
         * \return Output returns lower case value of a string
         */
         std::string Debug::ToLower( std::string string );
+
+        /**
+        * \brief Update the frame data
+        *
+        * \param frameTime Time between frames
+        */
+        void UpdateFrameData( const float frameTime );
+
+        /**
+        * \brief Get the system information (CPU, Memory, GPU, OS, Motherboard stats)
+        *
+        * \return Output returns the system information
+        */
+        const SystemInformation &GetSystemInformation( ) const;
+
+        /**
+        * \brief Get the frame data
+        *
+        * \return Output returns the frame data
+        */
+        const FrameData &GetFrameData( ) const;
+
+        void ShowExampleAppSimpleOverlay( bool *p_open );
         
     private:
         /**
@@ -146,6 +176,21 @@ namespace Sonar
         * \brief Message categories
         */
         std::vector<std::pair<std::string, bool>> _categories;
+
+        /**
+        * \brief System information object for getting well system information
+        */
+        SysInfo _sysInfo;
+
+        /**
+        * \brief System information
+        */
+        SystemInformation _systemInformation;
+
+        /**
+        * \brief Frame rate data
+        */
+        FrameData _frameData;
         
     };
 }

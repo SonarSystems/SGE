@@ -3,6 +3,8 @@
 
 namespace Sonar
 {
+	static bool show_app_simple_overlay = true;
+
 	Game::Game( const int &width, const int &height, const std::string &title )
 	{
         _data->debug = Debug::getInstance( );
@@ -24,8 +26,6 @@ namespace Sonar
 
 		while ( _data->window.IsOpen( ) )
 		{
-			frames++;
-
 			_data->machine.ProcessStateChanges( );
 
 			newTime = _clock.GetElapsedTime( ).AsSeconds( );
@@ -56,20 +56,18 @@ namespace Sonar
 
 			interpolation = accumulator / dt;
 
+			_data->debug->UpdateFrameData( frameTime );
 
-
-			spdlog::info( "FPS: {}", 1.0f / frameTime );
-			spdlog::info( "Frame Time: {}ms", frameTime * 1000 );
-			spdlog::info( "Total Number Of Frames: {}", frames );
-
-			Sonar::SysInfo s;
+			
+			
+			
 
 				//Timestamp + Memory Info, and eventually CPU Load percentage
 
-				Sonar::SystemInformation info = s.GetSystemInformation( );
+				
 
 
-							std::cout
+							/*std::cout
 								<< info._timestamp._hour << ":"
 								<< info._timestamp._minutes << ":"
 								<< info._timestamp._seconds << ":"
@@ -83,13 +81,15 @@ namespace Sonar
 								<< info._gpus.front( )._videoArchitecture << " - "
 								<< info._gpus.front( )._videoModeDescription << " - "
 								<< info._gpus.front( )._videoProcessor << " - "
-								<< std::endl;
+								<< std::endl;*/
             
 			_data->window.Clear( _data->backgroundColor );
 
 			ImGui::SFML::Update( _data->window.GetSFMLWindowObject( ), _imGUIClock.SFMLRestart( ) );
 
 			_data->machine.GetActiveState( )->Draw( interpolation );
+
+			_data->debug->ShowExampleAppSimpleOverlay( &show_app_simple_overlay );
 
 			ImGui::SFML::Render( _data->window.GetSFMLWindowObject( ) );
             

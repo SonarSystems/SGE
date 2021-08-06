@@ -9,6 +9,9 @@ ENGINE
         - **Part of DEBUG CLASS**
         - **MAKE IT LIKE DOOM'S**
         - Choose which corner of the screen to put it 
+        - Colours
+            - Background
+            - Text
         - Draw calls count
         - Indices count
         - Vertices count
