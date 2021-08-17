@@ -1,7 +1,6 @@
 e:\github\sysinfo\solution\system information\system information\debug\vc142.pdb
 e:\github\sysinfo\solution\system information\system information\debug\vc142.idb
 e:\github\sysinfo\solution\system information\system information\debug\systemcommand.obj
-e:\github\sysinfo\solution\system information\system information\debug\sysinfo.obj
 e:\github\sysinfo\solution\system information\system information\debug\raminfodelegate.obj
 e:\github\sysinfo\solution\system information\system information\debug\raminfo.obj
 e:\github\sysinfo\solution\system information\system information\debug\osinfodelegate.obj
@@ -13,12 +12,34 @@ e:\github\sysinfo\solution\system information\system information\debug\gpuinfo.o
 e:\github\sysinfo\solution\system information\system information\debug\cpuinfodelegate.obj
 e:\github\sysinfo\solution\system information\system information\debug\cpuinfo.obj
 e:\github\sysinfo\solution\system information\system information\debug\main.obj
-e:\github\sysinfo\solution\system information\system information\debug\system information.ilk
+e:\project-xyz\code\project xyz\platforms\windows\debug\system information.pdb
+e:\project-xyz\code\project xyz\platforms\windows\debug\system information.idb
+e:\project-xyz\code\project xyz\platforms\windows\system information\debug\systemcommand.obj
+e:\project-xyz\code\project xyz\platforms\windows\system information\debug\sysinfo.obj
+e:\project-xyz\code\project xyz\platforms\windows\system information\debug\raminfodelegate.obj
+e:\project-xyz\code\project xyz\platforms\windows\system information\debug\raminfo.obj
+e:\project-xyz\code\project xyz\platforms\windows\system information\debug\osinfodelegate.obj
+e:\project-xyz\code\project xyz\platforms\windows\system information\debug\osinfo.obj
+e:\project-xyz\code\project xyz\platforms\windows\system information\debug\motherboardinfodelegate.obj
+e:\project-xyz\code\project xyz\platforms\windows\system information\debug\motherboardinfo.obj
+e:\project-xyz\code\project xyz\platforms\windows\system information\debug\gpuinfodelegate.obj
+e:\project-xyz\code\project xyz\platforms\windows\system information\debug\gpuinfo.obj
+e:\project-xyz\code\project xyz\platforms\windows\system information\debug\cpuinfodelegate.obj
+e:\project-xyz\code\project xyz\platforms\windows\system information\debug\cpuinfo.obj
+e:\project-xyz\code\project xyz\platforms\windows\system information\debug\main.obj
+e:\project-xyz\code\project xyz\platforms\windows\debug\system information.lib
 e:\github\sysinfo\solution\system information\debug\system information.exe
+e:\github\sysinfo\solution\system information\system information\debug\system information.ilk
 e:\github\sysinfo\solution\system information\debug\system information.pdb
-e:\github\sysinfo\solution\system information\system information\debug\system i.a955da42.tlog\cl.command.1.tlog
-e:\github\sysinfo\solution\system information\system information\debug\system i.a955da42.tlog\cl.read.1.tlog
-e:\github\sysinfo\solution\system information\system information\debug\system i.a955da42.tlog\cl.write.1.tlog
-e:\github\sysinfo\solution\system information\system information\debug\system i.a955da42.tlog\link.command.1.tlog
-e:\github\sysinfo\solution\system information\system information\debug\system i.a955da42.tlog\link.read.1.tlog
-e:\github\sysinfo\solution\system information\system information\debug\system i.a955da42.tlog\link.write.1.tlog
+e:\project-xyz\code\project xyz\platforms\windows\system information\debug\system information.ilk
+e:\project-xyz\code\project xyz\platforms\windows\system information\debug\vc142.idb
+e:\project-xyz\code\project xyz\platforms\windows\system information\debug\vc142.pdb
+e:\project-xyz\code\project xyz\platforms\windows\system information\debug\system i.a955da42.tlog\cl.command.1.tlog
+e:\project-xyz\code\project xyz\platforms\windows\system information\debug\system i.a955da42.tlog\cl.read.1.tlog
+e:\project-xyz\code\project xyz\platforms\windows\system information\debug\system i.a955da42.tlog\cl.write.1.tlog
+e:\project-xyz\code\project xyz\platforms\windows\system information\debug\system i.a955da42.tlog\lib-link.read.1.tlog
+e:\project-xyz\code\project xyz\platforms\windows\system information\debug\system i.a955da42.tlog\lib-link.write.1.tlog
+e:\project-xyz\code\project xyz\platforms\windows\system information\debug\system i.a955da42.tlog\lib.command.1.tlog
+e:\project-xyz\code\project xyz\platforms\windows\system information\debug\system i.a955da42.tlog\link.command.1.tlog
+e:\project-xyz\code\project xyz\platforms\windows\system information\debug\system i.a955da42.tlog\link.read.1.tlog
+e:\project-xyz\code\project xyz\platforms\windows\system information\debug\system i.a955da42.tlog\link.write.1.tlog

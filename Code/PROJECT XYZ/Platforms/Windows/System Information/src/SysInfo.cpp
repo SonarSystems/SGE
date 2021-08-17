@@ -36,6 +36,8 @@ namespace Sonar
 				*/
 		}
 
+		_cpuLoadCounter = 0;
+
 		if ( loadSystemInfo )
 		{ LoadSystemInformation( ); }
 	}
@@ -61,7 +63,7 @@ namespace Sonar
 		_systemInformation._timestamp._dayOfTheWeek = sysTime.wDayOfWeek;
 
 		// Load (in percentage)
-		_systemInformation._cpuLoad = GetCPULoad( ) * 100.0f;
+		_systemInformation._cpuLoadLast = GetCPULoad( ) * 100.0f;
 		_systemInformation._memoryLoad = memStat.dwMemoryLoad;
 
 		// Memory stats
@@ -72,6 +74,19 @@ namespace Sonar
 		_systemInformation._virtualAvailableMemory = memStat.ullAvailVirtual / _memoryFormatMultiplier;
 		_systemInformation._virtualTotalMemory = memStat.ullTotalVirtual / _memoryFormatMultiplier;
 		_systemInformation._virtualExtendedAvailableMemory = memStat.ullAvailExtendedVirtual / _memoryFormatMultiplier;
+
+		if ( 0 == _cpuLoadCounter )
+		{ _systemInformation._cpuLoadAverage = _systemInformation._cpuLoadLast; }
+		else
+		{ _systemInformation._cpuLoadAverage = ( ( _systemInformation._cpuLoadAverage * _cpuLoadCounter ) + _systemInformation._cpuLoadLast ) / ( _cpuLoadCounter + 1 ); }
+
+		if ( _systemInformation._cpuLoadLast < _systemInformation._cpuLoadMin )
+		{ _systemInformation._cpuLoadMin = _systemInformation._cpuLoadLast;  }
+
+		if ( _systemInformation._cpuLoadLast > _systemInformation._cpuLoadMax )
+		{ _systemInformation._cpuLoadMax = _systemInformation._cpuLoadLast; }
+
+		_cpuLoadCounter++;
 
 		return _systemInformation;
 	}
@@ -202,13 +217,21 @@ namespace Sonar
 		static unsigned long long _previousTotalTicks = 0;
 		static unsigned long long _previousIdleTicks = 0;
 
+		//std::cout << _previousTotalTicks << " : " << _previousIdleTicks << std::endl;
+
 		unsigned long long totalTicksSinceLastTime = totalTicks - _previousTotalTicks;
 		unsigned long long idleTicksSinceLastTime = idleTicks - _previousIdleTicks;
 
+		//std::cout << idleTicks << " : " << totalTicks << std::endl;
+		//std::cout << totalTicksSinceLastTime << " : " << idleTicksSinceLastTime << std::endl;
+
 		float ret = 1.0f - ( ( totalTicksSinceLastTime > 0 ) ? ( ( float )idleTicksSinceLastTime ) / totalTicksSinceLastTime : 0 );
+		//float ret = 1.0f - ((( float )idleTicksSinceLastTime ) / totalTicksSinceLastTime);
 
 		_previousTotalTicks = totalTicks;
 		_previousIdleTicks = idleTicks;
+
+		//std::cout << totalTicksSinceLastTime << std::endl;
 
 		return ret;
 	}

@@ -2,8 +2,6 @@
 
 namespace Sonar
 {
-
-
     Debug *Debug::_instance = 0;
 
     Debug *Debug::getInstance( )
@@ -134,9 +132,15 @@ namespace Sonar
 
 	void Debug::UpdateFrameData( const float frameTime )
 	{
-		_frameData._FPS = 1.0f / frameTime;
-		_frameData._frameTime = frameTime * 1000;
 		_frameData._totalFrames++;
+
+		if ( _clock.GetElapsedTime( ).AsSeconds( ) > 1.0f / DEBUG_FPS_UPDATE_FREQUENCY )
+		{
+			_frameData._FPS = 1.0f / frameTime;
+			_frameData._frameTime = frameTime * 1000;
+
+			_clock.Reset( );
+		}
 	}
 
 	void Debug::ShowExampleAppSimpleOverlay( bool *p_open )
@@ -161,11 +165,49 @@ namespace Sonar
 		ImGui::SetNextWindowBgAlpha( 0.35f ); // Transparent background
 		if ( ImGui::Begin( "Example: Simple overlay", p_open, window_flags ) )
 		{
+			if ( _cpuLoadClock.GetElapsedTime( ).AsSeconds( ) > 0.25f )
+			{
+				_systemInformation = _sysInfo.GetSystemInformation( );
+				_cpuLoadClock.Reset( );
+			}
+
 			//ImGui::Text( "%i FPS", ( int )ImGui::GetIO( ).Framerate );
 			ImGui::Text( "%i FPS", ( int )_frameData._FPS );
 			ImGui::Text( "%.2fms", _frameData._frameTime );
+			ImGui::Text( "Frame : %llu", _frameData._totalFrames );
+			if ( ImGui::BeginTable( "CPULoadTable", 5 ) )
+			{
+				ImGui::TableNextRow( );
+				ImGui::TableSetColumnIndex( 1 );
+				ImGui::Text( "avg" );
+				ImGui::TableSetColumnIndex( 2 );
+				ImGui::Text( "min" );
+				ImGui::TableSetColumnIndex( 3 );
+				ImGui::Text( "max" );
+				ImGui::TableSetColumnIndex( 4 );
+				ImGui::Text( "last" );
 
-			spdlog::error( "{} : {}", ImGui::GetIO().Framerate, _frameData._FPS );
+				ImGui::TableNextRow( );
+				ImGui::TableSetColumnIndex( 0 );
+				ImGui::Text( "CPU: " );
+				ImGui::TableSetColumnIndex( 1 );
+				ImGui::Text( "%hu", ( unsigned short )_systemInformation._cpuLoadAverage );
+				ImGui::TableSetColumnIndex( 2 );
+				ImGui::Text( "%hu", ( unsigned short )_systemInformation._cpuLoadMin );
+				ImGui::TableSetColumnIndex( 3 );
+				ImGui::Text( "%hu", ( unsigned short )_systemInformation._cpuLoadMax );
+				ImGui::TableSetColumnIndex( 4 );
+				ImGui::Text( "%hu", ( unsigned short )_systemInformation._cpuLoadLast );
+
+				ImGui::EndTable( );
+			}
+
+			static float arr[] = { 0.6f, 0.1f, 1.0f, 0.5f, 0.92f, 0.1f, 0.2f };
+			ImGui::PlotLines( "Frame Times", arr, IM_ARRAYSIZE( arr ) );
+			
+			//ImGui::Text( "		avg	min	max	last" );
+			//ImGui::Text( "CPU:	%hu 	%hu  	%hu 	%hu", ( unsigned short )_systemInformation._cpuLoadAverage, ( unsigned short )_systemInformation._cpuLoadMin, ( unsigned short )_systemInformation._cpuLoadMax, ( unsigned short )_systemInformation._cpuLoadLast );
+
 			ImGui::Separator( );
 			if ( ImGui::IsMousePosValid( ) )
 				ImGui::Text( "Mouse Position: (%.1f,%.1f)", io.MousePos.x, io.MousePos.y );

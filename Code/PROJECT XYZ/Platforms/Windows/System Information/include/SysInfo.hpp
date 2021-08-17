@@ -137,9 +137,10 @@ namespace Sonar
 	*/
 	struct SystemInformation
 	{
+	public:
 		Timestamp _timestamp;
 
-		float _cpuLoad;
+		float _cpuLoadAverage = 0.0f, _cpuLoadMin = 0.0f, _cpuLoadMax = 0.0f, _cpuLoadLast = 0.0f;
 		unsigned long _memoryLoad;
 		float _physicalTotalMemory;
 		float _physicalAvailableMemory;
@@ -229,6 +230,8 @@ namespace Sonar
 		* \brief Multipler to convert memory units
 		*/
 		float _memoryFormatMultiplier = pow( MEMORY_MULTIPLIER, 3.0f );
+
+		unsigned long long _cpuLoadCounter;
 
 	};
 }

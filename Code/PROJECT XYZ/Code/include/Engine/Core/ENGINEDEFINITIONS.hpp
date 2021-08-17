@@ -15,6 +15,11 @@
 #define WINDOW_TITLE "PR0J3CT XY2"
 
 /**
+* \brief How many times per second should the FPS be updated
+*/
+#define DEBUG_FPS_UPDATE_FREQUENCY 10.0f
+
+/**
 * \brief Default name for scores in the high score manager that aren't set
 */
 #define HIGH_SCORE_DEFAULT_NAME "-NOT SET-"

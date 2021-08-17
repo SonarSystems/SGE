@@ -3,6 +3,8 @@
 #define SPDLOG_EOL "\n"
 #include <spdlog/spdlog.h>
 
+#include "Core/Clock.hpp"
+
 // Starting state of the Debug system, true being enabled and false being disabled
 #define START_STATE true
 #define PHYSICS_START_STATE true
@@ -191,6 +193,11 @@ namespace Sonar
         * \brief Frame rate data
         */
         FrameData _frameData;
+
+        /**
+        * \brief Clock for the frame rate updating
+        */
+        Clock _clock, _cpuLoadClock;
         
     };
 }

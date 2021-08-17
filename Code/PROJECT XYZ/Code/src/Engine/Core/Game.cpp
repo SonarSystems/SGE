@@ -57,9 +57,6 @@ namespace Sonar
 			interpolation = accumulator / dt;
 
 			_data->debug->UpdateFrameData( frameTime );
-
-			
-			
 			
 
 				//Timestamp + Memory Info, and eventually CPU Load percentage
