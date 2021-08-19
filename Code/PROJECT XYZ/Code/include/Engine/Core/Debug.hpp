@@ -197,7 +197,7 @@ namespace Sonar
         /**
         * \brief Clock for the frame rate updating
         */
-        Clock _clock, _cpuLoadClock;
+        Clock _clock, _cpuLoadClock, _fpsClock;
         
     };
 }

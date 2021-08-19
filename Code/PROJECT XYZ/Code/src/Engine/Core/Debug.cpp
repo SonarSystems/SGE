@@ -1,7 +1,11 @@
 #include "pch.hpp"
 
+#include <array>
+
 namespace Sonar
 {
+	std::vector<float> points;
+
     Debug *Debug::_instance = 0;
 
     Debug *Debug::getInstance( )
@@ -171,7 +175,20 @@ namespace Sonar
 				_cpuLoadClock.Reset( );
 			}
 
-			//ImGui::Text( "%i FPS", ( int )ImGui::GetIO( ).Framerate );
+			if ( _frameData._FPS <= 5000.0f && _fpsClock.GetElapsedTime( ).AsSeconds( ) > 0.0167f )
+			{
+				if ( points.size( ) > 100 )
+				{
+					for ( unsigned int i = 1; i < points.size( ); i++ )
+					{ points[i - 1] = points[i]; }
+					points[points.size( ) - 1] = _frameData._FPS;
+				}
+				else
+				{ points.push_back( _frameData._FPS ); }
+
+				_fpsClock.Reset( );
+			}
+
 			ImGui::Text( "%i FPS", ( int )_frameData._FPS );
 			ImGui::Text( "%.2fms", _frameData._frameTime );
 			ImGui::Text( "Frame : %llu", _frameData._totalFrames );
@@ -201,12 +218,10 @@ namespace Sonar
 
 				ImGui::EndTable( );
 			}
-
-			static float arr[] = { 0.6f, 0.1f, 1.0f, 0.5f, 0.92f, 0.1f, 0.2f };
-			ImGui::PlotLines( "Frame Times", arr, IM_ARRAYSIZE( arr ) );
 			
-			//ImGui::Text( "		avg	min	max	last" );
-			//ImGui::Text( "CPU:	%hu 	%hu  	%hu 	%hu", ( unsigned short )_systemInformation._cpuLoadAverage, ( unsigned short )_systemInformation._cpuLoadMin, ( unsigned short )_systemInformation._cpuLoadMax, ( unsigned short )_systemInformation._cpuLoadLast );
+			if ( !points.empty( ) )
+			{ ImGui::PlotHistogram( "FPS", &points[0], points.size( ), 0, 0, 0, 5000.0f ); }
+			//ImGui::PlotLines( "Frame Times", arr, IM_ARRAYSIZE( arr ) );
 
 			ImGui::Separator( );
 			if ( ImGui::IsMousePosValid( ) )
