@@ -4,8 +4,6 @@
 
 namespace Sonar
 {
-	std::vector<float> points;
-
     Debug *Debug::_instance = 0;
 
     Debug *Debug::getInstance( )
@@ -147,7 +145,7 @@ namespace Sonar
 		}
 	}
 
-	void Debug::ShowExampleAppSimpleOverlay( bool *p_open )
+	void Debug::ShowExampleAppSimpleOverlay( bool *p_open, GameDataRef data )
 	{
 		static int corner = 0;
 		ImGuiIO &io = ImGui::GetIO( );
@@ -175,18 +173,36 @@ namespace Sonar
 				_cpuLoadClock.Reset( );
 			}
 
-			if ( _frameData._FPS <= 5000.0f && _fpsClock.GetElapsedTime( ).AsSeconds( ) > 0.0167f )
+			if ( _frameData._FPS <= 5000.0f && _graphClock.GetElapsedTime( ).AsSeconds( ) > 0.0167f )
 			{
-				if ( points.size( ) > 100 )
+				if ( _fpsGraphPoints.size( ) > 100 )
 				{
-					for ( unsigned int i = 1; i < points.size( ); i++ )
-					{ points[i - 1] = points[i]; }
-					points[points.size( ) - 1] = _frameData._FPS;
+					for ( unsigned int i = 1; i < _fpsGraphPoints.size( ); i++ )
+					{ _fpsGraphPoints[i - 1] = _fpsGraphPoints[i]; }
+					_fpsGraphPoints[_fpsGraphPoints.size( ) - 1] = _frameData._FPS;
 				}
 				else
-				{ points.push_back( _frameData._FPS ); }
+				{ _fpsGraphPoints.push_back( _frameData._FPS ); }
 
-				_fpsClock.Reset( );
+				if ( _cpuGraphPoints.size( ) > 100 )
+				{
+					for ( unsigned int i = 1; i < _cpuGraphPoints.size( ); i++ )
+					{ _cpuGraphPoints[i - 1] = _cpuGraphPoints[i]; }
+					_cpuGraphPoints[_cpuGraphPoints.size( ) - 1] = _systemInformation._cpuLoadLast;
+				}
+				else
+				{ _cpuGraphPoints.push_back( _systemInformation._cpuLoadLast ); }
+
+				if ( _ramGraphPoints.size( ) > 100 )
+				{
+					for ( unsigned int i = 1; i < _ramGraphPoints.size( ); i++ )
+					{ _ramGraphPoints[i - 1] = _ramGraphPoints[i]; }
+					_ramGraphPoints[_ramGraphPoints.size( ) - 1] = _systemInformation._physicalTotalMemory - _systemInformation._physicalAvailableMemory;
+				}
+				else
+				{ _ramGraphPoints.push_back( _systemInformation._cpuLoadLast ); }
+
+				_graphClock.Reset( );
 			}
 
 			ImGui::Text( "%i FPS", ( int )_frameData._FPS );
@@ -219,9 +235,14 @@ namespace Sonar
 				ImGui::EndTable( );
 			}
 			
-			if ( !points.empty( ) )
-			{ ImGui::PlotHistogram( "FPS", &points[0], points.size( ), 0, 0, 0, 5000.0f ); }
-			//ImGui::PlotLines( "Frame Times", arr, IM_ARRAYSIZE( arr ) );
+			if ( !_fpsGraphPoints.empty( ) )
+			{ ImGui::PlotHistogram( "FPS", &_fpsGraphPoints[0], _fpsGraphPoints.size( ), 0, 0, 0, 2000.0f ); }
+
+			if ( !_cpuGraphPoints.empty( ) )
+			{ ImGui::PlotHistogram( "CPU", &_cpuGraphPoints[0], _cpuGraphPoints.size( ), 0, 0, 0, 100.0f ); }
+
+			if ( !_ramGraphPoints.empty( ) )
+			{ ImGui::PlotHistogram( "RAM", &_ramGraphPoints[0], _ramGraphPoints.size( ), 0, 0, 0, _systemInformation._physicalTotalMemory ); }
 
 			ImGui::Separator( );
 			if ( ImGui::IsMousePosValid( ) )

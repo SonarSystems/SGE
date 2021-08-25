@@ -1,2 +1,2 @@
-﻿  Debug.cpp
-  SFML Template.vcxproj -> E:\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\SFML Template.exe
+﻿  pch.cpp
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Debug.hpp(154,57): error C2061: syntax error: identifier 'GameDataRef'

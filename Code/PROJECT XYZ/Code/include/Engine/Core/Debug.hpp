@@ -151,7 +151,7 @@ namespace Sonar
         */
         const FrameData &GetFrameData( ) const;
 
-        void ShowExampleAppSimpleOverlay( bool *p_open );
+        void ShowExampleAppSimpleOverlay( bool *p_open, GameDataRef data );
         
     private:
         /**
@@ -197,7 +197,9 @@ namespace Sonar
         /**
         * \brief Clock for the frame rate updating
         */
-        Clock _clock, _cpuLoadClock, _fpsClock;
+        Clock _clock, _cpuLoadClock, _graphClock;
+
+        std::vector<float> _fpsGraphPoints, _cpuGraphPoints, _ramGraphPoints;
         
     };
 }

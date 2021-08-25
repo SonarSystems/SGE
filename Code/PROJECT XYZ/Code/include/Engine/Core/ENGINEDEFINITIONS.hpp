@@ -20,6 +20,11 @@
 #define DEBUG_FPS_UPDATE_FREQUENCY 10.0f
 
 /**
+* \brief Whether or not to show the system stats overlay on launch
+*/
+#define SHOW_SYSTEM_STATS_OVERLAY_ON_LAUNCH true
+
+/**
 * \brief Default name for scores in the high score manager that aren't set
 */
 #define HIGH_SCORE_DEFAULT_NAME "-NOT SET-"
