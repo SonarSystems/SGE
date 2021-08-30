@@ -1,6 +1,11 @@
 #pragma once
 
 /**
+* \brief Engine version
+*/
+#define ENGINE_VERSION "0.01 Pre-Release"
+
+/**
 * \brief Game window width
 */
 #define SCREEN_WIDTH 1280

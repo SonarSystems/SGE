@@ -22,8 +22,18 @@ namespace Sonar
 
 		if ( _isEnabled )
 		{
-			//sysInfo.LoadSystemInformation( );
+			_sysInfo.LoadSystemInformation( );
 			_systemInformation = _sysInfo.GetSystemInformation( );
+
+			std::cout << _systemInformation._gpus.at(0)._name << std::endl;
+			std::cout << _systemInformation._gpus.at(0)._manufacturer << std::endl;
+			std::cout << _systemInformation._gpus.at(0)._caption << std::endl;
+			std::cout << _systemInformation._gpus.at(0)._ram << std::endl;
+			std::cout << _systemInformation._gpus.at(0)._refreshRate << std::endl;
+			std::cout << _systemInformation._gpus.at(0)._driverVersion << std::endl;
+			std::cout << _systemInformation._gpus.at(0)._videoArchitecture << std::endl;
+			std::cout << _systemInformation._gpus.at(0)._videoModeDescription << std::endl;
+			std::cout << _systemInformation._gpus.at(0)._videoProcessor << std::endl;
 		}
     }
 
@@ -145,7 +155,7 @@ namespace Sonar
 		}
 	}
 
-	void Debug::ShowExampleAppSimpleOverlay( bool *p_open, GameDataRef data )
+	void Debug::DrawComputerStats( bool *p_open, const glm::uvec2 &screenSize )
 	{
 		static int corner = 0;
 		ImGuiIO &io = ImGui::GetIO( );
@@ -245,6 +255,14 @@ namespace Sonar
 			{ ImGui::PlotHistogram( "RAM", &_ramGraphPoints[0], _ramGraphPoints.size( ), 0, 0, 0, _systemInformation._physicalTotalMemory ); }
 
 			ImGui::Separator( );
+
+			ImGui::Text( "%ix%i", screenSize.x, screenSize.y );
+
+			ImGui::Text( "SGE %s", ENGINE_VERSION );
+
+			ImGui::Text( "%s", _systemInformation._gpus.at( 0 )._name );
+			ImGui::Text( "VRAM %s", _systemInformation._gpus.at( 0 )._ram );
+
 			if ( ImGui::IsMousePosValid( ) )
 				ImGui::Text( "Mouse Position: (%.1f,%.1f)", io.MousePos.x, io.MousePos.y );
 			else

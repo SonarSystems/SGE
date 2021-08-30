@@ -64,7 +64,7 @@ namespace Sonar
 
 			_data->machine.GetActiveState( )->Draw( interpolation );
 
-			_data->debug->ShowExampleAppSimpleOverlay( &SHOW_SYSTEM_STATS_OVERLAY, _data );
+			_data->debug->DrawComputerStats( &SHOW_SYSTEM_STATS_OVERLAY, _data->window.GetSize( ) );
 
 			ImGui::SFML::Render( _data->window.GetSFMLWindowObject( ) );
             

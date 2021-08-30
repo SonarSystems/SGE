@@ -151,7 +151,7 @@ namespace Sonar
         */
         const FrameData &GetFrameData( ) const;
 
-        void ShowExampleAppSimpleOverlay( bool *p_open, GameDataRef data );
+        void DrawComputerStats( bool *p_open, const glm::uvec2 &screenSize );
         
     private:
         /**
