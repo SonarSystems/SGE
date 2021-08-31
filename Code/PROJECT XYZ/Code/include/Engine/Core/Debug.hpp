@@ -11,6 +11,9 @@
 
 namespace Sonar
 {
+    /**
+    * \brief Frame rate data
+    */
     struct FrameData
     {
         float _FPS;
@@ -21,6 +24,18 @@ namespace Sonar
     class Debug
     {
     public:
+        /**
+        * \brief DOOM style verbosity
+        */
+        enum Verbosity
+        {
+            NONE = 0,
+            MINIMAL,
+            MEDIUM,
+            HIGH,
+            SUPER_HIGH
+        };
+
         /**
         * \brief Get the singleton instance (create one if it hasn't been already)
         *
@@ -151,7 +166,15 @@ namespace Sonar
         */
         const FrameData &GetFrameData( ) const;
 
-        void DrawComputerStats( bool *p_open, const glm::uvec2 &screenSize );
+        /**
+        * \brief Description
+        *
+		* \param pOpen Is the stats overlay open
+		* \param screenSize Size of the window
+		* \param verbosity How many stats should be shown
+		* \param opacity Opacity of the background
+        */
+        void DrawComputerStats( bool *pOpen, const glm::uvec2 &windowSize, const Verbosity verbosity = Verbosity::SUPER_HIGH, const float opacity = COMPUTER_STATS_BACKGROUND_OPACITY );
         
     private:
         /**
@@ -199,6 +222,9 @@ namespace Sonar
         */
         Clock _clock, _cpuLoadClock, _graphClock;
 
+        /**
+        * \brief Points for the graphs
+        */
         std::vector<float> _fpsGraphPoints, _cpuGraphPoints, _ramGraphPoints;
         
     };

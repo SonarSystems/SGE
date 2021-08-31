@@ -3,20 +3,6 @@ GAME
 
 ENGINE
 -----------------------------------------------------------------
-* GUI
-    - FPS counter - https://github.com/Hopson97/SFML-Game-Framework/blob/master/Source/Util/FPSCounter.cpp
-        - ***LOOK INTO IMGUI ESPECIALLY FOR THE GRAPH STUFF*** - https://github.com/eliasdaler/imgui-sfml
-        - **Part of DEBUG CLASS**
-        - **MAKE IT LIKE DOOM'S**
-        - Choose which corner of the screen to put it 
-        - Colours
-            - Background
-            - Text
-        - Draw calls count
-        - Indices count
-        - Vertices count
-        - Triangles count
-        - Quads count
 * Add [[nodiscard]] to all functions that return a value
 * Look into smart pointers
 * Delete all pointers in all custom classes including methods where stuff is removed (release memory)

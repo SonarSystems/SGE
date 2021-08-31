@@ -24,16 +24,6 @@ namespace Sonar
 		{
 			_sysInfo.LoadSystemInformation( );
 			_systemInformation = _sysInfo.GetSystemInformation( );
-
-			std::cout << _systemInformation._gpus.at(0)._name << std::endl;
-			std::cout << _systemInformation._gpus.at(0)._manufacturer << std::endl;
-			std::cout << _systemInformation._gpus.at(0)._caption << std::endl;
-			std::cout << _systemInformation._gpus.at(0)._ram << std::endl;
-			std::cout << _systemInformation._gpus.at(0)._refreshRate << std::endl;
-			std::cout << _systemInformation._gpus.at(0)._driverVersion << std::endl;
-			std::cout << _systemInformation._gpus.at(0)._videoArchitecture << std::endl;
-			std::cout << _systemInformation._gpus.at(0)._videoModeDescription << std::endl;
-			std::cout << _systemInformation._gpus.at(0)._videoProcessor << std::endl;
 		}
     }
 
@@ -155,11 +145,12 @@ namespace Sonar
 		}
 	}
 
-	void Debug::DrawComputerStats( bool *p_open, const glm::uvec2 &screenSize )
+	void Debug::DrawComputerStats( bool *pOpen, const glm::uvec2 &windowSize, const Verbosity verbosity, const float opacity )
 	{
-		static int corner = 0;
+		static short int corner = COMPUTER_STATS_DEFAULT_CORNER;
 		ImGuiIO &io = ImGui::GetIO( );
 		ImGuiWindowFlags window_flags = ImGuiWindowFlags_NoDecoration | ImGuiWindowFlags_AlwaysAutoResize | ImGuiWindowFlags_NoSavedSettings | ImGuiWindowFlags_NoFocusOnAppearing | ImGuiWindowFlags_NoNav;
+		
 		if ( corner != -1 )
 		{
 			const float PAD = 10.0f;
@@ -174,110 +165,140 @@ namespace Sonar
 			ImGui::SetNextWindowPos( window_pos, ImGuiCond_Always, window_pos_pivot );
 			window_flags |= ImGuiWindowFlags_NoMove;
 		}
-		ImGui::SetNextWindowBgAlpha( 0.35f ); // Transparent background
-		if ( ImGui::Begin( "Example: Simple overlay", p_open, window_flags ) )
+
+		if ( verbosity > Verbosity::NONE )
 		{
-			if ( _cpuLoadClock.GetElapsedTime( ).AsSeconds( ) > 0.25f )
+			ImGui::SetNextWindowBgAlpha( opacity ); // Transparent background
+
+			if ( ImGui::Begin( "Computer Stats Overlay", pOpen, window_flags ) )
 			{
-				_systemInformation = _sysInfo.GetSystemInformation( );
-				_cpuLoadClock.Reset( );
-			}
-
-			if ( _frameData._FPS <= 5000.0f && _graphClock.GetElapsedTime( ).AsSeconds( ) > 0.0167f )
-			{
-				if ( _fpsGraphPoints.size( ) > 100 )
+				if ( _cpuLoadClock.GetElapsedTime( ).AsSeconds( ) > 0.25f )
 				{
-					for ( unsigned int i = 1; i < _fpsGraphPoints.size( ); i++ )
-					{ _fpsGraphPoints[i - 1] = _fpsGraphPoints[i]; }
-					_fpsGraphPoints[_fpsGraphPoints.size( ) - 1] = _frameData._FPS;
+					_systemInformation = _sysInfo.GetSystemInformation( );
+					_cpuLoadClock.Reset( );
 				}
-				else
-				{ _fpsGraphPoints.push_back( _frameData._FPS ); }
 
-				if ( _cpuGraphPoints.size( ) > 100 )
+				if ( _frameData._FPS <= 5000.0f && _graphClock.GetElapsedTime( ).AsSeconds( ) > 0.0167f )
 				{
-					for ( unsigned int i = 1; i < _cpuGraphPoints.size( ); i++ )
-					{ _cpuGraphPoints[i - 1] = _cpuGraphPoints[i]; }
-					_cpuGraphPoints[_cpuGraphPoints.size( ) - 1] = _systemInformation._cpuLoadLast;
-				}
-				else
-				{ _cpuGraphPoints.push_back( _systemInformation._cpuLoadLast ); }
+					if ( _fpsGraphPoints.size( ) > 100 )
+					{
+						for ( unsigned int i = 1; i < _fpsGraphPoints.size( ); i++ )
+						{ _fpsGraphPoints[i - 1] = _fpsGraphPoints[i]; }
+						_fpsGraphPoints[_fpsGraphPoints.size( ) - 1] = _frameData._FPS;
+					}
+					else
+					{ _fpsGraphPoints.push_back( _frameData._FPS ); }
 
-				if ( _ramGraphPoints.size( ) > 100 )
+					if ( _cpuGraphPoints.size( ) > 100 )
+					{
+						for ( unsigned int i = 1; i < _cpuGraphPoints.size( ); i++ )
+						{ _cpuGraphPoints[i - 1] = _cpuGraphPoints[i]; }
+						_cpuGraphPoints[_cpuGraphPoints.size( ) - 1] = _systemInformation._cpuLoadLast;
+					}
+					else
+					{ _cpuGraphPoints.push_back( _systemInformation._cpuLoadLast ); }
+
+					if ( _ramGraphPoints.size( ) > 100 )
+					{
+						for ( unsigned int i = 1; i < _ramGraphPoints.size( ); i++ )
+						{ _ramGraphPoints[i - 1] = _ramGraphPoints[i]; }
+						_ramGraphPoints[_ramGraphPoints.size( ) - 1] = _systemInformation._physicalTotalMemory - _systemInformation._physicalAvailableMemory;
+					}
+					else
+					{ _ramGraphPoints.push_back( _systemInformation._cpuLoadLast ); }
+
+					_graphClock.Reset( );
+				}
+
+				if ( verbosity >= Verbosity::MINIMAL )
 				{
-					for ( unsigned int i = 1; i < _ramGraphPoints.size( ); i++ )
-					{ _ramGraphPoints[i - 1] = _ramGraphPoints[i]; }
-					_ramGraphPoints[_ramGraphPoints.size( ) - 1] = _systemInformation._physicalTotalMemory - _systemInformation._physicalAvailableMemory;
+					ImGui::Text( "%i FPS", ( int )_frameData._FPS );
 				}
-				else
-				{ _ramGraphPoints.push_back( _systemInformation._cpuLoadLast ); }
 
-				_graphClock.Reset( );
-			}
+				if ( verbosity >= Verbosity::MEDIUM )
+				{
+					ImGui::Text( "%.2fms", _frameData._frameTime );
+					ImGui::Text( "Frame : %llu", _frameData._totalFrames );
+				}
 
-			ImGui::Text( "%i FPS", ( int )_frameData._FPS );
-			ImGui::Text( "%.2fms", _frameData._frameTime );
-			ImGui::Text( "Frame : %llu", _frameData._totalFrames );
-			if ( ImGui::BeginTable( "CPULoadTable", 5 ) )
-			{
-				ImGui::TableNextRow( );
-				ImGui::TableSetColumnIndex( 1 );
-				ImGui::Text( "avg" );
-				ImGui::TableSetColumnIndex( 2 );
-				ImGui::Text( "min" );
-				ImGui::TableSetColumnIndex( 3 );
-				ImGui::Text( "max" );
-				ImGui::TableSetColumnIndex( 4 );
-				ImGui::Text( "last" );
+				if ( verbosity >= Verbosity::HIGH )
+				{
+					if ( ImGui::BeginTable( "CPULoadTable", 5 ) )
+					{
+						ImGui::TableNextRow( );
+						ImGui::TableSetColumnIndex( 1 );
+						ImGui::Text( "avg" );
+						ImGui::TableSetColumnIndex( 2 );
+						ImGui::Text( "min" );
+						ImGui::TableSetColumnIndex( 3 );
+						ImGui::Text( "max" );
+						ImGui::TableSetColumnIndex( 4 );
+						ImGui::Text( "last" );
 
-				ImGui::TableNextRow( );
-				ImGui::TableSetColumnIndex( 0 );
-				ImGui::Text( "CPU: " );
-				ImGui::TableSetColumnIndex( 1 );
-				ImGui::Text( "%hu", ( unsigned short )_systemInformation._cpuLoadAverage );
-				ImGui::TableSetColumnIndex( 2 );
-				ImGui::Text( "%hu", ( unsigned short )_systemInformation._cpuLoadMin );
-				ImGui::TableSetColumnIndex( 3 );
-				ImGui::Text( "%hu", ( unsigned short )_systemInformation._cpuLoadMax );
-				ImGui::TableSetColumnIndex( 4 );
-				ImGui::Text( "%hu", ( unsigned short )_systemInformation._cpuLoadLast );
+						ImGui::TableNextRow( );
+						ImGui::TableSetColumnIndex( 0 );
+						ImGui::Text( "CPU: " );
+						ImGui::TableSetColumnIndex( 1 );
+						ImGui::Text( "%hu", ( unsigned short )_systemInformation._cpuLoadAverage );
+						ImGui::TableSetColumnIndex( 2 );
+						ImGui::Text( "%hu", ( unsigned short )_systemInformation._cpuLoadMin );
+						ImGui::TableSetColumnIndex( 3 );
+						ImGui::Text( "%hu", ( unsigned short )_systemInformation._cpuLoadMax );
+						ImGui::TableSetColumnIndex( 4 );
+						ImGui::Text( "%hu", ( unsigned short )_systemInformation._cpuLoadLast );
 
-				ImGui::EndTable( );
-			}
+						ImGui::EndTable( );
+					}
 			
-			if ( !_fpsGraphPoints.empty( ) )
-			{ ImGui::PlotHistogram( "FPS", &_fpsGraphPoints[0], _fpsGraphPoints.size( ), 0, 0, 0, 2000.0f ); }
+					if ( !_fpsGraphPoints.empty( ) )
+					{ ImGui::PlotHistogram( "FPS", &_fpsGraphPoints[0], _fpsGraphPoints.size( ), 0, 0, 0, 2000.0f ); }
 
-			if ( !_cpuGraphPoints.empty( ) )
-			{ ImGui::PlotHistogram( "CPU", &_cpuGraphPoints[0], _cpuGraphPoints.size( ), 0, 0, 0, 100.0f ); }
+					if ( !_cpuGraphPoints.empty( ) )
+					{ ImGui::PlotHistogram( "CPU", &_cpuGraphPoints[0], _cpuGraphPoints.size( ), 0, 0, 0, 100.0f ); }
 
-			if ( !_ramGraphPoints.empty( ) )
-			{ ImGui::PlotHistogram( "RAM", &_ramGraphPoints[0], _ramGraphPoints.size( ), 0, 0, 0, _systemInformation._physicalTotalMemory ); }
+					if ( !_ramGraphPoints.empty( ) )
+					{ ImGui::PlotHistogram( "RAM", &_ramGraphPoints[0], _ramGraphPoints.size( ), 0, 0, 0, _systemInformation._physicalTotalMemory ); }
+				}
 
-			ImGui::Separator( );
+				if ( verbosity >= Verbosity::SUPER_HIGH )
+				{
+					ImGui::Separator( );
 
-			ImGui::Text( "%ix%i", screenSize.x, screenSize.y );
+					ImGui::Text( "%ix%i", windowSize.x, windowSize.y );
 
-			ImGui::Text( "SGE %s", ENGINE_VERSION );
+					ImGui::Text( "SGE %s", ENGINE_VERSION );
 
-			ImGui::Text( "%s", _systemInformation._gpus.at( 0 )._name );
-			ImGui::Text( "VRAM %s", _systemInformation._gpus.at( 0 )._ram );
+					ImGui::Text( "%s", _systemInformation._gpus.at( 0 )._name.c_str( ) );
+					ImGui::Text( "VRAM %s", _systemInformation._gpus.at( 0 )._ram.c_str( ) );
 
-			if ( ImGui::IsMousePosValid( ) )
-				ImGui::Text( "Mouse Position: (%.1f,%.1f)", io.MousePos.x, io.MousePos.y );
-			else
-				ImGui::Text( "Mouse Position: <invalid>" );
-			if ( ImGui::BeginPopupContextWindow( ) )
-			{
-				if ( ImGui::MenuItem( "Custom", NULL, corner == -1 ) ) corner = -1;
-				if ( ImGui::MenuItem( "Top-left", NULL, corner == 0 ) ) corner = 0;
-				if ( ImGui::MenuItem( "Top-right", NULL, corner == 1 ) ) corner = 1;
-				if ( ImGui::MenuItem( "Bottom-left", NULL, corner == 2 ) ) corner = 2;
-				if ( ImGui::MenuItem( "Bottom-right", NULL, corner == 3 ) ) corner = 3;
-				if ( p_open && ImGui::MenuItem( "Close" ) ) *p_open = false;
-				ImGui::EndPopup( );
+					ImGui::Text( "VRAM %s", _systemInformation._cpus.at( 0 )._name.c_str( ) );
+				}
+
+				if ( ImGui::BeginPopupContextWindow( ) )
+				{
+					if ( ImGui::MenuItem( "Custom", NULL, corner == -1 ) )
+					{ corner = -1; }
+
+					if ( ImGui::MenuItem( "Top-left", NULL, corner == 0 ) )
+					{ corner = 0; }
+
+					if ( ImGui::MenuItem( "Top-right", NULL, corner == 1 ) )
+					{ corner = 1; }
+				
+					if ( ImGui::MenuItem( "Bottom-left", NULL, corner == 2 ) )
+					{ corner = 2; }
+
+					if ( ImGui::MenuItem( "Bottom-right", NULL, corner == 3 ) )
+					{ corner = 3; }
+
+					if ( pOpen && ImGui::MenuItem( "Close" ) )
+					{ *pOpen = false; }
+
+					ImGui::EndPopup( );
+				}
 			}
+
+			ImGui::End( );
 		}
-		ImGui::End( );
 	}
 }

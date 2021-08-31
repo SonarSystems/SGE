@@ -15,6 +15,24 @@
 #define SCREEN_HEIGHT 720
 
 /**
+* \brief Default corner for stats
+* 
+* -1 - No corner (free moving)
+* 0 - Top left
+* 1 - Top right
+* 2 - Bottom left
+* 3 - Bottom right
+*/
+#define COMPUTER_STATS_DEFAULT_CORNER 1
+
+/**
+* \brief Opacity of the background
+* 
+* 0 being fully transparent, 1 being fully opaque
+*/
+#define COMPUTER_STATS_BACKGROUND_OPACITY 0.45f
+
+/**
 * \brief Game window title
 */
 #define WINDOW_TITLE "PR0J3CT XY2"
