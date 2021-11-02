@@ -77,7 +77,7 @@ namespace Sonar
         *
         * \return Output returns the background speed
         */
-        float GetSpeed( ) const;
+        [[nodiscard]] float GetSpeed( ) const;
 
         /**
         * \brief Set the direction of the scrolling backgrounds
@@ -91,7 +91,7 @@ namespace Sonar
         *
         * \return Output returns the direction of the background scroll
         */
-        ScrollingBackground::DIRECTION GetDirection( ) const;
+        [[nodiscard]] ScrollingBackground::DIRECTION GetDirection( ) const;
 
         /**
         * \brief Set the orientation of the scrolling backgrounds
@@ -105,7 +105,7 @@ namespace Sonar
         *
         * \return Output returns the orientation of the background scroll
         */
-        ScrollingBackground::ORIENTATION GetOrientation( ) const;
+        [[nodiscard]] ScrollingBackground::ORIENTATION GetOrientation( ) const;
 
         /**
         * \brief Set the scrolling to be triggered manually not time based (backgrounds are positioned with last first and going in the left/up direction)
@@ -134,9 +134,6 @@ namespace Sonar
 		* \param offsetY Offset between backgrounds in the y axis
         */
         void SetOffset( const float &offsetX, const float &offsetY );
-
-
-        // Create parallax class
 
     private:
         /**

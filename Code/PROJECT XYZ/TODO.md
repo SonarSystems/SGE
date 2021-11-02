@@ -3,7 +3,6 @@ GAME
 
 ENGINE
 -----------------------------------------------------------------
-* Add [[nodiscard]] to all functions that return a value
 * Look into smart pointers
 * Delete all pointers in all custom classes including methods where stuff is removed (release memory)
     - delete pointer;

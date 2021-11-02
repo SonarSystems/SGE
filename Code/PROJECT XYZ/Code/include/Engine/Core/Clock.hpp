@@ -27,14 +27,14 @@ namespace Sonar
 		* 
 		* \return Output return the SFML time after a restart
 		*/
-		sf::Time SFMLRestart( );
+		[[nodiscard]] sf::Time SFMLRestart( );
 		
 		/**
 		 * \brief Get elapsed time
 		 *
 		 * \return Output returns the time that elapsed since the last reset or start
 		 */
-		 const Time GetElapsedTime( ) const;
+		[[nodiscard]] const Time GetElapsedTime( ) const;
 		
 	private:
 		/**

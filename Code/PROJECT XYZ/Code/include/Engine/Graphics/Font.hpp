@@ -34,7 +34,7 @@ namespace Sonar
         *
         * \return Output returns the font's file path
         */
-        std::string GetFontFilePath( ) const;
+        [[nodiscard]] std::string GetFontFilePath( ) const;
 
         /**
         * \brief Get the font's line spacing
@@ -43,7 +43,7 @@ namespace Sonar
         *
         * \return Output returns line spacing
         */
-        float GetLineSpacing( const unsigned int &characterSize ) const;
+        [[nodiscard]] float GetLineSpacing( const unsigned int &characterSize ) const;
 
         /**
         * \brief Get the font's underline position
@@ -52,7 +52,7 @@ namespace Sonar
         *
         * \return Output returns the underline position
         */
-        float GetUnderlinePosition( const unsigned int &characterSize ) const;
+        [[nodiscard]] float GetUnderlinePosition( const unsigned int &characterSize ) const;
 
         /**
         * \brief Get the font's underline thickness
@@ -61,14 +61,14 @@ namespace Sonar
         *
         * \return Output returns the underline thickness
         */
-        float GetUnderlineThickness( const unsigned int &characterSize ) const;
+        [[nodiscard]] float GetUnderlineThickness( const unsigned int &characterSize ) const;
 
         /**
         * \brief Get the underlying SFML font object
         *
         * \return Output returns SFML font object
         */
-        const sf::Font &GetSFMLFont( ) const;
+        [[nodiscard]] const sf::Font &GetSFMLFont( ) const;
 
     private:
         /**

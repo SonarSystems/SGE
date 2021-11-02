@@ -204,7 +204,7 @@ namespace Sonar
         *
         * \return Output returns the SFML event object
         */
-        sf::Event &GetSFMLEventObject( );
+        [[nodiscard]] sf::Event &GetSFMLEventObject( );
 
         void Update( );
 

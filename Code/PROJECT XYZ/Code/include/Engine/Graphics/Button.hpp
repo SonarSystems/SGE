@@ -87,7 +87,7 @@ namespace Sonar
         *
         * \param dt Delta time (difference between frames)
         */
-        MOUSE_STATE UpdateForButtonGroup( const float &dt, const bool &isDefaultStyleEnabled );
+        [[nodiscard]] MOUSE_STATE UpdateForButtonGroup( const float &dt, const bool &isDefaultStyleEnabled );
 
         /**
         * \brief Poll the input from the Joystick, Keyboard and Mouse
@@ -125,14 +125,14 @@ namespace Sonar
         *
         * \return Output returns the buttons background rectangle
         */
-		Rectangle *GetRectangleBackground( ) const;
+        [[nodiscard]] Rectangle *GetRectangleBackground( ) const;
 
         /**
         * \brief Get the buttons label
         *
         * \return Output returns the buttons label
         */
-		Label *GetRectangleLabel( ) const;
+        [[nodiscard]] Label *GetRectangleLabel( ) const;
 
         /**
         * \brief Set extra padding around the text
@@ -172,21 +172,21 @@ namespace Sonar
         *
         * \return Output returns the padding
         */
-        const glm::vec2 &GetPadding( ) const;
+        [[nodiscard]] const glm::vec2 &GetPadding( ) const;
 
         /**
         * \brief Get padding around the text's x axis (left and right)
         *
         * \return Output returns the x padding
         */
-        float GetPaddingX( ) const;
+        [[nodiscard]] float GetPaddingX( ) const;
 
         /**
         * \brief Get padding around the text's y axis (top and bottom)
         *
         * \return Output returns the y padding
         */
-        float GetPaddingY( ) const;
+        [[nodiscard]] float GetPaddingY( ) const;
 
         /**
         * \brief Set width and height
@@ -226,21 +226,21 @@ namespace Sonar
         *
         * \return Output returns the size vector
         */
-        glm::vec2 GetSize( ) const;
+        [[nodiscard]] glm::vec2 GetSize( ) const;
 
         /**
         * \brief Get the width
         *
         * \return Output returns the width
         */
-        float GetWidth( ) const;
+        [[nodiscard]] float GetWidth( ) const;
 
         /**
         * \brief Get the height
         *
         * \return Output returns the height
         */
-        float GetHeight( ) const;
+        [[nodiscard]] float GetHeight( ) const;
 
         /**
         * \brief Set the label's x anchor
@@ -274,7 +274,7 @@ namespace Sonar
         *
         * \return Output returns the button's text
         */
-        const std::string &GetText( ) const;
+        [[nodiscard]] const std::string &GetText( ) const;
 
         /**
         * \brief Set x and y position
@@ -310,21 +310,21 @@ namespace Sonar
         *
         * \return Output returns the x position
         */
-        float GetPositionX( ) const;
+        [[nodiscard]] float GetPositionX( ) const;
 
         /**
         * \brief Get the y position
         *
         * \return Output returns the y position
         */
-        float GetPositionY( ) const;
+        [[nodiscard]] float GetPositionY( ) const;
 
         /**
         * \brief Get the position vector
         *
         * \return Output returns the position vector
         */
-        glm::vec2 GetPosition( ) const;
+        [[nodiscard]] glm::vec2 GetPosition( ) const;
 
         /**
         * \brief Set the character size in pixels
@@ -340,7 +340,7 @@ namespace Sonar
         *
         * \return Output returns the character size
         */
-        unsigned int GetCharacterSize( ) const;
+        [[nodiscard]] unsigned int GetCharacterSize( ) const;
 
         /**
         * \brief Set the background's inside color (fill color)
@@ -375,21 +375,21 @@ namespace Sonar
         *
         * \return Output returns the inside color
         */
-        Color GetBackgroundInsideColor( ) const;
+        [[nodiscard]] Color GetBackgroundInsideColor( ) const;
 
         /**
         * \brief Get the background's border color
         *
         * \return Output returns the border color
         */
-        Color GetBackgroundBorderColor( ) const;
+        [[nodiscard]] Color GetBackgroundBorderColor( ) const;
 
         /**
         * \brief Get the background's border thickness
         *
         * \return Output returns the border thickness
         */
-        float GetBackgroundBorderThickness( ) const;
+        [[nodiscard]] float GetBackgroundBorderThickness( ) const;
 
         /**
         * \brief Set the label's inside color (fill color)
@@ -424,21 +424,21 @@ namespace Sonar
         *
         * \return Output returns the inside color
         */
-        Color GetLabelInsideColor( ) const;
+        [[nodiscard]] Color GetLabelInsideColor( ) const;
 
         /**
         * \brief Get the label's border color
         *
         * \return Output returns the border color
         */
-        Color GetLabelBorderColor( ) const;
+        [[nodiscard]] Color GetLabelBorderColor( ) const;
 
         /**
         * \brief Get the label's border thickness
         *
         * \return Output returns the border thickness
         */
-        float GetLabelBorderThickness( ) const;
+        [[nodiscard]] float GetLabelBorderThickness( ) const;
 
 		/**
 		* \brief Set the hover character size in pixels
@@ -454,7 +454,7 @@ namespace Sonar
 		*
 		* \return Output returns the character size
 		*/
-		unsigned int GetHoverCharacterSize( ) const;
+        [[nodiscard]] unsigned int GetHoverCharacterSize( ) const;
 
 		/**
 		* \brief Set the hover background's inside color (fill color)
@@ -489,21 +489,21 @@ namespace Sonar
 		*
 		* \return Output returns the inside color
 		*/
-		Color GetHoverBackgroundInsideColor( ) const;
+        [[nodiscard]] Color GetHoverBackgroundInsideColor( ) const;
 
 		/**
 		* \brief Get the hover background's border color
 		*
 		* \return Output returns the border color
 		*/
-		Color GetHoverBackgroundBorderColor( ) const;
+        [[nodiscard]] Color GetHoverBackgroundBorderColor( ) const;
 
 		/**
 		* \brief Get the hover background's border thickness
 		*
 		* \return Output returns the border thickness
 		*/
-		float GetHoverBackgroundBorderThickness( ) const;
+        [[nodiscard]] float GetHoverBackgroundBorderThickness( ) const;
 
 		/**
 		* \brief Set the hover label's inside color (fill color)
@@ -538,21 +538,21 @@ namespace Sonar
 		*
 		* \return Output returns the inside color
 		*/
-		Color GetHoverLabelInsideColor( ) const;
+        [[nodiscard]] Color GetHoverLabelInsideColor( ) const;
 
 		/**
 		* \brief Get the hover label's border color
 		*
 		* \return Output returns the border color
 		*/
-		Color GetHoverLabelBorderColor( ) const;
+        [[nodiscard]] Color GetHoverLabelBorderColor( ) const;
 
 		/**
 		* \brief Get the hover label's border thickness
 		*
 		* \return Output returns the border thickness
 		*/
-		float GetHoverLabelBorderThickness( ) const;
+        [[nodiscard]] float GetHoverLabelBorderThickness( ) const;
 
 		/**
 		* \brief Set a particular style for the hover label
@@ -568,7 +568,7 @@ namespace Sonar
 		*
 		* \return Output returns the overall style
 		*/
-		unsigned int GetHoverLabelStyle( ) const;
+        [[nodiscard]] unsigned int GetHoverLabelStyle( ) const;
 
 		/**
 		* \brief Set the hover scale factor
@@ -637,21 +637,21 @@ namespace Sonar
 		*
 		* \return Output returns scale factor for both axes
 		*/
-		glm::vec2 GetHoverScale( ) const;
+        [[nodiscard]] glm::vec2 GetHoverScale( ) const;
 
 		/**
 		* \brief Get the hover scale factor for x axis
 		*
 		* \return Output returns scale factor for the x axis
 		*/
-		float GetHoverScaleX( ) const;
+        [[nodiscard]] float GetHoverScaleX( ) const;
 
 		/**
 		* \brief Get the hover scale factor for y axis
 		*
 		* \return Output returns scale factor for the y axis
 		*/
-		float GetHoverScaleY( ) const;
+        [[nodiscard]] float GetHoverScaleY( ) const;
 
         /**
         * \brief Set the clicked character size in pixels
@@ -667,7 +667,7 @@ namespace Sonar
         *
         * \return Output returns the character size
         */
-        unsigned int GetClickedCharacterSize( ) const;
+        [[nodiscard]] unsigned int GetClickedCharacterSize( ) const;
 
         /**
         * \brief Set the clicked background's inside color (fill color)
@@ -702,21 +702,21 @@ namespace Sonar
         *
         * \return Output returns the inside color
         */
-        Color GetClickedBackgroundInsideColor( ) const;
+        [[nodiscard]] Color GetClickedBackgroundInsideColor( ) const;
 
         /**
         * \brief Get the clicked background's border color
         *
         * \return Output returns the border color
         */
-        Color GetClickedBackgroundBorderColor( ) const;
+        [[nodiscard]] Color GetClickedBackgroundBorderColor( ) const;
 
         /**
         * \brief Get the clicked background's border thickness
         *
         * \return Output returns the border thickness
         */
-        float GetClickedBackgroundBorderThickness( ) const;
+        [[nodiscard]] float GetClickedBackgroundBorderThickness( ) const;
 
         /**
         * \brief Set the clicked label's inside color (fill color)
@@ -751,21 +751,21 @@ namespace Sonar
         *
         * \return Output returns the inside color
         */
-        Color GetClickedLabelInsideColor( ) const;
+        [[nodiscard]] Color GetClickedLabelInsideColor( ) const;
 
         /**
         * \brief Get the clicked label's border color
         *
         * \return Output returns the border color
         */
-        Color GetClickedLabelBorderColor( ) const;
+        [[nodiscard]] Color GetClickedLabelBorderColor( ) const;
 
         /**
         * \brief Get the clicked label's border thickness
         *
         * \return Output returns the border thickness
         */
-        float GetClickedLabelBorderThickness( ) const;
+        [[nodiscard]] float GetClickedLabelBorderThickness( ) const;
 
         /**
         * \brief Set a particular style for the clicked label
@@ -781,7 +781,7 @@ namespace Sonar
         *
         * \return Output returns the overall style
         */
-        unsigned int GetClickedLabelStyle( ) const;
+        [[nodiscard]] unsigned int GetClickedLabelStyle( ) const;
 
         /**
         * \brief Set the clicked scale factor
@@ -850,21 +850,21 @@ namespace Sonar
         *
         * \return Output returns scale factor for both axes
         */
-        glm::vec2 GetClickedScale( ) const;
+        [[nodiscard]] glm::vec2 GetClickedScale( ) const;
 
         /**
         * \brief Get the clicked scale factor for x axis
         *
         * \return Output returns scale factor for the x axis
         */
-        float GetClickedScaleX( ) const;
+        [[nodiscard]] float GetClickedScaleX( ) const;
 
         /**
         * \brief Get the clicked scale factor for y axis
         *
         * \return Output returns scale factor for the y axis
         */
-        float GetClickedScaleY( ) const;
+        [[nodiscard]] float GetClickedScaleY( ) const;
 
 		/**
 		* \brief Set the highlighted character size in pixels
@@ -880,7 +880,7 @@ namespace Sonar
 		*
 		* \return Output returns the character size
 		*/
-		unsigned int GetHighlightedCharacterSize( ) const;
+        [[nodiscard]] unsigned int GetHighlightedCharacterSize( ) const;
 
 		/**
 		* \brief Set the highlighted background's inside color (fill color)
@@ -915,21 +915,21 @@ namespace Sonar
 		*
 		* \return Output returns the inside color
 		*/
-		Color GetHighlightedBackgroundInsideColor( ) const;
+        [[nodiscard]] Color GetHighlightedBackgroundInsideColor( ) const;
 
 		/**
 		* \brief Get the highlighted background's border color
 		*
 		* \return Output returns the border color
 		*/
-		Color GetHighlightedBackgroundBorderColor( ) const;
+        [[nodiscard]] Color GetHighlightedBackgroundBorderColor( ) const;
 
 		/**
 		* \brief Get the highlighted background's border thickness
 		*
 		* \return Output returns the border thickness
 		*/
-		float GetHighlightedBackgroundBorderThickness( ) const;
+        [[nodiscard]] float GetHighlightedBackgroundBorderThickness( ) const;
 
 		/**
 		* \brief Set the highlighted label's inside color (fill color)
@@ -964,21 +964,21 @@ namespace Sonar
 		*
 		* \return Output returns the inside color
 		*/
-		Color GetHighlightedLabelInsideColor( ) const;
+        [[nodiscard]] Color GetHighlightedLabelInsideColor( ) const;
 
 		/**
 		* \brief Get the highlighted label's border color
 		*
 		* \return Output returns the border color
 		*/
-		Color GetHighlightedLabelBorderColor( ) const;
+        [[nodiscard]] Color GetHighlightedLabelBorderColor( ) const;
 
 		/**
 		* \brief Get the highlighted label's border thickness
 		*
 		* \return Output returns the border thickness
 		*/
-		float GetHighlightedLabelBorderThickness( ) const;
+        [[nodiscard]] float GetHighlightedLabelBorderThickness( ) const;
 
 		/**
 		* \brief Set a particular style for the highlighted label
@@ -994,7 +994,7 @@ namespace Sonar
 		*
 		* \return Output returns the overall style
 		*/
-		unsigned int GetHighlightedLabelStyle( ) const;
+        [[nodiscard]] unsigned int GetHighlightedLabelStyle( ) const;
 
 		/**
 		* \brief Set the highlighted scale factor
@@ -1063,21 +1063,21 @@ namespace Sonar
 		*
 		* \return Output returns scale factor for both axes
 		*/
-		glm::vec2 GetHighlightedScale( ) const;
+        [[nodiscard]] glm::vec2 GetHighlightedScale( ) const;
 
 		/**
 		* \brief Get the highlighted scale factor for x axis
 		*
 		* \return Output returns scale factor for the x axis
 		*/
-		float GetHighlightedScaleX( ) const;
+        [[nodiscard]] float GetHighlightedScaleX( ) const;
 
 		/**
 		* \brief Get the highlighted scale factor for y axis
 		*
 		* \return Output returns scale factor for the y axis
 		*/
-		float GetHighlightedScaleY( ) const;
+        [[nodiscard]] float GetHighlightedScaleY( ) const;
 
         /**
         * \brief Move the object relative to it's current position in the x and y axis
@@ -1175,21 +1175,21 @@ namespace Sonar
         *
         * \return Output returns scale factor for both axes
         */
-        glm::vec2 GetScale( ) const;
+        [[nodiscard]] glm::vec2 GetScale( ) const;
 
         /**
         * \brief Get the scale factor for x axis
         *
         * \return Output returns scale factor for the x axis
         */
-        float GetScaleX( ) const;
+        [[nodiscard]] float GetScaleX( ) const;
 
         /**
         * \brief Get the scale factor for y axis
         *
         * \return Output returns scale factor for the y axis
         */
-        float GetScaleY( ) const;
+        [[nodiscard]] float GetScaleY( ) const;
 
         /**
         * \brief Set the label's font
@@ -1214,14 +1214,14 @@ namespace Sonar
         *
         * \return Output returns the font used for the label
         */
-        const Font &GetFont( ) const;
+        [[nodiscard]] const Font &GetFont( ) const;
 
         /**
         * \brief Gets the font's file path
         *
         * \return Output returns the font's file path
         */
-        std::string GetFontFilePath( ) const;
+        [[nodiscard]] std::string GetFontFilePath( ) const;
 
         /**
         * \brief Set a particular style for the label
@@ -1247,7 +1247,7 @@ namespace Sonar
         *
         * \return Output returns the overall style
         */
-        unsigned int GetLabelStyle( ) const;
+        [[nodiscard]] unsigned int GetLabelStyle( ) const;
 
         /**
         * \brief Check if a particular style is enabled
@@ -1256,7 +1256,7 @@ namespace Sonar
         *
         * \return Output returns true if the style is enabled and false if it is disabled
         */
-        bool IsStyleEnabled( const Label::STYLE &style ) const;
+        [[nodiscard]] bool IsStyleEnabled( const Label::STYLE &style ) const;
 
         /**
         * \brief Reset the labels position within the background
@@ -1290,7 +1290,7 @@ namespace Sonar
         *
         * \return Output returns the button background enabled status
         */
-        const bool &IsBackgroundEnabled( ) const;
+        [[nodiscard]] const bool &IsBackgroundEnabled( ) const;
 
         /**
         * \brief Check if the object is clicked by the mouse
@@ -1299,14 +1299,14 @@ namespace Sonar
         *
         * \return Output returns true if the mouse is being clicked over the object and false otherwise
         */
-        bool IsClicked( const Mouse::Button &button ) const;
+        [[nodiscard]] bool IsClicked( const Mouse::Button &button ) const;
 
         /**
         * \brief Is the mouse hovering
         *
         * \return Output returns the mouse hover status, true if the mouse is in the item and false if it isn't
         */
-        bool IsMouseOver( ) const;
+        [[nodiscard]] bool IsMouseOver( ) const;
 
         /**
         * \brief Set the overall button style
@@ -1342,28 +1342,28 @@ namespace Sonar
         *
         * \return Output returns the default button style
         */
-        const ButtonStyle &GetDefaultButtonStyle( ) const;
+        [[nodiscard]] const ButtonStyle &GetDefaultButtonStyle( ) const;
 
         /**
         * \brief Get the hover button style
         *
         * \return Output returns the hover button style
         */
-        const ButtonStyle &GetHoverButtonStyle( ) const;
+        [[nodiscard]] const ButtonStyle &GetHoverButtonStyle( ) const;
 
         /**
         * \brief Get the clicked button style
         *
         * \return Output returns the clicked button style
         */
-        const ButtonStyle &GetClickedButtonStyle( ) const;
+        [[nodiscard]] const ButtonStyle &GetClickedButtonStyle( ) const;
 
         /**
         * \brief Get the highlighted button style
         *
         * \return Output returns the highlighted button style
         */
-        const ButtonStyle &GetHighlightedButtonStyle( ) const;
+        [[nodiscard]] const ButtonStyle &GetHighlightedButtonStyle( ) const;
 
         /**
         * \brief Enable the hover functionality
@@ -1385,7 +1385,7 @@ namespace Sonar
         *
         * \return Output returns the hover enabled/disabled status
         */
-        bool GetHoverStatus( );
+        [[nodiscard]] bool GetHoverStatus( );
 
         /**
         * \brief Enable the click functionality
@@ -1407,7 +1407,7 @@ namespace Sonar
         *
         * \return Output returns the click enabled/disabled status
         */
-        bool GetClickStatus( );
+        [[nodiscard]] bool GetClickStatus( );
 
         /**
         * \brief Set the buttons minimum size
@@ -1443,21 +1443,21 @@ namespace Sonar
         *
         * \return Output returns the minimum size
         */
-        const glm::vec2 &GetMinimumSize( ) const;
+        [[nodiscard]] const glm::vec2 &GetMinimumSize( ) const;
 
         /**
         * \brief Get the buttons minimum width
         *
         * \return Output returns the minimum width
         */
-        float GetMinimumWidth( ) const;
+        [[nodiscard]] float GetMinimumWidth( ) const;
 
         /**
         * \brief Get the buttons minimum height
         *
         * \return Output returns the minimum height
         */
-        float GetMinimumHeight( ) const;
+        [[nodiscard]] float GetMinimumHeight( ) const;
 
         /**
         * \brief Set the buttons Maximum size
@@ -1493,21 +1493,21 @@ namespace Sonar
         *
         * \return Output returns the Maximum size
         */
-        const glm::vec2 &GetMaximumSize( ) const;
+        [[nodiscard]] const glm::vec2 &GetMaximumSize( ) const;
 
         /**
         * \brief Get the buttons Maximum width
         *
         * \return Output returns the Maximum width
         */
-        float GetMaximumWidth( ) const;
+        [[nodiscard]] float GetMaximumWidth( ) const;
 
         /**
         * \brief Get the buttons Maximum height
         *
         * \return Output returns the Maximum height
         */
-        float GetMaximumHeight( ) const;
+        [[nodiscard]] float GetMaximumHeight( ) const;
 
         /**
         * \brief Set the mousee button which would trigger the click function
@@ -1521,7 +1521,7 @@ namespace Sonar
         *
         * \return Output returns the mouse button
         */
-        const Mouse::Button &GetMouseButtonToClick( ) const;
+        [[nodiscard]] const Mouse::Button &GetMouseButtonToClick( ) const;
 
     private:
         /**

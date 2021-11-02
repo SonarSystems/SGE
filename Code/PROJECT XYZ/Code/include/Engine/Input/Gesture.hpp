@@ -100,7 +100,7 @@ namespace Sonar
 		*
 		* \return Output returns the status of the gesture
 		*/
-		bool IsComplete( );
+		[[nodiscard]] bool IsComplete( );
 
 		/**
 		* \brief Reset the Gesture
@@ -119,7 +119,7 @@ namespace Sonar
 		*
 		* \return Output returns the gesture's analogue stick
 		*/
-		AnalogueStick GetAnalogueStick( ) const;
+		[[nodiscard]] AnalogueStick GetAnalogueStick( ) const;
 
 		/**
 		* \brief Set the joysticks ID
@@ -133,7 +133,7 @@ namespace Sonar
 		*
 		* \return Output returns the joystick ID
 		*/
-		int GetJoystickID( ) const;
+		[[nodiscard]] int GetJoystickID( ) const;
 
 		/**
 		* \brief Set the gesture pattern
@@ -147,14 +147,14 @@ namespace Sonar
 		*
 		* \return Output returns the gesture pattern
 		*/
-		Pattern GetPattern( ) const;
+		[[nodiscard]] Pattern GetPattern( ) const;
 
 		/**
 		* \brief Get the status of the joystick rotation (only for Clockwise and CounterClockwise patterns)
 		*
 		* \return Output returns joystick rotation status
 		*/
-		bool GetIsRotating( ) const;
+		[[nodiscard]] bool GetIsRotating( ) const;
 
 		/**
 		* \brief Get the total number of degrees turned (only for Clockwise and CounterClockwise patterns)
@@ -163,21 +163,21 @@ namespace Sonar
 		*
 		* \return Output returns total degrees turned by the joystick
 		*/
-		bool GetTotalDegreesTurned( const bool &isDegrees = true ) const;
+		[[nodiscard]] bool GetTotalDegreesTurned( const bool &isDegrees = true ) const;
 
 		/**
 		* \brief Get the total number of circles turned by the joystick (only for Clockwise and CounterClockwise patterns)
 		*
 		* \return Output returns total number of joystick rotations
 		*/
-		float GetTotalCirclesTurned( ) const;
+		[[nodiscard]] float GetTotalCirclesTurned( ) const;
 
 		/**
 		* \brief Get the gesture clock (only for Clockwise and CounterClockwise patterns)
 		*
 		* \return Output returns clock
 		*/
-		Clock GetClock( );
+		[[nodiscard]] Clock GetClock( );
 
 	private:
 		void SetResetAxis( );

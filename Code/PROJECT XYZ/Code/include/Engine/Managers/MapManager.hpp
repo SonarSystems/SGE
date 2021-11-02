@@ -39,7 +39,7 @@ namespace Sonar
 		*
 		* \return Output returns a map value
 		*/
-		char GetValue( const unsigned int &posX, const unsigned int &posY ) const;
+		[[nodiscard]] char GetValue( const unsigned int &posX, const unsigned int &posY ) const;
 
 		/**
 		* \brief Save the map array
@@ -60,21 +60,21 @@ namespace Sonar
 		*
 		* \return Output returns the map size
 		*/
-		glm::uvec2 GetSize( ) const;
+		[[nodiscard]] glm::uvec2 GetSize( ) const;
 
 		/**
 		* \brief Get the map size x
 		*
 		* \return Output returns the map size x
 		*/
-		unsigned int GetSizeX( ) const;
+		[[nodiscard]] unsigned int GetSizeX( ) const;
 
 		/**
 		* \brief Get the map size y
 		*
 		* \return Output returns the map size y
 		*/
-		unsigned int GetSizeY( ) const;
+		[[nodiscard]] unsigned int GetSizeY( ) const;
 
 	private:
 		/**

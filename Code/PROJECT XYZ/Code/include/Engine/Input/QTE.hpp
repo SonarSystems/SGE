@@ -30,14 +30,14 @@ namespace Sonar
 		 *
 		 * \return Output returns the started status (true or false)
 		 */
-		bool HasStarted( ) const;
+		[[nodiscard]] bool HasStarted( ) const;
 
 		/**
 		 * \brief Get the event position
 		 *
 		 * \return Output returns the position of the event in the overll QTE
 		 */
-		int GetEventPosition( ) const;
+		[[nodiscard]] int GetEventPosition( ) const;
 
 		/**
 		 * \brief Set the event position
@@ -51,35 +51,35 @@ namespace Sonar
 		 *
 		 * \return Output returns the total number of events in the QTE
 		 */
-		int GetEventCount( ) const;
+		[[nodiscard]] int GetEventCount( ) const;
 
 		/**
 		* \brief Get event list for the keyboard (vector container)
 		*
 		* \return Output returns the list of events in the keyboard QTE
 		*/
-		std::vector<Keyboard::Key> GetEventListKeyboard( ) const;
+		[[nodiscard]] std::vector<Keyboard::Key> GetEventListKeyboard( ) const;
 
 		/**
 		* \brief Get event list for the joystick (vector container)
 		*
 		* \return Output returns the list of events in the joystick QTE
 		*/
-		std::vector<std::array<int, 2>> GetEventListJoystick( ) const;
+		[[nodiscard]] std::vector<std::array<int, 2>> GetEventListJoystick( ) const;
 
 		/**
 		 * \brief Checks if the QTE is complete
 		 *
 		 * \return Output returns the complete status of the QTE
 		 */
-		bool IsComplete( ) const;
+		[[nodiscard]] bool IsComplete( ) const;
 
 		/**
 		 * \brief Get the QTE clock
 		 *
 		 * \return Output returns the QTE clock
 		 */
-		Clock GetClock( ) const;
+		[[nodiscard]] Clock GetClock( ) const;
 
 		/**
 		* \brief Process the next keyboard input
@@ -117,7 +117,7 @@ namespace Sonar
 		*
 		* \return Output returns the QTE failure count
 		*/
-		unsigned int GetFailureCount( ) const;
+		[[nodiscard]] unsigned int GetFailureCount( ) const;
 
 	private:
 		/**

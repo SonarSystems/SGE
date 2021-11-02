@@ -123,7 +123,7 @@ namespace Sonar
          *
          * \return Output returns true if key is pressed and false otherwise
         */
-        static bool IsPressed( const Key &key );
+        [[nodiscard]] static bool IsPressed( const Key &key );
         
         /**
          * \brief Check if multiple keys have been pressed
@@ -132,6 +132,6 @@ namespace Sonar
          *
          * \return Output returns true if all keys are pressed and false otherwise
         */
-        static bool ChordPressed( const std::initializer_list<Key> &keys );
+        [[nodiscard]] static bool ChordPressed( const std::initializer_list<Key> &keys );
     };
 }

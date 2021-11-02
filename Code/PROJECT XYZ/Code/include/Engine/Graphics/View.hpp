@@ -106,28 +106,28 @@ namespace Sonar
 		*
 		* \return Output returns the view's center vector
 		*/
-		const glm::vec2 GetCenter( ) const;
+		[[nodiscard]] const glm::vec2 GetCenter( ) const;
 
 		/**
 		* \brief Get the view's size
 		*
 		* \return Output returns the view's size vector
 		*/
-		const glm::vec2 GetSize( ) const;
+		[[nodiscard]] const glm::vec2 GetSize( ) const;
 
 		/**
 		* \brief Get the view's rotation angle
 		*
 		* \return Output returns the view's rotation angle
 		*/
-		const float GetRotation( ) const;
+		[[nodiscard]] const float GetRotation( ) const;
 
 		/**
 		* \brief Get the view's viewport
 		*
 		* \return Output returns the view's viewport vector
 		*/
-		const glm::vec4 GetViewport( ) const;
+		[[nodiscard]] const glm::vec4 GetViewport( ) const;
 
 		/**
 		* \brief Move the view
@@ -163,21 +163,21 @@ namespace Sonar
 		*
 		* \return Output returns the view's transform
 		*/
-		const sf::Transform &GetTransform( ) const;
+		[[nodiscard]] const sf::Transform &GetTransform( ) const;
 
 		/**
 		* \brief Get the view's SFML Inverse Transform object (COULD ABTRAST LATER INTO Sonar::Transform)
 		*
 		* \return Output returns the view's inverse transform
 		*/
-		const sf::Transform &GetInverseTransform( ) const;
+		[[nodiscard]] const sf::Transform &GetInverseTransform( ) const;
 
 		/**
 		* \brief Get the view's underlying SFML View object
 		*
 		* \return Output returns the SFML View object
 		*/
-		const sf::View &GetSFMLViewObject( ) const;
+		[[nodiscard]] const sf::View &GetSFMLViewObject( ) const;
         
     private:
 		/**

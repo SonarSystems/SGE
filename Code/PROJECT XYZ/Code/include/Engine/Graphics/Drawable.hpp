@@ -72,7 +72,7 @@ namespace Sonar
         *
         * \return Output returns the x position
         */
-        float GetPositionX( const OBJECT_POINTS &point = OBJECT_POINTS::TOP_LEFT ) const;
+        [[nodiscard]] float GetPositionX( const OBJECT_POINTS &point = OBJECT_POINTS::TOP_LEFT ) const;
 
         /**
 		* \brief Get the y position
@@ -81,7 +81,7 @@ namespace Sonar
         *
         * \return Output returns the y position
         */
-        float GetPositionY( const OBJECT_POINTS &point = OBJECT_POINTS::TOP_LEFT ) const;
+        [[nodiscard]] float GetPositionY( const OBJECT_POINTS &point = OBJECT_POINTS::TOP_LEFT ) const;
 
         /**
         * \brief Get the position vector
@@ -90,7 +90,7 @@ namespace Sonar
         *
         * \return Output returns the position vector
         */
-        glm::vec2 GetPosition( const OBJECT_POINTS &point = OBJECT_POINTS::TOP_LEFT ) const;
+        [[nodiscard]] glm::vec2 GetPosition( const OBJECT_POINTS &point = OBJECT_POINTS::TOP_LEFT ) const;
 
         /**
         * \brief Set width and height
@@ -126,21 +126,21 @@ namespace Sonar
         *
         * \return Output returns the width
         */
-        float GetWidth( ) const;
+        [[nodiscard]] float GetWidth( ) const;
 
         /**
         * \brief Get the height
         *
         * \return Output returns the height
         */
-        float GetHeight( ) const;
+        [[nodiscard]] float GetHeight( ) const;
 
         /**
         * \brief Get the size vector
         *
         * \return Output returns the size vector
         */
-        glm::vec2 GetSize( ) const;
+        [[nodiscard]] glm::vec2 GetSize( ) const;
 
         /**
         * \brief Set the inside color (fill color)
@@ -172,21 +172,21 @@ namespace Sonar
         *
         * \return Output returns the inside color
         */
-        Color GetInsideColor( ) const;
+        [[nodiscard]] Color GetInsideColor( ) const;
 
         /**
         * \brief Get the border color
         *
         * \return Output returns the border color
         */
-        Color GetBorderColor( ) const;
+        [[nodiscard]] Color GetBorderColor( ) const;
 
         /**
         * \brief Get the border thickness
         *
         * \return Output returns the border thickness
         */
-        float GetBorderThickness( ) const;
+        [[nodiscard]] float GetBorderThickness( ) const;
 
         /**
         * \brief Move the object relative to it's current position in the x and y axis
@@ -236,7 +236,7 @@ namespace Sonar
         *
         * \return Output returns the rotation angle
         */
-        float GetRotation( ) const;
+        [[nodiscard]] float GetRotation( ) const;
 
         /**
         * \brief Set the scale factor
@@ -301,21 +301,21 @@ namespace Sonar
         *
         * \return Output returns scale factor for both axes
         */
-        glm::vec2 GetScale( ) const;
+        [[nodiscard]] glm::vec2 GetScale( ) const;
 
         /**
         * \brief Get the scale factor for x axis
         *
         * \return Output returns scale factor for the x axis
         */
-        float GetScaleX( ) const;
+        [[nodiscard]] float GetScaleX( ) const;
 
         /**
         * \brief Get the scale factor for y axis
         *
         * \return Output returns scale factor for the y axis
         */
-        float GetScaleY( ) const;
+        [[nodiscard]] float GetScaleY( ) const;
 
         /**
         * \brief Set the pivot point
@@ -358,21 +358,21 @@ namespace Sonar
         *
         * \return Output returns pivot points for both axes
         */
-        glm::vec2 GetPivot( ) const;
+        [[nodiscard]] glm::vec2 GetPivot( ) const;
 
         /**
         * \brief Get the x pivot point
         *
         * \return Output returns x pivot point
         */
-        float GetPivotX( ) const;
+        [[nodiscard]] float GetPivotX( ) const;
 
         /**
         * \brief Get the y pivot point
         *
         * \return Output returns y pivot point
         */
-        float GetPivotY( ) const;
+        [[nodiscard]] float GetPivotY( ) const;
 
         /**
         * \brief Set the pulse properties and activate it
@@ -389,21 +389,21 @@ namespace Sonar
         *
         * \return Output returns the end pulse scale vector
         */
-        glm::vec2 GetPulse( ) const;
+        [[nodiscard]] glm::vec2 GetPulse( ) const;
 
         /**
         * \brief Gets the total number of pulses to be performed
         *
         * \return Output returns the pulse amount
         */
-        int GetPulseAmount( ) const;
+        [[nodiscard]] int GetPulseAmount( ) const;
 
         /**
         * \brief Gets the amount of successful pulses
         *
         * \return Output returns the pulse counter
         */
-        int GetPulseCounter( ) const;
+        [[nodiscard]] int GetPulseCounter( ) const;
 
         /**
         * \brief Stop the pulse
@@ -424,7 +424,7 @@ namespace Sonar
         *
         * \return Output returns true if the mouse is being clicked over the object and false otherwise
         */
-        bool IsClicked( const Mouse::Button &button ) const;
+        [[nodiscard]] bool IsClicked( const Mouse::Button &button ) const;
 
         /**
         * \brief Is the mouse hovering
@@ -432,7 +432,7 @@ namespace Sonar
         * \return Out
         put returns the mouse hover status, true if the mouse is in the item and false if it isn't
         */
-        bool IsMouseOver( ) const;
+        [[nodiscard]] bool IsMouseOver( ) const;
 
         /**
         * \brief Check if the object has collided with another using bounding box
@@ -441,7 +441,7 @@ namespace Sonar
         *
         * \return Output returns true if the objects have collided, false otherwise
         */
-        bool BoundingBoxCollision( const Drawable &object ) const;
+        [[nodiscard]] bool BoundingBoxCollision( const Drawable &object ) const;
 
         /**
         * \brief Check if the object has collided with another using circle collision detection
@@ -450,21 +450,21 @@ namespace Sonar
         *
         * \return Output returns true if the objects have collided, false otherwise
         */
-        bool CircleCollision( const Drawable &object ) const;
+        [[nodiscard]] bool CircleCollision( const Drawable &object ) const;
 
         /**
         * \brief Get the global bounds
         *
         * \return Output returns the shape's texture global bounds
         */
-        glm::vec4 GetGlobalBounds( ) const;
+        [[nodiscard]] glm::vec4 GetGlobalBounds( ) const;
 
         /**
         * \brief Get the SFML drawable object
         *
         * \return Output returns the SFML drawable object
         */
-        sf::Drawable *GetSFMLDrawable( ) const;
+        [[nodiscard]] sf::Drawable *GetSFMLDrawable( ) const;
 
     protected:
         /**

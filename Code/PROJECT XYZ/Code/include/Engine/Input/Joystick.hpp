@@ -117,7 +117,7 @@ namespace Sonar
          *
          * \return Output returns the name, vendor id and product id of the joystick
         */
-        static Identification GetIdentification( const unsigned int &joystick );
+        [[nodiscard]] static Identification GetIdentification( const unsigned int &joystick );
         
         /**
          * \brief Check if a joystick is connected
@@ -126,7 +126,7 @@ namespace Sonar
          *
          * \return Output returns true if the joystick is connected, false if it isn't
         */
-        static bool IsConnected( const unsigned int &joystick );
+        [[nodiscard]] static bool IsConnected( const unsigned int &joystick );
         
         /**
          * \brief Return the number of buttons supported by a joystick
@@ -135,7 +135,7 @@ namespace Sonar
          *
          * \return Output returns how many buttons the joystick supports
         */
-        static unsigned int GetButtonCount( const unsigned int &joystick );
+        [[nodiscard]] static unsigned int GetButtonCount( const unsigned int &joystick );
         
         /**
          * \brief Check if a joystick supports a given axis
@@ -145,7 +145,7 @@ namespace Sonar
          *
          * \return Output returns true if the joystick supports the axis and false if it doesn't
         */
-        static bool HasAxis( const unsigned int &joystick, const Axis &axis );
+        [[nodiscard]] static bool HasAxis( const unsigned int &joystick, const Axis &axis );
         
         /**
          * \brief Check if a joystick button is pressed
@@ -155,7 +155,7 @@ namespace Sonar
          *
          * \return Output returns true if the button is pressed, false if it isn't
         */
-        static bool IsPressed( const unsigned int &joystick, const unsigned int &button );
+        [[nodiscard]] static bool IsPressed( const unsigned int &joystick, const unsigned int &button );
         
         /**
          * \brief Get the current position of a joystick axis
@@ -166,7 +166,7 @@ namespace Sonar
          *
          * \return Output returns the axis position
         */
-        static float GetAxisPosition( const unsigned int &joystick, const Axis &axis, const float &deadzone = 0 );
+        [[nodiscard]] static float GetAxisPosition( const unsigned int &joystick, const Axis &axis, const float &deadzone = 0 );
         
         /**
          * \brief Check if multiple buttons have been pressed
@@ -177,7 +177,7 @@ namespace Sonar
          *
          * Checks if all buttons are being pressed at the same time across all joysticks
         */
-        static bool ChordPressed( const std::initializer_list<std::array<int, 2>> &joystickButtons );
+        [[nodiscard]] static bool ChordPressed( const std::initializer_list<std::array<int, 2>> &joystickButtons );
         
         /**
         * \brief Check if a basic gesture is triggered in a single direction
@@ -188,7 +188,7 @@ namespace Sonar
         *
         * \return Output returns true if all buttons on all joysticks are pressed, false if not
         */
-        static bool IsGestureTriggered( const unsigned int &joystickID, const Joystick::AnalogueStick &analogueStick, const Direction &direction );
+        [[nodiscard]] static bool IsGestureTriggered( const unsigned int &joystickID, const Joystick::AnalogueStick &analogueStick, const Direction &direction );
 
         /**
         * \brief Get the angle of a joystick (Left and no vertical is 0 and it goes clockwise)
@@ -201,7 +201,7 @@ namespace Sonar
         *
         * \return Output returns the joystick angle
         */
-        static float GetJoystickAngle( const unsigned int &joystick, const Axis &xAxis, const Axis &yAxis, const bool &isDegrees = true, const std::pair<float, float> &deadzone = { 0.0f, 0.0f } );
+        [[nodiscard]] static float GetJoystickAngle( const unsigned int &joystick, const Axis &xAxis, const Axis &yAxis, const bool &isDegrees = true, const std::pair<float, float> &deadzone = { 0.0f, 0.0f } );
 
         /**
         * \brief Get the distance of the joystick from the center/origin
@@ -213,7 +213,7 @@ namespace Sonar
         *
         * \return Output returns the joystick distance
         */
-        static float GetJoystickDistanceFromCenter( const unsigned int &joystick, const Axis &xAxis, const Axis &yAxis, const std::pair<float, float> &deadzone = { 0.0f, 0.0f } );
+        [[nodiscard]] static float GetJoystickDistanceFromCenter( const unsigned int &joystick, const Axis &xAxis, const Axis &yAxis, const std::pair<float, float> &deadzone = { 0.0f, 0.0f } );
 
         /**
         * \brief Identify a joysticks manufacturer and product description
@@ -222,14 +222,14 @@ namespace Sonar
         *
         * \return Output returns joysticks info
         */
-        static std::tuple<int, std::string, std::string, std::string> IdentifyJoystick( const int &joystickID );
+        [[nodiscard]] static std::tuple<int, std::string, std::string, std::string> IdentifyJoystick( const int &joystickID );
 
         /**
         * \brief Get a list of all the connected controllers
         *
         * \return Output returns a list of all the connected controllers
         */
-        static std::vector<std::tuple<int, int, std::string, std::string, std::string>> GetControllerList( );
+        [[nodiscard]] static std::vector<std::tuple<int, int, std::string, std::string, std::string>> GetControllerList( );
 
         /**
         * \brief Update the rumble status
@@ -263,57 +263,57 @@ namespace Sonar
         *
         * \return Output returns vibration intensity for both motors and 
         */
-         std::pair<float, float> GetVibration( ) const;
+        [[nodiscard]] std::pair<float, float> GetVibration( ) const;
 
-         /**
-         * \brief Disable the controllers vibration for both motors
-         */
-		 void DisableVibration( );
+        /**
+        * \brief Disable the controllers vibration for both motors
+        */
+		void DisableVibration( );
 
-         /**
-         * \brief Disable the controllers left vibration 
-         */
-         void DisableVibrationLeft( );
+        /**
+        * \brief Disable the controllers left vibration 
+        */
+        void DisableVibrationLeft( );
 
-         /**
-         * \brief Disable the controller right vibration
-         */
-         void DisableVibrationRight( );
+        /**
+        * \brief Disable the controller right vibration
+        */
+        void DisableVibrationRight( );
 
-         /**
-         * \brief Set the ID of the joystick to be checked
-         *
-         * \param joystickID ID of the current controller
-         */
-         void SetJoystickID( const int &joystickID );
+        /**
+        * \brief Set the ID of the joystick to be checked
+        *
+        * \param joystickID ID of the current controller
+        */
+        void SetJoystickID( const int &joystickID );
 
-         /**
-         * \brief Gets the current Joysticks ID
-         *
-         * \return Output returns joystick ID
-         */
-         int GetJoystickID( ) const;
+        /**
+        * \brief Gets the current Joysticks ID
+        *
+        * \return Output returns joystick ID
+        */
+        [[nodiscard]] int GetJoystickID( ) const;
 
     private:              
-         /**
-         * \brief Gamepad object from the external library
-         */
-         Gamepad _gamepad;
+		/**
+		* \brief Gamepad object from the external library
+		*/
+		Gamepad _gamepad;
 
-         /**
-         * \brief ID of the joystick
-         */
-         int _joystickID;
+		/**
+		* \brief ID of the joystick
+		*/
+		int _joystickID;
 
-         /**
-         * \brief Left motor rumble
-         */
-         float _leftRumble;
+		/**
+		* \brief Left motor rumble
+		*/
+		float _leftRumble;
 
-         /**
-         * \brief Right motor rumble
-         */
-         float _rightRumble;
+		/**
+		* \brief Right motor rumble
+		*/
+		float _rightRumble;
 
     };
 }

@@ -80,21 +80,21 @@ namespace Sonar
         *
         * \return Output returns the x position
         */
-        float GetPositionX( ) const;
+        [[nodiscard]] float GetPositionX( ) const;
 
         /**
         * \brief Get the y position
         *
         * \return Output returns the y position
         */
-        float GetPositionY( ) const;
+        [[nodiscard]] float GetPositionY( ) const;
 
         /**
         * \brief Get the position vector
         *
         * \return Output returns the position vector
         */
-        glm::vec2 GetPosition( ) const;
+        [[nodiscard]] glm::vec2 GetPosition( ) const;
 
         /**
         * \brief Set radius of the object
@@ -108,7 +108,7 @@ namespace Sonar
         *
         * \return Output returns the radius
         */
-        float GetRadius( ) const;
+        [[nodiscard]] float GetRadius( ) const;
 
         /**
         * \brief Set the color of the border
@@ -147,28 +147,28 @@ namespace Sonar
         *
         * \return Output returns the border color
         */
-        Color GetColor( ) const;
+        [[nodiscard]] Color GetColor( ) const;
 
         /**
         * \brief Get the inside color (fill color)
         *
         * \return Output returns the inside color
         */
-        Color GetInsideColor( ) const;
+        [[nodiscard]] Color GetInsideColor( ) const;
 
         /**
         * \brief Get the checked color
         *
         * \return Output returns the checked color
         */
-        Color GetCheckedColor( ) const;
+        [[nodiscard]] Color GetCheckedColor( ) const;
 
         /**
         * \brief Get the border thickness
         *
         * \return Output returns the border thickness
         */
-        float GetBorderThickness( ) const;
+        [[nodiscard]] float GetBorderThickness( ) const;
 
         /**
         * \brief Move the object relative to it's current position in the x and y axis
@@ -225,14 +225,14 @@ namespace Sonar
         *
         * \return Output returns the shape's texture local bounds
         */
-        glm::vec4 GetLocalBounds( ) const;
+        [[nodiscard]] glm::vec4 GetLocalBounds( ) const;
 
         /**
         * \brief Get the global bounds
         *
         * \return Output returns the shape's texture global bounds
         */
-        glm::vec4 GetGlobalBounds( ) const;
+        [[nodiscard]] glm::vec4 GetGlobalBounds( ) const;
 
         /**
         * \brief Set the mousee button which would trigger the click function
@@ -246,14 +246,14 @@ namespace Sonar
         *
         * \return Output returns the mouse button
         */
-        const Mouse::Button &GetMouseButtonToClick( ) const;
+        [[nodiscard]] const Mouse::Button &GetMouseButtonToClick( ) const;
 
         /**
         * \brief Is the checkbox selected
         *
         * \return Output returns the selected status
         */
-        const bool &IsSelected( ) const;
+        [[nodiscard]] const bool &IsSelected( ) const;
 
         /**
         * \brief Enable the radio button
@@ -275,7 +275,7 @@ namespace Sonar
         *
         * \return Output returns the selected time
         */
-        const long long GetSelectedTime( ) const;
+        [[nodiscard]] const long long GetSelectedTime( ) const;
 
     private:
         /**

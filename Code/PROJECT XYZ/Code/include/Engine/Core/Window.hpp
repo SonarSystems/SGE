@@ -118,7 +118,7 @@ namespace Sonar
 		*
 		* \return Output returns the SFML Window object
 		*/
-		sf::RenderWindow &GetSFMLWindowObject( );
+		[[nodiscard]] sf::RenderWindow &GetSFMLWindowObject( );
 
 		/**
 		* \brief Close the window and destroy all the attached resources
@@ -142,14 +142,14 @@ namespace Sonar
 		*
 		* \return Output returns true if the window is open and false if it has been closed
 		*/
-		bool IsOpen( ) const;
+		[[nodiscard]] bool IsOpen( ) const;
 
 		/**
 		* \brief Get the settings of the OpenGL context of the window
 		*
 		* \return Output returns the OpenGL settings
 		*/
-		const ContextSettings &GetSettings( );
+		[[nodiscard]] const ContextSettings &GetSettings( );
 
 		/**
 		* \brief Pop the event on top of the event queue, if any, and return it
@@ -158,7 +158,7 @@ namespace Sonar
 		*
 		* \return Output returns true if an event was detected and false if not events were detected
 		*/
-		bool PollEvent( Event &event );
+		[[nodiscard]] bool PollEvent( Event &event );
 
 		/**
 		* \brief Wait for an event and return it
@@ -167,14 +167,14 @@ namespace Sonar
 		*
 		* \return Output returns false if any error occured and true if it did not
 		*/
-		bool WaitEvent( Event &event );
+		[[nodiscard]] bool WaitEvent( Event &event );
 
 		/**
 		* \brief Get the position of the window
 		*
 		* \return Output returns window's position
 		*/
-		glm::ivec2 GetPosition( ) const;
+		[[nodiscard]] glm::ivec2 GetPosition( ) const;
 
 		/**
 		* \brief Change the position of the window on screen
@@ -188,7 +188,7 @@ namespace Sonar
 		*
 		* \return Output returns the window size
 		*/
-		glm::uvec2 GetSize( ) const;
+		[[nodiscard]] glm::uvec2 GetSize( ) const;
 
 		/**
 		* \brief Change the size of the rendering region of the window
@@ -286,7 +286,7 @@ namespace Sonar
 		*
 		* \return Output return true if window has focus, false otherwise
 		*/
-		bool HasFocus( ) const;
+		[[nodiscard]] bool HasFocus( ) const;
 
 		/**
 		* \brief Set the Window's current view to display

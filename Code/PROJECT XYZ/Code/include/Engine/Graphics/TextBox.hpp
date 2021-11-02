@@ -46,7 +46,7 @@ namespace Sonar
         *
         * \return Output returns the maximum number of characters allowed
         */
-        const unsigned int &GetMaximumCharacters( ) const;
+        [[nodiscard]] const unsigned int &GetMaximumCharacters( ) const;
 
         /**
         * \brief Add a character to the list of restricted characters
@@ -81,7 +81,7 @@ namespace Sonar
         *
         * \return Output returns all the restricted characters
         */
-        const std::vector<unsigned int> GetRestrictedCharacterList( ) const;
+        [[nodiscard]] const std::vector<unsigned int> GetRestrictedCharacterList( ) const;
 
         /**
         * \brief Check if a character is already restricted
@@ -90,7 +90,7 @@ namespace Sonar
         *
         * \return Output returns true if the character is restricted
         */
-        bool IsRestrictedCharacter( const unsigned int &unicodeCharacter ) const;
+        [[nodiscard]] bool IsRestrictedCharacter( const unsigned int &unicodeCharacter ) const;
 
         /**
         * \brief Check if a character is already restricted
@@ -99,7 +99,7 @@ namespace Sonar
         *
         * \return Output returns true if the character is restricted
         */
-        bool IsRestrictedCharacter( const char &character ) const;
+        [[nodiscard]] bool IsRestrictedCharacter( const char &character ) const;
         
         /**
         * \brief Update the object
@@ -130,7 +130,7 @@ namespace Sonar
         /**
         * \brief Get the blinkers time
         */
-        const float &GetBlinkerTime( ) const;
+        [[nodiscard]] const float &GetBlinkerTime( ) const;
 
         /**
         * \brief Set the minimum clickable size
@@ -166,21 +166,21 @@ namespace Sonar
         *
         * \return Output returns the minimum clickable area
         */
-        glm::vec2 GetClickableSize( ) const;
+        [[nodiscard]] glm::vec2 GetClickableSize( ) const;
 
         /**
         * \brief Get the minimum clickable width
         *
         * \return Output returns the minimum clickable width
         */
-        float GetClickableWidth( ) const;
+        [[nodiscard]] float GetClickableWidth( ) const;
 
         /**
         * \brief Get the minimum clickable height
         *
         * \return Output returns the minimum clickable height
         */
-        float GetClickableHeight( ) const;
+        [[nodiscard]] float GetClickableHeight( ) const;
 
         /**
         * \brief Set the mousee button which would trigger the click function
@@ -194,7 +194,7 @@ namespace Sonar
         *
         * \return Output returns the mouse button
         */
-        const Mouse::Button &GetMouseButtonToClick( ) const;
+        [[nodiscard]] const Mouse::Button &GetMouseButtonToClick( ) const;
 
         /**
         * \brief Set the mouse's hover cursor
@@ -208,7 +208,7 @@ namespace Sonar
         *
         * \return Output returns the hover mouse cursor
         */
-        const Mouse::Cursor &GetMouseHoverCursor( ) const;
+        [[nodiscard]] const Mouse::Cursor &GetMouseHoverCursor( ) const;
 
         /**
         * \brief Enables the debug drawing
@@ -230,7 +230,7 @@ namespace Sonar
         *
         * \return Output returns the debug drawing status
         */
-        const bool &IsDebugDrawing( ) const;
+        [[nodiscard]] const bool &IsDebugDrawing( ) const;
 
         /**
         * \brief Set the blinker's color
@@ -244,7 +244,7 @@ namespace Sonar
         *
         * \return Output returns the blinker color
         */
-        Color GetBlinkerColor( ) const;
+        [[nodiscard]] Color GetBlinkerColor( ) const;
 
     private:
         /**

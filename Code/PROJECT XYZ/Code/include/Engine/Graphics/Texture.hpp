@@ -41,14 +41,14 @@ namespace Sonar
         *
         * \return Output returns the texture
         */
-        sf::Texture *GetTexture( ) const;
+        [[nodiscard]] sf::Texture *GetTexture( ) const;
 
         /**
         * \brief Get the texture size
         *
         * \return Output returns the size of the texture
         */
-        glm::vec2 GetSize( ) const;
+        [[nodiscard]] glm::vec2 GetSize( ) const;
 
         /**
         * \brief Set the repeat status
@@ -62,7 +62,7 @@ namespace Sonar
         *
         * \return Output returns the repeat status
         */
-        bool IsRepeated( ) const;
+        [[nodiscard]] bool IsRepeated( ) const;
 
     private:
         /**

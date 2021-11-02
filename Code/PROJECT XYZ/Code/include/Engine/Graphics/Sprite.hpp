@@ -74,7 +74,7 @@ namespace Sonar
         *
         * \return Output returns the color
         */
-        Color GetColor( ) const;
+        [[nodiscard]] Color GetColor( ) const;
 
         /**
         * \brief Move the object relative to it's current position in the x and y axis
@@ -124,7 +124,7 @@ namespace Sonar
         *
         * \return Output returns the rotation angle
         */
-        float GetRotation( ) const;
+        [[nodiscard]] float GetRotation( ) const;
 
         /**
         * \brief Set the scale factor
@@ -265,28 +265,28 @@ namespace Sonar
         *
         * \return Output returns the sprite's texture object
         */
-        Texture *GetTexture( ) const;
+        [[nodiscard]] Texture *GetTexture( ) const;
 
         /**
         * \brief Get the Textures rectangle
         *
         * \return Output returns the sprite's texture rectangle
         */
-		glm::ivec4 GetTextureRect( ) const;
+        [[nodiscard]] glm::ivec4 GetTextureRect( ) const;
 
         /**
         * \brief Get the local bounds
         *
         * \return Output returns the sprite's local bounds
         */
-		glm::vec4 GetLocalBounds( ) const;
+        [[nodiscard]] glm::vec4 GetLocalBounds( ) const;
 
         /**
         * \brief Get the global bounds
         *
         * \return Output returns the sprite's global bounds
         */
-        glm::vec4 GetGlobalBounds( ) const;
+        [[nodiscard]] glm::vec4 GetGlobalBounds( ) const;
 
         /**
         * \brief Check for pixel perfect collision (very heavy on the processing)
@@ -296,14 +296,14 @@ namespace Sonar
         *
         * \return Output returns true if the collision is successful
         */
-        bool PixelPerfectCollisionCheck( const Sprite &object, const unsigned char &alphaLimit = 0 );
+        [[nodiscard]] bool PixelPerfectCollisionCheck( const Sprite &object, const unsigned char &alphaLimit = 0 );
 
         /**
         * \brief Get the underlying SFML sprite object
         *
         * \return Output returns SFML sprite object
         */
-        const sf::Sprite &GetSFMLSprite( ) const;
+        [[nodiscard]] const sf::Sprite &GetSFMLSprite( ) const;
 
     private:
         /**

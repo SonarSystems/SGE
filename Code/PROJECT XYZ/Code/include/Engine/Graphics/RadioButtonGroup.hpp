@@ -74,7 +74,7 @@ namespace Sonar
         *
         * \return Output returns the size of the radio button vector
         */
-        unsigned int GetSize( ) const;
+        [[nodiscard]] unsigned int GetSize( ) const;
 
         /**
         * \brief Set the components theme

@@ -27,21 +27,21 @@ namespace Sonar
 		 *
 		 * \return Output returns the time as seconds
 		 */
-		float AsSeconds( ) const;
+		[[nodiscard]] float AsSeconds( ) const;
 		
 		/**
 		 * \brief Get the time as milliseconds
 		 *
 		 * \return Output returns the time as milliseconds
 		 */
-		float AsMilliseconds( ) const;
+		[[nodiscard]] float AsMilliseconds( ) const;
 		
 		/**
 		 * \brief Get the time as microseconds
 		 *
 		 * \return Output returns the time as microseconds
 		 */
-		long long AsMicroseconds( ) const;
+		[[nodiscard]] long long AsMicroseconds( ) const;
 
 		/**
 		* \brief Convert seconds to milliseconds
@@ -50,7 +50,7 @@ namespace Sonar
 		*
 		* \return Output returns the value converted to milliseconds
 		*/
-		static float SecondsToMilliseconds( float seconds );
+		[[nodiscard]] static float SecondsToMilliseconds( float seconds );
 
 		/**
 		* \brief Convert seconds to microseconds
@@ -59,7 +59,7 @@ namespace Sonar
 		*
 		* \return Output returns the value converted to microseconds
 		*/
-		static long long SecondsToMicroseconds( float seconds );
+		[[nodiscard]] static long long SecondsToMicroseconds( float seconds );
 
 		/**
 		* \brief Convert milliseconds to seconds
@@ -68,7 +68,7 @@ namespace Sonar
 		*
 		* \return Output returns the value converted to seconds
 		*/
-		static float MillisecondsToSeconds( float milliseconds );
+		[[nodiscard]] static float MillisecondsToSeconds( float milliseconds );
 
 		/**
 		* \brief Convert milliseconds to microseconds
@@ -77,7 +77,7 @@ namespace Sonar
 		*
 		* \return Output returns the value converted to microseconds
 		*/
-		static long long MillisecondsToMicroseconds( float milliseconds );
+		[[nodiscard]] static long long MillisecondsToMicroseconds( float milliseconds );
 
 		/**
 		* \brief Convert microseconds to seconds
@@ -86,7 +86,7 @@ namespace Sonar
 		*
 		* \return Output returns the value converted to seconds
 		*/
-		static float MicrosecondsToSeconds( long long microseconds );
+		[[nodiscard]] static float MicrosecondsToSeconds( long long microseconds );
 
 		/**
 		* \brief Convert microseconds to milliseconds
@@ -95,9 +95,9 @@ namespace Sonar
 		*
 		* \return Output returns the value converted to milliseconds
 		*/
-		static float MicrosecondsToMilliseconds( long long microseconds );
+		[[nodiscard]] static float MicrosecondsToMilliseconds( long long microseconds );
 
-		static long long GetCurrentEpochDateTime( );
+		[[nodiscard]] static long long GetCurrentEpochDateTime( );
 
 	private:
 		friend Time Seconds( const float & );

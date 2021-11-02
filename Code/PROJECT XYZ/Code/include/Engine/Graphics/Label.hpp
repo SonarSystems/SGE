@@ -70,7 +70,7 @@ namespace Sonar
         *
         * \return Output returns the font's file path
         */
-        std::string GetFontFilePath( ) const;
+        [[nodiscard]] std::string GetFontFilePath( ) const;
 
         /**
         * \brief Get the font's underline position
@@ -79,7 +79,7 @@ namespace Sonar
         *
         * \return Output returns the underline position
         */
-        float GetUnderlinePosition( const unsigned int &characterSize ) const;
+        [[nodiscard]] float GetUnderlinePosition( const unsigned int &characterSize ) const;
 
         /**
         * \brief Get the font's underline thickness
@@ -88,7 +88,7 @@ namespace Sonar
         *
         * \return Output returns the underline thickness
         */
-        float GetUnderlineThickness( const unsigned int &characterSize ) const;
+        [[nodiscard]] float GetUnderlineThickness( const unsigned int &characterSize ) const;
 
         /**
         * \brief Set x and y position
@@ -149,21 +149,21 @@ namespace Sonar
         *
         * \return Output returns the inside color
         */
-        Color GetInsideColor( ) const;
+        [[nodiscard]] Color GetInsideColor( ) const;
 
         /**
         * \brief Get the border color
         *
         * \return Output returns the border color
         */
-        Color GetBorderColor( ) const;
+        [[nodiscard]] Color GetBorderColor( ) const;
 
         /**
         * \brief Get the border thickness
         *
         * \return Output returns the border thickness
         */
-        float GetBorderThickness( ) const;
+        [[nodiscard]] float GetBorderThickness( ) const;
 
         /**
         * \brief Move the object relative to it's current position in the x and y axis
@@ -213,7 +213,7 @@ namespace Sonar
         *
         * \return Output returns the rotation angle
         */
-        float GetRotation( ) const;
+        [[nodiscard]] float GetRotation( ) const;
 
         /**
         * \brief Set the scale factor
@@ -321,14 +321,14 @@ namespace Sonar
         *
         * \return Output returns the sprite's local bounds
         */
-        glm::vec4 GetLocalBounds( ) const;
+        [[nodiscard]] glm::vec4 GetLocalBounds( ) const;
 
         /**
         * \brief Get the global bounds
         *
         * \return Output returns the sprite's global bounds
         */
-        glm::vec4 GetGlobalBounds( ) const;
+        [[nodiscard]] glm::vec4 GetGlobalBounds( ) const;
 
         /**
         * \brief Set the label's text
@@ -356,7 +356,7 @@ namespace Sonar
         *
         * \return Output returns the character size
         */
-        unsigned int GetCharacterSize( ) const;
+        [[nodiscard]] unsigned int GetCharacterSize( ) const;
 
         /**
         * \brief Set line spacing
@@ -377,14 +377,14 @@ namespace Sonar
         *
         * \return Output returns line spacing
         */
-        float GetLineSpacing( ) const;
+        [[nodiscard]] float GetLineSpacing( ) const;
 
         /**
         * \brief Get letter spacing
         *
         * \return Output returns letter spacing
         */
-        float GetLetterSpacing( ) const;
+        [[nodiscard]] float GetLetterSpacing( ) const;
 
         /**
         * \brief Set a particular style for the label
@@ -406,21 +406,21 @@ namespace Sonar
         *
         * \return Output returns the label's text
         */
-		const std::string &GetText( ) const;
+        [[nodiscard]] const std::string &GetText( ) const;
 
         /**
         * \brief Get the label's font object
         *
         * \return Output returns the font used for the label
         */
-		const Font &GetFont( ) const;
+        [[nodiscard]] const Font &GetFont( ) const;
 
         /**
         * \brief Get the overall style
         *
         * \return Output returns the overall style
         */
-		unsigned int GetStyle( ) const;
+        [[nodiscard]] unsigned int GetStyle( ) const;
 
         /**
         * \brief Check if a particular style is enabled
@@ -429,7 +429,7 @@ namespace Sonar
         *
         * \return Output returns true if the style is enabled and false if it is disabled
         */
-        bool IsStyleEnabled( const STYLE &style ) const;
+        [[nodiscard]] bool IsStyleEnabled( const STYLE &style ) const;
 
         /**
         * \brief Get the position of a particular character
@@ -438,14 +438,14 @@ namespace Sonar
         *
         * \return Output returns the characters position
         */
-		glm::vec2 FindCharacterPos( const std::size_t &index ) const;
+        [[nodiscard]] glm::vec2 FindCharacterPos( const std::size_t &index ) const;
 
         /**
         * \brief Get the length of the label's string
         * 
         * \return Output returns the label's length
         */
-        unsigned int GetStringLength( ) const;
+        [[nodiscard]] unsigned int GetStringLength( ) const;
 
     private:
         /**

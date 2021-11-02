@@ -20,21 +20,21 @@ namespace Sonar
 		*
 		* \return Output returns the started status (true or false)
 		*/
-		bool HasStarted( ) const;
+		[[nodiscard]] bool HasStarted( ) const;
 
 		/**
 		* \brief Checks if the RBM is complete
 		*
 		* \return Output returns the complete status of the RBM
 		*/
-		bool IsComplete( ) const;
+		[[nodiscard]] bool IsComplete( ) const;
 
 		/**
 		* \brief Get the RBM clock
 		*
 		* \return Output returns the RBM clock
 		*/
-		Clock GetClock( ) const;
+		[[nodiscard]] Clock GetClock( ) const;
 
 		/**
 		* \brief Update the RBM
@@ -51,7 +51,7 @@ namespace Sonar
 		*
 		* \return Output returns the RBM failure count
 		*/
-		int GetFailureCount( ) const;
+		[[nodiscard]] int GetFailureCount( ) const;
 
 		/**
 		* \brief Tick up the RBM counter
@@ -63,7 +63,7 @@ namespace Sonar
 		*
 		* \return Output returns the RBM counter
 		*/
-		float GetCounter( ) const;
+		[[nodiscard]] float GetCounter( ) const;
 
 	private:
 		/**

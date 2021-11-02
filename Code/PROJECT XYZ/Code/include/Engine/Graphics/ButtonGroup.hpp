@@ -84,28 +84,28 @@ namespace Sonar
         *
         * \return Output returns the size of the button vector
         */
-        unsigned int GetNumberOfButtons( ) const;
+        [[nodiscard]] unsigned int GetNumberOfButtons( ) const;
 
         /**
         * \brief Get the width and height of the button group (for vertical the width is determined by the largest button width, for horizontal the height is determined by the largest button height)
         *
         * \return Output returns the size
         */
-        glm::vec2 GetSize( );
+        [[nodiscard]] glm::vec2 GetSize( );
 
         /**
         * \brief Get the width (for vertical the width)
         *
         * \return Output returns the width
         */
-        float GetWidth( );
+        [[nodiscard]] float GetWidth( );
 
         /**
         * \brief Get the height of the button group (for horizontal the height is determined by the largest button height)
         *
         * \return Output returns the height
         */
-        float GetHeight( );
+        [[nodiscard]] float GetHeight( );
 
         /**
         * \brief Set the components theme
@@ -142,7 +142,7 @@ namespace Sonar
         *
         * \return Output returns the current selected index
         */
-        unsigned int GetCurrentIndex( ) const;
+        [[nodiscard]] unsigned int GetCurrentIndex( ) const;
 
         /**
         * \brief Enable/disable the keyboard state for the button group
@@ -171,7 +171,7 @@ namespace Sonar
         *
         * \return Output returns the keyboard enabled state
         */
-        const bool &IsKeyboardEnabled( ) const;
+        [[nodiscard]] const bool &IsKeyboardEnabled( ) const;
 
         /**
         * \brief Set the button groups minimum width
@@ -185,7 +185,7 @@ namespace Sonar
         *
         * \return Output returns the minimum width of the button group
         */
-        const float &GetMinimumWidth( ) const;
+        [[nodiscard]] const float &GetMinimumWidth( ) const;
 
         /**
         * \brief Set the orientation of the buttons in the button group (NEEDS TO BE SET BEFORE ADDING ANY BUTTONS)
@@ -199,7 +199,7 @@ namespace Sonar
         *
         * \return Output returns the orientation
         */
-        const ORIENTATION &GetOrientation( ) const;
+        [[nodiscard]] const ORIENTATION &GetOrientation( ) const;
 
         /**
         * \brief Set the gap between the buttons in the button group (NEEDS TO BE SET BEFORE ADDING ANY BUTTONS)
@@ -213,7 +213,7 @@ namespace Sonar
         *
         * \return Output returns the gap between the buttons
         */
-        const float &GetGap( ) const;
+        [[nodiscard]] const float &GetGap( ) const;
 
         /**
         * \brief Set the button groups position so it is centered (must be run after adding all buttons, if a new button is added then must be redone if realigning)
@@ -257,21 +257,21 @@ namespace Sonar
         *
         * \return Output returns the x position
         */
-        float GetPositionX( ) const;
+        [[nodiscard]] float GetPositionX( ) const;
 
         /**
         * \brief Get the y position
         *
         * \return Output returns the y position
         */
-        float GetPositionY( ) const;
+        [[nodiscard]] float GetPositionY( ) const;
 
         /**
         * \brief Get the position vector
         *
         * \return Output returns the position vector
         */
-        glm::vec2 GetPosition( ) const;
+        [[nodiscard]] glm::vec2 GetPosition( ) const;
 
         /**
         * \brief Move the object relative to it's current position in the x and y axis
@@ -307,7 +307,7 @@ namespace Sonar
         *
         * \return Output returns the last button clicked
         */
-        const int &GetButtonClickedIndex( ) const;
+        [[nodiscard]] const int &GetButtonClickedIndex( ) const;
 
         /**
         * \brief Add a valid keyboard key to trigger the buttons
@@ -321,7 +321,7 @@ namespace Sonar
         *
         * \return Output returns the valid keyboard trigger keys
         */
-        const std::vector<Keyboard::Key> &GetValidKeyboardTriggerKeys( ) const;
+        [[nodiscard]] const std::vector<Keyboard::Key> &GetValidKeyboardTriggerKeys( ) const;
 
         /**
         * \brief Remove a keyboard key from the list of valid trigger keys
@@ -347,7 +347,7 @@ namespace Sonar
         *
         * \return Output returns the valid mouse click button
         */
-        const Mouse::Button &GetMouseClickButton( ) const;
+        [[nodiscard]] const Mouse::Button &GetMouseClickButton( ) const;
 
         /**
         * \brief Add keyboard navigation key pair
@@ -376,7 +376,7 @@ namespace Sonar
         *
         * \return Output returns the navigation key pairs
         */
-        const std::vector<std::pair<Keyboard::Key, Keyboard::Key>> &GetAllNavigationKeyPairs( ) const;
+        [[nodiscard]] const std::vector<std::pair<Keyboard::Key, Keyboard::Key>> &GetAllNavigationKeyPairs( ) const;
 
     private:
         /**

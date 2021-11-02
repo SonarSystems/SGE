@@ -39,7 +39,7 @@ namespace Sonar
 		*
 		* \return Output returns the scores loaded into memory
 		*/
-		std::vector<ScoreInfo> GetScores( ) const;
+		[[nodiscard]] std::vector<ScoreInfo> GetScores( ) const;
 
 		/**
 		* \brief Check and save the score if high enough
@@ -58,7 +58,7 @@ namespace Sonar
 		*
 		* \return Output returns the position the new score will be (returns -1 if not a high score, BOOHOO)
 		*/
-		int CheckScore( const std::vector<long long> &scores, const long long &score ) const;
+		[[nodiscard]] int CheckScore( const std::vector<long long> &scores, const long long &score ) const;
 
 		/**
 		* \brief Set the maximum number of high scores
@@ -72,7 +72,7 @@ namespace Sonar
 		*
 		* \return Output returns the maximum number of high scores
 		*/
-		unsigned int GetMaximumNumberOfHighScores( ) const;
+		[[nodiscard]] unsigned int GetMaximumNumberOfHighScores( ) const;
 
 		/**
 		* \brief Create a save file with default scores

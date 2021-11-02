@@ -41,7 +41,7 @@ namespace Sonar
         *
         * \return Output returns the singleton instance
         */
-        static Debug *getInstance();
+        [[nodiscard]] static Debug *getInstance();
 
         /**
          * \brief Enable the debugger
@@ -61,7 +61,7 @@ namespace Sonar
          *
          * \return Output returns true if the debugger is enabled and false if it isn't
         */
-        bool IsEnabled( ) const;
+        [[nodiscard]] bool IsEnabled( ) const;
 
         /**
         * \brief Enable the physics debug drawing
@@ -81,7 +81,7 @@ namespace Sonar
         *
         * \return Output returns true if the physics debug drawing is enabled and false if it isn't
         */
-        bool IsPhysicsEnabled( ) const;
+        [[nodiscard]] bool IsPhysicsEnabled( ) const;
         
         /**
          * \brief Print a message to the terminal
@@ -127,14 +127,14 @@ namespace Sonar
         *
         * \param category Message's category
         */
-        bool IsCategoryEnabled( const std::string &category );
+        [[nodiscard]] bool IsCategoryEnabled( const std::string &category );
 
         /**
         * \brief Gets all the categories
         *
         * \return Output returns a vector of all the categories
         */
-        std::vector<std::pair<std::string, bool>> GetCategories( ) const;
+        [[nodiscard]] std::vector<std::pair<std::string, bool>> GetCategories( ) const;
 
         /**
         * \brief Convert a string to lower case
@@ -143,7 +143,7 @@ namespace Sonar
         *
         * \return Output returns lower case value of a string
         */
-        std::string Debug::ToLower( std::string string );
+        [[nodiscard]] std::string Debug::ToLower( std::string string );
 
         /**
         * \brief Update the frame data
@@ -157,14 +157,14 @@ namespace Sonar
         *
         * \return Output returns the system information
         */
-        const SystemInformation &GetSystemInformation( ) const;
+        [[nodiscard]] const SystemInformation &GetSystemInformation( ) const;
 
         /**
         * \brief Get the frame data
         *
         * \return Output returns the frame data
         */
-        const FrameData &GetFrameData( ) const;
+        [[nodiscard]] const FrameData &GetFrameData( ) const;
 
         /**
         * \brief Description

@@ -57,7 +57,7 @@ namespace Sonar
          *
          * \return Output returns true if the button is pressed abd false otherwise
         */
-        static bool IsPressed( const Button &button );
+        [[nodiscard]] static bool IsPressed( const Button &button );
         
         /**
          * \brief Get the mouse position relative to the game window
@@ -67,13 +67,13 @@ namespace Sonar
          *
          * \return Output returns the mouse position relative to the game window
          */
-        static glm::vec2 GetPosition( Sonar::Window &window, const bool &windowOnly = true );
+        [[nodiscard]] static glm::vec2 GetPosition( Sonar::Window &window, const bool &windowOnly = true );
         /**
          * \brief Get the mouse position relative to the screen
          *
          * \return Output returns the mouse position relative to the screen
         */
-        static glm::vec2 GetScreenPosition( );
+        [[nodiscard]] static glm::vec2 GetScreenPosition( );
         
         /**
          * \brief Set the mouse position relative to the screen
@@ -98,7 +98,7 @@ namespace Sonar
          *
          * \return Output returns true if key is pressed and false otherwise
         */
-        static bool ChordPressed( const std::initializer_list<Button> &buttons );
+        [[nodiscard]] static bool ChordPressed( const std::initializer_list<Button> &buttons );
 
         /**
         * \brief Change the mouse cursor
@@ -113,7 +113,7 @@ namespace Sonar
         *
         * \return Output returns the current mouse cursor
         */
-        static const Cursor &GetCurrentCursor( );
+        [[nodiscard]] static const Cursor &GetCurrentCursor( );
 
         /**
         * \brief Show the mouse cursor
@@ -135,7 +135,7 @@ namespace Sonar
         *
         * \return Output returns the cursor status (false if not show and true if shown)
         */
-        static bool GetCursorStatus( Window &window );
+        [[nodiscard]] static bool GetCursorStatus( Window &window );
 
     private:
         /**

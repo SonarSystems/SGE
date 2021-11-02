@@ -86,21 +86,21 @@ namespace Sonar
         *
         * \return Output returns the inside color
         */
-        Color GetInsideColor( ) const;
+        [[nodiscard]] Color GetInsideColor( ) const;
 
         /**
         * \brief Get the border color
         *
         * \return Output returns the border color
         */
-        Color GetBorderColor( ) const;
+        [[nodiscard]] Color GetBorderColor( ) const;
 
         /**
         * \brief Get the border thickness
         *
         * \return Output returns the border thickness
         */
-        float GetBorderThickness( ) const;
+        [[nodiscard]] float GetBorderThickness( ) const;
 
         /**
         * \brief Move the object relative to it's current position in the x and y axis
@@ -150,7 +150,7 @@ namespace Sonar
         *
         * \return Output returns the rotation angle
         */
-        float GetRotation( ) const;
+        [[nodiscard]] float GetRotation( ) const;
 
         /**
         * \brief Set the scale factor
@@ -267,7 +267,7 @@ namespace Sonar
         *
         * \return Output returns the triangle's points/vertices vector of glm::vec2 (3 in total)
         */
-        std::vector<glm::vec2> GetPoints( );
+        [[nodiscard]] std::vector<glm::vec2> GetPoints( );
 
         /**
         * \brief Set the shape texture from a file
@@ -307,28 +307,28 @@ namespace Sonar
         *
         * \return Output returns the shape's texture object
         */
-        Texture *GetTexture( ) const;
+        [[nodiscard]] Texture *GetTexture( ) const;
 
         /**
         * \brief Get the Textures rectangle
         *
         * \return Output returns the shape's texture rectangle
         */
-        glm::ivec4 GetTextureRect( ) const;
+        [[nodiscard]] glm::ivec4 GetTextureRect( ) const;
 
         /**
         * \brief Get the Textures local bounds
         *
         * \return Output returns the shape's texture local bounds
         */
-        glm::vec4 GetLocalBounds( ) const;
+        [[nodiscard]] glm::vec4 GetLocalBounds( ) const;
 
         /**
         * \brief Get the Textures global bounds
         *
         * \return Output returns the shape's texture global bounds
         */
-        glm::vec4 GetGlobalBounds( ) const;
+        [[nodiscard]] glm::vec4 GetGlobalBounds( ) const;
 
     private:
         /**

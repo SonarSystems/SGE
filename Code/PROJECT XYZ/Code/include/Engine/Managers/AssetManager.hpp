@@ -30,7 +30,7 @@ namespace Sonar
 		 *
 		 * \return Output returns the requested texture
 		*/
-		const sf::Texture &GetTexture( const std::string &name ) const;
+		[[nodiscard]] const sf::Texture &GetTexture( const std::string &name ) const;
 
 		/**
 		 * \brief Load a font in the engine for later use
@@ -47,7 +47,7 @@ namespace Sonar
 		 *
 		 * \return Output returns the requested font
 		*/
-		const sf::Font &GetFont( const std::string &name ) const;
+		[[nodiscard]] const sf::Font &GetFont( const std::string &name ) const;
 
 		/**
 		 * \brief Load a sound in the engine for later use
@@ -64,7 +64,7 @@ namespace Sonar
 		 *
 		 * \return Output returns the requested sound
 		*/
-		const sf::Sound &GetSound( const std::string &name ) const;
+		[[nodiscard]] const sf::Sound &GetSound( const std::string &name ) const;
 
 		/**
 		 * \brief Load a music in the engine for later use
@@ -81,7 +81,7 @@ namespace Sonar
 		 *
 		 * \return Output returns the requested music
 		*/
-		const sf::Music &GetMusic( const std::string &name ) const;
+		[[nodiscard]] const sf::Music &GetMusic( const std::string &name ) const;
 
 	private:
 		/**

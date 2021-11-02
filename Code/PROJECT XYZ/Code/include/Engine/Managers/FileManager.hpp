@@ -75,7 +75,7 @@ namespace Sonar
 		*
 		* \return Output returns the while file data
 		*/
-		std::vector<std::string> GetFileContents( const std::string &filepath );
+		[[nodiscard]] std::vector<std::string> GetFileContents( const std::string &filepath );
 
 		/**
 		* \brief Get a specific line from the file (0 is the first line, last is n - 1)
@@ -85,7 +85,7 @@ namespace Sonar
 		*
 		* \return Output returns the specified line
 		*/
-		std::string GetLineFromFile( const std::string &filepath,const unsigned int &lineNumber );
+		[[nodiscard]] std::string GetLineFromFile( const std::string &filepath,const unsigned int &lineNumber );
 
 	private:
 		/**

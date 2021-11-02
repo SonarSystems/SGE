@@ -88,21 +88,21 @@ namespace Sonar
         *
         * \return Output returns the x position
         */
-        float GetPositionX( ) const;
+        [[nodiscard]] float GetPositionX( ) const;
 
         /**
         * \brief Get the y position
         *
         * \return Output returns the y position
         */
-        float GetPositionY( ) const;
+        [[nodiscard]] float GetPositionY( ) const;
 
         /**
         * \brief Get the position vector
         *
         * \return Output returns the position vector
         */
-        glm::vec2 GetPosition( ) const;
+        [[nodiscard]] glm::vec2 GetPosition( ) const;
 
         /**
         * \brief Set the background size
@@ -138,21 +138,21 @@ namespace Sonar
         *
         * \return Output returns the background size
         */
-        glm::vec2 GetBackgroundSize( ) const;
+        [[nodiscard]] glm::vec2 GetBackgroundSize( ) const;
 
         /**
         * \brief Get the background width
         *
         * \return Output returns the background width
         */
-        float GetBackgroundWidth( ) const;
+        [[nodiscard]] float GetBackgroundWidth( ) const;
 
         /**
         * \brief Get the background height
         *
         * \return Output returns the background height
         */
-        float GetBackgroundHeight( ) const;
+        [[nodiscard]] float GetBackgroundHeight( ) const;
 
         /**
         * \brief Set the color of the background
@@ -182,21 +182,21 @@ namespace Sonar
         *
         * \return Output returns the background color
         */
-        Color GetBackgroundColor( ) const;
+        [[nodiscard]] Color GetBackgroundColor( ) const;
 
         /**
         * \brief Get the background border thickness
         *
         * \return Output returns the border thickness
         */
-        float GetBackgroundBorderThickness( ) const;
+        [[nodiscard]] float GetBackgroundBorderThickness( ) const;
 
         /**
         * \brief Get the background border color
         *
         * \return Output returns the checked color
         */
-        Color GetBackgroundBorderColor( ) const;
+        [[nodiscard]] Color GetBackgroundBorderColor( ) const;
 
 		/**
 		* \brief Set the color of the progress bar
@@ -226,21 +226,21 @@ namespace Sonar
 		*
 		* \return Output returns the progress bar color
 		*/
-		Color GetProgressBarColor( ) const;
+        [[nodiscard]] Color GetProgressBarColor( ) const;
 
 		/**
 		* \brief Get the progress bar border thickness
 		*
 		* \return Output returns the border thickness
 		*/
-		float GetProgressBarBorderThickness( ) const;
+        [[nodiscard]] float GetProgressBarBorderThickness( ) const;
 
 		/**
 		* \brief Get the progress bar border color
 		*
 		* \return Output returns the checked color
 		*/
-		Color GetProgressBarBorderColor( ) const;
+        [[nodiscard]] Color GetProgressBarBorderColor( ) const;
 
         /**
         * \brief Move the object relative to it's current position in the x and y axis
@@ -297,14 +297,14 @@ namespace Sonar
         *
         * \return Output returns the shape's local bounds
         */
-        glm::vec4 GetLocalBounds( ) const;
+        [[nodiscard]] glm::vec4 GetLocalBounds( ) const;
 
         /**
         * \brief Get the global bounds (for the background)
         *
         * \return Output returns the shape's global bounds
         */
-        glm::vec4 GetGlobalBounds( ) const;
+        [[nodiscard]] glm::vec4 GetGlobalBounds( ) const;
 
         /**
         * \brief Set the sliders current value
@@ -318,7 +318,7 @@ namespace Sonar
         *
         * \return Output returns the sliders current value
         */
-        const float &GetValue( ) const;
+        [[nodiscard]] const float &GetValue( ) const;
 
         /**
         * \brief Set sliders minimum value
@@ -339,14 +339,14 @@ namespace Sonar
         *
         * \return Output returns the sliders minimum value
         */
-        const float &GetMinimumValue( ) const;
+        [[nodiscard]] const float &GetMinimumValue( ) const;
 
         /**
         * \brief Get the sliders maximum value
         *
         * \return Output returns the sliders maximum value
         */
-        const float &GetMaximumValue( ) const;
+        [[nodiscard]] const float &GetMaximumValue( ) const;
 
         /**
         * \brief Increment the sliders current value
@@ -370,21 +370,21 @@ namespace Sonar
         *
         * \return Output returns the jump amount value
         */
-        const float &GetJumpAmount( ) const;
+        [[nodiscard]] const float &GetJumpAmount( ) const;
 
         /**
         * \brief Is the mouse hovering over the slider
         *
         * \return Output returns the true or false for the hover event
         */
-        bool IsMouseOver( ) const;
+        [[nodiscard]] bool IsMouseOver( ) const;
 
         /**
         * \brief Get the slider's orientation (to change the orientation, the slider must be reinitialized)
         *
         * \return Output returns which orientation the slider is in
         */
-        const Orientation &GetOrientation( ) const;
+        [[nodiscard]] const Orientation &GetOrientation( ) const;
 
         /**
         * \brief Set the progress bar's size percentage (0 is 0%, 1.0 is 100%)
@@ -398,7 +398,7 @@ namespace Sonar
         *
         * \return Output returns the progress bar size percentage 
         */
-        const float &GetProgressBarSizePercentage( ) const;
+        [[nodiscard]] const float &GetProgressBarSizePercentage( ) const;
 
     private:
         /**

@@ -89,35 +89,35 @@ namespace Sonar
          *
          * \return Output returns the SFML color object
         */
-        sf::Color GetColor( ) const;
+        [[nodiscard]] sf::Color GetColor( ) const;
         
         /**
          * \brief Get the red color value
          *
          * \return Output returns the red value
         */
-        uint8_t GetRed( ) const;
+        [[nodiscard]] uint8_t GetRed( ) const;
         
         /**
          * \brief Get the green color value
          *
          * \return Output returns the green value
         */
-        uint8_t GetGreen( ) const;
+        [[nodiscard]] uint8_t GetGreen( ) const;
         
        /**
         * \brief Get the blue color value
         *
         * \return Output returns the blue value
        */
-        uint8_t GetBlue( ) const;
+        [[nodiscard]] uint8_t GetBlue( ) const;
         
         /**
          * \brief Get the alpha color value
          *
          * \return Output returns the alpha value
         */
-        uint8_t GetAlpha( ) const;
+        [[nodiscard]] uint8_t GetAlpha( ) const;
 
         /**
          * \brief Predefined Black color object

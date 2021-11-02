@@ -97,21 +97,21 @@ namespace Sonar
         *
         * \return Output returns the x position
         */
-        float GetPositionX( ) const;
+        [[nodiscard]] float GetPositionX( ) const;
 
         /**
         * \brief Get the y position
         *
         * \return Output returns the y position
         */
-        float GetPositionY( ) const;
+        [[nodiscard]] float GetPositionY( ) const;
 
         /**
         * \brief Get the position vector
         *
         * \return Output returns the position vector
         */
-        glm::vec2 GetPosition( ) const;
+        [[nodiscard]] glm::vec2 GetPosition( ) const;
 
         /**
         * \brief Set the background size
@@ -147,21 +147,21 @@ namespace Sonar
         *
         * \return Output returns the background size
         */
-        glm::vec2 GetBackgroundSize( ) const;
+        [[nodiscard]] glm::vec2 GetBackgroundSize( ) const;
 
         /**
         * \brief Get the background width
         *
         * \return Output returns the background width
         */
-        float GetBackgroundWidth( ) const;
+        [[nodiscard]] float GetBackgroundWidth( ) const;
 
         /**
         * \brief Get the background height
         *
         * \return Output returns the background height
         */
-        float GetBackgroundHeight( ) const;
+        [[nodiscard]] float GetBackgroundHeight( ) const;
 
         /**
         * \brief Set the color of the background
@@ -191,21 +191,21 @@ namespace Sonar
         *
         * \return Output returns the background color
         */
-        Color GetBackgroundColor( ) const;
+        [[nodiscard]] Color GetBackgroundColor( ) const;
 
         /**
         * \brief Get the background border thickness
         *
         * \return Output returns the border thickness
         */
-        float GetBackgroundBorderThickness( ) const;
+        [[nodiscard]] float GetBackgroundBorderThickness( ) const;
 
         /**
         * \brief Get the background border color
         *
         * \return Output returns the checked color
         */
-        Color GetBackgroundBorderColor( ) const;
+        [[nodiscard]] Color GetBackgroundBorderColor( ) const;
 
         /**
         * \brief Move the object relative to it's current position in the x and y axis
@@ -255,28 +255,28 @@ namespace Sonar
         *
         * \return Output returns the scale factor
         */
-        float GetScale( ) const;
+        [[nodiscard]] float GetScale( ) const;
 
         /**
         * \brief Get the local bounds (for the background)
         *
         * \return Output returns the shape's local bounds
         */
-        glm::vec4 GetLocalBounds( ) const;
+        [[nodiscard]] glm::vec4 GetLocalBounds( ) const;
 
         /**
         * \brief Get the global bounds (for the background)
         *
         * \return Output returns the shape's global bounds
         */
-        glm::vec4 GetGlobalBounds( ) const;
+        [[nodiscard]] glm::vec4 GetGlobalBounds( ) const;
 
         /**
         * \brief Is the mouse hovering over the slider
         *
         * \return Output returns the true or false for the hover event
         */
-        bool IsMouseOver( ) const;
+        [[nodiscard]] bool IsMouseOver( ) const;
 
 		/**
 		* \brief Set the map size
@@ -312,21 +312,21 @@ namespace Sonar
 		*
 		* \return Output returns the map size
 		*/
-		glm::vec2 GetMapSize( ) const;
+        [[nodiscard]] glm::vec2 GetMapSize( ) const;
 
 		/**
 		* \brief Get the map width
 		*
 		* \return Output returns the map width
 		*/
-		float GetMapWidth( ) const;
+        [[nodiscard]] float GetMapWidth( ) const;
 
 		/**
 		* \brief Get the map height
 		*
 		* \return Output returns the map height
 		*/
-		float GetMapHeight( ) const;
+        [[nodiscard]] float GetMapHeight( ) const;
         
         /**
         * \brief Add an object to the minimap
@@ -478,7 +478,7 @@ namespace Sonar
         *
         * \return Output returns the true if the point is within the range and false if it is not
         */
-        bool IsPointWithinRange( const float &point, const float &start, const float &end ) const;
+        [[nodiscard]] bool IsPointWithinRange( const float &point, const float &start, const float &end ) const;
 
         /**
         * \brief Does the object exist
@@ -487,7 +487,7 @@ namespace Sonar
         *
         * \return Output returns true if the object exists and false if it does not
         */
-        bool DoesObjectExist( const unsigned int &id );
+        [[nodiscard]] bool DoesObjectExist( const unsigned int &id );
 
         /**
         * \brief Game data object

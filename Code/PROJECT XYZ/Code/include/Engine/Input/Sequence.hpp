@@ -93,21 +93,21 @@ namespace Sonar
 		 *
 		 * \return Output returns the counter
 		 */
-        float GetCount( ) const;
+		[[nodiscard]] float GetCount( ) const;
         
 		/**
 		 * \brief Get the min boundary value
 		 *
 		 * \return Output returns the min boundary value
 		 */
-        float GetMin( ) const;
+		[[nodiscard]] float GetMin( ) const;
         
 		/**
 		 * \brief Get the max boundary value
 		 *
 		 * \return Output returns the max boundary value
 		 */
-        float GetMax( ) const;
+		[[nodiscard]] float GetMax( ) const;
         
 		/**
 		 * \brief Keyboard pressed event timer
@@ -116,7 +116,7 @@ namespace Sonar
 		 *
 		 * \return Output returns the timer total since last reset
 		 */
-		Time KeyboardPressedTimer( const Keyboard::Key &key );
+		[[nodiscard]] Time KeyboardPressedTimer( const Keyboard::Key &key );
 		
 		/**
 		 * \brief Mouse pressed event timer
@@ -125,7 +125,7 @@ namespace Sonar
 		 *
 		 * \return Output returns the timer total since last reset
 		 */
-		Time MousePressedTimer( const Mouse::Button &button );
+		[[nodiscard]] Time MousePressedTimer( const Mouse::Button &button );
 		
 		/**
 		 * \brief Joystick pressed event timer
@@ -135,7 +135,7 @@ namespace Sonar
 		 *
 		 * \return Output returns the timer total since last reset
 		 */
-		Time JoystickPressedTimer( const unsigned int &joystick, const unsigned int &button );
+		[[nodiscard]] Time JoystickPressedTimer( const unsigned int &joystick, const unsigned int &button );
 		
     private:
 		/**

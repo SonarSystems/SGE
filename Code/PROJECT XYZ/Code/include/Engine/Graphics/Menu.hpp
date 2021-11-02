@@ -88,7 +88,7 @@ namespace Sonar
         *
         * \return Output returns the menu's theme
         */
-        const MenuComponent::Theme &GetTheme( ) const;
+        [[nodiscard]] const MenuComponent::Theme &GetTheme( ) const;
 
     private:
         /**

@@ -39,7 +39,7 @@ namespace Sonar
          *
          * \return Output returns the state reference
         */
-		StateRef &GetActiveState( );
+        [[nodiscard]] StateRef &GetActiveState( );
 
 	private:
         /**
