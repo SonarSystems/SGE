@@ -1,2 +1,40 @@
-﻿  pch.cpp
-  SFML Template.vcxproj -> E:\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\SFML Template.exe
+﻿  Button.cpp
+E:\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Button.cpp(772,24): warning C4834: discarding return value of function with 'nodiscard' attribute
+D:\Software\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30037\include\xutility(158,56): error C2664: 'Sonar::Rectangle::Rectangle(Sonar::GameDataRef)': cannot convert argument 1 from 'Sonar::Rectangle *' to 'Sonar::GameDataRef'
+D:\Software\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30037\include\xutility(151,49): message : No constructor could take the source type, or constructor overload resolution was ambiguous
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Rectangle.hpp(13,9): message : see declaration of 'Sonar::Rectangle::Rectangle'
+D:\Software\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30037\include\memory(2021): message : see reference to function template instantiation 'void std::_Construct_in_place<_Ty,Sonar::Rectangle*&>(_Ty &,Sonar::Rectangle *&) noexcept(false)' being compiled
+          with
+          [
+              _Ty=Sonar::Rectangle
+          ]
+D:\Software\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30037\include\memory(2747): message : see reference to function template instantiation 'std::_Ref_count_obj2<_Ty>::_Ref_count_obj2<Sonar::Rectangle*&>(Sonar::Rectangle *&)' being compiled
+          with
+          [
+              _Ty=Sonar::Rectangle
+          ]
+D:\Software\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30037\include\memory(2748): message : see reference to function template instantiation 'std::_Ref_count_obj2<_Ty>::_Ref_count_obj2<Sonar::Rectangle*&>(Sonar::Rectangle *&)' being compiled
+          with
+          [
+              _Ty=Sonar::Rectangle
+          ]
+E:\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Button.cpp(69): message : see reference to function template instantiation 'std::shared_ptr<Sonar::Rectangle> std::make_shared<Sonar::Rectangle,Sonar::Rectangle*&>(Sonar::Rectangle *&)' being compiled
+D:\Software\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30037\include\xutility(158,56): error C2664: 'Sonar::Label::Label(Sonar::GameDataRef)': cannot convert argument 1 from 'Sonar::Label *' to 'Sonar::GameDataRef'
+D:\Software\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30037\include\xutility(151,49): message : No constructor could take the source type, or constructor overload resolution was ambiguous
+E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Label.hpp(27,9): message : see declaration of 'Sonar::Label::Label'
+D:\Software\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30037\include\memory(2021): message : see reference to function template instantiation 'void std::_Construct_in_place<_Ty,Sonar::Label*&>(_Ty &,Sonar::Label *&) noexcept(false)' being compiled
+          with
+          [
+              _Ty=Sonar::Label
+          ]
+D:\Software\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30037\include\memory(2747): message : see reference to function template instantiation 'std::_Ref_count_obj2<_Ty>::_Ref_count_obj2<Sonar::Label*&>(Sonar::Label *&)' being compiled
+          with
+          [
+              _Ty=Sonar::Label
+          ]
+D:\Software\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30037\include\memory(2748): message : see reference to function template instantiation 'std::_Ref_count_obj2<_Ty>::_Ref_count_obj2<Sonar::Label*&>(Sonar::Label *&)' being compiled
+          with
+          [
+              _Ty=Sonar::Label
+          ]
+E:\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Button.cpp(77): message : see reference to function template instantiation 'std::shared_ptr<Sonar::Label> std::make_shared<Sonar::Label,Sonar::Label*&>(Sonar::Label *&)' being compiled

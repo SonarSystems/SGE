@@ -14,10 +14,10 @@ namespace Sonar
 		_anchorX = LABEL_ANCHOR_X::CENTER_X;
 		_anchorY = LABEL_ANCHOR_Y::CENTER_Y;
 
-		_background = new Rectangle( data );
+		_background = std::make_shared<Rectangle>( data );
 		_background->SetInsideColor( DEFAULT_BUTTON_BACKGROUND_COLOR );
 
-		_label = new Label( data );
+		_label = std::make_shared<Label>( data );
 		_label->SetInsideColor( DEFAULT_BUTTON_LABEL_COLOR );
 		_label->SetCharacterSize( DEFAULT_BUTTON_LABEL_CHARACTER_SIZE );
 
@@ -66,7 +66,7 @@ namespace Sonar
 
 	void Button::SetRectangleBackground( Rectangle *rectangle, const bool &updateDefaultStyle )
 	{
-		_background = rectangle;
+		_background = std::make_shared<Rectangle>( rectangle);
 
 		if ( updateDefaultStyle )
 		{ UpdateDefaultStyle( ); }
@@ -74,16 +74,16 @@ namespace Sonar
 
 	void Button::SetLabelBackground( Label *label, const bool &updateDefaultStyle )
 	{
-		_label = label;
+		_label = std::make_shared<Label>( label );
 
 		if ( updateDefaultStyle )
 		{ UpdateDefaultStyle( ); }
 	}
 
-	Rectangle *Button::GetRectangleBackground( ) const
+	std::shared_ptr<Rectangle> Button::GetRectangleBackground( ) const
 	{ return _background; }
 
-	Label *Button::GetRectangleLabel( ) const
+	std::shared_ptr<Label> Button::GetRectangleLabel( ) const
 	{ return _label; }
 
 	void Button::SetPadding( const glm::vec2 &padding, const bool &updateDefaultStyle )

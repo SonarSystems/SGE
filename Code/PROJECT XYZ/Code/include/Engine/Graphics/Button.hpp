@@ -125,14 +125,14 @@ namespace Sonar
         *
         * \return Output returns the buttons background rectangle
         */
-        [[nodiscard]] Rectangle *GetRectangleBackground( ) const;
+        [[nodiscard]] std::shared_ptr<Rectangle> GetRectangleBackground( ) const;
 
         /**
         * \brief Get the buttons label
         *
         * \return Output returns the buttons label
         */
-        [[nodiscard]] Label *GetRectangleLabel( ) const;
+        [[nodiscard]] std::shared_ptr<Label> GetRectangleLabel( ) const;
 
         /**
         * \brief Set extra padding around the text
@@ -1537,12 +1537,12 @@ namespace Sonar
         /**
         * \brief Button background
         */
-        Rectangle *_background;
+        std::shared_ptr<Rectangle> _background;
 
         /**
         * \brief Button label
         */
-        Label *_label;
+        std::shared_ptr<Label> _label;
 
         /**
         * \brief Padding around the label
