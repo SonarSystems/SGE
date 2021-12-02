@@ -1,40 +1,146 @@
-﻿  Button.cpp
-E:\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Button.cpp(772,24): warning C4834: discarding return value of function with 'nodiscard' attribute
-D:\Software\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30037\include\xutility(158,56): error C2664: 'Sonar::Rectangle::Rectangle(Sonar::GameDataRef)': cannot convert argument 1 from 'Sonar::Rectangle *' to 'Sonar::GameDataRef'
-D:\Software\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30037\include\xutility(151,49): message : No constructor could take the source type, or constructor overload resolution was ambiguous
-E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Shapes\Rectangle.hpp(13,9): message : see declaration of 'Sonar::Rectangle::Rectangle'
-D:\Software\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30037\include\memory(2021): message : see reference to function template instantiation 'void std::_Construct_in_place<_Ty,Sonar::Rectangle*&>(_Ty &,Sonar::Rectangle *&) noexcept(false)' being compiled
+﻿  pch.cpp
+  Clock.cpp
+  Debug.cpp
+  Game.cpp
+  StateMachine.cpp
+  Time.cpp
+  Window.cpp
+  b2GLDraw.cpp
+  Collision.cpp
+  Gamepad.cpp
+  pugixml.cpp
+  Button.cpp
+  ButtonGroup.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Button.cpp(772,24): warning C4834: discarding return value of function with 'nodiscard' attribute
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\External\Collision.cpp(68,24): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
           with
           [
-              _Ty=Sonar::Rectangle
+              T=float
           ]
-D:\Software\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30037\include\memory(2747): message : see reference to function template instantiation 'std::_Ref_count_obj2<_Ty>::_Ref_count_obj2<Sonar::Rectangle*&>(Sonar::Rectangle *&)' being compiled
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\External\Collision.cpp(69,28): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
           with
           [
-              _Ty=Sonar::Rectangle
+              T=float
           ]
-D:\Software\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30037\include\memory(2748): message : see reference to function template instantiation 'std::_Ref_count_obj2<_Ty>::_Ref_count_obj2<Sonar::Rectangle*&>(Sonar::Rectangle *&)' being compiled
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\External\Collision.cpp(71,88): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\External\Collision.cpp(71,85): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\External\Collision.cpp(72,88): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\External\Collision.cpp(72,85): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\External\Collision.cpp(134,51): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
           with
           [
-              _Ty=Sonar::Rectangle
+              T=int
           ]
-E:\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Button.cpp(69): message : see reference to function template instantiation 'std::shared_ptr<Sonar::Rectangle> std::make_shared<Sonar::Rectangle,Sonar::Rectangle*&>(Sonar::Rectangle *&)' being compiled
-D:\Software\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30037\include\xutility(158,56): error C2664: 'Sonar::Label::Label(Sonar::GameDataRef)': cannot convert argument 1 from 'Sonar::Label *' to 'Sonar::GameDataRef'
-D:\Software\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30037\include\xutility(151,49): message : No constructor could take the source type, or constructor overload resolution was ambiguous
-E:\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Graphics\Label.hpp(27,9): message : see declaration of 'Sonar::Label::Label'
-D:\Software\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30037\include\memory(2021): message : see reference to function template instantiation 'void std::_Construct_in_place<_Ty,Sonar::Label*&>(_Ty &,Sonar::Label *&) noexcept(false)' being compiled
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\External\Collision.cpp(135,64): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
           with
           [
-              _Ty=Sonar::Label
+              T=int
           ]
-D:\Software\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30037\include\memory(2747): message : see reference to function template instantiation 'std::_Ref_count_obj2<_Ty>::_Ref_count_obj2<Sonar::Label*&>(Sonar::Label *&)' being compiled
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\External\Collision.cpp(135,51): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
           with
           [
-              _Ty=Sonar::Label
+              T=int
           ]
-D:\Software\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30037\include\memory(2748): message : see reference to function template instantiation 'std::_Ref_count_obj2<_Ty>::_Ref_count_obj2<Sonar::Label*&>(Sonar::Label *&)' being compiled
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\External\Collision.cpp(136,56): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
           with
           [
-              _Ty=Sonar::Label
+              T=int
           ]
-E:\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Button.cpp(77): message : see reference to function template instantiation 'std::shared_ptr<Sonar::Label> std::make_shared<Sonar::Label,Sonar::Label*&>(Sonar::Label *&)' being compiled
+  Checkbox.cpp
+  Color.cpp
+  Drawable.cpp
+  Font.cpp
+  Label.cpp
+  Menu.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\External\b2GLDraw.cpp(37,13): warning C4101: 'glVertices': unreferenced local variable
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\External\b2GLDraw.cpp(54,13): warning C4101: 'glVertices': unreferenced local variable
+  MenuComponent.cpp
+  Minimap.cpp
+  Parallax.cpp
+  ProgressBar.cpp
+  RadioButton.cpp
+  RadioButtonGroup.cpp
+  ScrollingBackground.cpp
+  Circle.cpp
+  Rectangle.cpp
+  Triangle.cpp
+  Slider.cpp
+  Sprite.cpp
+  TextBox.cpp
+  Texture.cpp
+  View.cpp
+  Events.cpp
+  Gesture.cpp
+  Input.cpp
+  Joystick.cpp
+  Keyboard.cpp
+  Mouse.cpp
+  QTE.cpp
+  RBM.cpp
+  Sensor.cpp
+  Sequence.cpp
+  main.cpp
+  AssetManager.cpp
+  FileManager.cpp
+  HighScoreManager.cpp
+  MapManager.cpp
+  PhysicsWorld.cpp
+  Player.cpp
+  SplashState.cpp
+  imgui-SFML.cpp
+  imgui.cpp
+  imgui_demo.cpp
+  imgui_draw.cpp
+  imgui_tables.cpp
+  imgui_widgets.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(127,16): warning C4834: discarding return value of function with 'nodiscard' attribute
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(128,16): warning C4834: discarding return value of function with 'nodiscard' attribute
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(129,16): warning C4834: discarding return value of function with 'nodiscard' attribute
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(130,16): warning C4834: discarding return value of function with 'nodiscard' attribute
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(131,16): warning C4834: discarding return value of function with 'nodiscard' attribute
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(132,16): warning C4834: discarding return value of function with 'nodiscard' attribute
+Box2D.lib(b2BroadPhase.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2BroadPhase.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
+Box2D.lib(b2CollideCircle.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2CollideCircle.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
+Box2D.lib(b2CollideEdge.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2CollideEdge.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
+Box2D.lib(b2CollidePolygon.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2CollidePolygon.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
+Box2D.lib(b2Collision.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2Collision.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
+Box2D.lib(b2Distance.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2Distance.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
+Box2D.lib(b2DynamicTree.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2DynamicTree.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
+Box2D.lib(b2TimeOfImpact.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2TimeOfImpact.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
+Box2D.lib(b2ChainShape.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2ChainShape.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
+Box2D.lib(b2EdgeShape.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2EdgeShape.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
+Box2D.lib(b2PolygonShape.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2PolygonShape.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
+Box2D.lib(b2BlockAllocator.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2BlockAllocator.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
+Box2D.lib(b2Draw.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2Draw.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
+Box2D.lib(b2Math.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2Math.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
+Box2D.lib(b2Settings.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2Settings.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
+Box2D.lib(b2StackAllocator.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2StackAllocator.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
+Box2D.lib(b2Timer.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2Timer.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
+Box2D.lib(b2Body.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2Body.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
+Box2D.lib(b2ContactManager.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2ContactManager.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
+Box2D.lib(b2Fixture.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2Fixture.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
+Box2D.lib(b2Island.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2Island.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
+Box2D.lib(b2World.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2World.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
+Box2D.lib(b2WorldCallbacks.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2WorldCallbacks.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
+Box2D.lib(b2ChainAndCircleContact.obj) : warning LNK4099: PDB '' was not found with 'Box2D.lib(b2ChainAndCircleContact.obj)' or at ''; linking object as if no debug info
+Box2D.lib(b2ChainAndPolygonContact.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2ChainAndPolygonContact.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
+Box2D.lib(b2CircleContact.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2CircleContact.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
+Box2D.lib(b2Contact.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2Contact.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
+Box2D.lib(b2ContactSolver.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2ContactSolver.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
+Box2D.lib(b2EdgeAndCircleContact.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2EdgeAndCircleContact.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
+Box2D.lib(b2EdgeAndPolygonContact.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2EdgeAndPolygonContact.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
+Box2D.lib(b2PolygonAndCircleContact.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2PolygonAndCircleContact.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
+Box2D.lib(b2PolygonContact.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2PolygonContact.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
+Box2D.lib(b2DistanceJoint.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2DistanceJoint.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
+Box2D.lib(b2FrictionJoint.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2FrictionJoint.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
+Box2D.lib(b2GearJoint.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2GearJoint.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
+Box2D.lib(b2Joint.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2Joint.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
+Box2D.lib(b2MotorJoint.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2MotorJoint.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
+Box2D.lib(b2MouseJoint.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2MouseJoint.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
+Box2D.lib(b2PrismaticJoint.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2PrismaticJoint.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
+Box2D.lib(b2PulleyJoint.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2PulleyJoint.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
+Box2D.lib(b2RevoluteJoint.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2RevoluteJoint.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
+Box2D.lib(b2RopeJoint.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2RopeJoint.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
+Box2D.lib(b2WeldJoint.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2WeldJoint.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
+Box2D.lib(b2WheelJoint.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2WheelJoint.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
+  SFML Template.vcxproj -> C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\SFML Template.exe

@@ -53,14 +53,14 @@ namespace Sonar
 		* \param overrideStyle Should the button's style be overriden using the group's style
 		* \param resetWidthForAllButtons Should the buttons have the same width
         */
-        void AddButton( Button *button, const bool &overrideStyle = true, const bool &resetWidthForAllButtons = true, const bool &autoOrient = true );
+        void AddButton( std::shared_ptr<Button> button, const bool &overrideStyle = true, const bool &resetWidthForAllButtons = true, const bool &autoOrient = true );
 
         /**
         * \brief Remove button
         *
         * \param button Button to remove
         */
-        void RemoveButton( Button *button );
+        void RemoveButton( std::shared_ptr<Button> button );
 
         /**
         * \brief Remove button at a specific index
@@ -392,7 +392,7 @@ namespace Sonar
         /**
         * \brief Vector of buttons
         */
-        std::vector<Button *> _buttons;
+        std::vector<std::shared_ptr<Button>> _buttons;
 
         /**
         * \brief Style of the menu

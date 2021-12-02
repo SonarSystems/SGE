@@ -154,7 +154,7 @@ namespace Sonar
 		}
 	}
 
-	void ButtonGroup::AddButton( Button *button, const bool &overrideStyle, const bool &resetWidthForAllButtons, const bool &autoOrient )
+	void ButtonGroup::AddButton( std::shared_ptr<Button> button, const bool &overrideStyle, const bool &resetWidthForAllButtons, const bool &autoOrient )
 	{
 		if ( autoOrient )
 		{
@@ -203,9 +203,9 @@ namespace Sonar
 		UpdateButtons( );
 	}
 
-	void ButtonGroup::RemoveButton( Button *button )
+	void ButtonGroup::RemoveButton( std::shared_ptr<Button> button )
 	{
-		std::vector<Button *> newMenuComponentsVector( _buttons.size( ) );
+		std::vector<std::shared_ptr<Button>> newMenuComponentsVector( _buttons.size( ) );
 
 		std::remove_copy( _buttons.begin( ), _buttons.end( ), newMenuComponentsVector.begin( ), button );
 

@@ -64,17 +64,17 @@ namespace Sonar
 		_label->Draw( );
 	}
 
-	void Button::SetRectangleBackground( Rectangle *rectangle, const bool &updateDefaultStyle )
+	void Button::SetRectangleBackground( std::shared_ptr<Rectangle> rectangle, const bool &updateDefaultStyle )
 	{
-		_background = std::make_shared<Rectangle>( new Rectangle(rectangle) );
+		_background = rectangle;
 
 		if ( updateDefaultStyle )
 		{ UpdateDefaultStyle( ); }
 	}
 
-	void Button::SetLabelBackground( Label *label, const bool &updateDefaultStyle )
+	void Button::SetLabelBackground( std::shared_ptr<Label> label, const bool &updateDefaultStyle )
 	{
-		_label = std::make_shared<Label>( label );
+		_label = label;
 
 		if ( updateDefaultStyle )
 		{ UpdateDefaultStyle( ); }

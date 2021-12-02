@@ -5,7 +5,7 @@ namespace Sonar
     Circle::Circle( GameDataRef data ) : Drawable( data )
     {
 		_object = &_shape;
-		_texture = new Texture( );
+		_texture = std::make_shared<Texture>( );
 
 		_globalBounds = _shape.getGlobalBounds( );
     }
@@ -13,7 +13,7 @@ namespace Sonar
     Circle::Circle( GameDataRef data, const float &radius ) : Drawable( data )
     {
 		_object = &_shape;
-		_texture = new Texture( );
+		_texture = std::make_shared<Texture>( );
 
         SetRadius( radius );
 		SetInsideColor( Color::Black );
@@ -219,7 +219,7 @@ namespace Sonar
 		SetPosition( _shape.getPosition( ).x, _shape.getPosition( ).y );
 	}
 
-	void Circle::SetTexture( Texture *texture, const bool &resetRect )
+	void Circle::SetTexture( std::shared_ptr<Texture> texture, const bool &resetRect )
 	{
 		_texture = texture;
 		_shape.setTexture( _texture->GetTexture( ), resetRect ); 
@@ -233,7 +233,7 @@ namespace Sonar
 	void Circle::SetTextureRect( const int &left, const int &top, const int &width, const int &height )
 	{ SetTextureRect( glm::ivec4( left, top, width, height ) ); }
 
-	Texture *Circle::GetTexture( ) const
+	std::shared_ptr<Texture>Circle::GetTexture( ) const
 	{ return _texture; }
 
 	glm::ivec4 Circle::GetTextureRect( ) const

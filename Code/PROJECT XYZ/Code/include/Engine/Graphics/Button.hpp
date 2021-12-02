@@ -110,7 +110,7 @@ namespace Sonar
 		* \param rectangle Pointer to the rectangle
 		* \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
         */
-        void SetRectangleBackground( Rectangle *rectangle, const bool &updateDefaultStyle = true );
+        void SetRectangleBackground( std::shared_ptr<Rectangle>rectangle, const bool &updateDefaultStyle = true );
 
         /**
         * \brief Set the button's label (most of the time leave as is)
@@ -118,7 +118,7 @@ namespace Sonar
 		* \param label Pointer to the label
 		* \param updateDefaultStyle Whether or not to update the default style (recommended to leave on true)
         */
-        void SetLabelBackground( Label *label, const bool &updateDefaultStyle = true );
+        void SetLabelBackground( std::shared_ptr<Label>label, const bool &updateDefaultStyle = true );
 
         /**
         * \brief Get the buttons background rectangle

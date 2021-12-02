@@ -4,8 +4,8 @@ namespace Sonar
 {
 	Checkbox::Checkbox( GameDataRef data ) : _data( data )
 	{
-		_outerLayer = new Rectangle( _data );
-		_insideLayer = new Rectangle( _data );
+		_outerLayer = std::make_shared<Rectangle>( _data );
+		_insideLayer = std::make_shared<Rectangle>( _data );
 
 		_outerLayer->SetSize( DEFAULT_CHECKBOX_OUTER_LAYER_SIZE );
 		_outerLayer->SetBorderThickness( DEFAULT_CHECKBOX_OUTSIDE_LAYER_BORDER_THICKNESS );

@@ -269,7 +269,7 @@ namespace Sonar
         /**
         * \brief Button background
         */
-        Rectangle *_outerLayer, *_insideLayer;
+        std::shared_ptr<Rectangle> _outerLayer, _insideLayer;
 
         /**
         * \brief Color of the inside layer

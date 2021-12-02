@@ -28,7 +28,7 @@ namespace Sonar
 
 		//menu->AddComponent( label );
 
-		button = new Button( _data );
+		button = std::make_shared<Button>( _data );
 		//button->SetPosition( 300, 300 );
 		//button->SetScale( 2.5, 2.5 );
 		//button->SetPadding( 50, 50 );
@@ -84,9 +84,9 @@ namespace Sonar
 
 		buttonGroup = new ButtonGroup( _data );
 
-		button = new Button( _data );
-		button2 = new Button( _data );
-		button3 = new Button( _data );
+		button = std::make_shared<Button>( _data );
+		button2 = std::make_shared<Button>( _data );
+		button3 = std::make_shared<Button>( _data );
 
 		//button->SetPosition( 100, 100 );
 		button->SetText( "PLAY", true );

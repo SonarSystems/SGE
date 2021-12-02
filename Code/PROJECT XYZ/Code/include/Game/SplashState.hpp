@@ -33,7 +33,7 @@ namespace Sonar
 
 		Menu *menu;
 
-		Button *button, *button2, *button3;
+		std::shared_ptr<Button> button, button2, button3;
 
 		ButtonGroup *buttonGroup;
 
