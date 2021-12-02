@@ -66,7 +66,7 @@ namespace Sonar
 
 	void Button::SetRectangleBackground( Rectangle *rectangle, const bool &updateDefaultStyle )
 	{
-		_background = std::make_shared<Rectangle>( rectangle);
+		_background = std::make_shared<Rectangle>( new Rectangle(rectangle) );
 
 		if ( updateDefaultStyle )
 		{ UpdateDefaultStyle( ); }
