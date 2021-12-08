@@ -16,14 +16,14 @@ namespace Sonar
 		_buttonToClick = DEFAULT_TEXTBOX_CLICKED_MOUSE_BUTTON;
 		_hoverCursor = DEFAULT_TEXTBOX_HOVER_CURSOR;
 
-		_postStringBlinker = new Rectangle( data );
+		_postStringBlinker = std::make_shared<Rectangle>( data );
 		_postStringBlinker->SetSize( 5, GetHeight( ) );
 		_postStringBlinker->SetPosition( GetPositionX( ) + GetWidth( ), GetPositionY( ) + ( GetHeight( ) * 0.5f ) );
 		_postStringBlinker->SetInsideColor( Color::Black );
 
 		_minimumClickableSize = GetSize( );
 
-		_clickableRect = new Rectangle( data );
+		_clickableRect = std::make_shared<Rectangle>( data );
 
 		_isDebugDrawing = DEFAULT_TEXTBOX_IS_DEBUG_DRAWING;
 	}

@@ -82,7 +82,7 @@ namespace Sonar
 
 		//menu->AddComponent( slider );
 
-		buttonGroup = new ButtonGroup( _data );
+		buttonGroup = std::make_shared<ButtonGroup>( _data );
 
 		button = std::make_shared<Button>( _data );
 		button2 = std::make_shared<Button>( _data );

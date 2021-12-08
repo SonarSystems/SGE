@@ -45,14 +45,14 @@ namespace Sonar
 		* \param component Component to add
 		* \param overrideStyle Should the component's style be overriden using the Menu's style
         */
-        void AddComponent( MenuComponent *component, const bool &overrideStyle = true );
+        void AddComponent( std::shared_ptr<MenuComponent> component, const bool &overrideStyle = true );
 
         /**
         * \brief Remove component from the menu
         *
         * \param component Component to remove
         */
-        void RemoveComponent( MenuComponent *component );
+        void RemoveComponent( std::shared_ptr<MenuComponent> component );
 
         /**
         * \brief Remove component at a specific index from the menu
@@ -99,7 +99,7 @@ namespace Sonar
         /**
         * \brief All the components of the menu
         */
-        std::vector<MenuComponent *> _menuComponents;
+        std::vector<std::shared_ptr<MenuComponent>> _menuComponents;
 
         /**
         * \brief Style of the menu

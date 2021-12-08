@@ -433,12 +433,12 @@ namespace Sonar
         /**
         * \brief Slider background
         */
-        Rectangle *_background;
+        std::shared_ptr<Rectangle> _background;
 
         /**
         * \brief Slider knob
         */
-        Circle *_knob;
+        std::shared_ptr<Circle> _knob;
 
         /**
         * \brief Is the mouse currently down

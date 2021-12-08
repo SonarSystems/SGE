@@ -26,7 +26,7 @@ namespace Sonar
         */
         struct ObjectProperty
         {
-            Circle *_shape;
+            std::shared_ptr<Circle> _shape;
             std::string _type;
             glm::vec2 _position;
             bool _isShowing;
@@ -497,7 +497,7 @@ namespace Sonar
         /**
         * \brief Slider background
         */
-        Rectangle *_background;
+        std::shared_ptr<Rectangle> _background;
 
         /**
         * \brief Internal map size

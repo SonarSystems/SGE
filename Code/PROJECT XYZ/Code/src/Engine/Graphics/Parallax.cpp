@@ -32,7 +32,7 @@ namespace Sonar
 		_layerStatus.push_back( std::make_pair( true, true ) );
 	}
 
-	void Parallax::AddLayer( const std::vector<Sprite *> &backgrounds )
+	void Parallax::AddLayer( const std::vector<std::shared_ptr<Sprite>> &backgrounds )
 	{
 		ScrollingBackground scrollingBackground( _data );
 		scrollingBackground.SetBackgrounds( backgrounds );

@@ -414,7 +414,7 @@ namespace Sonar
         /**
         * \brief Slider background
         */
-        Rectangle *_background, *_progressBar;
+        std::shared_ptr<Rectangle> _background, _progressBar;
 
         /**
         * \brief Is the mouse currently down

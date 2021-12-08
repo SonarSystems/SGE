@@ -4,7 +4,7 @@ namespace Sonar
 {
 	Minimap::Minimap( GameDataRef data ) : _data( data )
 	{
-		_background = new Rectangle( _data );
+		_background = std::make_shared<Rectangle>( _data );
 
 		SetBackgroundColor( DEFAULT_MINIMAP_BACKGROUND_COLOR );
 		SetBackgroundBorderThickness( DEFAULT_MINIMAP_BACKGROUND_BORDER_THICKNESS );
@@ -14,17 +14,7 @@ namespace Sonar
 		_mapSize = glm::vec2( DEFAULT_MINIMAP_INTERNAL_MAP_WIDTH, DEFAULT_MINIMAP_INTERNAL_MAP_HEIGHT );
 	}
 
-	Minimap::~Minimap( )
-	{
-		delete _background;
-		_background = nullptr;
-
-		for ( auto &object : _objects )
-		{
-			delete object.second._shape;
-			object.second._shape = nullptr;
-		}
-	}
+	Minimap::~Minimap( ) { }
 
 	void Minimap::Draw( )
 	{
@@ -102,7 +92,7 @@ namespace Sonar
 		objectProperty._type = type;
 		objectProperty._position = position;
 
-		objectProperty._shape = new Circle( _data );
+		objectProperty._shape = std::make_shared<Circle>( _data );
 		objectProperty._shape->SetRadius( radius );
 		objectProperty._shape->SetInsideColor( color );
 
@@ -114,12 +104,7 @@ namespace Sonar
 	void Minimap::RemoveObjectByID( const unsigned int &id )
 	{
 		if ( DoesObjectExist( id ) )
-		{
-			delete _objects.at( id )._shape;
-			_objects.at( id )._shape = nullptr;
-
-			_objects.erase( id );
-		}
+		{ _objects.erase( id );}
 	}
 
 	void Minimap::RemoveObjectByType( const std::string &type )
@@ -127,12 +112,7 @@ namespace Sonar
 		for ( auto it = _objects.begin( ); it != _objects.end( ); ) 
 		{
 			if ( it->second._type == type )
-			{
-				delete it->second._shape;
-				it->second._shape = nullptr;
-
-				it = _objects.erase( it );
-			}
+			{ it = _objects.erase( it ); }
 			else
 			{ ++it; }
 		}

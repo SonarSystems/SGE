@@ -260,7 +260,7 @@ namespace Sonar
         /**
         * \brief Blinker for text box at the end of the string
         */
-        Rectangle *_postStringBlinker;
+        std::shared_ptr<Rectangle> _postStringBlinker;
 
         /**
         * \brief Is the blinker visible
@@ -295,7 +295,7 @@ namespace Sonar
         /**
         * \brief Clickable area to focus on the text box
         */
-        Rectangle *_clickableRect;
+        std::shared_ptr<Rectangle> _clickableRect;
 
         /**
         * \brief Mouse cursor when hovered over the text box

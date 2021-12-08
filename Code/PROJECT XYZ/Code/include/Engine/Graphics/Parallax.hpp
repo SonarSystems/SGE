@@ -39,7 +39,7 @@ namespace Sonar
         *
         * \param backgrounds Backgrounds to create a layer to be added to the parallax
         */
-		void AddLayer( const std::vector<Sprite *> &backgrounds );
+		void AddLayer( const std::vector<std::shared_ptr<Sprite>> &backgrounds );
 
         /**
         * \brief Add a layer to the parallax using a set of string

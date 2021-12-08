@@ -5,7 +5,7 @@ namespace Sonar
 	Triangle::Triangle( GameDataRef data ) : Drawable( data )
 	{
 		_object = &_shape;
-		_texture = new Texture( );
+		_texture = std::make_shared<Texture>( );
 
 		_shape.setPointCount( 3 );
 
@@ -17,7 +17,7 @@ namespace Sonar
     Triangle::Triangle( GameDataRef data, const glm::vec2 &point1, const glm::vec2 &point2, const glm::vec2 &point3 ) : Drawable( data )
     {
         _object = &_shape;
-		_texture = new Texture( );
+		_texture = std::make_shared<Texture>( );
 
 		_shape.setPointCount( 3 );
 
@@ -250,7 +250,7 @@ namespace Sonar
 		SetPosition( _shape.getPosition( ).x, _shape.getPosition( ).y );
 	}
 
-	void Triangle::SetTexture( Texture *texture, const bool &resetRect )
+	void Triangle::SetTexture( std::shared_ptr<Texture> texture, const bool &resetRect )
 	{
 		_texture = texture;
 		_shape.setTexture( _texture->GetTexture( ), resetRect );
@@ -264,7 +264,7 @@ namespace Sonar
 	void Triangle::SetTextureRect( const int &left, const int &top, const int &width, const int &height )
 	{ SetTextureRect( glm::ivec4( left, top, width, height ) ); }
 
-	Texture *Triangle::GetTexture( ) const
+	std::shared_ptr<Texture> Triangle::GetTexture( ) const
 	{ return _texture; }
 
 	glm::ivec4 Triangle::GetTextureRect( ) const

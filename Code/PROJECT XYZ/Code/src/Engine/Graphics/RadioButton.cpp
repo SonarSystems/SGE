@@ -4,8 +4,8 @@ namespace Sonar
 {
 	RadioButton::RadioButton( GameDataRef data ) : _data( data )
 	{
-		_outerLayer = new Circle( _data );
-		_insideLayer = new Circle( _data );
+		_outerLayer = std::make_shared<Circle> ( _data );
+		_insideLayer = std::make_shared<Circle> ( _data );
 
 		_outerLayer->SetRadius( DEFAULT_RADIO_BUTTON_RADIUS );
 		_outerLayer->SetBorderThickness( DEFAULT_RADIO_BUTTON_OUTSIDE_LAYER_BORDER_THICKNESS );

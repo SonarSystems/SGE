@@ -291,7 +291,7 @@ namespace Sonar
         /**
         * \brief Button background
         */
-        Circle *_outerLayer, *_insideLayer;
+        std::shared_ptr<Circle> _outerLayer, _insideLayer;
 
         /**
         * \brief Color of the inside layer

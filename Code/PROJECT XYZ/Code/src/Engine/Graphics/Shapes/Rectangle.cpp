@@ -5,7 +5,7 @@ namespace Sonar
     Rectangle::Rectangle( GameDataRef data ) : Drawable( data )
     {
 		_object = &_shape;
-		_texture = new Texture( );
+		_texture = std::make_shared<Texture>( );
 
         SetPosition( 0, 0 );
 		_globalBounds = _shape.getGlobalBounds( );
@@ -14,7 +14,7 @@ namespace Sonar
     Rectangle::Rectangle( GameDataRef data, const float &width, const float &height ) : Drawable( data )
     {
 		_object = &_shape;
-		_texture = new Texture( );
+		_texture = std::make_shared<Texture>( );
 
         SetPosition( 0, 0 );
         SetSize( width, height );
@@ -209,7 +209,7 @@ namespace Sonar
 		SetPosition( _shape.getPosition( ).x, _shape.getPosition( ).y );
 	}
 
-	void Rectangle::SetTexture( Texture *texture, const bool &resetRect )
+	void Rectangle::SetTexture( std::shared_ptr<Texture> texture, const bool &resetRect )
 	{
 		_texture = texture;
 		_shape.setTexture( _texture->GetTexture( ), resetRect );
@@ -223,7 +223,7 @@ namespace Sonar
 	void Rectangle::SetTextureRect( const int &left, const int &top, const int &width, const int &height )
 	{ SetTextureRect( glm::ivec4( left, top, width, height ) ); }
 
-	Texture *Rectangle::GetTexture( ) const
+	std::shared_ptr<Texture> Rectangle::GetTexture( ) const
 	{ return _texture; }
 
 	glm::ivec4 Rectangle::GetTextureRect( ) const

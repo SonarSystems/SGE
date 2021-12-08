@@ -35,7 +35,7 @@ namespace Sonar
 
 		std::shared_ptr<Button> button, button2, button3;
 
-		ButtonGroup *buttonGroup;
+		std::shared_ptr<ButtonGroup> buttonGroup;
 
 		TextBox *textBox;
 

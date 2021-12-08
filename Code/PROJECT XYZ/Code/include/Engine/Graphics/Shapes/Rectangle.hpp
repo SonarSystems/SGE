@@ -294,7 +294,7 @@ namespace Sonar
         * \param texture Another texture to be copied onto the local texture
         * \param resetRect Whether or not the texture rect should be reset (default set to false)
         */
-        void SetTexture( Texture *texture, const bool &resetRect = false );
+        void SetTexture( std::shared_ptr<Texture> texture, const bool &resetRect = false );
 
         /**
         * \brief Set the shape rectangle
@@ -318,7 +318,7 @@ namespace Sonar
         *
         * \return Output returns the shape's texture object
         */
-        [[nodiscard]] Texture *GetTexture( ) const;
+        [[nodiscard]] std::shared_ptr<Texture> GetTexture( ) const;
 
         /**
         * \brief Get the Textures rectangle
@@ -350,7 +350,7 @@ namespace Sonar
         /**
         * \brief Texture for loading an image to be assigned to the shape
         */
-        Texture *_texture;
+        std::shared_ptr<Texture> _texture;
 
     };
 }

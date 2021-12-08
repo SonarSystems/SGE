@@ -4,8 +4,8 @@ namespace Sonar
 {
 	Slider::Slider( GameDataRef data, const Orientation &orientation ) : _data( data ), _orientation( orientation )
 	{
-		_background = new Rectangle( _data );
-		_knob = new Circle( _data );
+		_background = std::make_shared<Rectangle>( _data );
+		_knob = std::make_shared<Circle>( _data );
 
 		_isMouseDownOverKnob = false;
 

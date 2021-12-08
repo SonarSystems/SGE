@@ -25,7 +25,7 @@ namespace Sonar
 		{ component->PollInput( dt, event ); }
 	}
 
-	void Menu::AddComponent( MenuComponent *component, const bool &overrideStyle )
+	void Menu::AddComponent( std::shared_ptr<MenuComponent> component, const bool &overrideStyle )
 	{
 		if ( overrideStyle )
 		{ component->SetTheme( _theme ); }
@@ -33,9 +33,9 @@ namespace Sonar
 		_menuComponents.push_back( component );
 	}
 
-	void Menu::RemoveComponent( MenuComponent *component )
+	void Menu::RemoveComponent( std::shared_ptr<MenuComponent> component )
 	{
-		std::vector<MenuComponent *> newMenuComponentsVector( _menuComponents.size( ) );
+		std::vector<std::shared_ptr<MenuComponent> > newMenuComponentsVector( _menuComponents.size( ) );
 
 		std::remove_copy( _menuComponents.begin( ), _menuComponents.end( ), newMenuComponentsVector.begin( ), component );
 

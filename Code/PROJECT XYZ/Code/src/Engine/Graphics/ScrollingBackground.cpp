@@ -16,7 +16,7 @@ namespace Sonar
 
 	ScrollingBackground::~ScrollingBackground( ) { }
 
-	void ScrollingBackground::SetBackgrounds( const std::vector<Sprite *> &backgrounds )
+	void ScrollingBackground::SetBackgrounds( const std::vector<std::shared_ptr<Sprite>> &backgrounds )
 	{
 		_backgrounds = backgrounds;
 
@@ -26,7 +26,7 @@ namespace Sonar
 	void ScrollingBackground::SetBackgrounds( const std::vector<std::string> &backgrounds )
 	{
 		for ( auto filepath : backgrounds )
-		{ _backgrounds.push_back( new Sprite( _data, filepath ) ); }
+		{ _backgrounds.push_back( std::make_shared<Sprite>( _data, filepath ) ); }
 
 		SetBackgroundPositions( );
 	}

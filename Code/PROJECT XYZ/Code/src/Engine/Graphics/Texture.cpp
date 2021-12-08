@@ -12,7 +12,10 @@ namespace Sonar
 	}
 
 	Texture::~Texture( )
-	{ delete _texture; }
+	{
+		delete _texture;
+		_texture = nullptr;
+	}
 
 	void Texture::SetTexture( const std::string &filepath )
 	{ _texture->loadFromFile( filepath ); }

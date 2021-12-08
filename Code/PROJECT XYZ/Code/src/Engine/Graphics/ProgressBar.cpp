@@ -4,8 +4,8 @@ namespace Sonar
 {
 	ProgressBar::ProgressBar( GameDataRef data, const Orientation &orientation ) : _data( data ), _orientation( orientation )
 	{
-		_background = new Rectangle( _data );
-		_progressBar = new Rectangle( _data );
+		_background = std::make_shared<Rectangle>( _data );
+		_progressBar = std::make_shared<Rectangle>( _data );
 
 		_value = DEFAULT_PROGRESS_BAR_CURRENT_VALUE;
 		_minimumValue = DEFAULT_PROGRESS_BAR_MINIMUM_VALUE;
@@ -116,7 +116,7 @@ namespace Sonar
 	{ SetBackgroundSize( glm::vec2( width, _background->GetHeight( ) ) ); }
 
 	void ProgressBar::SetBackgroundHeight( const float &height )
-	{ SetBackgroundSize(glm::vec2(  _background->GetWidth( ), height ) ); }
+	{ SetBackgroundSize( glm::vec2( _background->GetWidth( ), height ) ); }
 
 	glm::vec2 ProgressBar::GetBackgroundSize( ) const
 	{ return _background->GetSize( ); }

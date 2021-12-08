@@ -44,7 +44,7 @@ namespace Sonar
         *
         * \param backgrounds All the backgrounds to be set
         */
-        void SetBackgrounds( const std::vector<Sprite *> &backgrounds );
+        void SetBackgrounds( const std::vector<std::shared_ptr<Sprite>> &backgrounds );
 
         /**
         * \brief Set the backgrounds
@@ -149,7 +149,7 @@ namespace Sonar
         /**
         * \brief Backgrounds to scroll next to each other
         */
-        std::vector<Sprite *> _backgrounds;
+        std::vector<std::shared_ptr<Sprite>> _backgrounds;
 
         /**
         * \brief Speed at which the background moves (negative moves it left/up and positive moves it right/down)

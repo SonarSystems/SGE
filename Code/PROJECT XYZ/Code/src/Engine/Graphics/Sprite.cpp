@@ -5,7 +5,7 @@ namespace Sonar
     Sprite::Sprite( GameDataRef data ) : Drawable( data )
     {
 		_object = &_sprite;
-		_texture = new Texture( );
+		_texture = std::make_shared<Texture>( );
 
 		_globalBounds = _sprite.getGlobalBounds( );
 	}
@@ -13,23 +13,22 @@ namespace Sonar
     Sprite::Sprite( GameDataRef data, const std::string &filepath ) : Drawable( data )
     {
 		_object = &_sprite;
-		_texture = new Texture( );
+		_texture = std::make_shared<Texture>( );
 
 		SetTexture( filepath );
 		_globalBounds = _sprite.getGlobalBounds( );
 	}
 
-	Sprite::Sprite( GameDataRef data, Texture *texture ) : Drawable( data )
+	Sprite::Sprite( GameDataRef data, std::shared_ptr<Texture> texture ) : Drawable( data )
 	{
 		_object = &_sprite;
 
-		_texture = new Texture( );
+		_texture = std::make_shared<Texture>( );
 		SetTexture( texture );
 		_globalBounds = _sprite.getGlobalBounds( );
 	}
 
-	Sprite::~Sprite( )
-	{ delete _texture; }
+	Sprite::~Sprite( ) { }
 
 	void Sprite::SetPosition( const glm::vec2 &position )
 	{
@@ -180,7 +179,7 @@ namespace Sonar
 		SetSize( _sprite.getLocalBounds( ).width, _sprite.getLocalBounds( ).height );
 	}
 
-	void Sprite::SetTexture( Texture *texture, const bool &resetRect )
+	void Sprite::SetTexture( std::shared_ptr<Texture> texture, const bool &resetRect )
 	{
 		_texture = texture;
 		_sprite.setTexture( *_texture->GetTexture( ), resetRect );
@@ -195,7 +194,7 @@ namespace Sonar
 	void Sprite::SetTextureRect( const int &left, const int &top, const int &width, const int &height )
 	{ SetTextureRect( glm::ivec4( left, top, width, height ) ); }
 
-	Texture *Sprite::GetTexture( ) const
+	std::shared_ptr<Texture> Sprite::GetTexture( ) const
 	{ return _texture; }
 
 	glm::ivec4 Sprite::GetTextureRect( ) const

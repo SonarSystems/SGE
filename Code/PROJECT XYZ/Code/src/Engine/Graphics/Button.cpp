@@ -13,7 +13,7 @@ namespace Sonar
 
 		_anchorX = LABEL_ANCHOR_X::CENTER_X;
 		_anchorY = LABEL_ANCHOR_Y::CENTER_Y;
-
+		 
 		_background = std::make_shared<Rectangle>( data );
 		_background->SetInsideColor( DEFAULT_BUTTON_BACKGROUND_COLOR );
 
