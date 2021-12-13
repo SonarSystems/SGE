@@ -1,16 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\Code",
-    "\\Code\\PROJECT XYZ",
-    "\\Code\\PROJECT XYZ\\Code",
-    "\\Code\\PROJECT XYZ\\Code\\include",
-    "\\Code\\PROJECT XYZ\\Code\\include\\Game",
-    "\\Code\\PROJECT XYZ\\Code\\src",
-    "\\Code\\PROJECT XYZ\\Code\\src\\Engine",
-    "\\Code\\PROJECT XYZ\\Code\\src\\Engine\\Core",
-    "\\Code\\PROJECT XYZ\\Code\\src\\Game"
+    ""
   ],
-  "SelectedNode": "\\Code\\PROJECT XYZ\\Code\\src\\Game\\SplashState.cpp",
+  "SelectedNode": "\\SFML Template.sln",
   "PreviewInSolutionExplorer": false
 }

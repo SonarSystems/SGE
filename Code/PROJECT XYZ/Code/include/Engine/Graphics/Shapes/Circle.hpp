@@ -21,8 +21,7 @@ namespace Sonar
          * \brief Class constructor with radius of the circle
          *
          * \param data Game data object
-         * \param width Width of the rectangle
-         * \param height Height of the rectangle
+         * \param radius Radius of the circle
         */
         Circle( GameDataRef data, const float &radius );
         

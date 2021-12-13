@@ -6,6 +6,8 @@
 
 #define _CRT_SECURE_NO_WARNINGS
 
+#include "Audio/AudioItem.hpp"
+#include "Audio/Music.hpp"
 #include "Core/Clock.hpp"
 #include "Core/Debug.hpp"
 #include "Core/Game.hpp"

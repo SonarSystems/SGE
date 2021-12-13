@@ -95,3 +95,5 @@
 #include "Managers/HighScoreManager.hpp"
 #include "Managers/MapManager.hpp"
 #include "Core/Game.hpp"
+#include "Audio/AudioItem.hpp"
+#include "Audio/Music.hpp"

@@ -1,146 +1,16 @@
 ﻿  pch.cpp
-  Clock.cpp
-  Debug.cpp
+  AudioItem.cpp
+  Music.cpp
   Game.cpp
-  StateMachine.cpp
-  Time.cpp
-  Window.cpp
-  b2GLDraw.cpp
-  Collision.cpp
-  Gamepad.cpp
-  pugixml.cpp
-  Button.cpp
-  ButtonGroup.cpp
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Button.cpp(772,24): warning C4834: discarding return value of function with 'nodiscard' attribute
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\External\Collision.cpp(68,24): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\External\Collision.cpp(69,28): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\External\Collision.cpp(71,88): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\External\Collision.cpp(71,85): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\External\Collision.cpp(72,88): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\External\Collision.cpp(72,85): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\External\Collision.cpp(134,51): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
-          with
-          [
-              T=int
-          ]
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\External\Collision.cpp(135,64): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
-          with
-          [
-              T=int
-          ]
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\External\Collision.cpp(135,51): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
-          with
-          [
-              T=int
-          ]
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\External\Collision.cpp(136,56): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
-          with
-          [
-              T=int
-          ]
-  Checkbox.cpp
-  Color.cpp
-  Drawable.cpp
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\External\b2GLDraw.cpp(37,13): warning C4101: 'glVertices': unreferenced local variable
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\External\b2GLDraw.cpp(54,13): warning C4101: 'glVertices': unreferenced local variable
-  Font.cpp
-  Label.cpp
-  Menu.cpp
-  MenuComponent.cpp
-  Minimap.cpp
-  Parallax.cpp
-  ProgressBar.cpp
-  RadioButton.cpp
-  RadioButtonGroup.cpp
-  ScrollingBackground.cpp
-  Circle.cpp
-  Rectangle.cpp
-  Triangle.cpp
-  Slider.cpp
   Sprite.cpp
-  TextBox.cpp
-  Texture.cpp
-  View.cpp
-  Events.cpp
-  Gesture.cpp
-  Input.cpp
-  Joystick.cpp
-  Keyboard.cpp
-  Mouse.cpp
-  QTE.cpp
-  RBM.cpp
-  Sensor.cpp
-  Sequence.cpp
-  main.cpp
-  AssetManager.cpp
-  FileManager.cpp
-  HighScoreManager.cpp
-  MapManager.cpp
-  PhysicsWorld.cpp
-  Player.cpp
   SplashState.cpp
-  imgui-SFML.cpp
-  imgui.cpp
-  imgui_demo.cpp
-  imgui_draw.cpp
-  imgui_tables.cpp
-  imgui_widgets.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Audio\Music.cpp(6,4): error C2065: '_filepath': undeclared identifier
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Audio\Music.cpp(11,5): error C2065: '_filepath': undeclared identifier
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Audio\Music.cpp(13,5): error C2065: '_filepath': undeclared identifier
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Audio\AudioItem.cpp(31): warning C4172: returning address of local variable or temporary
 C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(127,16): warning C4834: discarding return value of function with 'nodiscard' attribute
 C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(128,16): warning C4834: discarding return value of function with 'nodiscard' attribute
 C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(129,16): warning C4834: discarding return value of function with 'nodiscard' attribute
 C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(130,16): warning C4834: discarding return value of function with 'nodiscard' attribute
 C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(131,16): warning C4834: discarding return value of function with 'nodiscard' attribute
 C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(132,16): warning C4834: discarding return value of function with 'nodiscard' attribute
-Box2D.lib(b2BroadPhase.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2BroadPhase.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2CollideCircle.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2CollideCircle.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2CollideEdge.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2CollideEdge.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2CollidePolygon.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2CollidePolygon.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2Collision.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2Collision.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2Distance.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2Distance.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2DynamicTree.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2DynamicTree.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2TimeOfImpact.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2TimeOfImpact.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2ChainShape.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2ChainShape.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2EdgeShape.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2EdgeShape.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2PolygonShape.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2PolygonShape.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2BlockAllocator.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2BlockAllocator.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2Draw.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2Draw.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2Math.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2Math.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2Settings.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2Settings.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2StackAllocator.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2StackAllocator.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2Timer.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2Timer.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2Body.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2Body.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2ContactManager.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2ContactManager.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2Fixture.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2Fixture.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2Island.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2Island.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2World.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2World.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2WorldCallbacks.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2WorldCallbacks.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2ChainAndCircleContact.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2ChainAndCircleContact.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2ChainAndPolygonContact.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2ChainAndPolygonContact.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2CircleContact.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2CircleContact.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2Contact.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2Contact.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2ContactSolver.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2ContactSolver.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2EdgeAndCircleContact.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2EdgeAndCircleContact.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2EdgeAndPolygonContact.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2EdgeAndPolygonContact.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2PolygonAndCircleContact.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2PolygonAndCircleContact.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2PolygonContact.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2PolygonContact.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2DistanceJoint.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2DistanceJoint.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2FrictionJoint.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2FrictionJoint.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2GearJoint.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2GearJoint.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2Joint.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2Joint.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2MotorJoint.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2MotorJoint.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2MouseJoint.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2MouseJoint.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2PrismaticJoint.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2PrismaticJoint.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2PulleyJoint.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2PulleyJoint.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2RevoluteJoint.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2RevoluteJoint.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2RopeJoint.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2RopeJoint.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2WeldJoint.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2WeldJoint.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-Box2D.lib(b2WheelJoint.obj) : warning LNK4099: PDB 'Box2D.pdb' was not found with 'Box2D.lib(b2WheelJoint.obj)' or at 'C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\Box2D.pdb'; linking object as if no debug info
-  SFML Template.vcxproj -> C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\SFML Template.exe

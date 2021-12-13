@@ -189,6 +189,12 @@
     <ClInclude Include="..\..\..\Code\include\Engine\pch.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\Code\include\Engine\Audio\Music.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\include\Engine\Audio\AudioItem.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\Code\src\Engine\Core\Clock.cpp">
@@ -363,6 +369,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Code\src\Engine\pch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\src\Engine\Audio\Music.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\src\Engine\Audio\AudioItem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
