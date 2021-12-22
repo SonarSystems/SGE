@@ -46,6 +46,7 @@
 /**
 * \brief Custom files (including external libraries manually included and not linked)
 */
+#include "Core/Math.hpp"
 #include "Core/ENGINEDEFINITIONS.hpp"
 #include "Core/Debug.hpp"
 #include "Core/Time.hpp"

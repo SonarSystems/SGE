@@ -7,7 +7,16 @@
 C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Audio\Music.cpp(6,4): error C2065: '_filepath': undeclared identifier
 C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Audio\Music.cpp(11,5): error C2065: '_filepath': undeclared identifier
 C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Audio\Music.cpp(13,5): error C2065: '_filepath': undeclared identifier
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Audio\AudioItem.cpp(31): warning C4172: returning address of local variable or temporary
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Audio\Music.cpp(16,2): error C2059: syntax error: '}'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Audio\Music.cpp(18,19): warning C4273: 'sf::Music::~Music': inconsistent dll linkage
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\External Libraries\Windows\SFML\include\SFML\Audio\Music.hpp(99,6): message : see previous definition of '{dtor}' (compiling source file ..\..\..\Code\src\Engine\Audio\Music.cpp)
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Audio\Music.cpp(18,19): error C2888: 'sf::Music::~Music(void)': symbol cannot be defined within namespace 'Sonar'
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Audio\AudioItem.cpp(48,69): error C2678: binary '+': no operator found which takes a left-hand operand of type 'sf::Time' (or there is no acceptable conversion)
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Time.hpp(226,7): message : could be 'Sonar::Time Sonar::operator +(const Sonar::Time &,const Sonar::Time &)' (compiling source file ..\..\..\Code\src\Engine\Audio\AudioItem.cpp)
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\External Libraries\Windows\SFML\include\SFML\Graphics\Color.hpp(143,25): message : or       'sf::Color sf::operator +(const sf::Color &,const sf::Color &)' [found using argument-dependent lookup] (compiling source file ..\..\..\Code\src\Engine\Audio\AudioItem.cpp)
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\External Libraries\Windows\SFML\include\SFML\System\Time.hpp(244,22): message : or       'sf::Time sf::operator +(sf::Time,sf::Time)' [found using argument-dependent lookup] (compiling source file ..\..\..\Code\src\Engine\Audio\AudioItem.cpp)
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\External Libraries\Windows\SFML\include\SFML\System\String.hpp(612,24): message : or       'sf::String sf::operator +(const sf::String &,const sf::String &)' [found using argument-dependent lookup] (compiling source file ..\..\..\Code\src\Engine\Audio\AudioItem.cpp)
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Audio\AudioItem.cpp(48,69): message : while trying to match the argument list '(sf::Time, const unsigned int)'
 C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(127,16): warning C4834: discarding return value of function with 'nodiscard' attribute
 C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(128,16): warning C4834: discarding return value of function with 'nodiscard' attribute
 C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(129,16): warning C4834: discarding return value of function with 'nodiscard' attribute

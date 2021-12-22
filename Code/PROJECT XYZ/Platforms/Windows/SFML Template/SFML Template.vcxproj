@@ -25,6 +25,7 @@
     <ClInclude Include="..\..\..\Code\include\Engine\Core\Debug.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\Core\ENGINEDEFINITIONS.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\Core\Game.hpp" />
+    <ClInclude Include="..\..\..\Code\include\Engine\Core\Math.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\Core\State.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\Core\StateMachine.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\Core\Time.hpp" />

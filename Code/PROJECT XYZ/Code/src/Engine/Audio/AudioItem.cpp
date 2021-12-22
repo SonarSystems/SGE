@@ -8,18 +8,14 @@ namespace Sonar
 	const std::string &AudioItem::GetFilepath( ) const
 	{ return _filepath; }
 
-
 	void AudioItem::Play( )
 	{ _object->play( ); }
-
 
 	void AudioItem::Pause( )
 	{ _object->pause( ); }
 
-
 	void AudioItem::Stop( )
 	{ _object->stop( ); }
-
 
 	void AudioItem::Restart( )
 	{
@@ -27,70 +23,109 @@ namespace Sonar
 		_object->play( );
 	}
 
+	void AudioItem::SetVolume( const float &volume )
+	{ _object->setVolume( volume ); }
+
+	float AudioItem::GetVolume( ) const
+	{ return _object->getVolume( ); }
+
+	const unsigned int &AudioItem::GetChannelCount( ) const
+	{ return _object->getChannelCount( ); }
+
+	const unsigned int &AudioItem::GetSampleRate( ) const
+	{ return _object->getSampleRate( ); }
+
+	void AudioItem::SetPitch( const float &pitch )
+	{ _object->setPitch( pitch ); }
+
+	const float &AudioItem::GetPitch( ) const
+	{ return _object->getPitch( ); }
+
 	const Sonar::AUDIO_STATUS &AudioItem::GetStatus( ) const
 	{ return ( AUDIO_STATUS )_object->getStatus( ); }
 
-	void Drawable::SetPosition( const glm::vec2 &position )
-	{ _position = position; }
+	void AudioItem::Forward( const unsigned int &amount )
+	{ _object->setPlayingOffset( _object->getPlayingOffset( ) + amount ); }
 
-    void Drawable::SetPosition( const float &x, const float &y )
-    {
-        _position.x = x;
-        _position.y = y;
-    }
+	void AudioItem::Rewind( const unsigned int &amount )
+	{
 
-	void Drawable::SetPositionX( const float &x )
-    { _position.x = x; }
-
-    void Drawable::SetPositionY( const float &y )
-    { _position.y = y; }
-
-    float Drawable::GetPositionX( const OBJECT_POINTS &point ) const
-    { return GetPosition( point ).x; }
-
-    float Drawable::GetPositionY( const OBJECT_POINTS &point ) const
-	{ return GetPosition( point ).y; }
-
-    glm::vec2 Drawable::GetPosition( const OBJECT_POINTS &point ) const
-    {
-		switch ( point )
-		{
-			case OBJECT_POINTS::CENTER:
-				return glm::vec2( _position.x + ( _size.x * 0.5 ), _position.y + ( _size.y * 0.5 ) );
-				break;
-
-			case OBJECT_POINTS::TOP_RIGHT:
-				return glm::vec2( _position.x + _size.x, _position.y );
-				break;
-
-			case OBJECT_POINTS::BOTTOM_RIGHT:
-				return glm::vec2( _position.x + _size.x, _position.y + _size.y );
-				break;
-
-			case OBJECT_POINTS::BOTTOM_LEFT:
-				return glm::vec2( _position.x, _position.y + _size.y );
-				break;
-
-			case OBJECT_POINTS::TOP_LEFT:
-			default:
-				return _position;
-				break;
-		}
 	}
 
-	void Drawable::Move( const glm::vec2 &offset )
-	{ _position += offset; }
+	void AudioItem::SetAttenuation( const float &attenuation )
+	{
 
-	void Drawable::Move( const float &x, const float &y )
-    {
-        _position.x += x;
-        _position.y += y;
-    }
+	}
 
-	void Drawable::MoveX( const float &x )
-    { _position.x += x; }
+	const float &AudioItem::GetAttenuation( ) const
+	{
 
-    void Drawable::MoveY( const float &y )
-    { _position.y += y; }
+	}
+
+	void AudioItem::EnableLooping( )
+	{
+
+	}
+
+	void AudioItem::DisableLooping( )
+	{
+
+	}
+
+	void AudioItem::ToggleLooping( )
+	{
+
+	}
+
+	const bool &AudioItem::IsLooping( )
+	{
+
+	}
+
+	void AudioItem::SetPosition( const glm::vec3 &position )
+	{ _object->setPosition( Math::GLMvec3ToSFMLVector3F( position ) ); }
+
+    void AudioItem::SetPosition( const float &x, const float &y, const float &z )
+    { _object->setPosition( x, y, z ); }
+
+	void AudioItem::SetPositionX( const float &x )
+    { _object->setPosition( x, _object->getPosition( ).y, _object->getPosition( ).z ); }
+
+	void AudioItem::SetPositionY( const float &y )
+	{ _object->setPosition( _object->getPosition( ).x, y, _object->getPosition( ).z ); }
+	
+	void AudioItem::SetPositionZ( const float &z )
+	{ _object->setPosition( _object->getPosition( ).x, _object->getPosition( ).y, z ); }
+
+    const float &AudioItem::GetPositionX( ) const
+    { return _object->getPosition( ).x; }
+
+    const float &AudioItem::GetPositionY( ) const
+	{ return _object->getPosition( ).y; }
+
+	const float &AudioItem::GetPositionZ( ) const
+	{ return _object->getPosition( ).z; }
+
+    const glm::vec3 &AudioItem::GetPosition( ) const
+    { return Math::SFMLVector3FToGLMvec3( _object->getPosition( ) ); }
+
+	void AudioItem::Move( const glm::vec3 &offset )
+	{ _object->setPosition( _object->getPosition( ) + Math::GLMvec3ToSFMLVector3F( offset ) ); }
+
+	void AudioItem::Move( const float &x, const float &y, const float &z )
+    { _object->setPosition( _object->getPosition( ) + sf::Vector3f( x, y, z ) ); }
+
+	void AudioItem::MoveX( const float &x )
+    { SetPositionX( GetPositionX( ) + x ); }
+
+    void AudioItem::MoveY( const float &y )
+	{ SetPositionY( GetPositionY( ) + y ); }
+
+	void AudioItem::MoveZ( const float &z )
+	{ SetPositionZ( GetPositionZ( ) + z ); }
+
+	AudioItem::AudioItem( ) { }
+
+	AudioItem::~AudioItem( ) { }
 }
 

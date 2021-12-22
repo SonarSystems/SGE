@@ -11,6 +11,8 @@ namespace Sonar
 		{ _filepath = filepath; }
 		else
 		{ _filepath = ""; }
+
+		_music.
 	}
 
 	Music::~Music( ) { }

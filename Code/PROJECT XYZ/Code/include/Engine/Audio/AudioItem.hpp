@@ -19,16 +19,16 @@ namespace Sonar
     {
     public:
         /**
-        * \brief Set the music's file
+        * \brief Set audio file
         *
-        * \param filepath Filepath of the music file
+        * \param filepath Filepath of the file
         */
         void LoadFile( const std::string &filepath );
 
         /**
-        * \brief Get the filepath of the currently loaded music file
+        * \brief Get the filepath of the currently loaded audio file
         *
-        * \return Output returns the music filepath
+        * \return Output returns the audio filepath
         */
         [[nodiscard]] const std::string &GetFilepath( ) const;
 
@@ -53,36 +53,118 @@ namespace Sonar
         void Restart( );
 
         /**
+        * \brief Set volume (0 - 100)
+        *
+        * \param volume Audio item's volume
+        */
+        void SetVolume( const float &volume );
+
+        /**
+        * \brief Get volume
+        */
+        [[nodiscard]] float GetVolume( ) const;
+
+        /**
+        * \brief Get the audio files channel count
+        */
+        const unsigned int &GetChannelCount( ) const;
+
+        /**
+        * \brief Get the audio files sample rate
+        */
+        const unsigned int &GetSampleRate( ) const;
+
+        /**
+        * \brief Set pitch
+        * 
+         * \param pitch Pitch of the audio item
+        */
+        void SetPitch( const float &pitch );
+
+        /**
+        * \brief Get pitch
+        *
+        * \return Output returns the pitch
+        */
+        const float &GetPitch( ) const;
+
+        /**
         * \brief Get the status of the audio item
         */
         const AUDIO_STATUS &GetStatus( ) const;
 
-        // Audio class - like drawable
         /**
-        * rewind (set amount in seconds)
-        * forward (set amount in seconds)
-        * set volume (0 - 100)
-        * get volume
-        * channelcount
-        * sample rate
-        * pitch
-        * set position
-        */
-
-        /**
-        * \brief Set x and y position
+        * \brief Forward the audio item
         *
-        * \param position X and Y position
+        * \param amount amount to forward
         */
-        void SetPosition( const glm::vec2 &position );
+        void Forward( const unsigned int &amount );
 
         /**
-        * \brief Set x and y position
+        * \brief Rewind the audio item
+        *
+        * \param amount Amount to rewind
+        */
+        void Rewind( const unsigned int &amount );
+
+        /**
+        * \brief Set attenuation
+        *
+        * \param attenuation Attenuation for sound item
+        */
+        void SetAttenuation( const float &attenuation );
+
+        /**
+        * \brief Get the attenuation
+        *
+        * \return Output returns the attenuation
+        */
+        const float &GetAttenuation( ) const;
+
+        /**
+        * \brief Enable looping
+        */
+        void EnableLooping( );
+
+        /**
+        * \brief Disable looping
+        */
+        void DisableLooping( );
+
+        /**
+        * \brief Toggle looping
+        */
+        void ToggleLooping( );
+
+        /**
+        * \brief Is the audio item looping
+        *
+        * \return Output returns the looping status
+        */
+        const bool &IsLooping( );
+
+        /**
+        * forward - use set playing offset
+        * backward
+        * attenuation
+        * loop
+        */
+
+        /**
+        * \brief Set x, y and z position
+        *
+        * \param position X, Y and Z position
+        */
+        void SetPosition( const glm::vec3 &position );
+
+        /**
+		* \brief Set x, y and z position
         *
         * \param x X position
-        * \param y Y position
+		* \param y Y position
+		* \param z Z position
         */
-        void SetPosition( const float &x, const float &y );
+        void SetPosition( const float &x, const float &y, const float &z );
 
         /**
         * \brief Set x position
@@ -99,46 +181,55 @@ namespace Sonar
         void SetPositionY( const float &y );
 
         /**
+        * \brief Set z position
+        *
+        * \param z Z position
+        */
+        void SetPositionZ( const float &z );
+
+        /**
 		* \brief Get the x position
 		*
-		* \param point Point on the object to get the position for (default is top left)
-        *
         * \return Output returns the x position
         */
-        [[nodiscard]] float GetPositionX( const OBJECT_POINTS &point = OBJECT_POINTS::TOP_LEFT ) const;
+        [[nodiscard]] const float &GetPositionX( ) const;
 
         /**
 		* \brief Get the y position
-		*
-		* \param point Point on the object to get the position for (default is top left)
         *
         * \return Output returns the y position
         */
-        [[nodiscard]] float GetPositionY( const OBJECT_POINTS &point = OBJECT_POINTS::TOP_LEFT ) const;
+        [[nodiscard]] const float &GetPositionY( ) const;
+
+        /**
+        * \brief Get the z position
+        *
+        * \return Output returns the z position
+        */
+        [[nodiscard]] const float &GetPositionZ( ) const;
 
         /**
         * \brief Get the position vector
-        * 
-        * \param point Point on the object to get the position for (default is top left)
         *
         * \return Output returns the position vector
         */
-        [[nodiscard]] glm::vec2 GetPosition( const OBJECT_POINTS &point = OBJECT_POINTS::TOP_LEFT ) const;
+        [[nodiscard]] const glm::vec3 &GetPosition( ) const;
 
         /**
-        * \brief Move the object relative to it's current position in the x and y axis
+        * \brief Move the object relative to it's current position in the x, y and z axis
         *
-        * \param offset Offset in x and y axis
+        * \param offset Offset in x, y and z axis
         */
-        void Move( const glm::vec2 &offset );
+        void Move( const glm::vec3 &offset );
 
         /**
-        * \brief Move the object relative to it's current position in the x and y axis
+		* \brief Move the object relative to it's current position in the x, y and z axis
         *
         * \param x Offset in x axis
-        * \param y Offset in y axis
+		* \param y Offset in y axis
+		* \param z Offset in z axis
         */
-        void Move( const float &x, const float &y );
+        void Move( const float &x, const float &y, const float &z );
 
         /**
         * \brief Move the object relative to it's current position in the x axis
@@ -153,6 +244,13 @@ namespace Sonar
         * \param y Offset in y axis
         */
         void MoveY( const float &y );
+
+        /**
+        * \brief Move the object relative to it's current position in the z axis
+        *
+        * \param z Offset in z axis
+        */
+        void MoveZ( const float &z );
 
     protected:
         /**
