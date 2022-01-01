@@ -2,21 +2,17 @@
 
 namespace Sonar
 {
-	Music::Music( )
-	{ _filepath = ""; }
-
-	Music::Music( const std::string &filepath )
+	Music::Music( const std::string &filepath ) : AudioItem( )
 	{
-		if ( _music.openFromFile( filepath ) )
-		{ _filepath = filepath; }
-		else
-		{ _filepath = ""; }
+		LoadFile( filepath );
+		_music.openFromFile( filepath );
 
-		_music.
+		_object = &_music;
 	}
 
 	Music::~Music( ) { }
 
-	
+	const Time &Music::GetLength( ) const
+	{ return Time( _music.getDuration( ).asMicroseconds( ) ); }
 }
 

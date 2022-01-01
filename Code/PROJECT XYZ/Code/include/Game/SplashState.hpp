@@ -51,6 +51,8 @@ namespace Sonar
 
 		View *view;
 
+		std::shared_ptr<Music> music;
+
 		
 		char windowTitle[255] = "ImGui + SFML = <3";
 

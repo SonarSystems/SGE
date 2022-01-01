@@ -7,6 +7,10 @@ namespace Sonar
 	{
 		ImGui::SFML::Init( _data->window.GetSFMLWindowObject( ) );
 
+		music = std::make_shared<Music>( "Resources/Music.ogg" );
+
+		music->Play( );
+
         player = new Player( _data );
         physicsWorld = new PhysicsWorld( _data );
 
@@ -134,7 +138,7 @@ namespace Sonar
 
 	SplashState::~SplashState( )
 	{
-		
+
 	}
 
 	void SplashState::Init( )

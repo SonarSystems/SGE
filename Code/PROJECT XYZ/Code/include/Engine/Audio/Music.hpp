@@ -2,16 +2,9 @@
 
 namespace Sonar
 {
-    class Music
+    class Music : public AudioItem
     {
     public:
-        /**
-         * \brief Class constructor
-         *
-         * \param data Game data object
-        */
-        Music( );
-        
         /**
          * \brief Class constructor with music filepath
          *
@@ -24,7 +17,12 @@ namespace Sonar
         */
         ~Music( );
 
-        
+        /**
+        * \brief Get the total length of the music item 
+        *
+        * \return Output returns the total length
+        */
+        const Time &GetLength( ) const;
 
     private:
         /**

@@ -62,17 +62,17 @@ namespace Sonar
         /**
         * \brief Get volume
         */
-        [[nodiscard]] float GetVolume( ) const;
+        [[nodiscard]] const float GetVolume( ) const;
 
         /**
         * \brief Get the audio files channel count
         */
-        const unsigned int &GetChannelCount( ) const;
+        [[nodiscard]] const unsigned int &GetChannelCount( ) const;
 
         /**
         * \brief Get the audio files sample rate
         */
-        const unsigned int &GetSampleRate( ) const;
+        [[nodiscard]] const unsigned int &GetSampleRate( ) const;
 
         /**
         * \brief Set pitch
@@ -86,26 +86,37 @@ namespace Sonar
         *
         * \return Output returns the pitch
         */
-        const float &GetPitch( ) const;
+        [[nodiscard]] const float &GetPitch( ) const;
 
         /**
         * \brief Get the status of the audio item
         */
-        const AUDIO_STATUS &GetStatus( ) const;
+        [[nodiscard]] const AUDIO_STATUS &GetStatus( ) const;
+
+        /**
+        * \brief Get the current time that has been played
+		*
+		* \param denomination Get playing position in microseconds, milliseconds or seconds
+        * 
+        * \return Output returns the playing position (default in seconds)
+        */
+        [[nodiscard]] const float &GetPlayingPosition( const Time::DENOMINATION &denomination = Time::DENOMINATION::SECONDS ) const;
 
         /**
         * \brief Forward the audio item
         *
-        * \param amount amount to forward
+		* \param displacement Amount to forward (defaultin seconds)
+		* \param denomination Is the displacement in microseconds, milliseconds or seconds
         */
-        void Forward( const unsigned int &amount );
+        void Forward( const unsigned int &displacement, const Time::DENOMINATION &denomination = Time::DENOMINATION::SECONDS );
 
         /**
         * \brief Rewind the audio item
         *
-        * \param amount Amount to rewind
+		* \param displacement Amount to rewind (default in seconds)
+		* \param denomination Is the displacement in microseconds, milliseconds or seconds
         */
-        void Rewind( const unsigned int &amount );
+        void Rewind( const unsigned int &displacement, const Time::DENOMINATION &denomination = Time::DENOMINATION::SECONDS );
 
         /**
         * \brief Set attenuation
@@ -119,7 +130,7 @@ namespace Sonar
         *
         * \return Output returns the attenuation
         */
-        const float &GetAttenuation( ) const;
+        [[nodiscard]] const float &GetAttenuation( ) const;
 
         /**
         * \brief Enable looping
@@ -141,14 +152,7 @@ namespace Sonar
         *
         * \return Output returns the looping status
         */
-        const bool &IsLooping( );
-
-        /**
-        * forward - use set playing offset
-        * backward
-        * attenuation
-        * loop
-        */
+        [[nodiscard]] const bool &IsLooping( );
 
         /**
         * \brief Set x, y and z position
@@ -263,12 +267,12 @@ namespace Sonar
         */
         ~AudioItem( );
 
-    private:
         /**
         * \brief Object to be listened to
         */
         sf::SoundStream *_object;
 
+    private:
         /**
         * \brief Filepath of the music file
         */

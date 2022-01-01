@@ -26,7 +26,7 @@ namespace Sonar
 	void AudioItem::SetVolume( const float &volume )
 	{ _object->setVolume( volume ); }
 
-	float AudioItem::GetVolume( ) const
+	const float AudioItem::GetVolume( ) const
 	{ return _object->getVolume( ); }
 
 	const unsigned int &AudioItem::GetChannelCount( ) const
@@ -44,43 +44,98 @@ namespace Sonar
 	const Sonar::AUDIO_STATUS &AudioItem::GetStatus( ) const
 	{ return ( AUDIO_STATUS )_object->getStatus( ); }
 
-	void AudioItem::Forward( const unsigned int &amount )
-	{ _object->setPlayingOffset( _object->getPlayingOffset( ) + amount ); }
-
-	void AudioItem::Rewind( const unsigned int &amount )
+	const float &AudioItem::GetPlayingPosition( const Time::DENOMINATION &denomination ) const
 	{
+		switch ( denomination )
+		{
+			case Time::DENOMINATION::MICROSECONDS:
+				return _object->getPlayingOffset( ).asMicroseconds( );
 
+				break;
+
+			case Time::DENOMINATION::MILLISECONDS:
+				return _object->getPlayingOffset( ).asMilliseconds( );
+
+				break;
+
+			case Time::DENOMINATION::SECONDS:
+			default:
+				return _object->getPlayingOffset( ).asSeconds( );
+
+				break;
+		}
+		
+	}
+
+	void AudioItem::Forward( const unsigned int &displacement, const Time::DENOMINATION &denomination )
+	{
+		sf::Time time;
+
+		switch ( denomination )
+		{
+			case Time::DENOMINATION::MICROSECONDS:
+				time = sf::microseconds( displacement );
+
+				break;
+
+			case Time::DENOMINATION::MILLISECONDS:
+				time = sf::milliseconds( displacement );
+
+				break;
+
+			case Time::DENOMINATION::SECONDS:
+			default:
+				time = sf::seconds( displacement );
+
+				break;
+		}
+
+		_object->setPlayingOffset( _object->getPlayingOffset( ) + time );
+	}
+
+	void AudioItem::Rewind( const unsigned int &displacement, const Time::DENOMINATION &denomination )
+	{
+		sf::Time time;
+
+		switch ( denomination )
+		{
+			case Time::DENOMINATION::MICROSECONDS:
+				time = sf::microseconds( displacement );
+
+				break;
+
+			case Time::DENOMINATION::MILLISECONDS:
+				time = sf::milliseconds( displacement );
+
+				break;
+
+			case Time::DENOMINATION::SECONDS:
+			default:
+				time = sf::seconds( displacement );
+
+				break;
+		}
+
+		_object->setPlayingOffset( _object->getPlayingOffset( ) - time );
 	}
 
 	void AudioItem::SetAttenuation( const float &attenuation )
-	{
-
-	}
+	{ _object->setAttenuation( attenuation ); }
 
 	const float &AudioItem::GetAttenuation( ) const
-	{
-
-	}
+	{ return _object->getAttenuation( ); }
 
 	void AudioItem::EnableLooping( )
-	{
-
-	}
+	{ _object->setLoop( true ); }
 
 	void AudioItem::DisableLooping( )
-	{
-
-	}
+	{ _object->setLoop( false ); }
 
 	void AudioItem::ToggleLooping( )
-	{
-
-	}
+	{ _object->setLoop( !_object->getLoop( ) ); }
 
 	const bool &AudioItem::IsLooping( )
-	{
-
-	}
+	{ return _object->getLoop( ); }
 
 	void AudioItem::SetPosition( const glm::vec3 &position )
 	{ _object->setPosition( Math::GLMvec3ToSFMLVector3F( position ) ); }
@@ -126,6 +181,10 @@ namespace Sonar
 
 	AudioItem::AudioItem( ) { }
 
-	AudioItem::~AudioItem( ) { }
+	AudioItem::~AudioItem( )
+	{
+		delete _object;
+		_object = NULL;
+	}
 }
 

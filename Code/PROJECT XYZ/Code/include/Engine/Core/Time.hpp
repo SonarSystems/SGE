@@ -6,6 +6,16 @@ namespace Sonar
 	{
 	public:
 		/**
+		* \brief Time denomination
+		*/
+		enum DENOMINATION
+		{
+			MICROSECONDS = 0,
+			MILLISECONDS,
+			SECONDS
+		};
+
+		/**
 		 * \brief Class constructor
 		 */
 		Time( );
