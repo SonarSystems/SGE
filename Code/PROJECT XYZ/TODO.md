@@ -3,7 +3,6 @@ GAME
 
 ENGINE
 -----------------------------------------------------------------
-* Make constructor and destructors that have no code into default (remove the implemention in the cpp and make the declaration in the header "= default")
 * Music and sound items
 * Port AssetManager to Sonar Classes
 * Sorting algorithms, bubble sort, quick sort, insert sort

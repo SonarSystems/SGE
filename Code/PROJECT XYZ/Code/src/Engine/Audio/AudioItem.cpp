@@ -183,8 +183,8 @@ namespace Sonar
 
 	AudioItem::~AudioItem( )
 	{
-		delete _object;
 		_object = NULL;
+		delete _object;
 	}
 }
 

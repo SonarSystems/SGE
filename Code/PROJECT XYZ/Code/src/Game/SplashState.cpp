@@ -138,12 +138,17 @@ namespace Sonar
 
 	SplashState::~SplashState( )
 	{
-
+		spdlog::info( "HHH" );
 	}
 
 	void SplashState::Init( )
 	{
         
+	}
+
+	void SplashState::Destructor( )
+	{
+		music->~Music( );
 	}
 
 	void SplashState::PollInput( const float &dt, Event &event )

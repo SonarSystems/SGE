@@ -44,7 +44,10 @@ namespace Sonar
                 while ( _data->window.PollEvent( event ) )
                 {
                     if ( Sonar::Event::EventType::Closed == event.type )
-                    { _data->window.CloseWindow( ); }
+                    {
+						_data->machine.GetActiveState( )->Destructor( );
+						_data->window.CloseWindow( );
+					}
                                         
                     _data->machine.GetActiveState( )->PollInput( dt, event );
                 }

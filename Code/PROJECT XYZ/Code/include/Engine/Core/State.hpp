@@ -18,6 +18,12 @@ namespace Sonar
 		virtual void Init( ) = 0;
 
         /**
+        * \brief For any cleanup that is absolutely necessary right now
+
+        */
+        virtual void Destructor( ) = 0;
+
+        /**
          * \brief Poll the input from the Joystick, Keyboard and Mouse (overriding is essential)
          *
          * \param dt Delta time (difference between frames)

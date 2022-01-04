@@ -98,3 +98,4 @@
 #include "Core/Game.hpp"
 #include "Audio/AudioItem.hpp"
 #include "Audio/Music.hpp"
+#include "Audio/Sound.hpp"

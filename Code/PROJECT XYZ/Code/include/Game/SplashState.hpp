@@ -15,6 +15,8 @@ namespace Sonar
 
 		void Init( );
 
+		void Destructor( );
+
 		// No pause() or resume() methods here as this
 		// is a very simple example of a game state.
 

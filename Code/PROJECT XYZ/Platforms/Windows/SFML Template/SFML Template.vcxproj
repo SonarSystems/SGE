@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClInclude Include="..\..\..\Code\include\Engine\Audio\AudioItem.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\Audio\Music.hpp" />
+    <ClInclude Include="..\..\..\Code\include\Engine\Audio\Sound.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\Core\Clock.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\Core\Debug.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\Core\ENGINEDEFINITIONS.hpp" />
@@ -84,6 +85,7 @@
   <ItemGroup>
     <ClCompile Include="..\..\..\Code\src\Engine\Audio\AudioItem.cpp" />
     <ClCompile Include="..\..\..\Code\src\Engine\Audio\Music.cpp" />
+    <ClCompile Include="..\..\..\Code\src\Engine\Audio\Sound.cpp" />
     <ClCompile Include="..\..\..\Code\src\Engine\Core\Clock.cpp" />
     <ClCompile Include="..\..\..\Code\src\Engine\Core\Debug.cpp" />
     <ClCompile Include="..\..\..\Code\src\Engine\Core\Game.cpp" />
