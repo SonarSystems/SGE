@@ -2,12 +2,12 @@
 
 namespace Sonar
 {
-	Music::Music( const std::string &filepath ) : AudioItem( )
+	Music::Music( const std::string &filepath ) : AudioItem( AUDIO_TYPE::MUSIC )
 	{
 		LoadFile( filepath );
 		_music.openFromFile( filepath );
 
-		_object = &_music;
+		_musicObject = &_music;
 	}
 
 	Music::~Music( ) { }

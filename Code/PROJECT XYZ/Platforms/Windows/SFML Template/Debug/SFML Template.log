@@ -5,29 +5,27 @@
   Game.cpp
   StateMachine.cpp
   SplashState.cpp
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Audio\Sound.cpp(11,20): error C2440: '=': cannot convert from 'sf::Sound *' to 'sf::SoundStream *'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Audio\Sound.cpp(11,13): message : Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
 C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Audio\Sound.cpp(17,24): error C2039: 'getDuration': is not a member of 'sf::Sound'
 C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\External Libraries\Windows\SFML\include\SFML\Audio\SoundBuffer.hpp(41): message : see declaration of 'sf::Sound'
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Audio\AudioItem.cpp(52,55): warning C4244: 'return': conversion from 'sf::Int64' to 'const float', possible loss of data
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Audio\AudioItem.cpp(57,55): warning C4244: 'return': conversion from 'sf::Int32' to 'const float', possible loss of data
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Audio\AudioItem.cpp(88,25): warning C4244: 'argument': conversion from 'const unsigned int' to 'float', possible loss of data
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Audio\AudioItem.cpp(114,25): warning C4244: 'argument': conversion from 'const unsigned int' to 'float', possible loss of data
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Audio\AudioItem.cpp(131,60): warning C4244: 'return': conversion from 'sf::Int64' to 'const float', possible loss of data
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Audio\AudioItem.cpp(136,60): warning C4244: 'return': conversion from 'sf::Int32' to 'const float', possible loss of data
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Audio\AudioItem.cpp(172,25): warning C4244: 'argument': conversion from 'const unsigned int' to 'float', possible loss of data
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Audio\AudioItem.cpp(203,25): warning C4244: 'argument': conversion from 'const unsigned int' to 'float', possible loss of data
 C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Audio\Music.cpp(16): warning C4172: returning address of local variable or temporary
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Audio\AudioItem.cpp(33): warning C4172: returning address of local variable or temporary
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Audio\AudioItem.cpp(36): warning C4172: returning address of local variable or temporary
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Audio\AudioItem.cpp(45): warning C4172: returning address of local variable or temporary
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Audio\AudioItem.cpp(42): warning C4172: returning address of local variable or temporary
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Audio\AudioItem.cpp(52): warning C4172: returning address of local variable or temporary
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Audio\AudioItem.cpp(57): warning C4172: returning address of local variable or temporary
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Audio\AudioItem.cpp(63): warning C4172: returning address of local variable or temporary
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Audio\AudioItem.cpp(126): warning C4172: returning address of local variable or temporary
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Audio\AudioItem.cpp(138): warning C4172: returning address of local variable or temporary
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Audio\AudioItem.cpp(156): warning C4172: returning address of local variable or temporary
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Audio\AudioItem.cpp(159): warning C4172: returning address of local variable or temporary
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Audio\AudioItem.cpp(162): warning C4172: returning address of local variable or temporary
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Math.hpp(19): warning C4172: returning address of local variable or temporary
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Audio\AudioItem.cpp(108): warning C4172: returning address of local variable or temporary
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Audio\AudioItem.cpp(118): warning C4172: returning address of local variable or temporary
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Audio\AudioItem.cpp(88): warning C4172: returning address of local variable or temporary
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Audio\AudioItem.cpp(131): warning C4172: returning address of local variable or temporary
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Audio\AudioItem.cpp(228): warning C4172: returning address of local variable or temporary
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Audio\AudioItem.cpp(136): warning C4172: returning address of local variable or temporary
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Audio\AudioItem.cpp(142): warning C4172: returning address of local variable or temporary
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Audio\AudioItem.cpp(268): warning C4172: returning address of local variable or temporary
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Audio\AudioItem.cpp(328): warning C4172: returning address of local variable or temporary
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Audio\AudioItem.cpp(338): warning C4172: returning address of local variable or temporary
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Audio\AudioItem.cpp(348): warning C4172: returning address of local variable or temporary
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Audio\AudioItem.cpp(78): warning C4172: returning address of local variable or temporary
 C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Math.hpp(16): warning C4172: returning address of local variable or temporary
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Math.hpp(19): warning C4172: returning address of local variable or temporary
 C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(131,16): warning C4834: discarding return value of function with 'nodiscard' attribute
 C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(132,16): warning C4834: discarding return value of function with 'nodiscard' attribute
 C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(133,16): warning C4834: discarding return value of function with 'nodiscard' attribute

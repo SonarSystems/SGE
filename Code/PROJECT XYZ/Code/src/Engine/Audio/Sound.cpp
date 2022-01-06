@@ -2,13 +2,13 @@
 
 namespace Sonar
 {
-	Sound::Sound( const std::string &filepath ) : AudioItem( )
+	Sound::Sound( const std::string &filepath ) : AudioItem( AUDIO_TYPE::MUSIC )
 	{
 		LoadFile( filepath );
 		_buffer.loadFromFile( filepath );
 		_sound.setBuffer( _buffer );
 
-		_object = &_sound;
+		_soundObject = &_sound;
 	}
 
 	Sound::~Sound( ) { }

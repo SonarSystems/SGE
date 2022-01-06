@@ -9,58 +9,133 @@ namespace Sonar
 	{ return _filepath; }
 
 	void AudioItem::Play( )
-	{ _object->play( ); }
+	{
+		if ( _isMusic )
+		{ _musicObject->play( ); }
+		else
+		{ _soundObject->play( ); }
+	}
 
 	void AudioItem::Pause( )
-	{ _object->pause( ); }
+	{
+		if ( _isMusic )
+		{ _musicObject->pause( ); }
+		else
+		{ _soundObject->pause( ); }		
+	}
 
 	void AudioItem::Stop( )
-	{ _object->stop( ); }
+	{
+		if ( _isMusic )
+		{ _musicObject->stop( ); }
+		else
+		{ _musicObject->stop( ); }
+	}
 
 	void AudioItem::Restart( )
 	{
-		_object->stop( );
-		_object->play( );
+		if ( _isMusic )
+		{
+			_musicObject->stop( );
+			_musicObject->play( );
+		}
+		else
+		{
+			_soundObject->stop( );
+			_soundObject->play( );
+		}
 	}
 
 	void AudioItem::SetVolume( const float &volume )
-	{ _object->setVolume( volume ); }
+	{
+		if ( _isMusic )
+		{ _musicObject->setVolume( volume ); }
+		else
+		{ _soundObject->setVolume( volume ); }
+	}
 
 	const float AudioItem::GetVolume( ) const
-	{ return _object->getVolume( ); }
+	{
+		if ( _isMusic )
+		{ }
+		else
+		{ }
+
+		return _musicObject->getVolume( );
+	}
 
 	const unsigned int &AudioItem::GetChannelCount( ) const
-	{ return _object->getChannelCount( ); }
+	{
+		if ( _isMusic )
+		{ }
+		else
+		{ }
+
+		return _musicObject->getChannelCount( );
+	}
 
 	const unsigned int &AudioItem::GetSampleRate( ) const
-	{ return _object->getSampleRate( ); }
+	{
+		if ( _isMusic )
+		{ }
+		else
+		{ }
+
+		return _musicObject->getSampleRate( );
+	}
 
 	void AudioItem::SetPitch( const float &pitch )
-	{ _object->setPitch( pitch ); }
+	{
+		if ( _isMusic )
+		{ }
+		else
+		{ }
+
+		_musicObject->setPitch( pitch );
+	}
 
 	const float &AudioItem::GetPitch( ) const
-	{ return _object->getPitch( ); }
+	{
+		if ( _isMusic )
+		{ }
+		else
+		{ }
+
+		return _musicObject->getPitch( );
+	}
 
 	const Sonar::AUDIO_STATUS &AudioItem::GetStatus( ) const
-	{ return ( AUDIO_STATUS )_object->getStatus( ); }
+	{
+		if ( _isMusic )
+		{ }
+		else
+		{ }
+
+		return ( AUDIO_STATUS )_musicObject->getStatus( );
+	}
 
 	const float &AudioItem::GetPlayingPosition( const Time::DENOMINATION &denomination ) const
 	{
+		if ( _isMusic )
+		{ }
+		else
+		{ }
+
 		switch ( denomination )
 		{
 			case Time::DENOMINATION::MICROSECONDS:
-				return _object->getPlayingOffset( ).asMicroseconds( );
+				return _musicObject->getPlayingOffset( ).asMicroseconds( );
 
 				break;
 
 			case Time::DENOMINATION::MILLISECONDS:
-				return _object->getPlayingOffset( ).asMilliseconds( );
+				return _musicObject->getPlayingOffset( ).asMilliseconds( );
 
 				break;
 
 			case Time::DENOMINATION::SECONDS:
 			default:
-				return _object->getPlayingOffset( ).asSeconds( );
+				return _musicObject->getPlayingOffset( ).asSeconds( );
 
 				break;
 		}
@@ -69,6 +144,11 @@ namespace Sonar
 
 	void AudioItem::Forward( const unsigned int &displacement, const Time::DENOMINATION &denomination )
 	{
+		if ( _isMusic )
+		{ }
+		else
+		{ }
+
 		sf::Time time;
 
 		switch ( denomination )
@@ -90,11 +170,16 @@ namespace Sonar
 				break;
 		}
 
-		_object->setPlayingOffset( _object->getPlayingOffset( ) + time );
+		_musicObject->setPlayingOffset( _musicObject->getPlayingOffset( ) + time );
 	}
 
 	void AudioItem::Rewind( const unsigned int &displacement, const Time::DENOMINATION &denomination )
 	{
+		if ( _isMusic )
+		{ }
+		else
+		{ }
+
 		sf::Time time;
 
 		switch ( denomination )
@@ -116,75 +201,231 @@ namespace Sonar
 				break;
 		}
 
-		_object->setPlayingOffset( _object->getPlayingOffset( ) - time );
+		_musicObject->setPlayingOffset( _musicObject->getPlayingOffset( ) - time );
 	}
 
 	void AudioItem::SetAttenuation( const float &attenuation )
-	{ _object->setAttenuation( attenuation ); }
+	{
+		if ( _isMusic )
+		{ }
+		else
+		{ }
+
+		_musicObject->setAttenuation( attenuation );
+	}
 
 	const float &AudioItem::GetAttenuation( ) const
-	{ return _object->getAttenuation( ); }
+	{
+		if ( _isMusic )
+		{ }
+		else
+		{ }
+
+		return _musicObject->getAttenuation( );
+	}
 
 	void AudioItem::EnableLooping( )
-	{ _object->setLoop( true ); }
+	{
+		if ( _isMusic )
+		{ }
+		else
+		{ }
+
+		_musicObject->setLoop( true );
+	}
 
 	void AudioItem::DisableLooping( )
-	{ _object->setLoop( false ); }
+	{
+		if ( _isMusic )
+		{ }
+		else
+		{ }
+
+		_musicObject->setLoop( false );
+	}
 
 	void AudioItem::ToggleLooping( )
-	{ _object->setLoop( !_object->getLoop( ) ); }
+	{
+		if ( _isMusic )
+		{ }
+		else
+		{ }
+
+		_musicObject->setLoop( !_musicObject->getLoop( ) );
+	}
 
 	const bool &AudioItem::IsLooping( )
-	{ return _object->getLoop( ); }
+	{
+		if ( _isMusic )
+		{ }
+		else
+		{ }
+
+		return _musicObject->getLoop( );
+	}
 
 	void AudioItem::SetPosition( const glm::vec3 &position )
-	{ _object->setPosition( Math::GLMvec3ToSFMLVector3F( position ) ); }
+	{
+		if ( _isMusic )
+		{ }
+		else
+		{ }
+
+		_musicObject->setPosition( Math::GLMvec3ToSFMLVector3F( position ) );
+	}
 
     void AudioItem::SetPosition( const float &x, const float &y, const float &z )
-    { _object->setPosition( x, y, z ); }
+	{
+		if ( _isMusic )
+		{ }
+		else
+		{ }
+
+		_musicObject->setPosition( x, y, z );
+	}
 
 	void AudioItem::SetPositionX( const float &x )
-    { _object->setPosition( x, _object->getPosition( ).y, _object->getPosition( ).z ); }
+	{
+		if ( _isMusic )
+		{ }
+		else
+		{ }
+
+		_musicObject->setPosition( x, _musicObject->getPosition( ).y, _musicObject->getPosition( ).z );
+	}
 
 	void AudioItem::SetPositionY( const float &y )
-	{ _object->setPosition( _object->getPosition( ).x, y, _object->getPosition( ).z ); }
+	{
+		if ( _isMusic )
+		{ }
+		else
+		{ }
+
+		_musicObject->setPosition( _musicObject->getPosition( ).x, y, _musicObject->getPosition( ).z );
+	}
 	
 	void AudioItem::SetPositionZ( const float &z )
-	{ _object->setPosition( _object->getPosition( ).x, _object->getPosition( ).y, z ); }
+	{
+		if ( _isMusic )
+		{ }
+		else
+		{ }
+
+		_musicObject->setPosition( _musicObject->getPosition( ).x, _musicObject->getPosition( ).y, z );
+	}
 
     const float &AudioItem::GetPositionX( ) const
-    { return _object->getPosition( ).x; }
+	{
+		if ( _isMusic )
+		{ }
+		else
+		{ }
+
+		return _musicObject->getPosition( ).x;
+	}
 
     const float &AudioItem::GetPositionY( ) const
-	{ return _object->getPosition( ).y; }
+	{
+		if ( _isMusic )
+		{ }
+		else
+		{ }
+
+		return _musicObject->getPosition( ).y;
+	}
 
 	const float &AudioItem::GetPositionZ( ) const
-	{ return _object->getPosition( ).z; }
+	{
+		if ( _isMusic )
+		{ }
+		else
+		{ }
+
+		return _musicObject->getPosition( ).z;
+	}
 
     const glm::vec3 &AudioItem::GetPosition( ) const
-    { return Math::SFMLVector3FToGLMvec3( _object->getPosition( ) ); }
+	{
+		if ( _isMusic )
+		{ }
+		else
+		{ }
+
+		return Math::SFMLVector3FToGLMvec3( _musicObject->getPosition( ) );
+	}
 
 	void AudioItem::Move( const glm::vec3 &offset )
-	{ _object->setPosition( _object->getPosition( ) + Math::GLMvec3ToSFMLVector3F( offset ) ); }
+	{
+		if ( _isMusic )
+		{ }
+		else
+		{ }
+
+		_musicObject->setPosition( _musicObject->getPosition( ) + Math::GLMvec3ToSFMLVector3F( offset ) );
+	}
 
 	void AudioItem::Move( const float &x, const float &y, const float &z )
-    { _object->setPosition( _object->getPosition( ) + sf::Vector3f( x, y, z ) ); }
+	{
+		if ( _isMusic )
+		{ }
+		else
+		{ }
+
+		_musicObject->setPosition( _musicObject->getPosition( ) + sf::Vector3f( x, y, z ) );
+	}
 
 	void AudioItem::MoveX( const float &x )
-    { SetPositionX( GetPositionX( ) + x ); }
+	{
+		if ( _isMusic )
+		{ }
+		else
+		{ }
+
+		SetPositionX( GetPositionX( ) + x );
+	}
 
     void AudioItem::MoveY( const float &y )
-	{ SetPositionY( GetPositionY( ) + y ); }
+	{
+		if ( _isMusic )
+		{ }
+		else
+		{ }
+
+		SetPositionY( GetPositionY( ) + y );
+	}
 
 	void AudioItem::MoveZ( const float &z )
-	{ SetPositionZ( GetPositionZ( ) + z ); }
+	{
+		if ( _isMusic )
+		{ }
+		else
+		{ }
 
-	AudioItem::AudioItem( ) { }
+		SetPositionZ( GetPositionZ( ) + z );
+	}
+
+	AudioItem::AudioItem( const AUDIO_TYPE &audioType )
+	{
+		if ( _isMusic )
+		{ }
+		else
+		{ }
+
+		if ( AUDIO_TYPE::MUSIC == audioType )
+		{ _isMusic = true; }
+		else
+		{ _isMusic = false; }
+	}
 
 	AudioItem::~AudioItem( )
 	{
-		_object = NULL;
-		delete _object;
+		if ( _isMusic )
+		{ }
+		else
+		{ }
+
+		_musicObject = NULL;
+		delete _musicObject;
 	}
 }
 

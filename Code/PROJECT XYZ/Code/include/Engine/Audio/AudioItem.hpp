@@ -8,11 +8,20 @@
 
 namespace Sonar
 {
+    /**
+    * \brief Status of the audio
+    */
     enum AUDIO_STATUS
     {
         STOPPED = 0,
         PAUSED,
         PLAYING
+    };
+
+    enum AUDIO_TYPE
+    {
+        MUSIC = 0,
+        SOUND
     };
 
     class AudioItem
@@ -260,7 +269,7 @@ namespace Sonar
         /**
         * \brief Class constructor
         */
-        AudioItem( );
+        AudioItem( const AUDIO_TYPE &audioType );
 
         /**
         * \brief Class destructor
@@ -270,13 +279,19 @@ namespace Sonar
         /**
         * \brief Object to be listened to
         */
-        sf::SoundStream *_object;
+        sf::SoundStream *_musicObject;
+        sf::SoundSource *_soundObject;
 
     private:
         /**
         * \brief Filepath of the music file
         */
         std::string _filepath;
+
+        /**
+        * \brief Is the audio item a music or sound item (true for music, false for sound)
+        */
+        bool _isMusic;
 
     };
 }
