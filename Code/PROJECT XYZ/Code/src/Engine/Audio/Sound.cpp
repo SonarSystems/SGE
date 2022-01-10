@@ -2,7 +2,7 @@
 
 namespace Sonar
 {
-	Sound::Sound( const std::string &filepath ) : AudioItem( AUDIO_TYPE::MUSIC )
+	Sound::Sound( const std::string &filepath ) : AudioItem( AUDIO_TYPE::SOUND )
 	{
 		LoadFile( filepath );
 		_buffer.loadFromFile( filepath );
@@ -12,8 +12,5 @@ namespace Sonar
 	}
 
 	Sound::~Sound( ) { }
-
-	const Time &Sound::GetLength( ) const
-	{ return Time( _sound.getDuration( ).asMicroseconds( ) ); }
 }
 

@@ -17,13 +17,6 @@ namespace Sonar
         */
         ~Sound( );
 
-        /**
-        * \brief Get the total length of the sound item 
-        *
-        * \return Output returns the total length
-        */
-        const Time &GetLength( ) const;
-
     private:
         /**
          * \brief Backend SFML music object
