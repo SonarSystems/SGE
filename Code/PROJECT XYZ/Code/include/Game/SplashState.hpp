@@ -56,6 +56,8 @@ namespace Sonar
 		std::shared_ptr<Music> music;
 		std::shared_ptr<Sound> sound;
 
+		AssetManager am;
+
 		
 		char windowTitle[255] = "ImGui + SFML = <3";
 

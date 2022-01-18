@@ -1,5 +1,7 @@
 #pragma once
 
+#include <Audio/AudioItem.hpp>
+
 namespace Sonar
 {
     class Sound : public AudioItem
@@ -11,6 +13,11 @@ namespace Sonar
          * \param filepath Filepath of the sound file
         */
         Sound( const std::string &filepath );
+
+        /**
+        * \brief Default constructor
+        */
+        Sound( );
         
         /**
          * \brief Class destructor

@@ -10,6 +10,8 @@ namespace Sonar
 		_musicObject = &_music;
 	}
 
+	Music::Music( ) : AudioItem( AUDIO_TYPE::MUSIC ) { }
+
 	Music::~Music( ) { }
 
 	const Time &Music::GetLength( ) const

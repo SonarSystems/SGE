@@ -13,7 +13,7 @@ namespace Sonar
 
 		sound = std::make_shared<Sound>( "Resources/Sound Effect.wav" );
 
-		
+		am.LoadSound( "name1", "Resources/Sound Effect.wav" );
 
         player = new Player( _data );
         physicsWorld = new PhysicsWorld( _data );
@@ -164,7 +164,7 @@ namespace Sonar
 		if ( Event::MouseWheelScrolled == event.type )
 		{
 			progressBar->Increment( );
-			sound->Play( );
+			am.GetSound( "name1" ).Play();
 
 			//mm->RemoveObjectByType( "Test" );
 

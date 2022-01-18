@@ -1,5 +1,10 @@
 #pragma once
 
+#include <Graphics/Texture.hpp>
+#include <Graphics/Font.hpp>
+#include <Audio/Sound.hpp>
+#include <Audio/Music.hpp>
+
 namespace Sonar
 {
 	class AssetManager
@@ -30,7 +35,7 @@ namespace Sonar
 		 *
 		 * \return Output returns the requested texture
 		*/
-		[[nodiscard]] const sf::Texture &GetTexture( const std::string &name ) const;
+		[[nodiscard]] const Texture &GetTexture( const std::string &name ) const;
 
 		/**
 		 * \brief Load a font in the engine for later use
@@ -47,7 +52,7 @@ namespace Sonar
 		 *
 		 * \return Output returns the requested font
 		*/
-		[[nodiscard]] const sf::Font &GetFont( const std::string &name ) const;
+		[[nodiscard]] const Font &GetFont( const std::string &name ) const;
 
 		/**
 		 * \brief Load a sound in the engine for later use
@@ -64,7 +69,7 @@ namespace Sonar
 		 *
 		 * \return Output returns the requested sound
 		*/
-		[[nodiscard]] const sf::Sound &GetSound( const std::string &name ) const;
+		[[nodiscard]] Sound &GetSound( const std::string &name );
 
 		/**
 		 * \brief Load a music in the engine for later use
@@ -81,28 +86,28 @@ namespace Sonar
 		 *
 		 * \return Output returns the requested music
 		*/
-		[[nodiscard]] const sf::Music &GetMusic( const std::string &name ) const;
+		[[nodiscard]] const Music &GetMusic( const std::string &name ) const;
 
 	private:
 		/**
 		 * \brief Textures map
 		*/
-		std::map<std::string, sf::Texture> _textures;
+		std::map<std::string, Texture> _textures;
 
 		/**
 		 * \brief Fonts map
 		*/
-		std::map<std::string, sf::Font> _fonts;
+		std::map<std::string, Font> _fonts;
 
 		/**
 		 * \brief Sounds map
 		*/
-		std::map<std::string, sf::SoundBuffer> _sounds;
+		std::map<std::string, Sound> _sounds;
 
 		/**
 		 * \brief Musics map
 		*/
-		std::map<std::string, sf::Music> _musics;
+		std::map<std::string, Music> _musics;
 
 	};
 }

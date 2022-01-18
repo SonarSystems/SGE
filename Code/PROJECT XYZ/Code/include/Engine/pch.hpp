@@ -91,7 +91,6 @@
 #include "Graphics/ProgressBar.hpp"
 #include "Graphics/Minimap.hpp"
 #include "Input/Input.hpp"
-#include "Managers/AssetManager.hpp"
 #include "Managers/FileManager.hpp"
 #include "Managers/HighScoreManager.hpp"
 #include "Managers/MapManager.hpp"
@@ -99,3 +98,4 @@
 #include "Audio/AudioItem.hpp"
 #include "Audio/Music.hpp"
 #include "Audio/Sound.hpp"
+#include "Managers/AssetManager.hpp"

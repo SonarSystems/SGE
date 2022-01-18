@@ -11,6 +11,8 @@ namespace Sonar
 		_soundObject = &_sound;
 	}
 
+	Sound::Sound( ) : AudioItem( AUDIO_TYPE::SOUND ) { }
+
 	Sound::~Sound( ) { }
 }
 
