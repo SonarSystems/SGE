@@ -35,7 +35,7 @@ namespace Sonar
 		 *
 		 * \return Output returns the requested texture
 		*/
-		[[nodiscard]] const Texture &GetTexture( const std::string &name ) const;
+		[[nodiscard]] Texture &GetTexture( const std::string &name ) const;
 
 		/**
 		 * \brief Load a font in the engine for later use
@@ -52,7 +52,7 @@ namespace Sonar
 		 *
 		 * \return Output returns the requested font
 		*/
-		[[nodiscard]] const Font &GetFont( const std::string &name ) const;
+		[[nodiscard]] Font &GetFont( const std::string &name ) const;
 
 		/**
 		 * \brief Load a sound in the engine for later use
@@ -69,7 +69,7 @@ namespace Sonar
 		 *
 		 * \return Output returns the requested sound
 		*/
-		[[nodiscard]] Sound &GetSound( const std::string &name );
+		[[nodiscard]] Sound &GetSound( const std::string &name ) const;
 
 		/**
 		 * \brief Load a music in the engine for later use
@@ -86,28 +86,28 @@ namespace Sonar
 		 *
 		 * \return Output returns the requested music
 		*/
-		[[nodiscard]] const Music &GetMusic( const std::string &name ) const;
+		[[nodiscard]] Music &GetMusic( const std::string &name ) const;
 
 	private:
 		/**
 		 * \brief Textures map
 		*/
-		std::map<std::string, Texture> _textures;
+		std::map<std::string, std::shared_ptr<Texture>> _textures;
 
 		/**
 		 * \brief Fonts map
 		*/
-		std::map<std::string, Font> _fonts;
+		std::map<std::string, std::shared_ptr<Font>> _fonts;
 
 		/**
 		 * \brief Sounds map
 		*/
-		std::map<std::string, Sound> _sounds;
+		std::map<std::string, std::shared_ptr<Sound>> _sounds;
 
 		/**
 		 * \brief Musics map
 		*/
-		std::map<std::string, Music> _musics;
+		std::map<std::string, std::shared_ptr<Music>> _musics;
 
 	};
 }

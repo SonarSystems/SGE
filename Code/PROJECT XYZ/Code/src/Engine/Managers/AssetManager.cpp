@@ -3,29 +3,26 @@
 namespace Sonar
 {
 	void AssetManager::LoadTexture( const std::string &name, const std::string &fileName )
-	{ _textures[name] = Texture( fileName); }
+	{ _textures[name] = std::make_shared<Texture>( fileName); }
 
-	const Texture &AssetManager::GetTexture( const std::string &name ) const
-	{ return this->_textures.at( name ); }
+	Texture &AssetManager::GetTexture( const std::string &name ) const
+	{ return *_textures.at( name ); }
 
 	void AssetManager::LoadFont( const std::string &name, const std::string &fileName )
-    { this->_fonts[name] = Font( fileName ); }
+    { _fonts[name] = std::make_shared<Font>( fileName ); }
 
-    const Font &AssetManager::GetFont( const std::string &name ) const
-    { return _fonts.at( name ); }
+    Font &AssetManager::GetFont( const std::string &name ) const
+    { return *_fonts.at( name ); }
 
     void AssetManager::LoadSound( const std::string &name, const std::string &fileName )
-    {
-        Sound s( fileName );
-        _sounds[name] = s;
-    }
+    { _sounds[name] = std::make_shared<Sound>( fileName ); }
 
-    Sound &AssetManager::GetSound( const std::string &name )
-    { return _sounds.at( name ); }
+    Sound &AssetManager::GetSound( const std::string &name ) const
+    { return *_sounds.at( name ); }
 
     void AssetManager::LoadMusic( const std::string &name, const std::string &fileName )
-    { this->_musics[name].LoadFile( fileName ); }
+    { _musics[name] = std::make_shared<Music>( fileName ); }
 
-    const Music &AssetManager::GetMusic( const std::string &name ) const
-    { return _musics.at( name ); }
+    Music &AssetManager::GetMusic( const std::string &name ) const
+    { return *_musics.at( name ); }
 }
