@@ -3,7 +3,8 @@ GAME
 
 ENGINE
 -----------------------------------------------------------------
-* Sorting algorithms, bubble sort, quick sort, insert sort
+* Reorganise both external library folders
+* Get rid of Audio Library not closed warning when shutting down the app
 * Anti Aliasing and other settings for SFML
 * Abstract dt into GameData struct in the Game.hpp, only for Sonar classes not states, states still get dt
 * Set background color of the clear method (currently set in Game.hpp in the struct)
