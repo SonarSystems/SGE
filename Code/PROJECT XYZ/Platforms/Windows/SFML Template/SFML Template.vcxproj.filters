@@ -36,9 +36,6 @@
     <ClInclude Include="..\..\..\Code\include\Engine\Core\Time.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Code\include\Engine\External\b2GLDraw.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\Code\include\Engine\External\glext.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -84,9 +81,6 @@
     <ClInclude Include="..\..\..\Code\include\Engine\Sonar.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Code\include\Game\PhysicsWorld.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\Code\include\Game\Player.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -111,9 +105,6 @@
     <ClInclude Include="..\..\..\Code\include\Engine\Graphics\Shapes\Triangle.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Code\include\Engine\External\Collision.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\Code\include\Engine\Graphics\ScrollingBackground.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -121,12 +112,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Code\include\Engine\Managers\FileManager.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Code\include\Engine\External\pugixml\pugiconfig.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Code\include\Engine\External\pugixml\pugixml.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Code\include\Engine\External\json.hpp">
@@ -218,9 +203,6 @@
     <ClCompile Include="..\..\..\Code\src\Engine\Core\Time.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Code\src\Engine\External\b2GLDraw.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\Code\src\Engine\Graphics\Color.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -263,9 +245,6 @@
     <ClCompile Include="..\..\..\Code\src\Engine\Managers\AssetManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Code\src\Game\PhysicsWorld.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\Code\src\Game\Player.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -290,9 +269,6 @@
     <ClCompile Include="..\..\..\Code\src\Engine\Graphics\Shapes\Triangle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Code\src\Engine\External\Collision.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\Code\src\Engine\Graphics\ScrollingBackground.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -300,9 +276,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Code\src\Engine\Managers\FileManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Code\src\Engine\External\pugixml\pugixml.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Code\src\Engine\Managers\HighScoreManager.cpp">

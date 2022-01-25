@@ -2,7 +2,6 @@
 
 #include "Sonar.hpp"
 #include "Player.hpp"
-#include "PhysicsWorld.hpp"
 
 namespace Sonar
 {
@@ -26,8 +25,6 @@ namespace Sonar
 
 	private:
 		GameDataRef _data;
-        
-        PhysicsWorld *physicsWorld;
         
 		Player *player;
 

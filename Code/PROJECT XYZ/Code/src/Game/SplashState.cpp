@@ -19,7 +19,6 @@ namespace Sonar
 		//s.Play( );
 
         player = new Player( _data );
-        physicsWorld = new PhysicsWorld( _data );
 
 		menu = new Menu( _data );
 		label = new Label( _data );
@@ -173,7 +172,6 @@ namespace Sonar
 
 			mm->HideObjectByID( 0 );
 
-			//physicsWorld->CreateDynamicBody( event.mouseButton.x, event.mouseButton.y, 32, 32 );
 		}
 		else if ( Event::MouseButtonReleased == event.type )
 		{

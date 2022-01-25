@@ -1,2 +1,0 @@
-C:/Users/thund/Documents/GitHub/Project-XYZ/Code/PROJECT XYZ/Code/include/Engine/External/glm/out/build/x64-Debug/CMakeFiles/edit_cache.dir
-C:/Users/thund/Documents/GitHub/Project-XYZ/Code/PROJECT XYZ/Code/include/Engine/External/glm/out/build/x64-Debug/CMakeFiles/rebuild_cache.dir

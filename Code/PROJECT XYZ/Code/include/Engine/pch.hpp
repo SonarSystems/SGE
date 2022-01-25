@@ -39,10 +39,11 @@
 /**
 * \brief External Library Files
 */
-#include <External/Collision.hpp>
-#include <External/glm/glm.hpp>
+#include <Collision.hpp>
+#include <glm.hpp>
 #include <sort.h>
 #include "SysInfo.hpp"
+#include <b2GLDraw.h>
 
 /**
 * \brief Custom files (including external libraries manually included and not linked)
@@ -52,7 +53,6 @@
 #include "Core/Debug.hpp"
 #include "Core/Time.hpp"
 #include "Core/Clock.hpp"
-#include "External/Collision.hpp"
 #include "External/csv.hpp"
 #include "External/Gamepad.h"
 #include "External/json.hpp"

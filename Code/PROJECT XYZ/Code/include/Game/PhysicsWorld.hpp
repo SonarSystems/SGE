@@ -1,7 +1,7 @@
 #pragma once
 
-#include <Box2D/Box2D.h>
-#include "External/b2GLDraw.h"
+
+#include "Sonar.hpp"
 
 namespace Sonar
 {

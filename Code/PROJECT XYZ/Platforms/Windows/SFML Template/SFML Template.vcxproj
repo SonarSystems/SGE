@@ -31,14 +31,10 @@
     <ClInclude Include="..\..\..\Code\include\Engine\Core\StateMachine.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\Core\Time.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\Core\Window.hpp" />
-    <ClInclude Include="..\..\..\Code\include\Engine\External\b2GLDraw.h" />
-    <ClInclude Include="..\..\..\Code\include\Engine\External\Collision.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\External\csv.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\External\Gamepad.h" />
     <ClInclude Include="..\..\..\Code\include\Engine\External\glext.h" />
     <ClInclude Include="..\..\..\Code\include\Engine\External\json.hpp" />
-    <ClInclude Include="..\..\..\Code\include\Engine\External\pugixml\pugiconfig.hpp" />
-    <ClInclude Include="..\..\..\Code\include\Engine\External\pugixml\pugixml.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\Graphics\Button.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\Graphics\ButtonGroup.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\Graphics\Checkbox.hpp" />
@@ -78,7 +74,6 @@
     <ClInclude Include="..\..\..\Code\include\Engine\Managers\MapManager.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\pch.hpp" />
     <ClInclude Include="..\..\..\Code\include\Engine\Sonar.hpp" />
-    <ClInclude Include="..\..\..\Code\include\Game\PhysicsWorld.hpp" />
     <ClInclude Include="..\..\..\Code\include\Game\Player.hpp" />
     <ClInclude Include="..\..\..\Code\include\Game\SplashState.hpp" />
   </ItemGroup>
@@ -92,10 +87,7 @@
     <ClCompile Include="..\..\..\Code\src\Engine\Core\StateMachine.cpp" />
     <ClCompile Include="..\..\..\Code\src\Engine\Core\Time.cpp" />
     <ClCompile Include="..\..\..\Code\src\Engine\Core\Window.cpp" />
-    <ClCompile Include="..\..\..\Code\src\Engine\External\b2GLDraw.cpp" />
-    <ClCompile Include="..\..\..\Code\src\Engine\External\Collision.cpp" />
     <ClCompile Include="..\..\..\Code\src\Engine\External\Gamepad.cpp" />
-    <ClCompile Include="..\..\..\Code\src\Engine\External\pugixml\pugixml.cpp" />
     <ClCompile Include="..\..\..\Code\src\Engine\Graphics\Button.cpp" />
     <ClCompile Include="..\..\..\Code\src\Engine\Graphics\ButtonGroup.cpp" />
     <ClCompile Include="..\..\..\Code\src\Engine\Graphics\Checkbox.cpp" />
@@ -148,7 +140,6 @@
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
       </PrecompiledHeaderFile>
     </ClCompile>
-    <ClCompile Include="..\..\..\Code\src\Game\PhysicsWorld.cpp" />
     <ClCompile Include="..\..\..\Code\src\Game\Player.cpp" />
     <ClCompile Include="..\..\..\Code\src\Game\SplashState.cpp" />
     <ClCompile Include="..\..\..\External Libraries\imgui-sfml\include\imgui-SFML.cpp" />
@@ -232,7 +223,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)/../../External Libraries/spdlog/include/;$(SolutionDir)/../../External Libraries/Windows/Box2D/include;$(SolutionDir)/../../External Libraries/Windows/SFML/include;$(SolutionDir)/../../Code/include/Engine;$(SolutionDir)/../../Code/include/Game;$(SolutionDir)/../../External Libraries/imgui/include;$(SolutionDir)/../../External Libraries/imgui-sfml/include;%(AdditionalIncludeDirectories);$(SolutionDir)/System Information/include;$(SolutionDir)/../../External Libraries/Sort/</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)/../../External Libraries/Collision/include;$(SolutionDir)/../../External Libraries/spdlog/include/;$(SolutionDir)/../../External Libraries/Windows/Box2D/include;$(SolutionDir)/../../External Libraries/Windows/SFML/include;$(SolutionDir)/../../Code/include/Engine;$(SolutionDir)/../../Code/include/Game;$(SolutionDir)/../../External Libraries/imgui/include;$(SolutionDir)/../../External Libraries/imgui-sfml/include;%(AdditionalIncludeDirectories);$(SolutionDir)/System Information/include;$(SolutionDir)/../../External Libraries/Sort/;$(SolutionDir)/../../External Libraries/glm/;$(SolutionDir)/../../External Libraries/pugixml/include;$(SolutionDir)/../../External Libraries/b2GLDraw/;$(SolutionDir)/../../External Libraries/Collision/</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <PrecompiledHeaderFile>pch.hpp</PrecompiledHeaderFile>
       <AdditionalOptions>/Zm1000 %(AdditionalOptions)</AdditionalOptions>
@@ -255,7 +246,7 @@
       <PrecompiledHeaderFile>pch.hpp</PrecompiledHeaderFile>
       <AdditionalOptions>/Zm1000 %(AdditionalOptions)</AdditionalOptions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <AdditionalIncludeDirectories>;$(SolutionDir)/../../External Libraries/infoware/include;$(SolutionDir)/System Information/include;$(SolutionDir)/../../External Libraries/Sort/</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)/../../External Libraries/infoware/include;$(SolutionDir)/System Information/include;$(SolutionDir)/../../External Libraries/Sort/;$(SolutionDir)/../../External Libraries/glm/;$(SolutionDir)/../../External Libraries/pugixml/include;$(SolutionDir)/../../External Libraries/b2GLDraw/;$(SolutionDir)/../../External Libraries/Collision/include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -272,7 +263,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)/../../External Libraries/spdlog/include/;$(SolutionDir)/../../External Libraries/Windows/Box2D/include;$(SolutionDir)/../../External Libraries/Windows/SFML/include;$(SolutionDir)/../../Code/include/engine;$(SolutionDir)/../../Code/include/game;$(SolutionDir)/../../External Libraries/imgui/include/;$(SolutionDir)/../../External Libraries/imgui-sfml/include/;%(AdditionalIncludeDirectories);$(SolutionDir)/../../External Libraries/infoware/include;$(SolutionDir)/../../External Libraries/infoware/include;$(SolutionDir)/System Information/include;$(SolutionDir)/../../External Libraries/Sort/</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)/../../External Libraries/Collision/include;$(SolutionDir)/../../External Libraries/spdlog/include/;$(SolutionDir)/../../External Libraries/Windows/Box2D/include;$(SolutionDir)/../../External Libraries/Windows/SFML/include;$(SolutionDir)/../../Code/include/engine;$(SolutionDir)/../../Code/include/game;$(SolutionDir)/../../External Libraries/imgui/include/;$(SolutionDir)/../../External Libraries/imgui-sfml/include/;%(AdditionalIncludeDirectories);$(SolutionDir)/../../External Libraries/infoware/include;$(SolutionDir)/../../External Libraries/infoware/include;$(SolutionDir)/System Information/include;$(SolutionDir)/../../External Libraries/Sort/;$(SolutionDir)/../../External Libraries/glm/;$(SolutionDir)/../../External Libraries/pugixml/include;$(SolutionDir)/../../External Libraries/b2GLDraw/;$(SolutionDir)/../../External Libraries/Collision/;(SolutionDir)/../../External Libraries/Collision/</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <PrecompiledHeaderFile>pch.hpp</PrecompiledHeaderFile>
       <AdditionalOptions>/Zm1000 %(AdditionalOptions)</AdditionalOptions>
@@ -299,7 +290,7 @@
       <PrecompiledHeaderFile>pch.hpp</PrecompiledHeaderFile>
       <AdditionalOptions>/Zm1000 %(AdditionalOptions)</AdditionalOptions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <AdditionalIncludeDirectories>;$(SolutionDir)/../../External Libraries/infoware/include;$(SolutionDir)/System Information/include;$(SolutionDir)/../../External Libraries/Sort/</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)/../../External Libraries/infoware/include;$(SolutionDir)/System Information/include;$(SolutionDir)/../../External Libraries/Sort/;$(SolutionDir)/../../External Libraries/glm/;$(SolutionDir)/../../External Libraries/pugixml/include;$(SolutionDir)/../../External Libraries/b2GLDraw/;$(SolutionDir)/../../External Libraries/Collision/include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
