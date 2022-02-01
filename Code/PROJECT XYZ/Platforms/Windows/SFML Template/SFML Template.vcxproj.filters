@@ -93,9 +93,6 @@
     <ClInclude Include="..\..\..\Code\include\Engine\Input\Gesture.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Code\include\Engine\External\Gamepad.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\Code\include\Engine\Graphics\Texture.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -255,9 +252,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Code\src\Engine\Input\Gesture.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Code\src\Engine\External\Gamepad.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Code\src\Engine\Graphics\Texture.cpp">

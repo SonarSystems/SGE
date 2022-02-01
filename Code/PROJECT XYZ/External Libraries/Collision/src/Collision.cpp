@@ -2,7 +2,7 @@
 * File:   collision.cpp
 * Author: Nick (original version), ahnonay (SFML2 compatibility)
 */
-#include "../include/Collison.hpp"
+#include "../include/Collision.hpp"
 
 namespace Collision
 {

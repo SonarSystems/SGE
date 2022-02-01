@@ -44,6 +44,9 @@
 #include <sort.h>
 #include "SysInfo.hpp"
 #include <b2GLDraw.h>
+#include <Gamepad.h>
+#include <csv.hpp>
+#include <json.hpp>
 
 /**
 * \brief Custom files (including external libraries manually included and not linked)
@@ -53,9 +56,6 @@
 #include "Core/Debug.hpp"
 #include "Core/Time.hpp"
 #include "Core/Clock.hpp"
-#include "External/csv.hpp"
-#include "External/Gamepad.h"
-#include "External/json.hpp"
 #include "Graphics/Color.hpp"
 #include "Graphics/Font.hpp"
 #include "Graphics/ScrollingBackground.hpp"

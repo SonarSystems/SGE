@@ -3,7 +3,6 @@ GAME
 
 ENGINE
 -----------------------------------------------------------------
-* Reorganise both external library folders
 * Get rid of Audio Library not closed warning when shutting down the app
 * Anti Aliasing and other settings for SFML
 * Abstract dt into GameData struct in the Game.hpp, only for Sonar classes not states, states still get dt

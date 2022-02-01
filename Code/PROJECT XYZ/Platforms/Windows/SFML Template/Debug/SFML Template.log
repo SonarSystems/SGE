@@ -1,2 +1,89 @@
-﻿Sprite.obj : error LNK2019: unresolved external symbol "bool __cdecl Collision::PixelPerfectTest(class sf::Sprite const &,class sf::Sprite const &,unsigned char)" (?PixelPerfectTest@Collision@@YA_NABVSprite@sf@@0E@Z) referenced in function "public: bool __thiscall Sonar::Sprite::PixelPerfectCollisionCheck(class Sonar::Sprite const &,unsigned char const &)" (?PixelPerfectCollisionCheck@Sprite@Sonar@@QAE_NABV12@ABE@Z)
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\SFML Template.exe : fatal error LNK1120: 1 unresolved externals
+﻿  pch.cpp
+  AudioItem.cpp
+  Music.cpp
+  Sound.cpp
+  Clock.cpp
+  Debug.cpp
+  Game.cpp
+  StateMachine.cpp
+  Time.cpp
+  Window.cpp
+  Button.cpp
+  ButtonGroup.cpp
+  Checkbox.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Audio\Music.cpp(31,53): warning C4244: 'return': conversion from 'sf::Int64' to 'const float', possible loss of data
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Audio\Music.cpp(36,53): warning C4244: 'return': conversion from 'sf::Int32' to 'const float', possible loss of data
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Audio\Music.cpp(66,25): warning C4244: 'argument': conversion from 'const unsigned int' to 'float', possible loss of data
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Audio\Music.cpp(92,25): warning C4244: 'argument': conversion from 'const unsigned int' to 'float', possible loss of data
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Graphics\Button.cpp(772,24): warning C4834: discarding return value of function with 'nodiscard' attribute
+  Color.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Audio\AudioItem.cpp(76): warning C4172: returning address of local variable or temporary
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Audio\AudioItem.cpp(84): warning C4172: returning address of local variable or temporary
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Audio\AudioItem.cpp(86): warning C4172: returning address of local variable or temporary
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Audio\AudioItem.cpp(78): warning C4172: returning address of local variable or temporary
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Audio\AudioItem.cpp(100): warning C4172: returning address of local variable or temporary
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Audio\AudioItem.cpp(102): warning C4172: returning address of local variable or temporary
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Audio\AudioItem.cpp(148): warning C4172: returning address of local variable or temporary
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Audio\AudioItem.cpp(150): warning C4172: returning address of local variable or temporary
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Audio\AudioItem.cpp(156): warning C4172: returning address of local variable or temporary
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Audio\AudioItem.cpp(158): warning C4172: returning address of local variable or temporary
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Audio\AudioItem.cpp(164): warning C4172: returning address of local variable or temporary
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Audio\AudioItem.cpp(166): warning C4172: returning address of local variable or temporary
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Math.hpp(19): warning C4172: returning address of local variable or temporary
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\include\Engine\Core\Math.hpp(16): warning C4172: returning address of local variable or temporary
+  Drawable.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Audio\Music.cpp(18): warning C4172: returning address of local variable or temporary
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Audio\Music.cpp(21): warning C4172: returning address of local variable or temporary
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Audio\Music.cpp(24): warning C4172: returning address of local variable or temporary
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Audio\Music.cpp(31): warning C4172: returning address of local variable or temporary
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Audio\Music.cpp(36): warning C4172: returning address of local variable or temporary
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Audio\Music.cpp(42): warning C4172: returning address of local variable or temporary
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Audio\Music.cpp(110): warning C4172: returning address of local variable or temporary
+  Font.cpp
+  Label.cpp
+  Menu.cpp
+  MenuComponent.cpp
+  Minimap.cpp
+  Parallax.cpp
+  ProgressBar.cpp
+  RadioButton.cpp
+  RadioButtonGroup.cpp
+  ScrollingBackground.cpp
+  Circle.cpp
+  Rectangle.cpp
+  Triangle.cpp
+  Slider.cpp
+  Sprite.cpp
+  TextBox.cpp
+  Texture.cpp
+  View.cpp
+  Events.cpp
+  Gesture.cpp
+  Input.cpp
+  Joystick.cpp
+  Keyboard.cpp
+  Mouse.cpp
+  QTE.cpp
+  RBM.cpp
+  Sensor.cpp
+  Sequence.cpp
+  main.cpp
+  AssetManager.cpp
+  FileManager.cpp
+  HighScoreManager.cpp
+  MapManager.cpp
+  Player.cpp
+  SplashState.cpp
+  imgui-SFML.cpp
+  imgui.cpp
+  imgui_demo.cpp
+  imgui_draw.cpp
+  imgui_tables.cpp
+  imgui_widgets.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(137,16): warning C4834: discarding return value of function with 'nodiscard' attribute
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(138,16): warning C4834: discarding return value of function with 'nodiscard' attribute
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(139,16): warning C4834: discarding return value of function with 'nodiscard' attribute
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(140,16): warning C4834: discarding return value of function with 'nodiscard' attribute
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(141,16): warning C4834: discarding return value of function with 'nodiscard' attribute
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(142,16): warning C4834: discarding return value of function with 'nodiscard' attribute
+  SFML Template.vcxproj -> C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\SFML Template.exe
