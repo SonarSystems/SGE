@@ -83,8 +83,10 @@ namespace Sonar
 
 		/**
 		* \brief Setup function - recommended to use overloaded version with parameters (width, height & title will be set by default properties in ENGINEDEFINITIONS.hpp)
+		* 
+		* \param contextSettings Context settings of the window
 		*/
-		void Setup( );
+		void Setup( const ContextSettings &contextSettings = ContextSettings( ) );
 
 		/**
 		* \brief Setup function with width, height & title parameters (Recommended version of the constructor)
@@ -93,8 +95,9 @@ namespace Sonar
 		* \param height Height of the window
 		* \param title Title of the window
 		* \param style Style of the window
+		* \param contextSettings Context settings of the window
 		*/
-		void Setup( const unsigned int &width, const unsigned int &height, const std::string &title, const Style &style );
+		void Setup( const unsigned int &width, const unsigned int &height, const std::string &title, const Style &style, const ContextSettings &contextSettings = ContextSettings( ) );
 
 		/**
 		* \brief Setup function with width and height parameters (title will be set by default properties in ENGINEDEFINITIONS.hpp)
@@ -102,16 +105,18 @@ namespace Sonar
 		* \param width Width of the window
 		* \param height Height of the window
 		* \param style Style of the window
+		* \param contextSettings Context settings of the window
 		*/
-		void Setup( const unsigned int &width, const unsigned int &height, const Style &style );
+		void Setup( const unsigned int &width, const unsigned int &height, const Style &style, const ContextSettings &contextSettings = ContextSettings( ) );
 
 		/**
 		* \brief Setup function with title parameters (width and height will be set by default properties in ENGINEDEFINITIONS.hpp)
 		* 
 		* \param title Title of the window
 		* \param style Style of the window
+		* \param contextSettings Context settings of the window
 		*/
-		void Setup( const std::string &title, const Style &style );
+		void Setup( const std::string &title, const Style &style, const ContextSettings &contextSettings = ContextSettings( ) );
 
 		/**
 		* \brief Get the underlying SFML Window object
@@ -323,6 +328,15 @@ namespace Sonar
 		* \return Output returns the style as an enum
 		*/
 		const StyleEnum CalculateStyle( const Style &style );
+
+		/**
+		* \brief Convert SGE context settings to SFML objecty
+		*
+		* \param contextSettings Context settings object to be converted
+		*
+		* \return Output returns the SFML version of the context settings
+		*/
+		const sf::ContextSettings ConvertContextSettingsToSFMLObject( const ContextSettings &contextSettings );
 
 		/**
 		* \brief SFML Window object

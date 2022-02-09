@@ -50,8 +50,6 @@ namespace Sonar
 
 		View *view;
 
-		std::shared_ptr<Music> music;
-		std::shared_ptr<Sound> sound;
 
 		AssetManager am;
 

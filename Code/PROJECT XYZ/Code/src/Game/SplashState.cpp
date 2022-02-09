@@ -7,11 +7,6 @@ namespace Sonar
 	{
 		ImGui::SFML::Init( _data->window.GetSFMLWindowObject( ) );
 
-		music = std::make_shared<Music>( "Resources/Music.ogg" );
-
-		//music->Play( );
-
-		sound = std::make_shared<Sound>( "Resources/Sound Effect.wav" );
 
 		am.LoadMusic( "name1", "Resources/Music.ogg" );
 
@@ -154,7 +149,8 @@ namespace Sonar
 
 	void SplashState::Destructor( )
 	{
-		music->~Music( );
+		//music->~Music( );
+		am.~AssetManager( );
 	}
 
 	void SplashState::PollInput( const float &dt, Event &event )

@@ -6,17 +6,17 @@ namespace Sonar
 
 	Window::~Window( ) { }
 
-	void Window::Setup( )
-	{ _window.create( sf::VideoMode( SCREEN_WIDTH, SCREEN_HEIGHT ), WINDOW_TITLE, StyleEnum::Close | StyleEnum::Titlebar ); }
+	void Window::Setup( const ContextSettings &contextSettings )
+	{ _window.create( sf::VideoMode( SCREEN_WIDTH, SCREEN_HEIGHT ), WINDOW_TITLE, StyleEnum::Close | StyleEnum::Titlebar, ConvertContextSettingsToSFMLObject( contextSettings ) ); }
 
-	void Window::Setup( const unsigned int &width, const unsigned int &height, const std::string &title, const Style &style )
-	{ _window.create( sf::VideoMode( width, height ), title, CalculateStyle( style ) ); }
+	void Window::Setup( const unsigned int &width, const unsigned int &height, const std::string &title, const Style &style, const ContextSettings &contextSettings )
+	{ _window.create( sf::VideoMode( width, height ), title, CalculateStyle( style ), ConvertContextSettingsToSFMLObject( contextSettings ) ); }
 
-	void Window::Setup( const unsigned int &width, const unsigned int &height, const Style &style )
-	{ _window.create( sf::VideoMode( width, height ), WINDOW_TITLE, CalculateStyle( style ) ); }
+	void Window::Setup( const unsigned int &width, const unsigned int &height, const Style &style, const ContextSettings &contextSettings )
+	{ _window.create( sf::VideoMode( width, height ), WINDOW_TITLE, CalculateStyle( style ), ConvertContextSettingsToSFMLObject( contextSettings ) ); }
 
-	void Window::Setup( const std::string &title, const Style &style )
-	{ _window.create( sf::VideoMode( SCREEN_WIDTH, SCREEN_HEIGHT ), title, CalculateStyle( style ) ); }
+	void Window::Setup( const std::string &title, const Style &style, const ContextSettings &contextSettings )
+	{ _window.create( sf::VideoMode( SCREEN_WIDTH, SCREEN_HEIGHT ), title, CalculateStyle( style ), ConvertContextSettingsToSFMLObject( contextSettings ) ); }
 
 	sf::RenderWindow &Window::GetSFMLWindowObject( )
 	{ return _window; }
@@ -140,4 +140,6 @@ namespace Sonar
 		return StyleEnum( titlebar | resize | close | fullscreen );
 	}
 
+	const sf::ContextSettings Window::ConvertContextSettingsToSFMLObject( const ContextSettings &contextSettings )
+	{ return sf::ContextSettings( contextSettings.depthBits, contextSettings.stencilBits, contextSettings.antialiasingLevel, contextSettings.majorVersion, contextSettings.minorVersion, contextSettings.attributeFlags, contextSettings.sRgbCapable ); }
 }
