@@ -130,6 +130,72 @@ namespace Sonar
 	void Window::SetDefaultView( )
 	{ _window.setView( _window.getDefaultView( ) ); }
 
+	const glm::vec2 &Window::GetPointOnScreen( const bool isWindow, const POINTS &point )
+	{
+		if ( isWindow )
+		{
+			switch ( point )
+			{
+				case POINTS::TOP_LEFT:
+					return glm::vec2( 0, 0 );
+
+					break;
+
+				case POINTS::TOP_RIGHT:
+					return glm::vec2( _window.getSize( ).x, 0 );
+
+					break;
+
+				case POINTS::BOTTOM_RIGHT:
+					return glm::vec2( _window.getSize( ).x, _window.getSize( ).y );
+
+					break;
+
+				case POINTS::BOTTOM_LEFT:
+					return glm::vec2( 0, _window.getSize( ).y );
+
+					break;
+
+				case POINTS::CENTER:
+				default:
+					return glm::vec2( _window.getSize( ).x * 0.5f, _window.getSize( ).y * 0.5f );
+
+					break;
+			}
+		}
+		else
+		{
+			switch ( point )
+			{
+				case POINTS::TOP_LEFT:
+					return glm::vec2( 0, 0 );
+
+					break;
+
+				case POINTS::TOP_RIGHT:
+					return glm::vec2( sf::VideoMode::getDesktopMode( ).width, 0 );
+
+					break;
+
+				case POINTS::BOTTOM_RIGHT:
+					return glm::vec2( sf::VideoMode::getDesktopMode( ).width, sf::VideoMode::getDesktopMode( ).height );
+
+					break;
+
+				case POINTS::BOTTOM_LEFT:
+					return glm::vec2( 0, sf::VideoMode::getDesktopMode( ).height );
+
+					break;
+
+				case POINTS::CENTER:
+				default:
+					return glm::vec2( sf::VideoMode::getDesktopMode( ).width * 0.5f, sf::VideoMode::getDesktopMode( ).height * 0.5f );
+
+					break;
+			}
+		}
+	}
+
 	const Sonar::Window::StyleEnum Window::CalculateStyle( const Style &style )
 	{
 		StyleEnum titlebar = ( true == style.titlebar ) ? StyleEnum::Titlebar : StyleEnum::None;

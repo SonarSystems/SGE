@@ -71,6 +71,18 @@ namespace Sonar
 			bool         sRgbCapable;       ///< Whether the context framebuffer is sRGB capable
 		};
 
+		/**
+		* \brief Points on the screen/window
+		*/
+		enum POINTS
+		{
+			CENTER = 0,
+			TOP_LEFT,
+			TOP_RIGHT,
+			BOTTOM_RIGHT,
+			BOTTOM_LEFT
+		};
+
         /**
         * \brief Class constructor
         */
@@ -304,6 +316,16 @@ namespace Sonar
 		* \brief Get the Window's default view
 		*/
 		void SetDefaultView( );
+
+		/**
+		* \brief Description
+		*
+		* \param isWindow True gets the point of the window, false gets the point of the screen
+		* \param point Which point's coordinates to get
+		*
+		* \return Output returns the window/screen points
+		*/
+		const glm::vec2 &GetPointOnScreen( const bool isWindow, const POINTS &point );
                         
 	private:
 		/**

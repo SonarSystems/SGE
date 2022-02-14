@@ -19,7 +19,7 @@ namespace Sonar
 
 	void Game::Run( )
 	{
-		float newTime, frameTime, interpolation;
+		float newTime, frameTime;
 
 		float currentTime = _clock.GetElapsedTime( ).AsSeconds( );
 		float accumulator = 0.0f;
@@ -37,7 +37,7 @@ namespace Sonar
 			currentTime = newTime;
 			accumulator += frameTime;
 
-			while ( accumulator >= dt )
+			while ( accumulator >= _fixedFrameRate )
 			{
 				Sonar::Event event;
                 
@@ -49,15 +49,15 @@ namespace Sonar
 						_data->window.CloseWindow( );
 					}
                                         
-                    _data->machine.GetActiveState( )->PollInput( dt, event );
+                    _data->machine.GetActiveState( )->PollInput( _fixedFrameRate, event );
                 }
                 
-				_data->machine.GetActiveState( )->Update( dt );
+				_data->machine.GetActiveState( )->Update( _fixedFrameRate );
 
-				accumulator -= dt;
+				accumulator -= _fixedFrameRate;
 			}
 
-			interpolation = accumulator / dt;
+			_data->dt = accumulator / _fixedFrameRate;
 
 			_data->debug->UpdateFrameData( frameTime );
             
@@ -65,7 +65,7 @@ namespace Sonar
 
 			ImGui::SFML::Update( _data->window.GetSFMLWindowObject( ), _imGUIClock.SFMLRestart( ) );
 
-			_data->machine.GetActiveState( )->Draw( interpolation );
+			_data->machine.GetActiveState( )->Draw( _data->dt );
 
 			_data->debug->DrawComputerStats( &SHOW_SYSTEM_STATS_OVERLAY, _data->window.GetSize( ) );
 

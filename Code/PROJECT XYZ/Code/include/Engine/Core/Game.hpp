@@ -15,7 +15,8 @@ namespace Sonar
 		Window window; // Game window
 		AssetManager assets; // Asset manager
         Debug *debug; // Debugger
-        Color backgroundColor = Color::White;
+        Color backgroundColor = DEFAULT_BACKGROUND_CLEAR_COLOR;
+        float dt;
 	};
     
     /**
@@ -39,7 +40,7 @@ namespace Sonar
         /**
          * \brief Updates run at 60 per second.
         */
-		const float dt = 1.0f / 60.0f;
+		const float _fixedFrameRate = 1.0f / 60.0f;
         
         /**
          * \brief Game clock

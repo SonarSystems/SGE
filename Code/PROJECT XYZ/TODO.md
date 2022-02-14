@@ -3,14 +3,6 @@ GAME
 
 ENGINE
 -----------------------------------------------------------------
-* Abstract dt into GameData struct in the Game.hpp, only for Sonar classes not states, states still get dt
-* Set background color of the clear method (currently set in Game.hpp in the struct)
-* Get points of screen - RETURN AS glm::vec2
-    - Center
-    - Top left
-    - Top right
-    - Bottom left
-    - Bottom right
 * Add grid for debugging/developing - ABILITY TO SET SPACE BETWEEN LINES AND/OR HOW MANY LINES IN BOTH AXES
 * Physics
     - Box2d - MAYBE IN THE ENGINE POTENTIALLY, WILL SEE - build into the graphics classes like shapes and sprite
@@ -38,3 +30,7 @@ SKIPPED
 * Buttons (rotation, pivot)
 * Mini map
     - Zoom level
+
+FUTURE
+-----------------------------------------------------------------
+* Use dt from _data in Sonar classes, maybe even in State classes
