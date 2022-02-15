@@ -326,7 +326,7 @@ namespace Sonar
 		* \return Output returns the window/screen points
 		*/
 		const glm::vec2 &GetPointOnScreen( const bool isWindow, const POINTS &point );
-                        
+
 	private:
 		/**
 		* \brief Style of the window, to be OR'd with each other

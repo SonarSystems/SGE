@@ -301,4 +301,16 @@ namespace Sonar
 			ImGui::End( );
 		}
 	}
+
+	void Debug::EnableGrid( )
+	{ _isGridEnabled = true; }
+
+	void Debug::DisableGrid( )
+	{ _isGridEnabled = false; }
+
+	void Debug::ToggleGrid( )
+	{ _isGridEnabled = !_isGridEnabled; }
+
+	const bool Debug::IsGridEnabled( ) const
+	{ return ( _isGridEnabled && _isGridEnabled ); }
 }

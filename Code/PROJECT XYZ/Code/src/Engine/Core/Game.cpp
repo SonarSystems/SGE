@@ -70,6 +70,31 @@ namespace Sonar
 			_data->debug->DrawComputerStats( &SHOW_SYSTEM_STATS_OVERLAY, _data->window.GetSize( ) );
 
 			ImGui::SFML::Render( _data->window.GetSFMLWindowObject( ) );
+
+			if ( _data->debug->IsGridEnabled( ) )
+			{
+				int x = 20, y = 20;
+
+				for ( int i = 1; i <= x; i++ )
+				{
+					std::shared_ptr<Rectangle> line = std::make_shared<Rectangle>( _data, 3, 720 );
+
+					line->SetInsideColor( Color::Black );
+					line->SetPosition( ( ( _data->window.GetSize( ).x / ( x + 1.0f ) ) * i ) - ( line->GetWidth( ) * 0.5f ), 0 );
+
+					line->Draw( );
+				}
+
+				for ( int j = 1; j <= y; j++ )
+				{
+					std::shared_ptr<Rectangle> line = std::make_shared<Rectangle>( _data, 1280, 3 );
+
+					line->SetInsideColor( Color::Black );
+					line->SetPosition( 0, ( ( _data->window.GetSize( ).y / ( y + 1.0f ) ) * j ) - ( line->GetHeight( ) * 0.5f ) );
+
+					line->Draw( );
+				}
+			}
             
             _data->window.Display( );
 		}

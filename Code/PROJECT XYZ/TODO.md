@@ -4,6 +4,10 @@ GAME
 ENGINE
 -----------------------------------------------------------------
 * Add grid for debugging/developing - ABILITY TO SET SPACE BETWEEN LINES AND/OR HOW MANY LINES IN BOTH AXES
+    - Set and get color
+    - Set and get width
+    - Ability to draw a border
+    -Draw lines with a set width/height apart so not a set amount of lines but a width/height
 * Physics
     - Box2d - MAYBE IN THE ENGINE POTENTIALLY, WILL SEE - build into the graphics classes like shapes and sprite
     - Fluid box2d

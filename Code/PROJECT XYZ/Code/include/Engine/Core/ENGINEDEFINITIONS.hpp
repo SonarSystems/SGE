@@ -33,9 +33,10 @@
 #define COMPUTER_STATS_BACKGROUND_OPACITY 0.45f
 
 /**
-* \brief Game window title
+* \brief Window Properties
 */
 #define WINDOW_TITLE "PR0J3CT XY2"
+#define DEFAULT_IS_DEBUG_GRID_ENABLED true
 
 /**
 * \brief How many times per second should the FPS be updated

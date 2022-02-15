@@ -1,8 +1,25 @@
-﻿  SplashState.cpp
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(132,16): warning C4834: discarding return value of function with 'nodiscard' attribute
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(133,16): warning C4834: discarding return value of function with 'nodiscard' attribute
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(134,16): warning C4834: discarding return value of function with 'nodiscard' attribute
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(135,16): warning C4834: discarding return value of function with 'nodiscard' attribute
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(136,16): warning C4834: discarding return value of function with 'nodiscard' attribute
-C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Game\SplashState.cpp(137,16): warning C4834: discarding return value of function with 'nodiscard' attribute
+﻿  Game.cpp
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Core\Game.cpp(83,79): warning C4244: 'argument': conversion from 'double' to 'const float', possible loss of data
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Core\Game.cpp(93,82): warning C4244: 'argument': conversion from 'double' to 'const float', possible loss of data
+D:\Software\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30037\include\xutility(158,77): warning C4244: 'argument': conversion from '_Ty' to 'const float', possible loss of data
+          with
+          [
+              _Ty=int
+          ]
+D:\Software\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30037\include\memory(2021): message : see reference to function template instantiation 'void std::_Construct_in_place<_Ty,Sonar::GameDataRef&,int,int>(_Ty &,Sonar::GameDataRef &,int &&,int &&) noexcept(false)' being compiled
+          with
+          [
+              _Ty=Sonar::Rectangle
+          ]
+D:\Software\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30037\include\memory(2747): message : see reference to function template instantiation 'std::_Ref_count_obj2<_Ty>::_Ref_count_obj2<Sonar::GameDataRef&,int,int>(Sonar::GameDataRef &,int &&,int &&)' being compiled
+          with
+          [
+              _Ty=Sonar::Rectangle
+          ]
+D:\Software\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30037\include\memory(2748): message : see reference to function template instantiation 'std::_Ref_count_obj2<_Ty>::_Ref_count_obj2<Sonar::GameDataRef&,int,int>(Sonar::GameDataRef &,int &&,int &&)' being compiled
+          with
+          [
+              _Ty=Sonar::Rectangle
+          ]
+C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Code\src\Engine\Core\Game.cpp(80): message : see reference to function template instantiation 'std::shared_ptr<Sonar::Rectangle> std::make_shared<Sonar::Rectangle,Sonar::GameDataRef&,int,int>(Sonar::GameDataRef &,int &&,int &&)' being compiled
   SFML Template.vcxproj -> C:\Users\thund\Documents\GitHub\Project-XYZ\Code\PROJECT XYZ\Platforms\Windows\Debug\SFML Template.exe

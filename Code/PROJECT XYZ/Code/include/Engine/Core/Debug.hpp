@@ -176,6 +176,28 @@ namespace Sonar
         */
         void DrawComputerStats( bool *pOpen, const glm::uvec2 &windowSize, const Verbosity verbosity = Verbosity::SUPER_HIGH, const float opacity = COMPUTER_STATS_BACKGROUND_OPACITY );
         
+        /**
+        * \brief Enable the debug grid
+        */
+        void EnableGrid( );
+
+        /**
+        * \brief Disable the debug grid
+        */
+        void DisableGrid( );
+
+        /**
+        * \brief Toggle the debug grid
+        */
+        void ToggleGrid( );
+
+        /**
+        * \brief Check if the debug grid is enabled
+        *
+        * \return Output returns the debug grid status
+        */
+        [[nodiscard]] const bool IsGridEnabled( ) const;
+
     private:
         /**
          * \brief Class constructor
@@ -226,6 +248,11 @@ namespace Sonar
         * \brief Points for the graphs
         */
         std::vector<float> _fpsGraphPoints, _cpuGraphPoints, _ramGraphPoints;
+
+        /**
+        * \brief Tracks the status of the grid
+        */
+        bool _isGridEnabled = DEFAULT_IS_DEBUG_GRID_ENABLED;
         
     };
 }
