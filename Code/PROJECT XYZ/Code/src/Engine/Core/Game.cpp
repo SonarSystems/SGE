@@ -73,26 +73,39 @@ namespace Sonar
 
 			if ( _data->debug->IsGridEnabled( ) )
 			{
-				int x = 20, y = 20;
+				int x = _data->debug->GetNumberOfGridSpacesX( ) - 1;
+				int y = _data->debug->GetNumberOfGridSpacesY( ) - 1;
+				float lineWidth = _data->debug->GetLineWidth( );
 
 				for ( int i = 1; i <= x; i++ )
 				{
-					std::shared_ptr<Rectangle> line = std::make_shared<Rectangle>( _data, 3, 720 );
+					std::shared_ptr<Rectangle> line = std::make_shared<Rectangle>( _data, lineWidth, _data->window.GetSize( ).y );
 
-					line->SetInsideColor( Color::Black );
-					line->SetPosition( ( ( _data->window.GetSize( ).x / ( x + 1.0f ) ) * i ) - ( line->GetWidth( ) * 0.5f ), 0 );
+					line->SetInsideColor( _data->debug->GetLineColor( ) );
+					line->SetPosition( ( ( _data->window.GetSize( ).x / ( x + 1.0f ) ) * i ) - ( lineWidth * 0.5f ), 0 );
 
 					line->Draw( );
 				}
 
 				for ( int j = 1; j <= y; j++ )
 				{
-					std::shared_ptr<Rectangle> line = std::make_shared<Rectangle>( _data, 1280, 3 );
+					std::shared_ptr<Rectangle> line = std::make_shared<Rectangle>( _data, _data->window.GetSize( ).x, lineWidth );
 
-					line->SetInsideColor( Color::Black );
-					line->SetPosition( 0, ( ( _data->window.GetSize( ).y / ( y + 1.0f ) ) * j ) - ( line->GetHeight( ) * 0.5f ) );
+					line->SetInsideColor( _data->debug->GetLineColor( ) );
+					line->SetPosition( 0, ( ( _data->window.GetSize( ).y / ( y + 1.0f ) ) * j ) - ( lineWidth * 0.5f ) );
 
 					line->Draw( );
+				}
+
+				if ( _data->debug->IsBorderEnabled( ) )
+				{
+					std::shared_ptr<Rectangle> borderTop = std::make_shared<Rectangle>( _data, 0, lineWidth );
+					std::shared_ptr<Rectangle> borderBottom = std::make_shared<Rectangle>( _data, _data->window.GetSize( ).y - lineWidth, lineWidth );
+					std::shared_ptr<Rectangle> borderLeft = std::make_shared<Rectangle>( _data, lineWidth, 0 );
+					std::shared_ptr<Rectangle> borderRight = std::make_shared<Rectangle>( _data, lineWidth, _data->window.GetSize( ).x - lineWidth );
+
+					line->SetInsideColor( _data->debug->GetLineColor( ) );
+					line->SetPosition( 0, ( ( _data->window.GetSize( ).y / ( y + 1.0f ) ) * j ) - ( lineWidth * 0.5f ) );
 				}
 			}
             

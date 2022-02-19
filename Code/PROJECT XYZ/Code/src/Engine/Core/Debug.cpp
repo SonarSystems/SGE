@@ -313,4 +313,55 @@ namespace Sonar
 
 	const bool Debug::IsGridEnabled( ) const
 	{ return ( _isGridEnabled && _isGridEnabled ); }
+
+	void Debug::SetNumberOfGridSpacesX( const int &spaces )
+	{ _grid.numOfSpacesX = spaces; }
+
+	const int &Debug::GetNumberOfGridSpacesX( ) const
+	{ return _grid.numOfSpacesX; }
+
+	void Debug::SetNumberOfGridSpacesY( const int &spaces )
+	{ _grid.numOfSpacesY = spaces; }
+
+	const int &Debug::GetNumberOfGridSpacesY( ) const
+	{ return _grid.numOfSpacesY; }
+
+	void Debug::SetNumberOfGridSpaces( const int &spacesX, const int &spacesY )
+	{
+		_grid.numOfSpacesX = spacesX;
+		_grid.numOfSpacesY = spacesY;
+	}
+
+	void Debug::SetNumberOfGridSpaces( const glm::uvec2 &spaces )
+	{
+		_grid.numOfSpacesX = spaces.x;
+		_grid.numOfSpacesY = spaces.y;
+	}
+
+	const glm::uvec2 &Debug::GetNumberOfGridSpaces( ) const
+	{ return glm::uvec2( _grid.numOfSpacesX, _grid.numOfSpacesY ); }
+
+	void Debug::SetLineColor( const Color &color )
+	{ _grid.color = color; }
+
+	const Color &Debug::GetLineColor( ) const
+	{ return _grid.color; }
+
+	void Debug::SetLineWidth( const float &width )
+	{ _grid.lineWidth = width; }
+
+	const float &Debug::GetLineWidth( ) const
+	{ return _grid.lineWidth; }
+
+	void Debug::EnableBorder( )
+	{ _grid.isBorderEnabled = true; }
+
+	void Debug::DisableBorder( )
+	{ _grid.isBorderEnabled = false; }
+
+	void Debug::ToggleBorder( )
+	{ _grid.isBorderEnabled = !_grid.isBorderEnabled; }
+
+	const bool &Debug::IsBorderEnabled( ) const
+	{ reutnr _grid.isBorderEnabled; }
 }

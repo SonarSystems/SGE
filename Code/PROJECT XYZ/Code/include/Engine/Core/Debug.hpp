@@ -4,6 +4,7 @@
 #include <spdlog/spdlog.h>
 
 #include "Core/Clock.hpp"
+#include "Graphics/Color.hpp"
 
 // Starting state of the Debug system, true being enabled and false being disabled
 #define START_STATE true
@@ -19,6 +20,18 @@ namespace Sonar
         float _FPS;
         float _frameTime; // CALCULATED AND STORED IN MILLISECONDS
         unsigned long long int _totalFrames = 0;
+    };
+
+    /**
+    * \brief Debug grid properties
+    */
+    struct DebugGrid
+    {
+		int numOfSpacesX = 10;
+		int numOfSpacesY = 10;
+        Color color = Color::Black;
+        float lineWidth = 3;
+        bool isBorderEnabled = true;
     };
 
     class Debug
@@ -198,6 +211,106 @@ namespace Sonar
         */
         [[nodiscard]] const bool IsGridEnabled( ) const;
 
+        /**
+        * \brief Set the number of spaces in the x axis for the debug grid
+        *
+        * \param spaces Number of spaces in the x axis
+        */
+        void SetNumberOfGridSpacesX( const int &spaces );
+
+        /**
+        * \brief Get the number of spaces in the x axis for the debug grid
+        *
+        * \return Output returns the number of spaces in the x axis
+        */
+        [[nodiscard]] const int &GetNumberOfGridSpacesX( ) const;
+
+        /**
+        * \brief Set the number of spaces in the y axis for the debug grid
+        *
+        * \param spaces Number of spaces in the y axis
+        */
+        void SetNumberOfGridSpacesY( const int &spaces );
+
+        /**
+        * \brief Get the number of spaces in the y axis for the debug grid
+        *
+		* \return Output returns the number of spaces in the y axis
+        */
+        [[nodiscard]] const int &GetNumberOfGridSpacesY( ) const;
+
+        /**
+        * \brief Set the number of spaces in the x and y axis for the debug grid
+        *
+		* \param spacesX Number of spaces in the x axis
+		* \param spacesY Number of spaces in the y axis
+        */
+        void SetNumberOfGridSpaces( const int &spacesX, const int &spacesY );
+
+        /**
+        * \brief Set the number of spaces in the x and y axis for the debug grid
+        *
+        * \param spaces Number of spaces in the x and y axis
+        */
+        void SetNumberOfGridSpaces( const glm::uvec2 &spaces );
+
+        /**
+        * \brief Get the number of spaces in the y axis for the debug grid
+        *
+		* \return Output returns the number of spaces in the x and y axis
+        */
+        [[nodiscard]] const glm::uvec2 &GetNumberOfGridSpaces( ) const;
+
+        /**
+        * \brief Set the debug grid's line color
+        *
+        * \param color Color of the line
+        */
+        void SetLineColor( const Color &color );
+
+        /**
+        * \brief Get the debug grid's line color
+        *
+        * \return Output returns the color of the line
+        */
+        [[nodiscard]] const Color &GetLineColor( ) const;
+
+        /**
+        * \brief Set the debug grid's line width
+        *
+        * \param width Width of the line
+        */
+        void SetLineWidth( const float &width );
+
+        /**
+        * \brief Get the debug grid's line width
+        *
+        * \return Output returns the width of the line
+        */
+        [[nodiscard]] const float &GetLineWidth( ) const;
+
+        /**
+        * \brief Enable the grid border
+        */
+        void EnableBorder( );
+
+        /**
+        * \brief Disable the grid border
+        */
+        void DisableBorder( );
+
+        /**
+        * \brief Toggle the grid border
+        */
+        void ToggleBorder( );
+
+        /**
+        * \brief Is the border enabled
+        *
+        * \return Output returns the border status
+        */
+        const bool &IsBorderEnabled( ) const;
+
     private:
         /**
          * \brief Class constructor
@@ -253,6 +366,11 @@ namespace Sonar
         * \brief Tracks the status of the grid
         */
         bool _isGridEnabled = DEFAULT_IS_DEBUG_GRID_ENABLED;
-        
+
+        /**
+        * \brief Properties of the debug grid
+        */
+        DebugGrid _grid;
+
     };
 }
