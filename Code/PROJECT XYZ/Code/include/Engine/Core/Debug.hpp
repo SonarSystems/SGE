@@ -30,8 +30,10 @@ namespace Sonar
 		int numOfSpacesX = 10;
 		int numOfSpacesY = 10;
         Color color = Color::Black;
-        float lineWidth = 3;
+		float lineWidth = 3;
+		float gridWidth = 50;
         bool isBorderEnabled = true;
+        bool isFixedWidth = false;
     };
 
     class Debug
@@ -290,6 +292,42 @@ namespace Sonar
         [[nodiscard]] const float &GetLineWidth( ) const;
 
         /**
+        * \brief Set the width of each grid space
+        *
+        * \param width Width of each grid space
+        */
+        void SetGridWidth( const float &width );
+
+        /**
+        * \brief Get the width of each grid space
+        *
+        * \return Output returns the grid space width
+        */
+		[[nodiscard]] const float &GetGridWidth( ) const;
+
+        /**
+        * \brief Enable fixed width grid
+        */
+        void EnableFixedWidth( );
+
+        /**
+        * \brief Disable fixed width grid
+        */
+        void DisableFixedWidth( );
+
+        /**
+        * \brief Toggle fixed width grid
+        */
+        void ToggleFixedWidth( );
+
+        /**
+        * \brief Is the grid space fixed width enabled
+        *
+        * \return Output returns the grid fixed width status
+        */
+        [[nodiscard]] const bool &IsFixedWidthEnabled( ) const;
+
+        /**
         * \brief Enable the grid border
         */
         void EnableBorder( );
@@ -309,7 +347,7 @@ namespace Sonar
         *
         * \return Output returns the border status
         */
-        const bool &IsBorderEnabled( ) const;
+        [[nodiscard]] const bool &IsBorderEnabled( ) const;
 
     private:
         /**

@@ -73,39 +73,82 @@ namespace Sonar
 
 			if ( _data->debug->IsGridEnabled( ) )
 			{
-				int x = _data->debug->GetNumberOfGridSpacesX( ) - 1;
-				int y = _data->debug->GetNumberOfGridSpacesY( ) - 1;
 				float lineWidth = _data->debug->GetLineWidth( );
 
-				for ( int i = 1; i <= x; i++ )
+				if ( _data->debug->IsFixedWidthEnabled( ) )
 				{
-					std::shared_ptr<Rectangle> line = std::make_shared<Rectangle>( _data, lineWidth, _data->window.GetSize( ).y );
+					float gridWidth = _data->debug->GetGridWidth( );
 
-					line->SetInsideColor( _data->debug->GetLineColor( ) );
-					line->SetPosition( ( ( _data->window.GetSize( ).x / ( x + 1.0f ) ) * i ) - ( lineWidth * 0.5f ), 0 );
+					int gridSpacesX = _data->window.GetSize( ).x / gridWidth;
+					int gridSpacesY = _data->window.GetSize( ).y / gridWidth;
 
-					line->Draw( );
+					for ( int i = 0; i <= gridSpacesX; i++ )
+					{
+						std::shared_ptr<Rectangle> line = std::make_shared<Rectangle>( _data, lineWidth, _data->window.GetSize( ).y );
+
+						line->SetInsideColor( _data->debug->GetLineColor( ) );
+						line->SetPosition( gridWidth * i, 0 );
+
+						line->Draw( );
+					}
+
+					for ( int j = 0; j <= gridSpacesY; j++ )
+					{
+						std::shared_ptr<Rectangle> line = std::make_shared<Rectangle>( _data, _data->window.GetSize( ).x, lineWidth );
+
+						line->SetInsideColor( _data->debug->GetLineColor( ) );
+						line->SetPosition( 0, gridWidth * j );
+
+						line->Draw( );
+					}
 				}
-
-				for ( int j = 1; j <= y; j++ )
+				else
 				{
-					std::shared_ptr<Rectangle> line = std::make_shared<Rectangle>( _data, _data->window.GetSize( ).x, lineWidth );
+					int x = _data->debug->GetNumberOfGridSpacesX( ) - 1;
+					int y = _data->debug->GetNumberOfGridSpacesY( ) - 1;
 
-					line->SetInsideColor( _data->debug->GetLineColor( ) );
-					line->SetPosition( 0, ( ( _data->window.GetSize( ).y / ( y + 1.0f ) ) * j ) - ( lineWidth * 0.5f ) );
+					for ( int i = 1; i <= x; i++ )
+					{
+						std::shared_ptr<Rectangle> line = std::make_shared<Rectangle>( _data, lineWidth, _data->window.GetSize( ).y );
 
-					line->Draw( );
+						line->SetInsideColor( _data->debug->GetLineColor( ) );
+						line->SetPosition( ( ( _data->window.GetSize( ).x / ( x + 1.0f ) ) * i ) - ( lineWidth * 0.5f ), 0 );
+
+						line->Draw( );
+					}
+
+					for ( int j = 1; j <= y; j++ )
+					{
+						std::shared_ptr<Rectangle> line = std::make_shared<Rectangle>( _data, _data->window.GetSize( ).x, lineWidth );
+
+						line->SetInsideColor( _data->debug->GetLineColor( ) );
+						line->SetPosition( 0, ( ( _data->window.GetSize( ).y / ( y + 1.0f ) ) * j ) - ( lineWidth * 0.5f ) );
+
+						line->Draw( );
+					}
 				}
 
 				if ( _data->debug->IsBorderEnabled( ) )
 				{
-					std::shared_ptr<Rectangle> borderTop = std::make_shared<Rectangle>( _data, 0, lineWidth );
-					std::shared_ptr<Rectangle> borderBottom = std::make_shared<Rectangle>( _data, _data->window.GetSize( ).y - lineWidth, lineWidth );
-					std::shared_ptr<Rectangle> borderLeft = std::make_shared<Rectangle>( _data, lineWidth, 0 );
-					std::shared_ptr<Rectangle> borderRight = std::make_shared<Rectangle>( _data, lineWidth, _data->window.GetSize( ).x - lineWidth );
+					std::shared_ptr<Rectangle> borderTop = std::make_shared<Rectangle>( _data, _data->window.GetSize( ).x, lineWidth );
+					std::shared_ptr<Rectangle> borderBottom = std::make_shared<Rectangle>( _data, _data->window.GetSize( ).x, lineWidth );
+					std::shared_ptr<Rectangle> borderLeft = std::make_shared<Rectangle>( _data, lineWidth, _data->window.GetSize( ).x );
+					std::shared_ptr<Rectangle> borderRight = std::make_shared<Rectangle>( _data, lineWidth, _data->window.GetSize( ).x );
 
-					line->SetInsideColor( _data->debug->GetLineColor( ) );
-					line->SetPosition( 0, ( ( _data->window.GetSize( ).y / ( y + 1.0f ) ) * j ) - ( lineWidth * 0.5f ) );
+					borderTop->SetInsideColor( _data->debug->GetLineColor( ) );
+					borderBottom->SetInsideColor( _data->debug->GetLineColor( ) );
+					borderLeft->SetInsideColor( _data->debug->GetLineColor( ) );
+					borderRight->SetInsideColor( _data->debug->GetLineColor( ) );
+
+					borderTop->SetPosition( 0, 0 );
+					borderBottom->SetPosition( 0, _data->window.GetSize( ).y - borderBottom->GetHeight( ) );
+					borderLeft->SetPosition( 0, 0 );
+					borderRight->SetPosition( _data->window.GetSize( ).x - borderRight->GetWidth( ), 0 );
+
+					borderTop->Draw( );
+					borderBottom->Draw( );
+					borderLeft->Draw( );
+					borderRight->Draw( );
 				}
 			}
             

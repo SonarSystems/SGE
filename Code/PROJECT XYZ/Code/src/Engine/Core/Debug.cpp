@@ -353,6 +353,24 @@ namespace Sonar
 	const float &Debug::GetLineWidth( ) const
 	{ return _grid.lineWidth; }
 
+	void Debug::SetGridWidth( const float &width )
+	{ _grid.gridWidth = width; }
+
+	const float &Debug::GetGridWidth( ) const
+	{ return _grid.gridWidth; }
+
+	void Debug::EnableFixedWidth( )
+	{ _grid.isFixedWidth = true; }
+
+	void Debug::DisableFixedWidth( )
+	{ _grid.isFixedWidth = false; }
+
+	void Debug::ToggleFixedWidth( )
+	{ _grid.isFixedWidth = !_grid.isFixedWidth; }
+
+	const bool &Debug::IsFixedWidthEnabled( ) const
+	{ return _grid.isFixedWidth; }
+
 	void Debug::EnableBorder( )
 	{ _grid.isBorderEnabled = true; }
 
@@ -363,5 +381,5 @@ namespace Sonar
 	{ _grid.isBorderEnabled = !_grid.isBorderEnabled; }
 
 	const bool &Debug::IsBorderEnabled( ) const
-	{ reutnr _grid.isBorderEnabled; }
+	{ return _grid.isBorderEnabled; }
 }
