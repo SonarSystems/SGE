@@ -5,8 +5,7 @@ ENGINE
 -----------------------------------------------------------------
 * Physics
     - Box2d - MAYBE IN THE ENGINE POTENTIALLY, WILL SEE - build into the graphics classes like shapes and sprite
-    - Fluid box2d
-    - LiquidFun maybe, check it out
+    - LiquidFun maybe, check it out (NEED BOX2D SETUP FIRST AS IT IS BASED ON IT)
 * Borders on left and right or up and down going to center, like a movie changed from 16x9 to 21x9, use rectangle shape and ability to set colour
 * Shadows
 * Fog

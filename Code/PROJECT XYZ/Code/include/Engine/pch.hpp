@@ -47,6 +47,7 @@
 #include <Gamepad.h>
 #include <csv.hpp>
 #include <json.hpp>
+#include <b2GLDraw.h>
 
 /**
 * \brief Custom files (including external libraries manually included and not linked)

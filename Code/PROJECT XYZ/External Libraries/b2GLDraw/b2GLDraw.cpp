@@ -1,4 +1,3 @@
-#include "pch.hpp"
 #include "b2GLDraw.h"
 #include <cstdio>
 #include <cstdarg>
