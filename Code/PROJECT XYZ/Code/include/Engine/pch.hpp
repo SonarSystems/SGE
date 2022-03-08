@@ -43,7 +43,6 @@
 #include <glm.hpp>
 #include <sort.h>
 #include "SysInfo.hpp"
-#include <b2GLDraw.h>
 #include <Gamepad.h>
 #include <csv.hpp>
 #include <json.hpp>

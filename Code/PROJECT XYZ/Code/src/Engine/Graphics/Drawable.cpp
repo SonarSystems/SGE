@@ -373,5 +373,21 @@ namespace Sonar
 	sf::Drawable *Drawable::GetSFMLDrawable( ) const
 	{ return _object; }
 
+	void Drawable::SetupPhysics( )
+	{
+		float SCALE = 32.0f;
+
+		BodyDef.position = b2Vec2( _position[0] / SCALE, _position[1] / SCALE );
+		BodyDef.type = b2_dynamicBody;
+		b2Body *Body = _data->world->CreateBody( &BodyDef );
+
+		b2PolygonShape Shape;
+		Shape.SetAsBox( ( _size[0] * 0.5f ) / SCALE, ( _size[1] * 0.5f ) / SCALE );
+		b2FixtureDef FixtureDef;
+		FixtureDef.density = 1.0f;
+		FixtureDef.friction = 0.7f;
+		FixtureDef.shape = &Shape;
+		Body->CreateFixture( &FixtureDef );
+	}
 }
 

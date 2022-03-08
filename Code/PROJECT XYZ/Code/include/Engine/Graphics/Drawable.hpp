@@ -466,6 +466,8 @@ namespace Sonar
         */
         [[nodiscard]] sf::Drawable *GetSFMLDrawable( ) const;
 
+        void SetupPhysics( );
+
     protected:
         /**
         * \brief Class constructor
@@ -564,6 +566,9 @@ namespace Sonar
         * \brief Clock to keep track of the time
         */
         Clock _clock;
+
+        b2BodyDef BodyDef;
+        
 
     };
 }

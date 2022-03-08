@@ -56,6 +56,8 @@ namespace Sonar
 		
 		char windowTitle[255] = "ImGui + SFML = <3";
 
+		Rectangle *rectangle;
+
 
 	};
 }

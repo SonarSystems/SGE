@@ -17,6 +17,8 @@ namespace Sonar
         Debug *debug; // Debugger
         Color backgroundColor = DEFAULT_BACKGROUND_CLEAR_COLOR;
         float dt;
+        b2World *world;
+        b2GLDraw fooDrawInstance;
 	};
     
     /**

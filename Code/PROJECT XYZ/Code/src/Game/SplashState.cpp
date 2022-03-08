@@ -135,6 +135,12 @@ namespace Sonar
 		mm->AddObject( "Friendly", glm::vec2( 150, 200 ), 10 );
 		mm->AddObject( "Enemy", glm::vec2( 200, 0 ), 10 );
 		mm->AddObject( "Friendly", glm::vec2( 200, 200 ), 10 );
+
+		rectangle = new Rectangle( _data );
+		rectangle->SetPosition( 20, 20 );
+		rectangle->SetSize( 30, 50 );
+		rectangle->SetInsideColor( Color::Red );
+		rectangle->SetupPhysics( );
 	}
 
 	SplashState::~SplashState( )
@@ -207,7 +213,7 @@ namespace Sonar
 		
 
 		menu->Draw( );
-
+		rectangle->Draw( );
 		
 
 		//mm->Draw( );

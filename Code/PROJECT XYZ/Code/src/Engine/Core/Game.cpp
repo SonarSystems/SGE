@@ -14,6 +14,17 @@ namespace Sonar
 		_data->window.Setup( width, height, title, style );
 		_data->machine.AddState( StateRef( new SplashState( _data ) ) );
 
+		_data->world = new b2World( b2Vec2( 0.0f, 0.0f ) );
+
+		_data->world->SetDebugDraw( &_data->fooDrawInstance );
+		uint32 flags = 0;
+		flags += b2Draw::e_shapeBit;
+		flags += b2Draw::e_jointBit;
+		flags += b2Draw::e_aabbBit;
+		flags += b2Draw::e_pairBit;
+		flags += b2Draw::e_centerOfMassBit;
+		_data->fooDrawInstance.SetFlags( flags );
+
 		Run( );
 	}
 
